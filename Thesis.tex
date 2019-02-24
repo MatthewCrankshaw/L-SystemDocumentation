@@ -1,7 +1,43 @@
-\documentclass[11pt]{article}
+\documentclass[11pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\title{
+{ Procedural Plant Generation and Simulated Plant Growth }\\
+{\large Massey University}
+\\
+{\includegraphics[scale=0.35]{titlepage.png}}
+}
+
+
+\author{Matthew Crankshaw}
+\date{25 February 2019}
 
 \begin{document}
-This is my first LaTeX document.
 
-this is some mathematics $(x+1)$ and $(x+3)$
+\maketitle
+
+\chapter*{Acknowledgements}
+
+\chapter*{Abstract}
+
+\tableofcontents
+\listoffigures
+
+
+\chapter{Introduction}
+\input{chapters/introduction}
+
+\chapter{Introducing Lindenmayer Systems}
+\input{chapters/chapter01}
+
+\appendix
+\chapter{Appendix}
+\input{chapters/appendix}
+
+
 \end{document}
+
+
+
