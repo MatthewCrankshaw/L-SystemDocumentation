@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage[margin=1in]{geometry}
+\usepackage{placeins}
 \graphicspath{ {images/} }
 
 \title{

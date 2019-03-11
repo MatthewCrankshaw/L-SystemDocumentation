@@ -1,5 +1,10 @@
 \begin{thebibliography}{}
 
+\bibitem[Mandelbrot, 1982]{mandelbrot1982fractal}
+Mandelbrot, B.~B. (1982).
+\newblock {\em The fractal geometry of nature}, volume~2.
+\newblock WH freeman New York.
+
 \bibitem[Worth and Stepney, 2005]{worth2005growing}
 Worth, P. and Stepney, S. (2005).
 \newblock Growing music: musical interpretations of l-systems.
