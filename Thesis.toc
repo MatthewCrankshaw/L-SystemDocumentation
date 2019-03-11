@@ -5,9 +5,8 @@
 \contentsline {section}{\numberline {1.4}Practical Relevance}{5}
 \contentsline {chapter}{\numberline {2}Introducing Lindenmayer Systems}{6}
 \contentsline {section}{\numberline {2.1}L-system grammars}{6}
-\contentsline {section}{\numberline {2.2}D0L System}{6}
-\contentsline {section}{\numberline {2.3}Basic 2D L-systems}{6}
-\contentsline {section}{\numberline {2.4}Branching Filaments}{9}
-\contentsline {chapter}{\numberline {A}Appendix}{10}
-\contentsline {section}{\numberline {A.1}Appendix 1}{10}
-\contentsline {section}{\numberline {A.2}Bibliography}{10}
+\contentsline {section}{\numberline {2.2}Basic 2D L-systems}{7}
+\contentsline {section}{\numberline {2.3}Branching Filaments}{10}
+\contentsline {chapter}{\numberline {A}Appendix}{11}
+\contentsline {section}{\numberline {A.1}Appendix 1}{11}
+\contentsline {section}{\numberline {A.2}Bibliography}{11}

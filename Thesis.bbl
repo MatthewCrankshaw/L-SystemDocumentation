@@ -5,6 +5,11 @@ Mandelbrot, B.~B. (1982).
 \newblock {\em The fractal geometry of nature}, volume~2.
 \newblock WH freeman New York.
 
+\bibitem[Prusinkiewicz and Hanan, 2013]{prusinkiewicz2013lindenmayer}
+Prusinkiewicz, P. and Hanan, J. (2013).
+\newblock {\em Lindenmayer systems, fractals, and plants}, volume~79.
+\newblock Springer Science \& Business Media.
+
 \bibitem[Worth and Stepney, 2005]{worth2005growing}
 Worth, P. and Stepney, S. (2005).
 \newblock Growing music: musical interpretations of l-systems.
