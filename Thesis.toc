@@ -1,12 +1,15 @@
 \contentsline {chapter}{\numberline {1}Introduction}{5}
 \contentsline {section}{\numberline {1.1}Context and Background}{5}
-\contentsline {section}{\numberline {1.2}Research Setting}{5}
-\contentsline {section}{\numberline {1.3}Objectives}{5}
-\contentsline {section}{\numberline {1.4}Practical Relevance}{5}
-\contentsline {chapter}{\numberline {2}Introducing Lindenmayer Systems}{6}
-\contentsline {section}{\numberline {2.1}L-system grammars}{6}
-\contentsline {section}{\numberline {2.2}Basic 2D L-systems}{7}
-\contentsline {section}{\numberline {2.3}Branching Filaments}{10}
-\contentsline {chapter}{\numberline {A}Appendix}{11}
-\contentsline {section}{\numberline {A.1}Appendix 1}{11}
-\contentsline {section}{\numberline {A.2}Bibliography}{11}
+\contentsline {chapter}{\numberline {2}Outline}{6}
+\contentsline {section}{\numberline {2.1}Outline}{6}
+\contentsline {chapter}{\numberline {3}Introducing Lindenmayer Systems}{7}
+\contentsline {section}{\numberline {3.1}The Use of L-systems in 3D applications}{7}
+\contentsline {section}{\numberline {3.2}L-system grammars}{7}
+\contentsline {section}{\numberline {3.3}Basic 2D L-systems}{8}
+\contentsline {section}{\numberline {3.4}Branching Filaments}{11}
+\contentsline {chapter}{\numberline {4}Implementation}{12}
+\contentsline {section}{\numberline {4.1}Language and environment}{12}
+\contentsline {section}{\numberline {4.2}Open Graphics Library}{12}
+\contentsline {chapter}{\numberline {A}Appendix}{13}
+\contentsline {section}{\numberline {A.1}Appendix 1}{13}
+\contentsline {section}{\numberline {A.2}Bibliography}{13}

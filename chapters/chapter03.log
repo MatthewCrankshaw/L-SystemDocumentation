@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.2.2)  20 MAR 2019 19:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.2.2)  20 MAR 2019 19:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**chapter02.tex
-(./chapter02.tex
+**chapter03.tex
+(./chapter03.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 7 language(s) loaded.
 ! Undefined control sequence.
@@ -3846,7 +3846,7 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no s in font nullfont!
 )
 ! Emergency stop.
-<*> chapter02.tex
+<*> chapter03.tex
                  
 *** (job aborted, no legal \end found)
 
