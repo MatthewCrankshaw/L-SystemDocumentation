@@ -82,4 +82,21 @@
   publisher={Nelson Education}
 }
 
+% \cite{prusinkiewicz2012algorithmic}
+@book{prusinkiewicz2012algorithmic,
+  title={The algorithmic beauty of plants},
+  author={Prusinkiewicz, Przemyslaw and Lindenmayer, Aristid},
+  year={2012},
+  publisher={Springer Science \& Business Media}
+}
+
+% \cite{prusinkiewicz1986graphical}
+@inproceedings{prusinkiewicz1986graphical,
+  title={Graphical applications of L-systems},
+  author={Prusinkiewicz, Przemyslaw},
+  booktitle={Proceedings of graphics interface},
+  volume={86},
+  pages={247--253},
+  year={1986}
+}
 

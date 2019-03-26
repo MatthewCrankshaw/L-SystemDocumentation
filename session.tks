@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TexmakerSession quickmode="3">
-    <document bookmark2="0" hasfocus="true" file="/home/matthew/Documents/Uni/L_Systems/Documentation/Thesis.tex" line="0" bookmark1="0" bookmark3="0" master="false"/>
-    <document bookmark2="0" hasfocus="false" file="/home/matthew/Documents/Uni/L_Systems/Documentation/chapters/chapter01.tex" line="0" bookmark1="0" bookmark3="0" master="false"/>
-    <document bookmark2="0" hasfocus="false" file="/home/matthew/Documents/Uni/L_Systems/Documentation/chapters/appendix.tex" line="0" bookmark1="0" bookmark3="0" master="false"/>
-    <document bookmark2="0" hasfocus="false" file="/home/matthew/Documents/Uni/L_Systems/Documentation/chapters/chapter03.tex" line="0" bookmark1="0" bookmark3="0" master="false"/>
-    <document bookmark2="0" hasfocus="false" file="/home/matthew/Documents/Uni/L_Systems/Documentation/chapters/chapter02.tex" line="0" bookmark1="0" bookmark3="0" master="false"/>
-    <document bookmark2="0" hasfocus="false" file="/home/matthew/Documents/Uni/L_Systems/Documentation/chapters/chapter04.tex" line="0" bookmark1="0" bookmark3="0" master="false"/>
-    <document bookmark2="0" hasfocus="false" file="/home/matthew/Documents/Uni/L_Systems/Documentation/chapters/ref.bib" line="0" bookmark1="0" bookmark3="0" master="false"/>
+<TexmakerSession quickmode="12">
+    <document master="false" file="/home/matthew/Documents/Uni/L_Systems/Documentation/chapters/appendix.tex" line="0" bookmark3="0" bookmark1="0" bookmark2="0" hasfocus="false"/>
+    <document master="false" file="/home/matthew/Documents/Uni/L_Systems/Documentation/chapters/chapter01.tex" line="0" bookmark3="0" bookmark1="0" bookmark2="0" hasfocus="false"/>
+    <document master="false" file="/home/matthew/Documents/Uni/L_Systems/Documentation/chapters/chapter03.tex" line="45" bookmark3="0" bookmark1="0" bookmark2="0" hasfocus="true"/>
+    <document master="false" file="/home/matthew/Documents/Uni/L_Systems/Documentation/chapters/chapter04.tex" line="0" bookmark3="0" bookmark1="0" bookmark2="0" hasfocus="false"/>
+    <document master="false" file="/home/matthew/Documents/Uni/L_Systems/Documentation/chapters/chapter02.tex" line="0" bookmark3="0" bookmark1="0" bookmark2="0" hasfocus="false"/>
+    <document master="false" file="/home/matthew/Documents/Uni/L_Systems/Documentation/chapters/ref.bib" line="0" bookmark3="0" bookmark1="0" bookmark2="0" hasfocus="false"/>
+    <document master="false" file="/home/matthew/Documents/Uni/L_Systems/Documentation/Thesis.tex" line="30" bookmark3="0" bookmark1="0" bookmark2="0" hasfocus="false"/>
 </TexmakerSession>
