@@ -1,9 +1,19 @@
 \begin{thebibliography}{}
 
+\bibitem[Horton, 2015]{horton2015stl}
+Horton, I. (2015).
+\newblock {\em Using the C++ Standard Template Libraries}.
+\newblock Apress.
+
 \bibitem[Mandelbrot, 1982]{mandelbrot1982fractal}
 Mandelbrot, B.~B. (1982).
 \newblock {\em The fractal geometry of nature}, volume~2.
 \newblock WH freeman New York.
+
+\bibitem[Movania et~al., 2017]{movania2017opengl}
+Movania, M.~M., Lo, W. C.~Y., Wolff, D., and Lo, R. C.~H. (2017).
+\newblock {\em OpenGL – Build high performance graphics}.
+\newblock Packt Publishing Ltd, 1 edition.
 
 \bibitem[Prusinkiewicz, 1986]{prusinkiewicz1986graphical}
 Prusinkiewicz, P. (1986).
@@ -15,6 +25,16 @@ Prusinkiewicz, P. (1986).
 Prusinkiewicz, P. and Hanan, J. (2013).
 \newblock {\em Lindenmayer systems, fractals, and plants}, volume~79.
 \newblock Springer Science \& Business Media.
+
+\bibitem[Ritchie et~al., 1975]{ritchie1975c}
+Ritchie, D.~M., Kernighan, B.~W., and Lesk, M.~E. (1975).
+\newblock {\em The C programming language}.
+\newblock Bell Laboratories.
+
+\bibitem[Stroustrup, 2000]{stroustrup2000c++}
+Stroustrup, B. (2000).
+\newblock {\em The C++ programming language}.
+\newblock Pearson Education India.
 
 \bibitem[Worth and Stepney, 2005]{worth2005growing}
 Worth, P. and Stepney, S. (2005).

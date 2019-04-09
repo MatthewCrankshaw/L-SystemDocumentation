@@ -3,6 +3,7 @@
 \usepackage{graphicx}
 \usepackage[margin=1in]{geometry}
 \usepackage{placeins}
+\usepackage{glossaries}
 \graphicspath{ {images/} }
 
 \title{
@@ -19,6 +20,13 @@
 \date{25 February 2019}
 
 
+\makeglossaries
+\newglossaryentry{ltx}
+{
+name={LaTeX},
+description={test2}
+}
+\input{chapters/glossary}
 
 \begin{document}
 
@@ -35,6 +43,9 @@
 \chapter{Introduction}
 
 Here I will introduce the project and the thesis in general.
+
+\Gls{ltx}
+\gls{latex}
 
 \input{chapters/chapter01}
 
@@ -54,11 +65,14 @@ Introduction to the implementation section
 
 \input{chapters/chapter04}
 
-
+\chapter{Glossary}
+\clearpage
+\printglossaries
 
 \appendix
 \chapter{Appendix}
 \input{chapters/appendix}
+
 
 
 \end{document}
