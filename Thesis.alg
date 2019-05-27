@@ -1,2 +1,7 @@
-Warning: File 'Thesis.acn' is empty.
-Have you used any entries defined in glossary 'acronym'?
+This is makeindex, version 2.15 [TeX Live 2017] (kpathsea + Thai support).
+Scanning style file ./Thesis.ist.............................done (29 attributes redefined, 0 ignored).
+Scanning input file Thesis.acn....done (12 entries accepted, 0 rejected).
+Sorting entries....done (43 comparisons).
+Generating output file Thesis.acr....done (19 lines written, 0 warnings).
+Output written in Thesis.acr.
+Transcript written in Thesis.alg.

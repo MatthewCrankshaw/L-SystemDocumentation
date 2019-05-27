@@ -3,7 +3,7 @@
 \usepackage{graphicx}
 \usepackage[margin=1in]{geometry}
 \usepackage{placeins}
-\usepackage{glossaries}
+\usepackage[acronym]{glossaries}
 \graphicspath{ {images/} }
 
 \title{
@@ -44,9 +44,17 @@
 \chapter{Implementation}
 \input{chapters/chapter03}
 
-\chapter{Glossary}
-\clearpage
-\printglossaries
+\chapter{Findings and Data Analysis}
+\input{chapters/chapter04}
+
+\chapter{Discussion}
+\input{chapters/chapter05}
+
+\chapter{Conclusions}
+\input{chapters/chapter06}
+
+\printglossary[type=\acronymtype]
+\printglossary
 
 \appendix
 \chapter{Appendix}
