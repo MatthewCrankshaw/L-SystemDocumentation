@@ -61,7 +61,8 @@ When we move onto some more complicated L-systems, such as those that use parame
 We are now able to represent complex three dimensional tree structures in the form of a L-system rule set. In a computing sense this rule set can be seen as a type of program. In the program we define the number of generations we would like to generate, the starting point (Axiom) some constant varables (\#define) and the set of production rules. \\
 Using this information, we iterate through the from generation to generation rewritting the strings and then at the end provide a resulting string which will then be interpreted and displayed on the screen.
 \\
-We can represent the languages grammar in the form of a \acrlong{cfg} (\acrshort{cfg}). A \acrshort{cfg} is a set of recursive rewriting rules used to generate patterns of strings. In this case it can be used to fit the pattern of the L-system grammar. \\
+We can represent the languages grammar in the form of a \acrlong{bnf}, \acrshort{bnf} is a notation for \acrlong{cfg}s used to describe the syntax of different languages. In this case the \acrshort{bnf} is used below to describe the syntax of the parametric L-system grammar. \\
+\\
 For example: \\ 
 \\
 \textless expression\textgreater~ $\rightarrow$ number \\ 
@@ -88,7 +89,7 @@ In addition to this, any statement that is not surrounded by \textless \textgrea
 
 
 \newpage 
-
+\subsection{\acrlong{bnf} of the L-system Grammar}
 
 % Program 
 \noindent

@@ -17,9 +17,10 @@
 \contentsline {subsection}{\numberline {3.1.6}Git Version Control}{13}
 \contentsline {section}{\numberline {3.2}L-system Generator}{13}
 \contentsline {subsection}{\numberline {3.2.1}Building a Generalised L-system Grammar}{14}
-\contentsline {subsection}{\numberline {3.2.2}The L-system Compiler}{17}
-\contentsline {subsection}{\numberline {3.2.3}Flex - Lexical Analyser}{17}
-\contentsline {subsection}{\numberline {3.2.4}Bison - Parser Generator}{17}
+\contentsline {subsection}{\numberline {3.2.2}\acrlong {bnf} of the L-system Grammar}{15}
+\contentsline {subsection}{\numberline {3.2.3}The L-system Compiler}{17}
+\contentsline {subsection}{\numberline {3.2.4}Flex - Lexical Analyser}{17}
+\contentsline {subsection}{\numberline {3.2.5}Bison - Parser Generator}{17}
 \contentsline {section}{\numberline {3.3}L-system Interpreter}{17}
 \contentsline {subsection}{\numberline {3.3.1}Basic 2D L-systems}{17}
 \contentsline {subsection}{\numberline {3.3.2}The Use of L-systems in 3D applications}{20}
