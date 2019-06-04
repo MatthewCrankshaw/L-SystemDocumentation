@@ -41,6 +41,11 @@ Stroustrup, B. (2000).
 \newblock {\em The C++ programming language}.
 \newblock Pearson Education India.
 
+\bibitem[Wilhelm and Seidl, 2010]{wilhelm2010compiler}
+Wilhelm, R. and Seidl, H. (2010).
+\newblock {\em Compiler design: virtual machines}.
+\newblock Springer Science \& Business Media.
+
 \bibitem[Worth and Stepney, 2005]{worth2005growing}
 Worth, P. and Stepney, S. (2005).
 \newblock Growing music: musical interpretations of l-systems.

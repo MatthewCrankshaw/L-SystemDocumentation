@@ -321,21 +321,21 @@ In addition to this, any statement that is not surrounded by \textless \textgrea
 
 
 \newpage
-\subsection{The L-system Compiler}
+\subsection{The L-system Interpreter}
 
-Now that the grammar has been defined we have a very strict syntax in which an L-system can be defined, Although the syntax is quite strict we are actually able to define almost any L-system using this grammar. 
+Traditionally an interpreter is a program that takes a programs code as input, where it is then analyzed and interpreted as it is encountered in the execution process. All of the previously encountered / interpreted is not exploited. The information about the program can be extracted by inspection of the program as a whole, such as the set of declared variables in a block, a function, or a block. \cite{wilhelm2010compiler} 
+
+The \acrlong{bnf} above, of the L-system grammar, defines the syntax of a valid L-system descriptor file. 
+\\
+In order to develop a system that is capable of taking a L-system descriptor file and if it valid, process it and give the resulting string, or if it is not valid give a usefull syntax error.  
+
 
 \subsection{Flex - Lexical Analyser} 
 
+
+
 \subsection{Bison - Parser Generator}
-
-
-
-
-
-
-
-
+ 
 
 
 \section{L-system Interpreter}
