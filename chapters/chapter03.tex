@@ -58,67 +58,275 @@ When we move onto some more complicated L-systems, such as those that use parame
 
 \subsection{Building a Generalised L-system Grammar}
 
-We are now able to represent complex three dimensional tree structures in the form of a L-system rule set. In a computing sense this rule set can be seen as a type of program. In the program we define the number of generations we would like to generate, the starting point (Axiom) some constant varables (\#define) and the production rules. \\
+We are now able to represent complex three dimensional tree structures in the form of a L-system rule set. In a computing sense this rule set can be seen as a type of program. In the program we define the number of generations we would like to generate, the starting point (Axiom) some constant varables (\#define) and the set of production rules. \\
+Using this information, we iterate through the from generation to generation rewritting the strings and then at the end provide a resulting string which will then be interpreted and displayed on the screen.
 \\
-\textless generations\textgreater~ ::= "\#n" "=" \textless float\textgreater~ ";" \\
+We can represent the languages grammar in the form of a \acrlong{cfg} (\acrshort{cfg}). A \acrshort{cfg} is a set of recursive rewriting rules used to generate patterns of strings. In this case it can be used to fit the pattern of the L-system grammar. \\
+For example: \\ 
 \\
-\textless definition\textgreater~ ::=  "\#define" \textless variable\textgreater~ \textless float\textgreater~ ";" \\
+\textless expression\textgreater~ $\rightarrow$ number \\ 
+\textless expression\textgreater~ $\rightarrow$ (\textless expression\textgreater~) \\
+\textless expression\textgreater~ $\rightarrow$ \textless expression\textgreater~ + \textless expression\textgreater~ \\
+\textless expression\textgreater~ $\rightarrow$ \textless expression\textgreater~ - \textless expression\textgreater~ \\
 \\
-\textless axiom\textgreater~ ::=  "\#w" ":" \textless moduleAx\textgreater~ ";" \\
+The first line states that an \textless expression\textgreater~ can be any number, line two states that an \\ \textless expression\textgreater~ can also be an expression that is inside parenthesis. Line three states that an \\ \textless expression\textgreater~ can be an \textless expression\textgreater~ added to another \textless expression\textgreater~, furthermore line four states that an \textless expression\textgreater~ can also be an \textless expression\textgreater~ subtracted by another \textless expression\textgreater~. \\
 \\
-\textless moduleAx\textgreater~  ::= \textless variable\textgreater~ $|$ "$+$" $|$ "$-$" $|$ "/" $|$ "$\backslash$" $|$ "$\hat{}$" $|$ "$\&$" $|$ "!" 
-
-\hspace{2cm} \textless variable\textgreater~ "("  \textless paramAx\textgreater~ \textless paramListAx\textgreater~ ")"
-
-\hspace{2cm} $|$ "$+$" "("  \textless paramAx\textgreater~ \textless paramListAx\textgreater~ ")" 
-
-\hspace{2cm} $|$ "$-$""("  \textless paramAx\textgreater~ \textless paramListAx\textgreater~ ")" 
-
-\hspace{2cm} $|$ "/""("  \textless paramAx\textgreater~ \textless paramListAx\textgreater~ ")" 
-
-\hspace{2cm} $|$ "$\backslash$""("  \textless paramAx\textgreater~ \textless paramListAx\textgreater~ ")" 
-
-\hspace{2cm} $|$ "$\hat{}$ " "("  \textless paramAx\textgreater~ \textless paramListAx\textgreater~ ")" 
-
-\hspace{2cm} $|$ "$\&$" "("  \textless paramAx\textgreater~ \textless paramListAx\textgreater~ ")" \\
+The above grammar can be expressed as follows: \\
 \\
-\textless paramAxList\textgreater~ ::=  $\in$ $|$ ":" \textless paramAx\textgreater~ \textless paramAxList\textgreater~ \\
-\\
-\textless paramAx\textgreater~ ::= \textless float\textgreater~ \\
-\\
-\textless production\textgreater~ ::=  "\#" \textless variable\textgreater~  ":" \textless module\textgreater~ ":" \textless condition\textgreater~  ":" \textless successor\textgreater~ ";"\\
-\\
-\textless module\textgreater~ ::=  \textless variable\textgreater~ $|$ "$+$" $|$ "$-$" $|$ "/" $|$ "$\backslash$" $|$ "$\hat{}$" $|$ "$\&$" $|$ "!" 
+\textless expression\textgreater~ $\rightarrow$ number 
 
-\hspace{2cm} \textless variable\textgreater~ "("  \textless param\textgreater~ \textless paramList\textgreater~ ")"
+\hspace{2cm} $|$ (\textless expression\textgreater~) 
 
-\hspace{2cm} $|$ "$+$" "("  \textless param\textgreater~ \textless paramList\textgreater~ ")" 
+\hspace{2cm} $|$ \textless expression\textgreater~ + \textless expression\textgreater~ 
 
-\hspace{2cm} $|$ "$-$""("  \textless param\textgreater~ \textless paramList\textgreater~ ")" 
-
-\hspace{2cm} $|$ "/""("  \textless param\textgreater~ \textless paramList\textgreater~ ")" 
-
-\hspace{2cm} $|$ "$\backslash$""("  \textless param\textgreater~ \textless paramList\textgreater~ ")" 
-
-\hspace{2cm} $|$ "$\hat{}$ " "("  \textless param\textgreater~ \textless paramList\textgreater~ ")" 
-
-\hspace{2cm} $|$ "$\&$" "("  \textless param\textgreater~ \textless paramList\textgreater~ ")" \\
+\hspace{2cm} $|$ \textless expression\textgreater~ - \textless expression\textgreater~ \\
 \\
-\textless paramList\textgreater~ ::=  $\in$ $|$ ":" \textless param\textgreater~ \textless paramList\textgreater~ \\
+Here the $|$ symbol can be articulated as an OR, therefore it can be said that an \textless expression\textgreater~ can be a number OR an \textless expression\textgreater~ surrounded by parenthesis, OR an \textless expression\textgreater~ added to another \textless expression\textgreater~ OR an \textless expression\textgreater~ subtracted by another \textless expression\textgreater~. 
 \\
-\textless param\textgreater~ ::= \textless float\textgreater~ \\
+In addition to this, any statement that is not surrounded by \textless \textgreater, states it must match that particular string. The $\in$ followed by an $|$ states that it can either be nothing or another statement. \\
 \\
-\textless expression\textgreater~ ::=  \textless expression\textgreater~ \textless symbol\textgreater~ \textless expression\textgreater~ $|$ 
-\\
-\textless float\textgreater~ ::= [0-9]+.[0-9]+ \\
-\\
-\textless variable\textgreater~ ::= [a-zA-Z\_][a-zA-Z0-9\_]* \\
 
+
+\newpage 
+
+
+% Program 
+\noindent
+\textless prog\textgreater~ $\rightarrow$ $\in$ 
+
+\hspace{2cm} $|$  \textless stmts\textgreater~ EOF \\
+
+
+
+% Statements
+\noindent
+\textless stmts\textgreater~ $\rightarrow$ $\in$
+
+\hspace{2cm} $|$ \textless stmt\textgreater~ \textless stmts\textgreater~ \\
+
+
+% Statement
+\noindent
+\textless stmt\textgreater~ $\rightarrow$ EOL 
+
+\hspace{2cm} $|$ \textless generations\textgreater~
+
+\hspace{2cm} $|$ \textless definition\textgreater~
+
+\hspace{2cm} $|$ \textless axiom\textgreater~
+
+\hspace{2cm} $|$ \textless production\textgreater~\\
+
+
+
+% Generations
+\noindent
+\textless generations\textgreater~ $\rightarrow$ \#n = \textless float\textgreater~ ; \\
+
+
+
+% Definitions
+\noindent
+\textless definition\textgreater~ $\rightarrow$  \#define \textless variable\textgreater~ \textless float\textgreater~ ;
+
+\hspace{2cm} $|$ \#define \textless variable\textgreater~ + \textless float\textgreater~ ;
+
+\hspace{2cm} $|$ \#define \textless variable\textgreater~ -\textless float\textgreater~ ; \\
+
+
+
+% Axiom
+\noindent
+\textless axiom\textgreater~ $\rightarrow$  \#w : \textless axiom statement list\textgreater~ ; \\
+
+
+
+% Axiom Statement List
+\noindent
+\textless axiom statement list\textgreater~ $\rightarrow$ $\in$ 
+
+\hspace{2cm} $|$ \textless axiom statement\textgreater~ \textless axiom statement list\textgreater~ ; \\
+
+
+
+% Axiom Statement
+\noindent
+\textless axiom statement\textgreater~ $\rightarrow$ \textless moduleAx\textgreater~ \\
+
+
+
+% Axiom Module 
+\noindent
+\textless moduleAx\textgreater~  $\rightarrow$ \textless variable\textgreater~ $|$ "$+$" $|$ "$-$" $|$ "/" $|$ "$\backslash$" $|$ "\textasciicircum" $|$ "$\&$" $|$ "!" 
+
+\hspace{2cm} $|$ \textless variable\textgreater~ (  \textless paramAx\textgreater~ \textless paramListAx\textgreater~ )
+
+\hspace{2cm} $|$ +(  \textless paramAx\textgreater~ \textless paramListAx\textgreater~ ) 
+
+\hspace{2cm} $|$ -(  \textless paramAx\textgreater~ \textless paramListAx\textgreater~ ) 
+
+\hspace{2cm} $|$ /(  \textless paramAx\textgreater~ \textless paramListAx\textgreater~ ) 
+
+\hspace{2cm} $|$ $\backslash$(  \textless paramAx\textgreater~ \textless paramListAx\textgreater~ )
+
+\hspace{2cm} $|$ \textasciicircum (  \textless paramAx\textgreater~ \textless paramListAx\textgreater~ ) 
+
+\hspace{2cm} $|$ $\&$(  \textless paramAx\textgreater~ \textless paramListAx\textgreater~ ) \\
+
+
+
+% Axiom Parameter List
+\noindent
+\textless paramAxList\textgreater~ $\rightarrow$  $\in$ 
+
+\hspace{2cm} $|$ , \textless paramAx\textgreater~ \textless paramAxList\textgreater~ \\
+
+
+
+% Axiom Parameter
+\noindent
+\textless paramAx\textgreater~ $\rightarrow$ \textless expression\textgreater~ \\
+
+
+
+% Production
+\noindent
+\textless production\textgreater~ $\rightarrow$  \# \textless variable\textgreater~  : \textless predecessor\textgreater~ : \textless condition\textgreater~  : \textless successor\textgreater~ ;\\
+
+
+
+% Predecessor
+\noindent
+\textless predecessor\textgreater~ $\rightarrow$ \textless pred statement list\textgreater~ \\
+
+
+% Predecessor Statement List
+\noindent
+\textless pred statement list\textgreater~ $\rightarrow$ $\in$
+
+\hspace{2cm} $|$ \textless pred statement\textgreater~ \textless pred statement list\textgreater~ \\
+
+
+% Predecessor Statement
+\noindent
+\textless pred statement\textgreater~ $\rightarrow$ \textless module\textgreater~ \\
+
+
+
+% Condition 
+\noindent
+\textless condition\textgreater~ $\rightarrow$ *
+
+\hspace{2cm} $|$ \textless left expression\textgreater~ \textless conditions statement\textgreater~ \textless right expression\textgreater~ \\
+
+
+% Condition Left Expression
+\noindent
+\textless left expression\textgreater~ $\rightarrow$ \textless expression\textgreater~ \\
+
+
+% Condition Right Expression
+\noindent
+\textless right expression\textgreater~ $\rightarrow$ \textless expression\textgreater~ \\
+
+
+% Condition Statement
+\noindent
+\textless condition statement\textgreater~ $\rightarrow$ == $|$ != $|$ \textless $|$ \textgreater $|$ \textless = $|$ \textgreater =\\
+
+
+
+% Successor
+\noindent
+\textless successor \textgreater~ $\rightarrow$ \textless successor statement list \textgreater~ \\
+
+
+% Successor Statement List
+\noindent
+\textless successor statement list\textgreater~ $\rightarrow$ $\in$
+
+\hspace{2cm} $|$ \textless successor statement\textgreater~ \textless successor statement list \textgreater~ \\
+
+
+%Successor Statement
+\noindent
+\textless successor statement\textgreater~ $\rightarrow$ \textless module\textgreater~ \\
+
+
+
+% Module
+\noindent
+\textless module\textgreater~ $\rightarrow$  \textless variable\textgreater~ $|$ $+$ $|$ $-$ $|$ / $|$ $\backslash$ $|$ \textasciicircum $|$ $\&$ $|$ ! 
+
+\hspace{2cm} $|$ \textless variable\textgreater~ (  \textless param\textgreater~ \textless paramList\textgreater~ )
+
+\hspace{2cm} $|$ +(  \textless param\textgreater~ \textless paramList\textgreater~ )
+
+\hspace{2cm} $|$ -(  \textless param\textgreater~ \textless paramList\textgreater~ )
+
+\hspace{2cm} $|$ /(  \textless param\textgreater~ \textless paramList\textgreater~ ) 
+
+\hspace{2cm} $|$ $\backslash$(  \textless param\textgreater~ \textless paramList\textgreater~ ) 
+
+\hspace{2cm} $|$ \textasciicircum (  \textless param\textgreater~ \textless paramList\textgreater~ ) 
+
+\hspace{2cm} $|$ $\&$(  \textless param\textgreater~ \textless paramList\textgreater~ ) \\
+
+
+
+% Parameter List
+\noindent
+\textless paramList\textgreater~ $\rightarrow$ $\in$ $|$ : \textless param\textgreater~ \textless paramList\textgreater~ \\
+
+
+
+%Parameter List
+\noindent
+\textless param\textgreater~ $\rightarrow$ \textless expression\textgreater~ \\
+
+
+
+% Expression
+\noindent
+\textless expression\textgreater~ $\rightarrow$  \textless variable\textgreater~
+
+\hspace{2cm} $|$ \textless float\textgreater~
+
+\hspace{2cm} $|$ \textless expression\textgreater~ + \textless expression\textgreater~
+
+\hspace{2cm} $|$ \textless expression\textgreater~ - \textless expression\textgreater~
+
+\hspace{2cm} $|$ \textless expression\textgreater~ * \textless expression\textgreater~
+
+\hspace{2cm} $|$ \textless expression\textgreater~ / \textless expression\textgreater~
+
+\hspace{2cm} $|$ \textless expression\textgreater~ \textasciicircum \textless expression\textgreater~
+
+\hspace{2cm} $|$ "(" \textless expression\textgreater~ ) \\
+
+
+
+% Float
+\noindent
+\textless float\textgreater~ $\rightarrow$ [0-9]+.[0-9]+ \\
+
+
+
+% Variable
+\noindent
+\textless variable\textgreater~ $\rightarrow$ [a-zA-Z\_][a-zA-Z0-9\_]* \\
+
+
+
+
+\newpage
 \subsection{The L-system Compiler}
 
-\subsection{Flex Lexical Analyser} 
+Now that the grammar has been defined we have a very strict syntax in which an L-system can be defined, Although the syntax is quite strict we are actually able to define almost any L-system using this grammar. 
 
-\subsection{Bison Parser Generator}
+\subsection{Flex - Lexical Analyser} 
+
+\subsection{Bison - Parser Generator}
 
 
 
