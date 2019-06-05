@@ -19,14 +19,14 @@
 \contentsline {subsection}{\numberline {3.2.1}Building a Generalised L-system Grammar}{14}
 \contentsline {subsection}{\numberline {3.2.2}\acrlong {bnf} of the L-system Grammar}{15}
 \contentsline {subsection}{\numberline {3.2.3}The L-system Interpreter}{17}
-\contentsline {subsection}{\numberline {3.2.4}Flex - Lexical Analyser}{17}
-\contentsline {subsection}{\numberline {3.2.5}Bison - Parser Generator}{17}
-\contentsline {section}{\numberline {3.3}L-system Interpreter}{17}
-\contentsline {subsection}{\numberline {3.3.1}Basic 2D L-systems}{17}
-\contentsline {subsection}{\numberline {3.3.2}The Use of L-systems in 3D applications}{20}
-\contentsline {chapter}{\numberline {4}Findings and Data Analysis}{21}
-\contentsline {chapter}{\numberline {5}Discussion}{22}
-\contentsline {chapter}{\numberline {6}Conclusions}{23}
-\contentsline {chapter}{\numberline {A}Appendix}{26}
-\contentsline {section}{\numberline {A.1}Appendix 1}{26}
-\contentsline {section}{\numberline {A.2}Bibliography}{26}
+\contentsline {subsection}{\numberline {3.2.4}Scanner - Flex}{17}
+\contentsline {subsection}{\numberline {3.2.5}Parser Generator - Bison}{17}
+\contentsline {section}{\numberline {3.3}Interpreting the L-system Instructions}{18}
+\contentsline {subsection}{\numberline {3.3.1}Basic 2D L-systems}{18}
+\contentsline {subsection}{\numberline {3.3.2}The Use of L-systems in 3D applications}{21}
+\contentsline {chapter}{\numberline {4}Findings and Data Analysis}{22}
+\contentsline {chapter}{\numberline {5}Discussion}{23}
+\contentsline {chapter}{\numberline {6}Conclusions}{24}
+\contentsline {chapter}{\numberline {A}Appendix}{27}
+\contentsline {section}{\numberline {A.1}Appendix 1}{27}
+\contentsline {section}{\numberline {A.2}Bibliography}{27}

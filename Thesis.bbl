@@ -1,5 +1,10 @@
 \begin{thebibliography}{}
 
+\bibitem[Cooper and Torczon, 2011]{cooper2011engineering}
+Cooper, K. and Torczon, L. (2011).
+\newblock {\em Engineering a compiler}.
+\newblock Elsevier.
+
 \bibitem[Horton, 2015]{horton2015stl}
 Horton, I. (2015).
 \newblock {\em Using the C++ Standard Template Libraries}.

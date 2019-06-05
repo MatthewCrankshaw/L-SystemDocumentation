@@ -323,22 +323,30 @@ In addition to this, any statement that is not surrounded by \textless \textgrea
 \newpage
 \subsection{The L-system Interpreter}
 
-Traditionally an interpreter is a program that takes a programs code as input, where it is then analyzed and interpreted as it is encountered in the execution process. All of the previously encountered / interpreted is not exploited. The information about the program can be extracted by inspection of the program as a whole, such as the set of declared variables in a block, a function, or a block. \cite{wilhelm2010compiler} 
-
-The \acrlong{bnf} above, of the L-system grammar, defines the syntax of a valid L-system descriptor file. 
+Traditionally an interpreter is a program that takes program code as input, where it is then analyzed and interpreted as it is encountered in the execution process. All of the previously encountered information is kept for later interpretations. The information about the program can be extracted by inspection of the program as a whole, such as the set of declared variables in a block, a function, etc. \cite{wilhelm2010compiler} \\
 \\
-In order to develop a system that is capable of taking a L-system descriptor file and if it valid, process it and give the resulting string, or if it is not valid give a usefull syntax error.  
+A similarity can be drawn between traditional interpreted languages and the L-system descriptors. With the L-system descriptors we are defining a set of constant variables, a starting point and then some productions. Once we have all of this information, we would like to interpret that information a number of times. \\
+For instance we may firstly want to generate up to the fifth generation rewrite, this requires using the information to rewrite five times, but then we may want to instead generate up to the tenth generation. We do not want to have to throw all of this information away and start from scratch so instead we can go from the current state of the interpreter and just rewrite another five times, if we then would like to get the resulting string we can just ask for it from the interpreter. \\
+\\
+To make the most of a \acrshort{cfg} like the L-system grammar, creating an interpreter specifically designed to interpret the L-system descriptors can not only make it simpler to debug any syntactic errors, but also make the string rewriting much faster.\\
+\\
+In compilers and interpreteres there is usually a three step process in order to understand the input program. The first is the scanner or lexical analyser, the output of the scanner is then processed using the parser, this generates a syntax tree which is then further processed by a context-sensitive analyser. I will be elaborating on each of these processes in sections \ref{Flex} and \ref{Bison}. \\
 
 
-\subsection{Flex - Lexical Analyser} 
+\subsection{Scanner - Flex} \label{Flex}
+
+D. Cooper and L. Torczon write that "The scanner, or lexical analyser, reads a stream of characters and produces a streeam of words. It aggregates characters to form words and applies a set of rules to determin wheter or not each word is legal in the source language. If the word is valid, the scanner assigns it a syntactic category, or part of speech" \cite{cooper2011engineering}. \\
+\\ 
+Writing a custom \gls{Lexer} can be quite complicated and time consuming to design and implement, and once a custom \gls{Lexer} has been created it can be difficult to change some functionality at a later stage. Luckely there is a well known program known as the \acrlong{flex} (\acrshort{flex}), \acrshort{flex} takes a .lex file which contains the lexical rules of the language, it uses these rules to create a \gls{Lexer} program. When \acrshort{flex} is run it will create a \gls{Lexer} in the form of a C program. \\
+\\    
 
 
+\subsection{Parser Generator - Bison} \label{Bison}
 
-\subsection{Bison - Parser Generator}
- 
+The parsers job is to find out if the input stream of words from the \gls{Lexer} makes up a valid sentence in the language. The \gls{Parser} fits the syntactical category to the grammatical model of the language. If the \gls{Parser} is able to fit the syntactical category of the word to the grammatical model of the language then the syntax is seen to be correct. If all of the syntax is correct the \gls{Parser} will output a syntax tree and build the structures for use later on during the compilation process \cite{cooper2011engineering}.
 
 
-\section{L-system Interpreter}
+\section{Interpreting the L-system Instructions}
 
 \subsection{Basic 2D L-systems} 
 
