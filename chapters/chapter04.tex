@@ -351,15 +351,13 @@ There are a number of fractal geometry that have become well known particularly 
 \begin{figure}[htbp]
 	\raggedright
 	\textbf{\underline{Koch Curve:}} \\
-	\textbf{Alphabet:} F \\
-	\textbf{Constants:} +, - \\
-	\textbf{Axiom:} F \\
-	\textbf{Angle:} 90$^\circ$ \\
-	\textbf{Rules:} \\
-	F $\rightarrow$ F+F--F+F\\
+	\#n = 4; \\
+	\#define r 90; \\
+	\#w : F(1); \\
+	\#p1 : F(x) : * : F(x)+(r)F(x)-(r)F(x)-(r)F(x)+(r)F(x);\\
 	{\centering
 		\vspace{7px}
-		\includegraphics[scale=0.8]{KochCurve/KochCurve04.png}
+		\includegraphics[scale=0.2]{KochCurve/KochCurve04.png}
 		\caption{Koch Curve.}
 	}
 \end{figure}
