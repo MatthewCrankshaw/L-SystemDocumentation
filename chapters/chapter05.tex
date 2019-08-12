@@ -408,6 +408,89 @@ There are a number of fractal geometry that have become well known particularly 
 \end{figure}
 
 \FloatBarrier
+
+\subsection{Representing Randomness}
+\begin{flushleft}
+
+Randomness is an essential part of nature. If there was no randomness in plant life, we would end up with very symetric and unrealistic plants. Randomness is also responsible for creating variation in the same L-system. A L-system essentially describes the structure and species of a plant. It describes everything from how large the trunk of the tree is, to how many leaves there are on the end of branch, or even if it has flowers or not. However if there is no capability to have randomness in the generation of the L-system then we will always end up with the exact same structure. 
+\vspace{5mm}
+Below is a simple example of how randomness can be used to create variation.
+
+\end{flushleft}   
+
+\begin{figure}[htbp]
+	\raggedright
+	\textbf{\underline{Random Fractal:}} \\
+	\#n = 2; \\
+	\#w : !(0.2)F(1.0); \\
+	\#p1 : F(x) : * : F(x)[+(25)F(x)][-(25)F(x)]+(\{-20.0, 20.0\})F(x)-(\{-20.0, 20.0\})F(x);\\
+	\vspace{10mm}
+	{\centering
+		\vspace{7px}
+		\includegraphics[scale=0.20]{Diagrams/RandomTrees.png}
+		\caption{Different Variations of the Same L-system with Randomness Introduced in The Angles. \label{figRandomness}}
+	}
+\end{figure}
+\FloatBarrier
+
+\begin{flushleft}
+
+In figure \ref{figRandomness} there are four variations of the same L-system using randomness, We can specify that we would like to create a random number by using the expression \{-20.0, 20.0\}. The curly braces signify that what is contained is a random number range, ranging from the minimum value as the first floating point value and the maximum value as the second floating point value separated by a comma. If both values are the same for instance +(\{10.0, 10.0\}) this is equivilant to +(10.0).
+
+\end{flushleft}
+
+\subsection{Conditional L-system}
+
+\begin{flushleft}
+
+For a module to match a rule in the rule set, we need to check if the name of the rule in the predecessor matches the module name. Secondly we check to see if the number of parameters in the predecessor are the same as the number of parameters in the module. Finally we check if the condition in the rule evaluates to true. \\
+
+\vspace{5mm}
+
+Take the following L-system as an example:\\
+
+\vspace{5mm}
+
+\#n = 2 - 4 - 6; \\
+\#object F BRANCH; \\
+\#object L LEAF; \\
+\#object S SPHERE; \\
+
+\vspace{5mm}
+
+\#define r 45; \\
+\#define len 0.5; \\
+\#define lean 5.0; \\
+\#define flowerW 1.0; \\
+
+\vspace{5mm}
+
+\#w : !(0.1)I(5); \\
+
+\vspace{5mm}
+
+\#p1 : I(x) : x $>$ 0 : F(len)-(lean)[R({0, 100})]F(len)[R({0, 100})]I(x-1);\\
+\#p2 : R(x) : x $>$ 50 : -(r)/(20)!(2.0)L(2)!(0.1); \\
+\#p3 : R(x) : x $<$ 50 : -(r)$\backslash$(170)!(2.0)L(2)!(0.1); \\
+\#p4 : I(x) : x $<=$ 0 : F(len)!(flowerW)S(0.3); \\
+
+\vspace{5mm}
+
+
+
+\end{flushleft}
+
+\begin{figure}[htbp]
+\raggedright
+\textbf{\underline{Random Fractal:}} \\
+	{\centering
+		\vspace{7px}
+		\includegraphics[scale=0.13]{Diagrams/conditionalLsystem.png}
+		\caption{Condition Statements Used to Simulate the Growth of a Flower. 2nd Generation on the Left, 4th Generation in the Center and 6th Generation on the Right}
+	}
+\end{figure}
+
+\FloatBarrier
 \newpage
 
 \subsection{The Use of L-systems in 3D applications}

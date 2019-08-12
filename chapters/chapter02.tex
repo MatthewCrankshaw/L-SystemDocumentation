@@ -1,56 +1,121 @@
-Aristid Lindenmayer is a well known biologist who started work on what would become known as the Lindenmayer System or L-system for short. Lindenmayer initially intended the L-systems to be to be used as a way to describe the development of simple organisms such as algae and bactaria. More recently the concept has been adapted to be used to describe larger organisms such as plants and trees. L-systems have also been used to describe non organic structures like music. \cite{worth2005growing} \\
-\\
-An L-system at its core is a definition of a starting point called the \textit{Axiom}, the Axiom is a state or number of states which bear some kind or real world meaning. A single state can then have a number of rules describing what the next state will be. In section \ref{Simple DOL-systems} below, I will be speaking about the most simple type of L-system called a Deterministic 0L-system. These types of simple D0L-systems serve as a good way to introduce the concept of an L-system.
+\begin{flushleft}
 
+Aristid Lindenmayer is a well known biologist who started work on what would become known as the Lindenmayer System or L-system for short. Lindenmayer initially intended the L-systems to be to be used as a way to describe the development of simple organisms such as algae and bactaria. More recently the concept has been adapted to be used to describe larger organisms such as plants and trees. L-systems have also been used to describe non organic structures like music. \cite{worth2005growing} \\
+
+\vspace{5mm}
+
+An L-system at its core is a formal grammar made up of an \textit{alphabet} of symbols which are put together into strings, a set of rules is used to determine whether or not a symbol in the string should be rewritten with another symbol or string. What we end up with is a string of symbols which we can refer to as a set of states, for each state the rules determine what symbols to rewrite and what they should be replaced with or if they should be replaced at all.\\
+
+\vspace{5mm}
+
+
+In section \ref{Simple DOL-systems} below, I will be going into detail about a simple type of L-system called a Deterministic 0L-system.  D0L-systems serve as a good way to introduce the concept of an L-system.
+
+\end{flushleft}
 
 \section{Simple DOL-system} \label{Simple DOL-systems}
 
-According to Prusinkiewicz and Hanan a simple type of L-systems are those known as deterministic 0L systems, where the string refers to the sequence of cellular states and '0L system' abbreviating 'Lindenmayer system with zero-sided interactions'.  With 0L systems there are only three major parts. There is a set of symbols known as the (\textit{alphabet}), the starting string (\textit{Axiom}) and state transition rules (\textit{rules}). The alphabet is a set of states. The starting string is a starting point containing one or more states. The transition rules are rules that dictate whether a state should remain the same or transition into a different state or even disappear. \cite{prusinkiewicz2013lindenmayer}. \\
-\\
-An example of a deterministic 0L system: \\
-\\
-We are given the \textit{alphabet}: A, B \\ 
-and the \textit{axiom}: A \\
-and the \textit{rule} set: \\ 
+\begin{flushleft}
+
+According to Prusinkiewicz and Hanan a simple type of L-systems are those known as deterministic 0L systems, where the string refers to the sequence of cellular states and the term '0L system' abbreviates 'Lindenmayer system with zero-sided interactions'.  With D0L systems there are only three major parts. There is a set of symbols known as the (\textit{alphabet}), the starting string or (\textit{axiom}) and the state transition rules (\textit{rules}). The alphabet is a set of states. The starting string or \textit{axiom} is the starting point containing one or more states. The transition rules dictate whether a state should remain the same or transition into a different state, remain the same or even disappear. \cite{prusinkiewicz2013lindenmayer}. \\
+
+\vspace{5mm}
+
+Below is an example of a deterministic 0L system: \\
+
+\vspace{5mm}
+
+We are given the \textit{alphabet} with symbols: A, B \\ 
+The \textit{axiom}: A \\
+The \textit{rule} set: \\ 
 A $\rightarrow$ AB \\
 B $\rightarrow$ A \\
-\\
-The symbol $\rightarrow$ can be verbalised as "replaced by". Therefor it can be said that the string 'A' is replaced by string 'AB' and string 'B' is replaced by the string 'A'.\\
-To start we take the \textit{axiom} which is this case is 'A' and we run through all of the states in this start string 'A' matches the rule: A $\rightarrow$ AB and is therefor replaced by 'AB'. 'AB' then becomes the new start string and we then match the rules once again. Below I have shown the resulting string up to six generations.\\
-\\
-If we then apply the rules to the L-system we find it creates the following generation structure. \\
-\\
-1.) A \\
-2.) AB \\
-3.) ABA \\
-4.) ABAAB \\
-5.) ABAABABA \\
-6.) ABAABABAABAAB \\
-\\
-This rewriting of initial string using a set of rules is ultimately the underlying concept behind L-systems. There are a number of improvements that can be made to this type of L-system in order to accommodate for more complex and intricate structure. One of which is the inclusion of \textit{constants}. Constants can be considered any state that does not have a rule associated with it or remains the same from generation to generation and therefore holds a consistent value or meaning. These constants are used when the L-system is interpreted and thus holds a constant value during string rewriting, I will be covering this in section \ref{interpreting 2D l-systems}. \\
-\\
-Prusinkiewicz and Lindenmayer simulated a blue-green bacteria known as \textit{Anabaena catenula} \cite{prusinkiewicz2012algorithmic}\\
-\\
-The DOL-system representation is shown below in the grammar: \\
-\\
+
+\vspace{5mm}
+
+The symbol $\rightarrow$ can be verbalised as "replaced by". Therefore the first rule is said to be, string 'A' is replaced by string 'AB' and the second rule is said to be 'B' is replaced by the string 'A'.\\
+To start we take the first state in the \textit{axiom} which, in this case is the symbol 'A', we then check it against the first rule which is 'A', if the current state matches the rule state we replace 'A' with whatever the rules successor is, which is 'AB'. We would then move onto the next state in the axiom, however there is only one state in the axiom, 'A' so we are finished with the first generation. The states 'AB' then becomes the new starting string for the first generation. We can then continue by matching the rules once again to the new starting string. Below I have shown the string for each generation up to the sixth generation.\\
+
+\vspace{5mm}
+
+0.) A \\
+1.) AB \\
+2.) ABA \\
+3.) ABAAB \\
+4.) ABAABABA \\
+5.) ABAABABAABAAB \\
+
+\vspace{5mm}
+
+This rewriting of strings using a set of rules is ultimately the underlying concept behind L-systems. There are a number of improvements that can be made to this type of L-system in order to accommodate for more complex and intricate structures. I will be talking about these in more detail in the following sections, however some important imporovements are: constants, variables, branching constructs, parametric l-systems, conditional rules and random values. //
+
+\vspace{5mm}
+
+An example of how an L-system can represent a real life biological structure would be Prusinkiewicz and Lindenmayer's simulation of a blue-green bacteria known as \textit{Anabaena catenula}\\
+
+\vspace{5mm}
+
+Prusinkiewicz and Lindenmayer created the following DOL-system representation shown below in the following grammar: \\
+
+\vspace{5mm}
+
 $w$ : $ a\textsubscript{r} $\\
 \textit{p1} : $ a\textsubscript{r} $ $\rightarrow$ $a\textsubscript{l}b\textsubscript{r}$ \\
 \textit{p2} : $ a\textsubscript{l} $ $\rightarrow$ $b\textsubscript{l}a\textsubscript{r}$ \\
 \textit{p3} : $ b\textsubscript{r} $ $\rightarrow$ $a\textsubscript{r}$ \\
 \textit{p4} : $ b\textsubscript{l} $ $\rightarrow$ $a\textsubscript{l}$ \\
-\\
+
+\vspace{5mm}
+
 The value $w$ is there to specify the axiom which is this case has the value of $ a\textsubscript{r} $. \textit{p1}, \textit{p2}, \textit{p3}, \textit{p4} are the names of the rules that follow after the semi-colon. In order to simulate Anabaena catenula we need four rules. \\
 According to Prusinkiewicz and Lindenmayer "Under a microscope, the filaments appear as a sequence of cylinders of various lengths, with $a$-type cells longer than $b$-type cells. And the subscript $l$ and $r$ indicate cell polarity, specifying the positions in which daughter cells of type $a$ and $b$ will be produced. \cite{prusinkiewicz2012algorithmic} \\
-\\ 
-This gives us a good real world demonstration of how even a simple DOL-system can represent something in the real world. 
+
+\vspace{5mm}
+
+The first five generations can be written as follows: \\
+
+\vspace{5mm}
+
+0.) $a_r$ \\
+1.) $a_l b_r$ \\
+2.) $b_l a_r a_r$ \\
+3.) $a_l a_l b_r a_l b_r$ \\
+4.) $b_l a_r b_l a_r a_r b_l a_r a_r$ \\
+5.) $a_l a_l b_r a_l a_l b_r a_l b_r a_l a_l b_r a_l b_r$ \\
+
+\vspace{5mm}
 
 
-\section{Interpreting L-systems} \label{interpreting 2D l-systems}
 
-After we have iterated through each generation, using string rewriting we are left with a string of characters or states which represent a number of different instructions that need to be interpreted. As with any grammar, there is a number of ways of interpreting the string that is generated by the L-systems rules. One method proposed by Przemyslaw Prusinkiewics is "to generate a string of symbols using an L-system, and to interpret this string as a sequence of commands which control a 'turtle'" \cite{prusinkiewicz1986graphical}.\\
-\\
-When talking about a turtle, prusinkiewicz is refering to turtle graphics. Turtle graphics is a type of vector graphics that can be carried out with instructions. It is named a turtle after one of the main features of the Logo programming language. A simple set of turtle instructions can be expressed in the form below and displayed as Figure 2.1.\\
-\\
+\end{flushleft}
+
+\section{Constants and Variables}
+
+\begin{flushleft}
+
+Constants are symbols or states which don't have any significant value during the rewriting process and therefore will remain the same between generations however they do have significance when the final string is being interpreted and furthermore represented. There are a number of constants that have a fixed meaning when interpreted and are therefore known as commands. These values are:
+
+\vspace{5mm}
+
+$\bullet$ F: 				\hspace{10mm}  		Move forward by a specified distance whilst drawing a line \\
+$\bullet$ f: 				\hspace{10mm} 		Move forward by a specified distance without drawing a line \\
+$\bullet$ +: 				\hspace{10mm} 		Yaw to the right specified angle. \\
+$\bullet$ -: 				\hspace{10mm} 		Yaw to the left by a specified angle.  \\
+$\bullet$ /: 				\hspace{10mm} 		Pitch up by specified angle. \\
+$\bullet$ $\backslash$: 	\hspace{10mm} 		Pitch down by a specified angle.  \\
+$\bullet$ $\hat{}$: 		\hspace{10mm} 		Roll to the right specified angle. \\
+$\bullet$ \&:				\hspace{10mm}  		Roll to the left by a specified angle.  \\
+
+\vspace{5mm}
+
+The question then remains why should they be interpreted using these commands and how are these instructions actually interpreted. As with any grammar, there is a number of ways of interpreting the string that is generated. One method proposed by Przemyslaw Prusinkiewics is "to generate a string of symbols using an L-system, and to interpret this string as a sequence of commands which control a 'turtle'" \cite{prusinkiewicz1986graphical}.\\
+
+\vspace{5mm}
+
+When talking about a turtle, prusinkiewicz is refering to turtle graphics. Turtle graphics is a type of vector graphics that can be carried out with instructions. It is named a turtle after one of the main features of the Logo programming language. The simple set of turtle instructions shown below, can be expressed in the form below and displayed as figure \ref{basic turtle}\\
+
+\vspace{5mm}
+
 1. Move forward by 1.\\
 2. Rotate right by 90 degrees.\\
 3. Move forward by 1.\\
@@ -60,44 +125,44 @@ When talking about a turtle, prusinkiewicz is refering to turtle graphics. Turtl
 7. Move forward by 1. \\
 8. Rotate right by 90 degrees. \\
 9. Move forward by 1.\\
-\\
-In order to quickly and effectively interpret the L-systems resulting string we can define the turtle instructions in the form of the following characters below:\\
-\\
-$\bullet$ F: 				\hspace{10mm} 		Move forward by a specified distance whilst drawing a line \\
-$\bullet$ f: 				\hspace{10mm} 		Move forward by a specified distance without drawing a line \\
-$\bullet$ +: 				\hspace{10mm} 		Rotate to the right specified angle. \\
-$\bullet$ -: 				\hspace{10mm} 		Rotate to the left by a specified angle.  \\
-$\bullet$ $[$: 				\hspace{10mm} 		Save the current position and angle. \\
-$\bullet$ $]$: 				\hspace{10mm} 		Load a saved position and angle. \\
-\\
-Similarly a three dimensional L-system string may hold the following commands in the form of symbols. \\
-\\ 
-$\bullet$ F: 				\hspace{10mm}  		Move forward by a specified distance whilst drawing a line \\
-$\bullet$ f: 				\hspace{10mm} 		Move forward by a specified distance without drawing a line \\
-$\bullet$ +: 				\hspace{10mm} 		Yaw to the right specified angle. \\
-$\bullet$ -: 				\hspace{10mm} 		Yaw to the left by a specified angle.  \\
-$\bullet$ /: 				\hspace{10mm} 		Pitch up by specified angle. \\
-$\bullet$ $\backslash$: 	\hspace{10mm} 		Pitch down by a specified angle.  \\
-$\bullet$ $\hat{}$: 		\hspace{10mm} 		Roll to the right specified angle. \\
-$\bullet$ \&:				\hspace{10mm}  		Roll to the left by a specified angle.  \\
-$\bullet$ $[$: 				\hspace{10mm} 		Save the current position and angle. \\
-$\bullet$ $]$: 				\hspace{10mm}		Load a saved position and angle. \\
+
+\vspace{5mm}
 
 \begin{figure}[htbp]
 	{\centering
 		\vspace{7px}
 		\includegraphics[scale=0.5]{Diagrams/basic_turtle.png}
-		\caption{Diagram showing a turtle interpreting simple L-system string.}
+		\caption{Diagram showing a turtle interpreting simple L-system string.} \label{basic turtle}
 	}
 \end{figure}
 \FloatBarrier
 
-\section{Branching}
+\vspace{5mm}
 
-In the previous section there are two turtle commands in particular which were not covered. These are the square brackets "[", "]". The square bracket characters instruct the turtle object to save its position and current angle for use later on. This allows the turtle to jump back to a previous point facing the same direction as it was before, It could then branch in a different direction.\\
-\\
-A way to keep track of these saved locations is in the form of a stack structure. Each time the "[" is called the current position and direction of the turtle is saved to the top of the stack. Conversely when the "]" is called we restore the turtles position back to whatever position and direction is stored on the top of the stack structure. \\
-\\
+There are a further two commands which I will be covering in detail in section \ref{branching}. We can also have constant numerical values that can be used. For instance we could pass in a constant value of 1.0 as a parameter to the forward instruction as follows.
+
+\vspace{5mm}
+
+F(1.0)+F(1.0)-F(1.0)+F(1.0)
+
+\vspace{5mm}
+
+In doing this, we are able to specify that we would like to move forward by a specified amount. In this case we would like to move forward by 1.0 unit length. We will be covering parametric L-systems in great detail in section \ref{parametric}.
+
+\end{flushleft}
+
+\section{Branching} \label{branching}
+
+\begin{flushleft}
+
+In the previous section there are two turtle commands in particular which were  not covered. These are the square bracket commands "[", "]". The square bracket characters instruct the turtle object to save its position and rotation for the purpose of being able to restore that saved position and rotation later on. This allows the turtle to jump back to a previous position, facing the same direction as it was before. We can then branch off in a different direction.\\
+
+\vspace{5mm}
+
+A way to keep track of these saved locations, is in the form of a stack structure. Each time the "[" is called the current position and orientation of the turtle is saved to the top of the stack. While conversely when the "]" is called we restore the turtles position back to whatever position and orientation is stored on the top of the stack. \\
+
+\vspace{5mm}
+
 An example of this can be shown below in figure 2.2.\\
 
 \begin{figure}[htbp]
@@ -109,7 +174,9 @@ An example of this can be shown below in figure 2.2.\\
 \end{figure}
 \FloatBarrier
 
-\section{Parametric L-system}
+\end{flushleft}
+
+\section{Parametric L-system} \label{parametric}
 
 With simplistic L-systems like the algae representation above, there are a number of details that are skipped over when making this simplistic representation. (talk about the representation for both parameterized and non parameterised Algae systems). When it comes to representing trees as L-systems a simplistic approach would be to just assume that the width and length of each branch section is constant and will not vary depending on where in the tree it is. We can also assume that the angles at which a branch may split is also constant, say 25 degrees. 
 The resulting representation of this L-system is a tree like structure, however it is not a very accurate representation of a real tree in nature. \\
@@ -149,6 +216,11 @@ $\bullet$ The name of the axiom module matches the name of the production predec
 $\bullet$ The number of parameters for the axiom module is the same as the number of parameters for the production predecessor. \\
 $\bullet$ The condition of the production evaluates to true. If there is no condition then the result is true by default.\\
 \\
+
+
+
+
+
 
 
 
