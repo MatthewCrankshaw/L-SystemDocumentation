@@ -89,7 +89,7 @@ The first five generations can be written as follows: \\
 
 \end{flushleft}
 
-\section{Constants and Variables}
+\section{Constants and Variables} \label{constants variables}
 
 \begin{flushleft}
 
@@ -178,24 +178,45 @@ An example of this can be shown below in figure 2.2.\\
 
 \section{Parametric L-system} \label{parametric}
 
-With simplistic L-systems like the algae representation above, there are a number of details that are skipped over when making this simplistic representation. (talk about the representation for both parameterized and non parameterised Algae systems). When it comes to representing trees as L-systems a simplistic approach would be to just assume that the width and length of each branch section is constant and will not vary depending on where in the tree it is. We can also assume that the angles at which a branch may split is also constant, say 25 degrees. 
-The resulting representation of this L-system is a tree like structure, however it is not a very accurate representation of a real tree in nature. \\
-In order to more accurately model trees we need to take into account the branch width, height, branching angles. There are two different approaches to solving this added complexity. One would be to increase the complexity of the L-system grammar and the other would be to increase the complexity of the interpretation of the L-system. \\
-For instance defining an complex L-system grammar with a less complex interpreting system can give a huge amount of flexibility to define parameters that can accurately define exactly how the L-system should be interpreted, and because the complexity is with the L-system rewriting you also have the control of being able to change the L-system rules. \\
-\\ 
+\begin{flushleft}
+
+With simplistic L-systems like the algae representation above, there are a number of details that are skipped over when making this simplistic representation. (talk about the representation for both parameterized and non parameterised Algae systems). \\
+When it comes to representing plants as L-systems a simplistic approach would be to just assume that the width and length of each branch section is constant and will not vary depending on where in the tree it is. We could also assume that the branching angles is also constant, say 25 degrees. The downside to this is that the width, height and branching angles would have to be hard coded into the turtle interpretation. Apart from making for a plant that is not very realistic. This really leaves us with two options, do we increase the complexity of the L-system grammar or increase the complexity of the interpration of the resulting string.\\
+
+\vspace{5mm}
+
+In order to more accurately model plants, we would really like to take into account the branch width, branch height, branching angles and any other information we need in order to generate a complete 3D model of that L-system. We could even as far as to specify what kind of 3D models or textures to render.\\
+For instance, defining an complex L-system grammar, with a less complexity in the interpreting system, we are given a huge amount of flexibility to define parameters that can accurately represent exactly how the L-system should be interpreted, furthermore the complexity is with the L-system grammar, so there is no need for you to make any changes to the interpreter itself. When compaired to a simple L-system, you may have the advantage of being able to define simple a L-system grammar but you would have to change and manipulate the way that the L-system is interpreted each time. Which is tedius and makes for an undesireable solution. \\
+
+\vspace{5mm}
+
+This is where parametric L-systems become very usefull. Parametric L-systems allow us to define parameters for states. In section \ref{constants variables}. I showed an example F(1.0)+F(1.0)-F(1.0)+F(1.0), where 1.0 is the measure of distance that the turtle should move forward. This is a parametric L-system where the state F has a parameter of 1.0. Which can be interpreted as "move forward by a distance of 1.0".
+
+\vspace{5mm}
+
 A parametric l-system be represented as the following: \\
-\\
+
+\vspace{5mm}
+
 \hspace*{3cm} n = 8\\
-\\
+
+\vspace{5mm}
+
 \hspace*{3cm} R 1.456\\
 \hspace*{3cm} r1 85\\
 \hspace*{3cm} wr 0.707\\
-\\
+
+\vspace{5mm}
+
 \hspace*{3cm} w : A(5)\\
-\\
+
+\vspace{5mm}
+
 \hspace*{3cm} p1 : A(w) : * : F(1)!(w)[/(r1)A(w*wr)][$\backslash$(r1)A(w*wr)]\\
 \hspace*{3cm} p2 : F(s) : * : F(s*R)\\
-\\
+
+\vspace{5mm}
+
 The above l-system gives the resulting representation shown below in figure 3.8. 
 
 \begin{figure}[htbp]
@@ -206,16 +227,21 @@ The above l-system gives the resulting representation shown below in figure 3.8.
 	}
 \end{figure}
 
-Similarly to the 2D L-system in section \ref{Simple DOL-systems}, n refers to the number of iterations that we would like to rewrite the L-system. w refers to the Axiom string, the \#define R 1.456 states that there is a constant number that will be used somewhere in the production rules, with the name R and the value 1.456. P1, P2 refer to the production rules. The 3D L-system introduces the concept of a module.\\
-A module is an instruction or variable which has zero or more parameters. The Axiom A(5) is a module with one parameter which is the number 5. A parameter can either be a number, variable or even an expression of variables and numbers. For instance A(a + 1, a * b) is a valid module A with two parameters a + 1 and a * b, where a and b are variables, however this is only a valid module if the value of a and b can be determined. Each module is treated as a single instruction, it will either be overwritten when matched with a production rule or the expression of each parameter is evaluated and is left unchaged for use when interpretted.\\
-Each production rule is made up of four parts the name, the predecessor module, the condition and the successor modules, each part is separated by a colon. Therefor the predecessor for p1 is A(w), the condition is a '*' which means that in this case there are no conditions, and the successor is F(1)!(w)[/(r1)A(w*wr)][$\backslash$(r1)A(w*wr)]\\
-\\
+Similarly to the simple DOL-systems in section \ref{Simple DOL-systems}, n refers to the number of iterations that we would like to rewrite the L-system. w refers to the Axiom string or starting states, the "\#define R 1.456" states that we are defining a constant number that will be used somewhere in the production rules or Axiom, the constant will be refered to with the name R and will have the value 1.456. \#P1, \#P2 define the production rules P1 and P2. The parametric L-system introduces the concept of a module.\\
+A module is a state or variable which has zero or more parameters. The Axiom A(5) is a module with one parameter which is the number 5. A parameter can either be a number, variable or an expression of variables and numbers. For instance A(a + 1, a * b) is a valid module with the name A with two parameters a + 1 and a * b, where a and b are variables, however this is only a valid module if the value of a and b have been defined previously. Each module is treated as a single instruction, it will either be overwritten when matched with a production rule or the expression of each parameter is evaluated and is left unchaged for use when interpretted.\\
+Each production rule is made up of four parts. The name, the predecessor module, the condition and the successor modules, each part is separated by a colon. Therefore the predecessor for P1 is A(w), the condition is a '*' which means that in this case there are no conditions, and the successor is F(1)!(w)[/(r1)A(w*wr)][$\backslash$(r1)A(w*wr)]. I will cover conditions in a later section.\\
+
+\vspace{5mm}
+
 Initially we iterate through the Axiom modules and compare them to the production rule. A match is determined if they meet three criteria.\\
-\\
+
+\vspace{5mm}
+
 $\bullet$ The name of the axiom module matches the name of the production predecessor. \\
 $\bullet$ The number of parameters for the axiom module is the same as the number of parameters for the production predecessor. \\
 $\bullet$ The condition of the production evaluates to true. If there is no condition then the result is true by default.\\
-\\
+
+\end{flushleft}
 
 
 
