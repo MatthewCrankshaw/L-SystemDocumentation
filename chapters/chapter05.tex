@@ -37,7 +37,7 @@ Git is a free and open source version control software, that is able to keep tra
 
 \section{L-system Generator}
 
-The purpose of the L-system generator is to read a file containing any information that might be necessary for the string rewriting process. This file must contain the number of times the string will be rewritten (number of generations), a starting point (axiom) and at least one production rule, it may also contain some constant variables. \\
+The purpose of the L-system generator is to read a file, called the L-system discriptor which contains any information that might be necessary for the string rewriting process. This file must contain the number of times the string will be rewritten (number of generations), a starting point (axiom) and at least one production rule, it may also contain some constant variables and other information. \\
 \\
 For simple L-systems, the generator need not be too complicated. The Koch Curve L-system stated below is a good example of this. \\
 \\
@@ -85,7 +85,7 @@ In addition to this, any statement that is not surrounded by \textless \textgrea
 
 
 \newpage 
-\subsection{\acrlong{bnf} of the L-system Grammar}
+\subsection{\acrlong{bnf} of the L-system Grammar} \label{L-system Grammar}
 
 % Program 
 \noindent
@@ -317,12 +317,13 @@ In addition to this, any statement that is not surrounded by \textless \textgrea
 
 
 \newpage
-\subsection{The L-system Interpreter}
 
-Traditionally an interpreter is a program that takes program code as input, where it is then analyzed and interpreted as it is encountered in the execution process. All of the previously encountered information is kept for later interpretations. The information about the program can be extracted by inspection of the program as a whole, such as the set of declared variables in a block, a function, etc. \cite{wilhelm2010compiler} \\
+\section{The L-system Interpreter}
+
+Traditionally an interpreter is a program that takes program code as input, where it is then analyzed and interpreted as it is encountered in the execution process. All of the previously encountered information is kept for later interpretations. The information about the program can be extracted by inspection of the program as a whole, such as the set of declared variables in a block, a function, etc \cite{wilhelm2010compiler}. \\
 \\
-A similarity can be drawn between traditional interpreted languages and the L-system descriptors. With the L-system descriptors we are defining a set of constant variables, a starting point and then some productions. Once we have all of this information, we would like to interpret that information a number of times. \\
-For instance we may firstly want to generate up to the fifth generation rewrite, this requires using the information to rewrite five times, but then we may want to instead generate up to the tenth generation. We do not want to have to throw all of this information away and start from scratch so instead we can go from the current state of the interpreter and just rewrite another five times, if we then would like to get the resulting string we can just ask for it from the interpreter. \\
+A similarity can be drawn between traditional interpreted languages and the L-system descriptors. With the L-system descriptors we are defining a set of constant variables, a starting point and then some production rules. Once we have all of this information, we would like to interpret that information a number of times. \\
+For instance, we may want to rewrite five generations of the L-system, but later on we may want to instead generate up to the tenth generation. So we don't want to have to throw all the previous information away and start from scratch, instead, we can go from the current state of the interpreter and just rewrite another five times. If we would then like to get the resulting string we can just ask for it from the interpreter. \\
 \\
 To make the most of a \acrshort{cfg} like the L-system grammar, creating an interpreter specifically designed to interpret the L-system descriptors can not only make it simpler to debug any syntactic errors, but also make the string rewriting much faster.\\
 \\
@@ -342,7 +343,9 @@ Writing a custom \gls{Lexer} can be quite complicated and time consuming to desi
 The parsers job is to find out if the input stream of words from the \gls{Lexer} makes up a valid sentence in the language. The \gls{Parser} fits the syntactical category to the grammatical model of the language. If the \gls{Parser} is able to fit the syntactical category of the word to the grammatical model of the language then the syntax is seen to be correct. If all of the syntax is correct the \gls{Parser} will output a syntax tree and build the structures for use later on during the compilation process \cite{cooper2011engineering}.
 
 
-\section{Interpreting the L-system Instructions}
+
+
+\section{Displaying the L-system Instructions} \label{Display L-system Instructions}
 
 \subsection{Basic 2D L-systems} 
 
@@ -409,91 +412,57 @@ There are a number of fractal geometry that have become well known particularly 
 
 \FloatBarrier
 
-\subsection{Representing Randomness}
-\begin{flushleft}
-
-Randomness is an essential part of nature. If there was no randomness in plant life, we would end up with very symetric and unrealistic plants. Randomness is also responsible for creating variation in the same L-system. A L-system essentially describes the structure and species of a plant. It describes everything from how large the trunk of the tree is, to how many leaves there are on the end of branch, or even if it has flowers or not. However if there is no capability to have randomness in the generation of the L-system then we will always end up with the exact same structure. 
-\vspace{5mm}
-Below is a simple example of how randomness can be used to create variation.
-
-\end{flushleft}   
-
-\begin{figure}[htbp]
-	\raggedright
-	\textbf{\underline{Random Fractal:}} \\
-	\#n = 2; \\
-	\#w : !(0.2)F(1.0); \\
-	\#p1 : F(x) : * : F(x)[+(25)F(x)][-(25)F(x)]+(\{-20.0, 20.0\})F(x)-(\{-20.0, 20.0\})F(x);\\
-	\vspace{10mm}
-	{\centering
-		\vspace{7px}
-		\includegraphics[scale=0.20]{Diagrams/RandomTrees.png}
-		\caption{Different Variations of the Same L-system with Randomness Introduced in The Angles. \label{figRandomness}}
-	}
-\end{figure}
-\FloatBarrier
-
-\begin{flushleft}
-
-In figure \ref{figRandomness} there are four variations of the same L-system using randomness, We can specify that we would like to create a random number by using the expression \{-20.0, 20.0\}. The curly braces signify that what is contained is a random number range, ranging from the minimum value as the first floating point value and the maximum value as the second floating point value separated by a comma. If both values are the same for instance +(\{10.0, 10.0\}) this is equivilant to +(10.0).
-
-\end{flushleft}
-
-\subsection{Conditional L-system}
-
-\begin{flushleft}
-
-For a module to match a rule in the rule set, we need to check if the name of the rule in the predecessor matches the module name. Secondly we check to see if the number of parameters in the predecessor are the same as the number of parameters in the module. Finally we check if the condition in the rule evaluates to true. \\
-
-\vspace{5mm}
-
-Take the following L-system as an example:\\
-
-\vspace{5mm}
-
-\#n = 2 - 4 - 6; \\
-\#object F BRANCH; \\
-\#object L LEAF; \\
-\#object S SPHERE; \\
-
-\vspace{5mm}
-
-\#define r 45; \\
-\#define len 0.5; \\
-\#define lean 5.0; \\
-\#define flowerW 1.0; \\
-
-\vspace{5mm}
-
-\#w : !(0.1)I(5); \\
-
-\vspace{5mm}
-
-\#p1 : I(x) : x $>$ 0 : F(len)-(lean)[R({0, 100})]F(len)[R({0, 100})]I(x-1);\\
-\#p2 : R(x) : x $>$ 50 : -(r)/(20)!(2.0)L(2)!(0.1); \\
-\#p3 : R(x) : x $<$ 50 : -(r)$\backslash$(170)!(2.0)L(2)!(0.1); \\
-\#p4 : I(x) : x $<=$ 0 : F(len)!(flowerW)S(0.3); \\
-
-\vspace{5mm}
-
-
-
-\end{flushleft}
-
-\begin{figure}[htbp]
-\raggedright
-\textbf{\underline{Random Fractal:}} \\
-	{\centering
-		\vspace{7px}
-		\includegraphics[scale=0.13]{Diagrams/conditionalLsystem.png}
-		\caption{Condition Statements Used to Simulate the Growth of a Flower. 2nd Generation on the Left, 4th Generation in the Center and 6th Generation on the Right}
-	}
-\end{figure}
-
-\FloatBarrier
-\newpage
-
 \subsection{The Use of L-systems in 3D applications}
 
+\begin{flushleft}
+
 L-systems have been talked about and researched since its inception in 1968 by Aristid Lindenmayer. Over the years it's usefulness in modelling different types of plant life has been very clear, however its presence has been quite absent from any mainstream game engines for the most part, these engines relying either on digital artists skill to develop individual plants or on 3rd party software such as SpeedTree. These types of software use a multitude of different techniques however their methods are heavily rooted in Lindenmayer Systems. 
+
+\end{flushleft}
+
+\newpage
+
+\section{Modeling Seamless Branches}
+
+\begin{flushleft}
+
+Modeling the branches of a plant is the most important part behind the overall look and feel of that plant. The L-system described in the previous sections is able to describe the most important details about the plants structure. For instance the width, length, weight and other important information. Our job now is to take this information and intelligently generate a model consisting of vertices, normals, texture coordinates and other information that can then be provided to the GPU and then rendered on the screen.\\
+
+\vspace{5mm}
+
+The most obvious way to generate a model for a branching structure would be to take a number of cylinders and to rotate and stack them according to the branching structure. In this way we are able to represent the overall branching structure of the tree. However there is a problem pointed out by Baele and Warz\'{e}e "The branches junction causes a continuity problem: to simply stack up cylinders generates a gap" \cite{baele2005real}. This can be shown in the figure below:
+
+\FloatBarrier
+
+\begin{figure}[htbp]
+	{\centering
+		\vspace{7px}
+		\includegraphics[scale=0.16]{Diagrams/stackedBranchesMesh.png}
+		\caption{Example of the continuity problem faced with stacked branching with a 25$^{\circ}$ bend per joint.}
+	}
+\end{figure}
+
+\FloatBarrier
+
+\vspace{5mm}
+
+
+\vspace{5mm}
+
+This simple method of stacking cylinders gives a reasonable looking tree structure and it is usually good enough when the angles of branches are not more than about 25$^{\circ}$ and the size of the branches do not change. However for a much more convincing tree structure we will want to do better than this. The logical next step would be to actively link the branch segments together.
+
+\FloatBarrier
+
+\begin{figure}[htbp]
+	{\centering
+		\vspace{7px}
+		\includegraphics[scale=0.16]{Diagrams/linkedBranchesMesh.png}
+		\caption{Example of linked branching with a 25$^{\circ}$ bend per joint.}
+	}
+\end{figure}
+
+\FloatBarrier
+
+\end{flushleft}
+
 

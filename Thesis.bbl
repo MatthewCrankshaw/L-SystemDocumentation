@@ -1,5 +1,11 @@
 \begin{thebibliography}{}
 
+\bibitem[Baele and Warzee, 2005]{baele2005real}
+Baele, X. and Warzee, N. (2005).
+\newblock Real time l-system generated trees based on modern graphics hardware.
+\newblock In {\em International Conference on Shape Modeling and Applications
+  2005 (SMI'05)}, pages 184--193. IEEE.
+
 \bibitem[Cooper and Torczon, 2011]{cooper2011engineering}
 Cooper, K. and Torczon, L. (2011).
 \newblock {\em Engineering a compiler}.

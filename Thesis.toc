@@ -1,54 +1,55 @@
-\contentsline {chapter}{\numberline {1}Research Description}{6}% 
-\contentsline {section}{\numberline {1.1}Motivations}{6}% 
-\contentsline {section}{\numberline {1.2}Research Aims and Objectives}{6}% 
-\contentsline {section}{\numberline {1.3}Scope and Limitations}{7}% 
-\contentsline {section}{\numberline {1.4}Timeframe}{7}% 
-\contentsline {section}{\numberline {1.5}Structure of Thesis}{7}% 
-\contentsline {chapter}{\numberline {2}Introducing Lindenmayer Systems}{8}% 
-\contentsline {section}{\numberline {2.1}Simple DOL-system}{8}% 
-\contentsline {section}{\numberline {2.2}Constants and Variables}{10}% 
-\contentsline {section}{\numberline {2.3}Branching}{11}% 
-\contentsline {section}{\numberline {2.4}Parametric L-system}{12}% 
-\contentsline {chapter}{\numberline {3}3D Mathematics}{15}% 
-\contentsline {section}{\numberline {3.1}Points}{15}% 
-\contentsline {section}{\numberline {3.2}Vector}{16}% 
-\contentsline {subsection}{\numberline {3.2.1}Vector Multiplication}{16}% 
-\contentsline {subsection}{\numberline {3.2.2}Vector Addition and Subtraction}{16}% 
-\contentsline {subsection}{\numberline {3.2.3}Dot and Cross Product}{16}% 
-\contentsline {section}{\numberline {3.3}Matrices}{16}% 
-\contentsline {subsection}{\numberline {3.3.1}Matrix Multiplication}{17}% 
-\contentsline {subsection}{\numberline {3.3.2}Translation}{17}% 
-\contentsline {subsection}{\numberline {3.3.3}Rotation}{17}% 
-\contentsline {subsection}{\numberline {3.3.4}Scale}{17}% 
-\contentsline {section}{\numberline {3.4}Quaternions}{17}% 
-\contentsline {subsection}{\numberline {3.4.1}Unit Quaternion}{18}% 
-\contentsline {subsection}{\numberline {3.4.2}Quaternion Multiplication}{18}% 
-\contentsline {subsection}{\numberline {3.4.3}Conjugate and Inverse}{18}% 
-\contentsline {chapter}{\numberline {4}Physics Simulation}{19}% 
-\contentsline {section}{\numberline {4.1}Motion Equations}{19}% 
-\contentsline {section}{\numberline {4.2}Hook's Law}{20}% 
-\contentsline {chapter}{\numberline {5}Implementation}{21}% 
-\contentsline {section}{\numberline {5.1}Language and environment}{21}% 
-\contentsline {subsection}{\numberline {5.1.1}C/C++ Programming Language}{21}% 
-\contentsline {subsection}{\numberline {5.1.2}Standard Template Library (\acrshort {stl})}{22}% 
-\contentsline {subsection}{\numberline {5.1.3}Open Graphics Library (OpenGL)}{22}% 
-\contentsline {subsection}{\numberline {5.1.4}OpenGL Mathematics Library ( \acrshort {glm} )}{22}% 
-\contentsline {subsection}{\numberline {5.1.5}Graphics Library Framework(\acrshort {glfw})}{22}% 
-\contentsline {subsection}{\numberline {5.1.6}Git Version Control}{22}% 
-\contentsline {section}{\numberline {5.2}L-system Generator}{22}% 
-\contentsline {subsection}{\numberline {5.2.1}Building a Generalised L-system Grammar}{23}% 
-\contentsline {subsection}{\numberline {5.2.2}\acrlong {bnf} of the L-system Grammar}{24}% 
-\contentsline {subsection}{\numberline {5.2.3}The L-system Interpreter}{26}% 
-\contentsline {subsection}{\numberline {5.2.4}Scanner - Flex}{26}% 
-\contentsline {subsection}{\numberline {5.2.5}Parser - Bison}{26}% 
-\contentsline {section}{\numberline {5.3}Interpreting the L-system Instructions}{27}% 
-\contentsline {subsection}{\numberline {5.3.1}Basic 2D L-systems}{27}% 
-\contentsline {subsection}{\numberline {5.3.2}Representing Randomness}{29}% 
-\contentsline {subsection}{\numberline {5.3.3}Conditional L-system}{30}% 
-\contentsline {subsection}{\numberline {5.3.4}The Use of L-systems in 3D applications}{32}% 
-\contentsline {chapter}{\numberline {6}Findings and Data Analysis}{33}% 
-\contentsline {chapter}{\numberline {7}Discussion}{34}% 
-\contentsline {chapter}{\numberline {8}Conclusions}{35}% 
-\contentsline {chapter}{\numberline {A}Appendix}{38}% 
-\contentsline {section}{\numberline {A.1}Appendix 1}{38}% 
-\contentsline {section}{\numberline {A.2}Bibliography}{38}% 
+\contentsline {chapter}{\numberline {1}Research Description}{6}
+\contentsline {section}{\numberline {1.1}Motivations}{6}
+\contentsline {section}{\numberline {1.2}Research Aims and Objectives}{6}
+\contentsline {section}{\numberline {1.3}Scope and Limitations}{7}
+\contentsline {section}{\numberline {1.4}Timeframe}{7}
+\contentsline {section}{\numberline {1.5}Structure of Thesis}{7}
+\contentsline {chapter}{\numberline {2}Introducing Lindenmayer Systems}{8}
+\contentsline {section}{\numberline {2.1}Simple DOL-system}{8}
+\contentsline {section}{\numberline {2.2}Constants and Variables}{10}
+\contentsline {section}{\numberline {2.3}Branching}{11}
+\contentsline {section}{\numberline {2.4}Parametric OL-system}{12}
+\contentsline {subsection}{\numberline {2.4.1}Representing Randomness}{14}
+\contentsline {subsection}{\numberline {2.4.2}Representing L-system Conditions}{15}
+\contentsline {chapter}{\numberline {3}3D Mathematics}{17}
+\contentsline {section}{\numberline {3.1}Points}{17}
+\contentsline {section}{\numberline {3.2}Vector}{18}
+\contentsline {subsection}{\numberline {3.2.1}Vector Multiplication}{18}
+\contentsline {subsection}{\numberline {3.2.2}Vector Addition and Subtraction}{18}
+\contentsline {subsection}{\numberline {3.2.3}Dot and Cross Product}{18}
+\contentsline {section}{\numberline {3.3}Matrices}{18}
+\contentsline {subsection}{\numberline {3.3.1}Matrix Multiplication}{19}
+\contentsline {subsection}{\numberline {3.3.2}Translation}{19}
+\contentsline {subsection}{\numberline {3.3.3}Rotation}{19}
+\contentsline {subsection}{\numberline {3.3.4}Scale}{19}
+\contentsline {section}{\numberline {3.4}Quaternions}{19}
+\contentsline {subsection}{\numberline {3.4.1}Unit Quaternion}{20}
+\contentsline {subsection}{\numberline {3.4.2}Quaternion Multiplication}{20}
+\contentsline {subsection}{\numberline {3.4.3}Conjugate and Inverse}{20}
+\contentsline {chapter}{\numberline {4}Physics Simulation}{21}
+\contentsline {section}{\numberline {4.1}Motion Equations}{21}
+\contentsline {section}{\numberline {4.2}Hook's Law}{22}
+\contentsline {chapter}{\numberline {5}Implementation}{23}
+\contentsline {section}{\numberline {5.1}Language and environment}{23}
+\contentsline {subsection}{\numberline {5.1.1}C/C++ Programming Language}{23}
+\contentsline {subsection}{\numberline {5.1.2}Standard Template Library (\acrshort {stl})}{24}
+\contentsline {subsection}{\numberline {5.1.3}Open Graphics Library (OpenGL)}{24}
+\contentsline {subsection}{\numberline {5.1.4}OpenGL Mathematics Library ( \acrshort {glm} )}{24}
+\contentsline {subsection}{\numberline {5.1.5}Graphics Library Framework(\acrshort {glfw})}{24}
+\contentsline {subsection}{\numberline {5.1.6}Git Version Control}{24}
+\contentsline {section}{\numberline {5.2}L-system Generator}{24}
+\contentsline {subsection}{\numberline {5.2.1}Building a Generalised L-system Grammar}{25}
+\contentsline {subsection}{\numberline {5.2.2}\acrlong {bnf} of the L-system Grammar}{26}
+\contentsline {section}{\numberline {5.3}The L-system Interpreter}{28}
+\contentsline {subsection}{\numberline {5.3.1}Scanner - Flex}{28}
+\contentsline {subsection}{\numberline {5.3.2}Parser - Bison}{28}
+\contentsline {section}{\numberline {5.4}Displaying the L-system Instructions}{29}
+\contentsline {subsection}{\numberline {5.4.1}Basic 2D L-systems}{29}
+\contentsline {subsection}{\numberline {5.4.2}The Use of L-systems in 3D applications}{31}
+\contentsline {section}{\numberline {5.5}Modeling Seamless Branches}{32}
+\contentsline {chapter}{\numberline {6}Findings and Data Analysis}{33}
+\contentsline {chapter}{\numberline {7}Discussion}{34}
+\contentsline {chapter}{\numberline {8}Conclusions}{35}
+\contentsline {chapter}{\numberline {A}Appendix}{38}
+\contentsline {section}{\numberline {A.1}Appendix 1}{38}
+\contentsline {section}{\numberline {A.2}Bibliography}{38}
