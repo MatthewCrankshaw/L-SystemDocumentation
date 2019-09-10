@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.27)  4 SEP 2019 15:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.27)  10 SEP 2019 14:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -803,56 +803,88 @@ ne 171.
 (pdftex.def)             Requested size: 469.75385pt x 219.82071pt.
  [11 <./images/Diagrams/basic_turtle.png>] [12 <./images/Diagrams/branching_tur
 tle.png>]
+! Undefined control sequence.
+<recently read> \RE 
+                    
+l.195 ... result in the real number parameter $\RE
+                                                  $.\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.198 \\
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 <images/ParametricLsystem/branchingPattern.png, id=62, 1204.5pt x 597.23125pt>
 File: images/ParametricLsystem/branchingPattern.png Graphic file (type png)
 <use images/ParametricLsystem/branchingPattern.png>
 Package pdftex.def Info: images/ParametricLsystem/branchingPattern.png  used on
- input line 225.
+ input line 233.
 (pdftex.def)             Requested size: 240.89574pt x 119.44412pt.
- [13 <./images/ParametricLsystem/branchingPattern.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 260.
+[13 <./images/ParametricLsystem/branchingPattern.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 273.
 
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 260.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 273.
 <images/Diagrams/RandomTrees.png, id=66, 1003.75pt x 803.0pt>
 File: images/Diagrams/RandomTrees.png Graphic file (type png)
 <use images/Diagrams/RandomTrees.png>
-Package pdftex.def Info: images/Diagrams/RandomTrees.png  used on input line 26
-4.
+Package pdftex.def Info: images/Diagrams/RandomTrees.png  used on input line 27
+7.
 (pdftex.def)             Requested size: 200.74644pt x 160.59715pt.
- [14 <./images/Diagrams/RandomTrees.png>]
-<images/Diagrams/conditionalLsystem.png, id=71, 3613.5pt x 803.0pt>
+ [14] [15 <./images/Diagrams/RandomTrees.png>]
+<images/Diagrams/conditionalLsystem.png, id=74, 3613.5pt x 803.0pt>
 File: images/Diagrams/conditionalLsystem.png Graphic file (type png)
 <use images/Diagrams/conditionalLsystem.png>
 Package pdftex.def Info: images/Diagrams/conditionalLsystem.png  used on input 
-line 336.
+line 349.
 (pdftex.def)             Requested size: 469.7715pt x 104.39366pt.
- [15]) [16 <./images/Diagrams/conditionalLsystem.png>]
+<images/Diagrams/stochastics.png, id=75, 1204.5pt x 401.5pt>
+File: images/Diagrams/stochastics.png Graphic file (type png)
+<use images/Diagrams/stochastics.png>
+Package pdftex.def Info: images/Diagrams/stochastics.png  used on input line 36
+5.
+(pdftex.def)             Requested size: 421.58131pt x 140.5271pt.
+ [16 <./images/Diagrams/conditionalLsystem.png>])
+[17 <./images/Diagrams/stochastics.png>]
 Chapter 3.
 (./chapters/chapter03.tex
-<images/Diagrams/3D_Axis.png, id=79, 622.325pt x 622.325pt>
+<images/Diagrams/3D_Axis.png, id=84, 622.325pt x 622.325pt>
 File: images/Diagrams/3D_Axis.png Graphic file (type png)
 <use images/Diagrams/3D_Axis.png>
 Package pdftex.def Info: images/Diagrams/3D_Axis.png  used on input line 13.
 (pdftex.def)             Requested size: 105.79384pt x 105.79384pt.
-<images/Diagrams/HandAxis.png, id=80, 1157.32375pt x 602.25pt>
+<images/Diagrams/HandAxis.png, id=85, 1157.32375pt x 602.25pt>
 File: images/Diagrams/HandAxis.png Graphic file (type png)
 <use images/Diagrams/HandAxis.png>
 Package pdftex.def Info: images/Diagrams/HandAxis.png  used on input line 24.
 (pdftex.def)             Requested size: 231.46065pt x 120.44786pt.
- [17
+ [18
 
  <./images/Diagrams/3D_Axis.png>]
-<images/Diagrams/Vector2DAnd3D.png, id=85, 1195.46625pt x 532.99126pt>
+<images/Diagrams/Vector2DAnd3D.png, id=91, 1195.46625pt x 532.99126pt>
 File: images/Diagrams/Vector2DAnd3D.png Graphic file (type png)
 <use images/Diagrams/Vector2DAnd3D.png>
 Package pdftex.def Info: images/Diagrams/Vector2DAnd3D.png  used on input line 
 39.
 (pdftex.def)             Requested size: 358.64264pt x 159.8986pt.
- [18 <./images/Diagrams/HandAxis.png> <./images/Diagrams/Vector2DAnd3D.png>]
+ [19 <./images/Diagrams/HandAxis.png> <./images/Diagrams/Vector2DAnd3D.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 140--150
 
  []
@@ -862,7 +894,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 140--150
 
  []
 
-[19]) [20]
+[20]) [21]
 Chapter 4.
 (./chapters/chapter04.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--26
@@ -904,9 +936,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--50
 
  []
 
-[21
+[22
 
-] [22]
+] [23]
 Chapter 5.
 (./chapters/chapter05.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--13
@@ -933,7 +965,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--13
 
  []
 
-[23
+[24
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 40--54
@@ -960,7 +992,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--54
 
  []
 
-[24]
+[25]
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 64.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -1007,7 +1039,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--85
 
  []
 
-[25]
+[26]
 Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
@@ -1082,7 +1114,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 208--210
 
  []
 
-[26]
+[27]
 Underfull \hbox (badness 10000) in paragraph at lines 217--218
 
  []
@@ -1147,49 +1179,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 313--315
 
  []
 
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 323--331
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 323--331
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 323--331
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 323--331
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 335--339
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 335--339
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 335--339
-
- []
-
 [28]
-<images/KochCurve/KochCurve04.png, id=125, 2464.20625pt x 746.79pt>
+Underfull \hbox (badness 10000) in paragraph at lines 323--331
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 323--331
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 323--331
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 323--331
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 335--339
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 335--339
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 335--339
+
+ []
+
+[29]
+<images/KochCurve/KochCurve04.png, id=130, 2464.20625pt x 746.79pt>
 File: images/KochCurve/KochCurve04.png Graphic file (type png)
 <use images/KochCurve/KochCurve04.png>
 Package pdftex.def Info: images/KochCurve/KochCurve04.png  used on input line 3
 63.
 (pdftex.def)             Requested size: 369.61499pt x 112.01366pt.
-<images/SierpinskiTriangle/SierpinskiTriangle04.png, id=126, 2319.66624pt x 131
+<images/SierpinskiTriangle/SierpinskiTriangle04.png, id=131, 2319.66624pt x 131
 8.9275pt>
 File: images/SierpinskiTriangle/SierpinskiTriangle04.png Graphic file (type png
 )
@@ -1197,55 +1229,55 @@ File: images/SierpinskiTriangle/SierpinskiTriangle04.png Graphic file (type png
 Package pdftex.def Info: images/SierpinskiTriangle/SierpinskiTriangle04.png  us
 ed on input line 377.
 (pdftex.def)             Requested size: 347.93492pt x 197.83058pt.
-<images/FractalPlant/FractalPlant05.png, id=127, 1204.5pt x 749.80125pt>
+<images/FractalPlant/FractalPlant05.png, id=132, 1204.5pt x 749.80125pt>
 File: images/FractalPlant/FractalPlant05.png Graphic file (type png)
 <use images/FractalPlant/FractalPlant05.png>
 Package pdftex.def Info: images/FractalPlant/FractalPlant05.png  used on input 
 line 393.
 (pdftex.def)             Requested size: 180.6672pt x 112.46533pt.
-<images/FractalBush/FractalBush06.png, id=128, 1147.28625pt x 795.97375pt>
+<images/FractalBush/FractalBush06.png, id=133, 1147.28625pt x 795.97375pt>
 File: images/FractalBush/FractalBush06.png Graphic file (type png)
 <use images/FractalBush/FractalBush06.png>
 Package pdftex.def Info: images/FractalBush/FractalBush06.png  used on input li
 ne 408.
 (pdftex.def)             Requested size: 172.08551pt x 119.3909pt.
- [29 <./images/KochCurve/KochCurve04.png>] [30 <./images/SierpinskiTriangle/Sie
-rpinskiTriangle04.png> <./images/FractalPlant/FractalPlant05.png>] [31 <./image
+ [30 <./images/KochCurve/KochCurve04.png>] [31 <./images/SierpinskiTriangle/Sie
+rpinskiTriangle04.png> <./images/FractalPlant/FractalPlant05.png>] [32 <./image
 s/FractalBush/FractalBush06.png>]
-<images/Diagrams/stackedBranchesMesh.png, id=141, 777.90625pt x 731.73375pt>
+<images/Diagrams/stackedBranchesMesh.png, id=146, 777.90625pt x 731.73375pt>
 File: images/Diagrams/stackedBranchesMesh.png Graphic file (type png)
 <use images/Diagrams/stackedBranchesMesh.png>
 Package pdftex.def Info: images/Diagrams/stackedBranchesMesh.png  used on input
  line 440.
 (pdftex.def)             Requested size: 124.46753pt x 117.07979pt.
-<images/Diagrams/linkedBranchesMesh.png, id=142, 724.7075pt x 623.32875pt>
+<images/Diagrams/linkedBranchesMesh.png, id=147, 724.7075pt x 623.32875pt>
 File: images/Diagrams/linkedBranchesMesh.png Graphic file (type png)
 <use images/Diagrams/linkedBranchesMesh.png>
 Package pdftex.def Info: images/Diagrams/linkedBranchesMesh.png  used on input 
 line 459.
 (pdftex.def)             Requested size: 115.95557pt x 99.73463pt.
-) [32 <./images/Diagrams/stackedBranchesMesh.png> <./images/Diagrams/linkedBran
+) [33 <./images/Diagrams/stackedBranchesMesh.png> <./images/Diagrams/linkedBran
 chesMesh.png>]
 Chapter 6.
-(./chapters/chapter06.tex) [33
+(./chapters/chapter06.tex) [34
 
 ]
 Chapter 7.
-(./chapters/chapter07.tex) [34
+(./chapters/chapter07.tex) [35
 
 ]
 Chapter 8.
-(./chapters/chapter08.tex) (./Thesis.acr [35
+(./chapters/chapter08.tex) (./Thesis.acr [36
 
-]) (./Thesis.gls [36
+]) (./Thesis.gls [37
 
-]) [37
+]) [38
 
 ]
 Appendix A.
-(./chapters/appendix.tex (./Thesis.bbl [38
+(./chapters/appendix.tex (./Thesis.bbl [39
 
-])) [39
+])) [40
 
 ] (./Thesis.aux)
 
@@ -1253,13 +1285,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7425 strings out of 494880
- 108680 string characters out of 6179601
- 229464 words of memory out of 5000000
- 10516 multiletter control sequences out of 15000+600000
+ 7432 strings out of 494880
+ 108872 string characters out of 6179601
+ 229495 words of memory out of 5000000
+ 10522 multiletter control sequences out of 15000+600000
  12247 words of font info for 43 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 45i,7n,37p,1997b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,7n,37p,1997b,354s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
@@ -1272,10 +1304,10 @@ ic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Thesis.pdf (40 pages, 2432487 bytes).
+Output written on Thesis.pdf (41 pages, 2605680 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
- 131 compressed objects within 2 object streams
+ 218 PDF objects out of 1000 (max. 8388607)
+ 133 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -32,6 +32,13 @@ Prusinkiewicz, P. (1986).
 \newblock In {\em Proceedings of graphics interface}, volume~86, pages
   247--253.
 
+\bibitem[Prusinkiewicz and Hanan, 1990]{prusinkiewicz1990visualization}
+Prusinkiewicz, P. and Hanan, J. (1990).
+\newblock Visualization of botanical structures and processes using parametric
+  l-systems.
+\newblock In {\em Scientific visualization and graphics simulation}, pages
+  183--201. John Wiley \& Sons, Inc.
+
 \bibitem[Prusinkiewicz and Hanan, 2013]{prusinkiewicz2013lindenmayer}
 Prusinkiewicz, P. and Hanan, J. (2013).
 \newblock {\em Lindenmayer systems, fractals, and plants}, volume~79.
