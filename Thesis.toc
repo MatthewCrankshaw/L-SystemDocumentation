@@ -10,9 +10,9 @@
 \contentsline {section}{\numberline {2.3}Branching}{11}
 \contentsline {section}{\numberline {2.4}Parametric OL-system}{12}
 \contentsline {subsection}{\numberline {2.4.1}Definition of a Parametric 0L-system}{12}
-\contentsline {subsection}{\numberline {2.4.2}Demonstration of Parametric 0L-systems}{13}
-\contentsline {subsection}{\numberline {2.4.3}Representing Randomness}{14}
-\contentsline {subsection}{\numberline {2.4.4}Representing L-system Conditions}{15}
+\contentsline {subsection}{\numberline {2.4.2}Controlling the Width and Length of Branch Segments}{13}
+\contentsline {subsection}{\numberline {2.4.3}Representing L-system Conditions}{14}
+\contentsline {subsection}{\numberline {2.4.4}Representing Randomness}{16}
 \contentsline {subsection}{\numberline {2.4.5}Stochastic Rules in the L-system}{16}
 \contentsline {chapter}{\numberline {3}3D Mathematics}{18}
 \contentsline {section}{\numberline {3.1}Points}{18}

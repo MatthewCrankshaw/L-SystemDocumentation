@@ -180,50 +180,71 @@ An example of this can be shown below in figure 2.2.\\
 
 \begin{flushleft}
 
-With simplistic L-systems like the algae representation in section \ref{Simple DOL-systems} above, there are a number of details that we are not able to represent.\\
-When creating a L-system to represent plants, we could assume that the width and length of each branch section is constant. We could also assume that the branching angles are also constant, 25 degrees for instance. The result of this would be that all of the important details of width and length of branches and branching angles is left up to the interpretation of the L-system string. This leaves a very large question mark as to how we should accurately interpret the L-system string. The other option would be to not only provide this information via the L-system but also to manipulate it during the re-writing process. This functionality can be provided using parametric 0L-systems set out by Prusinkiewicz and Lindenmayer. \cite{prusinkiewicz2012algorithmic} \\
+Simplistic L-systems like the algae representation in section \ref{Simple DOL-systems} above, give us enough information to create a very basic structure of plant life, there are many details that are not included which a simple OL-system will not be able to represent. With the simplistic approach we have assumed that the width and length and branching angles of each section is constant or predefined. The result of this was that all of the details such as width and length of branchesis left up to the interpretation of the resultant L-system string. This begs the question as to how we should accurately interpret the L-system string when we are not provided the details by the L-system. The answer lies in parametric 0L-systems.
 
 \vspace{5mm}
 
-For the purposes of this thesis we will be using the parametric L-system extensively, and we will be building some extra functionality using the concepts provided by Prusinkiewicz and Hanan \cite{prusinkiewicz1990visualization}. \\
+In this section I will outline the definition and major concepts of the parametric L-system formulated by Prusinkiewicz and Hanan in 1990 \cite{prusinkiewicz1990visualization}, and developed upon in 2012 by Prusinkiewicz and Lindenmayer \cite{prusinkiewicz2012algorithmic}. I will also be talking about some of the changes that I have made, and explaining why these changes are necessary for the purpose of this thesis.
 
-\vspace{5mm}
+\end{flushleft}
 
 \subsection{Definition of a Parametric 0L-system}
 
-Prusinkiewicz and Hanan have defined the parametric 0L-systems as a system of parametric words, where a string of letters make up a module name $A$, each module has a number of parameters associated with it. The module names belong an alphabet $V$, therefore, $A~ \epsilon~ V$, and the parameters belong to a set of real numbers $\Re$. If $(a_1,~ a_2,~ ...,~ a_n)~ \epsilon~ R$ are parameters of $A$, the module can be stated as $A(a_1,~ a_2,~ ...,~ a_n)$. Each module is an element of the set of modules $M~ =~ V~ \times~ \Re^*$. $\Re^*$ represents the set of all finite sequences of parameters, including the case where there are no parameters. We can then infer that $M^*~ =~ (V~ \times~ \Re^*)^*$ where $M^*$ is the set of all finite modules. \\
-Each parameter of a given module corresponds to a formal definition of that parameter defined within the L-system productions. Let the formal definition of a parameter be $\Sigma$. $ E(\Sigma) $ can be said to be an arithmetic expression of a given parameter. Similar to the arithmetic expressions in the programming languages C/C++, we can make use of the arithmetic operators $ +,~ -,~ *,~ \,~ \wedge{}$. The parentheses () are also used in order to specify precedence within an expression. These arithmetic expressions can be evaluated and will result in the real number parameter $\RE$.\\
+\begin{flushleft}
+
+Prusinkiewicz and Hanan define the parametric 0L-systems as a system of parametric words, where a string of letters make up a module name $A$, each module has a number of parameters associated with it. The module names belong an alphabet $V$, therefore, $A~ \in~ V$, and the parameters belong to a set of real numbers $\Re$. If $(a_1,~ a_2,~ ...,~ a_n)~ \in~ R$ are parameters of $A$, the module can be stated as $A(a_1,~ a_2,~ ...,~ a_n)$. Each module is an element of the set of modules $M~ =~ V~ \times~ \Re^*$. $\Re^*$ represents the set of all finite sequences of parameters, including the case where there are no parameters. We can then infer that $M^*~ =~ (V~ \times~ \Re^*)^*$ where $M^*$ is the set of all finite modules. \\
+Each parameter of a given module corresponds to a formal definition of that parameter defined within the L-system productions. Let the formal definition of a parameter be $\Sigma$. $ E(\Sigma) $ can be said to be an arithmetic expression of a given parameter.\\ Similar to the arithmetic expressions in the programming languages C/C++, we can make use of the arithmetic operators $ +,~ -,~ *,~ \,~ \wedge{}$. Furthermore, we can have the relational expression $C(\Sigma)$, with a set of relational operators. In the literature by Prusinkiewicz and Hanan the set of relational operators is said to be $<,~ >,~ =$, I have extended this to include the relational operators $>,~ <,~ >=,~ <=,~ ==,~ !=$. Where $==$ is the 'equal to' operator and $!=$ is the 'not equal' operator, and the symbols $>=$ and $<=$ are 'greater than or equal to' and 'less than or equal to' respectively. The parentheses () are also used in order to specify precedence within an expression. The arithmetic expressions can be evaluated and will result in the real number parameter $\Re $, and the relational expressions can be evaluated to either true or false. \\
+
+\vspace{5mm}
 
 The parametric 0L-system can be shown as follows as per Prusinkiewicz and Hanan's definition:\\
-\\
-$G~ = (V, \Sigma, \omega, P)$ 
 
-\cite{prusinkiewicz2012algorithmic} 
+\vspace{5mm}
 
-\subsection{Demonstration of Parametric 0L-systems}
+\begin{equation}
+G~ = (V, \Sigma, \omega, P)
+\end{equation}
+\vspace{5mm}
+
+$G$ is an ordererd quadruplet that describes the parametric OL-system. $V$ is the alphabet of characters for the system. $\Sigma$ is the set of formal parameters for the system. $\omega~ \in~ (V~ \times \Re^*)^+$ is a non-empty parametric word called the axiom. Finally $P$ is a finite set of production rules which can be fully defined as:
+
+\vspace{5mm}
+
+\begin{equation}
+P~ \subset~ (V~ \times~ \Sigma^*)~ \times C(\Sigma)~ \times~ (V~ \times~ E(\Sigma))^*
+\end{equation}
+
+\vspace{5mm} 
+
+Where $(V~ \times~ \Sigma^*) $ is the predecessor module, $C(\Sigma) $ is the condition and $(V~ \times~ E(\Sigma))^* $ is the set of successor modules. For the sake of readability we can write out a production rule as \textit{predecessor} : \textit{condition} $\rightarrow$ \textit{successor}. I will be explaining the use of conditions in production rules in more detail in section \ref{Condition L-system Subsection}.\\
+A module is said to match a production rule predecessor if they meet the three criteria below. In the case where the module does not match any of the production rule predecessors, the module is left unchanged, effectively rewriting itself. \\
+
+\vspace{5mm}
+
+$\bullet$ The name of the axiom module matches the name of the production predecessor. \\
+$\bullet$ The number of parameters for the axiom module is the same as the number of parameters for the production predecessor. \\
+$\bullet$ The condition of the production evaluates to true. If there is no condition, then the result is true by default.\\
+
+\vspace{5mm}
+
+\subsection{Defining Constants and Objects}
+
+\textit{task about #define and #object constructs}
+
+\subsection{Width and Length of Branch Segments}
+
+\textit{talk about the ! symbol for changing the width of a branch somewhere (not using the ' symbol as per text) and the use of the first parameter determining length}
 
 A parametric l-system be represented as the following: \\
 
-\vspace{5mm}
-
-\hspace*{3cm} n = 8\\
-
-\vspace{5mm}
-
-\hspace*{3cm} R 1.456\\
-\hspace*{3cm} r1 85\\
-\hspace*{3cm} wr 0.707\\
-
-\vspace{5mm}
-
-\hspace*{3cm} w : A(5)\\
-
-\vspace{5mm}
-
-\hspace*{3cm} p1 : A(w) : * : F(1)!(w)[/(r1)A(w*wr)][$\backslash$(r1)A(w*wr)]\\
-\hspace*{3cm} p2 : F(s) : * : F(s*R)\\
-
-\vspace{5mm}
+\begin{equation} \label{parametric l-system practical}
+\begin{aligned}
+	&n=8 \\
+	&\omega~~ : A(5)\\
+	&p_1~ :  A(w)~~~~~ :~ * \rightarrow~ F(1)!(w)[+A(w~*~0.707)][-A(w~*~0.707)]\\
+	&p_2~ :  F(s)~~~~~ :~ * \rightarrow~ F(s~*~1.456)\\
+\end{aligned}
+\end{equation}
 
 The above l-system gives the resulting representation shown below in figure 3.8. 
 
@@ -235,27 +256,94 @@ The above l-system gives the resulting representation shown below in figure 3.8.
 	}
 \end{figure}
 
-\textit{
-Defining an complex L-system grammar, with a less complexity in the interpreting system, we are given a huge amount of flexibility to define parameters that can accurately represent exactly how the L-system should be interpreted, furthermore the complexity is with the L-system grammar, so there is no need for you to make any changes to the interpreter itself. When compared to a simple L-system, you may have the advantage of being able to define simple a L-system grammar, but you would have to change and manipulate the way that the L-system is interpreted each time. Which is tedious and makes for an undesirable solution. \\
-}
-
-Similarly, to the simple DOL-systems in section \ref{Simple DOL-systems}, n refers to the number of iterations that we would like to rewrite the L-system. w refers to the Axiom string or starting states, the "\#define R 1.456" states that we are defining a constant number that will be used somewhere in the production rules or Axiom, the constant will be referred to with the name R and will have the value 1.456. \#P1, \#P2 define the production rules P1 and P2. The parametric L-system introduces the concept of a module.\\
-A module is a state or variable which has zero or more parameters. The Axiom A(5) is a module with one parameter which is the number 5. A parameter can either be a number, variable or an expression of variables and numbers. For instance A(a + 1, a * b) is a valid module with the name A with two parameters a + 1 and a * b, where a and b are variables, however this is only a valid module if the value of a and b have been defined previously. Each module is treated as a single instruction, it will either be overwritten when matched with a production rule or the expression of each parameter is evaluated and is left unchanged for use when interpreted.\\
-Each production rule is made up of four parts. The name, the predecessor module, the condition and the successor modules, each part is separated by a colon. Therefore the predecessor for P1 is A(w), the condition is a '*' which means that in this case there are no conditions, and the successor is F(1)!(w)[/(r1)A(w*wr)][$\backslash$(r1)A(w*wr)]. I will cover conditions in a later section.\\
-
-\vspace{5mm}
-
-Initially we iterate through the Axiom modules and compare them to the production rule. A match is determined if they meet three criteria.\\
-
-\vspace{5mm}
-
-$\bullet$ The name of the axiom module matches the name of the production predecessor. \\
-$\bullet$ The number of parameters for the axiom module is the same as the number of parameters for the production predecessor. \\
-$\bullet$ The condition of the production evaluates to true. If there is no condition, then the result is true by default.\\
+\FloatBarrier
 
 \end{flushleft}
 
-\subsection{Representing Randomness}
+
+
+\subsection{Representing L-system Conditions} \label{Condition L-system Subsection}
+
+\begin{flushleft}
+
+A condition allows us to have multiple production rules that are the same in terms of the module name and the number of parameters that they have, furthermore, they require a particalar condition to be met in order for the module to match that rule. \\
+In this section I will be detailing the use of the condition statement, which lies between the predecessor and the successor in a production rule, and can be seen as an a mathematical expression on either side of a relational operator. During the rule selection process the expressions are evaluated and the results are compared using the condition operator. If the result of the condition is true then that rule is selected for rewriting, if the result is false then it moves on to check the next rule. \\
+
+\vspace{5mm}
+
+Below is an example of a parametric 0L-system using condition statements:\\
+
+\begin{equation} \label{parametric l-system example}
+\begin{aligned}
+	&n=5 \\
+	&\omega~~ : A(0)B(0,4)\\
+	&p_1~ :  A(x)~~~~~ :~ x~ >~ 2~ \rightarrow~ C\\
+	&p_2~ :  A(x)~~~~~ :~ x~ <~ 2~ \rightarrow~ A(x~ +~ 1)\\
+	&p_3~ :  B(x,~ y)~ :~ x~ >~ y~ \rightarrow~ D\\
+	&p_4~ :  B(x,~ y)~ :~ x~ <~ y~ \rightarrow~ B(x~ +~ 1,~ y)\\
+\end{aligned}
+\end{equation}
+
+\vspace{5mm}
+
+The L-system above in \ref{parametric l-system example} is rewritten five times using the axiom specified by the symbol $\omega$, as well as the four production rules $p_1, p_2, p_3, p_4$. Each generation of the rewritting process can be seen below in \ref{parametric l-system example result}.
+
+\vspace{5mm}
+
+\begin{equation} \label{parametric l-system example result}
+\begin{aligned}
+	&g_0 :~ A(0)B(0,~4)\\
+	&g_1 :~ A(1)B(1,~4)\\
+	&g_2 :~ A(2)B(2,~4)\\
+	&g_3 :~ C~B(3,~4)\\
+	&g_4 :~ C~B(4,~4)\\
+	&g_5 :~ C~D\\
+\end{aligned}
+\end{equation}
+
+\vspace{5mm}
+
+\vspace{5mm}
+
+A practical use of the condition statement might be to simulate different stages of growth. This is best illustrated using the L-system below: \\
+
+\vspace{5mm}
+
+\begin{figure}[htbp]
+\raggedright
+\textbf{\underline{Growth of Flower Using Conditions:}} \\
+
+\begin{equation} \label{conditional l-system example}
+\begin{aligned}
+	&n=2,~4,~6 \\
+	&\#object~ F~ BRANCH \\
+ 	&\#object~ L~ LEAF \\
+	&\#object~ S~ SPHERE \\
+	&\#define~ r~ 45 \\
+	&\#define~ len~ 0.5 \\
+	&\#define~ lean~ 5.0 \\
+	&\#define~ flowerW~ 1.0 \\
+	&\omega~~ : !(0.1)I(5)\\
+	&p_1~ :  I(x)~ :~ x~ >~ 0~~ \rightarrow~ F(len)-(lean)[R({0, 100})]F(len)[R({0, 100})]I(x-1)\\
+	&p_2~ :  R(x)~ :~ x~ >~ 50~ \rightarrow~ -(r)/(20)!(2.0)L(2)!(0.1)\\
+	&p_3~ :  R(x)~ :~ x~ <~ 50~ \rightarrow~ -(r)\backslash(170)!(2.0)L(2)!(0.1)\\
+	&p_4~ :  I(x)~ :~ x~ <=~ 0~ \rightarrow~ F(len)!(flowerW)S(0.3)\\
+\end{aligned}
+\end{equation}
+
+	{\centering
+		\vspace{7px}
+		\includegraphics[scale=0.13]{Diagrams/conditionalLsystem.png}
+		\caption{Condition Statements Used to Simulate the Growth of a Flower. 2nd Generation on the Left, 4th Generation in the Center and 6th Generation on the Right}
+	}
+\end{figure}
+
+\FloatBarrier
+
+\end{flushleft}
+
+
+\subsection{Representing Randomness} \label{Randomness L-system Subsection}
 
 \begin{flushleft}
 
@@ -286,76 +374,7 @@ In figure \ref{figRandomness} there are four variations of the same L-system usi
 
 \end{flushleft}
 
-\subsection{Representing L-system Conditions}
-
-\begin{flushleft}
-
-For a module to match a rule in the rule set, we need to check three criteria. The name of the rule in the predecessor matches the module name. Secondly, the number of parameters in the predecessor are the same as the number of parameters in the module. Finally, we check if the condition in the rule evaluates to true. \\
-
-\vspace{5mm}
-
-In this section we will be talking about the third point in the criteria above, ie., The condition must be true in order for a module to match a production rule. A condition in a rule allows us to have multiple rules that are the same in terms of the module name and the number of parameters, however they require a particalar condition to be met in order to match that rule. \\
-There are six different condition operators that can be used, similar to the programming languages C/C++, as listed below.
-
-\vspace{5mm}
-
-$\bullet~$  '$==$'  - Equal to \\
-$\bullet~$  '$!=$' - Not Equal to \\
-$\bullet~$  '$>$' - Greater than \\
-$\bullet~$  '$<$' - Less than \\
-$\bullet~$  '$>=$' - Greater or Equal to \\
-$\bullet~$  '$<=$' - Less or Equal to \\
-
-\vspace{5mm}
-
-The condition statement comes between the predecessor and the successor in a production rule and can be seen as an a mathematical expression on either side of the condition operator. During the rule selection process the expressions are evaluated and the results are compared using the condition operator. If the result of the condition is true then that rule is selected for rewriting, if the result is false then it moves onto the next rule. \\
-
-\vspace{5mm}
-
-A practical use of the condition statement might be to simulate different stages of growth. This is best illustrated using the L-system below: \\
-
-\vspace{5mm}
-
-\#n = 2 - 4 - 6; \\
-\#object F BRANCH; \\
-\#object L LEAF; \\
-\#object S SPHERE; \\
-
-\vspace{5mm}
-
-\#define r 45; \\
-\#define len 0.5; \\
-\#define lean 5.0; \\
-\#define flowerW 1.0; \\
-
-\vspace{5mm}
-
-\#w : !(0.1)I(5); \\
-
-\vspace{5mm}
-
-\#p1 : I(x) : x $>$ 0 : F(len)-(lean)[R({0, 100})]F(len)[R({0, 100})]I(x-1);\\
-\#p2 : R(x) : x $>$ 50 : -(r)/(20)!(2.0)L(2)!(0.1); \\
-\#p3 : R(x) : x $<$ 50 : -(r)$\backslash$(170)!(2.0)L(2)!(0.1); \\
-\#p4 : I(x) : x $<=$ 0 : F(len)!(flowerW)S(0.3); \\
-
-\vspace{5mm}
-
-\begin{figure}[htbp]
-\raggedright
-\textbf{\underline{Random Fractal:}} \\
-	{\centering
-		\vspace{7px}
-		\includegraphics[scale=0.13]{Diagrams/conditionalLsystem.png}
-		\caption{Condition Statements Used to Simulate the Growth of a Flower. 2nd Generation on the Left, 4th Generation in the Center and 6th Generation on the Right}
-	}
-\end{figure}
-
-\FloatBarrier
-
-\end{flushleft}
-
-\subsection{Stochastic Rules in the L-system}
+\subsection{Stochastic Rules in the L-system} \label{Stochastic L-system Subsection}
 
 \begin{flushleft}
 
