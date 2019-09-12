@@ -2,14 +2,14 @@
 \begin{theglossary}\glossaryheader
 \glsgroupheading{C}\relax \glsresetentrylist %
 \glossentry{C/C++}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{24}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{25}}}\glsgroupskip
 \glsgroupheading{L}\relax \glsresetentrylist %
 \glossentry{Lexer}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{29}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{30}}}\glsgroupskip
 \glsgroupheading{O}\relax \glsresetentrylist %
 \glossentry{OpenGL}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{24\delimN 25}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{25\delimN 26}}}\glsgroupskip
 \glsgroupheading{P}\relax \glsresetentrylist %
 \glossentry{Parser}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{29\delimN 30}}}%
+		\setentrycounter[]{page}\glsnumberformat{30\delimN 31}}}%
 \end{theglossary}\glossarypostamble

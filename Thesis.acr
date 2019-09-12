@@ -2,34 +2,34 @@
 \begin{theglossary}\glossaryheader
 \glsgroupheading{glssymbols}\relax \glsresetentrylist %
 \glossentry{2d}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{18}}}%
+		\setentrycounter[]{page}\glsnumberformat{19}}}%
 \glossentry{3d}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{18\delimN 19}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{19\delimN 20}}}\glsgroupskip
 \glsgroupheading{A}\relax \glsresetentrylist %
 \glossentry{api}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{25}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{26}}}\glsgroupskip
 \glsgroupheading{B}\relax \glsresetentrylist %
 \glossentry{bnf}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{4}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{26\delimN 27}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{27\delimN 28}}}\glsgroupskip
 \glsgroupheading{C}\relax \glsresetentrylist %
 \glossentry{cfg}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{26}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{29}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{27}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{30}}}\glsgroupskip
 \glsgroupheading{F}\relax \glsresetentrylist %
 \glossentry{flex}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{29}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{30}}}\glsgroupskip
 \glsgroupheading{G}\relax \glsresetentrylist %
 \glossentry{glfw}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{4}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{24\delimN 25}}}%
+		\setentrycounter[]{page}\glsnumberformat{25\delimN 26}}}%
 \glossentry{glm}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{4}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{24\delimN 25}}}%
+		\setentrycounter[]{page}\glsnumberformat{25\delimN 26}}}%
 \glossentry{glsl}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{25}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{26}}}\glsgroupskip
 \glsgroupheading{S}\relax \glsresetentrylist %
 \glossentry{stl}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{4}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{25}}}%
+		\setentrycounter[]{page}\glsnumberformat{26}}}%
 \end{theglossary}\glossarypostamble

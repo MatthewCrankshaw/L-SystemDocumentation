@@ -138,14 +138,12 @@ We will not get into too much detail as to the derivation of quaterions in mathe
 
 \subsection{Unit Quaternion}
 Unit quaternions are what are used for rotations, here we can take the angle and the axis of a rotation and convert it to a unit quaternion using the following formula: \\
-\\
 $q = [qx, qy, qz]$\\
 where\\
 $q_x = a_x sin \frac{\theta}{2}$\\
 $q_y = a_y sin \frac{\theta}{2}$\\
 $q_z = a_z sin \frac{\theta}{2}$\\
 $q_w = cos \frac{\theta}{2}$\\
-\\ 
 The scalar part $q_w$ is the cosine of the half angle, and the vector part $q_x q_y q_z$ is the axis of that rotation, scaled by sine of the half angle of rotation.  
 
 \subsection{Quaternion Multiplication}

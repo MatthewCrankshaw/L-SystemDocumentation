@@ -89,11 +89,12 @@ The first five generations can be written as follows: \\
 
 \end{flushleft}
 
-\section{Constants and Variables} \label{constants variables}
+\section{Turtle Instructions} \label{turtle instructions}
 
 \begin{flushleft}
 
-Constants are symbols or states which don't have any significant value during the rewriting process and therefore will remain the same between generations however they do have significance when the final string is being interpreted and furthermore represented. There are a number of constants that have a fixed meaning when interpreted and are therefore known as commands. These values are:
+Turtle instructions are symbols or states which will remain the same during the rewriting process, and have significance when the final resultant string is being interpret. In simple 0L-systems these instructions do not have any influence during the rewriting process, however, in parametric L-systems covered in section \ref{parametric} turtle instructions have extra functionality built in which allow then to be modified during the rewriting process. \\
+There are a number of instructions that have a fixed meaning when interpreted, these values are:
 
 \vspace{5mm}
 
@@ -108,23 +109,19 @@ $\bullet$ \&:				\hspace{10mm}  		Roll to the left by a specified angle.  \\
 
 \vspace{5mm}
 
-The question then remains why they should be interpreted using these commands and how are the instructions interpreted? As with any grammar, there are numerous ways of interpreting it. One method proposed by Przemyslaw Prusinkiewics is "To generate a string of symbols using an L-system, and to interpret this string as a sequence of commands which control a 'turtle'" \cite{prusinkiewicz1986graphical}.\\
+The question then remains, how are the instructions interpreted? As with any grammar, there are numerous ways of interpreting it. One method proposed by Przemyslaw Prusinkiewics is "To generate a string of symbols using an L-system, and to interpret this string as a sequence of commands which control a 'turtle'" \cite{prusinkiewicz1986graphical}. When talking about a turtle, prusinkiewicz is referring to turtle graphics. Turtle graphics is a type of vector graphics that can be carried out with instructions. It is named a turtle after one of the main features of the Logo programming language. The simple set of turtle instructions listed below, can be displayed as figure \ref{basic turtle}\\
 
 \vspace{5mm}
 
-When talking about a turtle, prusinkiewicz is referring to turtle graphics. Turtle graphics is a type of vector graphics that can be carried out with instructions. It is named a turtle after one of the main features of the Logo programming language. The simple set of turtle instructions listed below, can be displayed as figure \ref{basic turtle}\\
-
-\vspace{5mm}
-
-1. Move forward by 1.\\
-2. Rotate right by 90 degrees.\\
-3. Move forward by 1.\\
-4. Rotate left by 90 degrees \\
-5. Move forward by 1. \\
-6. Rotate left by 90 degrees. \\
-7. Move forward by 1. \\
-8. Rotate right by 90 degrees. \\
-9. Move forward by 1.\\
+Instruction 1. Move forward by 1.\\
+Instruction 2. Rotate right by 90 degrees.\\
+Instruction 3. Move forward by 1.\\
+Instruction 4. Rotate left by 90 degrees \\
+Instruction 5. Move forward by 1. \\
+Instruction 6. Rotate left by 90 degrees. \\
+Instruction 7. Move forward by 1. \\
+Instruction 8. Rotate right by 90 degrees. \\
+Instruction 9. Move forward by 1.\\
 
 \vspace{5mm}
 
@@ -227,15 +224,24 @@ $\bullet$ The condition of the production evaluates to true. If there is no cond
 
 \vspace{5mm}
 
+\end{flushleft}
+
 \subsection{Defining Constants and Objects}
 
-\textit{task about #define and #object constructs}
+\textit{task about \#define and \#object constructs}
 
-\subsection{Width and Length of Branch Segments}
+\subsection{Modules With Special Meanings}
 
-\textit{talk about the ! symbol for changing the width of a branch somewhere (not using the ' symbol as per text) and the use of the first parameter determining length}
+\begin{flushleft}
 
-A parametric l-system be represented as the following: \\
+
+In the above section I defined the details of a parametric 0L-system, in the paper by Prusinkiewicz and Lindenmayer, there are two operators which I have not discussed yet, those are the ! and the ‘. Prusinkiewicz and Lindenmayer state that “The symbols ! and ‘ are used to decrement the diameter of segments and increment the current index to the color table respectively” \cite{prusinkiewicz2012algorithmic}. We have decided to modify this to work slightly differently, the ! and ‘ will still perform the same operation, however the ! and ‘ symbols are actually treated as a module that holds a particular meaning to the interpreter, rather than a single operator, furthermore, they share the same properties with modules, they can contain multiple parameters, and depending on the number of parameters they can be treated differently. The module ! with no parameters could mean decrement the diameter of the segment by a default amount, whereas !(10) means set the diameter of the segment to 10. The length can also be manipulated in a similar manner. The module with the name F has a default meaning to create a segment in the current direction by a default amount. If we provide the module F(10) we are specifying to create a segment of length 10.\\
+
+\vspace{5mm}
+
+Using the L-system below we can create figure \ref{parametric l-system practical}, the concepts discussed above have been used by decrementing the segment diameter during the rewriting process as well as by incrementing the branch length.
+
+\vspace{5mm}
 
 \begin{equation} \label{parametric l-system practical}
 \begin{aligned}
@@ -245,6 +251,8 @@ A parametric l-system be represented as the following: \\
 	&p_2~ :  F(s)~~~~~ :~ * \rightarrow~ F(s~*~1.456)\\
 \end{aligned}
 \end{equation}
+
+\vspace{5mm}
 
 The above l-system gives the resulting representation shown below in figure 3.8. 
 
@@ -257,6 +265,8 @@ The above l-system gives the resulting representation shown below in figure 3.8.
 \end{figure}
 
 \FloatBarrier
+
+This gives a much more realistic looking tree structure as the branch segments become shorter but also become thinner in diameter as they get closer to the end of the branch as a whole. 
 
 \end{flushleft}
 
