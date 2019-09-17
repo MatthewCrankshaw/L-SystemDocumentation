@@ -1,6 +1,3 @@
-\glossaryentry{STL?\glossentry{stl}|setentrycounter[]{page}\glsnumberformat}{4}
-\glossaryentry{GLM?\glossentry{glm}|setentrycounter[]{page}\glsnumberformat}{4}
-\glossaryentry{GLFW?\glossentry{glfw}|setentrycounter[]{page}\glsnumberformat}{4}
 \glossaryentry{BNF?\glossentry{bnf}|setentrycounter[]{page}\glsnumberformat}{4}
 \glossaryentry{2D?\glossentry{2d}|setentrycounter[]{page}\glsnumberformat}{20}
 \glossaryentry{3D?\glossentry{3d}|setentrycounter[]{page}\glsnumberformat}{20}
@@ -8,15 +5,11 @@
 \glossaryentry{3D?\glossentry{3d}|setentrycounter[]{page}\glsnumberformat}{20}
 \glossaryentry{3D?\glossentry{3d}|setentrycounter[]{page}\glsnumberformat}{21}
 \glossaryentry{3D?\glossentry{3d}|setentrycounter[]{page}\glsnumberformat}{21}
+\glossaryentry{GPU?\glossentry{gpu}|setentrycounter[]{page}\glsnumberformat}{26}
 \glossaryentry{GLFW?\glossentry{glfw}|setentrycounter[]{page}\glsnumberformat}{26}
 \glossaryentry{GLM?\glossentry{glm}|setentrycounter[]{page}\glsnumberformat}{26}
 \glossaryentry{STL?\glossentry{stl}|setentrycounter[]{page}\glsnumberformat}{27}
 \glossaryentry{STL?\glossentry{stl}|setentrycounter[]{page}\glsnumberformat}{27}
-\glossaryentry{STL?\glossentry{stl}|setentrycounter[]{page}\glsnumberformat}{27}
-\glossaryentry{API?\glossentry{api}|setentrycounter[]{page}\glsnumberformat}{27}
-\glossaryentry{GLSL?\glossentry{glsl}|setentrycounter[]{page}\glsnumberformat}{27}
-\glossaryentry{GLM?\glossentry{glm}|setentrycounter[]{page}\glsnumberformat}{27}
-\glossaryentry{GLFW?\glossentry{glfw}|setentrycounter[]{page}\glsnumberformat}{27}
 \glossaryentry{BNF?\glossentry{bnf}|setentrycounter[]{page}\glsnumberformat}{28}
 \glossaryentry{BNF?\glossentry{bnf}|setentrycounter[]{page}\glsnumberformat}{28}
 \glossaryentry{CFG?\glossentry{cfg}|setentrycounter[]{page}\glsnumberformat}{28}

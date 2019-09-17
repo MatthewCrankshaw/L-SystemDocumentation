@@ -1,10 +1,11 @@
 \begin{flushleft}
 
-Aristid Lindenmayer is a well-known biologist who started work on what would become known as the Lindenmayer System or L-system for short. Lindenmayer initially intended the L-systems to be to be used to describe the development of simple organisms such as algae and bacteria. More recently the concept has been adapted to be used to describe larger organisms such as plants and trees. L-systems have also been used to describe non organic structures like music. \cite{worth2005growing} \\
+Aristid Lindenmayer was a well-known biologist who started work on what would become known as the Lindenmayer System or L-system for short. Lindenmayer published a paper in 1968 on a new method of simulating growth in multicelular orgamisms such as algae and bacteria\cite{lindenmayer1968mathematical}. In 1971 Lindenmayer published another paper outlining the definition of a formal grammar for simulating multicelular growth which he was then called the 0L-system. \cite {lindenmayer1971developmental}\\
+Initially the L-systems he defined were to be used to describe the development of simple multicelular organisms. However in the last twenty years the concept has been adapted to be used to describe larger organisms such as plants and trees as well as non organic structures like music. \cite{worth2005growing} \\
 
 \vspace{5mm}
 
-An L-system at its core is a formal grammar made up of an \textit{alphabet} of symbols which are put together into strings, a set of rules is used to determine whether a symbol in the string should be rewritten with another symbol or string. What we end up with is a string of symbols which we can refer to as a set of states, for each state the rules determine what symbols to rewrite and what they should be replaced with or if they should be replaced at all.\\
+A L-system at its core is a formal grammar made up of an \textit{alphabet} of symbols which are put together into strings, a set of rules is used to determine whether a symbol in the string should be rewritten with another symbol or string. Given a certain number of iterations a resultant string of symbols which we can refer to as a set of states, for each state the rules determine what symbols to rewrite and what they should be replaced with or if they should be replaced at all.\\
 
 \vspace{5mm}
 
@@ -244,7 +245,7 @@ For instance if we have an value for an angle that we would like to use within t
 	&n=4 \\
 	&\textrm{\#define angle 90}\\
 	&\omega~~ : F(5)\\
-	&p_1~ :  F(x)~~~~~ :~ * \rightarrow~ F(w)+(angle)\\
+	&p_1~ :  F(x)~~~~~ :~ * \rightarrow~ F(w)+(angle)F(w)+(angle)F(w)+(angle)F(w)\\
 \end{aligned}
 \end{equation}
 
@@ -281,6 +282,8 @@ With regards to the \#include statement, In the literature the \#include may be 
 \FloatBarrier
 
 \vspace{5mm}
+
+In the simple example in figure \ref{object statement example} above, you can see that the first three F modules render a branch segment with length of 1.0, however for the final module the S module renders a sphere of diameter 1.0. It is possible  
 
 I will be going into more detail about this and other features in section \ref{l-system generator section}.
 

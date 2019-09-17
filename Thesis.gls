@@ -8,7 +8,7 @@
 		\setentrycounter[]{page}\glsnumberformat{31}}}\glsgroupskip
 \glsgroupheading{O}\relax \glsresetentrylist %
 \glossentry{OpenGL}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{26\delimN 27}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{26}}}\glsgroupskip
 \glsgroupheading{P}\relax \glsresetentrylist %
 \glossentry{Parser}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{31\delimN 32}}}%
