@@ -35,7 +35,7 @@ talk about \acrshort{glsl}
 Git is a free and open source version control software, that is able to keep track of changes that have been made to the files within a project folder. It will be used to keep track of previous versions of the project throughout the development process. Git can be used in conjuction with Github, which is a online web application that stores git repositories. This acts as a backup as well as containing all previous versions of the project.
 
 
-\section{L-system Generator}
+\section{L-system Generator} \label{l-system generator section}
 
 The purpose of the L-system generator is to read a file, called the L-system discriptor which contains any information that might be necessary for the string rewriting process. This file must contain the number of times the string will be rewritten (number of generations), a starting point (axiom) and at least one production rule, it may also contain some constant variables and other information. \\
 \\
@@ -437,7 +437,10 @@ The most obvious way to generate a model for a branching structure would be to t
 \begin{figure}[htbp]
 	{\centering
 		\vspace{7px}
-		\includegraphics[scale=0.16]{Diagrams/stackedBranchesMesh.png}
+		\setlength{\fboxrule}{1pt}
+		\fbox{
+			\includegraphics[scale=0.16]{Diagrams/stackedBranchesMesh.png}
+		}
 		\caption{Example of the continuity problem faced with stacked branching with a 25$^{\circ}$ bend per joint.}
 	}
 \end{figure}
@@ -456,7 +459,10 @@ This simple method of stacking cylinders gives a reasonable looking tree structu
 \begin{figure}[htbp]
 	{\centering
 		\vspace{7px}
-		\includegraphics[scale=0.16]{Diagrams/linkedBranchesMesh.png}
+		\setlength{\fboxrule}{1pt}
+		\fbox{
+			\includegraphics[scale=0.16]{Diagrams/linkedBranchesMesh.png}
+		}
 		\caption{Example of linked branching with a 25$^{\circ}$ bend per joint.}
 	}
 \end{figure}

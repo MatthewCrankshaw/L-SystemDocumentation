@@ -127,8 +127,11 @@ Instruction 9. Move forward by 1.\\
 
 \begin{figure}[htbp]
 	{\centering
+		\setlength{\fboxrule}{1pt}
 		\vspace{7px}
-		\includegraphics[scale=0.5]{Diagrams/basic_turtle.png}
+		\fbox{
+			\includegraphics[scale=0.5]{Diagrams/basic_turtle.png}
+		}
 		\caption{Diagram showing a turtle interpreting simple L-system string.} \label{basic turtle}
 	}
 \end{figure}
@@ -164,8 +167,11 @@ An example of this can be shown below in figure 2.2.\\
 
 \begin{figure}[htbp]
 	{\centering
+		\setlength{\fboxrule}{1pt}
 		\vspace{7px}
-		\includegraphics[scale=0.5]{Diagrams/branching_turtle.png}
+		\fbox{
+			\includegraphics[scale=0.35]{Diagrams/branching_turtle.png}
+		}
 		\caption{Diagram showing a turtle interpreting an L-system incorporating branching.}
 	}
 \end{figure}
@@ -228,7 +234,55 @@ $\bullet$ The condition of the production evaluates to true. If there is no cond
 
 \subsection{Defining Constants and Objects}
 
-\textit{task about \#define and \#object constructs}
+There are some other features covered by Prusinkiewicz and Lindenmayer, that are not specific to the parametric L-systems definition itself but serve more as quality of life. In the literature, they refer to the \#define which is said "To assign values to numerical constants used in the L-system" as well as the \#include statement which specifies what type of shape to draw by refering to a library of predefined shapes \cite{prusinkiewicz2012algorithmic}. \\
+For instance if we have an value for an angle that we would like to use within the production rules we can use the \#define statement as follows:
+
+\vspace{5mm}
+
+\begin{equation} \label{define statement example}
+\begin{aligned}
+	&n=4 \\
+	&\textrm{\#define angle 90}\\
+	&\omega~~ : F(5)\\
+	&p_1~ :  F(x)~~~~~ :~ * \rightarrow~ F(w)+(angle)\\
+\end{aligned}
+\end{equation}
+
+\vspace{5mm}
+
+Here you can see that the \#define acts like a declaration, where we are going to be defining a variable which will be used later. Essentially we are replacing any occurences of the variable \textit{angle} with the value of 90 degrees. The define statement is written as  \#define \textit{variable\_name} \textit{value}. \\
+
+\vspace{5mm}
+
+With regards to the \#include statement, In the literature the \#include may be used by stating '\#include H'. This would tell the turtle interpreter that the symbol 'H' is a shape in a library of predefined shapes which should be rendered instead of the default shape. We have decided modify this functionality, instead of the \#include statement, we have provided the \#object statement. The \#object statement serves a similar purpose however instead of import the symbol 'H' we can specify, \#object H HETEROCYST, which specifies that we are associating the symbol or module 'H' with the object HETEROCYST. The HETEROCYST object will be stored in a predefined library. This way we can associate the same object to multiple symbols. It also does not limit us to a predefined name for an object. Below is an example using the \#object statement: \\
+
+\vspace{5mm}
+
+\begin{equation} \label{object statement example}
+\begin{aligned}
+	&n=1 \\
+	&\textrm{\#object F BRANCH}\\
+	&\textrm{\#object S SPHERE}\\
+	&\omega~~ : F(1)\\
+	&p_1~ :  F(x)~~~~~ :~ * \rightarrow~ F(w)F(w)F(w)F(w)S(w)\\
+\end{aligned}
+\end{equation}
+
+\begin{figure}[htbp]
+	{\centering
+		\vspace{7px}
+		\setlength{\fboxrule}{1pt}
+		\fbox{
+			\includegraphics[scale=0.2]{Diagrams/object_example.png}
+		}
+		\caption{Diagram of an L-system Using Multiple Objects.}
+	}
+\end{figure}
+\FloatBarrier
+
+\vspace{5mm}
+
+I will be going into more detail about this and other features in section \ref{l-system generator section}.
 
 \subsection{Modules With Special Meanings}
 
@@ -259,7 +313,10 @@ The above l-system gives the resulting representation shown below in figure 3.8.
 \begin{figure}[htbp]
 	{\centering
 		\vspace{7px}
-		\includegraphics[scale=0.20]{ParametricLsystem/branchingPattern.png}
+		\setlength{\fboxrule}{1pt}
+		\fbox{
+			\includegraphics[scale=0.20]{ParametricLsystem/branchingPattern.png}
+		}
 		\caption{3D Parametric L-system.}
 	}
 \end{figure}
@@ -313,15 +370,11 @@ The L-system above in \ref{parametric l-system example} is rewritten five times 
 
 \vspace{5mm}
 
-\vspace{5mm}
-
 A practical use of the condition statement might be to simulate different stages of growth. This is best illustrated using the L-system below: \\
 
 \vspace{5mm}
 
 \begin{figure}[htbp]
-\raggedright
-\textbf{\underline{Growth of Flower Using Conditions:}} \\
 
 \begin{equation} \label{conditional l-system example}
 \begin{aligned}
@@ -343,7 +396,10 @@ A practical use of the condition statement might be to simulate different stages
 
 	{\centering
 		\vspace{7px}
-		\includegraphics[scale=0.13]{Diagrams/conditionalLsystem.png}
+		\setlength{\fboxrule}{1pt}
+		\fbox{
+			\includegraphics[scale=0.13]{Diagrams/conditionalLsystem.png}
+		}
 		\caption{Condition Statements Used to Simulate the Growth of a Flower. 2nd Generation on the Left, 4th Generation in the Center and 6th Generation on the Right}
 	}
 \end{figure}
@@ -372,7 +428,10 @@ Below is a simple example of how randomness can be used to create variation.
 	\vspace{10mm}
 	{\centering
 		\vspace{7px}
-		\includegraphics[scale=0.20]{Diagrams/RandomTrees.png}
+		\setlength{\fboxrule}{1pt}
+		\fbox{
+			\includegraphics[scale=0.20]{Diagrams/RandomTrees.png}
+		}
 		\caption{Different Variations of the Same L-system with Randomness Introduced in The Angles. \label{figRandomness}}
 	}
 \end{figure}
@@ -391,7 +450,10 @@ In figure \ref{figRandomness} there are four variations of the same L-system usi
 \begin{figure}[htbp]
 	{\centering
 		\vspace{7px}
-		\includegraphics[scale=0.35]{Diagrams/stochastics.png}
+		\setlength{\fboxrule}{1pt}
+		\fbox{
+			\includegraphics[scale=0.35]{Diagrams/stochastics.png}
+		}
 		\caption{Representation of an L-system with a probability stochastic with a 33.33\% chance for each rule.}
 	}
 \end{figure}
