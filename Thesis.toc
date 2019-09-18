@@ -5,15 +5,15 @@
 \contentsline {section}{\numberline {1.4}Timeframe}{7}
 \contentsline {section}{\numberline {1.5}Structure of Thesis}{7}
 \contentsline {chapter}{\numberline {2}Lindenmayer Systems}{8}
-\contentsline {section}{\numberline {2.1}Simple DOL-system}{8}
+\contentsline {section}{\numberline {2.1}Simple DOL-system}{9}
 \contentsline {section}{\numberline {2.2}Turtle Instructions}{10}
 \contentsline {section}{\numberline {2.3}Branching}{11}
 \contentsline {section}{\numberline {2.4}Parametric OL-system}{12}
 \contentsline {subsection}{\numberline {2.4.1}Definition of a Parametric 0L-system}{12}
-\contentsline {subsection}{\numberline {2.4.2}Defining Constants and Objects}{13}
+\contentsline {subsection}{\numberline {2.4.2}Defining Constants and Objects}{14}
 \contentsline {subsection}{\numberline {2.4.3}Modules With Special Meanings}{15}
 \contentsline {subsection}{\numberline {2.4.4}Representing L-system Conditions}{16}
-\contentsline {subsection}{\numberline {2.4.5}Representing Randomness}{18}
+\contentsline {subsection}{\numberline {2.4.5}Representing Randomness}{17}
 \contentsline {subsection}{\numberline {2.4.6}Stochastic Rules in the L-system}{18}
 \contentsline {chapter}{\numberline {3}3D Mathematics}{20}
 \contentsline {section}{\numberline {3.1}Points}{20}
@@ -35,7 +35,7 @@
 \contentsline {section}{\numberline {4.2}Hook's Law}{25}
 \contentsline {chapter}{\numberline {5}L-system Parser Implementation}{26}
 \contentsline {section}{\numberline {5.1}Environment and Tools}{26}
-\contentsline {section}{\numberline {5.2}L-system Generator}{27}
+\contentsline {section}{\numberline {5.2}L-system Generator}{26}
 \contentsline {subsection}{\numberline {5.2.1}Building a Generalised L-system Grammar}{27}
 \contentsline {subsection}{\numberline {5.2.2}\acrlong {bnf} of the L-system Grammar}{29}
 \contentsline {section}{\numberline {5.3}The L-system Interpreter}{31}

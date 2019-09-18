@@ -16,10 +16,16 @@ Cooper, K. and Torczon, L. (2011).
 \newblock {\em Engineering a compiler}.
 \newblock Elsevier.
 
-\bibitem[Horton, 2015]{horton2015stl}
-Horton, I. (2015).
-\newblock {\em Using the C++ Standard Template Libraries}.
-\newblock Apress.
+\bibitem[{GLFW development team}, 2019]{glfwDocumentation}
+{GLFW development team} (2019).
+\newblock Glfw documentation.
+\newblock https://www.glfw.org/documentation.html.
+
+\bibitem[K{\'o}kai et~al., 1999]{kokai1999parametric}
+K{\'o}kai, G., V{\'a}nyi, R., and T{\'o}th, Z. (1999).
+\newblock Parametric l-system description of the retina with combined
+  evolutionary operators.
+\newblock {\em Banzhaf et al.[3]}, pages 1588--1595.
 
 \bibitem[Lindenmayer, 1971]{lindenmayer1971developmental}
 Lindenmayer, A. (1971).
@@ -67,11 +73,6 @@ Prusinkiewicz, P. and Lindenmayer, A. (2012).
 \newblock {\em The algorithmic beauty of plants}.
 \newblock Springer Science \& Business Media.
 
-\bibitem[Ritchie et~al., 1975]{ritchie1975c}
-Ritchie, D.~M., Kernighan, B.~W., and Lesk, M.~E. (1975).
-\newblock {\em The C programming language}.
-\newblock Bell Laboratories.
-
 \bibitem[Sellers et~al., 2013]{sellers2013opengl}
 Sellers, G., Wright~Jr, R.~S., and Haemel, N. (2013).
 \newblock {\em OpenGL superBible: comprehensive tutorial and reference}.
@@ -81,6 +82,17 @@ Sellers, G., Wright~Jr, R.~S., and Haemel, N. (2013).
 Stroustrup, B. (2000).
 \newblock {\em The C++ programming language}.
 \newblock Pearson Education India.
+
+\bibitem[Torvalds, ]{torvalds}
+Torvalds, L.
+\newblock Git documentation.
+\newblock https://git-scm.com/doc.
+
+\bibitem[Vaario et~al., 1991]{vaario1991connectionist}
+Vaario, J., Ohsuga, S., and Hori, K. (1991).
+\newblock Connectionist modeling using lindenmayer systems.
+\newblock In {\em In Information Modeling and Knowledge Bases: Foundations,
+  Theory, and Applications}. Citeseer.
 
 \bibitem[Wilhelm and Seidl, 2010]{wilhelm2010compiler}
 Wilhelm, R. and Seidl, H. (2010).

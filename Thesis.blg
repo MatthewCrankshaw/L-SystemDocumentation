@@ -3,44 +3,46 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Thesis.aux
 The style file: apalike.bst
 Database file #1: chapters/ref.bib
-You've used 17 entries,
+Warning--empty year in torvalds
+You've used 19 entries,
             1935 wiz_defined-function locations,
-            564 strings with 6045 characters,
-and the built_in function-call counts, 6344 in all, are:
-= -- 625
-> -- 210
-< -- 20
-+ -- 74
-- -- 66
-* -- 463
-:= -- 1076
-add.period$ -- 54
-call.type$ -- 17
-change.case$ -- 108
-chr.to.int$ -- 17
-cite$ -- 17
-duplicate$ -- 288
-empty$ -- 475
-format.name$ -- 97
-if$ -- 1288
+            575 strings with 6439 characters,
+and the built_in function-call counts, 7148 in all, are:
+= -- 718
+> -- 235
+< -- 22
++ -- 80
+- -- 74
+* -- 516
+:= -- 1209
+add.period$ -- 61
+call.type$ -- 19
+change.case$ -- 124
+chr.to.int$ -- 19
+cite$ -- 20
+duplicate$ -- 323
+empty$ -- 526
+format.name$ -- 107
+if$ -- 1456
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 26
-newline$ -- 88
-num.names$ -- 51
-pop$ -- 139
+missing$ -- 24
+newline$ -- 98
+num.names$ -- 57
+pop$ -- 148
 preamble$ -- 1
-purify$ -- 118
+purify$ -- 132
 quote$ -- 0
-skip$ -- 220
+skip$ -- 250
 stack$ -- 0
-substring$ -- 390
-swap$ -- 56
-text.length$ -- 7
+substring$ -- 452
+swap$ -- 67
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 82
-warning$ -- 0
-while$ -- 50
+type$ -- 98
+warning$ -- 1
+while$ -- 57
 width$ -- 0
-write$ -- 220
+write$ -- 245
+(There was 1 warning)
