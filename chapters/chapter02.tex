@@ -17,7 +17,42 @@ A well-known biologist Aristid Lindenmayer, started work on the Lindenmayer Syst
 
 \begin{flushleft}
 
-According to Prusinkiewicz and Hanan a simple type of L-systems is known as a Deterministic 0L systems. It is deterministic as each symbol has an associated rule and there is no randomness in determining which rule should be chosen. The term '0L system' abbreviates 'Lindenmayer system with zero-sided interactions'. A zero-sided interactions refers back to the multicellular representation of an L-system, where each symbol refers to a type of cell, and a 0L-system is a type of L-system that does not account for the state of its direct neighbouring symbols. With D0L systems there are only three major parts. There is a set of symbols known as the (\textit{alphabet}), the starting string or (\textit{axiom}) and the state transition rules (\textit{rules}). The alphabet is a set of states. The starting string or \textit{axiom} is the starting point containing one or more states. The transition rules dictate whether a state should remain the same or transition into a different state, remain the same or even disappear. \cite{prusinkiewicz2013lindenmayer}. \\
+According to Prusinkiewicz and Hanan a simple type of L-systems is known as a Deterministic 0L systems. It is deterministic as each symbol has an associated rule and there is no randomness in determining which rule should be chosen. The term '0L system' abbreviates 'Lindenmayer system with zero-sided interactions'. A zero-sided interactions refers to the multicellular representation of an L-system, where each symbol refers to a type of cell, and a 0L-system is a type of L-system that does not account for the state of its direct neighbouring symbols. There are three major parts to a D0L system. There is a finite set of symbols known as the (\textit{alphabet}), the starting string or (\textit{axiom}) and the state transition rules (\textit{rules}). The alphabet is a set of characters which represent a particular state in a system. The starting string or \textit{axiom} is the starting point of the system which contains one or more characters from the alphabet. The transition rules dictate whether a state should remain the same or transition into a different state or even disappear completely. \cite{prusinkiewicz2013lindenmayer}. \\
+
+\vspace{5mm}
+
+The DOL-system was originally created to serve as a context free grammar, which allows the multicellular organisms to be represented. In this case the each type of cell in represented in the L-system by a character in the alphabet, and the production rules represent the type of cell transitions that take place. In the DOL-system below, there is an example formulated by Prusinkiwicz and Lindenmayer to simulate Anabaena catenula which is a type of filamentous cyanobacteria which exists in plankton. According to Prusinkiewicz and Lindenmayer "Under a microscope, the filaments appear as a sequence of cylinders of various lengths, with $a$-type cells longer than $b$-type cells. And the subscript $l$ and $r$ indicate cell polarity, specifying the positions in which daughter cells of type $a$ and $b$ will be produced \cite{prusinkiewicz2012algorithmic}.
+
+\vspace{5mm}
+
+$w$ : $ a\textsubscript{r} $\\
+\textit{p1} : $ a\textsubscript{r} $ $\rightarrow$ $a\textsubscript{l}b\textsubscript{r}$ \\
+\textit{p2} : $ a\textsubscript{l} $ $\rightarrow$ $b\textsubscript{l}a\textsubscript{r}$ \\
+\textit{p3} : $ b\textsubscript{r} $ $\rightarrow$ $a\textsubscript{r}$ \\
+\textit{p4} : $ b\textsubscript{l} $ $\rightarrow$ $a\textsubscript{l}$ \\
+
+\vspace{5mm}
+
+With the deinition above, the DOL-system states $w~ :~ a_r$, $w$ signifies that what follows is the starting point (axiom), ergo, the starting point is the cell $a_r$. The production rules then follow and are $p1, p2, p3$ and $p4$. In production rule 1 ($p1$) the cell $a_r$ will be rewritten by cells $a_l b_r$, production rule 2 ($p2$) states that $a_l$ will be rewritten by cells $b_l a_r$, production rule 3 ($p3$) states $b_r$ will rewritten by cell $a_r$ and finally production rule 4 ($p4$), states that $b_l$ will be rewritten by cell $a_l$. In order to simulate Anabaena catenula we require these four rewritting rules, as there are four types of state transitions. \\
+
+\vspace{5mm}
+
+The resultant strings of five generations of the DOL-system rewritting process: \\
+
+\vspace{5mm}
+
+0.) $a_r$ \\
+1.) $a_l b_r$ \\
+2.) $b_l a_r a_r$ \\
+3.) $a_l a_l b_r a_l b_r$ \\
+4.) $b_l a_r b_l a_r a_r b_l a_r a_r$ \\
+5.) $a_l a_l b_r a_l a_l b_r a_l b_r a_l a_l b_r a_l b_r$ \\
+
+\vspace{5mm}
+
+During the rewriting process, generation zero is the axiom. In subsequent generations the resultant string of the previous generation is taken and each symbol in the string is compared to the production rules, if they match a rule the symbol is rewritten with the next symbol or string that is specified by the production rule. For generation one we take the previous generations resultant string which in this case is $a_r$, the first symbol is compared with the production rule until it matches one. In this case it matches $p1~ :~ a_r~ \rightarrow~ a_l b_r$ and therefore, $a_r$ is rewritten with $a_l b_r$. As the generation zero resultant string only has one symbol it can be concluded that the resultant string of generation one is $a_l b_r$. The resultant string of generation one is then rewritten to produce generation two and so on.\\
+
+
 
 \vspace{5mm}
 
@@ -48,42 +83,6 @@ To start we take the first state in the \textit{axiom} which, in this case is th
 \vspace{5mm}
 
 This rewriting of strings using a set of rules is ultimately the underlying concept behind L-systems. There are several improvements that can be made to this type of L-system in order to accommodate for more complex and intricate structures. I will be talking about these in more detail in the following sections, however some important improvements are: constants, variables, branching constructs, parametric l-systems, conditional rules and random values. //
-
-\vspace{5mm}
-
-An example of how an L-system can represent a real-life biological structure would be Prusinkiewicz and Lindenmayer's simulation of a blue-green bacteria known as \textit{Anabaena catenula}\\
-
-\vspace{5mm}
-
-Prusinkiewicz and Lindenmayer created the following DOL-system representation shown below in the following grammar: \\
-
-\vspace{5mm}
-
-$w$ : $ a\textsubscript{r} $\\
-\textit{p1} : $ a\textsubscript{r} $ $\rightarrow$ $a\textsubscript{l}b\textsubscript{r}$ \\
-\textit{p2} : $ a\textsubscript{l} $ $\rightarrow$ $b\textsubscript{l}a\textsubscript{r}$ \\
-\textit{p3} : $ b\textsubscript{r} $ $\rightarrow$ $a\textsubscript{r}$ \\
-\textit{p4} : $ b\textsubscript{l} $ $\rightarrow$ $a\textsubscript{l}$ \\
-
-\vspace{5mm}
-
-The value $w$ is there to specify the axiom which is this case has the value of $ a\textsubscript{r} $. \textit{p1}, \textit{p2}, \textit{p3}, \textit{p4} are the names of the rules that follow the semi-colon. In order to simulate Anabaena catenula we need four rules. \\
-According to Prusinkiewicz and Lindenmayer "Under a microscope, the filaments appear as a sequence of cylinders of various lengths, with $a$-type cells longer than $b$-type cells. And the subscript $l$ and $r$ indicate cell polarity, specifying the positions in which daughter cells of type $a$ and $b$ will be produced. \cite{prusinkiewicz2012algorithmic} \\
-
-\vspace{5mm}
-
-The first five generations can be written as follows: \\
-
-\vspace{5mm}
-
-0.) $a_r$ \\
-1.) $a_l b_r$ \\
-2.) $b_l a_r a_r$ \\
-3.) $a_l a_l b_r a_l b_r$ \\
-4.) $b_l a_r b_l a_r a_r b_l a_r a_r$ \\
-5.) $a_l a_l b_r a_l a_l b_r a_l b_r a_l a_l b_r a_l b_r$ \\
-
-\vspace{5mm}
 
 
 
