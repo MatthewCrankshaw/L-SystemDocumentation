@@ -68,12 +68,15 @@ During the rewriting process, generation zero ($G_0$) is the axiom. In subsequen
 
 \begin{flushleft}
 
-Section \ref{Simple DOL-systems} outlines a simple type of L-system known as the DOL-system, this L-system specifies a set of symbols, a starting point and a set of production rules, allowing us to represent a problem as a set of states. The prodcution rules can express valid state transisions, which thereafter allows us to produce a resulatant string of symbols that obay the L-systems production rules. This functionality is powerful in and of itself, however, the L-system's symbols are only usefull if they are capable of representing something meaningful in the real world, furthermore the L-system does not supply this meaning, each symbols meaning is interpreted after the rewriting process of the L-system. Due to this, there are two separate and very different systems involved in taking an L-systems input, such as the alphabet, axiom and production rules and turning it into something that models plant-life. There is the L-system rewriter and the L-system interpreter.  \\
+Section \ref{Simple DOL-systems} outlines a simple type of L-system known as the DOL-system, this L-system specifies a set of symbols, a starting point and a set of production rules, allowing us to represent a problem as a set of states. The prodcution rules can express valid state transisions, which thereafter allows us to produce a resulatant string of symbols that obay the L-systems production rules. This functionality is powerful in and of itself, however, the L-system's symbols are only usefull if they are capable of representing something meaningful in the real world, furthermore the L-system does not supply this meaning, each symbols meaning is interpreted after the rewriting process of the L-system. Due to this, there are two separate and very different systems involved in taking an L-systems input, such as the alphabet, axiom and production rules and turning it into something that is able to model plant-life. These two systems are the L-system rewriter is the system that is reposponsible for using the L-system definition in order to rewrite a string and provide a resultant string of symbols. The L-system interpreter takes the resultant string from the L-system rewriter and interprets in a way that is able to represent the model we are trying to create. \\
 
 \vspace{5mm}
 
-Turtle instructions are symbols or states which will remain the same during the rewriting process, and have significance when the final resultant string is being interpret. In simple 0L-systems these instructions do not have any influence during the rewriting process, however, in parametric L-systems covered in section \ref{parametric} turtle instructions have extra functionality built in which allow then to be modified during the rewriting process. \\
-There are a number of instructions that have a fixed meaning when interpreted, these values are:
+A paper by Przemyslaw Prusinkiewicz outlines a method for interpreting the L-system in a way that can model fractal structures, plants and trees. The method interprets the resultant string of the L-system, where each symbol represents an instructions which is carried out one after the other to control a 'turtle' \cite{prusinkiewicz1986graphical}. When talking about a turtle, prusinkiewicz is referring to turtle graphics. Turtle graphics is a type of vector graphics that can be carried out with instructions. It is named a turtle after one of the main features of the Logo programming language. The simple set of turtle instructions listed below, can be displayed as figure \ref{basic turtle}. The turtle starts at the base or root of the tree and interprets a set of rotation and translation movements, which when all executed one after the other, trace the points which make up the plant structure, when these points are then joined together the result is a fractal structure such as a plant or tree.\\
+
+\vspace{5mm}
+
+In the OL-system there are a number of symbols that represent a particular meaning to the L-system interpreter. Whenever the interpreter comes across one of these symbols in the resultant string, it is interpreted as a particular turtle instruction which can be seen in the table below:
 
 \vspace{5mm}
 
@@ -100,13 +103,36 @@ There are a number of instructions that have a fixed meaning when interpreted, t
 	\& 					& Roll to the left by a specified angle.\\
 \hline
 \end{tabular}
-\caption{Table of the Instruction Symbols and their meaning to the interpreter}
+\caption{Table of turtle instruction symbols and their meaning to the interpreter}
 \label{instruction table 1}
 \end{table}
 
+\FloatBarrier
+
+\begin{figure}[htbp]
+	{\centering
+		\setlength{\fboxrule}{1pt}
+		\vspace{7px}
+		\fbox{
+			\includegraphics[scale=0.3]{Diagrams/rotations.png}
+		}
+		\caption{Diagram of the 3D rotations of the turtle.} \label{3D rotations}
+	}
+\end{figure}
+\FloatBarrier
+
+The turtle instructions are presented in such a way that allows movement in three dimensions, the rotations in yaw, pitch and roll are multiplied together and then if the turtle moves forward again it will move in the direction of this new orientation.  
+
 \vspace{5mm}
 
-The question then remains, how are the instructions interpreted? As with any grammar, there are numerous ways of interpreting it. One method proposed by Przemyslaw Prusinkiewics is "To generate a string of symbols using an L-system, and to interpret this string as a sequence of commands which control a 'turtle'" \cite{prusinkiewicz1986graphical}. When talking about a turtle, prusinkiewicz is referring to turtle graphics. Turtle graphics is a type of vector graphics that can be carried out with instructions. It is named a turtle after one of the main features of the Logo programming language. The simple set of turtle instructions listed below, can be displayed as figure \ref{basic turtle}\\
+\begin{equation} \label{DOL-system example}
+\begin{aligned}
+	&\text{Generations: 1}\\
+	&\text{Angle: 90$^{\circ}$}\\
+	&\omega~~ : F \\
+	&p_1~ :  a_r~ \rightarrow~ F+F-F-F+F\\
+\end{aligned}
+\end{equation}
 
 \vspace{5mm}
 
@@ -119,6 +145,10 @@ Instruction 6. Rotate left by 90 degrees. \\
 Instruction 7. Move forward by 1. \\
 Instruction 8. Rotate right by 90 degrees. \\
 Instruction 9. Move forward by 1.\\
+
+\vspace{5mm}
+
+talk about the complexities of each system. 
 
 \vspace{5mm}
 

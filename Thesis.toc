@@ -8,47 +8,47 @@
 \contentsline {section}{\numberline {2.1}Simple DOL-system}{10}
 \contentsline {section}{\numberline {2.2}Interpreting the DOL-system}{11}
 \contentsline {section}{\numberline {2.3}Branching}{13}
-\contentsline {section}{\numberline {2.4}Parametric OL-system}{13}
+\contentsline {section}{\numberline {2.4}Parametric OL-system}{14}
 \contentsline {subsection}{\numberline {2.4.1}Definition of a Parametric 0L-system}{14}
 \contentsline {subsection}{\numberline {2.4.2}Defining Constants and Objects}{15}
-\contentsline {subsection}{\numberline {2.4.3}Modules With Special Meanings}{16}
-\contentsline {subsection}{\numberline {2.4.4}Representing L-system Conditions}{17}
-\contentsline {subsection}{\numberline {2.4.5}Representing Randomness}{18}
-\contentsline {subsection}{\numberline {2.4.6}Stochastic Rules in the L-system}{19}
-\contentsline {chapter}{\numberline {3}3D Mathematics}{21}
-\contentsline {section}{\numberline {3.1}Points}{21}
-\contentsline {section}{\numberline {3.2}Vector}{22}
-\contentsline {subsection}{\numberline {3.2.1}Vector Multiplication}{22}
-\contentsline {subsection}{\numberline {3.2.2}Vector Addition and Subtraction}{22}
-\contentsline {subsection}{\numberline {3.2.3}Dot and Cross Product}{22}
-\contentsline {section}{\numberline {3.3}Matrices}{22}
-\contentsline {subsection}{\numberline {3.3.1}Matrix Multiplication}{23}
-\contentsline {subsection}{\numberline {3.3.2}Translation}{23}
-\contentsline {subsection}{\numberline {3.3.3}Rotation}{23}
-\contentsline {subsection}{\numberline {3.3.4}Scale}{23}
-\contentsline {section}{\numberline {3.4}Quaternions}{23}
-\contentsline {subsection}{\numberline {3.4.1}Unit Quaternion}{24}
-\contentsline {subsection}{\numberline {3.4.2}Quaternion Multiplication}{24}
-\contentsline {subsection}{\numberline {3.4.3}Conjugate and Inverse}{24}
-\contentsline {chapter}{\numberline {4}Physics Simulation}{25}
-\contentsline {section}{\numberline {4.1}Motion Equations}{25}
-\contentsline {section}{\numberline {4.2}Hook's Law}{26}
-\contentsline {chapter}{\numberline {5}L-system Parser Implementation}{27}
-\contentsline {section}{\numberline {5.1}Environment and Tools}{27}
-\contentsline {section}{\numberline {5.2}L-system Generator}{27}
-\contentsline {subsection}{\numberline {5.2.1}Building a Generalised L-system Grammar}{28}
-\contentsline {subsection}{\numberline {5.2.2}\acrlong {bnf} of the L-system Grammar}{30}
-\contentsline {section}{\numberline {5.3}The L-system Interpreter}{32}
-\contentsline {subsection}{\numberline {5.3.1}Scanner - Flex}{32}
-\contentsline {subsection}{\numberline {5.3.2}Parser - Bison}{32}
-\contentsline {section}{\numberline {5.4}Displaying the L-system Instructions}{33}
-\contentsline {subsection}{\numberline {5.4.1}Basic 2D L-systems}{33}
-\contentsline {subsection}{\numberline {5.4.2}The Use of L-systems in 3D applications}{35}
-\contentsline {chapter}{\numberline {6}Turtle Interpreter Implementation}{36}
-\contentsline {section}{\numberline {6.1}Modeling Seamless Branches}{36}
-\contentsline {chapter}{\numberline {7}Findings and Data Analysis}{38}
-\contentsline {chapter}{\numberline {8}Discussion}{39}
-\contentsline {chapter}{\numberline {9}Conclusions}{40}
-\contentsline {chapter}{\numberline {A}Appendix}{43}
-\contentsline {section}{\numberline {A.1}Appendix 1}{43}
-\contentsline {section}{\numberline {A.2}Bibliography}{43}
+\contentsline {subsection}{\numberline {2.4.3}Modules With Special Meanings}{17}
+\contentsline {subsection}{\numberline {2.4.4}Representing L-system Conditions}{18}
+\contentsline {subsection}{\numberline {2.4.5}Representing Randomness}{20}
+\contentsline {subsection}{\numberline {2.4.6}Stochastic Rules in the L-system}{20}
+\contentsline {chapter}{\numberline {3}3D Mathematics}{22}
+\contentsline {section}{\numberline {3.1}Points}{22}
+\contentsline {section}{\numberline {3.2}Vector}{23}
+\contentsline {subsection}{\numberline {3.2.1}Vector Multiplication}{23}
+\contentsline {subsection}{\numberline {3.2.2}Vector Addition and Subtraction}{23}
+\contentsline {subsection}{\numberline {3.2.3}Dot and Cross Product}{23}
+\contentsline {section}{\numberline {3.3}Matrices}{23}
+\contentsline {subsection}{\numberline {3.3.1}Matrix Multiplication}{24}
+\contentsline {subsection}{\numberline {3.3.2}Translation}{24}
+\contentsline {subsection}{\numberline {3.3.3}Rotation}{24}
+\contentsline {subsection}{\numberline {3.3.4}Scale}{24}
+\contentsline {section}{\numberline {3.4}Quaternions}{24}
+\contentsline {subsection}{\numberline {3.4.1}Unit Quaternion}{25}
+\contentsline {subsection}{\numberline {3.4.2}Quaternion Multiplication}{25}
+\contentsline {subsection}{\numberline {3.4.3}Conjugate and Inverse}{25}
+\contentsline {chapter}{\numberline {4}Physics Simulation}{26}
+\contentsline {section}{\numberline {4.1}Motion Equations}{26}
+\contentsline {section}{\numberline {4.2}Hook's Law}{27}
+\contentsline {chapter}{\numberline {5}L-system Parser Implementation}{28}
+\contentsline {section}{\numberline {5.1}Environment and Tools}{28}
+\contentsline {section}{\numberline {5.2}L-system Generator}{28}
+\contentsline {subsection}{\numberline {5.2.1}Building a Generalised L-system Grammar}{29}
+\contentsline {subsection}{\numberline {5.2.2}\acrlong {bnf} of the L-system Grammar}{31}
+\contentsline {section}{\numberline {5.3}The L-system Interpreter}{33}
+\contentsline {subsection}{\numberline {5.3.1}Scanner - Flex}{33}
+\contentsline {subsection}{\numberline {5.3.2}Parser - Bison}{33}
+\contentsline {section}{\numberline {5.4}Displaying the L-system Instructions}{34}
+\contentsline {subsection}{\numberline {5.4.1}Basic 2D L-systems}{34}
+\contentsline {subsection}{\numberline {5.4.2}The Use of L-systems in 3D applications}{36}
+\contentsline {chapter}{\numberline {6}Turtle Interpreter Implementation}{37}
+\contentsline {section}{\numberline {6.1}Modeling Seamless Branches}{37}
+\contentsline {chapter}{\numberline {7}Findings and Data Analysis}{39}
+\contentsline {chapter}{\numberline {8}Discussion}{40}
+\contentsline {chapter}{\numberline {9}Conclusions}{41}
+\contentsline {chapter}{\numberline {A}Appendix}{44}
+\contentsline {section}{\numberline {A.1}Appendix 1}{44}
+\contentsline {section}{\numberline {A.2}Bibliography}{44}
