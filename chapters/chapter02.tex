@@ -106,8 +106,10 @@ In the OL-system there are a number of symbols that represent a particular meani
 \caption{Table of turtle instruction symbols and their meaning to the interpreter}
 \label{instruction table 1}
 \end{table}
-
 \FloatBarrier
+
+
+The turtle instructions are presented in such a way that allows movement in three dimensions, the rotations in yaw, pitch and roll are multiplied together, if the turtle moves forward again it will move in the direction of this new orientation. Diagram  \ref{3D rotations} shows the yaw, pitch and roll rotations and their associated interpretation names. \\ 
 
 \begin{figure}[htbp]
 	{\centering
@@ -121,9 +123,9 @@ In the OL-system there are a number of symbols that represent a particular meani
 \end{figure}
 \FloatBarrier
 
-The turtle instructions are presented in such a way that allows movement in three dimensions, the rotations in yaw, pitch and roll are multiplied together and then if the turtle moves forward again it will move in the direction of this new orientation.  
-
 \vspace{5mm}
+
+The turtle instructions in the table \ref{instruction table 1}, can be used as the alphabet for the rewriting system in the the L-system grammar below:
 
 \begin{equation} \label{DOL-system example}
 \begin{aligned}
@@ -133,6 +135,10 @@ The turtle instructions are presented in such a way that allows movement in thre
 	&p_1~ :  a_r~ \rightarrow~ F+F-F-F+F\\
 \end{aligned}
 \end{equation}
+
+\vspace{5mm}
+
+With the L-system above the resulting string would be "F+F-F-F+F", this string can be interpreted using turtle graphics to give a list of instructions.
 
 \vspace{5mm}
 

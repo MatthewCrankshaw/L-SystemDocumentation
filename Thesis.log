@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.27)  23 SEP 2019 13:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.2)  23 SEP 2019 16:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -803,7 +803,7 @@ Chapter 2.
 <images/Diagrams/rotations.png, id=54, 482.80376pt x 388.45125pt>
 File: images/Diagrams/rotations.png Graphic file (type png)
 <use images/Diagrams/rotations.png>
-Package pdftex.def Info: images/Diagrams/rotations.png  used on input line 118.
+Package pdftex.def Info: images/Diagrams/rotations.png  used on input line 120.
 
 (pdftex.def)             Requested size: 144.84224pt x 116.53627pt.
  [12 <./images/Diagrams/rotations.png>]
@@ -811,23 +811,23 @@ Package pdftex.def Info: images/Diagrams/rotations.png  used on input line 118.
 File: images/Diagrams/basic_turtle.png Graphic file (type png)
 <use images/Diagrams/basic_turtle.png>
 Package pdftex.def Info: images/Diagrams/basic_turtle.png  used on input line 1
-61.
+67.
 (pdftex.def)             Requested size: 341.27417pt x 136.00778pt.
-<images/Diagrams/branching_turtle.png, id=61, 939.51pt x 439.6425pt>
+
+[13 <./images/Diagrams/basic_turtle.png>]
+<images/Diagrams/branching_turtle.png, id=65, 939.51pt x 439.6425pt>
 File: images/Diagrams/branching_turtle.png Graphic file (type png)
 <use images/Diagrams/branching_turtle.png>
 Package pdftex.def Info: images/Diagrams/branching_turtle.png  used on input li
-ne 201.
+ne 207.
 (pdftex.def)             Requested size: 328.83342pt x 153.87717pt.
-
-[13 <./images/Diagrams/basic_turtle.png>] [14 <./images/Diagrams/branching_turt
-le.png>] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 280--281
+ [14 <./images/Diagrams/branching_turtle.png>] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--285
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
 
  []
 
@@ -835,47 +835,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 284--285
 File: images/Diagrams/object_example.png Graphic file (type png)
 <use images/Diagrams/object_example.png>
 Package pdftex.def Info: images/Diagrams/object_example.png  used on input line
- 304.
+ 310.
 (pdftex.def)             Requested size: 240.89574pt x 159.79416pt.
-[16 <./images/Diagrams/object_example.png>]
+[16]
 <images/ParametricLsystem/branchingPattern.png, id=77, 1204.5pt x 597.23125pt>
 File: images/ParametricLsystem/branchingPattern.png Graphic file (type png)
 <use images/ParametricLsystem/branchingPattern.png>
 Package pdftex.def Info: images/ParametricLsystem/branchingPattern.png  used on
- input line 348.
+ input line 354.
 (pdftex.def)             Requested size: 240.89574pt x 119.44412pt.
- [17 <./images/ParametricLsystem/branchingPattern.png>]
-<images/Diagrams/conditionalLsystem.png, id=81, 3613.5pt x 803.0pt>
+ [17 <./images/Diagrams/object_example.png>] [18 <./images/ParametricLsystem/br
+anchingPattern.png>]
+<images/Diagrams/conditionalLsystem.png, id=85, 3613.5pt x 803.0pt>
 File: images/Diagrams/conditionalLsystem.png Graphic file (type png)
 <use images/Diagrams/conditionalLsystem.png>
 Package pdftex.def Info: images/Diagrams/conditionalLsystem.png  used on input 
-line 431.
+line 437.
 (pdftex.def)             Requested size: 469.7715pt x 104.39366pt.
 
-Overfull \hbox (15.31647pt too wide) in paragraph at lines 431--432
+Overfull \hbox (15.31647pt too wide) in paragraph at lines 437--438
  [][] 
  []
 
-[18] [19 <./images/Diagrams/conditionalLsystem.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 456.
+[19 <./images/Diagrams/conditionalLsystem.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 462.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 456.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 462.
 <images/Diagrams/RandomTrees.png, id=90, 1003.75pt x 803.0pt>
 File: images/Diagrams/RandomTrees.png Graphic file (type png)
 <use images/Diagrams/RandomTrees.png>
 Package pdftex.def Info: images/Diagrams/RandomTrees.png  used on input line 46
-3.
+9.
 (pdftex.def)             Requested size: 200.74644pt x 160.59715pt.
 <images/Diagrams/stochastics.png, id=91, 1204.5pt x 401.5pt>
 File: images/Diagrams/stochastics.png Graphic file (type png)
 <use images/Diagrams/stochastics.png>
-Package pdftex.def Info: images/Diagrams/stochastics.png  used on input line 48
-5.
+Package pdftex.def Info: images/Diagrams/stochastics.png  used on input line 49
+1.
 (pdftex.def)             Requested size: 421.58131pt x 140.5271pt.
  [20 <./images/Diagrams/RandomTrees.png>]) [21 <./images/Diagrams/stochastics.p
 ng>]
@@ -1277,7 +1278,7 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  7573 strings out of 494880
- 111138 string characters out of 6179601
+ 111138 string characters out of 6179602
  231183 words of memory out of 5000000
  10651 multiletter control sequences out of 15000+600000
  12474 words of font info for 44 fonts, out of 8000000 for 9000
@@ -1295,7 +1296,7 @@ ic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Thesis.pdf (47 pages, 2635668 bytes).
+Output written on Thesis.pdf (47 pages, 2635959 bytes).
 PDF statistics:
  240 PDF objects out of 1000 (max. 8388607)
  146 compressed objects within 2 object streams
