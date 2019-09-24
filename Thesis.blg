@@ -4,45 +4,45 @@ The top-level auxiliary file: Thesis.aux
 The style file: apalike.bst
 Database file #1: chapters/ref.bib
 Warning--empty year in torvalds
-You've used 19 entries,
+You've used 20 entries,
             1935 wiz_defined-function locations,
-            575 strings with 6439 characters,
-and the built_in function-call counts, 7148 in all, are:
-= -- 718
-> -- 235
-< -- 22
-+ -- 80
-- -- 74
-* -- 516
-:= -- 1209
-add.period$ -- 61
-call.type$ -- 19
-change.case$ -- 124
-chr.to.int$ -- 19
-cite$ -- 20
-duplicate$ -- 323
-empty$ -- 526
-format.name$ -- 107
-if$ -- 1456
+            582 strings with 6549 characters,
+and the built_in function-call counts, 7484 in all, are:
+= -- 753
+> -- 242
+< -- 23
++ -- 82
+- -- 76
+* -- 544
+:= -- 1268
+add.period$ -- 64
+call.type$ -- 20
+change.case$ -- 130
+chr.to.int$ -- 20
+cite$ -- 21
+duplicate$ -- 337
+empty$ -- 553
+format.name$ -- 110
+if$ -- 1521
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 24
-newline$ -- 98
-num.names$ -- 57
-pop$ -- 148
+missing$ -- 25
+newline$ -- 103
+num.names$ -- 60
+pop$ -- 151
 preamble$ -- 1
-purify$ -- 132
+purify$ -- 138
 quote$ -- 0
-skip$ -- 250
+skip$ -- 261
 stack$ -- 0
-substring$ -- 452
-swap$ -- 67
+substring$ -- 480
+swap$ -- 68
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 98
+type$ -- 104
 warning$ -- 1
-while$ -- 57
+while$ -- 61
 width$ -- 0
-write$ -- 245
+write$ -- 258
 (There was 1 warning)

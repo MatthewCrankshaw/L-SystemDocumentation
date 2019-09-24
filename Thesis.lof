@@ -2,25 +2,25 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Diagram of the 3D rotations of the turtle.}}{12}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Diagram showing a turtle interpreting simple L-system string.}}{13}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagram showing a turtle interpreting an L-system incorporating branching.}}{14}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagram showing a turtle interpreting an L-system incorporating branching.}}{15}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Diagram of an L-system Using Multiple Objects.}}{17}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces 3D Parametric L-system.}}{18}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Condition Statements Used to Simulate the Growth of a Flower. 2nd Generation on the Left, 4th Generation in the Center and 6th Generation on the Right}}{19}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Different Variations of the Same L-system with Randomness Introduced in The Angles. }}{20}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Representation of an L-system with a probability stochastic with a 33.33\% chance for each rule.}}{21}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Condition Statements Used to Simulate the Growth of a Flower. 2nd Generation on the Left, 4th Generation in the Center and 6th Generation on the Right}}{20}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Different Variations of the Same L-system with Randomness Introduced in The Angles. }}{21}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Representation of an L-system with a probability stochastic with a 33.33\% chance for each rule.}}{22}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Point in 3D space shown using cartesian coordinates.}}{22}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Right Hand and Left Hand Coordinate Systems.}}{23}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces 2D Vector representing the vector at (-3, 2) And 3D Vector (4, 3, -1).}}{23}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Point in 3D space shown using cartesian coordinates.}}{23}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Right Hand and Left Hand Coordinate Systems.}}{24}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces 2D Vector representing the vector at (-3, 2) And 3D Vector (4, 3, -1).}}{24}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Koch Curve.}}{34}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Sierpinski Triangle.}}{35}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Fractal Plant.}}{35}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Fractal Bush.}}{36}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Koch Curve.}}{35}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Sierpinski Triangle.}}{36}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Fractal Plant.}}{36}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Fractal Bush.}}{37}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Example of the continuity problem faced with stacked branching with a 25$^{\circ }$ bend per joint.}}{37}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Example of linked branching with a 25$^{\circ }$ bend per joint.}}{38}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Example of the continuity problem faced with stacked branching with a 25$^{\circ }$ bend per joint.}}{38}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Example of linked branching with a 25$^{\circ }$ bend per joint.}}{39}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

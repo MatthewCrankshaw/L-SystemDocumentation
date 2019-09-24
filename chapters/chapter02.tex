@@ -76,10 +76,6 @@ A paper by Przemyslaw Prusinkiewicz outlines a method for interpreting the L-sys
 
 \vspace{5mm}
 
-In the OL-system there are a number of symbols that represent a particular meaning to the L-system interpreter. Whenever the interpreter comes across one of these symbols in the resultant string, it is interpreted as a particular turtle instruction which can be seen in the table below:
-
-\vspace{5mm}
-
 \begin{table}[h!]
 \begin{tabular}{ | c | l | }
 \hline
@@ -108,8 +104,9 @@ In the OL-system there are a number of symbols that represent a particular meani
 \end{table}
 \FloatBarrier
 
+In the OL-system there are a number of symbols that represent a particular meaning to the L-system interpreter. Whenever the interpreter comes across one of these symbols in the resultant string, it is interpreted as a particular turtle instruction which can be seen in table \ref{instruction table 1}. 
 
-The turtle instructions are presented in such a way that allows movement in three dimensions, the rotations in yaw, pitch and roll are multiplied together, if the turtle moves forward again it will move in the direction of this new orientation. Diagram  \ref{3D rotations} shows the yaw, pitch and roll rotations and their associated interpretation names. \\ 
+\vspace{5mm}
 
 \begin{figure}[htbp]
 	{\centering
@@ -123,6 +120,8 @@ The turtle instructions are presented in such a way that allows movement in thre
 \end{figure}
 \FloatBarrier
 
+The turtle instructions are presented in such a way that allows movement in three dimensions, the rotations in yaw, pitch and roll, where yaw is a rotation around the Z axis, pitch is rotation around the X axis and roll is rotation around the Y axis. We have two symbols for each rotation, which represent positive and negative rotations repectively. Rotations are expected to be applied before a translation, that way the rotations change the orientation of the turtle and then the forward instructions move the turtle in the Y direction using the current orientation. The orientation is maintained from translation to translation, and subsequent rotations are concatonated to maintain a global orientation, in this way when the turtle moves forward again, it will move in the direction of this global orientation. Diagram  \ref{3D rotations} shows the yaw, pitch and roll rotations as well as their axis and the instruction symbols for the L-system. \\ 
+
 \vspace{5mm}
 
 The turtle instructions in the table \ref{instruction table 1}, can be used as the alphabet for the rewriting system in the the L-system grammar below:
@@ -132,29 +131,47 @@ The turtle instructions in the table \ref{instruction table 1}, can be used as t
 	&\text{Generations: 1}\\
 	&\text{Angle: 90$^{\circ}$}\\
 	&\omega~~ : F \\
-	&p_1~ :  a_r~ \rightarrow~ F+F-F-F+F\\
+	&p_1~ :  F~ \rightarrow~ F+F-F-F+F\\
 \end{aligned}
 \end{equation}
 
 \vspace{5mm}
 
-With the L-system above the resulting string would be "F+F-F-F+F", this string can be interpreted using turtle graphics to give a list of instructions.
+This L-system makes use of the alphabet "F, +, -". The meaning of these symbols is not relevent to the rewriting system, so we can use the axiom and production rule to rewrite by one generation. The only piece of information which is relavent to the interpreter is the angle to rotate by when it comes across the symbols + and - this is specified in the definition of the L-system with Angle: 90$^{\circ}$. The resulting string would be "F+F-F-F+F", this string is passed to the interpreter system which uses turtle graphics to execute a list of instructions. These instructions can be articulated in the list below.
 
 \vspace{5mm}
 
-Instruction 1. Move forward by 1.\\
-Instruction 2. Rotate right by 90 degrees.\\
-Instruction 3. Move forward by 1.\\
-Instruction 4. Rotate left by 90 degrees \\
-Instruction 5. Move forward by 1. \\
-Instruction 6. Rotate left by 90 degrees. \\
-Instruction 7. Move forward by 1. \\
-Instruction 8. Rotate right by 90 degrees. \\
-Instruction 9. Move forward by 1.\\
+\begin{table}[h!]
+\begin{tabular}{ | c | c | l | }
+\hline
+	 	Instruction Number & Instruction Symbol & Instruction Interpretation \\  
+\hline
+\hline
+	I1 						& F & Move forward by 1\\
+\hline
+	I2						& + & Yaw right by 90 degrees\\
+\hline
+	I3						& F & Move forward by 1\\
+\hline
+	I4						& - & Yaw left by 90 degrees \\
+\hline
+	I5						& F & Move forward by 1\\
+\hline
+	I6 						& - & Yaw left by 90 degrees \\
+\hline
+	I7 						& F & Move forward by 1\\
+\hline
+	I8 						& + & Yaw right by 90 degrees\\
+\hline
+	I9 						& F & Move forward by 1\\
+\hline
+\end{tabular}
+\caption{Table showing each instruction symbols and their meaning for the L-system \ref{DOL-system example}}
+\label{Instruction Interpretation}
+\end{table}
+\FloatBarrier
 
-\vspace{5mm}
-
-talk about the complexities of each system. 
+These instructions are carried out one after the other, moving the turtle around the screen in three dimensions, furthermore, tracing the structure which the 0L-system has generated, these instructions will generate the traced line shown in figure \ref{basic turtle}.
 
 \vspace{5mm}
 
@@ -163,7 +180,7 @@ talk about the complexities of each system.
 		\setlength{\fboxrule}{1pt}
 		\vspace{7px}
 		\fbox{
-			\includegraphics[scale=0.5]{Diagrams/basic_turtle.png}
+			\includegraphics[scale=0.3]{Diagrams/basic_turtle.png}
 		}
 		\caption{Diagram showing a turtle interpreting simple L-system string.} \label{basic turtle}
 	}
@@ -172,15 +189,15 @@ talk about the complexities of each system.
 
 \vspace{5mm}
 
-There are a further two commands which I will be covering in detail in section \ref{branching}. We can also have constant numerical values that can be used. For instance, we could pass in a constant value of 1.0 as a parameter to the forward instruction as follows.
+As we can see from the turtle interpretation above, the turtle moves around as if it is an entity within a 3D world following a set of instructions telling it where to move. This is the basic concept of turtle graphics and how it is implemented in the interpreter system. What also becomes apparent is that there are a number of assumptions which the interpreter makes in order to produce the final image in I9. It is assumed that that the + and - symbols mean a change in yaw of 90 degrees, and the second assumption is that the F symbol means to move forward by a distance of 1 unit measurement. The angle and distance values are assumed because the resultant string does not explicitly define the angle or the distance, it leaves that up to the interpretation of the string. \\
 
 \vspace{5mm}
 
-F(1.0)+F(1.0)-F(1.0)+F(1.0)
+In a simple DOL-system like the one above, there is no explicit way of providing this additional information to the interpreter, as such it must be hardcoded into the interpretation, or assumed by some other means. This highlights one of the considerations when creating an L-system. There is a difference in complexities between the L-system rewriter and the interpreter. It is possible to create a very complex rewriting system with extensive rule systems, which is able to supply a large amount of information to the interpreter, urgo, the interpreter can be quite rudimentary and follow the instructions exactly. Conversely, we could have a system where the L-system rewriter is quite basic, but the interpreter is very complex and must be capable of representing the L-system dispite the lack of information in the resultant string, or be able to obtain this information by other means. \\
 
 \vspace{5mm}
 
-In doing this, we can specify that we would like to move forward by a specified amount. In this case we would like to move forward by 1.0 unit length. We will be covering parametric L-systems in detail in section \ref{parametric}.
+It may be tempting to leave the complexity to the interpreter in order to make the L-system rewriter and it's rules more simple, however, the drawback of this, is that the information needed to modeling branch diameters, branching angles even the type of objects that need to be represented have to be supplied to the interpreter in some way, and if not through the resulting string of information, how is this information meant to provided to the interpreter. An answer may be to build a system within the interpreter that is capable of assuming the general look of a plant, for instance, branches which decrement in diameter, branching angles which are consistant and other aspects. This results in a very inflexible system which may work for a portion of plant-life but might struggle to represent certain classes of plant-life. Therefore, the benefit of using a system with most of it's complexity with the rewriting system is that the L-system is responsible for some of the details of the interpretation such as angles, branch diameters and so on. In the next few sections I will be going through different types of L-systems and their benefits as well as developing a system intergrating these separate systems into an a single L-system grammar.   
 
 \end{flushleft}
 
@@ -188,7 +205,7 @@ In doing this, we can specify that we would like to move forward by a specified 
 
 \begin{flushleft}
 
-In the previous section there are two turtle commands in particular which were  not covered. These are the square bracket commands '[', ']'. The square bracket characters instruct the turtle object to save its position and rotation for the purpose of being able to restore that saved position and rotation later on. This allows the turtle to jump back to a previous position, facing the same direction as it was before. We can then branch off in a different direction.\\
+The previous section covered a very basic 0L-system, which was capable of tracing a 3D pattern, the 0L-system allows us to move around a 3D space, however we are not able to branch in or more different direction just as a plant might. Lindenmayer introduced two symbols which make branching much easier \cite{lindenmayer1968mathematical}. These are the square bracket commands '[', ']'. The square bracket characters instruct the turtle object to save its current position and orientation for the purpose of being able to go back to that saved position and orientation later. This allows the turtle to jump back to a previous position, facing the same direction as it was before. We can then change orientation and branch off in a different direction. This was originally used by Lindenmayer to develop the branching that occurs in algea, this idea was later used to represent plant-life by Smith \cite{smith1984plants}. \\
 
 \vspace{5mm}
 

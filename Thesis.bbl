@@ -78,6 +78,11 @@ Sellers, G., Wright~Jr, R.~S., and Haemel, N. (2013).
 \newblock {\em OpenGL superBible: comprehensive tutorial and reference}.
 \newblock Addison-Wesley.
 
+\bibitem[Smith, 1984]{smith1984plants}
+Smith, A.~R. (1984).
+\newblock Plants, fractals, and formal languages.
+\newblock {\em ACM SIGGRAPH Computer Graphics}, 18(3):1--10.
+
 \bibitem[Stroustrup, 2000]{stroustrup2000c++}
 Stroustrup, B. (2000).
 \newblock {\em The C++ programming language}.
