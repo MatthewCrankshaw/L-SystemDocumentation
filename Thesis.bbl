@@ -16,6 +16,11 @@ Cooper, K. and Torczon, L. (2011).
 \newblock {\em Engineering a compiler}.
 \newblock Elsevier.
 
+\bibitem[Eichhorst and Savitch, 1980]{eichhorst1980growth}
+Eichhorst, P. and Savitch, W.~J. (1980).
+\newblock Growth functions of stochastic lindenmayer systems.
+\newblock {\em Information and Control}, 45(3):217--228.
+
 \bibitem[{GLFW development team}, 2019]{glfwDocumentation}
 {GLFW development team} (2019).
 \newblock Glfw documentation.
@@ -109,5 +114,10 @@ Worth, P. and Stepney, S. (2005).
 \newblock Growing music: musical interpretations of l-systems.
 \newblock In {\em Workshops on Applications of Evolutionary Computation}, pages
   545--550. Springer.
+
+\bibitem[Yokomori, 1980]{yokomori1980stochastic}
+Yokomori, T. (1980).
+\newblock Stochastic characterizations of eol languages.
+\newblock {\em Information and Control}, 45(1):26--33.
 
 \end{thebibliography}

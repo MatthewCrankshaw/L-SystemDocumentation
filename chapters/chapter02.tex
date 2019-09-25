@@ -209,23 +209,35 @@ The previous section covered a very basic 0L-system, which was capable of tracin
 
 \vspace{5mm}
 
-A way to keep track of these saved locations, is in the form of a stack structure. Each time the '[' is called the current position and orientation of the turtle is saved to the top of the stack. While conversely when the ']' is called we restore the turtles position back to whatever position and orientation is stored on the top of the stack. \\
-
-\vspace{5mm}
-
-An example of this can be shown below in figure 2.2.\\
+The same method of interpreting the L-system string is applied, the symbols [ and ] are used in order the translate back to a previous position and orientation in order to branch off in a different direction. Each save state symbol [ must have a corresponding load state symbol within the string. In order to have a branch off of another branch we can have nested save and load state symbols. For instance the resultant string "F[+F-F]-F" branches off the main branch once as seen in figure \ref{branching 1}. Additionally using nested save and load states in the string "F[+F[+F]-F]-F" we are able to branch twice which can be shown in figure \ref{branching 2}.
 
 \begin{figure}[htbp]
 	{\centering
 		\setlength{\fboxrule}{1pt}
 		\vspace{7px}
 		\fbox{
-			\includegraphics[scale=0.35]{Diagrams/branching_turtle.png}
+			\includegraphics[scale=0.35]{Diagrams/branching.png}
 		}
-		\caption{Diagram showing a turtle interpreting an L-system incorporating branching.}
+		\caption{Diagram showing a turtle interpreting an L-system using the branching symbols.} \label{branching 1}
 	}
 \end{figure}
 \FloatBarrier
+
+Save and load operations are handled using the \acrfull{lifo} principle, meaning that when the save symbol is used [ the current position and orientation at $p1$ is saved, the next load state ] will restore $p1$'s position and orientation, unless another save takes place in which case that save will have to be loaded before $p1$ can be loaded. In this way, the position saves are stacked and the most recent save is loaded. This can be seen in figure \ref{branching 2} where we have nested branching. \\
+
+\begin{figure}[htbp]
+	{\centering
+		\setlength{\fboxrule}{1pt}
+		\vspace{7px}
+		\fbox{
+			\includegraphics[scale=0.35]{Diagrams/NestedBranching.png}
+		}
+		\caption{Diagram showing a turtle interpreting an L-system with nested branching.} \label{branching 2}
+	}
+\end{figure}
+\FloatBarrier
+
+The main advantage to using the save and load position functionality as a symbol within the alphabet of the L-system is that the rewiting system itself handels the branching. There is often no production rule for the save and load symbols and thus the symbols remain consistant from generation to generation. \\ 
 
 \end{flushleft}
 
@@ -284,6 +296,8 @@ $\bullet$ The condition of the production evaluates to true. If there is no cond
 
 \subsection{Defining Constants and Objects}
 
+\begin{flushleft}
+
 There are some other features covered by Prusinkiewicz and Lindenmayer, that are not specific to the parametric L-systems definition itself but serve more as quality of life. In the literature, they refer to the \#define which is said "To assign values to numerical constants used in the L-system" as well as the \#include statement which specifies what type of shape to draw by refering to a library of predefined shapes \cite{prusinkiewicz2012algorithmic}. \\
 For instance if we have an value for an angle that we would like to use within the production rules we can use the \#define statement as follows:
 
@@ -332,9 +346,12 @@ With regards to the \#include statement, In the literature the \#include may be 
 
 \vspace{5mm}
 
-In the simple example in figure \ref{object statement example} above, you can see that the first three F modules render a branch segment with length of 1.0, however for the final module the S module renders a sphere of diameter 1.0. It is possible  
+In the simple example in figure \ref{object statement example} above, you can see that the first three F modules render a branch segment with length of 1.0, however for the final S module renders a sphere of diameter 1.0. The \#object feature bares no meaning to the rewriting system, it simply stands as an instruction to the interpreter which instructs that each time the symbols F or S are interpreted, a specific object should be rendered, such as BRANCH and SPHERE respectively. \\     
 
 I will be going into more detail about this and other features in section \ref{l-system generator section}.
+
+
+\end{flushleft}
 
 \subsection{Modules With Special Meanings}
 
@@ -426,8 +443,6 @@ A practical use of the condition statement might be to simulate different stages
 
 \vspace{5mm}
 
-\begin{figure}[htbp]
-
 \begin{equation} \label{conditional l-system example}
 \begin{aligned}
 	&n=2,~4,~6 \\
@@ -446,13 +461,14 @@ A practical use of the condition statement might be to simulate different stages
 \end{aligned}
 \end{equation}
 
+\begin{figure}[htbp]
 	{\centering
 		\vspace{7px}
 		\setlength{\fboxrule}{1pt}
 		\fbox{
-			\includegraphics[scale=0.13]{Diagrams/conditionalLsystem.png}
+			\includegraphics[scale=0.10]{Diagrams/conditionalLsystem.png}
 		}
-		\caption{Condition Statements Used to Simulate the Growth of a Flower. 2nd Generation on the Left, 4th Generation in the Center and 6th Generation on the Right}
+		\caption{Condition statements used to simulate the growth of a flower. 2nd generation on the left, 4th generation in the center and 6th generation on the right}
 	}
 \end{figure}
 
@@ -465,19 +481,21 @@ A practical use of the condition statement might be to simulate different stages
 
 \begin{flushleft}
 
-Randomness is an essential part of nature. If there was no randomness in plant life, we would end up with very symetric and unrealistic plants. Randomness is also responsible for creating variation in the same L-system. A L-system essentially describes the structure and species of a plant. It describes everything from how large the trunk of the tree is, to how many leaves there are on the end of branch, or even if it has flowers or not. However if there is no capability to have randomness in the generation of the L-system then we will always end up with the exact same structure. 
+Randomness is an essential part of nature. If there was no randomness in plant life, it would end up with very symetric and unrealistic. Randomness is also responsible for creating variation in the same L-system. A L-system essentially describes the structure and species of a plant. It describes everything from how large the trunk of the tree is, to how many leaves there are on the end of branch, or even if it has flowers or not. However if there is no capability to have randomness in the generation of the L-system then we will always end up with the exact same structure. 
 \vspace{5mm}
 Below is a simple example of how randomness can be used to create variation.
 
-\end{flushleft}   
+\begin{equation} \label{randomness example}
+\begin{aligned}
+	&n=2\\
+	&\text{\#define r 25} \\
+	&\omega~~ :~ !(0.2)F(1.0)\\
+	&p_1~ :  F(x)~ :~ *~ \rightarrow~ F(x)[+(r)F(x)][-(r)F(x)]+(\{-20, 20\})F(x)-(\{-20, 20\})F(x)\\
+\end{aligned}
+\end{equation}
 
 \begin{figure}[htbp]
-	\raggedright
-	\textbf{\underline{Random Fractal:}} \\
-	\#n = 2; \\
-	\#w : !(0.2)F(1.0); \\
-	\#p1 : F(x) : * : F(x)[+(25)F(x)][-(25)F(x)]+(\{-20.0, 20.0\})F(x)-(\{-20.0, 20.0\})F(x);\\
-	\vspace{10mm}
+
 	{\centering
 		\vspace{7px}
 		\setlength{\fboxrule}{1pt}
@@ -487,9 +505,8 @@ Below is a simple example of how randomness can be used to create variation.
 		\caption{Different Variations of the Same L-system with Randomness Introduced in The Angles. \label{figRandomness}}
 	}
 \end{figure}
-\FloatBarrier
 
-\begin{flushleft}
+\FloatBarrier
 
 In figure \ref{figRandomness} there are four variations of the same L-system using randomness, We can specify that we would like to create a random number by using the expression \{-20.0, 20.0\}. The curly braces signify that what is contained is a random number range, ranging from the minimum value as the first floating point value and the maximum value as the second floating point value separated by a comma. If both values are the same for instance +(\{10.0, 10.0\}) this is equivilant to +(10.0).
 
@@ -498,6 +515,30 @@ In figure \ref{figRandomness} there are four variations of the same L-system usi
 \subsection{Stochastic Rules in the L-system} \label{Stochastic L-system Subsection}
 
 \begin{flushleft}
+
+Similar to the randomness L-system, introduced in section \ref{Randomness L-system Subsection}, stochastic L-systems fulfill a similar goal. L-systems on their own are incapable of creating any variation, they simply follow a strict set of production rules which gives the same result. Introducing randomness to an L-system for the parameters and other information can result in a slightly different look to a plant but does not change to overall structure of the plant. In order to create a different structure for a plant we must introduce some stochastic probability in the way a rule is chosen and therefore, affect the rewriting of the structure itself. \\
+
+\vspace{5mm}
+
+Eichhorst and Savitch introduced a new type of 0L-system called the S0L-system, this added two features to the existing 0L-system, firstly the S0L-system is not limited to defining a single axiom (starting point), a finite number of starting points defined and a probability distribution is used in order to select the starting point. Secondly the S0L-system allows you to define a finite number of production rules which have a probability distribution in order to decide which rule should be chosen for rewriting \cite{eichhorst1980growth}. Similarly an artical by Yokomori proposes a stochastic 0L-system which also proposes a measure of the entropy of a string generated by a 0L-system \cite{yokomori1980stochastic}. \\
+
+\vspace{5mm}
+
+In this paper I will be using a variation of the S0L-system's concepts and developing them into the existing parametric 0L-system. This will mean that some production rules in the L-system can rely on some condition to be met, and additionally other rules could rely on a probability distrobution to select the production rule. This L-system will not allow multiple starting points, like that of the SOL-system, as it does not seem necessary and could overcomplicate the L-system, however, it could be added in the future.
+
+\vspace{5mm} 
+
+
+\begin{equation} \label{stochastic example}
+\begin{aligned}
+	&n=5\\
+	&\text{\#define r 25}\\
+	&\omega~~ :~ F(1)\\
+	&p_1~ :  F(x)~ :~ \sim 0.33 ~ \rightarrow~ F(x)[+(r)F(x)]F(x)[-(r)F(x)]F(x)\\
+	&p_2~ :  F(x)~ :~ \sim 0.33 ~ \rightarrow~ F(x)[+(r)F(x)]F(x)\\
+	&p_3~ :  F(x)~ :~ \sim 0.34 ~ \rightarrow~ F(x)[-(r)F(x)]F(x)\\
+\end{aligned}
+\end{equation}
 
 \begin{figure}[htbp]
 	{\centering
