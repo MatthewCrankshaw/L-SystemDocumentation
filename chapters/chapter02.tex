@@ -524,10 +524,11 @@ Eichhorst and Savitch introduced a new type of 0L-system called the S0L-system, 
 
 \vspace{5mm}
 
-In this paper I will be using a variation of the S0L-system's concepts and developing them into the existing parametric 0L-system. This will mean that some production rules in the L-system can rely on some condition to be met, and additionally other rules could rely on a probability distrobution to select the production rule. This L-system will not allow multiple starting points, like that of the SOL-system, as it does not seem necessary and could overcomplicate the L-system, however, it could be added in the future.
+In this paper, I will be using a variation of the S0L-system's concepts and developing them into the existing parametric 0L-system. This will mean that some production rules in the L-system can rely on some condition to be met, and additionally other rules could rely on a probability distrobution to select the production rule. This L-system will not allow multiple starting points, like that of the SOL-system, as it does not seem necessary and could overcomplicate the L-system, however, it could be added in the future.
 
-\vspace{5mm} 
+\vspace{5mm}
 
+The following L-system definition is a states three production rules. For a finite set of production rules to be stochastic, the production rules must share the same module name an the same number of parameters. There must be two or more production rules and the total probability distribution must add up to 1.0. \\
 
 \begin{equation} \label{stochastic example}
 \begin{aligned}
@@ -539,6 +540,8 @@ In this paper I will be using a variation of the S0L-system's concepts and devel
 	&p_3~ :  F(x)~ :~ \sim 0.34 ~ \rightarrow~ F(x)[-(r)F(x)]F(x)\\
 \end{aligned}
 \end{equation}
+
+As you can see above the module F(x) is the predecessor for all three of the production rules, each rule has a probability of approximately one third, except for the 3rd production rule which has a slightly higher probability in order to have a total probability of 1.0. During the rewriting process, when the module F with one parameter is found, a production rule is randomly selected using the probability distribution described. \\
 
 \begin{figure}[htbp]
 	{\centering
