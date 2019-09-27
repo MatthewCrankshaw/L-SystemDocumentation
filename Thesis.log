@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.27)  25 SEP 2019 15:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.27)  27 SEP 2019 11:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -866,14 +866,14 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 511.
  [21 <./images/Diagrams/conditionalLsystem.png> <./images/Diagrams/RandomTrees.
-png>]
-<images/Diagrams/stochastics.png, id=100, 1204.5pt x 401.5pt>
+png>] [22]
+<images/Diagrams/stochastics.png, id=103, 1204.5pt x 401.5pt>
 File: images/Diagrams/stochastics.png Graphic file (type png)
 <use images/Diagrams/stochastics.png>
-Package pdftex.def Info: images/Diagrams/stochastics.png  used on input line 54
-9.
+Package pdftex.def Info: images/Diagrams/stochastics.png  used on input line 55
+2.
 (pdftex.def)             Requested size: 421.58131pt x 140.5271pt.
- [22])
+)
 [23 <./images/Diagrams/stochastics.png>]
 Chapter 3.
 (./chapters/chapter03.tex
@@ -1272,10 +1272,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7616 strings out of 494880
- 111895 string characters out of 6179601
- 231571 words of memory out of 5000000
- 10693 multiletter control sequences out of 15000+600000
+ 7617 strings out of 494880
+ 111915 string characters out of 6179601
+ 231582 words of memory out of 5000000
+ 10694 multiletter control sequences out of 15000+600000
  12474 words of font info for 44 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  45i,12n,37p,1987b,451s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1291,7 +1291,7 @@ ic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Thesis.pdf (49 pages, 2652834 bytes).
+Output written on Thesis.pdf (49 pages, 2654750 bytes).
 PDF statistics:
  249 PDF objects out of 1000 (max. 8388607)
  151 compressed objects within 2 object streams
