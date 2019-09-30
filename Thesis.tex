@@ -4,23 +4,39 @@
 \usepackage{graphicx}
 \usepackage[margin=1in]{geometry}
 \usepackage{placeins}
+\usepackage{setspace}
 \usepackage[acronym]{glossaries}
 \usepackage{url}
 \graphicspath{ {images/} }
+\usepackage{geometry}
+\geometry{
+	legalpaper, 
+	portrait,
+	total={297mm, 210mm},
+	top = 25mm, 
+	bottom = 25mm, 
+	left = 40mm, 
+	right = 20mm
+	}
+
+\linespread{1.5}
+
 
 \title{
-{ Procedural Plant Generation and Simulated Plant Growth }\\
-{\large Massey University}
-\\
-\vspace{2cm}
-{\includegraphics[scale=0.35]{titlepage.png}}
-\vspace{2cm}
+{\huge Procedural Plant Generation and Simulated Plant Growth }\\
+\vspace{3cm}
+{\large A thesis presented in partial fulfilment of the requirements for the degree of \\
+\vspace{4cm}
+\large Master of Information Science\\
+\large in\\
+\large Computer Science\\
+\vspace{4cm}
+\large at Massey University, Albany, \\
+\large New Zealand. }
+\vspace{3cm}
+\author{Matthew Halen Crankshaw}
+\date{2019}
 }
-
-
-\author{Matthew Crankshaw}
-\date{25 February 2019}
-
 
 \makeglossaries
 \input{chapters/glossary}
@@ -47,10 +63,10 @@
 \chapter{3D Mathematics}
 \input{chapters/chapter03}
 
-\chapter{Physics Simulation}
+\chapter{L-system Lexer and Parser Implementation}
 \input{chapters/chapter04}
 
-\chapter{L-system Parser Implementation}
+\chapter{Physics Simulation}
 \input{chapters/chapter05}
 
 \chapter{Turtle Interpreter Implementation}

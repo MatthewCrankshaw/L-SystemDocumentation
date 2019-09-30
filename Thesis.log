@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.27)  27 SEP 2019 11:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.27)  30 SEP 2019 14:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -453,6 +453,9 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 (/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
 Package: placeins 2005/04/18  v 2.2
 )
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
 (/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
 Package: glossaries 2017/11/14 v4.35 (NLCT)
 
@@ -626,16 +629,24 @@ Package: glossary-tree 2017/11/14 v4.35 (NLCT)
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
+
+Package geometry Warning: Over-specification in `h'-direction.
+    `width' (845.04684pt) is ignored.
+
+
+Package geometry Warning: Over-specification in `v'-direction.
+    `height' (597.50787pt) is ignored.
+
 \glswrite=\write3
 \glo@main@file=\write4
 \openout4 = `Thesis.glo'.
 
-Package glossaries Info: Writing glossary file Thesis.glo on input line 25.
+Package glossaries Info: Writing glossary file Thesis.glo on input line 41.
 \glo@acronym@file=\write5
 \openout5 = `Thesis.acn'.
 
-Package glossaries Info: Writing glossary file Thesis.acn on input line 25.
- (./chapters/glossary.tex) (./Thesis.aux
+Package glossaries Info: Writing glossary file Thesis.acn on input line 41.
+(./chapters/glossary.tex) (./Thesis.aux
 
 LaTeX Warning: Label `DOL-system example' multiply defined.
 
@@ -648,18 +659,18 @@ LaTeX Warning: Label `3DAxisFigure' multiply defined.
 )
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count131
@@ -729,19 +740,19 @@ e
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
-* paper: <default>
+* paper: legalpaper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
-* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* h-part:(L,W,R)=(113.81102pt, 443.57848pt, 56.9055pt)
+* v-part:(T,H,B)=(71.13188pt, 869.51624pt, 71.13188pt)
 * \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=469.75502pt
-* \textheight=650.43001pt
-* \oddsidemargin=0.0pt
-* \evensidemargin=0.0pt
-* \topmargin=-37.0pt
+* \paperheight=1011.78pt
+* \textwidth=443.57848pt
+* \textheight=869.51624pt
+* \oddsidemargin=41.54103pt
+* \evensidemargin=41.54103pt
+* \topmargin=-38.1381pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=11.0pt
@@ -759,21 +770,16 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<images/titlepage.png, id=1, 1003.75pt x 664.4825pt>
-File: images/titlepage.png Graphic file (type png)
-<use images/titlepage.png>
-Package pdftex.def Info: images/titlepage.png  used on input line 30.
-(pdftex.def)             Requested size: 351.31776pt x 232.57236pt.
 [1
 
 \openout3 = `Thesis.ist'.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/titlepage.png>] [
-1
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [1
 
 ] [2
 
-] (./Thesis.toc [3
+] (./Thesis.toc
+[3
 
 ])
 \tf@toc=\write6
@@ -800,29 +806,28 @@ Chapter 2.
 (./chapters/chapter02.tex [9
 
 ] [10] [11]
-<images/Diagrams/rotations.png, id=54, 482.80376pt x 388.45125pt>
+<images/Diagrams/rotations.png, id=51, 482.80376pt x 388.45125pt>
 File: images/Diagrams/rotations.png Graphic file (type png)
 <use images/Diagrams/rotations.png>
 Package pdftex.def Info: images/Diagrams/rotations.png  used on input line 117.
 
 (pdftex.def)             Requested size: 144.84224pt x 116.53627pt.
  [12 <./images/Diagrams/rotations.png>]
-<images/Diagrams/basic_turtle.png, id=60, 1131.22626pt x 405.515pt>
+<images/Diagrams/basic_turtle.png, id=58, 1131.22626pt x 405.515pt>
 File: images/Diagrams/basic_turtle.png Graphic file (type png)
 <use images/Diagrams/basic_turtle.png>
 Package pdftex.def Info: images/Diagrams/basic_turtle.png  used on input line 1
 84.
 (pdftex.def)             Requested size: 339.3705pt x 121.65543pt.
 
-[13 <./images/Diagrams/basic_turtle.png>]
-<images/Diagrams/branching.png, id=65, 963.6pt x 368.37625pt>
+[13 <./images/Diagrams/basic_turtle.png>] [14]
+<images/Diagrams/branching.png, id=66, 963.6pt x 368.37625pt>
 File: images/Diagrams/branching.png Graphic file (type png)
 <use images/Diagrams/branching.png>
 Package pdftex.def Info: images/Diagrams/branching.png  used on input line 220.
 
 (pdftex.def)             Requested size: 337.26506pt x 128.93361pt.
- [14]
-<images/Diagrams/NestedBranching.png, id=69, 963.6pt x 352.31625pt>
+<images/Diagrams/NestedBranching.png, id=67, 963.6pt x 352.31625pt>
 File: images/Diagrams/NestedBranching.png Graphic file (type png)
 <use images/Diagrams/NestedBranching.png>
 Package pdftex.def Info: images/Diagrams/NestedBranching.png  used on input lin
@@ -830,21 +835,21 @@ e 234.
 (pdftex.def)             Requested size: 337.26506pt x 123.31253pt.
  [15 <./images/Diagrams/branching.png> <./images/Diagrams/NestedBranching.png>]
  [16] [17]
-<images/Diagrams/object_example.png, id=81, 1204.5pt x 798.985pt>
+<images/Diagrams/object_example.png, id=79, 1204.5pt x 798.985pt>
 File: images/Diagrams/object_example.png Graphic file (type png)
 <use images/Diagrams/object_example.png>
 Package pdftex.def Info: images/Diagrams/object_example.png  used on input line
  341.
 (pdftex.def)             Requested size: 240.89574pt x 159.79416pt.
  [18 <./images/Diagrams/object_example.png>]
-<images/ParametricLsystem/branchingPattern.png, id=86, 1204.5pt x 597.23125pt>
+<images/ParametricLsystem/branchingPattern.png, id=84, 1204.5pt x 597.23125pt>
 File: images/ParametricLsystem/branchingPattern.png Graphic file (type png)
 <use images/ParametricLsystem/branchingPattern.png>
 Package pdftex.def Info: images/ParametricLsystem/branchingPattern.png  used on
  input line 388.
 (pdftex.def)             Requested size: 240.89574pt x 119.44412pt.
  [19 <./images/ParametricLsystem/branchingPattern.png>]
-<images/Diagrams/conditionalLsystem.png, id=90, 3613.5pt x 803.0pt>
+<images/Diagrams/conditionalLsystem.png, id=88, 3613.5pt x 803.0pt>
 File: images/Diagrams/conditionalLsystem.png Graphic file (type png)
 <use images/Diagrams/conditionalLsystem.png>
 Package pdftex.def Info: images/Diagrams/conditionalLsystem.png  used on input 
@@ -852,7 +857,7 @@ line 470.
 (pdftex.def)             Requested size: 361.37117pt x 80.3047pt.
 
 [20]
-<images/Diagrams/RandomTrees.png, id=94, 1003.75pt x 803.0pt>
+<images/Diagrams/RandomTrees.png, id=92, 1003.75pt x 803.0pt>
 File: images/Diagrams/RandomTrees.png Graphic file (type png)
 <use images/Diagrams/RandomTrees.png>
 Package pdftex.def Info: images/Diagrams/RandomTrees.png  used on input line 50
@@ -867,7 +872,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 511.
  [21 <./images/Diagrams/conditionalLsystem.png> <./images/Diagrams/RandomTrees.
 png>] [22]
-<images/Diagrams/stochastics.png, id=103, 1204.5pt x 401.5pt>
+<images/Diagrams/stochastics.png, id=101, 1204.5pt x 401.5pt>
 File: images/Diagrams/stochastics.png Graphic file (type png)
 <use images/Diagrams/stochastics.png>
 Package pdftex.def Info: images/Diagrams/stochastics.png  used on input line 55
@@ -877,12 +882,12 @@ Package pdftex.def Info: images/Diagrams/stochastics.png  used on input line 55
 [23 <./images/Diagrams/stochastics.png>]
 Chapter 3.
 (./chapters/chapter03.tex
-<images/Diagrams/3D_Axis.png, id=108, 622.325pt x 622.325pt>
+<images/Diagrams/3D_Axis.png, id=106, 622.325pt x 622.325pt>
 File: images/Diagrams/3D_Axis.png Graphic file (type png)
 <use images/Diagrams/3D_Axis.png>
 Package pdftex.def Info: images/Diagrams/3D_Axis.png  used on input line 13.
 (pdftex.def)             Requested size: 105.79384pt x 105.79384pt.
-<images/Diagrams/HandAxis.png, id=109, 1157.32375pt x 602.25pt>
+<images/Diagrams/HandAxis.png, id=107, 1157.32375pt x 602.25pt>
 File: images/Diagrams/HandAxis.png Graphic file (type png)
 <use images/Diagrams/HandAxis.png>
 Package pdftex.def Info: images/Diagrams/HandAxis.png  used on input line 24.
@@ -890,7 +895,7 @@ Package pdftex.def Info: images/Diagrams/HandAxis.png  used on input line 24.
  [24
 
  <./images/Diagrams/3D_Axis.png>]
-<images/Diagrams/Vector2DAnd3D.png, id=115, 1195.46625pt x 532.99126pt>
+<images/Diagrams/Vector2DAnd3D.png, id=113, 1195.46625pt x 532.99126pt>
 File: images/Diagrams/Vector2DAnd3D.png Graphic file (type png)
 <use images/Diagrams/Vector2DAnd3D.png>
 Package pdftex.def Info: images/Diagrams/Vector2DAnd3D.png  used on input line 
@@ -899,166 +904,116 @@ Package pdftex.def Info: images/Diagrams/Vector2DAnd3D.png  used on input line
  [25 <./images/Diagrams/HandAxis.png> <./images/Diagrams/Vector2DAnd3D.png>] [2
 6]) [27]
 Chapter 4.
-(./chapters/chapter04.tex
-Underfull \hbox (badness 10000) in paragraph at lines 14--37
+(./chapters/chapter04.tex [28
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 28--42
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--37
+Underfull \hbox (badness 10000) in paragraph at lines 28--42
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--37
+Underfull \hbox (badness 10000) in paragraph at lines 28--42
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--37
+Underfull \hbox (badness 10000) in paragraph at lines 28--42
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--37
+Underfull \hbox (badness 10000) in paragraph at lines 28--42
+
+ []
+
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 52.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 52.
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--62
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--37
+Underfull \hbox (badness 10000) in paragraph at lines 45--62
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--37
+Underfull \hbox (badness 10000) in paragraph at lines 45--62
 
  []
 
-[28
 
-])
-Underfull \hbox (badness 10000) in paragraph at lines 40--52
+Underfull \hbox (badness 10000) in paragraph at lines 45--62
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--62
 
  []
 
 [29]
-Chapter 5.
-(./chapters/chapter05.tex
-Underfull \hbox (badness 10000) in paragraph at lines 20--34
+Underfull \hbox (badness 10000) in paragraph at lines 67--73
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20--34
+Underfull \hbox (badness 10000) in paragraph at lines 67--73
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20--34
+Underfull \hbox (badness 10000) in paragraph at lines 67--73
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 20--34
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 20--34
-
- []
-
-[30
-
-]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 44.
- (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
-File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 44.
-
-Underfull \hbox (badness 10000) in paragraph at lines 37--54
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 37--54
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 37--54
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 37--54
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 37--54
-
- []
-
-[31]
-Underfull \hbox (badness 10000) in paragraph at lines 59--65
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 59--65
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 59--65
-
- []
-
-[32]
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
-
- []
-
-
+[30]
 Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--96
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--102
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
+Underfull \hbox (badness 10000) in paragraph at lines 108--110
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--118
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
+Underfull \hbox (badness 10000) in paragraph at lines 124--126
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 130--132
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
+Underfull \hbox (badness 10000) in paragraph at lines 138--140
 
  []
 
@@ -1068,217 +1023,261 @@ Underfull \hbox (badness 10000) in paragraph at lines 159--160
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--166
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--172
+Underfull \hbox (badness 10000) in paragraph at lines 172--174
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--178
+Underfull \hbox (badness 10000) in paragraph at lines 178--180
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
+Underfull \hbox (badness 10000) in paragraph at lines 184--186
+
+ []
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--190
+Underfull \hbox (badness 10000) in paragraph at lines 196--198
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--216
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--221
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--227
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--239
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--265
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--271
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+
+ []
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 295--297
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--303
 
  []
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 197--198
+Underfull \hbox (badness 10000) in paragraph at lines 311--319
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--203
+Underfull \hbox (badness 10000) in paragraph at lines 311--319
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--208
+Underfull \hbox (badness 10000) in paragraph at lines 311--319
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--213
+Underfull \hbox (badness 10000) in paragraph at lines 311--319
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--219
+Underfull \hbox (badness 10000) in paragraph at lines 323--327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--226
+Underfull \hbox (badness 10000) in paragraph at lines 323--327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 229--231
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 250--251
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 255--257
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 261--263
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 282--283
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 287--289
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 293--295
+Underfull \hbox (badness 10000) in paragraph at lines 323--327
 
  []
 
 [34]
-Underfull \hbox (badness 10000) in paragraph at lines 303--311
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 303--311
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 303--311
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 303--311
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 315--319
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 315--319
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 315--319
-
- []
-
-[35]
-<images/KochCurve/KochCurve04.png, id=154, 2464.20625pt x 746.79pt>
+<images/KochCurve/KochCurve04.png, id=149, 2464.20625pt x 746.79pt>
 File: images/KochCurve/KochCurve04.png Graphic file (type png)
 <use images/KochCurve/KochCurve04.png>
 Package pdftex.def Info: images/KochCurve/KochCurve04.png  used on input line 3
-43.
+51.
 (pdftex.def)             Requested size: 369.61499pt x 112.01366pt.
-<images/SierpinskiTriangle/SierpinskiTriangle04.png, id=155, 2319.66624pt x 131
+<images/SierpinskiTriangle/SierpinskiTriangle04.png, id=150, 2319.66624pt x 131
 8.9275pt>
 File: images/SierpinskiTriangle/SierpinskiTriangle04.png Graphic file (type png
 )
 <use images/SierpinskiTriangle/SierpinskiTriangle04.png>
 Package pdftex.def Info: images/SierpinskiTriangle/SierpinskiTriangle04.png  us
-ed on input line 357.
+ed on input line 365.
 (pdftex.def)             Requested size: 347.93492pt x 197.83058pt.
-<images/FractalPlant/FractalPlant05.png, id=156, 1204.5pt x 749.80125pt>
+<images/FractalPlant/FractalPlant05.png, id=151, 1204.5pt x 749.80125pt>
 File: images/FractalPlant/FractalPlant05.png Graphic file (type png)
 <use images/FractalPlant/FractalPlant05.png>
 Package pdftex.def Info: images/FractalPlant/FractalPlant05.png  used on input 
-line 373.
+line 381.
 (pdftex.def)             Requested size: 180.6672pt x 112.46533pt.
-<images/FractalBush/FractalBush06.png, id=157, 1147.28625pt x 795.97375pt>
+<images/FractalBush/FractalBush06.png, id=152, 1147.28625pt x 795.97375pt>
 File: images/FractalBush/FractalBush06.png Graphic file (type png)
 <use images/FractalBush/FractalBush06.png>
 Package pdftex.def Info: images/FractalBush/FractalBush06.png  used on input li
-ne 388.
+ne 396.
 (pdftex.def)             Requested size: 172.08551pt x 119.3909pt.
- [36 <./images/KochCurve/KochCurve04.png>] [37 <./images/SierpinskiTriangle/Sie
-rpinskiTriangle04.png> <./images/FractalPlant/FractalPlant05.png>] [38 <./image
-s/FractalBush/FractalBush06.png>])
+ [35 <./images/KochCurve/KochCurve04.png>] [36 <./images/SierpinskiTriangle/Sie
+rpinskiTriangle04.png> <./images/FractalPlant/FractalPlant05.png> <./images/Fra
+ctalBush/FractalBush06.png>] [37])
+Chapter 5.
+(./chapters/chapter05.tex
+Underfull \hbox (badness 10000) in paragraph at lines 14--37
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--37
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--37
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--37
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--37
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--37
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--37
+
+ []
+
+[38
+
+])
+Underfull \hbox (badness 10000) in paragraph at lines 40--71
+
+ []
+
+[39]
 Chapter 6.
 (./chapters/chapter06.tex
-<images/Diagrams/stackedBranchesMesh.png, id=170, 777.90625pt x 731.73375pt>
+<images/Diagrams/stackedBranchesMesh.png, id=171, 777.90625pt x 731.73375pt>
 File: images/Diagrams/stackedBranchesMesh.png Graphic file (type png)
 <use images/Diagrams/stackedBranchesMesh.png>
 Package pdftex.def Info: images/Diagrams/stackedBranchesMesh.png  used on input
  line 19.
 (pdftex.def)             Requested size: 124.46753pt x 117.07979pt.
-<images/Diagrams/linkedBranchesMesh.png, id=171, 724.7075pt x 623.32875pt>
+<images/Diagrams/linkedBranchesMesh.png, id=172, 724.7075pt x 623.32875pt>
 File: images/Diagrams/linkedBranchesMesh.png Graphic file (type png)
 <use images/Diagrams/linkedBranchesMesh.png>
 Package pdftex.def Info: images/Diagrams/linkedBranchesMesh.png  used on input 
 line 41.
 (pdftex.def)             Requested size: 115.95557pt x 99.73463pt.
- [39
+ [40
 
  <./images/Diagrams/stackedBranchesMesh.png>])
-[40 <./images/Diagrams/linkedBranchesMesh.png>]
+[41 <./images/Diagrams/linkedBranchesMesh.png>]
 Chapter 7.
-(./chapters/chapter07.tex) [41
+(./chapters/chapter07.tex) [42
 
 ]
 Chapter 8.
-(./chapters/chapter08.tex) [42
+(./chapters/chapter08.tex) [43
 
 ]
 Chapter 9.
-(./chapters/chapter09.tex) (./Thesis.acr [43
+(./chapters/chapter09.tex) (./Thesis.acr [44
 
-]) (./Thesis.gls [44
+]) (./Thesis.gls [45
 
-]) [45
+]) [46
 
 ]
 Appendix A.
-(./chapters/appendix.tex (./Thesis.bbl [46
+(./chapters/appendix.tex (./Thesis.bbl [47
 
-]
-Underfull \hbox (badness 2512) in paragraph at lines 25--28
-[]\OT1/cmr/m/n/10.95 GLFW de-vel-op-ment team (2019).  Glfw doc-u-men-ta-tion.
- []
+] [48
 
-[47
-
-])) [48] (./Thesis.aux)
+])) [49] (./Thesis.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7617 strings out of 494880
- 111915 string characters out of 6179601
- 231582 words of memory out of 5000000
- 10694 multiletter control sequences out of 15000+600000
+ 7654 strings out of 494880
+ 112497 string characters out of 6179601
+ 231131 words of memory out of 5000000
+ 10728 multiletter control sequences out of 15000+600000
  12474 words of font info for 44 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 45i,12n,37p,1987b,451s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,12n,63p,1987b,451s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
@@ -1291,10 +1290,10 @@ ic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Thesis.pdf (49 pages, 2654750 bytes).
+Output written on Thesis.pdf (50 pages, 2601407 bytes).
 PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
- 151 compressed objects within 2 object streams
+ 250 PDF objects out of 1000 (max. 8388607)
+ 153 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

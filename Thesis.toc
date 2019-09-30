@@ -30,25 +30,25 @@
 \contentsline {subsection}{\numberline {3.4.1}Unit Quaternion}{27}
 \contentsline {subsection}{\numberline {3.4.2}Quaternion Multiplication}{27}
 \contentsline {subsection}{\numberline {3.4.3}Conjugate and Inverse}{27}
-\contentsline {chapter}{\numberline {4}Physics Simulation}{28}
-\contentsline {section}{\numberline {4.1}Motion Equations}{28}
-\contentsline {section}{\numberline {4.2}Hook's Law}{29}
-\contentsline {chapter}{\numberline {5}L-system Parser Implementation}{30}
-\contentsline {section}{\numberline {5.1}Environment and Tools}{30}
-\contentsline {section}{\numberline {5.2}L-system Generator}{30}
-\contentsline {subsection}{\numberline {5.2.1}Building a Generalised L-system Grammar}{31}
-\contentsline {subsection}{\numberline {5.2.2}\acrlong {bnf} of the L-system Grammar}{33}
-\contentsline {section}{\numberline {5.3}The L-system Interpreter}{35}
-\contentsline {subsection}{\numberline {5.3.1}Scanner - Flex}{35}
-\contentsline {subsection}{\numberline {5.3.2}Parser - Bison}{35}
-\contentsline {section}{\numberline {5.4}Displaying the L-system Instructions}{36}
-\contentsline {subsection}{\numberline {5.4.1}Basic 2D L-systems}{36}
-\contentsline {subsection}{\numberline {5.4.2}The Use of L-systems in 3D applications}{38}
-\contentsline {chapter}{\numberline {6}Turtle Interpreter Implementation}{39}
-\contentsline {section}{\numberline {6.1}Modeling Seamless Branches}{39}
-\contentsline {chapter}{\numberline {7}Findings and Data Analysis}{41}
-\contentsline {chapter}{\numberline {8}Discussion}{42}
-\contentsline {chapter}{\numberline {9}Conclusions}{43}
-\contentsline {chapter}{\numberline {A}Appendix}{46}
-\contentsline {section}{\numberline {A.1}Appendix 1}{46}
-\contentsline {section}{\numberline {A.2}Bibliography}{46}
+\contentsline {chapter}{\numberline {4}L-system Lexer and Parser Implementation}{28}
+\contentsline {section}{\numberline {4.1}Environment and Tools}{28}
+\contentsline {section}{\numberline {4.2}L-system Generator}{29}
+\contentsline {subsection}{\numberline {4.2.1}Building a Generalised L-system Grammar}{30}
+\contentsline {subsection}{\numberline {4.2.2}\acrlong {bnf} of the L-system Grammar}{31}
+\contentsline {section}{\numberline {4.3}The L-system Interpreter}{34}
+\contentsline {subsection}{\numberline {4.3.1}Scanner - Flex}{34}
+\contentsline {subsection}{\numberline {4.3.2}Parser - Bison}{35}
+\contentsline {section}{\numberline {4.4}Displaying the L-system Instructions}{35}
+\contentsline {subsection}{\numberline {4.4.1}Basic 2D L-systems}{35}
+\contentsline {subsection}{\numberline {4.4.2}The Use of L-systems in 3D applications}{37}
+\contentsline {chapter}{\numberline {5}Physics Simulation}{38}
+\contentsline {section}{\numberline {5.1}Motion Equations}{38}
+\contentsline {section}{\numberline {5.2}Hook's Law}{39}
+\contentsline {chapter}{\numberline {6}Turtle Interpreter Implementation}{40}
+\contentsline {section}{\numberline {6.1}Modeling Seamless Branches}{40}
+\contentsline {chapter}{\numberline {7}Findings and Data Analysis}{42}
+\contentsline {chapter}{\numberline {8}Discussion}{43}
+\contentsline {chapter}{\numberline {9}Conclusions}{44}
+\contentsline {chapter}{\numberline {A}Appendix}{47}
+\contentsline {section}{\numberline {A.1}Appendix 1}{47}
+\contentsline {section}{\numberline {A.2}Bibliography}{47}

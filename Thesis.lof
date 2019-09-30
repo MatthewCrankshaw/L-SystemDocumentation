@@ -8,20 +8,20 @@
 \contentsline {figure}{\numberline {2.6}{\ignorespaces 3D Parametric L-system.}}{19}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Condition statements used to simulate the growth of a flower. 2nd generation on the left, 4th generation in the center and 6th generation on the right}}{21}
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Different Variations of the Same L-system with Randomness Introduced in The Angles. }}{21}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Representation of an L-system with a probability stochastic with a 33.33\% chance for each rule.}}{23}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Representation of an L-system with a probability stochastic with a 0.33 probability for each rule.}}{23}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Point in 3D space shown using cartesian coordinates.}}{24}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Right Hand and Left Hand Coordinate Systems.}}{25}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces 2D Vector representing the vector at (-3, 2) And 3D Vector (4, 3, -1).}}{25}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Koch Curve.}}{35}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Sierpinski Triangle.}}{36}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Fractal Plant.}}{36}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Fractal Bush.}}{36}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Koch Curve.}}{36}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Sierpinski Triangle.}}{37}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Fractal Plant.}}{37}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Fractal Bush.}}{38}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Example of the continuity problem faced with stacked branching with a 25$^{\circ }$ bend per joint.}}{39}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Example of linked branching with a 25$^{\circ }$ bend per joint.}}{40}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Example of the continuity problem faced with stacked branching with a 25$^{\circ }$ bend per joint.}}{40}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Example of linked branching with a 25$^{\circ }$ bend per joint.}}{41}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
