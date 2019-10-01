@@ -62,6 +62,10 @@ During the rewriting process, generation zero ($G_0$) is the axiom. In subsequen
 
 \vspace{5mm}
 
+The D0L-system is very simple and minimalist in design, which comes with some limitations. The D0L-system production rules merely state that a if the symbol matches, then that symbol will be rewritten, often this is not the case, there may be some other conditions that may need to be checked before it can be concluded that a rewrite should take place. Furthermore, the symbols within a D0L-system do not supply very much information, for instance, how does the D0L-system indicate how many times a given string has been rewriten? The D0L-system is also deterministic, meaning that there is no randomness the rewriting process, therefore, it will always yeald the same result with no variation. \\
+
+\vspace{5mm}
+
 \end{flushleft}
 
 \section{Interpreting the DOL-system} \label{Interpreting DOL-system}
@@ -320,7 +324,7 @@ Here you can see that the \#define acts like a declaration, where we are going t
 
 \vspace{5mm}
 
-With regards to the \#include statement, In the literature the \#include may be used by stating '\#include H'. This would tell the turtle interpreter that the symbol 'H' is a shape in a library of predefined shapes which should be rendered instead of the default shape. We have decided modify this functionality, instead of the \#include statement, we have provided the \#object statement. The \#object statement serves a similar purpose however instead of import the symbol 'H' we can specify, \#object H HETEROCYST, which specifies that we are associating the symbol or module 'H' with the object HETEROCYST. The HETEROCYST object will be stored in a predefined library. This way we can associate the same object to multiple symbols. It also does not limit us to a predefined name for an object. Below is an example using the \#object statement: \\
+With regards to the \#include statement, In the literature the \#include may be used by stating '\#include H'. This would tell the turtle interpreter that the symbol 'H' is a shape in a library of predefined shapes which should be rendered instead of the default shape. This functionality has been slightly modified, instead of the \#include statement, the \#object is used and serves a similar purpose, however, instead importing the symbol 'H', denoting to the hetrocist object from a library of predefined shapes, The statement "\#object H HETEROCYST" specifies that we are associating the symbol or module 'H' with the object HETEROCYST. The HETEROCYST object is still stored in a predefined library, however, the advantage is that the object can be associated with multiple different symbols, it also does not limit us to a predefined name for an object. Below is an example using the \#object statement: \\
 
 \vspace{5mm}
 
@@ -479,7 +483,7 @@ A practical use of the condition statement might be to simulate different stages
 \end{flushleft}
 
 
-\subsection{Representing Randomness} \label{Randomness L-system Subsection}
+\section{Randomness within L-systems} \label{Randomness L-system Subsection}
 
 \begin{flushleft}
 
@@ -514,7 +518,7 @@ In figure \ref{figRandomness} there are four variations of the same L-system usi
 
 \end{flushleft}
 
-\subsection{Stochastic Rules in the L-system} \label{Stochastic L-system Subsection}
+\section{Stochastic Rules within L-systems} \label{Stochastic L-system Subsection}
 
 \begin{flushleft}
 
@@ -563,8 +567,15 @@ The stochastic L-system definition in \ref{stochastic example}, produces the fol
 
 \end{flushleft}
 
+\section{Summary}
 
+\begin{flushleft}
 
+L-systems represent a set of state transitions based upon the production rules provided, these rules dictate how a string will be rewritten, which in turn determines the overall structure of the plant it is trying to represent. The symbols in D0L-systems or modules in parametric 0L-systems represent particular instructions to be carried out by turtle graphics within the interpreter. The symbols or modules within an L-system do not change the behaviour of the L-system but matter only to the interpreter. Additionally the complexity of the L-system rewriter decides the complexity of the interpreter, if a L-system provides a large amount of information to the interpreter, less assumptions need to be made during the interpretation and therefore, providing the able to more accurately describe the plant-life it is representing. \\
 
+\vspace{5mm}
 
+By using the parametric 0L-system we can build in a number of features, otherwise used in other L-systems, such as branching, conditional production rules, randomness in parameters, stochasticity. These features allow the parametric 0L-system to represent plant-life with varying structures as well as branch lengths, branch widths and production rule conditions can give control over stages of growth. \\ 
+
+\end{flushleft}
 
