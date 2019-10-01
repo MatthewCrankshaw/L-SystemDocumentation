@@ -30,17 +30,18 @@
 \contentsline {subsection}{\numberline {3.4.1}Unit Quaternion}{27}
 \contentsline {subsection}{\numberline {3.4.2}Quaternion Multiplication}{27}
 \contentsline {subsection}{\numberline {3.4.3}Conjugate and Inverse}{27}
-\contentsline {chapter}{\numberline {4}L-system Lexer and Parser Implementation}{28}
-\contentsline {section}{\numberline {4.1}Environment and Tools}{28}
-\contentsline {section}{\numberline {4.2}L-system Generator}{29}
-\contentsline {subsection}{\numberline {4.2.1}Building a Generalised L-system Grammar}{30}
-\contentsline {subsection}{\numberline {4.2.2}\acrlong {bnf} of the L-system Grammar}{31}
-\contentsline {section}{\numberline {4.3}The L-system Interpreter}{34}
-\contentsline {subsection}{\numberline {4.3.1}Scanner - Flex}{34}
-\contentsline {subsection}{\numberline {4.3.2}Parser - Bison}{35}
-\contentsline {section}{\numberline {4.4}Displaying the L-system Instructions}{35}
-\contentsline {subsection}{\numberline {4.4.1}Basic 2D L-systems}{35}
-\contentsline {subsection}{\numberline {4.4.2}The Use of L-systems in 3D applications}{37}
+\contentsline {chapter}{\numberline {4}L-system Rewriter Implementation}{28}
+\contentsline {section}{\numberline {4.1}Environment and Tools}{29}
+\contentsline {section}{\numberline {4.2}Formalising the L-system Descriptor}{29}
+\contentsline {section}{\numberline {4.3}L-system Generator}{29}
+\contentsline {section}{\numberline {4.4}The Need for a L-system Lexical Analyser and Parser}{30}
+\contentsline {subsection}{\numberline {4.4.1}Building a Generalised L-system Grammar}{31}
+\contentsline {subsection}{\numberline {4.4.2}\acrlong {bnf} of the L-system Grammar}{33}
+\contentsline {subsection}{\numberline {4.4.3}Scanner - Flex}{35}
+\contentsline {subsection}{\numberline {4.4.4}Parser - Bison}{35}
+\contentsline {section}{\numberline {4.5}Displaying the L-system Instructions}{35}
+\contentsline {subsection}{\numberline {4.5.1}Basic 2D L-systems}{35}
+\contentsline {subsection}{\numberline {4.5.2}The Use of L-systems in 3D applications}{37}
 \contentsline {chapter}{\numberline {5}Physics Simulation}{38}
 \contentsline {section}{\numberline {5.1}Motion Equations}{38}
 \contentsline {section}{\numberline {5.2}Hook's Law}{39}

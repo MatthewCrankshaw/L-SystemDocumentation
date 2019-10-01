@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.27)  30 SEP 2019 14:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  1 OCT 2019 13:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **Thesis.tex
 (./Thesis.tex
 LaTeX2e <2017-04-15>
-Babel <3.18> and hyphenation patterns for 5 language(s) loaded.
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
@@ -637,15 +637,25 @@ Package geometry Warning: Over-specification in `h'-direction.
 Package geometry Warning: Over-specification in `v'-direction.
     `height' (597.50787pt) is ignored.
 
+(/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count131
+\c@ALC@line=\count132
+\c@ALC@rem=\count133
+\c@ALC@depth=\count134
+\ALC@tlm=\skip59
+\algorithmicindent=\skip60
+)
 \glswrite=\write3
 \glo@main@file=\write4
 \openout4 = `Thesis.glo'.
 
-Package glossaries Info: Writing glossary file Thesis.glo on input line 41.
+Package glossaries Info: Writing glossary file Thesis.glo on input line 44.
 \glo@acronym@file=\write5
 \openout5 = `Thesis.acn'.
 
-Package glossaries Info: Writing glossary file Thesis.acn on input line 41.
+Package glossaries Info: Writing glossary file Thesis.acn on input line 44.
+
 (./chapters/glossary.tex) (./Thesis.aux
 
 LaTeX Warning: Label `DOL-system example' multiply defined.
@@ -659,30 +669,30 @@ LaTeX Warning: Label `3DAxisFigure' multiply defined.
 )
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count131
+\scratchcounter=\count135
 \scratchdimen=\dimen134
 \scratchbox=\box33
-\nofMPsegments=\count132
-\nofMParguments=\count133
+\nofMPsegments=\count136
+\nofMParguments=\count137
 \everyMPshowfont=\toks34
-\MPscratchCnt=\count134
+\MPscratchCnt=\count138
 \MPscratchDim=\dimen135
-\MPnumerator=\count135
-\makeMPintoPDFobject=\count136
+\MPnumerator=\count139
+\makeMPintoPDFobject=\count140
 \everyMPtoPDFconversion=\toks35
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -839,21 +849,21 @@ e 234.
 File: images/Diagrams/object_example.png Graphic file (type png)
 <use images/Diagrams/object_example.png>
 Package pdftex.def Info: images/Diagrams/object_example.png  used on input line
- 341.
+ 343.
 (pdftex.def)             Requested size: 240.89574pt x 159.79416pt.
  [18 <./images/Diagrams/object_example.png>]
 <images/ParametricLsystem/branchingPattern.png, id=84, 1204.5pt x 597.23125pt>
 File: images/ParametricLsystem/branchingPattern.png Graphic file (type png)
 <use images/ParametricLsystem/branchingPattern.png>
 Package pdftex.def Info: images/ParametricLsystem/branchingPattern.png  used on
- input line 388.
+ input line 390.
 (pdftex.def)             Requested size: 240.89574pt x 119.44412pt.
  [19 <./images/ParametricLsystem/branchingPattern.png>]
 <images/Diagrams/conditionalLsystem.png, id=88, 3613.5pt x 803.0pt>
 File: images/Diagrams/conditionalLsystem.png Graphic file (type png)
 <use images/Diagrams/conditionalLsystem.png>
 Package pdftex.def Info: images/Diagrams/conditionalLsystem.png  used on input 
-line 470.
+line 472.
 (pdftex.def)             Requested size: 361.37117pt x 80.3047pt.
 
 [20]
@@ -861,22 +871,22 @@ line 470.
 File: images/Diagrams/RandomTrees.png Graphic file (type png)
 <use images/Diagrams/RandomTrees.png>
 Package pdftex.def Info: images/Diagrams/RandomTrees.png  used on input line 50
-4.
+6.
 (pdftex.def)             Requested size: 200.74644pt x 160.59715pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 511.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 513.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 511.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 513.
  [21 <./images/Diagrams/conditionalLsystem.png> <./images/Diagrams/RandomTrees.
 png>] [22]
 <images/Diagrams/stochastics.png, id=101, 1204.5pt x 401.5pt>
 File: images/Diagrams/stochastics.png Graphic file (type png)
 <use images/Diagrams/stochastics.png>
 Package pdftex.def Info: images/Diagrams/stochastics.png  used on input line 55
-2.
+4.
 (pdftex.def)             Requested size: 421.58131pt x 140.5271pt.
 )
 [23 <./images/Diagrams/stochastics.png>]
@@ -907,143 +917,144 @@ Chapter 4.
 (./chapters/chapter04.tex [28
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 28--42
+Underfull \hbox (badness 10000) in paragraph at lines 36--48
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--42
+Underfull \hbox (badness 10000) in paragraph at lines 36--48
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--42
+Underfull \hbox (badness 10000) in paragraph at lines 36--48
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--42
+Underfull \hbox (badness 10000) in paragraph at lines 36--48
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--42
-
- []
-
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 52.
-(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
-File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 52.
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--62
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--62
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--62
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--62
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--62
+Underfull \hbox (badness 10000) in paragraph at lines 36--48
 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 67--73
+Underfull \hbox (badness 10000) in paragraph at lines 57--65
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--73
+Underfull \hbox (badness 10000) in paragraph at lines 57--65
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--73
+Underfull \hbox (badness 10000) in paragraph at lines 57--65
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--65
 
  []
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 82--83
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 76.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 76.
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
+Underfull \hbox (badness 10000) in paragraph at lines 69--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+Underfull \hbox (badness 10000) in paragraph at lines 69--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--110
+Underfull \hbox (badness 10000) in paragraph at lines 69--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
+Underfull \hbox (badness 10000) in paragraph at lines 69--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--126
+Underfull \hbox (badness 10000) in paragraph at lines 91--97
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
+Underfull \hbox (badness 10000) in paragraph at lines 91--97
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--140
+Underfull \hbox (badness 10000) in paragraph at lines 91--97
+
+ []
+
+[31] [32]
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--160
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--174
+Underfull \hbox (badness 10000) in paragraph at lines 132--134
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--180
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--186
+Underfull \hbox (badness 10000) in paragraph at lines 148--150
 
  []
 
-[31]
-Underfull \hbox (badness 10000) in paragraph at lines 192--193
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--164
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--192
 
  []
 
@@ -1053,111 +1064,110 @@ Underfull \hbox (badness 10000) in paragraph at lines 196--198
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 205--206
+Underfull \hbox (badness 10000) in paragraph at lines 202--204
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 209--211
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 214--216
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 219--221
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 225--227
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 233--234
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 237--239
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 258--259
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 263--265
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 269--271
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 290--291
-
- []
-
-[32]
-Underfull \hbox (badness 10000) in paragraph at lines 295--297
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 301--303
+Underfull \hbox (badness 10000) in paragraph at lines 208--210
 
  []
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 311--319
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--319
+Underfull \hbox (badness 10000) in paragraph at lines 220--222
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--319
+Underfull \hbox (badness 10000) in paragraph at lines 229--230
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--319
+Underfull \hbox (badness 10000) in paragraph at lines 233--235
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--327
+Underfull \hbox (badness 10000) in paragraph at lines 238--240
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--327
+Underfull \hbox (badness 10000) in paragraph at lines 243--245
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--327
+Underfull \hbox (badness 10000) in paragraph at lines 249--251
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 261--263
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 282--283
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--289
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 293--295
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 314--315
 
  []
 
 [34]
+Underfull \hbox (badness 10000) in paragraph at lines 319--321
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 325--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--335
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--335
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--335
+
+ []
+
 <images/KochCurve/KochCurve04.png, id=149, 2464.20625pt x 746.79pt>
 File: images/KochCurve/KochCurve04.png Graphic file (type png)
 <use images/KochCurve/KochCurve04.png>
 Package pdftex.def Info: images/KochCurve/KochCurve04.png  used on input line 3
-51.
+59.
 (pdftex.def)             Requested size: 369.61499pt x 112.01366pt.
 <images/SierpinskiTriangle/SierpinskiTriangle04.png, id=150, 2319.66624pt x 131
 8.9275pt>
@@ -1165,23 +1175,23 @@ File: images/SierpinskiTriangle/SierpinskiTriangle04.png Graphic file (type png
 )
 <use images/SierpinskiTriangle/SierpinskiTriangle04.png>
 Package pdftex.def Info: images/SierpinskiTriangle/SierpinskiTriangle04.png  us
-ed on input line 365.
+ed on input line 373.
 (pdftex.def)             Requested size: 347.93492pt x 197.83058pt.
 <images/FractalPlant/FractalPlant05.png, id=151, 1204.5pt x 749.80125pt>
 File: images/FractalPlant/FractalPlant05.png Graphic file (type png)
 <use images/FractalPlant/FractalPlant05.png>
 Package pdftex.def Info: images/FractalPlant/FractalPlant05.png  used on input 
-line 381.
+line 389.
 (pdftex.def)             Requested size: 180.6672pt x 112.46533pt.
 <images/FractalBush/FractalBush06.png, id=152, 1147.28625pt x 795.97375pt>
 File: images/FractalBush/FractalBush06.png Graphic file (type png)
 <use images/FractalBush/FractalBush06.png>
 Package pdftex.def Info: images/FractalBush/FractalBush06.png  used on input li
-ne 396.
+ne 404.
 (pdftex.def)             Requested size: 172.08551pt x 119.3909pt.
- [35 <./images/KochCurve/KochCurve04.png>] [36 <./images/SierpinskiTriangle/Sie
-rpinskiTriangle04.png> <./images/FractalPlant/FractalPlant05.png> <./images/Fra
-ctalBush/FractalBush06.png>] [37])
+[35] [36 <./images/KochCurve/KochCurve04.png> <./images/SierpinskiTriangle/Sier
+pinskiTriangle04.png> <./images/FractalPlant/FractalPlant05.png>] [37 <./images
+/FractalBush/FractalBush06.png>])
 Chapter 5.
 (./chapters/chapter05.tex
 Underfull \hbox (badness 10000) in paragraph at lines 14--37
@@ -1221,7 +1231,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--37
 [38
 
 ])
-Underfull \hbox (badness 10000) in paragraph at lines 40--71
+Underfull \hbox (badness 10000) in paragraph at lines 40--74
 
  []
 
@@ -1271,12 +1281,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7654 strings out of 494880
- 112497 string characters out of 6179601
- 231131 words of memory out of 5000000
- 10728 multiletter control sequences out of 15000+600000
+ 7791 strings out of 492982
+ 114088 string characters out of 6134896
+ 238050 words of memory out of 5000000
+ 11104 multiletter control sequences out of 15000+600000
  12474 words of font info for 44 fonts, out of 8000000 for 9000
- 36 hyphenation exceptions out of 8191
+ 1141 hyphenation exceptions out of 8191
  45i,12n,63p,1987b,451s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
@@ -1290,7 +1300,7 @@ ic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Thesis.pdf (50 pages, 2601407 bytes).
+Output written on Thesis.pdf (50 pages, 2602566 bytes).
 PDF statistics:
  250 PDF objects out of 1000 (max. 8388607)
  153 compressed objects within 2 object streams

@@ -32,18 +32,18 @@ K{\'o}kai, G., V{\'a}nyi, R., and T{\'o}th, Z. (1999).
   evolutionary operators.
 \newblock {\em Banzhaf et al.[3]}, pages 1588--1595.
 
+\bibitem[Lindenmayer, 1968]{lindenmayer1968mathematical}
+Lindenmayer, A. (1968).
+\newblock Mathematical models for cellular interaction in development, i.
+  filaments with one-sidedinputs, ii. simple and branching filaments with
+  two-sided inputs.
+\newblock {\em Journal of Theoretical Biology}, 18:280--315.
+
 \bibitem[Lindenmayer, 1971]{lindenmayer1971developmental}
 Lindenmayer, A. (1971).
 \newblock Developmental systems without cellular interactions, their languages
   and grammars.
 \newblock {\em Journal of Theoretical Biology}, 30(3):455--484.
-
-\bibitem[Lindenmyer, 1968]{lindenmayer1968mathematical}
-Lindenmyer, A. (1968).
-\newblock Mathematical models for cellular interaction in development, i.
-  filaments with one-sidedinputs, ii. simple and branching filaments with
-  two-sided inputs.
-\newblock {\em Journal of Theoretical Biology}, 18:280--315.
 
 \bibitem[Mandelbrot, 1982]{mandelbrot1982fractal}
 Mandelbrot, B.~B. (1982).

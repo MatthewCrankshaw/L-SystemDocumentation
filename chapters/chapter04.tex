@@ -1,27 +1,35 @@
 
 \begin{flushleft}
 
-There are two major parts of an L-systems implementation, firstly there is the L-system rewriter, which takes a defined L-system that complies to a partacular grammar, the starting point will be rewritten a number of times using the set of production rules. The rewriting system will give a set of instructions, sometimes called the resultant string. This resultant string is passed to the second system called the interpreter. The interpreter runs through each character or instruction within the resulting string  and interprets its meaning, this acts as a set of instructions that are carried out by turtle graphics to eventually represent a model of a plant on the screen. This chapter will focus on the rewriting system. This includes formaly defining a context-free grammar which the L-system must obide by. Once the grammar has been formalized, a lexer and parser (similar to those used in compilers) can be created to represent the context-free L-system grammar, essentially, creating a compiler for a context-free L-system grammar. Using this compiler we can write an L-system, similar to a computer program, the L-system "program" will be passed into the lexical analyser and then through the parser, where each component of the L-system will be identified and parsed into the appropriate computational structures. If the syntax is valid and the parser is successful, the structures created during parsing will be used to rewrite the L-system to a given generation. If the L-system provided does not match the context-free grammar definition, an appropriate error message can be displayed. \\ 
+There are two major parts of an L-systems implementation, firstly there is the L-system rewriter, which takes a defined L-system that complies to a partacular grammar, the starting point will be rewritten a number of times using the set of production rules. The rewriting system will give a set of instructions, sometimes called the resultant string. This resultant string is passed to the second system called the interpreter. The interpreter runs through each character or instruction within the resulting string  and interprets its meaning, this acts as a set of instructions that are carried out by turtle graphics to eventually represent a model of a plant on the screen. This chapter will focus on the rewriting system. This includes formaly defining a context-free grammar which the L-system must obide by. Once the grammar has been formalized, a lexical analyser and parser, similar to those used in interpreters and compilers in computing, can be created to represent the context-free L-system grammar, essentially, creating an compiler for a context-free L-system grammar. Using this compiler we can write an L-system, similar to a computer program, the L-system "program" will be passed into the lexical analyser and then through the parser, where each component of the L-system will be identified and parsed into the appropriate computational structures. If the syntax is valid and the parser is successful, the structures created during parsing will be used to rewrite the L-system to a given generation. If the L-system provided does not match the context-free grammar definition, an appropriate error message can be displayed. \\
+
+\vspace{5mm}
+
+For simple D0L-system seen in section \ref{DOL-system example}, creating a rewriter for a simple L-system such as this is quite simple, each rewritable symbol is only made up of a single character, and because the D0L-system is deterministic we know that there is no randomess when determining the matching rule. This is just a case of storing the starting string, and then iterating through this string one character at a time and when a symbol matches that in a rule, replace that character with the string provided by the rule. This can be programmed relatively simply, however, if we are to implement the parametric 0L-system, such as having each instruction be a module with multiple parameters and the parameters being expressions, the rewriting system will have to better understand what each part of the L-system is specifying based on the grammar that it belongs to. The lexical analyser and parser can be used for this purpose in order to classify each part of the L-system and prepare it for rewriting. \\
+
+\vspace{5mm}
+
+For the rewriting system I will be refering to definition of an L-system, the part containing information about the L-system, the axiom and the production rules.  
 
 \end{flushleft}
-
-
 
 \section{Environment and Tools}
 
 \begin{flushleft}
 
-This majority of the implementation of the L-system will be written in the C and C++ programming languages \cite{stroustrup2000c++}, and I will be using the modern Open Graphics Library or \gls{OpenGL}. The OpenGl framework is one of the industry standards for creating 3D graphics applications, and is a cross platform API for interacting with the \acrshort{gpu} in a low level way. The low level nature of OpenGL is important as some of the structures and models we are going to be displaying and simulating can be graphically intensive \cite{sellers2013opengl} \cite{movania2017opengl}. OpenGL was originally intended to be an \acrshort{api} for the C and C++ programming languages, and therefore we can have a programming language and graphics API which have a strong emphasis on performance. \\
+This majority of the implementation of the L-system will be written in the C and C++ programming languages \cite{stroustrup2000c++}, and I will be using the modern Open Graphics Library or \gls{OpenGL}. The OpenGl framework is one of the industry standards for creating 3D graphics applications, and is a cross platform API for interacting with the \acrshort{gpu} in a low level way. The low level nature of OpenGL is important as some of the structures and models we are going to be displaying and simulating can be graphically intensive \cite{sellers2013opengl} \cite{movania2017opengl}. OpenGL was originally intended to be an \acrshort{api} for the C and C++ programming languages, and therefore we can have a programming language and graphics API which have a strong emphasis on performance.
 
 \vspace{5mm}
 
-There are also a number of libraries which will provide some extra functionality. The standard library for C and C++ provides many usefull structures and functions which will be incredibly usefull during the development process. For more specialised mathematics capabilities the \acrfull{glm} library holds many mathematics classes and functions for conveniently dealing with some 3D mathematics such as vectors, matrices and quaternions. Another important library is the \acrfull{glfw} which is a multiplatform \acrshort{api} for creating an managing user interface windows, events and user input \cite{glfwDocumentation}.  \\ 
+There are also a number of libraries which will provide some extra functionality. The standard library for C and C++ provides many usefull structures and functions which will be incredibly usefull during the development process. For more specialised mathematics capabilities the \acrfull{glm} library holds many mathematics classes and functions for conveniently dealing with some 3D mathematics such as vectors, matrices and quaternions. Another important library is the \acrfull{glfw} which is a multiplatform \acrshort{api} for creating an managing user interface windows, events and user input \cite{glfwDocumentation}.
 
 \vspace{5mm}
 
-In order to keep track of changes and manage versions Git is a free and open source version control software, that is able to keep track of changes that have been made to the files within a project folder. It will be used to keep track of previous versions of the project throughout the development process. Git can be used in conjuction with Github, which is a online web application that stores git repositories. This acts as a backup as well as containing all previous versions of the project \cite{torvalds}.\\
+In order to keep track of changes and manage versions Git is a free and open source version control software, that is able to keep track of changes that have been made to the files within a project folder. It will be used to keep track of previous versions of the project throughout the development process. Git can be used in conjuction with Github, which is a online web application that stores git repositories. This acts as a backup as well as containing all previous versions of the project \cite{torvalds}.
 
 \end{flushleft}
+
+\section{Formalising the L-system Descriptor}
 
 \section{L-system Generator} \label{l-system generator section}
 
@@ -37,8 +45,24 @@ F $\rightarrow$ F+F-F+F\\
 Here we have a constant value of 90 degrees, the starting point of 'F' and one rule F $\rightarrow$ F+F-F+F. This type of system is very simple to rewrite computationally. \\ 
 \\
 \textbf{\textit{Here we describe some pseudocode}}\\
-\\
+
+\begin{algorithmic}
+\STATE $i \gets 10$
+\end{algorithmic}
+
 When we move onto some more complicated L-systems, such as those that use parameters which have expressions with both variables and numbers. We end up with an L-system file that is quite difficult to process and rewrite. In order to compute these complex L-systems we need to first develop a formal grammar that describes how L-system files are defined. Once we have a formalization of how to define an parametric l-system we can create a system to carry out the rewriting.
+
+\section{The Need for a L-system Lexical Analyser and Parser}
+
+Traditionally an interpreter is a program that takes program code as input, where it is then analyzed and interpreted as it is encountered in the execution process. All of the previously encountered information is kept for later interpretations. The information about the program can be extracted by inspection of the program as a whole, such as the set of declared variables in a block, a function, etc \cite{wilhelm2010compiler}. \\
+\\
+A similarity can be drawn between traditional interpreted languages and the L-system descriptors. With the L-system descriptors we are defining a set of constant variables, a starting point and then some production rules. Once we have all of this information, we would like to interpret that information a number of times. \\
+For instance, we may want to rewrite five generations of the L-system, but later on we may want to instead generate up to the tenth generation. So we don't want to have to throw all the previous information away and start from scratch, instead, we can go from the current state of the interpreter and just rewrite another five times. If we would then like to get the resulting string we can just ask for it from the interpreter. \\
+\\
+To make the most of a \acrshort{cfg} like the L-system grammar, creating an interpreter specifically designed to interpret the L-system descriptors can not only make it simpler to debug any syntactic errors, but also make the string rewriting much faster.\\
+\\
+In compilers and interpreteres there is usually a three step process in order to understand the input program. The first is the scanner or lexical analyser, the output of the scanner is then processed using the parser, this generates a syntax tree which is then further processed by a context-sensitive analyser. I will be elaborating on each of these processes in sections \ref{Flex} and \ref{Bison}. \\
+
 
 \subsection{Building a Generalised L-system Grammar}
 
@@ -300,22 +324,6 @@ In addition to this, any statement that is not surrounded by \textless \textgrea
 % Variable
 \noindent
 \textless variable\textgreater~ $\rightarrow$ [a-zA-Z\_][a-zA-Z0-9\_]* \\
-
-
-
-
-\newpage
-
-\section{The L-system Interpreter}
-
-Traditionally an interpreter is a program that takes program code as input, where it is then analyzed and interpreted as it is encountered in the execution process. All of the previously encountered information is kept for later interpretations. The information about the program can be extracted by inspection of the program as a whole, such as the set of declared variables in a block, a function, etc \cite{wilhelm2010compiler}. \\
-\\
-A similarity can be drawn between traditional interpreted languages and the L-system descriptors. With the L-system descriptors we are defining a set of constant variables, a starting point and then some production rules. Once we have all of this information, we would like to interpret that information a number of times. \\
-For instance, we may want to rewrite five generations of the L-system, but later on we may want to instead generate up to the tenth generation. So we don't want to have to throw all the previous information away and start from scratch, instead, we can go from the current state of the interpreter and just rewrite another five times. If we would then like to get the resulting string we can just ask for it from the interpreter. \\
-\\
-To make the most of a \acrshort{cfg} like the L-system grammar, creating an interpreter specifically designed to interpret the L-system descriptors can not only make it simpler to debug any syntactic errors, but also make the string rewriting much faster.\\
-\\
-In compilers and interpreteres there is usually a three step process in order to understand the input program. The first is the scanner or lexical analyser, the output of the scanner is then processed using the parser, this generates a syntax tree which is then further processed by a context-sensitive analyser. I will be elaborating on each of these processes in sections \ref{Flex} and \ref{Bison}. \\
 
 
 \subsection{Scanner - Flex} \label{Flex}
