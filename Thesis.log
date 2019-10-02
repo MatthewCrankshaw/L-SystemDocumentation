@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  2 OCT 2019 15:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  2 OCT 2019 15:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -846,8 +846,17 @@ File: images/Diagrams/NestedBranching.png Graphic file (type png)
 Package pdftex.def Info: images/Diagrams/NestedBranching.png  used on input lin
 e 238.
 (pdftex.def)             Requested size: 337.26506pt x 123.31253pt.
- [15 <./images/Diagrams/branching.png>] [16 <./images/Diagrams/NestedBranching.
-png>] [17]
+ [15 <./images/Diagrams/branching.png>]
+! Undefined control sequence.
+l.265 ...finition of a parameter be $\Sigma$. $ \E
+                                                  (\Sigma) $ can be said to ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[16 <./images/Diagrams/NestedBranching.png>] [17]
 <images/Diagrams/object_example.png, id=79, 1204.5pt x 798.985pt>
 File: images/Diagrams/object_example.png Graphic file (type png)
 <use images/Diagrams/object_example.png>
@@ -868,7 +877,8 @@ File: images/Diagrams/conditionalLsystem.png Graphic file (type png)
 Package pdftex.def Info: images/Diagrams/conditionalLsystem.png  used on input 
 line 476.
 (pdftex.def)             Requested size: 361.37117pt x 80.3047pt.
- [21 <./images/Diagrams/conditionalLsystem.png>]
+
+[21 <./images/Diagrams/conditionalLsystem.png>]
 <images/Diagrams/RandomTrees.png, id=96, 1003.75pt x 803.0pt>
 File: images/Diagrams/RandomTrees.png Graphic file (type png)
 <use images/Diagrams/RandomTrees.png>
@@ -922,230 +932,230 @@ Chapter 4.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 154--166
+Underfull \hbox (badness 10000) in paragraph at lines 158--170
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--166
+Underfull \hbox (badness 10000) in paragraph at lines 158--170
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--166
+Underfull \hbox (badness 10000) in paragraph at lines 158--170
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--166
+Underfull \hbox (badness 10000) in paragraph at lines 158--170
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--166
+Underfull \hbox (badness 10000) in paragraph at lines 158--170
 
  []
 
 [33]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 182.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 186.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 182.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 186.
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--192
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 175--192
+Underfull \hbox (badness 10000) in paragraph at lines 179--196
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--192
+Underfull \hbox (badness 10000) in paragraph at lines 179--196
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--192
+Underfull \hbox (badness 10000) in paragraph at lines 179--196
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--192
+Underfull \hbox (badness 10000) in paragraph at lines 179--196
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--203
+Underfull \hbox (badness 10000) in paragraph at lines 179--196
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--203
+Underfull \hbox (badness 10000) in paragraph at lines 201--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--203
+Underfull \hbox (badness 10000) in paragraph at lines 201--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--207
 
  []
 
 [34] [35]
-Underfull \hbox (badness 10000) in paragraph at lines 212--213
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 220--221
+Underfull \hbox (badness 10000) in paragraph at lines 224--225
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--234
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--240
+Underfull \hbox (badness 10000) in paragraph at lines 242--244
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 249--250
+Underfull \hbox (badness 10000) in paragraph at lines 253--254
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--256
+Underfull \hbox (badness 10000) in paragraph at lines 258--260
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 263--264
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 268--270
+Underfull \hbox (badness 10000) in paragraph at lines 272--274
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--290
+Underfull \hbox (badness 10000) in paragraph at lines 293--294
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--298
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 302--304
+Underfull \hbox (badness 10000) in paragraph at lines 306--308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 308--310
+Underfull \hbox (badness 10000) in paragraph at lines 312--314
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 314--316
+Underfull \hbox (badness 10000) in paragraph at lines 318--320
 
  []
 
 [36]
-Underfull \hbox (badness 10000) in paragraph at lines 322--323
+Underfull \hbox (badness 10000) in paragraph at lines 326--327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 326--328
+Underfull \hbox (badness 10000) in paragraph at lines 330--332
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 335--336
+Underfull \hbox (badness 10000) in paragraph at lines 339--340
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 339--341
+Underfull \hbox (badness 10000) in paragraph at lines 343--345
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--346
+Underfull \hbox (badness 10000) in paragraph at lines 348--350
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--351
+Underfull \hbox (badness 10000) in paragraph at lines 353--355
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 355--357
+Underfull \hbox (badness 10000) in paragraph at lines 359--361
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 363--364
+Underfull \hbox (badness 10000) in paragraph at lines 367--368
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 367--369
+Underfull \hbox (badness 10000) in paragraph at lines 371--373
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 388--389
+Underfull \hbox (badness 10000) in paragraph at lines 392--393
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 393--395
+Underfull \hbox (badness 10000) in paragraph at lines 397--399
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 399--401
+Underfull \hbox (badness 10000) in paragraph at lines 403--405
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 420--421
+Underfull \hbox (badness 10000) in paragraph at lines 424--425
 
  []
 
 [37]
-Underfull \hbox (badness 10000) in paragraph at lines 425--427
+Underfull \hbox (badness 10000) in paragraph at lines 429--431
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 431--433
+Underfull \hbox (badness 10000) in paragraph at lines 435--437
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 437--441
+Underfull \hbox (badness 10000) in paragraph at lines 441--445
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 437--441
+Underfull \hbox (badness 10000) in paragraph at lines 441--445
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 437--441
+Underfull \hbox (badness 10000) in paragraph at lines 441--445
 
  []
 
@@ -1153,7 +1163,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 437--441
 File: images/KochCurve/KochCurve04.png Graphic file (type png)
 <use images/KochCurve/KochCurve04.png>
 Package pdftex.def Info: images/KochCurve/KochCurve04.png  used on input line 4
-65.
+69.
 (pdftex.def)             Requested size: 369.61499pt x 112.01366pt.
 <images/SierpinskiTriangle/SierpinskiTriangle04.png, id=160, 2319.66624pt x 131
 8.9275pt>
@@ -1161,19 +1171,19 @@ File: images/SierpinskiTriangle/SierpinskiTriangle04.png Graphic file (type png
 )
 <use images/SierpinskiTriangle/SierpinskiTriangle04.png>
 Package pdftex.def Info: images/SierpinskiTriangle/SierpinskiTriangle04.png  us
-ed on input line 479.
+ed on input line 483.
 (pdftex.def)             Requested size: 347.93492pt x 197.83058pt.
 <images/FractalPlant/FractalPlant05.png, id=161, 1204.5pt x 749.80125pt>
 File: images/FractalPlant/FractalPlant05.png Graphic file (type png)
 <use images/FractalPlant/FractalPlant05.png>
 Package pdftex.def Info: images/FractalPlant/FractalPlant05.png  used on input 
-line 495.
+line 499.
 (pdftex.def)             Requested size: 180.6672pt x 112.46533pt.
 <images/FractalBush/FractalBush06.png, id=162, 1147.28625pt x 795.97375pt>
 File: images/FractalBush/FractalBush06.png Graphic file (type png)
 <use images/FractalBush/FractalBush06.png>
 Package pdftex.def Info: images/FractalBush/FractalBush06.png  used on input li
-ne 510.
+ne 514.
 (pdftex.def)             Requested size: 172.08551pt x 119.3909pt.
 [38] [39 <./images/KochCurve/KochCurve04.png> <./images/SierpinskiTriangle/Sier
 pinskiTriangle04.png> <./images/FractalPlant/FractalPlant05.png>] [40 <./images
@@ -1286,7 +1296,7 @@ ic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Thesis.pdf (53 pages, 2608785 bytes).
+Output written on Thesis.pdf (53 pages, 2609061 bytes).
 PDF statistics:
  259 PDF objects out of 1000 (max. 8388607)
  159 compressed objects within 2 object streams

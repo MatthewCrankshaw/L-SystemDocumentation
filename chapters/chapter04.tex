@@ -101,7 +101,7 @@ Defining constants and objects is similar syntactically, the keyword define or i
 \end{aligned}
 \end{equation}
 
-The definition variables can be stored as a table, called a constants table, which keeps track of all of the constant variables defined by the L-system, the implementation for this thesis involved using a Map structure from the c++ standard library, where the index is the variable name string, and the value is the value associated with the variable as seen in the table below: \\
+The definition variables can be stored as a table, called a constants table, which keeps track of all of the constant variables defined by the L-system, the implementation for this thesis involved using a map data structure from the c++ standard library, where the index is the variable name string, and the value is the value associated with the variable as seen in the table below: \\
 
 \vspace{5mm}
 
@@ -146,6 +146,10 @@ The object table structure also makes use of the Map structure and is very simil
 \begin{flushleft}
 
 For the purposes of the rewriter it is important to understand that there are three major parts of a module, there is a module name, which is a single character or symbol, secondly part is the list of parameters, an open parentheses, signifies the begining of these parameters, where there can be one or more parameters listed. Thirdly, each parameter can either be made up of a number, variable, random number range or a mathematical expression containing of numbers, variables and parentheses signifying precedence. Finally the modules end is specified by a close parentheses. \\   
+
+\vspace{5mm}
+
+A string in the context of a parametric L-system is a vector of modules, this being the C++ standard library vector data structure. The modules are linked one after the other creating a type of string, but instead of characters or symbols we have a string of modules. \\
 
 \end{flushleft}
 

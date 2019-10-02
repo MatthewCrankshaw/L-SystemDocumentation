@@ -262,7 +262,7 @@ In this section I will outline the definition and major concepts of the parametr
 \begin{flushleft}
 
 Prusinkiewicz and Hanan define the parametric 0L-systems as a system of parametric words, where a string of letters make up a module name $A$, each module has a number of parameters associated with it. The module names belong an alphabet $V$, therefore, $A~ \in~ V$, and the parameters belong to a set of real numbers $\Re$. If $(a_1,~ a_2,~ ...,~ a_n)~ \in~ R$ are parameters of $A$, the module can be stated as $A(a_1,~ a_2,~ ...,~ a_n)$. Each module is an element of the set of modules $M~ =~ V~ \times~ \Re^*$. $\Re^*$ represents the set of all finite sequences of parameters, including the case where there are no parameters. We can then infer that $M^*~ =~ (V~ \times~ \Re^*)^*$ where $M^*$ is the set of all finite modules. \\
-Each parameter of a given module corresponds to a formal definition of that parameter defined within the L-system productions. Let the formal definition of a parameter be $\Sigma$. $ E(\Sigma) $ can be said to be an arithmetic expression of a given parameter.\\ Similar to the arithmetic expressions in the programming languages C/C++, we can make use of the arithmetic operators $ +,~ -,~ *,~ \,~ \wedge{}$. Furthermore, we can have the relational expression $C(\Sigma)$, with a set of relational operators. In the literature by Prusinkiewicz and Hanan the set of relational operators is said to be $<,~ >,~ =$, I have extended this to include the relational operators $>,~ <,~ >=,~ <=,~ ==,~ !=$. Where $==$ is the 'equal to' operator and $!=$ is the 'not equal' operator, and the symbols $>=$ and $<=$ are 'greater than or equal to' and 'less than or equal to' respectively. The parentheses () are also used in order to specify precedence within an expression. The arithmetic expressions can be evaluated and will result in the real number parameter $\Re $, and the relational expressions can be evaluated to either true or false. \\
+Each parameter of a given module corresponds to a formal definition of that parameter defined within the L-system productions. Let the formal definition of a parameter be $\Sigma$. $ \E(\Sigma) $ can be said to be an arithmetic expression of a given parameter.\\ Similar to the arithmetic expressions in the programming languages C/C++, we can make use of the arithmetic operators $ +,~ -,~ *,~ \,~ \wedge{}$. Furthermore, we can have a relational expression $C(\Sigma)$, with a set of relational operators. In the literature by Prusinkiewicz and Hanan the set of relational operators is said to be $<,~ >,~ =$, I have extended this to include the relational operators $>,~ <,~ >=,~ <=,~ ==,~ !=$. Where $==$ is the 'equal to' operator and $!=$ is the 'not equal' operator, and the symbols $>=$ and $<=$ are 'greater than or equal to' and 'less than or equal to' respectively. The parentheses () are also used in order to specify precedence within an expression. A set of arithmetic expressions can be said to be $\hat{E} (\Sigma)$,  these arithmetic expressions can be evaluated and will result in the real number parameter $\Re $, and the relational expressions can be evaluated to either true or false. \\
 
 \vspace{5mm}
 
@@ -280,7 +280,7 @@ $G$ is an ordererd quadruplet that describes the parametric OL-system. $V$ is th
 \vspace{5mm}
 
 \begin{equation}
-P~ \subset~ (V~ \times~ \Sigma^*)~ \times C(\Sigma)~ \times~ (V~ \times~ E(\Sigma)^*)^*
+P~ \subset~ (V~ \times~ \Sigma^*)~ \times C(\Sigma)~ \times~ (V~ \times~ \hat{E}(\Sigma))^*
 \end{equation}
 
 \vspace{5mm} 
