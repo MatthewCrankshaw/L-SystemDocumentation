@@ -29,7 +29,125 @@ In order to keep track of changes and manage versions Git is a free and open sou
 
 \end{flushleft}
 
-\section{Formalising the L-system Descriptor}
+\section{The Need for a L-system Lexical Analyser and Parser}
+
+\begin{flushleft}
+
+Traditionally an interpreter in computing is a program that takes program code as input, where it is then analyzed and interpreted as it is encountered in the execution process. All of the previously encountered information is kept for later interpretations. The information about the program can be extracted by inspection of the program as a whole, such as the set of declared variables in a block, a function, etc \cite{wilhelm2010compiler}. In essence, the L-system rewriter contains a type of interpreter, this should not be confused with the interpreter that processes the resultant string using turtle graphics. Due to this confusion of terms I will refer the system containing the lexical analyser, L-system parser and the rewriter itself as the L-system rewriter. \\
+
+\vspace{5mm}
+
+A similarity can be drawn between traditional interpreted languages and the L-system rewriter. With the L-system rewriter we are defining a set of constant variables, a starting point and then some production rules. Once we have all of this information, we would like to interpret that information a number of times. \\
+For instance, we may want to rewrite five generations of the L-system, but later on we may want to instead generate up to the tenth generation. So we don't want to have to throw all the previous information away and start from scratch, instead, we can go from the current state of the L-system rewriter and just rewrite another five times. If we would then like to get the resulting string we can just ask for it from the L-system rewriter. \\
+
+\vspace{5mm}
+
+The reason that a lexical analyser and parser are neccessary to carry out rewriting, is that without them it would be very difficult to find the syntactic roles of each part of the L-system, for example: F(2*3, x * (2 + y)), here we have a single module with two parameters one parameter has the expression (2 * 3) and the other has the expression (x * (2+y)), these kinds of complex structures within a grammar require some knowledge about the grammar it represents. The lexical analyser firstly makes sure that all the syntax within the L-system is correct, the parser splits the L-system into its component parts and is then able to describe each parts syntactic roll. This will provide the understanding that x and y are variables within a module and do not represent another module, as well as provide where it could find the value of x and y. For a \acrshort{cfg} like the parametric 0L-system grammar, creating an rewriter specifically designed for the L-system can make it simpler to debug any syntactic errors which a user may input, as well as make the string rewriting much faster. \\
+
+\end{flushleft}
+
+\section{Defining the Syntax of a Parametric L-system}
+
+\begin{flushleft}
+
+This section will cover the syntax for the parametric L-system rewriter, this is using the definition of the L-systems given by Prusinkiewicz and Lindenmayer in section \ref{definition of a parametric 0L-system section}, the overall syntax of the L-system is based off on that definition, as well as some additions that allow the construction of a single L-system to include branching, constant variable definition, objects, parametric L-system concepts, randomness as well as stochastic L-systems\cite{prusinkiewicz2012algorithmic}.\\
+
+\vspace{5mm}
+
+A parametric L-system is made up of five major parts, which can be catagorised as statements, these are zero of more define statements, zero of more include statements, a single generation statement, a single axiom statement and a one or more production rule statements. To make it easy for the lexer and parser, as well as keeping consistant with the L-system grammars decribed by Prusinkiewicz and Lindenmayer, as well as computer programs, each statement will be started with a \# character and will end with a ; character \cite{prusinkiewicz2013lindenmayer}.\\
+
+\vspace{5mm}
+
+The order in which statements should be listed is as follows: \\
+
+\vspace{5mm}
+
+\begin{equation} \label{statement order example}
+\begin{aligned}
+	&\text{\#generations statement;}\\
+	&\text{\#define statements;}\\
+	&\text{\hspace{10mm}...}\\
+	&\text{\#include statements;}\\
+	&\text{\hspace{10mm}...}\\
+	&\text{\#axiom statement;}\\
+	&\text{\#production statements;}\\
+	&\text{\hspace{10mm}...}\\
+\end{aligned}
+\end{equation}
+
+\vspace{5mm}
+
+The generations statement can be defined anywhere within the L-system, however it is convension to put this at the top of the L-system in order to be clear how many generations we would like to rewrite. The define and include statements appear above the axiom and productions statements as they define values often used within the axiom and production rules. A single axiom is then defined followed by one or more production rules. \\
+
+\vspace{5mm}
+
+In order to make arithmatic less complicated, all numbers within the L-system are repersented as floating point numbers. Other data types could be added to the definition of the L-system, however, there is some added problems such as the conversion from one type to another as well as how you specify which data type you are defining. For all intent intents and purposes the floating point data type should provide all the neccessary functionality needed for the L-system.
+
+\end{flushleft}
+
+\subsection{Constants and Objects}
+
+\begin{flushleft}
+
+Defining constants and objects is similar syntactically, the keyword define or include is used, followed by a variable name followed by a value, the value for a constant is a floating point number and the value for an include is a name of an object within the predefined object library. An example of the defining a constant and an object can be seen below: \\
+
+\begin{equation} \label{constant and object example}
+\begin{aligned}
+	&\text{\#define num 10;}\\
+	&\text{\#define pi 3.1415;}\\
+	&\\
+	&\text{\#include F BRANCH;}\\
+	&\text{\#include S SPHERE;}\\
+\end{aligned}
+\end{equation}
+
+The definition variables can be stored as a table, called a constants table, which keeps track of all of the constant variables defined by the L-system, the implementation for this thesis involved using a Map structure from the c++ standard library, where the index is the variable name string, and the value is the value associated with the variable as seen in the table below: \\
+
+\vspace{5mm}
+
+\begin{table}[h!] \center
+\begin{tabular}{ | c | l | }
+\hline
+	Variable Name 	& Value\\  
+\hline
+\hline
+	num 				& 10.0\\
+\hline
+	pi					& 3.1415\\
+\hline
+\end{tabular}
+\caption{Table of turtle instruction symbols and their meaning to the interpreter}
+\label{constants table}
+\end{table}
+\FloatBarrier
+
+The object table structure also makes use of the Map structure and is very similar to the constants table, the object table holds the module name, and name of the object in the predefined object library. Which will not need to be used during rewriting but will be necessary during the interpretation of the resulting string. \\
+
+\begin{table}[h!] \center
+\begin{tabular}{ | c | l | }
+\hline
+	Module Name	& Object Name\\  
+\hline
+\hline
+	F 				& BRANCH\\
+\hline
+	S				& SPHERE\\
+\hline
+\end{tabular}
+\caption{Table of turtle instruction symbols and their meaning to the interpreter}
+\label{constants table}
+\end{table}
+\FloatBarrier
+
+\end{flushleft}
+
+\subsection{Modules and Strings}
+
+\begin{flushleft}
+
+For the purposes of the rewriter it is important to understand that there are three major parts of a module, there is a module name, which is a single character or symbol, secondly part is the list of parameters, an open parentheses, signifies the begining of these parameters, where there can be one or more parameters listed. Thirdly, each parameter can either be made up of a number, variable, random number range or a mathematical expression containing of numbers, variables and parentheses signifying precedence. Finally the modules end is specified by a close parentheses. \\   
+
+\end{flushleft}
 
 \section{L-system Generator} \label{l-system generator section}
 
@@ -51,18 +169,6 @@ Here we have a constant value of 90 degrees, the starting point of 'F' and one r
 \end{algorithmic}
 
 When we move onto some more complicated L-systems, such as those that use parameters which have expressions with both variables and numbers. We end up with an L-system file that is quite difficult to process and rewrite. In order to compute these complex L-systems we need to first develop a formal grammar that describes how L-system files are defined. Once we have a formalization of how to define an parametric l-system we can create a system to carry out the rewriting.
-
-\section{The Need for a L-system Lexical Analyser and Parser}
-
-Traditionally an interpreter is a program that takes program code as input, where it is then analyzed and interpreted as it is encountered in the execution process. All of the previously encountered information is kept for later interpretations. The information about the program can be extracted by inspection of the program as a whole, such as the set of declared variables in a block, a function, etc \cite{wilhelm2010compiler}. \\
-\\
-A similarity can be drawn between traditional interpreted languages and the L-system descriptors. With the L-system descriptors we are defining a set of constant variables, a starting point and then some production rules. Once we have all of this information, we would like to interpret that information a number of times. \\
-For instance, we may want to rewrite five generations of the L-system, but later on we may want to instead generate up to the tenth generation. So we don't want to have to throw all the previous information away and start from scratch, instead, we can go from the current state of the interpreter and just rewrite another five times. If we would then like to get the resulting string we can just ask for it from the interpreter. \\
-\\
-To make the most of a \acrshort{cfg} like the L-system grammar, creating an interpreter specifically designed to interpret the L-system descriptors can not only make it simpler to debug any syntactic errors, but also make the string rewriting much faster.\\
-\\
-In compilers and interpreteres there is usually a three step process in order to understand the input program. The first is the scanner or lexical analyser, the output of the scanner is then processed using the parser, this generates a syntax tree which is then further processed by a context-sensitive analyser. I will be elaborating on each of these processes in sections \ref{Flex} and \ref{Bison}. \\
-
 
 \subsection{Building a Generalised L-system Grammar}
 
