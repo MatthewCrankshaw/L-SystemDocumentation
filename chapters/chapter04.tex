@@ -189,90 +189,6 @@ There are also the symbols [,],+,-,/,$\backslash$, $\land$, $\&$, ! and \$, thes
 
 The parsers job is to find out if the input stream of words from the \gls{Lexer} makes up a valid sentence in the language. The \gls{Parser} fits the syntactical category to the grammatical model of the language. If the \gls{Parser} is able to fit the syntactical category of the word to the grammatical model of the language then the syntax is seen to be correct. If all of the syntax is correct the \gls{Parser} will output a syntax tree and build the structures for use later on during the compilation process \cite{cooper2011engineering}.
 
-
-\subsection{Constants and Objects}
-
-\begin{flushleft}
-
-Defining constants and objects is similar syntactically, the keyword define or include is used, followed by a variable name followed by a value, the value for a constant is a floating point number and the value for an include is a name of an object within the predefined object library. An example of the defining a constant and an object can be seen below: \\
-
-\begin{equation} \label{constant and object example}
-\begin{aligned}
-	&\text{\#define num 10;}\\
-	&\text{\#define pi 3.1415;}\\
-	&\\
-	&\text{\#include F BRANCH;}\\
-	&\text{\#include S SPHERE;}\\
-\end{aligned}
-\end{equation}
-
-The definition variables can be stored as a table, called a constants table, which keeps track of all of the constant variables defined by the L-system, the implementation for this thesis involved using a map data structure from the c++ standard library, where the index is the variable name string, and the value is the value associated with the variable as seen in the table below: \\
-
-\vspace{5mm}
-
-\begin{table}[h!] \center
-\begin{tabular}{ | c | l | }
-\hline
-	Variable Name 	& Value\\  
-\hline
-\hline
-	num 				& 10.0\\
-\hline
-	pi					& 3.1415\\
-\hline
-\end{tabular}
-\caption{Table of turtle instruction symbols and their meaning to the interpreter}
-\label{constants table}
-\end{table}
-\FloatBarrier
-
-The object table structure also makes use of the Map structure and is very similar to the constants table, the object table holds the module name, and name of the object in the predefined object library. Which will not need to be used during rewriting but will be necessary during the interpretation of the resulting string. \\
-
-\begin{table}[h!] \center
-\begin{tabular}{ | c | l | }
-\hline
-	Module Name	& Object Name\\  
-\hline
-\hline
-	F 				& BRANCH\\
-\hline
-	S				& SPHERE\\
-\hline
-\end{tabular}
-\caption{Table of turtle instruction symbols and their meaning to the interpreter}
-\label{constants table}
-\end{table}
-\FloatBarrier
-
-
-
-\end{flushleft}
-
-\subsection{Modules and Strings}
-
-\begin{flushleft}
-
-For the purposes of the rewriter it is important to understand that there are three major parts of a module, there is a module name, which is a single character or symbol, secondly part is the list of parameters, an open parentheses, signifies the begining of these parameters, where there can be one or more parameters listed. Thirdly, each parameter can either be made up of a number, variable, random number range or a mathematical expression containing of numbers, variables and parentheses signifying precedence. Finally the modules end is specified by a close parentheses. \\   
-
-\vspace{5mm}
-
-There are two types of modules, one being a module definition and the other a module call. The module definition stands as a type of template of a module within a production rule, these templates do not have to hold actual values but the values will be substituted during the rewriting process. The module calls would appear either in the axiom or in the resultant string, the parameters of a module call will hold an actual numerical value. Below is an example outlining the difference between the module definition and module calls.\\ 
-
-\begin{equation} \label{module definition and call example}
-\begin{aligned}
-	&\text{\#w : A(10);}\\
-	&\text{\#p1 : A(x) : * : A(x)A(x); }\\
-\end{aligned}
-\end{equation}
-
-In example \ref{module definition and call example} above, the module A(10) within the axiom, is a module call, as it contains the numerical value of 10 in the first parameter. In the production rule p1 the module A(x) within the predecessor is a module definition, it states that module A's first parmeter has a local variable x, the calling modules value will substitute x and will replace the value of x anywhere within the successor statement, p1's successor has two modules A(x)A(x), also module defintions however the value x will be subtituted with the calling modules value. When a production rules successor rewrites the calling module, the successors modules must have a numerical value, they then become module calls within the resultant string. \\ 
-
-\vspace{5mm}
-
-A string in the context of a parametric L-system is a vector of modules, this being the C++ standard library vector data structure. The modules are linked one after the other creating a type of string, but instead of characters or symbols we have a string of modules. \\
-
-\end{flushleft}
-
 \subsection{Building a Generalised L-system Grammar}
 
 We are now able to represent complex three dimensional tree structures in the form of a L-system rule set. In a computing sense this rule set can be seen as a type of program. In the program we define the number of generations we would like to generate, the starting point (Axiom) some constant varables (\#define) and the set of production rules. \\
@@ -532,81 +448,83 @@ In addition to this, any statement that is not surrounded by \textless \textgrea
 \noindent
 \textless variable\textgreater~ $\rightarrow$ [a-zA-Z\_][a-zA-Z0-9\_]* \\
 
-
-
-\section{Displaying the L-system Instructions} \label{Display L-system Instructions}
-
-\subsection{Basic 2D L-systems} 
-
-There are a number of fractal geometry that have become well known particularly with regards to how they can seemingly imitate nature \cite{mandelbrot1982fractal}. Particularly with the geometry such as the Koch snowflake which can be represented using the following L-system.
-
-\begin{figure}[htbp]
-	\raggedright
-	\textbf{\underline{Koch Curve:}} \\
-	\#n = 4; \\
-	\#define r 90; \\
-	\#w : F(1); \\
-	\#p1 : F(x) : * : F(x)+(r)F(x)-(r)F(x)-(r)F(x)+(r)F(x);\\
-	{\centering
-		\vspace{7px}
-		\includegraphics[scale=0.15]{KochCurve/KochCurve04.png}
-		\caption{Koch Curve.}
-	}
-\end{figure}
-\begin{figure}[htbp]
-	\raggedright
-	\textbf{\underline{Sierpinski Triangle:}} \\
-	\#n = 4;\\
-	\#define r 60;\\
-	\#w : F(1);\\
-	\#p1 : F(x) : * : X(x)-(r)F(x)-(r)X(x);\\
-	\#p2 : X(x) : * : F(x)+(r)X(x)+(r)F(x);\\
-	{\centering
-		\vspace{7px}
-		\includegraphics[scale=0.15]{SierpinskiTriangle/SierpinskiTriangle04.png}
-		\caption{Sierpinski Triangle.}
-	}
-\end{figure}
-\begin{figure}[htbp]
-	\raggedright
-	\textbf{\underline{Fractal Plant:}} \\
-	\textbf{Alphabet:} X, F\\
-	\textbf{Constants:} +, -, [, ] \\
-	\textbf{Axiom:} X \\
-	\textbf{Angle:} 25$^\circ$ \\
-	\textbf{Rules:} \\
-	X $\rightarrow$ F-[[X]+X]+F[+FX]-X\\
-	F $\rightarrow$ FF \\
-	{\centering
-		\vspace{7px}
-		\includegraphics[scale=0.15]{FractalPlant/FractalPlant05.png}
-		\caption{Fractal Plant.}
-	}
-\end{figure}
-\begin{figure}[htbp]
-	\raggedright
-	\textbf{\underline{Fractal Bush:}} \\
-	\textbf{Alphabet:} F\\
-	\textbf{Constants:} +, -, [, ] \\
-	\textbf{Axiom:} F \\
-	\textbf{Angle:} 25$^\circ$ \\
-	\textbf{Rules:} \\
-	F $\rightarrow$ FF+[+F-F-F]-[-F+F+F]\\
-	{\centering
-		\vspace{7px}
-		\includegraphics[scale=0.15]{FractalBush/FractalBush06.png}
-		\caption{Fractal Bush.}
-	}
-\end{figure}
-
-\FloatBarrier
-
-\subsection{The Use of L-systems in 3D applications}
+\subsection{Constants and Objects}
 
 \begin{flushleft}
 
-L-systems have been talked about and researched since its inception in 1968 by Aristid Lindenmayer. Over the years it's usefulness in modelling different types of plant life has been very clear, however its presence has been quite absent from any mainstream game engines for the most part, these engines relying either on digital artists skill to develop individual plants or on 3rd party software such as SpeedTree. These types of software use a multitude of different techniques however their methods are heavily rooted in Lindenmayer Systems. 
+Defining constants and objects is similar syntactically, the keyword define or include is used, followed by a variable name followed by a value, the value for a constant is a floating point number and the value for an include is a name of an object within the predefined object library. An example of the defining a constant and an object can be seen below: \\
+
+\begin{equation} \label{constant and object example}
+\begin{aligned}
+	&\text{\#define num 10;}\\
+	&\text{\#define pi 3.1415;}\\
+	&\\
+	&\text{\#include F BRANCH;}\\
+	&\text{\#include S SPHERE;}\\
+\end{aligned}
+\end{equation}
+
+The definition variables can be stored as a table, called a constants table, which keeps track of all of the constant variables defined by the L-system, the implementation for this thesis involved using a map data structure from the c++ standard library, where the index is the variable name string, and the value is the value associated with the variable as seen in the table below: \\
+
+\vspace{5mm}
+
+\begin{table}[h!] \center
+\begin{tabular}{ | c | l | }
+\hline
+	Variable Name 	& Value\\  
+\hline
+\hline
+	num 				& 10.0\\
+\hline
+	pi					& 3.1415\\
+\hline
+\end{tabular}
+\caption{Table of turtle instruction symbols and their meaning to the interpreter}
+\label{constants table}
+\end{table}
+\FloatBarrier
+
+The object table structure also makes use of the Map structure and is very similar to the constants table, the object table holds the module name, and name of the object in the predefined object library. Which will not need to be used during rewriting but will be necessary during the interpretation of the resulting string. \\
+
+\begin{table}[h!] \center
+\begin{tabular}{ | c | l | }
+\hline
+	Module Name	& Object Name\\  
+\hline
+\hline
+	F 				& BRANCH\\
+\hline
+	S				& SPHERE\\
+\hline
+\end{tabular}
+\caption{Table of turtle instruction symbols and their meaning to the interpreter}
+\label{constants table}
+\end{table}
+\FloatBarrier
 
 \end{flushleft}
 
-\newpage
+\subsection{Modules and Strings}
+
+\begin{flushleft}
+
+For the purposes of the rewriter it is important to understand that there are three major parts of a module, there is a module name, which is a single character or symbol, secondly part is the list of parameters, an open parentheses, signifies the begining of these parameters, where there can be one or more parameters listed. Thirdly, each parameter can either be made up of a number, variable, random number range or a mathematical expression containing of numbers, variables and parentheses signifying precedence. Finally the modules end is specified by a close parentheses. \\   
+
+\vspace{5mm}
+
+There are two types of modules, one being a module definition and the other a module call. The module definition stands as a type of template of a module within a production rule, these templates do not have to hold actual values but the values will be substituted during the rewriting process. The module calls would appear either in the axiom or in the resultant string, the parameters of a module call will hold an actual numerical value. Below is an example outlining the difference between the module definition and module calls.\\ 
+
+\begin{equation} \label{module definition and call example}
+\begin{aligned}
+	&\text{\#w : A(10);}\\
+	&\text{\#p1 : A(x) : * : A(x)A(x); }\\
+\end{aligned}
+\end{equation}
+
+In example \ref{module definition and call example} above, the module A(10) within the axiom, is a module call, as it contains the numerical value of 10 in the first parameter. In the production rule p1 the module A(x) within the predecessor is a module definition, it states that module A's first parmeter has a local variable x, the calling modules value will substitute x and will replace the value of x anywhere within the successor statement, p1's successor has two modules A(x)A(x), also module defintions however the value x will be subtituted with the calling modules value. When a production rules successor rewrites the calling module, the successors modules must have a numerical value, they then become module calls within the resultant string. \\ 
+
+\vspace{5mm}
+
+A string in the context of a parametric L-system is a vector of modules, this being the C++ standard library vector data structure. The modules are linked one after the other creating a type of string, but instead of characters or symbols we have a string of modules. \\
+
+\end{flushleft}

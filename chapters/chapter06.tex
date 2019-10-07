@@ -1,3 +1,79 @@
+\section{Displaying the L-system Instructions} \label{Display L-system Instructions}
+
+\subsection{Basic 2D L-systems} 
+
+There are a number of fractal geometry that have become well known particularly with regards to how they can seemingly imitate nature \cite{mandelbrot1982fractal}. Particularly with the geometry such as the Koch snowflake which can be represented using the following L-system.
+
+\begin{figure}[htbp]
+	\raggedright
+	\textbf{\underline{Koch Curve:}} \\
+	\#n = 4; \\
+	\#define r 90; \\
+	\#w : F(1); \\
+	\#p1 : F(x) : * : F(x)+(r)F(x)-(r)F(x)-(r)F(x)+(r)F(x);\\
+	{\centering
+		\vspace{7px}
+		\includegraphics[scale=0.15]{KochCurve/KochCurve04.png}
+		\caption{Koch Curve.}
+	}
+\end{figure}
+\begin{figure}[htbp]
+	\raggedright
+	\textbf{\underline{Sierpinski Triangle:}} \\
+	\#n = 4;\\
+	\#define r 60;\\
+	\#w : F(1);\\
+	\#p1 : F(x) : * : X(x)-(r)F(x)-(r)X(x);\\
+	\#p2 : X(x) : * : F(x)+(r)X(x)+(r)F(x);\\
+	{\centering
+		\vspace{7px}
+		\includegraphics[scale=0.15]{SierpinskiTriangle/SierpinskiTriangle04.png}
+		\caption{Sierpinski Triangle.}
+	}
+\end{figure}
+\begin{figure}[htbp]
+	\raggedright
+	\textbf{\underline{Fractal Plant:}} \\
+	\textbf{Alphabet:} X, F\\
+	\textbf{Constants:} +, -, [, ] \\
+	\textbf{Axiom:} X \\
+	\textbf{Angle:} 25$^\circ$ \\
+	\textbf{Rules:} \\
+	X $\rightarrow$ F-[[X]+X]+F[+FX]-X\\
+	F $\rightarrow$ FF \\
+	{\centering
+		\vspace{7px}
+		\includegraphics[scale=0.15]{FractalPlant/FractalPlant05.png}
+		\caption{Fractal Plant.}
+	}
+\end{figure}
+\begin{figure}[htbp]
+	\raggedright
+	\textbf{\underline{Fractal Bush:}} \\
+	\textbf{Alphabet:} F\\
+	\textbf{Constants:} +, -, [, ] \\
+	\textbf{Axiom:} F \\
+	\textbf{Angle:} 25$^\circ$ \\
+	\textbf{Rules:} \\
+	F $\rightarrow$ FF+[+F-F-F]-[-F+F+F]\\
+	{\centering
+		\vspace{7px}
+		\includegraphics[scale=0.15]{FractalBush/FractalBush06.png}
+		\caption{Fractal Bush.}
+	}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{The Use of L-systems in 3D applications}
+
+\begin{flushleft}
+
+L-systems have been talked about and researched since its inception in 1968 by Aristid Lindenmayer. Over the years it's usefulness in modelling different types of plant life has been very clear, however its presence has been quite absent from any mainstream game engines for the most part, these engines relying either on digital artists skill to develop individual plants or on 3rd party software such as SpeedTree. These types of software use a multitude of different techniques however their methods are heavily rooted in Lindenmayer Systems. 
+
+\end{flushleft}
+
+
 \section{Modeling Seamless Branches}
 
 \begin{flushleft}
