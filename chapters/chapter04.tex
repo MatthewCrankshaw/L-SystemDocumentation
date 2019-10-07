@@ -5,7 +5,7 @@ There are two major parts of an L-systems implementation, firstly there is the L
 
 \vspace{5mm}
 
-For simple D0L-system seen in section \ref{DOL-system example}, creating a rewriter for a simple L-system such as this is quite simple, each rewritable symbol is only made up of a single character, and because the D0L-system is deterministic we know that there is no randomess when determining the matching rule. This is just a case of storing the starting string, and then iterating through this string one character at a time and when a symbol matches that in a rule, replace that character with the string provided by the rule. This can be programmed relatively simply, however, if we are to implement the parametric 0L-system, such as having each instruction be a module with multiple parameters and the parameters being expressions, the rewriting system will have to better understand what each part of the L-system is specifying based on the grammar that it belongs to. The lexical analyser and parser can be used for this purpose in order to classify each part of the L-system and prepare it for rewriting. \\
+For simple D0L-system seen in section \ref{DOL-system example}, creating a rewriter for a simple DOL-system like this is quite simple, each rewritable symbol is only made up of a single character, and because the D0L-system is deterministic we know that there is no randomess when determining the matching rule. This is just a case of storing the starting string, and then iterating through this string one character at a time and when a symbol matches that in a rule, replace that character with the string provided by the rule. This can be implemented relatively simply, however, to implement the parametric 0L-system, where each instruction is a module with potentually multiple parameters and each parameter could be a mathematical expression, the rewriting system will have to better understand what each part of the L-system is specifying based on the grammar and its context in the L-system. The lexical analyser and parser can be used for this purpose in order to classify each part of the L-system and prepare it for rewriting. \\
 
 \vspace{5mm}
 
@@ -46,15 +46,15 @@ The reason that a lexical analyser and parser are neccessary to carry out rewrit
 
 \end{flushleft}
 
-\section{Defining the Syntax of a Parametric L-system}
+\section{The Syntax of a Parametric L-system}
 
 \begin{flushleft}
 
-This section will cover the syntax for the parametric L-system rewriter, this is using the definition of the L-systems given by Prusinkiewicz and Lindenmayer in section \ref{definition of a parametric 0L-system section}, the overall syntax of the L-system is based off on that definition, as well as some additions that allow the construction of a single L-system to include branching, constant variable definition, objects, parametric L-system concepts, randomness as well as stochastic L-systems\cite{prusinkiewicz2012algorithmic}.\\
+This section will cover the syntax for the parametric L-system rewriter, the syntax for the parametric 0L-system is similar to the definition of the L-systems given by Prusinkiewicz and Lindenmayer in section \ref{definition of a parametric 0L-system section}. There are some additions and modifications to the syntax definition provided by Prusinkiewicz and Lindenmayer in order to construct a single L-system that includes branching, constant variable definitions, object specifications, parametric L-system concepts, randomness as well as stochastic L-systems \cite{prusinkiewicz2012algorithmic}. \\
 
 \vspace{5mm}
 
-A parametric L-system is made up of five major parts, which can be catagorised as statements, these are zero of more define statements, zero of more include statements, a single generation statement, a single axiom statement and a one or more production rule statements. To make it easy for the lexer and parser, as well as keeping consistant with the L-system grammars decribed by Prusinkiewicz and Lindenmayer, as well as computer programs, each statement will be started with a \# character and will end with a ; character \cite{prusinkiewicz2013lindenmayer}.\\
+A parametric L-system is made up of five major parts, which can be catagorised as statements, these statements are the define statements, include statements, a single generation statement, a single axiom statement and a one or more production rule statements. \cite{prusinkiewicz2013lindenmayer}. In order to make it easy for the lexer and parser, each statement will be started with a \# character and will end with a ; character. \\ 
 
 \vspace{5mm}
 
@@ -84,6 +84,111 @@ The generations statement can be defined anywhere within the L-system, however i
 In order to make arithmatic less complicated, all numbers within the L-system are repersented as floating point numbers. Other data types could be added to the definition of the L-system, however, there is some added problems such as the conversion from one type to another as well as how you specify which data type you are defining. For all intent intents and purposes the floating point data type should provide all the neccessary functionality needed for the L-system.
 
 \end{flushleft}
+
+\section{Scanner - Flex} \label{Flex}
+
+\begin{flushleft}
+
+D. Cooper and L. Torczon write that "The scanner, or lexical analyser, reads a stream of characters and produces a streeam of words. It aggregates characters to form words and applies a set of rules to determin wheter or not each word is legal in the source language. If the word is valid, the scanner assigns it a syntactic category, or part of speech" \cite{cooper2011engineering}. \\
+
+\vspace{5mm}
+
+Writing a custom \gls{Lexer} can be quite complicated and time consuming to design and implement, and once a custom \gls{Lexer} has been created it can be difficult to change some functionality at a later stage. Luckely there is a well known program known as the \acrlong{flex} (\acrshort{flex}), \acrshort{flex} takes a .l file which contains the lexical rules of the language, it uses these rules to create a \gls{Lexer} program. When \acrshort{flex} is run it will create a \gls{Lexer} in the form of a C program. We can use the generated Lexer on the L-system that we would like to rewrite, taking the word within the L-system and assigning a syntactic category to it. The vaid syntactic categories are listed in the table below:
+
+\begin{table}[h!] \center
+\begin{tabular}{ | c | l | l |}
+\hline
+	Syntactic Word	& Syntactic Category & Meaning\\  
+\hline
+\hline
+	, 				& T\_COMMA 				& Separation between module parameters \\
+\hline
+	: 				& T\_COLON 				& Separation between production rule parts \\
+\hline
+	; 				& T\_SEMI\_COLON 		& End of a statement\\
+\hline
+	\#				& T\_HASH 				& Beginning of a statement\\
+\hline
+	( 				& T\_PARENL 			& Start of a modules parameters \\
+					&						& or specifies presidence in an expression \\
+\hline
+	) 				& T\_PARENR 			& End of a modules parameters \\
+					&						& or specifies presidence in an expression \\
+\hline 
+	\{ 				& T\_BRACKETL 			& Start of a random range\\
+\hline
+	\} 				& T\_BRACKETR 			& End of a random range\\
+\hline
+	$\sim$ 			& T\_TILDE 				& Stochastic operator\\
+\hline
+	== 				& T\_EQUAL\_TO 			& Relational operator stating equal to\\
+\hline
+	!= 				& T\_NOT\_EQUAL\_TO 	& Relational operator for not equal to\\
+\hline		
+	$<$ 			& T\_LESS\_THAN 		& Relational operator for less than\\
+\hline
+	$>$ 			& T\_GREATER\_THAN 		& Relational operator for greater than\\
+\hline
+	$<$ = 			& T\_LESS\_EQUAL 		& Relational operator for greater or equal\\
+\hline
+	$>$ = 			& T\_GREATER\_EQUAL 	& Relational operator for greater or equal\\
+\hline
+	[ 				& T\_SQUARE\_BRACEL 	& Module name (branching save state) \\
+\hline
+	] 				& T\_SQUARE\_BRACER 	& Module name (branching load state) \\
+\hline
+	+ 				& T\_PLUS 				& Arithmetic operator for addition, or\\
+					&						& Module name (Yaw right) \\
+\hline
+	- 				& T\_MINUS 				& Arithmetic operator for subtraction, or\\
+					&						& Module name (Yaw left)\\
+\hline
+	/ 				& T\_FORWARD\_SLASH 	& Arithmetic operator for division, or\\
+					&						& Module name (Pitch up)\\
+\hline
+	$\backslash$ 		& T\_BACK\_SLASH 		& Module name (Pitch down)\\
+\hline
+	* 				& T\_STAR 				& Arithmetic operator for multiplication, or\\
+					&						& Condition in a production rule which is true\\
+\hline
+	$\land$ 		& T\_HAT 				& Arithmetic operator for and exponent, or\\
+					&						& Module name (Roll right)\\
+\hline
+	$\&$ 			& T\_AMPERSAND 			& Module name (Roll left)\\
+\hline
+	! 				& T\_EXCLAMATION 		& Module name (Set size of branch)\\
+\hline
+	\$ 				& T\_DOLLAR 			& Module name \\
+\hline
+	= 				& T\_ASSIGN 			& Assignment operator used to set generations\\
+\hline
+	\#n 			& T\_GENERATIONS 		& Declaration of the number of generations\\
+\hline
+	\#w 			& T\_AXIOM 				& Declaration of the axiom\\
+\hline
+	[0-9]+\.[0-9]+|[0-9]+ 					& T\_FLOAT 				& Regular expression for a floating point number\\
+\hline
+	[a-zA-Z\_][a-zA-Z0-9\_]*  				& T\_VAR\_NAME 			& Regular expression for a module or variable name\\
+\hline
+\hline
+\end{tabular}
+\caption{Table of Valid Lexer Words}
+\label{lexer words}
+\end{table}
+\FloatBarrier
+
+From the table about there are a number of meanings to the grammar, for instance the ( and ) parenthesis have two meanings, it is either to specify the begining and end of a modules parameters or it specifies presidence within an expression. It is not up to the scanner to determine what the each particular parentheses meaning is, this is left up to the parser which is somewhat aware of the context of each syntactic word. \\
+
+\vspace{5mm}
+
+There are also the symbols [,],+,-,/,$\backslash$, $\land$, $\&$, ! and \$, these symbols are said to be valid module names, however it is also possible for a T\_VAR\_NAME to be a module name, this is becuase in some interpretations of the L-system these symbols are used to represent special meanings. This is the reason that the $\&$ word has the meaning \textit{roll left}. This does not mean that the scanner understands what the ampersand means, apart from the fact that it is a valid module name, the rest is left up to the interpreter.
+
+\end{flushleft}
+
+\section{Parser - Bison} \label{Bison}
+
+The parsers job is to find out if the input stream of words from the \gls{Lexer} makes up a valid sentence in the language. The \gls{Parser} fits the syntactical category to the grammatical model of the language. If the \gls{Parser} is able to fit the syntactical category of the word to the grammatical model of the language then the syntax is seen to be correct. If all of the syntax is correct the \gls{Parser} will output a syntax tree and build the structures for use later on during the compilation process \cite{cooper2011engineering}.
+
 
 \subsection{Constants and Objects}
 
@@ -139,6 +244,8 @@ The object table structure also makes use of the Map structure and is very simil
 \end{table}
 \FloatBarrier
 
+
+
 \end{flushleft}
 
 \subsection{Modules and Strings}
@@ -149,30 +256,22 @@ For the purposes of the rewriter it is important to understand that there are th
 
 \vspace{5mm}
 
+There are two types of modules, one being a module definition and the other a module call. The module definition stands as a type of template of a module within a production rule, these templates do not have to hold actual values but the values will be substituted during the rewriting process. The module calls would appear either in the axiom or in the resultant string, the parameters of a module call will hold an actual numerical value. Below is an example outlining the difference between the module definition and module calls.\\ 
+
+\begin{equation} \label{module definition and call example}
+\begin{aligned}
+	&\text{\#w : A(10);}\\
+	&\text{\#p1 : A(x) : * : A(x)A(x); }\\
+\end{aligned}
+\end{equation}
+
+In example \ref{module definition and call example} above, the module A(10) within the axiom, is a module call, as it contains the numerical value of 10 in the first parameter. In the production rule p1 the module A(x) within the predecessor is a module definition, it states that module A's first parmeter has a local variable x, the calling modules value will substitute x and will replace the value of x anywhere within the successor statement, p1's successor has two modules A(x)A(x), also module defintions however the value x will be subtituted with the calling modules value. When a production rules successor rewrites the calling module, the successors modules must have a numerical value, they then become module calls within the resultant string. \\ 
+
+\vspace{5mm}
+
 A string in the context of a parametric L-system is a vector of modules, this being the C++ standard library vector data structure. The modules are linked one after the other creating a type of string, but instead of characters or symbols we have a string of modules. \\
 
 \end{flushleft}
-
-\section{L-system Generator} \label{l-system generator section}
-
-The purpose of the L-system generator is to read a file, called the L-system discriptor which contains any information that might be necessary for the string rewriting process. This file must contain the number of times the string will be rewritten (number of generations), a starting point (axiom) and at least one production rule, it may also contain some constant variables and other information. \\
-\\
-For simple L-systems, the generator need not be too complicated. The Koch Curve L-system stated below is a good example of this. \\
-\\
-\textbf{Angle:} 90\\
-\textbf{Axiom:} F\\
-\textbf{Rules:} \\
-F $\rightarrow$ F+F-F+F\\
-\\
-Here we have a constant value of 90 degrees, the starting point of 'F' and one rule F $\rightarrow$ F+F-F+F. This type of system is very simple to rewrite computationally. \\ 
-\\
-\textbf{\textit{Here we describe some pseudocode}}\\
-
-\begin{algorithmic}
-\STATE $i \gets 10$
-\end{algorithmic}
-
-When we move onto some more complicated L-systems, such as those that use parameters which have expressions with both variables and numbers. We end up with an L-system file that is quite difficult to process and rewrite. In order to compute these complex L-systems we need to first develop a formal grammar that describes how L-system files are defined. Once we have a formalization of how to define an parametric l-system we can create a system to carry out the rewriting.
 
 \subsection{Building a Generalised L-system Grammar}
 
@@ -205,8 +304,6 @@ Here the $|$ symbol can be articulated as an OR, therefore it can be said that a
 In addition to this, any statement that is not surrounded by \textless \textgreater, states it must match that particular string. The $\in$ followed by an $|$ states that it can either be nothing or another statement. \\
 \\
 
-
-\newpage 
 \subsection{\acrlong{bnf} of the L-system Grammar} \label{L-system Grammar}
 
 % Program 
@@ -434,20 +531,6 @@ In addition to this, any statement that is not surrounded by \textless \textgrea
 % Variable
 \noindent
 \textless variable\textgreater~ $\rightarrow$ [a-zA-Z\_][a-zA-Z0-9\_]* \\
-
-
-\subsection{Scanner - Flex} \label{Flex}
-
-D. Cooper and L. Torczon write that "The scanner, or lexical analyser, reads a stream of characters and produces a streeam of words. It aggregates characters to form words and applies a set of rules to determin wheter or not each word is legal in the source language. If the word is valid, the scanner assigns it a syntactic category, or part of speech" \cite{cooper2011engineering}. \\
-\\ 
-Writing a custom \gls{Lexer} can be quite complicated and time consuming to design and implement, and once a custom \gls{Lexer} has been created it can be difficult to change some functionality at a later stage. Luckely there is a well known program known as the \acrlong{flex} (\acrshort{flex}), \acrshort{flex} takes a .lex file which contains the lexical rules of the language, it uses these rules to create a \gls{Lexer} program. When \acrshort{flex} is run it will create a \gls{Lexer} in the form of a C program. \\
-\\    
-
-
-\subsection{Parser - Bison} \label{Bison}
-
-The parsers job is to find out if the input stream of words from the \gls{Lexer} makes up a valid sentence in the language. The \gls{Parser} fits the syntactical category to the grammatical model of the language. If the \gls{Parser} is able to fit the syntactical category of the word to the grammatical model of the language then the syntax is seen to be correct. If all of the syntax is correct the \gls{Parser} will output a syntax tree and build the structures for use later on during the compilation process \cite{cooper2011engineering}.
-
 
 
 
