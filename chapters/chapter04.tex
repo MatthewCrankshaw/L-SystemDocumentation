@@ -557,6 +557,31 @@ In example \ref{module definition and call example} above, the module A(10) with
 
 \vspace{5mm}
 
-A string in the context of a parametric L-system is a vector of modules, this being the C++ standard library vector data structure. The modules are linked one after the other creating a type of string, but instead of characters or symbols we have a string of modules. \\
+A string in the context of a parametric L-system is a vector of modules, the modules are linked one after the other creating a type of string, but instead of characters or symbols we have a string of modules. \\
+
+\end{flushleft}
+
+\subsection{Arithmetic Expressions Trees}
+
+\begin{flushleft}
+
+As stated within the \acrshort{bnf} of the L-system grammar an expression is either a variable name, a number or a random range, it is also possible that an expression is part of another expression. Take the example: $5 \times 4 + n$, here there are three expressions 5, 4 and $n$ however, $5 \times 4$ is also an expression, as well as $4 + n$. We can represent this expression as an expression tree in the diagram below:
+
+
+\begin{figure}[htbp]
+	{\centering
+		\setlength{\fboxrule}{1pt}
+		\vspace{7px}
+		\fbox{
+			\includegraphics[scale=0.4]{Diagrams/ThesisContent.png}
+		}
+		\caption{Diagram of an expression tree.} \label{3D rotations}
+	}
+\end{figure}
+\FloatBarrier
+
+The parser provides a syntax tree, which makes it easy to generate the above expression tree, the tree can have four types of nodes, a variable, number, random range or a operator. The end nodes of the expression tree must be either a number, variable or random range; moreover, a connecting node within the tree must be an operator. We can then traverse the generated tree, and replace the variables with their associated value, and for random ranges we can generate the random value and assign it to the node. A second traversal then computes the result of the expression. \\
+ 
+
 
 \end{flushleft}
