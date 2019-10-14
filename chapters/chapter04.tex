@@ -9,7 +9,19 @@ For simple D0L-system seen in section \ref{DOL-system example}, creating a rewri
 
 \vspace{5mm}
 
-For the rewriting system I will be refering to definition of an L-system, the part containing information about the L-system, the axiom and the production rules.  
+\begin{figure}[htbp]
+	{\centering
+		\setlength{\fboxrule}{1pt}
+		\vspace{7px}
+		\fbox{
+			\includegraphics[scale=0.3]{Diagrams/StringRewriter.png}
+		}
+		\caption{Diagram of the Parts of The Rewiting System.} \label{3D rotations}
+	}
+\end{figure}
+\FloatBarrier
+
+The rewriting system, refers to three specific parts, as seen in the diagram above. The L-system input is passed to the rewriter in the form of a file, or string of text, this string of text is then processed by the lexical analyser, the result of the lexical analyser is a set of syntactic categories which is used by the parser to create the relvent data structures and syntax tree, this information is then used by the string rewriter which finally produces the resultant string that can be interpreted by a domain specific interpreter. Each part of the L-system rewriter will be explained in more detail in following sections. \\
 
 \end{flushleft}
 
@@ -29,20 +41,23 @@ In order to keep track of changes and manage versions Git is a free and open sou
 
 \end{flushleft}
 
-\section{The Need for a L-system Lexical Analyser and Parser}
+\section{The L-system as an interpreted grammar}
 
 \begin{flushleft}
 
-Traditionally an interpreter in computing is a program that takes program code as input, where it is then analyzed and interpreted as it is encountered in the execution process. All of the previously encountered information is kept for later interpretations. The information about the program can be extracted by inspection of the program as a whole, such as the set of declared variables in a block, a function, etc \cite{wilhelm2010compiler}. In essence, the L-system rewriter contains a type of interpreter, this should not be confused with the interpreter that processes the resultant string using turtle graphics. Due to this confusion of terms I will refer the system containing the lexical analyser, L-system parser and the rewriter itself as the L-system rewriter. \\
+Traditionally an interpreter in computing is a program that takes program code as input, where it is then analyzed and interpreted as it is encountered in the execution process. All of the previously encountered information is kept for later interpretations. The information about the program can be extracted by inspection of the program as a whole, such as the set of declared variables in a block, a function, etc \cite{wilhelm2010compiler}. In essence, the L-system rewriter contains a type of interpreter, this should not be confused with the interpreter that processes the resultant string using turtle graphics. Due to this confusion of terms I will refer the system containing the lexical analyser, L-system parser and the string rewriter as the L-system rewriter, instead of an interpreter in the computational sense. \\
 
 \vspace{5mm}
 
-A similarity can be drawn between traditional interpreted languages and the L-system rewriter. With the L-system rewriter we are defining a set of constant variables, a starting point and then some production rules. Once we have all of this information, we would like to interpret that information a number of times. \\
-For instance, we may want to rewrite five generations of the L-system, but later on we may want to instead generate up to the tenth generation. So we don't want to have to throw all the previous information away and start from scratch, instead, we can go from the current state of the L-system rewriter and just rewrite another five times. If we would then like to get the resulting string we can just ask for it from the L-system rewriter. \\
+A similarity can be drawn between traditional interpreted languages and the L-system rewriter. The L-system rewriter defines a set of constant variables, a starting point and then some production rules. This information can then be used to rewrite the starting string a number of times. Later on, it may be decided that, instead of five generations of rewriting, the rewriter should instead generate ten rewrites. Some information about the L-system is still valid, the production rules, axiom and constants have not changed and therefore, this information can be used in order to interpret to the tenth generation instead. This can be used to go from the current state of the L-system rewriter and just rewrite another five times. Instead of throwing all the information away and starting from scratch. Furthermore, if we would like to retrieve the resultant string, this can simply be asked for from the L-system rewriter. \\
 
 \vspace{5mm}
 
-The reason that a lexical analyser and parser are neccessary to carry out rewriting, is that without them it would be very difficult to find the syntactic roles of each part of the L-system, for example: F(2*3, x * (2 + y)), here we have a single module with two parameters one parameter has the expression (2 * 3) and the other has the expression (x * (2+y)), these kinds of complex structures within a grammar require some knowledge about the grammar it represents. The lexical analyser firstly makes sure that all the syntax within the L-system is correct, the parser splits the L-system into its component parts and is then able to describe each parts syntactic roll. This will provide the understanding that x and y are variables within a module and do not represent another module, as well as provide where it could find the value of x and y. For a \acrshort{cfg} like the parametric 0L-system grammar, creating an rewriter specifically designed for the L-system can make it simpler to debug any syntactic errors which a user may input, as well as make the string rewriting much faster. \\
+The lexical analyser and parser are a neccessary part in order to carry out rewriting. Without them it would be difficult to find the syntactic roles of each part of the L-system, take the module: F(2*3, x * (2 + y)) as an example, here there is a single module with two parameters, one parameter has the expression (2 * 3) and the other has the expression (x * (2+y)), these complex structures within a grammar require knowledge about the structure of the grammar it represents. The lexical analyser firstly makes sure that all the syntax within the L-system is correct and assigns each word or symbol to a syntactic category, the parser then splits the L-system into its component parts and is describes each parts syntactic roll. This provides the understanding that x and y are variables within a module and do not represent another module, as well as where the values of x and y could be found. \\
+
+\vspace{5mm}
+
+The trade off of creating an L-system with more complexity within the grammar itself is that it become more difficult to write a valid L-system to represent a particular structure, the advantage of using an rewriter specifically designed for a \acrshort{cfg} like the parametric 0L-system grammar is that it can make it simpler to debug any syntactic errors within an L-system, as well as make the string rewriting much faster. This means that writing a L-system becomes simlar to rewriting a recursive program and any syntactic mistakes made in writing this \say{program} results in a meaningful error describing what was incorrect. \\
 
 \end{flushleft}
 
@@ -50,15 +65,15 @@ The reason that a lexical analyser and parser are neccessary to carry out rewrit
 
 \begin{flushleft}
 
-This section will cover the syntax for the parametric L-system rewriter, the syntax for the parametric 0L-system is similar to the definition of the L-systems given by Prusinkiewicz and Lindenmayer in section \ref{definition of a parametric 0L-system section}. There are some additions and modifications to the syntax definition provided by Prusinkiewicz and Lindenmayer in order to construct a single L-system that includes branching, constant variable definitions, object specifications, parametric L-system concepts, randomness as well as stochastic L-systems \cite{prusinkiewicz2012algorithmic}. \\
+This section will cover the valid syntax for the parametric L-system rewriter, the syntax for the parametric 0L-system is similar to the definition of the L-systems given by Prusinkiewicz and Lindenmayer in section \ref{definition of a parametric 0L-system section}, this is to keep consistant with how most L-systems are defined. There are some additions and modifications to the syntax definition provided by Prusinkiewicz and Lindenmayer in order to construct a L-system that includes branching, constant variable definitions, object specifications, parametric L-system concepts, randomness as well as stochastic L-systems \cite{prusinkiewicz2012algorithmic}. \\
 
 \vspace{5mm}
 
-A parametric L-system is made up of five major parts, which can be catagorised as statements, these statements are the define statements, include statements, a single generation statement, a single axiom statement and a one or more production rule statements. \cite{prusinkiewicz2013lindenmayer}. In order to make it easy for the lexer and parser, each statement will be started with a \# character and will end with a ; character. \\ 
+This parametric 0L-system is made up of five major parts, each part can be catagorised as a statement, these statements are the define statements, include statements, a single generation statement, a single axiom statement and a one or more production rule statements \cite{prusinkiewicz2013lindenmayer}. All of these statements collectively form a parametric 0L-system. Each statement starts with a \# character and ends with a ; character, this is useful to the lexer and parser and allows two statements to be written on the same line. \\ 
 
 \vspace{5mm}
 
-The order in which statements should be listed is as follows: \\
+The order of statements should be listed as follows: \\
 
 \vspace{5mm}
 
@@ -77,11 +92,11 @@ The order in which statements should be listed is as follows: \\
 
 \vspace{5mm}
 
-The generations statement can be defined anywhere within the L-system, however it is convension to put this at the top of the L-system in order to be clear how many generations we would like to rewrite. The define and include statements appear above the axiom and productions statements as they define values often used within the axiom and production rules. A single axiom is then defined followed by one or more production rules. \\
+The order for some of statments does not necessarily matter, such as the generations statement which can be defined anywhere within the L-system, however, there are some parts that are required to be in a particular order, for instance, the define and include statements must appear above the axiom and productions statements as they define values used within the axiom and production rules. It is best practice to specify the L-system in the above order as to avoid any conflictions or errors. \\
 
 \vspace{5mm}
 
-In order to make arithmatic less complicated, all numbers within the L-system are repersented as floating point numbers. Other data types could be added to the definition of the L-system, however, there is some added problems such as the conversion from one type to another as well as how you specify which data type you are defining. For all intent intents and purposes the floating point data type should provide all the neccessary functionality needed for the L-system.
+Another design decision that has been made, is that all numbers within the L-system are repersented as floating point numbers. Other data types could be added to the definition of the L-system in the future, however, there is some added complexities in doing so, such as the conversion from one type to another, or having to specify which data type a variable represents. For all intents and purposes, the floating point data type provides all the neccessary functionality needed for the L-system, therefore, it seems unnecessary to add extra data types. \\
 
 \end{flushleft}
 
@@ -89,11 +104,11 @@ In order to make arithmatic less complicated, all numbers within the L-system ar
 
 \begin{flushleft}
 
-D. Cooper and L. Torczon write that "The scanner, or lexical analyser, reads a stream of characters and produces a streeam of words. It aggregates characters to form words and applies a set of rules to determin wheter or not each word is legal in the source language. If the word is valid, the scanner assigns it a syntactic category, or part of speech" \cite{cooper2011engineering}. \\
+D. Cooper and L. Torczon write that "The scanner, or lexical analyser, reads a stream of characters and produces a streeam of words. It aggregates characters to form words and applies a set of rules to determin wheter or not each word is legal in the source language. If the word is valid, the scanner assigns it a syntactic category, or part of speech" \cite{cooper2011engineering}. The lexer for parametric 0L-system will need to do exactly that. To get to a stage where we can successfully rewrite the L-system string, the rewriter must first understand what each word and symbol represents, in the form of a syntactic category, and whether or not the word or symbol is valid or not. \\
 
 \vspace{5mm}
 
-Writing a custom \gls{Lexer} can be quite complicated and time consuming to design and implement, and once a custom \gls{Lexer} has been created it can be difficult to change some functionality at a later stage. Luckely there is a well known program known as the \acrlong{flex} (\acrshort{flex}), \acrshort{flex} takes a .l file which contains the lexical rules of the language, it uses these rules to create a \gls{Lexer} program. When \acrshort{flex} is run it will create a \gls{Lexer} in the form of a C program. We can use the generated Lexer on the L-system that we would like to rewrite, taking the word within the L-system and assigning a syntactic category to it. The vaid syntactic categories are listed in the table below:
+It is possible to write custom \gls{Lexer}, however, it can be quite complicated and time consuming to design and implement, and once a custom \gls{Lexer} has been created it can be difficult to change functionality at a later stage. Luckely there is a well known program known as the \acrlong{flex} (\acrshort{flex}), \acrshort{flex} takes in a file which contains the lexical rules of the language, it uses these rules to create a \gls{Lexer} program. When \acrshort{flex} is run it will create a \gls{Lexer} in the form of a C program. We can use the generated Lexer on the L-system that we would like to rewrite, taking the word within the L-system and assigning a syntactic category to it. In order to create a lexer with \acrshort{flex}, the lexical rules in the form of syntactic categories must defined. Below are the valid syntactic categories of a parametric 0L-system:
 
 \begin{table}[h!] \center
 \begin{tabular}{ | c | l | l |}
@@ -166,6 +181,10 @@ Writing a custom \gls{Lexer} can be quite complicated and time consuming to desi
 \hline
 	\#w 			& T\_AXIOM 				& Declaration of the axiom\\
 \hline
+	\#define 			& T\_DEFINE 		& Declaration of the define\\
+\hline
+	\#object 			& T\_OBJECT			& Declaration of the object\\
+\hline
 	[0-9]+\.[0-9]+|[0-9]+ 					& T\_FLOAT 				& Regular expression for a floating point number\\
 \hline
 	[a-zA-Z\_][a-zA-Z0-9\_]*  				& T\_VAR\_NAME 			& Regular expression for a module or variable name\\
@@ -177,11 +196,12 @@ Writing a custom \gls{Lexer} can be quite complicated and time consuming to desi
 \end{table}
 \FloatBarrier
 
-From the table about there are a number of meanings to the grammar, for instance the ( and ) parenthesis have two meanings, it is either to specify the begining and end of a modules parameters or it specifies presidence within an expression. It is not up to the scanner to determine what the each particular parentheses meaning is, this is left up to the parser which is somewhat aware of the context of each syntactic word. \\
+From the table above there are a number syntactic categories which contain more than one meaning to the grammar, for instance the ( and ) parenthesis have two meanings, it is either to specify the begining and end of a modules parameters or it specifies presidence within an expression.  It is not up to the scanner to determine what the each particular parentheses means, or that it has a meaning at all, the lexer only recognises that it falls into the syntactic categories, T\_PARENL and T\_PARENR. Deriving the meaning of a given token or sytactic category is left up to the parser which is more aware of the context of each syntactic word. Similarly, the symbols [,],+,-,/,$\backslash$, $\land$, $\&$, ! and \$ are valid module names; Moreover, it is possible for a T\_VAR\_NAME to also be a module name, these symbols need to be specifically defined as their own syntactic category, as they not only represent a module name but can also represent a different meaning depending on their context. For instance, the +, -, / are valid module names, but they also are mathematical symbols used within an arithmetic expression. The scanner must separate these symbols and keep them in their own syntactic category in order for the parser to be able to understand the same symbol in multiple contexts. \\
 
 \vspace{5mm}
 
-There are also the symbols [,],+,-,/,$\backslash$, $\land$, $\&$, ! and \$, these symbols are said to be valid module names, however it is also possible for a T\_VAR\_NAME to be a module name, this is becuase in some interpretations of the L-system these symbols are used to represent special meanings. This is the reason that the $\&$ word has the meaning \textit{roll left}. This does not mean that the scanner understands what the ampersand means, apart from the fact that it is a valid module name, the rest is left up to the interpreter.
+
+It is also important to note that there are two special types of tokens, these being the T\_FLOAT and T\_VAR\_NAME which not only are part of a syntactic category but also contain a value, for instance T\_FLOAT has a floating point value and T\_VAR\_NAME has a string value. These values must be kept and provided to the parser.\\
 
 \end{flushleft}
 
@@ -222,48 +242,60 @@ In addition to this, any statement that is not surrounded by \textless \textgrea
 
 \subsection{\acrlong{bnf} of the L-system Grammar} \label{L-system Grammar}
 
-% Program 
-\noindent
-\textless prog\textgreater~ $\rightarrow$ $\in$ 
-
-\hspace{2cm} $|$  \textless stmts\textgreater~ EOF \\
-
-
-
-% Statements
-\noindent
-\textless stmts\textgreater~ $\rightarrow$ $\in$
-
-\hspace{2cm} $|$ \textless stmt\textgreater~ \textless stmts\textgreater~ \\
-
-
-% Statement
-\noindent
-\textless stmt\textgreater~ $\rightarrow$ EOL 
-
-\hspace{2cm} $|$ \textless generations\textgreater~
-
-\hspace{2cm} $|$ \textless definition\textgreater~
-
-\hspace{2cm} $|$ \textless axiom\textgreater~
-
-\hspace{2cm} $|$ \textless production\textgreater~\\
-
-
-
-% Generations
-\noindent
-\textless generations\textgreater~ $\rightarrow$ \#n = \textless float\textgreater~ ; \\
-
-
-
-% Definitions
-\noindent
-\textless definition\textgreater~ $\rightarrow$  \#define \textless variable\textgreater~ \textless float\textgreater~ ;
-
-\hspace{2cm} $|$ \#define \textless variable\textgreater~ + \textless float\textgreater~ ;
-
-\hspace{2cm} $|$ \#define \textless variable\textgreater~ -\textless float\textgreater~ ; \\
+	$<$prog$>$ $\rightarrow~ \in$ \\
+	\hspace{2cm} $|$ $<$statements$>$ EOF \\
+	
+	\noindent
+	$<$statements$>$ $\rightarrow~$ $\in$ \\
+	\hspace{2cm} $|$ $<$statement$>$ $<$statements$>$ \\ 
+	
+	\noindent
+	$<$statement$>$ $\rightarrow$~ EOL \\
+	\hspace{2cm} $|$ $<$generations$>$ \\ 
+	\hspace{2cm} $|$ $<$definition$>$ \\ 
+	\hspace{2cm} $|$ $<$object$>$ \\ 
+	\hspace{2cm} $|$ $<$axiom$>$ \\ 
+	\hspace{2cm} $|$ $<$production$>$ \\ 
+	
+	\noindent
+	$<$generations$>$ $\rightarrow$ T\_GENERATIONS T\_ASSIGN T\_FLOAT T\_SEMI\_COLON \\
+	\noindent
+	$<$number$>$ $\rightarrow$ T\_FLOAT \\
+	\hspace{2cm} $|$ T\_MINUS T\_FLOAT \\ 
+	
+	\noindent
+	$<$range$>$ $\rightarrow$ T\_BRACEL $<$number$>$ T\_COMMA $<$number$>$ T\_BRACER\\
+	
+	\noindent
+	$<$definition$>$ $\rightarrow$ T\_DEFINE T\_VAR\_NAME $<$number$>$ T\_SEMI\_COLON \\
+	\hspace{2cm} $|$  T\_DEFINE T\_VAR\_NAME $<$range$>$ T\_SEMI\_COLON \\
+	
+	\noindent
+	$<$object$>$ $\rightarrow$ T\_OBJECT T\_VAR\_NAME T\_VAR\_NAME T\_SEMI\_COLON \\
+	
+	\noindent
+	$<$module$>$ T\_VAR\_NAME \\
+	\hspace{2cm} $|$ T\_PLUS \\ 
+	\hspace{2cm} $|$ T\_MINUS \\ 
+	\hspace{2cm} $|$ T\_FORWARD\_SLASH\\ 
+	\hspace{2cm} $|$ T\_BACK\_SLASH \\ 
+	\hspace{2cm} $|$ T\_HAT \\ 
+	\hspace{2cm} $|$ T\_AMPERSAND \\ 
+	\hspace{2cm} $|$ T\_DOLLAR \\ 
+	\hspace{2cm} $|$ T\_SQUARE\_BRACEL \\ 
+	\hspace{2cm} $|$ T\_SQUARE\_BRACER \\ 
+	\hspace{2cm} $|$ T\_EXCLAMATION \\ 
+	\hspace{2cm} $|$ T\_VAR\_NAME T\_PARENL $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
+	\hspace{2cm} $|$ T\_PLUS $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
+	\hspace{2cm} $|$ T\_MINUS $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
+	\hspace{2cm} $|$ T\_FORWARD\_SLASH $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
+	\hspace{2cm} $|$ T\_BACK\_SLASH $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
+	\hspace{2cm} $|$ T\_HAT $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
+	\hspace{2cm} $|$ T\_AMPERSAND $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
+	\hspace{2cm} $|$ T\_DOLLAR $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
+	\hspace{2cm} $|$ T\_SQUARE\_BRACEL $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
+	\hspace{2cm} $|$ T\_SQUARE\_BRACER $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
+	\hspace{2cm} $|$ T\_EXCLAMATION $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
 
 
 
@@ -464,7 +496,7 @@ Defining constants and objects is similar syntactically, the keyword define or i
 \end{aligned}
 \end{equation}
 
-The definition variables can be stored as a table, called a constants table, which keeps track of all of the constant variables defined by the L-system, the implementation for this thesis involved using a map data structure from the c++ standard library, where the index is the variable name string, and the value is the value associated with the variable as seen in the table below: \\
+The definition variables can be stored as a table, called a constants table, which keeps track of all of the constant variable names as well as their values defined by the L-system, as seen in the table below: \\
 
 \vspace{5mm}
 
@@ -484,7 +516,7 @@ The definition variables can be stored as a table, called a constants table, whi
 \end{table}
 \FloatBarrier
 
-The object table structure also makes use of the Map structure and is very similar to the constants table, the object table holds the module name, and name of the object in the predefined object library. Which will not need to be used during rewriting but will be necessary during the interpretation of the resulting string. \\
+The object table structure is very similar to the constants table, the object table holds the module name, and name of the object in the predefined object library. The object table will not be used during rewriting but will be necessary to provide information during the interpretation of the resulting string about which objects each module should render. \\
 
 \begin{table}[h!] \center
 \begin{tabular}{ | c | l | }
@@ -508,7 +540,7 @@ The object table structure also makes use of the Map structure and is very simil
 
 \begin{flushleft}
 
-For the purposes of the rewriter it is important to understand that there are three major parts of a module, there is a module name, which is a single character or symbol, secondly part is the list of parameters, an open parentheses, signifies the begining of these parameters, where there can be one or more parameters listed. Thirdly, each parameter can either be made up of a number, variable, random number range or a mathematical expression containing of numbers, variables and parentheses signifying precedence. Finally the modules end is specified by a close parentheses. \\   
+For the purposes of the rewriter it is important to understand that there are three major parts of a module, there is a module name, which is a string of characters or a symbol, secondly there is a list of parameters signified by open and close parenthesis, there can be zero or more parameters listed. If there are no parameters for a module you can specify it without parenthesis, however, there should then be a space between the module without parenthesis and the next module. Thirdly, each parameter can either be made up of a number, variable, random number range or a mathematical expression containing  numbers, variables and parentheses signifying precedence. \\   
 
 \vspace{5mm}
 

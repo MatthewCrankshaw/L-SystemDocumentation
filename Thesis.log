@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  7 OCT 2019 15:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  14 OCT 2019 13:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -629,95 +629,21 @@ Package: glossary-tree 2017/11/14 v4.35 (NLCT)
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/dirtytalk/dirtytalk.sty
+Package: dirtytalk 2010/11/21 A package making "quoting" easier
 
-Package geometry Warning: Over-specification in `h'-direction.
-    `width' (845.04684pt) is ignored.
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
-
-Package geometry Warning: Over-specification in `v'-direction.
-    `height' (597.50787pt) is ignored.
-
-(/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithmic.sty
-Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
-\c@ALC@unique=\count131
-\c@ALC@line=\count132
-\c@ALC@rem=\count133
-\c@ALC@depth=\count134
-\ALC@tlm=\skip59
-\algorithmicindent=\skip60
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
-\glswrite=\write3
-\glo@main@file=\write4
-\openout4 = `Thesis.glo'.
-
-Package glossaries Info: Writing glossary file Thesis.glo on input line 44.
-\glo@acronym@file=\write5
-\openout5 = `Thesis.acn'.
-
-Package glossaries Info: Writing glossary file Thesis.acn on input line 44.
-
-(./chapters/glossary.tex) (./Thesis.aux
-
-LaTeX Warning: Label `DOL-system example' multiply defined.
-
-
-LaTeX Warning: Label `3DAxisFigure' multiply defined.
-
-
-LaTeX Warning: Label `3DAxisFigure' multiply defined.
-
-
-LaTeX Warning: Label `constants table' multiply defined.
-
-)
-\openout1 = `Thesis.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
- (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count135
-\scratchdimen=\dimen134
-\scratchbox=\box33
-\nofMPsegments=\count136
-\nofMParguments=\count137
-\everyMPshowfont=\toks34
-\MPscratchCnt=\count138
-\MPscratchDim=\dimen135
-\MPnumerator=\count139
-\makeMPintoPDFobject=\count140
-\everyMPtoPDFconversion=\toks35
-) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)))
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 
@@ -730,6 +656,88 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
+\c@dirtytalk@qdepth=\count131
+)
+
+Package geometry Warning: Over-specification in `h'-direction.
+    `width' (845.04684pt) is ignored.
+
+
+Package geometry Warning: Over-specification in `v'-direction.
+    `height' (597.50787pt) is ignored.
+
+(/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count132
+\c@ALC@line=\count133
+\c@ALC@rem=\count134
+\c@ALC@depth=\count135
+\ALC@tlm=\skip59
+\algorithmicindent=\skip60
+)
+\glswrite=\write3
+\glo@main@file=\write4
+\openout4 = `Thesis.glo'.
+
+Package glossaries Info: Writing glossary file Thesis.glo on input line 45.
+\glo@acronym@file=\write5
+\openout5 = `Thesis.acn'.
+
+Package glossaries Info: Writing glossary file Thesis.acn on input line 45.
+
+(./chapters/glossary.tex) (./Thesis.aux
+
+LaTeX Warning: Label `DOL-system example' multiply defined.
+
+
+LaTeX Warning: Label `3DAxisFigure' multiply defined.
+
+
+LaTeX Warning: Label `3DAxisFigure' multiply defined.
+
+
+LaTeX Warning: Label `3D rotations' multiply defined.
+
+
+LaTeX Warning: Label `constants table' multiply defined.
+
+)
+\openout1 = `Thesis.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count136
+\scratchdimen=\dimen134
+\scratchbox=\box33
+\nofMPsegments=\count137
+\nofMParguments=\count138
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count139
+\MPscratchDim=\dimen135
+\MPnumerator=\count140
+\makeMPintoPDFobject=\count141
+\everyMPtoPDFconversion=\toks35
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -920,181 +928,189 @@ Package pdftex.def Info: images/Diagrams/Vector2DAnd3D.png  used on input line
  [26 <./images/Diagrams/HandAxis.png> <./images/Diagrams/Vector2DAnd3D.png>] [2
 7]) [28]
 Chapter 4.
-(./chapters/chapter04.tex [29
+(./chapters/chapter04.tex
+<images/Diagrams/StringRewriter.png, id=129, 1238.6275pt x 484.81125pt>
+File: images/Diagrams/StringRewriter.png Graphic file (type png)
+<use images/Diagrams/StringRewriter.png>
+Package pdftex.def Info: images/Diagrams/StringRewriter.png  used on input line
+ 18.
+(pdftex.def)             Requested size: 371.59113pt x 145.44449pt.
+ [29
 
-] [30] [31]
-Overfull \hbox (45.77937pt too wide) in paragraph at lines 99--175
+] [30 <./images/Diagrams/StringRewriter.png>]
+[31] [32]
+Overfull \hbox (45.77937pt too wide) in paragraph at lines 114--194
  [] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[32] [33]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 201.
+[33] [34]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 221.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 201.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 221.
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--211
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 194--211
+Underfull \hbox (badness 10000) in paragraph at lines 214--231
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--211
+Underfull \hbox (badness 10000) in paragraph at lines 214--231
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--211
+Underfull \hbox (badness 10000) in paragraph at lines 214--231
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--211
+Underfull \hbox (badness 10000) in paragraph at lines 214--231
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--222
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 216--222
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 216--222
-
- []
-
-[34]
-Underfull \hbox (badness 10000) in paragraph at lines 229--230
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 237--238
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 250--251
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 255--257
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 266--267
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 271--273
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 280--281
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 285--287
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 306--307
+Underfull \hbox (badness 10000) in paragraph at lines 214--231
 
  []
 
 [35]
-Underfull \hbox (badness 10000) in paragraph at lines 314--315
+Underfull \hbox (badness 10000) in paragraph at lines 236--242
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 319--321
+Underfull \hbox (badness 10000) in paragraph at lines 236--242
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 325--327
+Underfull \hbox (badness 10000) in paragraph at lines 236--242
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--333
+Underfull \hbox (badness 10000) in paragraph at lines 245--247
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 339--340
+Underfull \hbox (badness 10000) in paragraph at lines 248--251
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 343--345
+Underfull \hbox (badness 10000) in paragraph at lines 252--259
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 352--353
+Underfull \hbox (badness 10000) in paragraph at lines 260--265
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 356--358
+Underfull \hbox (badness 10000) in paragraph at lines 266--268
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 361--363
+Underfull \hbox (badness 10000) in paragraph at lines 269--272
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 366--368
+Underfull \hbox (badness 10000) in paragraph at lines 273--275
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 372--374
+Underfull \hbox (badness 10000) in paragraph at lines 276--299
+
+ []
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 303--305
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 380--381
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 384--386
+Underfull \hbox (badness 10000) in paragraph at lines 317--319
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--406
+Underfull \hbox (badness 10000) in paragraph at lines 338--339
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--412
+Underfull \hbox (badness 10000) in paragraph at lines 346--347
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--353
+
+ []
+
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 357--359
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 363--365
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 375--377
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--385
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--390
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--395
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 398--400
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 404--406
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 412--413
 
  []
 
@@ -1103,7 +1119,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 416--418
 
  []
 
-[36]
+
 Underfull \hbox (badness 10000) in paragraph at lines 437--438
 
  []
@@ -1118,10 +1134,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 448--450
 
  []
 
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 469--470
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+ []
 
-[37]) [38]
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--476
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 480--482
+
+ []
+
+[39]) [40]
 Chapter 5.
 (./chapters/chapter05.tex
 Underfull \hbox (badness 10000) in paragraph at lines 14--37
@@ -1158,23 +1186,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--37
 
  []
 
-[39
+[41
 
 ])
-Underfull \hbox (badness 10000) in paragraph at lines 40--74
+Underfull \hbox (badness 10000) in paragraph at lines 40--75
 
  []
 
-[40]
+[42]
 Chapter 6.
 (./chapters/chapter06.tex
-<images/KochCurve/KochCurve04.png, id=167, 2464.20625pt x 746.79pt>
+<images/KochCurve/KochCurve04.png, id=176, 2464.20625pt x 746.79pt>
 File: images/KochCurve/KochCurve04.png Graphic file (type png)
 <use images/KochCurve/KochCurve04.png>
 Package pdftex.def Info: images/KochCurve/KochCurve04.png  used on input line 1
 6.
 (pdftex.def)             Requested size: 369.61499pt x 112.01366pt.
-<images/SierpinskiTriangle/SierpinskiTriangle04.png, id=168, 2319.66624pt x 131
+<images/SierpinskiTriangle/SierpinskiTriangle04.png, id=177, 2319.66624pt x 131
 8.9275pt>
 File: images/SierpinskiTriangle/SierpinskiTriangle04.png Graphic file (type png
 )
@@ -1182,59 +1210,59 @@ File: images/SierpinskiTriangle/SierpinskiTriangle04.png Graphic file (type png
 Package pdftex.def Info: images/SierpinskiTriangle/SierpinskiTriangle04.png  us
 ed on input line 30.
 (pdftex.def)             Requested size: 347.93492pt x 197.83058pt.
-<images/FractalPlant/FractalPlant05.png, id=169, 1204.5pt x 749.80125pt>
+<images/FractalPlant/FractalPlant05.png, id=178, 1204.5pt x 749.80125pt>
 File: images/FractalPlant/FractalPlant05.png Graphic file (type png)
 <use images/FractalPlant/FractalPlant05.png>
 Package pdftex.def Info: images/FractalPlant/FractalPlant05.png  used on input 
 line 46.
 (pdftex.def)             Requested size: 180.6672pt x 112.46533pt.
-<images/FractalBush/FractalBush06.png, id=170, 1147.28625pt x 795.97375pt>
+<images/FractalBush/FractalBush06.png, id=179, 1147.28625pt x 795.97375pt>
 File: images/FractalBush/FractalBush06.png Graphic file (type png)
 <use images/FractalBush/FractalBush06.png>
 Package pdftex.def Info: images/FractalBush/FractalBush06.png  used on input li
 ne 61.
 (pdftex.def)             Requested size: 172.08551pt x 119.3909pt.
- [41
+ [43
 
- <./images/KochCurve/KochCurve04.png>] [42 <./images/SierpinskiTriangle/Sierpin
+ <./images/KochCurve/KochCurve04.png>] [44 <./images/SierpinskiTriangle/Sierpin
 skiTriangle04.png> <./images/FractalPlant/FractalPlant05.png> <./images/Fractal
 Bush/FractalBush06.png>]
-<images/Diagrams/stackedBranchesMesh.png, id=180, 777.90625pt x 731.73375pt>
+<images/Diagrams/stackedBranchesMesh.png, id=188, 777.90625pt x 731.73375pt>
 File: images/Diagrams/stackedBranchesMesh.png Graphic file (type png)
 <use images/Diagrams/stackedBranchesMesh.png>
 Package pdftex.def Info: images/Diagrams/stackedBranchesMesh.png  used on input
  line 95.
 (pdftex.def)             Requested size: 124.46753pt x 117.07979pt.
-<images/Diagrams/linkedBranchesMesh.png, id=181, 724.7075pt x 623.32875pt>
+<images/Diagrams/linkedBranchesMesh.png, id=189, 724.7075pt x 623.32875pt>
 File: images/Diagrams/linkedBranchesMesh.png Graphic file (type png)
 <use images/Diagrams/linkedBranchesMesh.png>
 Package pdftex.def Info: images/Diagrams/linkedBranchesMesh.png  used on input 
 line 117.
 (pdftex.def)             Requested size: 115.95557pt x 99.73463pt.
- [43 <./images/Diagrams/stackedBranchesMesh.png>]) [44 <./images/Diagrams/linke
+ [45 <./images/Diagrams/stackedBranchesMesh.png>]) [46 <./images/Diagrams/linke
 dBranchesMesh.png>]
 Chapter 7.
-(./chapters/chapter07.tex) [45
+(./chapters/chapter07.tex) [47
 
 ]
 Chapter 8.
-(./chapters/chapter08.tex) [46
+(./chapters/chapter08.tex) [48
 
 ]
 Chapter 9.
-(./chapters/chapter09.tex) (./Thesis.acr [47
+(./chapters/chapter09.tex) (./Thesis.acr [49
 
-]) (./Thesis.gls [48
+]) (./Thesis.gls [50
 
-]) [49
+]) [51
 
 ]
 Appendix A.
-(./chapters/appendix.tex (./Thesis.bbl [50
+(./chapters/appendix.tex (./Thesis.bbl [52
 
-] [51
+] [53
 
-])) [52] (./Thesis.aux)
+])) [54] (./Thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1243,10 +1271,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7766 strings out of 492982
- 114000 string characters out of 6134896
- 245107 words of memory out of 5000000
- 11080 multiletter control sequences out of 15000+600000
+ 7800 strings out of 492982
+ 114773 string characters out of 6134896
+ 244332 words of memory out of 5000000
+ 11109 multiletter control sequences out of 15000+600000
  12115 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  45i,12n,63p,1987b,451s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1262,10 +1290,10 @@ amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 sy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pf
 b>
-Output written on Thesis.pdf (53 pages, 2603184 bytes).
+Output written on Thesis.pdf (55 pages, 2628183 bytes).
 PDF statistics:
- 255 PDF objects out of 1000 (max. 8388607)
- 156 compressed objects within 2 object streams
+ 264 PDF objects out of 1000 (max. 8388607)
+ 161 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 
