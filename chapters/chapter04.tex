@@ -209,7 +209,7 @@ It is also important to note that there are two special types of tokens, these b
 
 The parsers job is to find out if the input stream of words from the \gls{Lexer} makes up a valid sentence in the language. The \gls{Parser} fits the syntactical category to the grammatical model of the language. If the \gls{Parser} is able to fit the syntactical category of the word to the grammatical model of the language then the syntax is seen to be correct. If all of the syntax is correct the \gls{Parser} will output a syntax tree and build the structures for use later on during the compilation process \cite{cooper2011engineering}.
 
-\subsection{Building a Generalised L-system Grammar}
+\section{Building a Generalised L-system Grammar}
 
 We are now able to represent complex three dimensional tree structures in the form of a L-system rule set. In a computing sense this rule set can be seen as a type of program. In the program we define the number of generations we would like to generate, the starting point (Axiom) some constant varables (\#define) and the set of production rules. \\
 Using this information, we iterate through the from generation to generation rewritting the strings and then at the end provide a resulting string which will then be interpreted and displayed on the screen.
@@ -536,7 +536,7 @@ The object table structure is very similar to the constants table, the object ta
 
 \end{flushleft}
 
-\subsection{Modules and Strings}
+\subsection{Implementing Modules and Strings}
 
 \begin{flushleft}
 
@@ -561,11 +561,11 @@ A string in the context of a parametric L-system is a vector of modules, the mod
 
 \end{flushleft}
 
-\subsection{Arithmetic Expressions Trees}
+\subsection{Implementing Arithmetic Expressions Trees}
 
 \begin{flushleft}
 
-As stated within the \acrshort{bnf} of the L-system grammar an expression is either a variable name, a number or a random range, it is also possible that an expression is part of another expression. Take the example: $5 \times 4 + n$, here there are three expressions 5, 4 and $n$ however, $5 \times 4$ is also an expression, as well as $4 + n$. We can represent this expression as an expression tree in the diagram below:
+As stated within the \acrshort{bnf} of the L-system grammar an expression is either a variable name, a number or a random range, it is also possible that an expression is part of another expression. Take the example: $5 \times 4 + n$, here there are three expressions 5, 4 and $n$ however, $5 \times 4$ is also an expression, as well as $4 + n$. An expression can also be described as any of the aforementioned expressions between a set of parenthesis such as $(4+n)$. The result of the expression is calculated from left to right unless the parenthesis are used which prioritises the encapsulated expression to be calculated first. We can represent this expression as an expression tree in the diagram below:
 
 
 \begin{figure}[htbp]
@@ -580,8 +580,78 @@ As stated within the \acrshort{bnf} of the L-system grammar an expression is eit
 \end{figure}
 \FloatBarrier
 
-The parser provides a syntax tree, which makes it easy to generate the above expression tree, the tree can have four types of nodes, a variable, number, random range or a operator. The end nodes of the expression tree must be either a number, variable or random range; moreover, a connecting node within the tree must be an operator. We can then traverse the generated tree, and replace the variables with their associated value, and for random ranges we can generate the random value and assign it to the node. A second traversal then computes the result of the expression. \\
- 
+The parser provides a syntax tree, which makes it easy to generate the above expression tree, this can have four types of nodes, a variable, number, random range or a operator. The end nodes of the expression tree must be either a number, variable or random range; moreover, a connecting node within the tree must be an operator. We can then traverse the generated tree, and replace the variables with their associated value, and for random ranges we can generate the random value and assign it to the node. A second traversal during the rewriting process can then computes the result of the expression. \\
+
+
+\end{flushleft}
+
+\subsection{Implementing Random Ranges}
+
+\begin{flushleft}
+
+A random range provides a method of declaring a variable which represents a number that should be randomly generated between two bounds. A random range declared within a define statement will generate a random number when that constant variable is added to the constants table. A random range declared within the axiom will generate random number before the string rewriting process begins, this ensures that the number. Conversely, if a random range is defined within the successor of a production rule, the number should be generated during the rewriting process when the current module within the string is successfully matched to the predeccessor at the same time as the expressions within the successors are being evaluated. The values are generated during the rewriting process rather than prior is so that each time a module is matched to the rule, the successor will generate a different value. \\
+
+\vspace{5mm}
+
+The random number is generated using a simple psuedo-random number generator which gives a uniform distribution between a minimum and a maximum value. It is possible to implement a different type of random distribution if this is something required by the problem domain, however for the purposes of generating plant-life a uniform distribution should be sufficient.  
+
+\end{flushleft}
+
+\subsection{Implementing Stochastic Rules}
+
+\begin{flushleft}
+
+Each rule belonging to a stochastic group of rules provides a probabity value of how likely it is that the particular rule is selected during the rewriting process. For production rules to be part of the same stochastic group they are required to meet four criteria: \\
+
+\begin{itemize}
+\item The stochastic operator $\sim$ must be used with a probability between 0.0 and 1.0.
+\item The predecessor module name must match the other predecessor module names within that stochastic group.
+\item The number of parameters within the predecessor must match the number of parameters of other production rules within that stochastic group.
+\item The total probability of all of the production rules within the stochastic group must not exceed 1.0 or be less than 0.0.
+\end{itemize}
+
+Each time a rule is added to a stochastic group an entry a stochastic rule table is created in order to keep track of which rules are associated with which stochastic group as well as the probability of each rule. Using the stochastic rules below, we can generate a stochastic rule table as seen in table \ref{stochastic table}. \\
+
+\begin{equation} \label{stochastic implementation example}
+\begin{aligned}
+	&p_1~ :  F(x)~ :~ \sim 0.33 ~ :~ F(x)[+(r)F(x)]F(x)[-(r)F(x)]F(x)\\
+	&p_2~ :  F(x)~ :~ \sim 0.33 ~ :~ F(x)[+(r)F(x)]F(x)\\
+	&p_3~ :  F(x)~ :~ \sim 0.34 ~ :~ F(x)[-(r)F(x)]F(x)\\
+\end{aligned}
+\end{equation}
+
+\vspace{5mm}
+
+\begin{table}[h!] \center
+\begin{tabular}{ | c | c | c | }
+\hline
+	Stochastic Group & Rule Name & Probability\\  
+\hline
+\hline
+\multirow{3}{*}{F1} & p1 & 0.33 \\
+& p2 & 0.33 \\
+& p3 & 0.34 \\
+\hline
+\end{tabular}
+\caption{Table of the stochastic rules probabilities within a stochastic group.}
+\label{stochastic table}
+\end{table}
+\FloatBarrier
+
+\vspace{5mm}
+
+The stochastic name can be generated by using the module name of the predecessor of the production rule as well as the number of parameters within the predecessor module. In the example above we can use the predecessor name F which has a single parameter, making the stochastic name F1. This serves as a unique identifier for the stochastic group. Once all of the production rules have been processed and added to the stochastic rule table, each groups probabilities should be added together and the total should equal 1.0, certain tolerences should put in place to account for floating point error. \\
+
+\vspace{5mm}
+
+During the rewriting process the module that is to be rewritten will be matched to a particular stochastic group. A uniformly distributed random number is then generated between 0.0 and 1.0. A range for each rule will then be generated, for instance, p1 will be between 0.0 and 0.33, p2 will be between 0.33 and 0.66 and finally p3 will be between 0.66 and 1.0. The production rule with the range that the random number falls between is then selected and used for rewriting. \\
+
+\end{flushleft}
+
+\section{The String Rewriter}
+
+\begin{flushleft}
+
 
 
 \end{flushleft}

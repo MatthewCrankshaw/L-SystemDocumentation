@@ -37,22 +37,25 @@
 \contentsline {section}{\numberline {4.3}The Syntax of a Parametric L-system}{32}
 \contentsline {section}{\numberline {4.4}Scanner - Flex}{33}
 \contentsline {section}{\numberline {4.5}Parser - Bison}{35}
-\contentsline {subsection}{\numberline {4.5.1}Building a Generalised L-system Grammar}{35}
-\contentsline {subsection}{\numberline {4.5.2}\acrlong {bnf} of the L-system Grammar}{36}
-\contentsline {subsection}{\numberline {4.5.3}Constants and Objects}{39}
-\contentsline {subsection}{\numberline {4.5.4}Modules and Strings}{39}
-\contentsline {subsection}{\numberline {4.5.5}Arithmetic Expressions Trees}{40}
-\contentsline {chapter}{\numberline {5}Physics Simulation}{42}
-\contentsline {section}{\numberline {5.1}Motion Equations}{42}
-\contentsline {section}{\numberline {5.2}Hook's Law}{43}
-\contentsline {chapter}{\numberline {6}Turtle Interpreter Implementation}{44}
-\contentsline {section}{\numberline {6.1}Displaying the L-system Instructions}{44}
-\contentsline {subsection}{\numberline {6.1.1}Basic 2D L-systems}{44}
-\contentsline {subsection}{\numberline {6.1.2}The Use of L-systems in 3D applications}{46}
-\contentsline {section}{\numberline {6.2}Modeling Seamless Branches}{46}
-\contentsline {chapter}{\numberline {7}Findings and Data Analysis}{48}
-\contentsline {chapter}{\numberline {8}Discussion}{49}
-\contentsline {chapter}{\numberline {9}Conclusions}{50}
-\contentsline {chapter}{\numberline {A}Appendix}{53}
-\contentsline {section}{\numberline {A.1}Appendix 1}{53}
-\contentsline {section}{\numberline {A.2}Bibliography}{53}
+\contentsline {section}{\numberline {4.6}Building a Generalised L-system Grammar}{35}
+\contentsline {subsection}{\numberline {4.6.1}\acrlong {bnf} of the L-system Grammar}{36}
+\contentsline {subsection}{\numberline {4.6.2}Constants and Objects}{39}
+\contentsline {subsection}{\numberline {4.6.3}Implementing Modules and Strings}{39}
+\contentsline {subsection}{\numberline {4.6.4}Implementing Arithmetic Expressions Trees}{40}
+\contentsline {subsection}{\numberline {4.6.5}Implementing Random Ranges}{41}
+\contentsline {subsection}{\numberline {4.6.6}Implementing Stochastic Rules}{42}
+\contentsline {section}{\numberline {4.7}The String Rewriter}{43}
+\contentsline {chapter}{\numberline {5}Physics Simulation}{44}
+\contentsline {section}{\numberline {5.1}Motion Equations}{44}
+\contentsline {section}{\numberline {5.2}Hook's Law}{45}
+\contentsline {chapter}{\numberline {6}Turtle Interpreter Implementation}{46}
+\contentsline {section}{\numberline {6.1}Displaying the L-system Instructions}{46}
+\contentsline {subsection}{\numberline {6.1.1}Basic 2D L-systems}{46}
+\contentsline {subsection}{\numberline {6.1.2}The Use of L-systems in 3D applications}{48}
+\contentsline {section}{\numberline {6.2}Modeling Seamless Branches}{48}
+\contentsline {chapter}{\numberline {7}Findings and Data Analysis}{50}
+\contentsline {chapter}{\numberline {8}Discussion}{51}
+\contentsline {chapter}{\numberline {9}Conclusions}{52}
+\contentsline {chapter}{\numberline {A}Appendix}{55}
+\contentsline {section}{\numberline {A.1}Appendix 1}{55}
+\contentsline {section}{\numberline {A.2}Bibliography}{55}
