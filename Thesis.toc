@@ -38,10 +38,10 @@
 \contentsline {section}{\numberline {4.4}Scanner - Flex}{33}
 \contentsline {section}{\numberline {4.5}Parser - Bison}{35}
 \contentsline {section}{\numberline {4.6}Building a Generalised L-system Grammar}{35}
-\contentsline {subsection}{\numberline {4.6.1}\acrlong {bnf} of the L-system Grammar}{36}
+\contentsline {subsection}{\numberline {4.6.1}\acrlong {bnf} of the L-system Grammar}{37}
 \contentsline {subsection}{\numberline {4.6.2}Constants and Objects}{39}
-\contentsline {subsection}{\numberline {4.6.3}Implementing Modules and Strings}{39}
-\contentsline {subsection}{\numberline {4.6.4}Implementing Arithmetic Expressions Trees}{40}
+\contentsline {subsection}{\numberline {4.6.3}Implementing Modules and Strings}{40}
+\contentsline {subsection}{\numberline {4.6.4}Implementing Arithmetic Expressions Trees}{41}
 \contentsline {subsection}{\numberline {4.6.5}Implementing Random Ranges}{41}
 \contentsline {subsection}{\numberline {4.6.6}Implementing Stochastic Rules}{42}
 \contentsline {section}{\numberline {4.7}The String Rewriter}{43}

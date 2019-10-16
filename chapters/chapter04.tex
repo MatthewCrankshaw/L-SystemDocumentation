@@ -1,7 +1,9 @@
 
+
 \begin{flushleft}
 
-There are two major parts of an L-systems implementation, firstly there is the L-system rewriter, which takes a defined L-system that complies to a partacular grammar, the starting point will be rewritten a number of times using the set of production rules. The rewriting system will give a set of instructions, sometimes called the resultant string. This resultant string is passed to the second system called the interpreter. The interpreter runs through each character or instruction within the resulting string  and interprets its meaning, this acts as a set of instructions that are carried out by turtle graphics to eventually represent a model of a plant on the screen. This chapter will focus on the rewriting system. This includes formaly defining a context-free grammar which the L-system must obide by. Once the grammar has been formalized, a lexical analyser and parser, similar to those used in interpreters and compilers in computing, can be created to represent the context-free L-system grammar, essentially, creating an compiler for a context-free L-system grammar. Using this compiler we can write an L-system, similar to a computer program, the L-system "program" will be passed into the lexical analyser and then through the parser, where each component of the L-system will be identified and parsed into the appropriate computational structures. If the syntax is valid and the parser is successful, the structures created during parsing will be used to rewrite the L-system to a given generation. If the L-system provided does not match the context-free grammar definition, an appropriate error message can be displayed. \\
+There are two major parts of an L-systems implementation, firstly there is the L-system rewriter, which takes a defined L-system that complies to a partacular grammar, the starting point will be rewritten a number of times using the set of production rules. The rewriting system will give a set of instructions, sometimes called the resultant string. This resultant string is passed to the second system called the inter
+preter. The interpreter runs through each character or instruction within the resulting string  and interprets its meaning, this acts as a set of instructions that are carried out by turtle graphics to eventually represent a model of a plant on the screen. This chapter will focus on the rewriting system. This includes formaly defining a context-free grammar which the L-system must obide by. Once the grammar has been formalized, a lexical analyser and parser, similar to those used in interpreters and compilers in computing, can be created to represent the context-free L-system grammar, essentially, creating an compiler for a context-free L-system grammar. Using this compiler we can write an L-system, similar to a computer program, the L-system "program" will be passed into the lexical analyser and then through the parser, where each component of the L-system will be identified and parsed into the appropriate computational structures. If the syntax is valid and the parser is successful, the structures created during parsing will be used to rewrite the L-system to a given generation. If the L-system provided does not match the context-free grammar definition, an appropriate error message can be displayed. \\
 
 \vspace{5mm}
 
@@ -185,7 +187,7 @@ It is possible to write custom \gls{Lexer}, however, it can be quite complicated
 \hline
 	\#object 			& T\_OBJECT			& Declaration of the object\\
 \hline
-	[0-9]+\.[0-9]+|[0-9]+ 					& T\_FLOAT 				& Regular expression for a floating point number\\
+	[0-9]+.[0-9]+$|$[0-9]+ 					& T\_FLOAT 				& Regular expression for a floating point number\\
 \hline
 	[a-zA-Z\_][a-zA-Z0-9\_]*  				& T\_VAR\_NAME 			& Regular expression for a module or variable name\\
 \hline
@@ -241,118 +243,101 @@ In addition to this, any statement that is not surrounded by \textless \textgrea
 \\
 
 \subsection{\acrlong{bnf} of the L-system Grammar} \label{L-system Grammar}
+	\begin{bnf*}
+	\bnfprod{prog}
+		{\bnfes \bnfor \bnfpn{statements} \bnfsp \bnfts{EOF}}\\
+	\bnfprod{statements}
+		{\bnfes \bnfor \bnfpn{statement} \bnfpn{statements}}\\
+	\bnfprod{statement}
+		{\bnfts{EOL} \bnfor \bnfpn{generations} 
+		\bnfor \bnfpn{definition} 
+		\bnfor \bnfpn{object} 
+		\bnfor \bnfpn{axiom} 
+		\bnfor \bnfpn{production}}\\
+	\bnfprod{generations}
+		{\bnfts{\#define} \bnfsp \bnfts{=} \bnfsp \bnfpn{float} \bnfts{;}}\\
+	\bnfprod{float}
+		{\bnfts{[0-9]+.[0-9]+$|$[0-9]+}}\\
+	\bnfprod{variable}
+		{\bnfts{[a-zA-Z\_][a-zA-Z0-9\_]*}}\\
+	\bnfprod{number}
+		{\bnfpn{float} \bnfor \bnfts{-} \bnfsp \bnfpn{float}}\\
+	\bnfprod{range}
+		{\bnfts{\{} \bnfpn{number} \bnfts{,} \bnfpn{number} \bnfts{\}}}\\
+	\bnfprod{definition}
+		{\bnfts{\#define} \bnfsp \bnfpn{variable} \bnfsp \bnfpn{number} \bnfts{;}}\\
+	\bnfprod{object}
+		{\bnfts{\#object} \bnfsp \bnfpn{variable} \bnfsp \bnfpn{variable} \bnfts{;}}\\ 
+	\bnfprod{module}
+		{\bnfpn{variable} \bnfor \bnfts{+} 
+		\bnfor \bnfts{-} 
+		\bnfor \bnfts{/} 
+		\bnfor \bnfts{$\backslash$} 
+		\bnfor \bnfts{$\hat{}$}
+		\bnfor \bnfts{\&}
+		\bnfor \bnfts{\$}
+		\bnfor \bnfts{[}
+		\bnfor \bnfts{]}
+		\bnfor \bnfts{!}}\\
+		\bnfmore{\bnfor \bnfts{+} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \bnfpn{paramList} \bnfts{)}}\\
+		\bnfmore{\bnfor \bnfts{-} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \bnfpn{paramList} \bnfts{)}}\\
+		\bnfmore{\bnfor \bnfts{/} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \bnfpn{paramList} \bnfts{)}}\\
+		\bnfmore{\bnfor \bnfts{$\backslash$} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \bnfpn{paramList} \bnfts{)}}\\
+		\bnfmore{\bnfor \bnfts{$\hat{}$} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \bnfpn{paramList} \bnfts{)}}\\
+		\bnfmore{\bnfor \bnfts{\&} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \bnfpn{paramList} \bnfts{)}}\\
+		\bnfmore{\bnfor \bnfts{\$} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \bnfpn{paramList} \bnfts{)}}\\
+		\bnfmore{\bnfor \bnfts{[} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \bnfpn{paramList} \bnfts{)}}\\
+		\bnfmore{\bnfor \bnfts{]} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \bnfpn{paramList} \bnfts{)}}\\
+		\bnfmore{\bnfor \bnfts{!} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \bnfpn{paramList} \bnfts{)}}\\
+	\bnfprod{axiom}
+		{\bnfts{\#w} \bnfsp \bnfts{:} \bnfsp \bnfpn{axiomStatementList} \bnfts{;}}\\
+	\bnfprod{axiomStatementList}
+		{\bnfes \bnfor \bnfpn{axiomStatement} \bnfpn{axiomStatementList}}\\
+	\bnfprod{axiomStatement}
+		{\bnfpn{module}}\\
+	\bnfprod{paramList}
+		{\bnfes \bnfor \bnfpn{param} \bnfpn{paramList}}\\
+	\bnfprod{param}
+		{\bnfpn{expression}}\\
+	\bnfprod{expression}
+		{\bnfpn{variable} \bnfor \bnfpn{number} \bnfor \bnfpn{range}}\\
+		\bnfmore{\bnfor \bnfpn{expression} \bnfts{+} \bnfpn{expression}}\\
+		\bnfmore{\bnfor \bnfpn{expression} \bnfts{-} \bnfpn{expression}}\\
+		\bnfmore{\bnfor \bnfpn{expression} \bnfts{*} \bnfpn{expression}}\\
+		\bnfmore{\bnfor \bnfpn{expression} \bnfts{/} \bnfpn{expression}}\\
+		\bnfmore{\bnfor \bnfpn{expression} \bnfts{$\hat{}$} \bnfpn{expression}}\\
+		\bnfmore{\bnfor \bnfts{(} \bnfpn{expression} \bnfts{)}}\\
+	\bnfprod{production}
+		{\bnfts{\#} \bnfpn{variable} \bnfsp \bnfts{:} \bnfsp \bnfpn{predecessor} \bnfsp \bnfts{:} \bnfsp \bnfpn{condition} \bnfsp \bnfts{:} \bnfsp \bnfpn{successor} \bnfts{;}}\\
+	\end{bnf*}
 
-	$<$prog$>$ $\rightarrow~ \in$ \\
-	\hspace{2cm} $|$ $<$statements$>$ EOF \\
+\newpage
+
+\begin{bnf*}
+	\bnfprod{predecessor}
+		{\bnfpn{predecessorStatementList}}\\
+	\bnfprod{predecessorStatementList}
+		{\bnfes \bnfor \bnfpn{predecessorStatement} \bnfpn{predecessorStatementList} }\\
+	\bnfprod{predecessorStatement}
+		{\bnfpn{module}}\\
+	\bnfprod{condition}
+		{\bnfts{*}}\\
+		\bnfmore{\bnfor \bnfts{$\sim$} \bnfpn{float}}\\
+		\bnfmore{\bnfor \bnfpn{leftExpression} \bnfpn{operator} \bnfpn{rightExpression}}\\
+	\bnfprod{leftExpression}
+		{\bnfpn{expression}}\\
+	\bnfprod{rightExpression}
+		{\bnfpn{expression}}\\
+	\bnfprod{operator}
+		{\bnfts{==} \bnfor \bnfts{!=} \bnfor \bnfts{$<=$} \bnfor \bnfts{$>=$} \bnfor \bnfts{$>$} \bnfor \bnfts{$<$}}\\
+	\bnfprod{successor}
+		{\bnfpn{successorStatementList}}\\
+	\bnfprod{successorStatementList}
+		{\bnfes \bnfor \bnfpn{successorStatement} \bnfpn{successorStatementList}}\\
+	\bnfprod{successorStatement}
+		{\bnfpn{module}}\\
+\end{bnf*}
 	
-	\noindent
-	$<$statements$>$ $\rightarrow~$ $\in$ \\
-	\hspace{2cm} $|$ $<$statement$>$ $<$statements$>$ \\ 
-	
-	\noindent
-	$<$statement$>$ $\rightarrow$~ EOL \\
-	\hspace{2cm} $|$ $<$generations$>$ \\ 
-	\hspace{2cm} $|$ $<$definition$>$ \\ 
-	\hspace{2cm} $|$ $<$object$>$ \\ 
-	\hspace{2cm} $|$ $<$axiom$>$ \\ 
-	\hspace{2cm} $|$ $<$production$>$ \\ 
-	
-	\noindent
-	$<$generations$>$ $\rightarrow$ T\_GENERATIONS T\_ASSIGN T\_FLOAT T\_SEMI\_COLON \\
-	\noindent
-	$<$number$>$ $\rightarrow$ T\_FLOAT \\
-	\hspace{2cm} $|$ T\_MINUS T\_FLOAT \\ 
-	
-	\noindent
-	$<$range$>$ $\rightarrow$ T\_BRACEL $<$number$>$ T\_COMMA $<$number$>$ T\_BRACER\\
-	
-	\noindent
-	$<$definition$>$ $\rightarrow$ T\_DEFINE T\_VAR\_NAME $<$number$>$ T\_SEMI\_COLON \\
-	\hspace{2cm} $|$  T\_DEFINE T\_VAR\_NAME $<$range$>$ T\_SEMI\_COLON \\
-	
-	\noindent
-	$<$object$>$ $\rightarrow$ T\_OBJECT T\_VAR\_NAME T\_VAR\_NAME T\_SEMI\_COLON \\
-	
-	\noindent
-	$<$module$>$ T\_VAR\_NAME \\
-	\hspace{2cm} $|$ T\_PLUS \\ 
-	\hspace{2cm} $|$ T\_MINUS \\ 
-	\hspace{2cm} $|$ T\_FORWARD\_SLASH\\ 
-	\hspace{2cm} $|$ T\_BACK\_SLASH \\ 
-	\hspace{2cm} $|$ T\_HAT \\ 
-	\hspace{2cm} $|$ T\_AMPERSAND \\ 
-	\hspace{2cm} $|$ T\_DOLLAR \\ 
-	\hspace{2cm} $|$ T\_SQUARE\_BRACEL \\ 
-	\hspace{2cm} $|$ T\_SQUARE\_BRACER \\ 
-	\hspace{2cm} $|$ T\_EXCLAMATION \\ 
-	\hspace{2cm} $|$ T\_VAR\_NAME T\_PARENL $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
-	\hspace{2cm} $|$ T\_PLUS $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
-	\hspace{2cm} $|$ T\_MINUS $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
-	\hspace{2cm} $|$ T\_FORWARD\_SLASH $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
-	\hspace{2cm} $|$ T\_BACK\_SLASH $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
-	\hspace{2cm} $|$ T\_HAT $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
-	\hspace{2cm} $|$ T\_AMPERSAND $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
-	\hspace{2cm} $|$ T\_DOLLAR $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
-	\hspace{2cm} $|$ T\_SQUARE\_BRACEL $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
-	\hspace{2cm} $|$ T\_SQUARE\_BRACER $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
-	\hspace{2cm} $|$ T\_EXCLAMATION $<$param$>$ $<$param\_list$>$ T\_PARENR\\ 
-
-
-
-% Axiom
-\noindent
-\textless axiom\textgreater~ $\rightarrow$  \#w : \textless axiom statement list\textgreater~ ; \\
-
-
-
-% Axiom Statement List
-\noindent
-\textless axiom statement list\textgreater~ $\rightarrow$ $\in$ 
-
-\hspace{2cm} $|$ \textless axiom statement\textgreater~ \textless axiom statement list\textgreater~ ; \\
-
-
-
-% Axiom Statement
-\noindent
-\textless axiom statement\textgreater~ $\rightarrow$ \textless moduleAx\textgreater~ \\
-
-
-
-% Axiom Module 
-\noindent
-\textless moduleAx\textgreater~  $\rightarrow$ \textless variable\textgreater~ $|$ "$+$" $|$ "$-$" $|$ "/" $|$ "$\backslash$" $|$ "\textasciicircum" $|$ "$\&$" $|$ "!" 
-
-\hspace{2cm} $|$ \textless variable\textgreater~ (  \textless paramAx\textgreater~ \textless paramListAx\textgreater~ )
-
-\hspace{2cm} $|$ +(  \textless paramAx\textgreater~ \textless paramListAx\textgreater~ ) 
-
-\hspace{2cm} $|$ -(  \textless paramAx\textgreater~ \textless paramListAx\textgreater~ ) 
-
-\hspace{2cm} $|$ /(  \textless paramAx\textgreater~ \textless paramListAx\textgreater~ ) 
-
-\hspace{2cm} $|$ $\backslash$(  \textless paramAx\textgreater~ \textless paramListAx\textgreater~ )
-
-\hspace{2cm} $|$ \textasciicircum (  \textless paramAx\textgreater~ \textless paramListAx\textgreater~ ) 
-
-\hspace{2cm} $|$ $\&$(  \textless paramAx\textgreater~ \textless paramListAx\textgreater~ ) \\
-
-
-
-% Axiom Parameter List
-\noindent
-\textless paramAxList\textgreater~ $\rightarrow$  $\in$ 
-
-\hspace{2cm} $|$ , \textless paramAx\textgreater~ \textless paramAxList\textgreater~ \\
-
-
-
-% Axiom Parameter
-\noindent
-\textless paramAx\textgreater~ $\rightarrow$ \textless expression\textgreater~ \\
-
-
-
 % Production
 \noindent
 \textless production\textgreater~ $\rightarrow$  \# \textless variable\textgreater~  : \textless predecessor\textgreater~ : \textless condition\textgreater~  : \textless successor\textgreater~ ;\\
