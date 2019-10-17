@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.15)  16 OCT 2019 10:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  17 OCT 2019 11:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -16293,6 +16293,15 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no m in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
+! Undefined control sequence.
+l.246 	\onehalfspacing
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 
 ! LaTeX Error: Environment bnf* undefined.
 
@@ -16300,14 +16309,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.246 	\begin{bnf*}
+l.247 	\begin{bnf*}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.247 	\bnfprod
+l.248 	\bnfprod
                {prog}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16320,7 +16329,7 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no g in font nullfont!
 ! Undefined control sequence.
-l.248 		{\bnfes
+l.249 		{\bnfes
                 \bnfor \bnfpn{statements} \bnfsp \bnfts{EOF}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16329,7 +16338,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.248 		{\bnfes \bnfor
+l.249 		{\bnfes \bnfor
                        \bnfpn{statements} \bnfsp \bnfts{EOF}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16338,7 +16347,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.248 		{\bnfes \bnfor \bnfpn
+l.249 		{\bnfes \bnfor \bnfpn
                              {statements} \bnfsp \bnfts{EOF}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16357,7 +16366,7 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no s in font nullfont!
 ! Undefined control sequence.
-l.248 		{\bnfes \bnfor \bnfpn{statements} \bnfsp
+l.249 		{\bnfes \bnfor \bnfpn{statements} \bnfsp
                                                  \bnfts{EOF}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16366,7 +16375,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.248 ...s \bnfor \bnfpn{statements} \bnfsp \bnfts
+l.249 ...s \bnfor \bnfpn{statements} \bnfsp \bnfts
                                                   {EOF}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16380,7 +16389,7 @@ Missing character: There is no F in font nullfont!
 ! Undefined control sequence.
 <recently read> \bnfprod 
                          
-l.249 	\bnfprod
+l.250 	\bnfprod
                {statements}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16399,7 +16408,7 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no s in font nullfont!
 ! Undefined control sequence.
-l.250 		{\bnfes
+l.251 		{\bnfes
                 \bnfor \bnfpn{statement} \bnfpn{statements}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16408,7 +16417,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.250 		{\bnfes \bnfor
+l.251 		{\bnfes \bnfor
                        \bnfpn{statement} \bnfpn{statements}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16417,7 +16426,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.250 		{\bnfes \bnfor \bnfpn
+l.251 		{\bnfes \bnfor \bnfpn
                              {statement} \bnfpn{statements}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16435,7 +16444,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.250 		{\bnfes \bnfor \bnfpn{statement} \bnfpn
+l.251 		{\bnfes \bnfor \bnfpn{statement} \bnfpn
                                                {statements}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16456,7 +16465,7 @@ Missing character: There is no s in font nullfont!
 ! Undefined control sequence.
 <recently read> \bnfprod 
                          
-l.251 	\bnfprod
+l.252 	\bnfprod
                {statement}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16474,7 +16483,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.252 		{\bnfts
+l.253 		{\bnfts
                {EOL} \bnfor \bnfpn{generations}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16486,7 +16495,7 @@ Missing character: There is no E in font nullfont!
 Missing character: There is no O in font nullfont!
 Missing character: There is no L in font nullfont!
 ! Undefined control sequence.
-l.252 		{\bnfts{EOL} \bnfor
+l.253 		{\bnfts{EOL} \bnfor
                             \bnfpn{generations}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16495,7 +16504,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.252 		{\bnfts{EOL} \bnfor \bnfpn
+l.253 		{\bnfts{EOL} \bnfor \bnfpn
                                   {generations}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16515,7 +16524,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no s in font nullfont!
 ! Undefined control sequence.
-l.253 		\bnfor
+l.254 		\bnfor
                \bnfpn{definition}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16524,7 +16533,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.253 		\bnfor \bnfpn
+l.254 		\bnfor \bnfpn
                      {definition}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16543,7 +16552,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
-l.254 		\bnfor
+l.255 		\bnfor
                \bnfpn{object}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16552,7 +16561,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.254 		\bnfor \bnfpn
+l.255 		\bnfor \bnfpn
                      {object}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16567,7 +16576,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.255 		\bnfor
+l.256 		\bnfor
                \bnfpn{axiom}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16576,7 +16585,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.255 		\bnfor \bnfpn
+l.256 		\bnfor \bnfpn
                      {axiom}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16590,7 +16599,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no m in font nullfont!
 ! Undefined control sequence.
-l.256 		\bnfor
+l.257 		\bnfor
                \bnfpn{production}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16599,7 +16608,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.256 		\bnfor \bnfpn
+l.257 		\bnfor \bnfpn
                      {production}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16620,7 +16629,7 @@ Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
 <recently read> \bnfprod 
                          
-l.257 	\bnfprod
+l.258 	\bnfprod
                {generations}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16640,7 +16649,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no s in font nullfont!
 ! Undefined control sequence.
-l.258 		{\bnfts
+l.259 		{\bnfts
                {\#define} \bnfsp \bnfts{=} \bnfsp \bnfpn{float} \bnfts{;}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16656,7 +16665,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.258 		{\bnfts{\#define} \bnfsp
+l.259 		{\bnfts{\#define} \bnfsp
                                  \bnfts{=} \bnfsp \bnfpn{float} \bnfts{;}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16665,7 +16674,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.258 		{\bnfts{\#define} \bnfsp \bnfts
+l.259 		{\bnfts{\#define} \bnfsp \bnfts
                                        {=} \bnfsp \bnfpn{float} \bnfts{;}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16675,7 +16684,7 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no = in font nullfont!
 ! Undefined control sequence.
-l.258 		{\bnfts{\#define} \bnfsp \bnfts{=} \bnfsp
+l.259 		{\bnfts{\#define} \bnfsp \bnfts{=} \bnfsp
                                                   \bnfpn{float} \bnfts{;}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16684,7 +16693,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.258 ...{\#define} \bnfsp \bnfts{=} \bnfsp \bnfpn
+l.259 ...{\#define} \bnfsp \bnfts{=} \bnfsp \bnfpn
                                                   {float} \bnfts{;}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16698,7 +16707,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.258 ...fsp \bnfts{=} \bnfsp \bnfpn{float} \bnfts
+l.259 ...fsp \bnfts{=} \bnfsp \bnfpn{float} \bnfts
                                                   {;}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16710,7 +16719,7 @@ Missing character: There is no ; in font nullfont!
 ! Undefined control sequence.
 <recently read> \bnfprod 
                          
-l.259 	\bnfprod
+l.260 	\bnfprod
                {float}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16724,7 +16733,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.260 		{\bnfts
+l.261 		{\bnfts
                {[0-9]+.[0-9]+$|$[0-9]+}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16754,7 +16763,7 @@ Missing character: There is no + in font nullfont!
 ! Undefined control sequence.
 <recently read> \bnfprod 
                          
-l.261 	\bnfprod
+l.262 	\bnfprod
                {variable}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16771,7 +16780,7 @@ Missing character: There is no b in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.262 		{\bnfts
+l.263 		{\bnfts
                {[a-zA-Z\_][a-zA-Z0-9\_]*}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16802,7 +16811,7 @@ Missing character: There is no * in font nullfont!
 ! Undefined control sequence.
 <recently read> \bnfprod 
                          
-l.263 	\bnfprod
+l.264 	\bnfprod
                {number}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16817,7 +16826,7 @@ Missing character: There is no b in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 ! Undefined control sequence.
-l.264 		{\bnfpn
+l.265 		{\bnfpn
                {float} \bnfor \bnfts{-} \bnfsp \bnfpn{float}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16831,7 +16840,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.264 		{\bnfpn{float} \bnfor
+l.265 		{\bnfpn{float} \bnfor
                               \bnfts{-} \bnfsp \bnfpn{float}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16840,7 +16849,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.264 		{\bnfpn{float} \bnfor \bnfts
+l.265 		{\bnfpn{float} \bnfor \bnfts
                                     {-} \bnfsp \bnfpn{float}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16850,7 +16859,7 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no - in font nullfont!
 ! Undefined control sequence.
-l.264 		{\bnfpn{float} \bnfor \bnfts{-} \bnfsp
+l.265 		{\bnfpn{float} \bnfor \bnfts{-} \bnfsp
                                                \bnfpn{float}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16859,7 +16868,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.264 ...fpn{float} \bnfor \bnfts{-} \bnfsp \bnfpn
+l.265 ...fpn{float} \bnfor \bnfts{-} \bnfsp \bnfpn
                                                   {float}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16875,7 +16884,7 @@ Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
 <recently read> \bnfprod 
                          
-l.265 	\bnfprod
+l.266 	\bnfprod
                {range}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16889,7 +16898,7 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no g in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.266 		{\bnfts
+l.267 		{\bnfts
                {\{} \bnfpn{number} \bnfts{,} \bnfpn{number} \bnfts{\}}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16898,7 +16907,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.266 		{\bnfts{\{} \bnfpn
+l.267 		{\bnfts{\{} \bnfpn
                           {number} \bnfts{,} \bnfpn{number} \bnfts{\}}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16913,7 +16922,7 @@ Missing character: There is no b in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 ! Undefined control sequence.
-l.266 		{\bnfts{\{} \bnfpn{number} \bnfts
+l.267 		{\bnfts{\{} \bnfpn{number} \bnfts
                                          {,} \bnfpn{number} \bnfts{\}}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16923,7 +16932,7 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no , in font nullfont!
 ! Undefined control sequence.
-l.266 ...bnfts{\{} \bnfpn{number} \bnfts{,} \bnfpn
+l.267 ...bnfts{\{} \bnfpn{number} \bnfts{,} \bnfpn
                                                   {number} \bnfts{\}}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16938,7 +16947,7 @@ Missing character: There is no b in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 ! Undefined control sequence.
-l.266 ...n{number} \bnfts{,} \bnfpn{number} \bnfts
+l.267 ...n{number} \bnfts{,} \bnfpn{number} \bnfts
                                                   {\}}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16949,7 +16958,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \bnfprod 
                          
-l.267 	\bnfprod
+l.268 	\bnfprod
                {definition}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16968,7 +16977,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
-l.268 		{\bnfts
+l.269 		{\bnfts
                {\#define} \bnfsp \bnfpn{variable} \bnfsp \bnfpn{number} \bnf...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16984,7 +16993,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.268 		{\bnfts{\#define} \bnfsp
+l.269 		{\bnfts{\#define} \bnfsp
                                  \bnfpn{variable} \bnfsp \bnfpn{number} \bnf...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -16993,7 +17002,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.268 		{\bnfts{\#define} \bnfsp \bnfpn
+l.269 		{\bnfts{\#define} \bnfsp \bnfpn
                                        {variable} \bnfsp \bnfpn{number} \bnf...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17010,7 +17019,7 @@ Missing character: There is no b in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.268 ...{\#define} \bnfsp \bnfpn{variable} \bnfsp
+l.269 ...{\#define} \bnfsp \bnfpn{variable} \bnfsp
                                                    \bnfpn{number} \bnfts{;}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17019,7 +17028,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.268 ...ne} \bnfsp \bnfpn{variable} \bnfsp \bnfpn
+l.269 ...ne} \bnfsp \bnfpn{variable} \bnfsp \bnfpn
                                                   {number} \bnfts{;}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17034,7 +17043,7 @@ Missing character: There is no b in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 ! Undefined control sequence.
-l.268 ...pn{variable} \bnfsp \bnfpn{number} \bnfts
+l.269 ...pn{variable} \bnfsp \bnfpn{number} \bnfts
                                                   {;}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17046,7 +17055,7 @@ Missing character: There is no ; in font nullfont!
 ! Undefined control sequence.
 <recently read> \bnfprod 
                          
-l.269 	\bnfprod
+l.270 	\bnfprod
                {object}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17061,7 +17070,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.270 		{\bnfts
+l.271 		{\bnfts
                {\#object} \bnfsp \bnfpn{variable} \bnfsp \bnfpn{variable} \b...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17077,7 +17086,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.270 		{\bnfts{\#object} \bnfsp
+l.271 		{\bnfts{\#object} \bnfsp
                                  \bnfpn{variable} \bnfsp \bnfpn{variable} \b...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17086,7 +17095,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.270 		{\bnfts{\#object} \bnfsp \bnfpn
+l.271 		{\bnfts{\#object} \bnfsp \bnfpn
                                        {variable} \bnfsp \bnfpn{variable} \b...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17103,7 +17112,7 @@ Missing character: There is no b in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.270 ...{\#object} \bnfsp \bnfpn{variable} \bnfsp
+l.271 ...{\#object} \bnfsp \bnfpn{variable} \bnfsp
                                                    \bnfpn{variable} \bnfts{;...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17112,7 +17121,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.270 ...ct} \bnfsp \bnfpn{variable} \bnfsp \bnfpn
+l.271 ...ct} \bnfsp \bnfpn{variable} \bnfsp \bnfpn
                                                   {variable} \bnfts{;}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17129,7 +17138,7 @@ Missing character: There is no b in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.270 ...{variable} \bnfsp \bnfpn{variable} \bnfts
+l.271 ...{variable} \bnfsp \bnfpn{variable} \bnfts
                                                   {;}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17141,7 +17150,7 @@ Missing character: There is no ; in font nullfont!
 ! Undefined control sequence.
 <recently read> \bnfprod 
                          
-l.271 	\bnfprod
+l.272 	\bnfprod
                {module}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17156,7 +17165,7 @@ Missing character: There is no u in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.272 		{\bnfpn
+l.273 		{\bnfpn
                {variable} \bnfor \bnfts{+}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17173,7 +17182,7 @@ Missing character: There is no b in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.272 		{\bnfpn{variable} \bnfor
+l.273 		{\bnfpn{variable} \bnfor
                                  \bnfts{+}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17182,7 +17191,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.272 		{\bnfpn{variable} \bnfor \bnfts
+l.273 		{\bnfpn{variable} \bnfor \bnfts
                                        {+}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17192,7 +17201,7 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no + in font nullfont!
 ! Undefined control sequence.
-l.273 		\bnfor
+l.274 		\bnfor
                \bnfts{-}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17201,7 +17210,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.273 		\bnfor \bnfts
+l.274 		\bnfor \bnfts
                      {-}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17211,7 +17220,7 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no - in font nullfont!
 ! Undefined control sequence.
-l.274 		\bnfor
+l.275 		\bnfor
                \bnfts{/}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17220,7 +17229,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.274 		\bnfor \bnfts
+l.275 		\bnfor \bnfts
                      {/}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17230,7 +17239,7 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no / in font nullfont!
 ! Undefined control sequence.
-l.275 		\bnfor
+l.276 		\bnfor
                \bnfts{$\backslash$}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17239,7 +17248,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.275 		\bnfor \bnfts
+l.276 		\bnfor \bnfts
                      {$\backslash$}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17248,26 +17257,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.276 		\bnfor
-               \bnfts{$\hat{}$}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.276 		\bnfor \bnfts
-                     {$\hat{}$}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
 l.277 		\bnfor
-               \bnfts{\&}
+               \bnfts{$\land$}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -17276,6 +17267,24 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 l.277 		\bnfor \bnfts
+                     {$\land$}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.278 		\bnfor
+               \bnfts{\&}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.278 		\bnfor \bnfts
                      {\&}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17285,7 +17294,7 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no & in font nullfont!
 ! Undefined control sequence.
-l.278 		\bnfor
+l.279 		\bnfor
                \bnfts{\$}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17294,7 +17303,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.278 		\bnfor \bnfts
+l.279 		\bnfor \bnfts
                      {\$}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17303,7 +17312,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.279 		\bnfor
+l.280 		\bnfor
                \bnfts{[}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17312,7 +17321,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.279 		\bnfor \bnfts
+l.280 		\bnfor \bnfts
                      {[}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17322,7 +17331,7 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
-l.280 		\bnfor
+l.281 		\bnfor
                \bnfts{]}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17331,7 +17340,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.280 		\bnfor \bnfts
+l.281 		\bnfor \bnfts
                      {]}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -17341,27 +17350,8 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
-l.281 		\bnfor
-               \bnfts{!}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.281 		\bnfor \bnfts
-                     {!}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no ! in font nullfont!
-! Undefined control sequence.
 l.282 		\bnfor
-               \bnfts{+} \bnfts{(} \bnfpn{param} \bnfpn{paramList} \bnfts{)}...
+               \bnfts{!}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -17370,7 +17360,37 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 l.282 		\bnfor \bnfts
-                     {+} \bnfts{(} \bnfpn{param} \bnfpn{paramList} \bnfts{)}...
+                     {!}}\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ! in font nullfont!
+! Undefined control sequence.
+<recently read> \bnfmore 
+                         
+l.283 		\bnfmore
+                {\bnfor \bnfts{+} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.283 		\bnfmore{\bnfor
+                        \bnfts{+} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.283 		\bnfmore{\bnfor \bnfts
+                              {+} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -17379,8 +17399,8 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no + in font nullfont!
 ! Undefined control sequence.
-l.282 		\bnfor \bnfts{+} \bnfts
-                               {(} \bnfpn{param} \bnfpn{paramList} \bnfts{)}...
+l.283 		\bnfmore{\bnfor \bnfts{+} \bnfts
+                                        {(} \bnfpn{param} \bnfts{,} \bnfsp \...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -17389,8 +17409,8 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no ( in font nullfont!
 ! Undefined control sequence.
-l.282 		\bnfor \bnfts{+} \bnfts{(} \bnfpn
-                                         {param} \bnfpn{paramList} \bnfts{)}...
+l.283 		\bnfmore{\bnfor \bnfts{+} \bnfts{(} \bnfpn
+                                                  {param} \bnfts{,} \bnfsp \...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -17403,8 +17423,27 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no m in font nullfont!
 ! Undefined control sequence.
-l.282 ... \bnfts{+} \bnfts{(} \bnfpn{param} \bnfpn
-                                                  {paramList} \bnfts{)} \bnfnl
+l.283 ... \bnfts{+} \bnfts{(} \bnfpn{param} \bnfts
+                                                  {,} \bnfsp \bnfpn{paramLis...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no , in font nullfont!
+! Undefined control sequence.
+l.283 ... \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp
+                                                   \bnfpn{paramList} \bnfts{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.283 ...{(} \bnfpn{param} \bnfts{,} \bnfsp \bnfpn
+                                                  {paramList} \bnfts{)}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -17421,8 +17460,8 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.282 ...(} \bnfpn{param} \bnfpn{paramList} \bnfts
-                                                  {)} \bnfnl
+l.283 ...\bnfts{,} \bnfsp \bnfpn{paramList} \bnfts
+                                                  {)}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -17431,8 +17470,10 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no ) in font nullfont!
 ! Undefined control sequence.
-l.282 ...param} \bnfpn{paramList} \bnfts{)} \bnfnl
-                                                  
+<recently read> \bnfmore 
+                         
+l.284 		\bnfmore
+                {\bnfor \bnfts{-} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -17440,8 +17481,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.283 		\bnfor
-               \bnfts{-} \bnfts{(} \bnfpn{param} \bnfpn{paramList} \bnfts{)}
+l.284 		\bnfmore{\bnfor
+                        \bnfts{-} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -17449,8 +17490,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.283 		\bnfor \bnfts
-                     {-} \bnfts{(} \bnfpn{param} \bnfpn{paramList} \bnfts{)}
+l.284 		\bnfmore{\bnfor \bnfts
+                              {-} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -17459,8 +17500,8 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no - in font nullfont!
 ! Undefined control sequence.
-l.283 		\bnfor \bnfts{-} \bnfts
-                               {(} \bnfpn{param} \bnfpn{paramList} \bnfts{)}
+l.284 		\bnfmore{\bnfor \bnfts{-} \bnfts
+                                        {(} \bnfpn{param} \bnfts{,} \bnfsp \...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -17469,65 +17510,14 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no ( in font nullfont!
 ! Undefined control sequence.
-l.283 		\bnfor \bnfts{-} \bnfts{(} \bnfpn
-                                         {param} \bnfpn{paramList} \bnfts{)}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no p in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no m in font nullfont!
-! Undefined control sequence.
-l.283 ... \bnfts{-} \bnfts{(} \bnfpn{param} \bnfpn
-                                                  {paramList} \bnfts{)}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no p in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no L in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-! Undefined control sequence.
-l.283 ...(} \bnfpn{param} \bnfpn{paramList} \bnfts
-                                                  {)}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no ) in font nullfont!
-! Undefined control sequence.
-l.284 		\bnfor
-               \bnfts{/} \bnfts{(} \bnfpn{param} \bnfpn{paramList} \bnfts{)}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.284 		\bnfor \bnfts
-                     {/} \bnfts{(} \bnfpn{param} \bnfpn{paramList} \bnfts{)}
+l.284 		\bnfmore{\bnfor \bnfts{-} \bnfts{(} \bnfpn
+                                                  {param} \bnfts{,} \bnfsp \...
 (That makes 100 errors; please try again.) 
 Here is how much of TeX's memory you used:
- 67 strings out of 492982
- 1138 string characters out of 6134895
- 75936 words of memory out of 5000000
- 3726 multiletter control sequences out of 15000+600000
+ 68 strings out of 492982
+ 1145 string characters out of 6134896
+ 75924 words of memory out of 5000000
+ 3727 multiletter control sequences out of 15000+600000
  3948 words of font info for 15 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  19i,7n,21p,1335b,241s stack positions out of 5000i,500n,10000p,200000b,80000s

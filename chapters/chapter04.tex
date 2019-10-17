@@ -1,5 +1,4 @@
 
-
 \begin{flushleft}
 
 There are two major parts of an L-systems implementation, firstly there is the L-system rewriter, which takes a defined L-system that complies to a partacular grammar, the starting point will be rewritten a number of times using the set of production rules. The rewriting system will give a set of instructions, sometimes called the resultant string. This resultant string is passed to the second system called the inter
@@ -168,7 +167,7 @@ It is possible to write custom \gls{Lexer}, however, it can be quite complicated
 	* 				& T\_STAR 				& Arithmetic operator for multiplication, or\\
 					&						& Condition in a production rule which is true\\
 \hline
-	$\land$ 		& T\_HAT 				& Arithmetic operator for and exponent, or\\
+	$\land$		& T\_HAT 				& Arithmetic operator for and exponent, or\\
 					&						& Module name (Roll right)\\
 \hline
 	$\&$ 			& T\_AMPERSAND 			& Module name (Roll left)\\
@@ -228,14 +227,15 @@ For example: \\
 The first line states that an \textless expression\textgreater~ can be any number, line two states that an \\ \textless expression\textgreater~ can also be an expression that is inside parenthesis. Line three states that an \\ \textless expression\textgreater~ can be an \textless expression\textgreater~ added to another \textless expression\textgreater~, furthermore line four states that an \textless expression\textgreater~ can also be an \textless expression\textgreater~ subtracted by another \textless expression\textgreater~. \\
 \\
 The above grammar can be expressed as follows: \\
-\\
-\textless expression\textgreater~ $\rightarrow$ number 
 
-\hspace{2cm} $|$ (\textless expression\textgreater~) 
-
-\hspace{2cm} $|$ \textless expression\textgreater~ + \textless expression\textgreater~ 
-
-\hspace{2cm} $|$ \textless expression\textgreater~ - \textless expression\textgreater~ \\
+\onehalfspacing
+\begin{bnf*}
+	\bnfprod{expression}
+		{\bnfts{number}}\\
+		\bnfmore{\bnfor \bnfts{(} \bnfpn{expression} \bnfts{)}}\\
+		\bnfmore{\bnfor \bnfpn{expression} \bnfts{+} \bnfpn{expression}}\\
+		\bnfmore{\bnfor \bnfpn{expression} \bnfts{-} \bnfpn{expression}}\\
+\end{bnf*}
 \\
 Here the $|$ symbol can be articulated as an OR, therefore it can be said that an \textless expression\textgreater~ can be a number OR an \textless expression\textgreater~ surrounded by parenthesis, OR an \textless expression\textgreater~ added to another \textless expression\textgreater~ OR an \textless expression\textgreater~ subtracted by another \textless expression\textgreater~. 
 \\
@@ -243,6 +243,7 @@ In addition to this, any statement that is not surrounded by \textless \textgrea
 \\
 
 \subsection{\acrlong{bnf} of the L-system Grammar} \label{L-system Grammar}
+	\onehalfspacing
 	\begin{bnf*}
 	\bnfprod{prog}
 		{\bnfes \bnfor \bnfpn{statements} \bnfsp \bnfts{EOF}}\\
@@ -273,7 +274,7 @@ In addition to this, any statement that is not surrounded by \textless \textgrea
 		\bnfor \bnfts{-} 
 		\bnfor \bnfts{/} 
 		\bnfor \bnfts{$\backslash$} 
-		\bnfor \bnfts{$\hat{}$}
+		\bnfor \bnfts{$\land$}
 		\bnfor \bnfts{\&}
 		\bnfor \bnfts{\$}
 		\bnfor \bnfts{[}
@@ -283,7 +284,7 @@ In addition to this, any statement that is not surrounded by \textless \textgrea
 		\bnfmore{\bnfor \bnfts{-} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \bnfpn{paramList} \bnfts{)}}\\
 		\bnfmore{\bnfor \bnfts{/} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \bnfpn{paramList} \bnfts{)}}\\
 		\bnfmore{\bnfor \bnfts{$\backslash$} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \bnfpn{paramList} \bnfts{)}}\\
-		\bnfmore{\bnfor \bnfts{$\hat{}$} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \bnfpn{paramList} \bnfts{)}}\\
+		\bnfmore{\bnfor \bnfts{$\land$} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \bnfpn{paramList} \bnfts{)}}\\
 		\bnfmore{\bnfor \bnfts{\&} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \bnfpn{paramList} \bnfts{)}}\\
 		\bnfmore{\bnfor \bnfts{\$} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \bnfpn{paramList} \bnfts{)}}\\
 		\bnfmore{\bnfor \bnfts{[} \bnfts{(} \bnfpn{param} \bnfts{,} \bnfsp \bnfpn{paramList} \bnfts{)}}\\
@@ -305,7 +306,7 @@ In addition to this, any statement that is not surrounded by \textless \textgrea
 		\bnfmore{\bnfor \bnfpn{expression} \bnfts{-} \bnfpn{expression}}\\
 		\bnfmore{\bnfor \bnfpn{expression} \bnfts{*} \bnfpn{expression}}\\
 		\bnfmore{\bnfor \bnfpn{expression} \bnfts{/} \bnfpn{expression}}\\
-		\bnfmore{\bnfor \bnfpn{expression} \bnfts{$\hat{}$} \bnfpn{expression}}\\
+		\bnfmore{\bnfor \bnfpn{expression} \bnfts{$\land$} \bnfpn{expression}}\\
 		\bnfmore{\bnfor \bnfts{(} \bnfpn{expression} \bnfts{)}}\\
 	\bnfprod{production}
 		{\bnfts{\#} \bnfpn{variable} \bnfsp \bnfts{:} \bnfsp \bnfpn{predecessor} \bnfsp \bnfts{:} \bnfsp \bnfpn{condition} \bnfsp \bnfts{:} \bnfsp \bnfpn{successor} \bnfts{;}}\\
@@ -337,133 +338,8 @@ In addition to this, any statement that is not surrounded by \textless \textgrea
 	\bnfprod{successorStatement}
 		{\bnfpn{module}}\\
 \end{bnf*}
-	
-% Production
-\noindent
-\textless production\textgreater~ $\rightarrow$  \# \textless variable\textgreater~  : \textless predecessor\textgreater~ : \textless condition\textgreater~  : \textless successor\textgreater~ ;\\
 
-
-
-% Predecessor
-\noindent
-\textless predecessor\textgreater~ $\rightarrow$ \textless pred statement list\textgreater~ \\
-
-
-% Predecessor Statement List
-\noindent
-\textless pred statement list\textgreater~ $\rightarrow$ $\in$
-
-\hspace{2cm} $|$ \textless pred statement\textgreater~ \textless pred statement list\textgreater~ \\
-
-
-% Predecessor Statement
-\noindent
-\textless pred statement\textgreater~ $\rightarrow$ \textless module\textgreater~ \\
-
-
-
-% Condition 
-\noindent
-\textless condition\textgreater~ $\rightarrow$ *
-
-\hspace{2cm} $|$ \textless left expression\textgreater~ \textless conditions statement\textgreater~ \textless right expression\textgreater~ \\
-
-
-% Condition Left Expression
-\noindent
-\textless left expression\textgreater~ $\rightarrow$ \textless expression\textgreater~ \\
-
-
-% Condition Right Expression
-\noindent
-\textless right expression\textgreater~ $\rightarrow$ \textless expression\textgreater~ \\
-
-
-% Condition Statement
-\noindent
-\textless condition statement\textgreater~ $\rightarrow$ == $|$ != $|$ \textless $|$ \textgreater $|$ \textless = $|$ \textgreater =\\
-
-
-
-% Successor
-\noindent
-\textless successor \textgreater~ $\rightarrow$ \textless successor statement list \textgreater~ \\
-
-
-% Successor Statement List
-\noindent
-\textless successor statement list\textgreater~ $\rightarrow$ $\in$
-
-\hspace{2cm} $|$ \textless successor statement\textgreater~ \textless successor statement list \textgreater~ \\
-
-
-%Successor Statement
-\noindent
-\textless successor statement\textgreater~ $\rightarrow$ \textless module\textgreater~ \\
-
-
-
-% Module
-\noindent
-\textless module\textgreater~ $\rightarrow$  \textless variable\textgreater~ $|$ $+$ $|$ $-$ $|$ / $|$ $\backslash$ $|$ \textasciicircum $|$ $\&$ $|$ ! 
-
-\hspace{2cm} $|$ \textless variable\textgreater~ (  \textless param\textgreater~ \textless paramList\textgreater~ )
-
-\hspace{2cm} $|$ +(  \textless param\textgreater~ \textless paramList\textgreater~ )
-
-\hspace{2cm} $|$ -(  \textless param\textgreater~ \textless paramList\textgreater~ )
-
-\hspace{2cm} $|$ /(  \textless param\textgreater~ \textless paramList\textgreater~ ) 
-
-\hspace{2cm} $|$ $\backslash$(  \textless param\textgreater~ \textless paramList\textgreater~ ) 
-
-\hspace{2cm} $|$ \textasciicircum (  \textless param\textgreater~ \textless paramList\textgreater~ ) 
-
-\hspace{2cm} $|$ $\&$(  \textless param\textgreater~ \textless paramList\textgreater~ ) \\
-
-
-
-% Parameter List
-\noindent
-\textless paramList\textgreater~ $\rightarrow$ $\in$ $|$ : \textless param\textgreater~ \textless paramList\textgreater~ \\
-
-
-
-%Parameter List
-\noindent
-\textless param\textgreater~ $\rightarrow$ \textless expression\textgreater~ \\
-
-
-
-% Expression
-\noindent
-\textless expression\textgreater~ $\rightarrow$  \textless variable\textgreater~
-
-\hspace{2cm} $|$ \textless float\textgreater~
-
-\hspace{2cm} $|$ \textless expression\textgreater~ + \textless expression\textgreater~
-
-\hspace{2cm} $|$ \textless expression\textgreater~ - \textless expression\textgreater~
-
-\hspace{2cm} $|$ \textless expression\textgreater~ * \textless expression\textgreater~
-
-\hspace{2cm} $|$ \textless expression\textgreater~ / \textless expression\textgreater~
-
-\hspace{2cm} $|$ \textless expression\textgreater~ \textasciicircum \textless expression\textgreater~
-
-\hspace{2cm} $|$ "(" \textless expression\textgreater~ ) \\
-
-
-
-% Float
-\noindent
-\textless float\textgreater~ $\rightarrow$ [0-9]+.[0-9]+ \\
-
-
-
-% Variable
-\noindent
-\textless variable\textgreater~ $\rightarrow$ [a-zA-Z\_][a-zA-Z0-9\_]* \\
+\doublespacing
 
 \subsection{Constants and Objects}
 
@@ -637,6 +513,7 @@ During the rewriting process the module that is to be rewritten will be matched 
 
 \begin{flushleft}
 
+Once the L-system has been processed by both the lexical analyser and the parser, all of the data structures and information for rewriting, has been retrieved and organised. The string rewriter, is the final stage which uses this data by starting with a current string of modules which is originally set to the axiom string. The string rewriter will then iterate over each module within the current string carrying out the production rules. Once all of the modules have been rewriten withing the current string the result of the rewriting for that generation becomes the new current string. This process is carried out for the number of generations specified within the L-system and will finally provide a resultant string of modules. The pseudocode for the rewriter can be seen below: 
 
 
 \end{flushleft}
