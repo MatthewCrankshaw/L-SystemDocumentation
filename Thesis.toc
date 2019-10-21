@@ -1,6 +1,6 @@
 \contentsline {chapter}{\numberline {1}Introduction}{7}
 \contentsline {section}{\numberline {1.1}Motivations}{7}
-\contentsline {section}{\numberline {1.2}Research Aims and Objectives}{7}
+\contentsline {section}{\numberline {1.2}Research Aims and Objectives}{8}
 \contentsline {section}{\numberline {1.3}Scope and Limitations}{8}
 \contentsline {section}{\numberline {1.4}Timeframe}{8}
 \contentsline {section}{\numberline {1.5}Structure of Thesis}{8}
@@ -49,10 +49,11 @@
 \contentsline {section}{\numberline {5.1}Motion Equations}{43}
 \contentsline {section}{\numberline {5.2}Hook's Law}{44}
 \contentsline {chapter}{\numberline {6}String Interpreter Implementation}{45}
-\contentsline {section}{\numberline {6.1}Displaying the L-system Instructions}{45}
-\contentsline {subsection}{\numberline {6.1.1}Basic 2D L-systems}{45}
-\contentsline {subsection}{\numberline {6.1.2}The Use of L-systems in 3D applications}{47}
-\contentsline {section}{\numberline {6.2}Modeling Seamless Branches}{47}
+\contentsline {section}{\numberline {6.1}Turtle Interpretation}{45}
+\contentsline {section}{\numberline {6.2}Displaying the L-system Instructions}{45}
+\contentsline {subsection}{\numberline {6.2.1}Basic 2D L-systems}{45}
+\contentsline {subsection}{\numberline {6.2.2}The Use of L-systems in 3D applications}{47}
+\contentsline {section}{\numberline {6.3}Modeling Seamless Branches}{47}
 \contentsline {chapter}{\numberline {7}Findings and Data Analysis}{49}
 \contentsline {chapter}{\numberline {8}Discussion}{50}
 \contentsline {chapter}{\numberline {9}Conclusions}{51}

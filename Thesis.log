@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  18 OCT 2019 12:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.15)  21 OCT 2019 12:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1111,8 +1111,8 @@ Chapter 6.
 <images/KochCurve/KochCurve04.png, id=185, 2464.20625pt x 746.79pt>
 File: images/KochCurve/KochCurve04.png Graphic file (type png)
 <use images/KochCurve/KochCurve04.png>
-Package pdftex.def Info: images/KochCurve/KochCurve04.png  used on input line 1
-9.
+Package pdftex.def Info: images/KochCurve/KochCurve04.png  used on input line 3
+4.
 (pdftex.def)             Requested size: 369.61499pt x 112.01366pt.
 <images/SierpinskiTriangle/SierpinskiTriangle04.png, id=186, 2319.66624pt x 131
 8.9275pt>
@@ -1120,39 +1120,39 @@ File: images/SierpinskiTriangle/SierpinskiTriangle04.png Graphic file (type png
 )
 <use images/SierpinskiTriangle/SierpinskiTriangle04.png>
 Package pdftex.def Info: images/SierpinskiTriangle/SierpinskiTriangle04.png  us
-ed on input line 33.
+ed on input line 48.
 (pdftex.def)             Requested size: 347.93492pt x 197.83058pt.
 <images/FractalPlant/FractalPlant05.png, id=187, 1204.5pt x 749.80125pt>
 File: images/FractalPlant/FractalPlant05.png Graphic file (type png)
 <use images/FractalPlant/FractalPlant05.png>
 Package pdftex.def Info: images/FractalPlant/FractalPlant05.png  used on input 
-line 49.
+line 64.
 (pdftex.def)             Requested size: 180.6672pt x 112.46533pt.
 <images/FractalBush/FractalBush06.png, id=188, 1147.28625pt x 795.97375pt>
 File: images/FractalBush/FractalBush06.png Graphic file (type png)
 <use images/FractalBush/FractalBush06.png>
 Package pdftex.def Info: images/FractalBush/FractalBush06.png  used on input li
-ne 64.
+ne 79.
 (pdftex.def)             Requested size: 172.08551pt x 119.3909pt.
  [45
 
- <./images/KochCurve/KochCurve04.png>] [46 <./images/SierpinskiTriangle/Sierpin
-skiTriangle04.png> <./images/FractalPlant/FractalPlant05.png> <./images/Fractal
-Bush/FractalBush06.png>]
+] [46 <./images/KochCurve/KochCurve04.png> <./images/SierpinskiTriangle/Sierpin
+skiTriangle04.png> <./images/FractalPlant/FractalPlant05.png>]
 <images/Diagrams/stackedBranchesMesh.png, id=197, 777.90625pt x 731.73375pt>
 File: images/Diagrams/stackedBranchesMesh.png Graphic file (type png)
 <use images/Diagrams/stackedBranchesMesh.png>
 Package pdftex.def Info: images/Diagrams/stackedBranchesMesh.png  used on input
- line 98.
+ line 113.
 (pdftex.def)             Requested size: 124.46753pt x 117.07979pt.
-<images/Diagrams/linkedBranchesMesh.png, id=198, 724.7075pt x 623.32875pt>
+ [47 <./images/FractalBush/FractalBush06.png>]
+<images/Diagrams/linkedBranchesMesh.png, id=201, 724.7075pt x 623.32875pt>
 File: images/Diagrams/linkedBranchesMesh.png Graphic file (type png)
 <use images/Diagrams/linkedBranchesMesh.png>
 Package pdftex.def Info: images/Diagrams/linkedBranchesMesh.png  used on input 
-line 120.
+line 135.
 (pdftex.def)             Requested size: 115.95557pt x 99.73463pt.
- [47 <./images/Diagrams/stackedBranchesMesh.png>]) [48 <./images/Diagrams/linke
-dBranchesMesh.png>]
+) [48 <./images/Diagrams/stackedBranchesMesh.png> <./images/Diagrams/linkedBran
+chesMesh.png>]
 Chapter 7.
 (./chapters/chapter07.tex) [49
 
@@ -1187,8 +1187,8 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  8442 strings out of 492982
- 122553 string characters out of 6134896
- 257483 words of memory out of 5000000
+ 122553 string characters out of 6134895
+ 257485 words of memory out of 5000000
  11725 multiletter control sequences out of 15000+600000
  12619 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1205,7 +1205,7 @@ amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 sy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Thesis.pdf (57 pages, 2657527 bytes).
+Output written on Thesis.pdf (57 pages, 2658655 bytes).
 PDF statistics:
  276 PDF objects out of 1000 (max. 8388607)
  168 compressed objects within 2 object streams
