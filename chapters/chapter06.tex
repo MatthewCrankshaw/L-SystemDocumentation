@@ -1,14 +1,20 @@
 \begin{flushleft}
 
-The string interpreter is one of the major components of the L-system, the L-system rewriter takes an L-system input and carries out a set of production rules and eventually provides the resulting string of modules. The rewriter forms the overall structure and calculates the values of any module parameters that will be used within the string interpreter, however, up until this point the string of modules does not hold any particular meaning, it is simply the result of a set of production rules. The string interpreter interprets the string of modules and in a way that is serves its purpose within the problem domain. This chapter will outline a string interpreter for generating 3D models of plant structures as well as simulating gravity and wind in real time on the plant models. 
+The string interpreter is one of the major components of the L-system, it is the final step in the process of procedural generation. The L-system rewriter takes an L-system input and carries out a set of production rules and eventually provides the resulting string of modules. The rewriter forms the overall structure and calculates the values of any module parameters that will be used within the string interpreter, however, up until this point the string of modules does not hold any particular meaning, it is simply the result of a set of production rules. The string interpreter then interprets the string of modules in a way that best serves the problem domain. This chapter will outline a string interpreter for generating 3D models of plant structures as well as the simulation of gravity and wind in real time on the plant models. 
 
-\vspace{5mm}
+\begin{figure}[htbp]
+	{\centering
+		\vspace{7px}
+		\includegraphics[scale=0.4]{Diagrams/L-systemInterpreter.png}
+		\caption{Diagram of the stages of L-system interpretation and rendering}
+	}
+\end{figure}
 
 
 
 \end{flushleft}
 
-\section{Turtle Interpretation}
+\section{Turtle Interpreter}
 
 \begin{flushleft}
 
@@ -92,7 +98,7 @@ L-systems have been talked about and researched since its inception in 1968 by A
 \end{flushleft}
 
 
-\section{Modeling Seamless Branches}
+\section{Model Generator}
 
 \begin{flushleft}
 
@@ -140,3 +146,5 @@ This simple method of stacking cylinders gives a reasonable looking tree structu
 \FloatBarrier
 
 \end{flushleft}
+
+\section{OpenGL Renderer}

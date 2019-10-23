@@ -51,14 +51,15 @@
 \contentsline {section}{\numberline {5.1}Motion Equations}{44}
 \contentsline {section}{\numberline {5.2}Hook's Law}{45}
 \contentsline {chapter}{\numberline {6}String Interpreter Implementation}{46}
-\contentsline {section}{\numberline {6.1}Turtle Interpretation}{46}
-\contentsline {section}{\numberline {6.2}Displaying the L-system Instructions}{46}
-\contentsline {subsection}{\numberline {6.2.1}Basic 2D L-systems}{46}
-\contentsline {subsection}{\numberline {6.2.2}The Use of L-systems in 3D applications}{48}
-\contentsline {section}{\numberline {6.3}Modeling Seamless Branches}{48}
-\contentsline {chapter}{\numberline {7}Findings and Data Analysis}{50}
-\contentsline {chapter}{\numberline {8}Discussion}{51}
-\contentsline {chapter}{\numberline {9}Conclusions}{52}
-\contentsline {chapter}{\numberline {A}Appendix}{55}
-\contentsline {section}{\numberline {A.1}Appendix 1}{55}
-\contentsline {section}{\numberline {A.2}Bibliography}{55}
+\contentsline {section}{\numberline {6.1}Turtle Interpreter}{46}
+\contentsline {section}{\numberline {6.2}Displaying the L-system Instructions}{47}
+\contentsline {subsection}{\numberline {6.2.1}Basic 2D L-systems}{47}
+\contentsline {subsection}{\numberline {6.2.2}The Use of L-systems in 3D applications}{49}
+\contentsline {section}{\numberline {6.3}Model Generator}{49}
+\contentsline {section}{\numberline {6.4}OpenGL Renderer}{50}
+\contentsline {chapter}{\numberline {7}Findings and Data Analysis}{51}
+\contentsline {chapter}{\numberline {8}Discussion}{52}
+\contentsline {chapter}{\numberline {9}Conclusions}{53}
+\contentsline {chapter}{\numberline {A}Appendix}{56}
+\contentsline {section}{\numberline {A.1}Appendix 1}{56}
+\contentsline {section}{\numberline {A.2}Bibliography}{56}
