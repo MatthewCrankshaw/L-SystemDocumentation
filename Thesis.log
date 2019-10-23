@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  22 OCT 2019 13:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  23 OCT 2019 14:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -731,6 +731,9 @@ Package glossaries Info: Writing glossary file Thesis.acn on input line 48.
 
 (./chapters/glossary.tex) (./Thesis.aux
 
+LaTeX Warning: Label `l-system chapter' multiply defined.
+
+
 LaTeX Warning: Label `DOL-system example' multiply defined.
 
 
@@ -867,7 +870,16 @@ e
 
 ]
 Chapter 1.
-(./chapters/chapter01.tex [7
+(./chapters/chapter01.tex
+
+LaTeX Warning: Citation `haubenwallner2017shapegenetics' on page 7 undefined on
+ input line 11.
+
+
+LaTeX Warning: Citation `juuso2017procedural' on page 7 undefined on input line
+ 11.
+
+[7
 
 ] [8]) [9]
 Chapter 2.
@@ -1185,13 +1197,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8442 strings out of 492982
- 122553 string characters out of 6134896
- 257483 words of memory out of 5000000
- 11725 multiletter control sequences out of 15000+600000
+ 8444 strings out of 492982
+ 122606 string characters out of 6134896
+ 257484 words of memory out of 5000000
+ 11727 multiletter control sequences out of 15000+600000
  12619 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,12n,63p,2085b,461s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,12n,63p,3136b,461s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
@@ -1204,7 +1216,7 @@ amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 sy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Thesis.pdf (58 pages, 2659201 bytes).
+Output written on Thesis.pdf (58 pages, 2660817 bytes).
 PDF statistics:
  279 PDF objects out of 1000 (max. 8388607)
  170 compressed objects within 2 object streams
