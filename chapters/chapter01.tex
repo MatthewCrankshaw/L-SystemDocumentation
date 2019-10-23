@@ -23,24 +23,28 @@ String rewriting also known as rewrite systems are the fundimental concept behin
 \section{Motivations}
  
 \begin{flushleft}
-One of the most time consuming parts for digital artists and animators is creating differing variations of the same basic piece of artwork. In most games and other graphics applications environment assets such as trees, plants, grass, algae and other types of plant life make up the large majority of the assets within a game. Creating a tree asset can take a skilled digital artist more than an hour of work by hand, The artist will then have to create many variations of the same asset in order to obtain enough variation that a user of that graphics application would not notice that the asset has been duplicated. If you multiply this by the number of assets that a given artist will have to create and then modify, you are looking at an incredible number of hours that could potentially be put to use creating much more intricate and important assets.\\
-\vspace{5mm}
-In addition to the huge number of development hours required, it is also important to note that graphics assets are then stored in large data files, describing the geometry and textures and other information. If we require three very similar plants, we have to store three separate sets of data. Procedurally generating plants can avoid this wasteful data storage entirely. We could just store one specification or description of set of similar plants we would like to create, then procedurally generate the geometry during the running of the program.\\
+
+One of the most time consuming parts for digital artists and animators is creating differing variations of the same piece of artwork. In most games and other graphics applications environment assets such as trees, plants, grass, algae and other types of plant life make up the large majority of the assets within a game. Creating a tree asset can take a skilled digital artist more than an hour of work by hand, The artist will then have to create many variations of the same asset in order to obtain enough variation that a user of that graphics application would not notice that the asset has been duplicated. If you multiply this by the number of assets that a given artist will have to create and then modify, you are looking at an incredible number of hours that could potentially be put to use creating much more intricate and important assets. In addition to this, it is also important to note that graphics assets are then stored in large data files, describing the geometry and textures and other information. If we require three very similar plants, we have to store three separate sets of data. Procedurally generating plants can avoid this wasteful data storage entirely. We could just store one specification or description of set of similar plants we would like to create, then procedurally generate the geometry during the running of the program. \\
+
+\vspace{5mm} 
+
+The L-system can also not only procedurally generate the geometry of the plant-life but can also generate parameters physical properties of the plant inself such as the weight and flexability of branches as well as its wind resistance and many other important information that can be used to simulate or animate the motion of the plant under various forces. \\
+
 \end{flushleft}
 
 \section{Research Aims and Objectives}
 
 \begin{flushleft}
 
-To develop upon the Lindenmayer System in order to procedurally generating the structure of plant life in real time, in a way that allows us to specify the species, or overall look of the plant as well as introduce variation in order to produce plants that look similar, but can vary in shape, size and branching structure. \\
+The main aim and objective of this research is to develop upon the Lindenmayer System in order to procedurally generating structures of plant life in real time, in a way that allows us to specify the species, or overall look of the plant in a human readable format as well as to be able to specify variation that produces plant-life that represent a similar species, but can vary in shape, size and branching structure. \\
 
 \vspace{5mm}
 
-I will also investigate using the Lindenmayer System to specify aspects of the plant life that enables the simulation of physical behaviour such as external forces like gravity and wind, and thus having a specification not only for the development of the plants structure but also of its physical behaviour. \\
+It will also investigate using the Lindenmayer system to specify physical properties of the plant-life, which is propegated down using string rewriting in order to enable the simulation of physical behaviour such as external forces like gravity and wind. Thus the L-system will not only provide a specification for the development of the plants structure but also of its physical properties and behaviour. \\
 
 \vspace{5mm}
 
-Finally, I will be investigating a method of generating a 3D mesh for the given structure of plant, where the branches are seamlessly connected together, and textures are intelligently mapped onto the generated 3D mesh.\\ 
+Finally, I will be investigating a method of generating a three dimensional mesh for the given structure of plant, where the branches are seamlessly connected together, textures are intelligently mapped onto the generated three dimensional mesh, and different types of objects are able to be rendered onto the mesh, such as leaves, branches, fruit and flowers.\\ 
 
 \end{flushleft} 
 
@@ -49,11 +53,7 @@ Finally, I will be investigating a method of generating a 3D mesh for the given 
 
 \begin{flushleft}
 
-For the purpose of this thesis, we will only be focusing on larger plant life, such as flowers, bushes and trees. We will not be focusing on algae or fungi as these types of plants are usually better represented with specialised texturing in modern 3D applications.\\
-
-\vspace{5mm}
-
-
+This thesis will only be focusing on developing an L-system from larger plant life, such as flowers, bushes and trees as they are the main environmental assets within modern graphics applications. Smaller fungi, grasses and microorganisms will not be the focus as this requires a different approach to the development of L-systems.\\
 
 \end{flushleft}
 
@@ -66,6 +66,12 @@ This research will be carried out over the period of a full year, from the 20\te
 \end{flushleft}
 
 \section{Structure of Thesis}
+
+\begin{flushleft}
+
+This thesis is split into three major parts. Part 1 focuses introduces the different types of L-systems as well as describes the type of L-system which will be used for this thesis. Part 2 talks about the L-system rewriter and how it is implemented in order to generate the structures which will be rendered in the final part. Part 3 focuses on the interpretation of the L-system rewriters result and finally how the L-system is used to finally render a convincing model of a tree on the screen, as well as how the L-system is capable of providing information relavant to the simulation or animation of the generated plants.
+
+\end{flushleft}
 
 
 

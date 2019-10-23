@@ -26,6 +26,17 @@ Eichhorst, P. and Savitch, W.~J. (1980).
 \newblock Glfw documentation.
 \newblock https://www.glfw.org/documentation.html.
 
+\bibitem[Haubenwallner et~al., 2017]{haubenwallner2017shapegenetics}
+Haubenwallner, K., Seidel, H.-P., and Steinberger, M. (2017).
+\newblock Shapegenetics: Using genetic algorithms for procedural modeling.
+\newblock In {\em Computer Graphics Forum}, volume~36, pages 213--223. Wiley
+  Online Library.
+
+\bibitem[Juuso, 2017]{juuso2017procedural}
+Juuso, L. (2017).
+\newblock Procedural generation of imaginative trees using a space colonization
+  algorithm.
+
 \bibitem[K{\'o}kai et~al., 1999]{kokai1999parametric}
 K{\'o}kai, G., V{\'a}nyi, R., and T{\'o}th, Z. (1999).
 \newblock Parametric l-system description of the retina with combined
