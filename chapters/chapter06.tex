@@ -1,23 +1,95 @@
 \begin{flushleft}
 
-The string interpreter is one of the major components of the L-system, it is the final step in the process of procedural generation. The L-system rewriter takes an L-system input and carries out a set of production rules and eventually provides the resulting string of modules. The rewriter forms the overall structure and calculates the values of any module parameters that will be used within the string interpreter, however, up until this point the string of modules does not hold any particular meaning, it is simply the result of a set of production rules. The string interpreter then interprets the string of modules in a way that best serves the problem domain. This chapter will outline a string interpreter for generating 3D models of plant structures as well as the simulation of gravity and wind in real time on the plant models. 
+The string interpreter is one of the major components of the L-system, it is the final step in the process of procedural generation. The L-system rewriter takes an L-system input and carries out a set of production rules and eventually provides the resulting string of modules. The rewriter forms the overall structure and calculates the values of any module parameters that will be used within the string interpreter, however, up until this point the string of modules does not hold any particular meaning, it is simply the result of a set of production rules. The string interpreter then interprets the string of modules in a way that best serves the problem domain. The string interpreter for the generation of plant-life has three stages, the first part is a turtle graphics interpreter which takes the string of modules as a set of instructions and uses the instructions to generate a skeleton of the plant which has many joints that make up each branch segment of part of the plant. The tree skeleton is then used to generate 3D models that make up the plant itself. These models can finally be passed to the renderer which finally renders the plant on the screen. The stages of string interpretation can be seen in figure \ref{l-system interpreter} below. 
 
 \begin{figure}[htbp]
 	{\centering
 		\vspace{7px}
 		\includegraphics[scale=0.4]{Diagrams/L-systemInterpreter.png}
-		\caption{Diagram of the stages of L-system interpretation and rendering}
+		\caption{Diagram of the stages of L-system interpretation and rendering} \label{l-system interpreter}
 	}
 \end{figure}
 
+This chapter will outline each stage in the string interpreter implementation for generating 3D models of plant structures as well as well as talking about how the interpreter is able to simulate and animation the plants movements under forces such as gravity and wind in real time.
+
+\end{flushleft}
+
+\section{Turtle Graphics Interpreter}
+
+\begin{flushleft}
+
+The main job of the turtle graphics interpreter is to take the string of modules from the L-system rewriter and interpret it as a list of turtle graphics instructions which can be used to create a skeleton of joints that hold information as to its 3D properties like position, orientation, physical properties as well as its parent joint. The information for each joint is as follows:
+
+\begin{figure}[htbp]
+	{\centering
+		\vspace{7px}
+		\includegraphics[scale=0.6]{Diagrams/JointDiagram.png}
+		\caption{Diagram for the properties of a joint} \label{joint properties}
+	}
+\end{figure}
+
+As you can see from figure \ref{joint properties}, there is large amount of information stored as to the position and orientation of each joint, each rotation is stored in both a local and global space, local space refers to the rotation of the joint relative to its parent joints rotation, this is useful as it allows the manipulation of subsequent child joints but leaving parent joints unchanged. Global space, also known as world space, is the rotation of the joint relative to the world itself this is useful for understanding the current rotation of the joint relative to the world for instance calculating the torque or force calculations due to gravity. Furthermore it is important to store both the current and previous rotations to calculate the rate of change for physics calculations.\\
+
+\vspace{5mm}
+
+The physical properties for each joint are the parts that will affect the model generation stage as well as the physics simulation. These include the length of the branch stemming from the joint position, the width of the branch, the spring constant or stiffness of the branch, the damping constant for slowing down the branch oscillation and the current momentum of the branch. 
 
 
 \end{flushleft}
 
-\section{Turtle Interpreter}
+
+\section{Model Generator}
 
 \begin{flushleft}
 
+Modeling the branches of a plant is the most important part behind the overall look and feel of that plant. The L-system described in the previous sections is able to describe the most important details about the plants structure. For instance the width, length, weight and other important information. Our job now is to take this information and intelligently generate a model consisting of vertices, normals, texture coordinates and other information that can then be provided to the GPU and then rendered on the screen.\\
+
+\vspace{5mm}
+
+The most obvious way to generate a model for a branching structure would be to take a number of cylinders and to rotate and stack them according to the branching structure. In this way we are able to represent the overall branching structure of the tree. However there is a problem pointed out by Baele and Warz\'{e}e "The branches junction causes a continuity problem: to simply stack up cylinders generates a gap" \cite{baele2005real}. This can be shown in the figure below:
+
+\FloatBarrier
+
+\begin{figure}[htbp]
+	{\centering
+		\vspace{7px}
+		\setlength{\fboxrule}{1pt}
+		\fbox{
+			\includegraphics[scale=0.16]{Diagrams/stackedBranchesMesh.png}
+		}
+		\caption{Example of the continuity problem faced with stacked branching with a 25$^{\circ}$ bend per joint.}
+	}
+\end{figure}
+
+\FloatBarrier
+
+\vspace{5mm}
+
+
+\vspace{5mm}
+
+This simple method of stacking cylinders gives a reasonable looking tree structure and it is usually good enough when the angles of branches are not more than about 25$^{\circ}$ and the size of the branches do not change. However for a much more convincing tree structure we will want to do better than this. The logical next step would be to actively link the branch segments together.
+
+\FloatBarrier
+
+\begin{figure}[htbp]
+	{\centering
+		\vspace{7px}
+		\setlength{\fboxrule}{1pt}
+		\fbox{
+			\includegraphics[scale=0.16]{Diagrams/linkedBranchesMesh.png}
+		}
+		\caption{Example of linked branching with a 25$^{\circ}$ bend per joint.}
+	}
+\end{figure}
+
+\FloatBarrier
+
+\end{flushleft}
+
+\section{Renderer}
+
+\begin{flushleft}
 
 
 \end{flushleft}
@@ -96,55 +168,3 @@ There are a number of fractal geometry that have become well known particularly 
 L-systems have been talked about and researched since its inception in 1968 by Aristid Lindenmayer. Over the years it's usefulness in modelling different types of plant life has been very clear, however its presence has been quite absent from any mainstream game engines for the most part, these engines relying either on digital artists skill to develop individual plants or on 3rd party software such as SpeedTree. These types of software use a multitude of different techniques however their methods are heavily rooted in Lindenmayer Systems. 
 
 \end{flushleft}
-
-
-\section{Model Generator}
-
-\begin{flushleft}
-
-Modeling the branches of a plant is the most important part behind the overall look and feel of that plant. The L-system described in the previous sections is able to describe the most important details about the plants structure. For instance the width, length, weight and other important information. Our job now is to take this information and intelligently generate a model consisting of vertices, normals, texture coordinates and other information that can then be provided to the GPU and then rendered on the screen.\\
-
-\vspace{5mm}
-
-The most obvious way to generate a model for a branching structure would be to take a number of cylinders and to rotate and stack them according to the branching structure. In this way we are able to represent the overall branching structure of the tree. However there is a problem pointed out by Baele and Warz\'{e}e "The branches junction causes a continuity problem: to simply stack up cylinders generates a gap" \cite{baele2005real}. This can be shown in the figure below:
-
-\FloatBarrier
-
-\begin{figure}[htbp]
-	{\centering
-		\vspace{7px}
-		\setlength{\fboxrule}{1pt}
-		\fbox{
-			\includegraphics[scale=0.16]{Diagrams/stackedBranchesMesh.png}
-		}
-		\caption{Example of the continuity problem faced with stacked branching with a 25$^{\circ}$ bend per joint.}
-	}
-\end{figure}
-
-\FloatBarrier
-
-\vspace{5mm}
-
-
-\vspace{5mm}
-
-This simple method of stacking cylinders gives a reasonable looking tree structure and it is usually good enough when the angles of branches are not more than about 25$^{\circ}$ and the size of the branches do not change. However for a much more convincing tree structure we will want to do better than this. The logical next step would be to actively link the branch segments together.
-
-\FloatBarrier
-
-\begin{figure}[htbp]
-	{\centering
-		\vspace{7px}
-		\setlength{\fboxrule}{1pt}
-		\fbox{
-			\includegraphics[scale=0.16]{Diagrams/linkedBranchesMesh.png}
-		}
-		\caption{Example of linked branching with a 25$^{\circ}$ bend per joint.}
-	}
-\end{figure}
-
-\FloatBarrier
-
-\end{flushleft}
-
-\section{OpenGL Renderer}
