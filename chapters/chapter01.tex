@@ -1,14 +1,17 @@
-\begin{flushleft}
 
-Procedurally generating three dimensional models of plant-life is a difficult task, largely due to the complex branching structures and how different species of plants can vary so wildly in structure and detail. It has only been in the last few decades, in the boom of computer graphics that research has been conducted into how to best generate three dimensional models of plant-life. There are three main techniques for generating plant models, these include extracting and reconstructing real world data, using modeling software or using a procedural or rule based generator. This thesis explores the procedural generation and simulation of three dimensional trees using a Lindenmayer System (L-system), as well as exploring the advantages and disadvantages of different types of L-systems.
 
-\end{flushleft}
+\lettrine[lines=3]{P}{}rocedurally generating 3D models of plant-life is a challenging task, largely due to the complex branching structures and variation between different types of species of plants. Up until recently all assets within 3D graphics applications either had to be scalpted by hand using a 3D modeling software, or scanned using photogrammetry, laser triangulation or some form of contact based 3D scanning. These methods are still used today but tend to be very time consuming and extremely costly. With the increase in computational power over the last few decades more emphasis has been placed on the use of produral generation to create complex structures such as tarrain, sound, architecture, characters and weaponry with far greater speed than previous techniques and much better realism than would be possible with artists, however, plant-life still stands as a challenge as it is difficult to define a system that is capable of representing every possibly type of plant-life, and having a simple description for what the procedural generator should output and have it be accurate and convincing. The Lindenmayer System (L-system), was originally developed by Aristed Lindenmayer in order to represent the development of multicellular organisms \cite{lindenmayer1968mathematical}. The has since gained popularity in the area of procedural generation and has been adapted to represent different types of structures, mainly in plant-life, such as trees, flowers, algea and grasses, but the L-system is also applicable to non-organic structures such as music, artificial neural networks and tiling patterns \cite{Prusinkiewicz1989}. The L-system in its most basic form is a formal grammar which contains a set of alphanumeric characters and symbols that belong to an \textit{alphabet}, the alphabet is used to create a starting string and a set of production rules. The production rules are applied to the starting string to dictate which symbols can be rewriten and what they will be rewritten with. In essence, the L-system uses the set of production rules for string rewriting in order to generate a string of symbols that follows those production rules. The resuting string is then interpreted in a way that best fits its representation, in this case to produce a model of a plant. \\
+
+This thesis develops upon the L-system in order to procedurally generate structures of plant-life in real-time, the L-system grammar allows the specification of the structure of a plant to be described in a human readable, formal grammar, and to specify variation in shape, size and branching structure within a particular species. Furthermore, this thesis will also investigate the use of a parameterised L-systems to propegate physical properties using string rewriting which will enable the animation of the physical behaviour, thus making it possible to simulate external forces such as gravity and wind.
+
+
+
 
 \section{Introduction to Procedural Generation}
 
 \begin{flushleft}
 
-Procedural generation is used in many different areas and applications particularly in computer graphics, particularly when generating naturally occuring structures such as plants or terrain. There is an aspect of randomness that is implicit when talking about procedural generation. Generated structures should fit a certain description that is given to it, but it must also provide some form of variation such that two instances of the same description will almost never be identical. There are three main methods for procedurally generating models of trees, these are genetic algorithms \cite{haubenwallner2017shapegenetics}, space colonisation algorithms\cite{juuso2017procedural} and the Lindenmayer system. Both genetic algorithm and space colonisation algorithms are similar in that they require a description in 3D space of which describes what the trees general size and shape should look like, the algorithm is then responsible for creating branches and matching it to that original template. L-systems on the other hand operate quite differently, the L-system defines a formal grammar, which contains a set of sybols that belong to an alphabet. A set of symbols is then chosen as the starting point and a set of production rules is used to dictate which symbols can be rewriten and what they will be rewritten with. A full explanation of L-system will be spoken about in chapter \label{l-system chapter}. In essence, the L-system uses the set of production rules to generate a structure that follows those rules. This requires specifying a template or description of a plant or tree, that describes the necessary information to generate the overall structure and data algorithmically. This structure and data can then be used to render a model within a three dimensional application. Trees can have complex and random structures, however, with closer observation, trees of a similar species have very obvious traits and features, for instance a palm tree (Arecaceae) has long stright trunks with leaves exclusively near the top, the leaves are long, compound leaves, branching in all different directions. Comparatively a pine tree has a long staight trunk with many branches coming off in different directions pupendicular to the ground, from its base to the top of the trunk. These are two very different species of trees and look quite different, however they share very similar properties. The challenge behind procedurally generating and simulating trees is how to provide a human readable grammar that describes in sufficient detail, how it should generate and render the three dimensional model, whilst allowing for randomness and variety within the generation process. It must be relatively straightforward and intuitive to define the procedural generation description, and must accuratly represents it, furthermore, the description must be able to fit many different species of trees with varying charactoristics, and must not be limited to only known species of trees, as some graphics applications may require something that is other-wordly.
+Procedural generation is used in many different areas and applications particularly in computer graphics, particularly when generating naturally occuring structures such as plants or terrain. There is an aspect of randomness that is implicit when talking about procedural generation. Generated structures should fit a certain description that is given to it, but it must also provide some form of variation such that two instances of the same description will almost never be identical. There are three main methods for procedurally generating models of trees, these are genetic algorithms \cite{haubenwallner2017shapegenetics}, space colonisation algorithms\cite{juuso2017procedural} and the Lindenmayer system. Both genetic algorithm and space colonisation algorithms are similar in that they require a description in 3D space of which describes what the trees general size and shape should look like, the algorithm is then responsible for creating branches and matching it to that original template. L-systems on the other hand operate quite differently,  This structure and data can then be used to render a model within a three dimensional application. Trees can have complex and random structures, however, with closer observation, trees of a similar species have very obvious traits and features, for instance a palm tree (Arecaceae) has long stright trunks with leaves exclusively near the top, the leaves are long, compound leaves, branching in all different directions. Comparatively a pine tree has a long staight trunk with many branches coming off in different directions pupendicular to the ground, from its base to the top of the trunk. These are two very different species of trees and look quite different, however they share very similar properties. The challenge behind procedurally generating and simulating trees is how to provide a human readable grammar that describes in sufficient detail, how it should generate and render the three dimensional model, whilst allowing for randomness and variety within the generation process. It must be relatively straightforward and intuitive to define the procedural generation description, and must accuratly represents it, furthermore, the description must be able to fit many different species of trees with varying charactoristics, and must not be limited to only known species of trees, as some graphics applications may require something that is other-wordly.
 
 \end{flushleft}
 
@@ -17,6 +20,14 @@ Procedural generation is used in many different areas and applications particula
 \begin{flushleft}
 
 String rewriting also known as rewrite systems are the fundimental concept behind L-systems. In their most basic form rewrite systems are a set of symbols or states and a set of relations that dictate how they transform from one state to the other. Rewrite systems can be non-deterministic, meaning that there could be a transition that depends on a condition being met or neighbouring states to be of a certain type. Using this rewriting concept any preceeding state can rely upon the current state as well as any conditions neccessary for transformation, otherwise the state will remain the same until such a point that the condition is satisfied. 
+
+\end{flushleft}
+
+\section{Introduction to Grammars}
+
+\begin{flushleft}
+
+
 
 \end{flushleft}
 
@@ -29,39 +40,6 @@ One of the most time consuming parts for digital artists and animators is creati
 \vspace{5mm} 
 
 The L-system can also not only procedurally generate the geometry of the plant-life but can also generate parameters physical properties of the plant inself such as the weight and flexability of branches as well as its wind resistance and many other important information that can be used to simulate or animate the motion of the plant under various forces. \\
-
-\end{flushleft}
-
-\section{Research Aims and Objectives}
-
-\begin{flushleft}
-
-The main aim and objective of this research is to develop upon the Lindenmayer System in order to procedurally generating structures of plant life in real time, in a way that allows us to specify the species, or overall look of the plant in a human readable format as well as to be able to specify variation that produces plant-life that represent a similar species, but can vary in shape, size and branching structure. \\
-
-\vspace{5mm}
-
-It will also investigate using the Lindenmayer system to specify physical properties of the plant-life, which is propegated down using string rewriting in order to enable the simulation of physical behaviour such as external forces like gravity and wind. Thus the L-system will not only provide a specification for the development of the plants structure but also of its physical properties and behaviour. \\
-
-\vspace{5mm}
-
-Finally, I will be investigating a method of generating a three dimensional mesh for the given structure of plant, where the branches are seamlessly connected together, textures are intelligently mapped onto the generated three dimensional mesh, and different types of objects are able to be rendered onto the mesh, such as leaves, branches, fruit and flowers.\\ 
-
-\end{flushleft} 
-
-
-\section{Scope and Limitations}
-
-\begin{flushleft}
-
-This thesis will only be focusing on developing an L-system from larger plant life, such as flowers, bushes and trees as they are the main environmental assets within modern graphics applications. Smaller fungi, grasses and microorganisms will not be the focus as this requires a different approach to the development of L-systems.\\
-
-\end{flushleft}
-
-\section{Timeframe}
-
-\begin{flushleft}
-
-This research will be carried out over the period of a full year, from the 20\textsuperscript{th} of February 2019 through to the 20\textsuperscript{th} of February 2020. 
 
 \end{flushleft}
 

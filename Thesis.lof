@@ -1,31 +1,31 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagram of the 3D rotations of the turtle.}}{13}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagram showing a turtle interpreting simple L-system string.}}{15}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagram showing a turtle interpreting an L-system using the branching symbols.}}{16}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Diagram showing a turtle interpreting an L-system with nested branching.}}{17}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Diagram of an L-system Using Multiple Objects.}}{20}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces 3D Parametric L-system.}}{21}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Condition statements used to simulate the growth of a flower. 2nd generation on the left, 4th generation in the center and 6th generation on the right}}{22}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Different Variations of the Same L-system with Randomness Introduced in The Angles. }}{23}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Representation of an L-system with a probability stochastic with a 0.33 probabability for each rule.}}{25}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagram of the 3D rotations of the turtle.}}{14}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagram showing a turtle interpreting simple L-system string.}}{16}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagram showing a turtle interpreting an L-system using the branching symbols.}}{17}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Diagram showing a turtle interpreting an L-system with nested branching.}}{18}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Diagram of an L-system Using Multiple Objects.}}{21}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces 3D Parametric L-system.}}{22}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Condition statements used to simulate the growth of a flower. 2nd generation on the left, 4th generation in the center and 6th generation on the right}}{23}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Different Variations of the Same L-system with Randomness Introduced in The Angles. }}{24}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Representation of an L-system with a probability stochastic with a 0.33 probabability for each rule.}}{26}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Point in 3D space shown using cartesian coordinates.}}{26}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Right Hand and Left Hand Coordinate Systems.}}{27}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces 2D Vector representing the vector at (-3, 2) And 3D Vector (4, 3, -1).}}{27}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Point in 3D space shown using cartesian coordinates.}}{27}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Right Hand and Left Hand Coordinate Systems.}}{28}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces 2D Vector representing the vector at (-3, 2) And 3D Vector (4, 3, -1).}}{28}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagram of the Parts of The Rewiting System.}}{31}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagram of an expression tree.}}{41}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagram of the Parts of The Rewiting System.}}{32}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagram of an expression tree.}}{42}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Diagram of the stages of L-system interpretation and rendering}}{46}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Diagram for the properties of a joint}}{47}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Example of the continuity problem faced with stacked branching with a 25$^{\circ }$ bend per joint.}}{48}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Example of linked branching with a 25$^{\circ }$ bend per joint.}}{48}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Koch Curve.}}{49}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Sierpinski Triangle.}}{49}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Fractal Plant.}}{50}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Fractal Bush.}}{50}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Diagram of the stages of L-system interpretation and rendering}}{47}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Diagram for the properties of a joint}}{48}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Example of the continuity problem faced with stacked branching with a 25$^{\circ }$ bend per joint.}}{49}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Example of linked branching with a 25$^{\circ }$ bend per joint.}}{49}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Koch Curve.}}{50}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Sierpinski Triangle.}}{50}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Fractal Plant.}}{51}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Fractal Bush.}}{51}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

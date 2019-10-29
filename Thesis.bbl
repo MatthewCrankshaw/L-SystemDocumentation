@@ -72,6 +72,11 @@ Prusinkiewicz, P. (1986).
 \newblock In {\em Proceedings of graphics interface}, volume~86, pages
   247--253.
 
+\bibitem[Prusinkiewicz and Hanan, 1989]{Prusinkiewicz1989}
+Prusinkiewicz, P. and Hanan, J. (1989).
+\newblock {\em Other applications of L-systems}.
+\newblock Springer New York, New York, NY.
+
 \bibitem[Prusinkiewicz and Hanan, 1990]{prusinkiewicz1990visualization}
 Prusinkiewicz, P. and Hanan, J. (1990).
 \newblock Visualization of botanical structures and processes using parametric

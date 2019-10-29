@@ -1,6 +1,5 @@
-\begin{flushleft}
 
-The string interpreter is one of the major components of the L-system, it is the final step in the process of procedural generation. The L-system rewriter takes an L-system input and carries out a set of production rules and eventually provides the resulting string of modules. The rewriter forms the overall structure and calculates the values of any module parameters that will be used within the string interpreter, however, up until this point the string of modules does not hold any particular meaning, it is simply the result of a set of production rules. The string interpreter then interprets the string of modules in a way that best serves the problem domain. The string interpreter for the generation of plant-life has three stages, the first part is a turtle graphics interpreter which takes the string of modules as a set of instructions and uses the instructions to generate a skeleton of the plant which has many joints that make up each branch segment of part of the plant. The tree skeleton is then used to generate 3D models that make up the plant itself. These models can finally be passed to the renderer which finally renders the plant on the screen. The stages of string interpretation can be seen in figure \ref{l-system interpreter} below. 
+\lettrine[lines=3]{T}{}he string interpreter is one of the major components of the L-system, it is the final step in the process of procedural generation. The L-system rewriter takes an L-system input and carries out a set of production rules and eventually provides the resulting string of modules. The rewriter forms the overall structure and calculates the values of any module parameters that will be used within the string interpreter, however, up until this point the string of modules does not hold any particular meaning, it is simply the result of a set of production rules. The string interpreter then interprets the string of modules in a way that best serves the problem domain. The string interpreter for the generation of plant-life has three stages, the first part is a turtle graphics interpreter which takes the string of modules as a set of instructions and uses the instructions to generate a skeleton of the plant which has many joints that make up each branch segment of part of the plant. The tree skeleton is then used to generate 3D models that make up the plant itself. These models can finally be passed to the renderer which finally renders the plant on the screen. The stages of string interpretation can be seen in figure \ref{l-system interpreter} below. 
 
 \begin{figure}[htbp]
 	{\centering
@@ -11,8 +10,6 @@ The string interpreter is one of the major components of the L-system, it is the
 \end{figure}
 
 This chapter will outline each stage in the string interpreter implementation for generating 3D models of plant structures as well as well as talking about how the interpreter is able to simulate and animation the plants movements under forces such as gravity and wind in real time.
-
-\end{flushleft}
 
 \section{Turtle Graphics Interpreter}
 
