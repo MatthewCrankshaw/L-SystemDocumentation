@@ -26,6 +26,11 @@ Eichhorst, P. and Savitch, W.~J. (1980).
 \newblock Glfw documentation.
 \newblock https://www.glfw.org/documentation.html.
 
+\bibitem[Gregory, 2014]{gregory2014game}
+Gregory, J. (2014).
+\newblock {\em Game engine architecture}.
+\newblock AK Peters/CRC Press.
+
 \bibitem[Haubenwallner et~al., 2017]{haubenwallner2017shapegenetics}
 Haubenwallner, K., Seidel, H.-P., and Steinberger, M. (2017).
 \newblock Shapegenetics: Using genetic algorithms for procedural modeling.
