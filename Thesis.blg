@@ -5,45 +5,45 @@ The style file: apalike.bst
 Database file #1: chapters/ref.bib
 Warning--can't use both volume and number fields in haubenwallner2017shapegenetics
 Warning--empty year in torvalds
-You've used 26 entries,
+You've used 28 entries,
             1935 wiz_defined-function locations,
-            616 strings with 7334 characters,
-and the built_in function-call counts, 9637 in all, are:
-= -- 971
-> -- 307
-< -- 30
-+ -- 102
-- -- 96
-* -- 712
-:= -- 1636
-add.period$ -- 82
-call.type$ -- 26
-change.case$ -- 168
-chr.to.int$ -- 26
-cite$ -- 28
-duplicate$ -- 430
-empty$ -- 714
-format.name$ -- 140
-if$ -- 1952
+            628 strings with 7730 characters,
+and the built_in function-call counts, 10674 in all, are:
+= -- 1068
+> -- 372
+< -- 31
++ -- 126
+- -- 120
+* -- 815
+:= -- 1820
+add.period$ -- 88
+call.type$ -- 28
+change.case$ -- 189
+chr.to.int$ -- 28
+cite$ -- 30
+duplicate$ -- 458
+empty$ -- 774
+format.name$ -- 166
+if$ -- 2145
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 32
-newline$ -- 132
-num.names$ -- 78
-pop$ -- 187
+missing$ -- 34
+newline$ -- 142
+num.names$ -- 84
+pop$ -- 203
 preamble$ -- 1
-purify$ -- 178
+purify$ -- 199
 quote$ -- 0
-skip$ -- 334
+skip$ -- 356
 stack$ -- 0
-substring$ -- 628
-swap$ -- 84
+substring$ -- 702
+swap$ -- 86
 text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 136
+type$ -- 148
 warning$ -- 2
-while$ -- 80
+while$ -- 88
 width$ -- 0
-write$ -- 334
+write$ -- 360
 (There were 2 warnings)

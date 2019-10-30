@@ -1,5 +1,11 @@
 \begin{thebibliography}{}
 
+\bibitem[Backus et~al., 1960]{backus1960report}
+Backus, J.~W., Bauer, F.~L., Green, J., Katz, C., McCarthy, J., Naur, P.,
+  Perlis, A., Rutishauser, H., Samelson, K., Vauquois, B., et~al. (1960).
+\newblock Report on the algorithmic language algol 60.
+\newblock {\em Numerische Mathematik}, 2(1):106--136.
+
 \bibitem[Baele and Warzee, 2005]{baele2005real}
 Baele, X. and Warzee, N. (2005).
 \newblock Real time l-system generated trees based on modern graphics hardware.
@@ -10,6 +16,11 @@ Baele, X. and Warzee, N. (2005).
 Barron, J.~T., Sorge, B.~P., and Davis, T.~A. (2001).
 \newblock {\em Real-time procedural animation of trees}.
 \newblock PhD thesis, Citeseer.
+
+\bibitem[Chomsky, 1956]{chomsky1956three}
+Chomsky, N. (1956).
+\newblock Three models for the description of language.
+\newblock {\em IRE Transactions on information theory}, 2(3):113--124.
 
 \bibitem[Cooper and Torczon, 2011]{cooper2011engineering}
 Cooper, K. and Torczon, L. (2011).

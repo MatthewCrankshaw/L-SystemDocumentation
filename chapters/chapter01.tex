@@ -1,6 +1,5 @@
 
 \lettrine[lines=3]{P}{}rocedurally generating 3D models of plant-life is a challenging task, largely due to the complex branching structures and variation between different types of plant species. Up until recently all assets within 3D graphics applications either had to be scalpted by hand using a 3D modeling software, or scanned using photogrammetry, laser triangulation or some form of contact based 3D scanning. These methods are still used today but tend to be very time consuming and extremely costly. With the increase in computational power over the last few decades more emphasis has been placed on the use of produral generation to create complex structures such as tarrain, architecture, sound, characters and weaponry with far greater speed than previous techniques and much better realism than would be possible with artists, however, plant-life still stands as a challenge as it is difficult to define a system that is capable of representing every possibly type of plant-life, whilst having a simple description for what the procedural generator should output. The Lindenmayer System (L-system) stands as a solution to this problem, it was originally developed by Aristed Lindenmayer in order to represent the development of multicellular organisms \cite{lindenmayer1968mathematical}, but has since gained popularity in the area of procedural generation and has been adapted to represent different types of structures, mainly with plant-life, such as trees, flowers, algea and grasses, but the L-system is also applicable to non-organic structures such as music, artificial neural networks and tiling patterns \cite{Prusinkiewicz1989}. The L-system in its most basic form is a formal grammar which contains a set of alphanumeric characters and symbols that belong to an \textit{alphabet}, the alphabet is used to create a starting string and a set of production rules. The production rules are applied to the starting string to dictate which symbols can be rewriten and what they will be rewritten with. In essence, the L-system uses the set of production rules for string rewriting in order to generate a string of symbols that follows those production rules. The resuting string is then interpreted in a way that best fits its representation, in this case to produce a model of a plant. \\
-
 This thesis develops upon the L-system in order to procedurally generate structures of plant-life in real-time, the L-system grammar allows the specification of the structure of a plant to be described in a human readable, formal grammar, and to specify variation in shape, size and branching structure within a particular species. Furthermore, this thesis will also investigate the use of a parameterised L-systems to propegate physical properties using string rewriting which will enable the animation of the physical behaviour, thus making it possible to simulate external forces such as gravity and wind.
 
 
@@ -20,11 +19,27 @@ Procedural generation is used in many different areas and applications particula
 
 String rewriting also known as rewrite systems are the fundimental concept behind L-systems. In their most basic form rewrite systems are a set of symbols or states and a set of relations that dictate how they transform from one state to the other. Rewrite systems can be non-deterministic, meaning that there could be a transition that depends on a condition being met or neighbouring states to be of a certain type. Using this rewriting concept any preceeding state can rely upon the current state as well as any conditions neccessary for transformation, otherwise the state will remain the same until such a point that the condition is satisfied. 
 
+\begin{figure}[htbp]
+	{\centering
+		\setlength{\fboxrule}{1pt}
+		\vspace{7px}
+		\fbox{
+			\includegraphics[scale=0.3]{Diagrams/snowflakeCurve.png}
+		}
+		\caption{Construction of the snowflake curve\cite{prusinkiewicz2013lindenmayer}.} \label{snowflake curve}
+	}
+\end{figure}
+\FloatBarrier
+
+
+
 \end{flushleft}
 
 \section{Introduction to Grammars}
 
 \begin{flushleft}
+
+In the context of computer science grammars are defined as a set of rules governing what strings are valid or allowable in a language or text. They consist of syntax, morphology and semantics. Grammars have been used extensively in computer science in the form of programming languages which give instructions to the computer to carry out in order to gain an expected result. A rewriting system such as the L-system operates in a way that is consistant with a context-free class of Chomsky grammar \cite{chomsky1956three}, similar to that of the programming language ALGOL-60 introduced by Backus and Naur in  1960\cite{backus1960report}. Formal languages have been defined in the form of grammars to suit particular problem domains. Humans find it easier to communicate a solution in the form of language, it is therefore intuitive to use a language to describe the desired outcome when dealing with the procedural generation of plant-life.
 
 \end{flushleft}
 
