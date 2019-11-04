@@ -10,7 +10,7 @@ For simple D0L-system seen in section \ref{DOL-system example}, creating a rewri
 		\setlength{\fboxrule}{1pt}
 		\vspace{7px}
 		\fbox{
-			\includegraphics[scale=0.3]{Diagrams/StringRewriter.png}
+			\includegraphics[scale=0.32]{Diagrams/StringRewriter.png}
 		}
 		\caption{Diagram of the Parts of The Rewiting System.} \label{3D rotations}
 	}
@@ -218,22 +218,18 @@ For example: \\
 \textless expression\textgreater~ $\rightarrow$ \textless expression\textgreater~ - \textless expression\textgreater~ \\
 \\
 The first line states that an \textless expression\textgreater~ can be any number, line two states that an \\ \textless expression\textgreater~ can also be an expression that is inside parenthesis. Line three states that an \\ \textless expression\textgreater~ can be an \textless expression\textgreater~ added to another \textless expression\textgreater~, furthermore line four states that an \textless expression\textgreater~ can also be an \textless expression\textgreater~ subtracted by another \textless expression\textgreater~. \\
-\\
-The above grammar can be expressed as follows: \\
 
+Here the $|$ symbol can be articulated as an OR, therefore it can be said that an \textless expression\textgreater~ can be a number OR an \textless expression\textgreater~ surrounded by parenthesis, OR an \textless expression\textgreater~ added to another \textless expression\textgreater~ OR an \textless expression\textgreater~ subtracted by another \textless expression\textgreater~. In addition to this, any statement that is not surrounded by \textless \textgreater, states it must match that particular string. The $\in$ followed by an $|$ states that it can either be nothing or another statement.\\
+\\
+The above grammar can be expressed in the following \acrshort{bnf} form:
 \onehalfspacing
 \begin{bnf*}
 	\bnfprod{expression}
 		{\bnfts{number}}\\
 		\bnfmore{\bnfor \bnfts{(} \bnfpn{expression} \bnfts{)}}\\
 		\bnfmore{\bnfor \bnfpn{expression} \bnfts{+} \bnfpn{expression}}\\
-		\bnfmore{\bnfor \bnfpn{expression} \bnfts{-} \bnfpn{expression}}\\
+		\bnfmore{\bnfor \bnfpn{expression} \bnfts{-} \bnfpn{expression}}
 \end{bnf*}
-\\
-Here the $|$ symbol can be articulated as an OR, therefore it can be said that an \textless expression\textgreater~ can be a number OR an \textless expression\textgreater~ surrounded by parenthesis, OR an \textless expression\textgreater~ added to another \textless expression\textgreater~ OR an \textless expression\textgreater~ subtracted by another \textless expression\textgreater~. 
-\\
-In addition to this, any statement that is not surrounded by \textless \textgreater, states it must match that particular string. The $\in$ followed by an $|$ states that it can either be nothing or another statement. \\
-\\
 
 \subsection{\acrlong{bnf} of the L-system Grammar} \label{L-system Grammar}
 	\onehalfspacing
@@ -506,7 +502,54 @@ During the rewriting process the module that is to be rewritten will be matched 
 
 \begin{flushleft}
 
-Once the L-system has been processed by both the lexical analyser and the parser, all of the data structures and information for rewriting, has been retrieved and organised. The string rewriter, is the final stage which uses this data by starting with a current string of modules which is originally set to the axiom string. The string rewriter will then iterate over each module within the current string carrying out the production rules. Once all of the modules have been rewriten withing the current string the result of the rewriting for that generation becomes the new current string. This process is carried out for the number of generations specified within the L-system and will finally provide a resultant string of modules. The pseudocode for the rewriter can be seen below: 
-
+Once the L-system has been processed by both the lexical analyser and the parser, the data structures and information, such as the starting string, constant variables and production rules are set up for the string rewriter. The string rewriter, is the final stage which uses this data by starting with a current string of modules which is originally set to the axiom string. The string rewriter will then iterate over each module within the current string carrying matching it to the production rules and rewriting the module with the successor if the production rule matches. Once all of the modules have been rewritten, the current string is replaced by the result string for that iteration. This process is carried out for the number of generations specified within the L-system and will eventually provide the resultant string of modules.
 
 \end{flushleft}
+
+\begin{algorithm}
+\caption{String rewriter algorithm}
+\begin{algorithmic}[1]
+
+\Procedure{rewriter}{N, axiom, productions}
+\Statex
+\Ensure N $>$ 0										\Comment{The number of generations to rewrite}
+\Ensure axiom $\not=$ empty							\Comment{The list of modules for the starting point}
+\Ensure production $\not=$ empty					\Comment{The list of production rules}
+\Statex
+\State n $\gets$ 0
+\For{N $>$ n}										\Comment{For each generation}
+	\State next $\gets$ empty list
+	\For{each modCall in currentList}
+		\State P $\gets$ \Call{FindProductionMatch}{module}		\Comment{P is the matching production rule}
+		\If{P $\not=$ NULL}
+			\State modDef $\gets$ P.predecessor
+			\For{each modDef in P.successor}
+				\For{index in modDef.param}
+					\State \Call{AddLocalVar}{modDef.param[index], modCall.param[index]}
+				\EndFor
+				\State \Call{ReplaceVariables}{modDef}
+				\State \Call{EvaluateParameters}{modDef}
+				\State next $\gets$ next + modDef
+			\EndFor
+		\Else
+			\State next $\gets$ next + modCall
+		\EndIf
+	\EndFor
+	\State n $\gets$ n + 1
+\EndFor
+\State \textbf{return} next
+\EndProcedure
+\Statex
+\Function{FindProductionMatch}{Module}
+
+\EndFunction
+\Statex
+\Function{ReplaceVariables}{DefinitionParam, CallParam}
+
+\EndFunction
+\Statex
+\Function{EvaluateParameters}{Module}
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+

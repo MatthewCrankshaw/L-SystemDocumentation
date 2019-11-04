@@ -53,6 +53,12 @@ Juuso, L. (2017).
 \newblock Procedural generation of imaginative trees using a space colonization
   algorithm.
 
+\bibitem[Koch et~al., 1906]{koch1906methode}
+Koch, H. et~al. (1906).
+\newblock Une m{\'e}thode g{\'e}om{\'e}trique {\'e}l{\'e}mentaire pour
+  l’{\'e}tude de certaines questions de la th{\'e}orie des courbes planes.
+\newblock {\em Acta mathematica}, 30:145--174.
+
 \bibitem[K{\'o}kai et~al., 1999]{kokai1999parametric}
 K{\'o}kai, G., V{\'a}nyi, R., and T{\'o}th, Z. (1999).
 \newblock Parametric l-system description of the retina with combined
