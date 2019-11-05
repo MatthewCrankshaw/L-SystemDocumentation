@@ -94,7 +94,7 @@ Another design decision that has been made, is that all numbers within the L-sys
 
 \end{flushleft}
 
-\section{Scanner - Flex} \label{Flex}
+\section{The L-system Scanner} \label{Flex}
 
 \begin{flushleft}
 
@@ -199,29 +199,12 @@ It is also important to note that there are two special types of tokens, these b
 
 \end{flushleft}
 
-\section{Parser - Bison} \label{Bison}
+\section{The L-system Parser} \label{parser}
 
-The parsers job is to find out if the input stream of words from the \gls{Lexer} makes up a valid sentence in the language. The \gls{Parser} fits the syntactical category to the grammatical model of the language. If the \gls{Parser} is able to fit the syntactical category of the word to the grammatical model of the language then the syntax is seen to be correct. If all of the syntax is correct the \gls{Parser} will output a syntax tree and build the structures for use later on during the compilation process \cite{cooper2011engineering}.
+The parsers job is to find out if the input stream of words from the \gls{Lexer} makes up a valid sentence in the language. The \gls{Parser} fits the syntactical category to the grammatical model of the language. If the \gls{Parser} is able to fit the syntactical category of the word to the grammatical model of the language then the syntax is seen to be correct. If all of the syntax is correct the \gls{Parser} will output a syntax tree and build the data structures for use later on in the compilation process \cite{cooper2011engineering}. For the L-system rewriter the syntax tree and data structures are not used for compilation but rather for the string string rewriting process.
 
-\section{Building a Generalised L-system Grammar}
+In order describe the a grammar, there needs to be a suitable notation to express its syntactic structure. According to Cooper the \acrlong{bnf} (\acrshort{bnf}) has traditionally been used by computer scientists to represent context-free grammers such as programming languages, its origins are from the late 1950s and early 1960s. The \acrshort{bnf} notation represents the context-free grammar by defining a set of non-terminal symbols that derives from a set of terminal or non-terminal symbols. Terminal symbols are elementary symbols of the language definied by the formal grammar, a terminal symbol will eventually appear in the resulting formal language. On the other hand a non-terminal symbol exists only as a placeholder for patterns of terminal symbols, but does not appear within the formal language itself. The syntactic convension for a \acrshort{bnf} is for non-terminal symbols to be surrounded by angled brackets for instance $<$expression$>$ and terminal symbols, such as the symbol for addition \say{+} to be underlined, but nowadays it is not often underlined. The symbol $\epsilon$ represents an empty string, the ::= means \say{derives} and the $\mid$ means \say{also derives} but is often articulated as an \say{or} \cite{cooper2011engineering}. In order to derive a sentence of text within a language the very first derivation must be a non-terminal symbol called the goal symbol, the goal symbol is a set of all valid derived strings, this means that the goal symbol is not a word within the language, but a syntactic variable in the form of a non-terminal symbol. The \acrshort{bnf} notation below can be used to represent a simple grammar for arithmetic expressions, where the terminal \say{number} is any valid integer and the goal symbol is $<$expression$>$.
 
-We are now able to represent complex three dimensional tree structures in the form of a L-system rule set. In a computing sense this rule set can be seen as a type of program. In the program we define the number of generations we would like to generate, the starting point (Axiom) some constant varables (\#define) and the set of production rules. \\
-Using this information, we iterate through the from generation to generation rewritting the strings and then at the end provide a resulting string which will then be interpreted and displayed on the screen.
-\\
-We can represent the languages grammar in the form of a \acrlong{bnf}, \acrshort{bnf} is a notation for \acrlong{cfg}s used to describe the syntax of different languages. In this case the \acrshort{bnf} is used below to describe the syntax of the parametric L-system grammar. \\
-\\
-For example: \\ 
-\\
-\textless expression\textgreater~ $\rightarrow$ number \\ 
-\textless expression\textgreater~ $\rightarrow$ (\textless expression\textgreater~) \\
-\textless expression\textgreater~ $\rightarrow$ \textless expression\textgreater~ + \textless expression\textgreater~ \\
-\textless expression\textgreater~ $\rightarrow$ \textless expression\textgreater~ - \textless expression\textgreater~ \\
-\\
-The first line states that an \textless expression\textgreater~ can be any number, line two states that an \\ \textless expression\textgreater~ can also be an expression that is inside parenthesis. Line three states that an \\ \textless expression\textgreater~ can be an \textless expression\textgreater~ added to another \textless expression\textgreater~, furthermore line four states that an \textless expression\textgreater~ can also be an \textless expression\textgreater~ subtracted by another \textless expression\textgreater~. \\
-
-Here the $|$ symbol can be articulated as an OR, therefore it can be said that an \textless expression\textgreater~ can be a number OR an \textless expression\textgreater~ surrounded by parenthesis, OR an \textless expression\textgreater~ added to another \textless expression\textgreater~ OR an \textless expression\textgreater~ subtracted by another \textless expression\textgreater~. In addition to this, any statement that is not surrounded by \textless \textgreater, states it must match that particular string. The $\in$ followed by an $|$ states that it can either be nothing or another statement.\\
-\\
-The above grammar can be expressed in the following \acrshort{bnf} form:
 \onehalfspacing
 \begin{bnf*}
 	\bnfprod{expression}
@@ -230,6 +213,8 @@ The above grammar can be expressed in the following \acrshort{bnf} form:
 		\bnfmore{\bnfor \bnfpn{expression} \bnfts{+} \bnfpn{expression}}\\
 		\bnfmore{\bnfor \bnfpn{expression} \bnfts{-} \bnfpn{expression}}
 \end{bnf*}
+
+The above \acrshort{bnf} states that the non-terminal $<$expression$>$ derives from a terminal number, or an expression contained within two parenthesis, or two expressions either side of an addition terminal symbol, or two expressions either side of a subtraction terminal symbol. This type of notation is recursive in nature and allows the formal language to write expressions which exist within other expressions, for example the expression \say{5 + 10 - (20 + 2)}. 
 
 \subsection{\acrlong{bnf} of the L-system Grammar} \label{L-system Grammar}
 	\onehalfspacing
@@ -506,50 +491,145 @@ Once the L-system has been processed by both the lexical analyser and the parser
 
 \end{flushleft}
 
-\begin{algorithm}
-\caption{String rewriter algorithm}
-\begin{algorithmic}[1]
 
-\Procedure{rewriter}{N, axiom, productions}
+\newpage
+\onehalfspacing
+\begin{algorithmic}[1]
+\Procedure{rewriter}{N, A}
 \Statex
-\Ensure N $>$ 0										\Comment{The number of generations to rewrite}
-\Ensure axiom $\not=$ empty							\Comment{The list of modules for the starting point}
-\Ensure production $\not=$ empty					\Comment{The list of production rules}
+\Ensure N $>$ 0																	\Comment{The number of generations to rewrite}
+\Ensure A $\not=$ empty															\Comment{A non empty Axiom, a list of modules}
 \Statex
 \State n $\gets$ 0
-\For{N $>$ n}										\Comment{For each generation}
+\State current $\gets$ A														\Comment{Current string of modules}
+\While{n $<$ N}																	\Comment{For each generation}
 	\State next $\gets$ empty list
-	\For{each modCall in currentList}
-		\State P $\gets$ \Call{FindProductionMatch}{module}		\Comment{P is the matching production rule}
+	\For{each mod in current}													\Comment{call is the calling module in current}
+		\State P $\gets$ \Call{FindProductionMatch}{mod}						\Comment{P is the matching production rule}
 		\If{P $\not=$ NULL}
-			\State modDef $\gets$ P.predecessor
-			\For{each modDef in P.successor}
-				\For{index in modDef.param}
-					\State \Call{AddLocalVar}{modDef.param[index], modCall.param[index]}
+			\State pred $\gets$ P.predecessor									\Comment{def is the defining module in predecessor}
+			\For{each succ in P.successor}
+				\State index $\gets$ 0
+				\While{index $<$ number of predecessor parameters}
+					\State \Call{AddLocalVar}{pred.param[index], mod.param[index]}
+					\State index $\gets$ index + 1
+				\EndWhile
+				\State copy $\gets$ succ 										\Comment{Create a deep copy}
+				\For{each parameter in copy}									\Comment{parameter is an expression tree}
+					\State \Call{ReplaceVariables}{parameter}
+					\State \Call{EvaluateExpression}{parameter}
 				\EndFor
-				\State \Call{ReplaceVariables}{modDef}
-				\State \Call{EvaluateParameters}{modDef}
-				\State next $\gets$ next + modDef
+				\State next $\gets$ next + copy
 			\EndFor
 		\Else
-			\State next $\gets$ next + modCall
+			\State next $\gets$ next + mod
 		\EndIf
 	\EndFor
 	\State n $\gets$ n + 1
-\EndFor
-\State \textbf{return} next
+	\State current $\gets$ next
+\EndWhile
+\State \textbf{return} current
 \EndProcedure
-\Statex
-\Function{FindProductionMatch}{Module}
-
-\EndFunction
-\Statex
-\Function{ReplaceVariables}{DefinitionParam, CallParam}
-
-\EndFunction
-\Statex
-\Function{EvaluateParameters}{Module}
-\EndFunction
 \end{algorithmic}
-\end{algorithm}
 
+\newpage
+\begin{algorithmic}[1]
+\Function{FindProductionMatch}{Module}
+\For{each P in productionTable}												\Comment{P is a production}
+	\State predecessor $\gets$ P.predecessor								\Comment{predecessor is a single module}
+	\If{predecessor.name $\not=$ Module.name}
+		\State \textbf{continue}
+	\EndIf
+	\If{predecessor.numParam $\not=$ Module.numParam}
+		\State \textbf{continue}
+	\EndIf
+	\If{P has no condition}													
+		\State \textbf{return} P.name										\Comment{match found}
+	\ElsIf{P has a stochastic condition}
+		\State rand $\gets$ random float between 0.0 and 1.0
+		\State total $\gets$ 0.0
+		\State S $\gets$ list of pairs 										\Comment{pair(production name, probability value)} 
+		\For{each s in S}													\Comment{Loop through each tuple in the stochasic list}
+			\If{first item}
+				\If{rand $\geq$ 0.0 AND rand $<$ s.value}
+					\State \textbf{return} s.name
+				\EndIf
+			\ElsIf{last item}
+				\If{rand $\geq$ total AND rand $\leq$ 1.0}
+					\State \textbf{return} s.name
+				\EndIf
+			\Else
+				\If{rand $\geq$ total AND rand $<$ total + s.value}
+					\State \textbf{return} s.name
+				\EndIf
+			\EndIf
+			\State total $\gets$ total + s.value
+		\EndFor	
+	\Else																	\Comment{Regular condition}
+		\State left $\gets$ P.condition.left								\Comment{Deep copy left expression tree}
+		\State right $\gets$ P.condition.right								\Comment{Deep copy right expression tree}
+		
+		\State \Call{replaceVariables}{left}
+		\State \Call{replaceVariables}{right}
+		
+		\State \Call{evaluateExpression}{left}
+		\State \Call{evaluateExpression}{right}
+		
+		\If{left P.condition.op right}										\Comment{Apply operator ($==$, $\not=$, $<$, $>$, $\leq$, $\geq$)}
+			\State \textbf{return} P.name
+		\EndIf 																		 
+	\EndIf							 
+\EndFor
+\EndFunction
+
+\end{algorithmic}
+
+\newpage
+\begin{algorithmic}[1]
+
+\Function{EvaluateExpression}{TreeNode}										\Comment{Recursively evaluate the expression tree}
+	\State left $\gets$ 0.0									
+	\State right $\gets$ 0.0
+	
+	\If{TreeNode.left $==$ NULL OR TreeNode.right $==$ NULL}
+		\State \textbf{return} TreeNode.value
+	\EndIf
+	
+	\State left $\gets$ \Call{ReplaceVariables}{TreeNode.left}
+	\State right $\gets$ \Call{ReplaceVariables}{TreeNode.right}
+	
+	\If{TreeNode.type is an operator}
+		\State \textbf{return} left TreeNode.operator right					\Comment{Apply arithmetic operator (+, -, *, /, $\land{}$)}
+	\EndIf
+\EndFunction
+\\
+\end{algorithmic}
+
+\begin{algorithmic}[1]
+
+\Function{ReplaceVariables}{TreeNode}										\Comment{Recursively replace expression tree variables}
+	\If{TreeNode $==$ NULL}
+		\State \textbf{return}
+	\EndIf
+	\If{TreeNode.type is a variable}
+		\If{TreeNode.value is in constants table}
+			\State TreeNode.value $\gets$ numeric value in constants table 
+		\EndIf
+		\If{TreeNode.value is in local table}
+			\State TreeNode.value $\gets$ numeric value in local table
+		\EndIf
+	\EndIf
+	\State \Call{ReplaceVariables}{TreeNode.left}
+	\State \Call{ReplaceVariables}{TreeNode.right}
+\EndFunction
+
+
+\end{algorithmic}
+
+\begin{algorithmic}[1]
+
+\Function{AddLocalVar}{call, def}										
+
+\EndFunction
+
+\end{algorithmic}
