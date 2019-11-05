@@ -217,9 +217,12 @@ In order describe the a grammar, there needs to be a suitable notation to expres
 The above \acrshort{bnf} states that the non-terminal $<$expression$>$ derives from a terminal number, or an expression contained within two parenthesis, or two expressions either side of an addition terminal symbol, or two expressions either side of a subtraction terminal symbol. This type of notation is recursive in nature and allows the formal language to write expressions which exist within other expressions, for example the expression \say{5 + 10 - (20 + 2)}. 
 
 \subsection{\acrlong{bnf} of the L-system Grammar} \label{L-system Grammar}
+
+The \acrshort{bnf} of the L-system has the goal state of $<$lSystem$>$, in terms of the L-system grammar it is made up of a collection of statements begining with the symbol \say{\#} and ending with the symbol \say{;}. The non terminal symbols $<$float$>$ and $<$variable$>$ specify a regular expression.
+
 	\onehalfspacing
 	\begin{bnf*}
-	\bnfprod{prog}
+	\bnfprod{lSystem}
 		{\bnfes \bnfor \bnfpn{statements} \bnfsp \bnfts{EOF}}\\
 	\bnfprod{statements}
 		{\bnfes \bnfor \bnfpn{statement} \bnfpn{statements}}\\
