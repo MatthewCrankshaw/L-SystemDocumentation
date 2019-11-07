@@ -1,5 +1,5 @@
 
-\lettrine[lines=3]{T}{}he string interpreter is one of the major components of the L-system, it is the final step in the process of procedural generation. The output of this stage of processing is dependant on what the L-system is representing, in this case it is responsible for interpreting the resulting string of modules provided by the string rewriter, it generates the 3D models, structures and data, the resulting plant models are rendered and simulated on the screen using the OpenGL framework. The generation of plant-life has three main stages, the first part is a turtle graphics interpreter which takes the string of modules, these modules are interpreted as a set of instructions from the root of the tree and generates a skeleton made up of branch joints, similar to the techniques used in skeleton rigging for computer animation \cite{gregory2014game}. The joints within the tree skeleton each represent a branch segment which has a number of information as to the properties of that segment, these segements can be used to generate the vertex, index and other data that make up the 3D models of the plant. These models can finally be passed to the renderer which renders the plant on the screen. The stages of string interpretation can be seen in figure \ref{l-system interpreter} below. 
+\lettrine[lines=3]{T}{}he string interpreter is one of the major components of the L-system, it is the final step in the process of procedural generation. The output of this stage of processing is dependant on what the L-system is representing, in this case it is responsible for interpreting the resulting string of modules, and uses this to generate the 3D models, structures and data of the resulting plant which is then rendered and simulated on the screen using the OpenGL framework. The generation of plant-life has three main stages, the first part is a turtle graphics interpreter which takes the string of modules, these modules are interpreted as a set of instructions, starting from the root of the tree and generates a skeleton made up of branch joints, similar to the techniques used in skeletal rigging in animation \cite{gregory2014game}. The joints within the tree skeleton each represent a branch segment which has some information about the properties of that segment. These segements can be used to generate the vertex, index and other data that make up the 3D models of the plant. These models can finally be passed to the renderer which renders the plant on the screen. The stages of string interpretation can be seen in figure \ref{l-system interpreter} below. 
 
 \begin{figure}[htbp]
 	{\centering
@@ -9,13 +9,13 @@
 	}
 \end{figure}
 
+\noindent
 This chapter will outline each stage in the string interpreter implementation for generating 3D models of plant structures as well as well as talking about how the interpreter is able to simulate and animation the plants movements under forces such as gravity and wind in real time. \\
 
 \section{Turtle Graphics Interpreter}
 
-\begin{flushleft}
 
-The main job of the turtle graphics interpreter is to take the string of modules from the L-system rewriter and interpret it as a list of turtle graphics instructions which can be used to create a skeleton of joints that hold information as to its 3D properties like position, orientation, physical properties as well as its parent joint. The information for each joint is as follows:
+The main job of the turtle graphics interpreter is to take the string of modules from the L-system rewriter and interpret it as a list of turtle graphics instructions. These instructions generate the plants skeleton which is made up of joints, the joints that hold information as to its 3D properties of a particular segement or object. The properties are the position, orientation, physical properties as well as the parent of the joint. The information for each joint is as follows:
 
 \begin{figure}[htbp]
 	{\centering
@@ -25,25 +25,36 @@ The main job of the turtle graphics interpreter is to take the string of modules
 	}
 \end{figure}
 
-As you can see from figure \ref{joint properties}, there is large amount of information stored as to the position and orientation of each joint, each rotation is stored in both a local and global space, local space refers to the rotation of the joint relative to its parent joints rotation, this is useful as it allows the manipulation of subsequent child joints but leaving parent joints unchanged. Global space, also known as world space, is the rotation of the joint relative to the world itself this is useful for understanding the current rotation of the joint relative to the world for instance calculating the torque or force calculations due to gravity. Furthermore it is important to store both the current and previous rotations to calculate the rate of change for physics calculations.\\
-
-\vspace{5mm}
+\noindent
+As you can see from figure \ref{joint properties}, there is large amount of information stored for the position and orientation of each joint. This is because each rotation is stored in both a local and global space. Local space refers to the rotation of the joint relative to the joints parent rotation, this is useful as it allows the manipulation of subsequent child joints but leaving parent joints local rotation unchanged. Global space, also known as world space, is the rotation of the joint relative to the world itself this is useful for understanding the current rotation of the joint relative to the world for instance calculating the torque or force calculations due to gravity. Furthermore it is important to store both the current and previous rotations to calculate the rate of change for physics calculations.
 
 The physical properties for each joint are the parts that will affect the model generation stage as well as the physics simulation. These include the length of the branch stemming from the joint position, the width of the branch, the spring constant or stiffness of the branch, the damping constant for slowing down the branch oscillation and the current momentum of the branch. 
 
+Take the string of modules \say{F(1)[/(90)F(1)$\backslash$ (90)F(1)]-(90)F(1)+(90)F(1)}, the alphabet is made up of seven unique modules F, /, $\backslash$, [, ], + and -. According to the as discussed in previous chapters the \say{F} symbol represents a move forward, and \say{+}, \say{-}, \say{/}, \say{$\backslash$} symbolize different rotations, and the \say{[} and \say{]} represent save and load state respecively. The aforementioned symbols each have a single parameter except the load and save state. It is the turtle graphics interpreters job to understand what these parameters are and how to interpret them. In this case all of the \say{F} modules have the parameter value of 1, and all of the rotation modules have the parameter of 90. These are interpreted as the distance to move forward and the angle to rotate respectively. This interpretation can be represented with the joint structure shown below:
 
-\end{flushleft}
+\begin{figure}[htbp]
+	{\centering
+		\vspace{7px}
+		\setlength{\fboxrule}{1pt}
+		\fbox{
+			\includegraphics[scale=0.4]{Diagrams/SkeletonJoints.png}
+		}
+		\caption{Diagram of a simple plant skeleton with joint position and orientation.}
+	}
+\end{figure}
+
+\FloatBarrier
 
 
 \section{Model Generator}
 
 \begin{flushleft}
 
-Modeling the branches of a plant is the most important part behind the overall look and feel of that plant. The L-system described in the previous sections is able to describe the most important details about the plants structure. For instance the width, length, weight and other important information. Our job now is to take this information and intelligently generate a model consisting of vertices, normals, texture coordinates and other information that can then be provided to the GPU and then rendered on the screen.\\
+Modeling the branches of a plant is one of the most important parts for the overall look and feel of that plant that is being generated. The L-system described in the previous sections is able to describe the details about the plants structure, for instance the position, width, length, weight and other important information. The job of the model generator is to take this information and intelligently generate the models vertices, normals, texture coordinates and other information that can then be provided to the OpenGL renderer and finally to the GPU to be rendered on the screen. \\
 
 \vspace{5mm}
 
-The most obvious way to generate a model for a branching structure would be to take a number of cylinders and to rotate and stack them according to the branching structure. In this way we are able to represent the overall branching structure of the tree. However there is a problem pointed out by Baele and Warz\'{e}e "The branches junction causes a continuity problem: to simply stack up cylinders generates a gap" \cite{baele2005real}. This can be shown in the figure below:
+The simplest way to generate a model for a branching structure of a plant would be to take a number of cylinders, and to rotate and stack them according to each joints position in 3D space. The up side to this approach is that every branch within the plant shares the same object model, depending on the position, rotation and scale of the branch the relavent matrix transforms can be applied. In this way we are able to represent the overall branching structure of the plant. However, there is a problem which is pointed out by Baele and Warz\'{e}e "The branches junction causes a continuity problem: to simply stack up cylinders generates a gap" \cite{baele2005real}. This can be shown in the figure below:
 
 \FloatBarrier
 

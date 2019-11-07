@@ -203,9 +203,11 @@ It is also important to note that there are two special types of tokens, these b
 
 The parsers job is to find out if the input stream of words from the \gls{Lexer} makes up a valid sentence in the language. The \gls{Parser} fits the syntactical category to the grammatical model of the language. If the \gls{Parser} is able to fit the syntactical category of the word to the grammatical model of the language then the syntax is seen to be correct. If all of the syntax is correct the \gls{Parser} will output a syntax tree and build the data structures for use later on in the compilation process \cite{cooper2011engineering}. For the L-system rewriter the syntax tree and data structures are not used for compilation but rather for the string string rewriting process.
 
-In order describe the a grammar, there needs to be a suitable notation to express its syntactic structure. According to Cooper the \acrlong{bnf} (\acrshort{bnf}) has traditionally been used by computer scientists to represent context-free grammers such as programming languages, its origins are from the late 1950s and early 1960s. The \acrshort{bnf} notation represents the context-free grammar by defining a set of non-terminal symbols that derives from a set of terminal or non-terminal symbols. Terminal symbols are elementary symbols of the language definied by the formal grammar, a terminal symbol will eventually appear in the resulting formal language. On the other hand a non-terminal symbol exists only as a placeholder for patterns of terminal symbols, but does not appear within the formal language itself. The syntactic convension for a \acrshort{bnf} is for non-terminal symbols to be surrounded by angled brackets for instance $<$expression$>$ and terminal symbols, such as the symbol for addition \say{+} to be underlined, but nowadays it is not often underlined. The symbol $\epsilon$ represents an empty string, the ::= means \say{derives} and the $\mid$ means \say{also derives} but is often articulated as an \say{or} \cite{cooper2011engineering}. In order to derive a sentence of text within a language the very first derivation must be a non-terminal symbol called the goal symbol, the goal symbol is a set of all valid derived strings, this means that the goal symbol is not a word within the language, but a syntactic variable in the form of a non-terminal symbol. The \acrshort{bnf} notation below can be used to represent a simple grammar for arithmetic expressions, where the terminal \say{number} is any valid integer and the goal symbol is $<$expression$>$.
-
-\onehalfspacing
+In order describe the a grammar, there needs to be a suitable notation to express its syntactic structure. According to Cooper the \acrlong{bnf} (\acrshort{bnf}) has traditionally been used by computer scientists to represent context-free grammers such as programming languages, its origins are from the late 1950s and early 1960s. The \acrshort{bnf} notation represents the context-free grammar by defining a set of non-terminal symbols that derives from a set of terminal or non-terminal symbols. Terminal symbols are elementary symbols of the language definied by the formal grammar, a terminal symbol will eventually appear in the resulting formal language. On the other hand a non-terminal symbol exists only as a placeholder for patterns of terminal symbols, but does not appear within the formal language itself. The syntactic convension for a \acrshort{bnf} is for non-terminal symbols to be surrounded by angled brackets for instance $<$expression$>$ and terminal symbols, such as the symbol for addition \say{+} to be underlined, but nowadays it is not often underlined. The symbol $\epsilon$ represents an empty string, the ::= means \say{derives} and the $\mid$ means \say{also derives} but is often articulated as an \say{or} \cite{cooper2011engineering}. In order to derive a sentence of text within a language the very first derivation must be a non-terminal symbol called the goal symbol, the goal symbol is a set of all valid derived strings, this means that the goal symbol is not a word within the language, but a syntactic variable in the form of a non-terminal symbol. The \acrshort{bnf} notation below can be used to represent a simple grammar for arithmetic expressions, where the terminal \say{number} is any valid integer and the goal symbol is $<$expression$>$.\\
+\\
+\noindent
+Below is the \acrshort{bnf} notation for the syntax of an arithmetic expression for addition and subtraction:
+\begin{algorithm}
 \begin{bnf*}
 	\bnfprod{expression}
 		{\bnfts{number}}\\
@@ -213,26 +215,25 @@ In order describe the a grammar, there needs to be a suitable notation to expres
 		\bnfmore{\bnfor \bnfpn{expression} \bnfts{+} \bnfpn{expression}}\\
 		\bnfmore{\bnfor \bnfpn{expression} \bnfts{-} \bnfpn{expression}}
 \end{bnf*}
+\end{algorithm}
+\FloatBarrier
 
-The above \acrshort{bnf} states that the non-terminal $<$expression$>$ derives from a terminal number, or an expression contained within two parenthesis, or two expressions either side of an addition terminal symbol, or two expressions either side of a subtraction terminal symbol. This type of notation is recursive in nature and allows the formal language to write expressions which exist within other expressions, for example the expression \say{5 + 10 - (20 + 2)}. 
+The above \acrshort{bnf} states that the non-terminal $<$expression$>$ derives from a terminal number, or an expression contained within two parenthesis, or two expressions either side of an addition terminal symbol, or two expressions either side of a subtraction terminal symbol. This type of notation is recursive in nature and allows the formal language to write expressions which exist within other expressions, for example the expression \say{5 + 10 - (20 + 2)}. \\
 
 \subsection{\acrlong{bnf} of the L-system Grammar} \label{L-system Grammar}
 
-The \acrshort{bnf} of the L-system has the goal state of $<$lSystem$>$, in terms of the L-system grammar it is made up of a collection of statements begining with the symbol \say{\#} and ending with the symbol \say{;}. The non terminal symbols $<$float$>$ and $<$variable$>$ specify a regular expression.
-
-	\onehalfspacing
 	\begin{bnf*}
 	\bnfprod{lSystem}
 		{\bnfes \bnfor \bnfpn{statements} \bnfsp \bnfts{EOF}}\\
 	\bnfprod{statements}
 		{\bnfes \bnfor \bnfpn{statement} \bnfpn{statements}}\\
 	\bnfprod{statement}
-		{\bnfts{EOL} \bnfor \bnfpn{generations} 
+		{\bnfts{EOL} \bnfor \bnfpn{generation} 
 		\bnfor \bnfpn{definition} 
 		\bnfor \bnfpn{object} 
 		\bnfor \bnfpn{axiom} 
 		\bnfor \bnfpn{production}}\\
-	\bnfprod{generations}
+	\bnfprod{generation}
 		{\bnfts{\#define} \bnfsp \bnfts{=} \bnfsp \bnfpn{float} \bnfts{;}}\\
 	\bnfprod{float}
 		{\bnfts{[0-9]+.[0-9]+$|$[0-9]+}}\\
@@ -316,7 +317,11 @@ The \acrshort{bnf} of the L-system has the goal state of $<$lSystem$>$, in terms
 		{\bnfpn{module}}\\
 \end{bnf*}
 
-\doublespacing
+\noindent
+As seen above in the \acrshort{bnf} notation for a L-system, the goal state is $<$lSystem$>$. The $<$lSystem$>$ can be made up of $<$statements$>$ beginning with the symbol \say{\#} and ending with the symbol \say{;}, or the \acrlong{eof} (\acrshort{eof}) character signifying the end of the L-system. Each non-terminal $<$statements$>$ is made up of a $<$statement$>$ followed by more $<$statements$>$, or an empty string ($\epsilon$). The $<$statement$>$ itself can either be an \acrlong{eol} (\acrshort{eol}) character or a $<$generation$>$, $<$definition$>$, $<$object$>$, $<$axiom$>$ or $<$production$>$ statement. The non-terminal symbols $<$float$>$ and $<$variable$>$ specify a regular expression. Each statement then has a number of terminal and non-terminal derivatives that allow the production of all valid L-systems that follow this grammar. 
+
+In the previous chapter the scanner definined the syntactic categories, these syntactic categories are in fact all the valid terminal symbols within the L-system grammar. In essence the parser takes these syntactic categories and finds if they fit the above \acrshort{bnf} and if so, it extracts the information from the L-system and generates the relavent data structures and syntax tree. 
+
 
 \subsection{Constants and Objects}
 
@@ -496,7 +501,6 @@ Once the L-system has been processed by both the lexical analyser and the parser
 
 
 \newpage
-\onehalfspacing
 \begin{algorithmic}[1]
 \Procedure{rewriter}{N, A}
 \Statex
