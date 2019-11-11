@@ -1,5 +1,7 @@
 
-\lettrine[lines=3]{T}{}he string interpreter is one of the major components of the L-system, it is the final step in the process of procedural generation. The output of this stage of processing is dependant on what the L-system is representing, in this case it is responsible for interpreting the resulting string of modules, and uses this to generate the 3D models, structures and data of the resulting plant which is then rendered and simulated on the screen using the OpenGL framework. The generation of plant-life has three main stages, the first part is a turtle graphics interpreter which takes the string of modules, these modules are interpreted as a set of instructions, starting from the root of the tree and generates a skeleton made up of branch joints, similar to the techniques used in skeletal rigging in animation \cite{gregory2014game}. The joints within the tree skeleton each represent a branch segment which has some information about the properties of that segment. These segements can be used to generate the vertex, index and other data that make up the 3D models of the plant. These models can finally be passed to the renderer which renders the plant on the screen. The stages of string interpretation can be seen in figure \ref{l-system interpreter} below. 
+\lettrine[lines=3]{T}{}he string interpreter is one of the major components of plant generation and it is the final step in the process of procedural generation. The output of this stage of processing is dependant on what the L-system is representing, in this case it is responsible for interpreting the resulting string of modules provided by the L-system rewriter, and uses this to generate the 3D models, structures and data of the resulting plant, which is then rendered and simulated on the screen using the OpenGL framework. The generation of plant-life has three main stages, the first part consists of a turtle graphics interpreter which takes the string of modules as a set of instructions, it starts from the root of the tree and generates a skeleton made up of joints, this is similar to the techniques used in skeletal rigging in animation \cite{gregory2014game}. The joints within the tree skeleton each represents a branch segment which has some information about the properties of that segment. These segements can be used to generate the vertex, index and other data that make up the 3D models of the plant. These models can finally be passed to the final part of string interpreter which is the renderer, the renderer is reponsible for taking all the vertices, indices, textures and shaders and organising it in an optimal way that enables rendering the plant on the screen, as well as the physical simulation of the tree skeleton. \\
+\\
+The stages of string interpretation can be seen in figure \ref{l-system interpreter} below. 
 
 \begin{figure}[htbp]
 	{\centering
@@ -10,12 +12,45 @@
 \end{figure}
 
 \noindent
-This chapter will outline each stage in the string interpreter implementation for generating 3D models of plant structures as well as well as talking about how the interpreter is able to simulate and animation the plants movements under forces such as gravity and wind in real time. \\
+This chapter will cover each stage of the string interpreter implementation in detail, as well as well as talk about how the interpreter is able to simulate and animation the plants movements under forces such as gravity and wind in real time. \\
 
 \section{Turtle Graphics Interpreter}
 
+The main job of the turtle graphics interpreter is to take the string of modules from the L-system rewriter and interpret it as a list of turtle graphics instructions. As briefly covered in chapter \ref{l-system chapter}, each module name within the L-systems resultant string represents a particular meaning to the turtle graphics interpreter, these meanings are predefined and are dependant on what the L-system is representing. The L-system used defined by the L-system rewriter is a parametric L-system, this allows each module to also provide a number of optional parameters, which may also have a special meaning. Below is a table describing the L-system modules names as well as their parameters meanings to the turtle graphics interpreter.
 
-The main job of the turtle graphics interpreter is to take the string of modules from the L-system rewriter and interpret it as a list of turtle graphics instructions. These instructions generate the plants skeleton which is made up of joints, the joints that hold information as to its 3D properties of a particular segement or object. The properties are the position, orientation, physical properties as well as the parent of the joint. The information for each joint is as follows:
+\begin{table}[h!]
+\centering
+\begin{tabular}{ | c | l | l | l |}
+\hline
+	Instruction Module Name 	& Parameter 1 & Parameter 2 & Parameter 3 \\  
+\hline
+\hline
+	F 							& Distance	&			&\\
+\hline
+	f 							& Angle		&			&\\
+\hline
+	+ 							& Angle		&			&\\
+\hline
+	- 							& Angle		&			&\\
+\hline
+	/ 							& Angle		&			&\\
+\hline
+	$\backslash$ 				& Angle		&			&\\
+\hline
+	$\land$ 					& Angle		&			&\\
+\hline
+	\& 							& Angle		&			&\\
+\hline
+	! 							& 	&			&\\
+\hline
+\end{tabular}
+\caption{Table of turtle instruction symbols and their meaning to the interpreter}
+\label{instruction table 1}
+\end{table}
+\FloatBarrier
+
+\noindent
+These instructions generate the plants skeleton which is made up of joints, the joints that hold information as to its 3D properties of a particular segement or object. The properties are the position, orientation, physical properties as well as the parent of the joint. The information for each joint is as follows:
 
 \begin{figure}[htbp]
 	{\centering
@@ -106,35 +141,7 @@ This simple method of stacking cylinders gives a reasonable looking tree structu
 
 \subsection{Basic 2D L-systems} 
 
-There are a number of fractal geometry that have become well known particularly with regards to how they can seemingly imitate nature \cite{mandelbrot1982fractal}. Particularly with the geometry such as the Koch snowflake which can be represented using the following L-system.
 
-\begin{figure}[htbp]
-	\raggedright
-	\textbf{\underline{Koch Curve:}} \\
-	\#n = 4; \\
-	\#define r 90; \\
-	\#w : F(1); \\
-	\#p1 : F(x) : * : F(x)+(r)F(x)-(r)F(x)-(r)F(x)+(r)F(x);\\
-	{\centering
-		\vspace{7px}
-		\includegraphics[scale=0.15]{KochCurve/KochCurve04.png}
-		\caption{Koch Curve.}
-	}
-\end{figure}
-\begin{figure}[htbp]
-	\raggedright
-	\textbf{\underline{Sierpinski Triangle:}} \\
-	\#n = 4;\\
-	\#define r 60;\\
-	\#w : F(1);\\
-	\#p1 : F(x) : * : X(x)-(r)F(x)-(r)X(x);\\
-	\#p2 : X(x) : * : F(x)+(r)X(x)+(r)F(x);\\
-	{\centering
-		\vspace{7px}
-		\includegraphics[scale=0.15]{SierpinskiTriangle/SierpinskiTriangle04.png}
-		\caption{Sierpinski Triangle.}
-	}
-\end{figure}
 \begin{figure}[htbp]
 	\raggedright
 	\textbf{\underline{Fractal Plant:}} \\
