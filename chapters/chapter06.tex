@@ -16,32 +16,32 @@ This chapter will cover each stage of the string interpreter implementation in d
 
 \section{Turtle Graphics Interpreter}
 
-The main job of the turtle graphics interpreter is to take the string of modules from the L-system rewriter and interpret it as a list of turtle graphics instructions. As briefly covered in chapter \ref{l-system chapter}, each module name within the L-systems resultant string represents a particular meaning to the turtle graphics interpreter, these meanings are predefined and are dependant on what the L-system is representing. The L-system used defined by the L-system rewriter is a parametric L-system, this allows each module to also provide a number of optional parameters, which may also have a special meaning. Below is a table describing the L-system modules names as well as their parameters meanings to the turtle graphics interpreter.
+The main purpose of the turtle graphics interpreter is to take the string of modules from the L-system rewriter, and interpret it as a list of turtle graphics instructions. As briefly covered in chapter \ref{l-system chapter}, each module name within the L-systems resultant string represents a particular meaning to the turtle graphics interpreter, these meanings are predefined and are dependant on what the L-system is representing. The L-system defined for this thesis is a parametric L-system, which allows each module to also provide a number of optional parameters. These may also carry a particular meaning for the interpreter. Below is a table describing the L-system module names as well as the parameter meanings for the turtle graphics interpreter.
 
 \begin{table}[h!]
 \centering
 \begin{tabular}{ | c | l | l | l |}
 \hline
-	Instruction Module Name 	& Parameter 1 & Parameter 2 & Parameter 3 \\  
+	Instruction Name 	& Parameter 1 & Parameter 2 & Parameter 3 \\  
 \hline
 \hline
 	F 							& Distance	&			&\\
 \hline
-	f 							& Angle		&			&\\
+	f 							& Distance	&			&\\
 \hline
-	+ 							& Angle		&			&\\
+	+ 							& Angle of rotation 		&			&\\
 \hline
-	- 							& Angle		&			&\\
+	- 							& Angle	of rotation	&			&\\
 \hline
-	/ 							& Angle		&			&\\
+	/ 							& Angle	of rotation	&			&\\
 \hline
-	$\backslash$ 				& Angle		&			&\\
+	$\backslash$ 				& Angle	of rotation	&			&\\
 \hline
-	$\land$ 					& Angle		&			&\\
+	$\land$ 					& Angle	of rotation	&			&\\
 \hline
-	\& 							& Angle		&			&\\
+	\& 							& Angle	of rotation	&			&\\
 \hline
-	! 							& 	&			&\\
+	! 							& Branch width		&			&\\
 \hline
 \end{tabular}
 \caption{Table of turtle instruction symbols and their meaning to the interpreter}
@@ -50,7 +50,7 @@ The main job of the turtle graphics interpreter is to take the string of modules
 \FloatBarrier
 
 \noindent
-These instructions generate the plants skeleton which is made up of joints, the joints that hold information as to its 3D properties of a particular segement or object. The properties are the position, orientation, physical properties as well as the parent of the joint. The information for each joint is as follows:
+These instructions are carried out one by one to generate the plants skeletal structure, which is made up of joints. The joints hold information about the properties of each particular segement or object of the plant. The joints properties are the position, orientation, scale, physical characteristics as well as its parent joint. A joint is defined by the figure below:
 
 \begin{figure}[htbp]
 	{\centering
@@ -59,13 +59,14 @@ These instructions generate the plants skeleton which is made up of joints, the 
 		\caption{Diagram for the properties of a joint} \label{joint properties}
 	}
 \end{figure}
+\FloatBarrier
 
 \noindent
-As you can see from figure \ref{joint properties}, there is large amount of information stored for the position and orientation of each joint. This is because each rotation is stored in both a local and global space. Local space refers to the rotation of the joint relative to the joints parent rotation, this is useful as it allows the manipulation of subsequent child joints but leaving parent joints local rotation unchanged. Global space, also known as world space, is the rotation of the joint relative to the world itself this is useful for understanding the current rotation of the joint relative to the world for instance calculating the torque or force calculations due to gravity. Furthermore it is important to store both the current and previous rotations to calculate the rate of change for physics calculations.
+As you can see from figure \ref{joint properties}, there is large amount of information stored for the position and orientation of each joint. This is because the rotation of the joint is stored in both a local and global space. Local space refers to the rotation of the joint relative to its parent rotation, this is useful as it allows the manipulation of subsequent child joints, whilst leaving other joints local rotation unchanged. Global space, also known as world space, is the rotation of each joint relative to the world itself this is useful for understanding the current rotation of the joint relative to the world for instance calculating the torque or force calculations due to gravity. It is important to store both the current and previous rotations as they are used to calculate the rate of change for physics calculations.
 
-The physical properties for each joint are the parts that will affect the model generation stage as well as the physics simulation. These include the length of the branch stemming from the joint position, the width of the branch, the spring constant or stiffness of the branch, the damping constant for slowing down the branch oscillation and the current momentum of the branch. 
+The physical properties for each joint are the parts are what will affect model generation as well as physics simulations. These properties include the length, width, spring constant, damping constant as well as the current momentum of the branch. 
 
-Take the string of modules \say{F(1)[/(90)F(1)$\backslash$ (90)F(1)]-(90)F(1)+(90)F(1)}, the alphabet is made up of seven unique modules F, /, $\backslash$, [, ], + and -. According to the as discussed in previous chapters the \say{F} symbol represents a move forward, and \say{+}, \say{-}, \say{/}, \say{$\backslash$} symbolize different rotations, and the \say{[} and \say{]} represent save and load state respecively. The aforementioned symbols each have a single parameter except the load and save state. It is the turtle graphics interpreters job to understand what these parameters are and how to interpret them. In this case all of the \say{F} modules have the parameter value of 1, and all of the rotation modules have the parameter of 90. These are interpreted as the distance to move forward and the angle to rotate respectively. This interpretation can be represented with the joint structure shown below:
+Take the string of modules \say{F(1)[/(90)F(1)$\backslash$ (90)F(1)]-(90)F(1)+(90)F(1)}, the alphabet is made up of seven unique modules F, /, $\backslash$, [, ], + and -. According to the as discussed in previous chapters the \say{F} symbol represents a move forward, and \say{+}, \say{-}, \say{/}, \say{$\backslash$} symbolize different rotations, and the \say{[} and \say{]} represent save and load state respecively. The aforementioned symbols each have a single parameter except the load and save state. It is the turtle graphics interpreters job to understand what these parameters are and how to interpret them. In this case all of the \say{F} modules have the parameter value of 1, and all of the rotation modules have the parameter of 90. These are interpreted as the distance to move forward and the change in angle from the previous joint in degrees. This interpretation can be represented with the joint structure shown in figure \ref{skeleton diagram} below:
 
 \begin{figure}[htbp]
 	{\centering
@@ -74,10 +75,9 @@ Take the string of modules \say{F(1)[/(90)F(1)$\backslash$ (90)F(1)]-(90)F(1)+(9
 		\fbox{
 			\includegraphics[scale=0.4]{Diagrams/SkeletonJoints.png}
 		}
-		\caption{Diagram of a simple plant skeleton with joint position and orientation.}
+		\caption{Diagram of a simple plant skeleton with joint position and orientation.} \label{skeleton diagram}
 	}
 \end{figure}
-
 \FloatBarrier
 
 

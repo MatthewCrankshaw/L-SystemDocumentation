@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  11 NOV 2019 16:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  12 NOV 2019 14:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -933,34 +933,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+
 Underfull \vbox (badness 3601) has occurred while \output is active []
 
  [8
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+
+ []
+
 [9]
 <images/Diagrams/snowflakeCurve.png, id=38, 1284.8pt x 827.09pt>
 File: images/Diagrams/snowflakeCurve.png Graphic file (type png)
 <use images/Diagrams/snowflakeCurve.png>
 Package pdftex.def Info: images/Diagrams/snowflakeCurve.png  used on input line
- 20.
+ 30.
 (pdftex.def)             Requested size: 385.44298pt x 248.1289pt.
- [10 <./images/Diagrams/snowflakeCurve.png>]
-<images/Diagrams/ChomskyGrammar.png, id=44, 596.2275pt x 353.32pt>
+ [10] [11 <./images/Diagrams/snowflakeCurve.png>]
+<images/Diagrams/ChomskyGrammar.png, id=47, 596.2275pt x 353.32pt>
 File: images/Diagrams/ChomskyGrammar.png Graphic file (type png)
 <use images/Diagrams/ChomskyGrammar.png>
 Package pdftex.def Info: images/Diagrams/ChomskyGrammar.png  used on input line
- 38.
+ 49.
 (pdftex.def)             Requested size: 298.11302pt x 176.65956pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
-
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11 <./images/Diagrams/ChomskyGrammar.png>]) [12]
+) [12 <./images/Diagrams/ChomskyGrammar.png>]
 Chapter 2.
 (./chapters/chapter02.tex
 Overfull \hbox (16.5958pt too wide) in paragraph at lines 6--7
@@ -1255,69 +1261,65 @@ Underfull \vbox (badness 7468) has occurred while \output is active []
 File: images/Diagrams/JointDiagram.png Graphic file (type png)
 <use images/Diagrams/JointDiagram.png>
 Package pdftex.def Info: images/Diagrams/JointDiagram.png  used on input line 5
-7.
+8.
 (pdftex.def)             Requested size: 215.0049pt x 288.47997pt.
  [55]
 <images/Diagrams/SkeletonJoints.png, id=231, 607.26875pt x 506.89375pt>
 File: images/Diagrams/SkeletonJoints.png Graphic file (type png)
 <use images/Diagrams/SkeletonJoints.png>
 Package pdftex.def Info: images/Diagrams/SkeletonJoints.png  used on input line
- 75.
+ 77.
 (pdftex.def)             Requested size: 242.9032pt x 202.7539pt.
- [56 <./images/Diagrams/JointDiagram.png> <./images/Diagrams/SkeletonJoints.png
->]
-<images/Diagrams/stackedBranchesMesh.png, id=237, 777.90625pt x 731.73375pt>
+ [56 <./images/Diagrams/JointDiagram.png>]
+<images/Diagrams/stackedBranchesMesh.png, id=236, 777.90625pt x 731.73375pt>
 File: images/Diagrams/stackedBranchesMesh.png Graphic file (type png)
 <use images/Diagrams/stackedBranchesMesh.png>
 Package pdftex.def Info: images/Diagrams/stackedBranchesMesh.png  used on input
- line 101.
+ line 103.
 (pdftex.def)             Requested size: 155.57849pt x 146.34415pt.
-<images/Diagrams/linkedBranchesMesh.png, id=238, 724.7075pt x 623.32875pt>
+ [57 <./images/Diagrams/SkeletonJoints.png> <./images/Diagrams/stackedBranchesM
+esh.png>]
+<images/Diagrams/linkedBranchesMesh.png, id=241, 724.7075pt x 623.32875pt>
 File: images/Diagrams/linkedBranchesMesh.png Graphic file (type png)
 <use images/Diagrams/linkedBranchesMesh.png>
 Package pdftex.def Info: images/Diagrams/linkedBranchesMesh.png  used on input 
-line 123.
+line 125.
 (pdftex.def)             Requested size: 144.93893pt x 124.66353pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [57 <./images/Diagrams/stackedBranchesMesh.png> <./images/Diagrams/linkedBranc
-hesMesh.png>]
 <images/FractalPlant/FractalPlant05.png, id=242, 1204.5pt x 749.80125pt>
 File: images/FractalPlant/FractalPlant05.png Graphic file (type png)
 <use images/FractalPlant/FractalPlant05.png>
 Package pdftex.def Info: images/FractalPlant/FractalPlant05.png  used on input 
-line 156.
+line 158.
 (pdftex.def)             Requested size: 180.6672pt x 112.46533pt.
 <images/FractalBush/FractalBush06.png, id=243, 1147.28625pt x 795.97375pt>
 File: images/FractalBush/FractalBush06.png Graphic file (type png)
 <use images/FractalBush/FractalBush06.png>
 Package pdftex.def Info: images/FractalBush/FractalBush06.png  used on input li
-ne 171.
+ne 173.
 (pdftex.def)             Requested size: 172.08551pt x 119.3909pt.
-) [58 <./images/FractalPlant/FractalPlant05.png> <./images/FractalBush/FractalB
-ush06.png>]
+ [58 <./images/Diagrams/linkedBranchesMesh.png> <./images/FractalPlant/FractalP
+lant05.png>]) [59 <./images/FractalBush/FractalBush06.png>]
 Chapter 7.
-(./chapters/chapter07.tex) [59
+(./chapters/chapter07.tex) [60
 
 ]
 Chapter 8.
-(./chapters/chapter08.tex) [60
+(./chapters/chapter08.tex) [61
 
 ]
 Chapter 9.
 (./chapters/chapter09.tex)
 No file Thesis.acr.
 No file Thesis.gls.
-[61
+[62
 
 ]
 Appendix A.
-(./chapters/appendix.tex (./Thesis.bbl [62
+(./chapters/appendix.tex (./Thesis.bbl [63
 
-] [63
+] [64
 
-])) [64] (./Thesis.aux)
+])) [65] (./Thesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1326,13 +1328,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 9198 strings out of 492982
- 134739 string characters out of 6134896
- 266890 words of memory out of 5000000
- 12469 multiletter control sequences out of 15000+600000
+ 9199 strings out of 492982
+ 134757 string characters out of 6134896
+ 266901 words of memory out of 5000000
+ 12470 multiletter control sequences out of 15000+600000
  13812 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,12n,63p,2471b,462s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,12n,63p,1987b,462s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
@@ -1347,10 +1349,10 @@ mr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Thesis.pdf (64 pages, 3611216 bytes).
+Output written on Thesis.pdf (65 pages, 3612757 bytes).
 PDF statistics:
- 316 PDF objects out of 1000 (max. 8388607)
- 189 compressed objects within 2 object streams
+ 319 PDF objects out of 1000 (max. 8388607)
+ 191 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  126 words of extra memory for PDF output out of 10000 (max. 10000000)
 
