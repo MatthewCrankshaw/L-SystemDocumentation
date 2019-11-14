@@ -90,19 +90,6 @@ In any 3D application, mathematical models are used to represent the positions, 
 Vectors have many meanings in different contexts, In \acrshort{3d} computer graphics, when we talk about vectors we are talking about the Euclidean vector. The Euclidean vector is a quantity in $n$-dimensional space that has both magnitude (the length from A to B) and direction (the direction to get from A to B). \\
 Vectors can be represented as a line segment pointing in direction with a certain length. A \acrshort{3d} vector can be written as a triple of scalar values eg: $(x, y, z)$
 
-\begin{figure}[htbp]
-	{\centering
-		\setlength{\fboxrule}{1pt}
-		\vspace{7px}
-		\fbox{
-			\includegraphics[scale=0.3]{Diagrams/Vector2DAnd3D.png}
-			\label{3DAxisFigure}
-		}
-		\caption{2D Vector representing the vector at (-3, 2) And 3D Vector (4, 3, -1).}
-	}
-\end{figure}
-\FloatBarrier
-
 The most common operations on vectors are multiplication by a scalar, addition, subtraction, normalisation and the dot and cross product. The multiplication by a scalar value can be simply seen as scaling the magnitude of the vector itself, this can be done uniformly or non-uniformly as seen in the equation below:
 
 \begin{equation}
@@ -114,8 +101,8 @@ Where $\otimes$ is the component-wise product of a vector $a$ and the scaling ve
 
 \begin{equation}
 \begin{aligned}
-a \oplus b = (a_x s_x, a_y s_y, a_z s_z)\\
-a \ominus b = (a_x s_x, a_y s_y, a_z s_z)
+a \oplus b = [(a_x + b_x), (a_y + b_y), (a_z + b_z)]\\
+a \ominus b = [(a_x + b_x), (a_y + b_y), (a_z + b_z)]
 \end{aligned}
 \end{equation}
 
@@ -124,17 +111,65 @@ a \ominus b = (a_x s_x, a_y s_y, a_z s_z)
 		\setlength{\fboxrule}{1pt}
 		\vspace{7px}
 		\fbox{
-			\includegraphics[scale=0.25]{Diagrams/vector_addition.png}
+			\includegraphics[scale=0.2]{Diagrams/vector_addition.png}
 			\label{3DAxisFigure}
 		}
-		\caption{Diagram of the sum and difference of the addition of two vectors.}
+		\caption{Table of common dot product tests between two vectors.}
 	}
 \end{figure}
 \FloatBarrier
 
-dot product and cross product. 
+\noindent
+There are many different ways to multiply vectors, however, in 3D graphics there two main multiplications. These being the dot and cross product. The dot product yields a scalar by adding the products of the vector product components. The cross product on the other hand is the product of two vectors which gives a vector which is perpendicular to to the two vectors. The dot product can be calculated using the formula below: 
 
+\begin{equation}
+a \cdot b = a_x b_x + a_y b_y + a_z b_z = d
+\end{equation}
 
+One of the main uses for dot products within 3D graphics is to find whether two vectors are collinear, perpendicular, in the same direction or opposite directions. 
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ | c | c | c |}
+\hline
+	Test 	& Equation & Example\\  
+\hline
+\hline
+	Collinear 							& $(a \cdot b) = ab$ & \includegraphics[scale=0.1]{Diagrams/vector1.png}\\
+\hline
+	Opposite Collinear 					& $(a \cdot b) = -ab$ &	\includegraphics[scale=0.1]{Diagrams/vector2.png}\\
+\hline
+	Perpendicular 						& $(a \cdot b) = 0$	&\includegraphics[scale=0.1]{Diagrams/vector3.png}\\
+\hline
+	Same Direction 						& $(a \cdot b) > 0$ &\includegraphics[scale=0.1]{Diagrams/vector4.png}\\
+\hline
+	Opposite Direction 					& $(a \cdot b) < 0$ &\includegraphics[scale=0.1]{Diagrams/vector5.png}\\
+\hline
+
+\end{tabular}
+\caption{Table of turtle instruction symbols and their meaning to the interpreter}
+\label{instruction table 1}
+\end{table}
+\FloatBarrier
+
+The cross product also known as the outer product can be expressed in the following formula: 
+
+\begin{equation}
+a \times b = [(a_y b_z - a_z b_y), (a_z b_x - a_x b_z), (a_x b_y - a_y b_x)]
+\end{equation}
+
+\begin{figure}[htbp]
+	{\centering
+		\setlength{\fboxrule}{1pt}
+		\vspace{7px}
+		\fbox{
+			\includegraphics[scale=0.25]{Diagrams/cross_product.png}
+			\label{3DAxisFigure}
+		}
+		\caption{Diagram of the cross product of two vectors a and b.}
+	}
+\end{figure}
+\FloatBarrier
 
 \subsection{Matrices}
 \begin{equation}

@@ -36,23 +36,23 @@
 \contentsline {section}{\numberline {5.1}Turtle Graphics Interpreter}{51}
 \contentsline {section}{\numberline {5.2}3D Mathematics}{53}
 \contentsline {subsection}{\numberline {5.2.1}Vectors}{53}
-\contentsline {subsection}{\numberline {5.2.2}Matrices}{54}
+\contentsline {subsection}{\numberline {5.2.2}Matrices}{55}
 \contentsline {subsection}{\numberline {5.2.3}Matrix Multiplication}{55}
-\contentsline {subsection}{\numberline {5.2.4}Translation}{55}
-\contentsline {subsection}{\numberline {5.2.5}Rotation}{55}
-\contentsline {subsection}{\numberline {5.2.6}Scale}{55}
-\contentsline {subsection}{\numberline {5.2.7}Quaternions}{55}
-\contentsline {subsection}{\numberline {5.2.8}Unit Quaternion}{55}
+\contentsline {subsection}{\numberline {5.2.4}Translation}{56}
+\contentsline {subsection}{\numberline {5.2.5}Rotation}{56}
+\contentsline {subsection}{\numberline {5.2.6}Scale}{56}
+\contentsline {subsection}{\numberline {5.2.7}Quaternions}{56}
+\contentsline {subsection}{\numberline {5.2.8}Unit Quaternion}{56}
 \contentsline {subsection}{\numberline {5.2.9}Quaternion Multiplication}{56}
 \contentsline {subsection}{\numberline {5.2.10}Conjugate and Inverse}{56}
 \contentsline {section}{\numberline {5.3}Model Generator}{56}
 \contentsline {section}{\numberline {5.4}Renderer}{57}
 \contentsline {section}{\numberline {5.5}Displaying the L-system Instructions}{57}
 \contentsline {subsection}{\numberline {5.5.1}Basic 2D L-systems}{57}
-\contentsline {subsection}{\numberline {5.5.2}The Use of L-systems in 3D applications}{58}
-\contentsline {chapter}{\numberline {6}Findings and Data Analysis}{59}
-\contentsline {chapter}{\numberline {7}Discussion}{60}
-\contentsline {chapter}{\numberline {8}Conclusions}{61}
-\contentsline {chapter}{\numberline {A}Appendix}{62}
-\contentsline {section}{\numberline {A.1}Appendix 1}{62}
-\contentsline {section}{\numberline {A.2}Bibliography}{62}
+\contentsline {subsection}{\numberline {5.5.2}The Use of L-systems in 3D applications}{59}
+\contentsline {chapter}{\numberline {6}Findings and Data Analysis}{60}
+\contentsline {chapter}{\numberline {7}Discussion}{61}
+\contentsline {chapter}{\numberline {8}Conclusions}{62}
+\contentsline {chapter}{\numberline {A}Appendix}{63}
+\contentsline {section}{\numberline {A.1}Appendix 1}{63}
+\contentsline {section}{\numberline {A.2}Bibliography}{63}
