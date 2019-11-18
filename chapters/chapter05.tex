@@ -87,8 +87,7 @@ In any 3D application, mathematical models are used to represent the positions, 
 
 \subsection{Vectors}
 
-Vectors have many meanings in different contexts, In \acrshort{3d} computer graphics, when we talk about vectors we are talking about the Euclidean vector. The Euclidean vector is a quantity in $n$-dimensional space that has both magnitude (the length from A to B) and direction (the direction to get from A to B). \\
-Vectors can be represented as a line segment pointing in direction with a certain length. A \acrshort{3d} vector can be written as a triple of scalar values eg: $(x, y, z)$
+Vectors have many meanings in different contexts, in \acrshort{3d} computer graphics, often vectors are refering to the Euclidean vector. The Euclidean vector is a quantity in $n$-dimensional space that has both magnitude (the length from A to B) and direction (the direction to get from A to B). Vectors can be represented as a line segment pointing in a direction, with a certain length. A \acrshort{3d} vector can be written as a triple of scalar values eg: $(x, y, z)$
 
 The most common operations on vectors are multiplication by a scalar, addition, subtraction, normalisation and the dot and cross product. The multiplication by a scalar value can be simply seen as scaling the magnitude of the vector itself, this can be done uniformly or non-uniformly as seen in the equation below:
 
@@ -102,7 +101,7 @@ Where $\otimes$ is the component-wise product of a vector $a$ and the scaling ve
 \begin{equation}
 \begin{aligned}
 a \oplus b = [(a_x + b_x), (a_y + b_y), (a_z + b_z)]\\
-a \ominus b = [(a_x + b_x), (a_y + b_y), (a_z + b_z)]
+a \ominus b = [(a_x - b_x), (a_y - b_y), (a_z - b_z)]
 \end{aligned}
 \end{equation}
 
@@ -120,13 +119,26 @@ a \ominus b = [(a_x + b_x), (a_y + b_y), (a_z + b_z)]
 \FloatBarrier
 
 \noindent
-There are many different ways to multiply vectors, however, in 3D graphics there two main multiplications. These being the dot and cross product. The dot product yields a scalar by adding the products of the vector product components. The cross product on the other hand is the product of two vectors which gives a vector which is perpendicular to to the two vectors. The dot product can be calculated using the formula below: 
+A useful type of vector is known as a unit vector. This is a type of vector which has a magnitude of 1. Unit vectors are used extensively in computer graphics particularly with ragards to \gls{Shader}s. Take the vector v its magnitude $\alpha$ can be calculated by taking the square root of the product its components squared, as seen below 
+
+\begin{equation}
+	\alpha =~ \mid \textbf{v} \mid~ = \sqrt{\textbf{v}^2_x + \textbf{v}^2_y + \textbf{v}^2_z}
+\end{equation}
+
+The unit vector can then be calculated by taking the product of $v$ and the reciprocal of its magnitude shown in the following equation.
+
+\begin{equation}
+	\upsilon = \frac{\textbf{v}}{\alpha} = \frac{1}{\alpha} \textbf{v}
+\end{equation}
+
+There are many different ways to multiply vectors, however, in 3D graphics there two main multiplications. These being the dot and cross product. The dot product yields a scalar by adding the products of the vector product components. The cross product on the other hand is the product of two vectors which gives a vector which is perpendicular. The dot product can be calculated using the formula below: 
 
 \begin{equation}
 a \cdot b = a_x b_x + a_y b_y + a_z b_z = d
 \end{equation}
 
-One of the main uses for dot products within 3D graphics is to find whether two vectors are collinear, perpendicular, in the same direction or opposite directions. Where $ab = \mid a \mid \mid b \mid = a \cdot b$
+\noindent
+Some of the main uses for dot products within 3D graphics is to find whether two vectors are collinear, perpendicular, in the same direction or opposite directions. One possible use for this is to find the dot product of two branches directions in order to find out if they growing in the same direct or in opposite directions. In the table \ref{dot product test} below, there are each of the dot product test diagrams as well as the test equation where $ab = \mid a \mid \mid b \mid = a \cdot b$.
 
 \begin{table}[h!]
 \centering
@@ -148,15 +160,28 @@ One of the main uses for dot products within 3D graphics is to find whether two 
 
 \end{tabular}
 \caption{Table of turtle instruction symbols and their meaning to the interpreter}
-\label{instruction table 1}
+\label{dot product test}
 \end{table}
 \FloatBarrier
 
-The cross product also known as the outer product can be expressed in the following formula: 
+\noindent
+The cross product also known as the outer product takes two vectors and finds the perpendicular vector of the two vectors, this is only possible in 3D space and can be expressed in the following formula using the left-hand rule: 
 
 \begin{equation}
 a \times b = [(a_y b_z - a_z b_y), (a_z b_x - a_x b_z), (a_x b_y - a_y b_x)]
 \end{equation}
+
+\noindent
+The result of a cross product can be seen in figure \ref{Cross product diagram} below. Where vectors $a$ and $b$ give the perpendicular vector $a \times b$. The cross product is very useful within physics calculations when it is necessary to find the rotational motion. 
+
+\noindent
+Some of the properties of the cross product are as follows:
+
+\begin{itemize}
+	\item is non-commutative meaning order matters($a \times b \not= b \times a$)
+	\item is anti-commutative ($a \times b = -(a \times b)$)
+	\item is distributive with addition ($a \times (b + c) = (a \times b) + (a \times c)$)
+\end{itemize}
 
 \begin{figure}[htbp]
 	{\centering
@@ -164,7 +189,7 @@ a \times b = [(a_y b_z - a_z b_y), (a_z b_x - a_x b_z), (a_x b_y - a_y b_x)]
 		\vspace{7px}
 		\fbox{
 			\includegraphics[scale=0.25]{Diagrams/cross_product.png}
-			\label{3DAxisFigure}
+			\label{Cross product diagram}
 		}
 		\caption{Diagram of the cross product of two vectors a and b.}
 	}

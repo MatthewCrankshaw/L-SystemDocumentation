@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  18 NOV 2019 13:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  18 NOV 2019 15:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -802,12 +802,6 @@ LaTeX Warning: Label `3D rotations' multiply defined.
 
 LaTeX Warning: Label `instruction table 1' multiply defined.
 
-
-LaTeX Warning: Label `instruction table 1' multiply defined.
-
-
-LaTeX Warning: Label `3DAxisFigure' multiply defined.
-
 )
 \openout1 = `Thesis.aux'.
 
@@ -1252,99 +1246,104 @@ Package pdftex.def Info: images/Diagrams/SkeletonJoints.png  used on input line
  77.
 (pdftex.def)             Requested size: 242.9032pt x 202.7539pt.
  [52 <./images/Diagrams/JointDiagram.png>]
-Underfull \vbox (badness 3000) has occurred while \output is active []
-
- [53 <./images/Diagrams/SkeletonJoints.png>]
-<images/Diagrams/vector_addition.png, id=220, 841.1425pt x 544.0325pt>
+<images/Diagrams/vector_addition.png, id=216, 841.1425pt x 544.0325pt>
 File: images/Diagrams/vector_addition.png Graphic file (type png)
 <use images/Diagrams/vector_addition.png>
 Package pdftex.def Info: images/Diagrams/vector_addition.png  used on input lin
-e 116.
+e 115.
 (pdftex.def)             Requested size: 168.22551pt x 108.80457pt.
+ [53 <./images/Diagrams/SkeletonJoints.png>]
 <images/Diagrams/vector1.png, id=221, 677.53125pt x 507.8975pt>
 File: images/Diagrams/vector1.png Graphic file (type png)
 <use images/Diagrams/vector1.png>
-Package pdftex.def Info: images/Diagrams/vector1.png  used on input line 138.
+Package pdftex.def Info: images/Diagrams/vector1.png  used on input line 150.
 (pdftex.def)             Requested size: 67.75708pt x 50.79272pt.
 <images/Diagrams/vector2.png, id=222, 677.53125pt x 507.8975pt>
 File: images/Diagrams/vector2.png Graphic file (type png)
 <use images/Diagrams/vector2.png>
-Package pdftex.def Info: images/Diagrams/vector2.png  used on input line 140.
+Package pdftex.def Info: images/Diagrams/vector2.png  used on input line 152.
 (pdftex.def)             Requested size: 67.75708pt x 50.79272pt.
 <images/Diagrams/vector3.png, id=223, 590.205pt x 441.65pt>
 File: images/Diagrams/vector3.png Graphic file (type png)
 <use images/Diagrams/vector3.png>
-Package pdftex.def Info: images/Diagrams/vector3.png  used on input line 142.
+Package pdftex.def Info: images/Diagrams/vector3.png  used on input line 154.
 (pdftex.def)             Requested size: 59.02396pt x 44.16757pt.
 <images/Diagrams/vector4.png, id=224, 677.53125pt x 507.8975pt>
 File: images/Diagrams/vector4.png Graphic file (type png)
 <use images/Diagrams/vector4.png>
-Package pdftex.def Info: images/Diagrams/vector4.png  used on input line 144.
+Package pdftex.def Info: images/Diagrams/vector4.png  used on input line 156.
 (pdftex.def)             Requested size: 67.75708pt x 50.79272pt.
 <images/Diagrams/vector5.png, id=225, 676.5275pt x 507.8975pt>
 File: images/Diagrams/vector5.png Graphic file (type png)
 <use images/Diagrams/vector5.png>
-Package pdftex.def Info: images/Diagrams/vector5.png  used on input line 146.
+Package pdftex.def Info: images/Diagrams/vector5.png  used on input line 158.
 (pdftex.def)             Requested size: 67.65671pt x 50.79272pt.
-<images/Diagrams/cross_product.png, id=226, 625.33624pt x 486.81876pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[54 <./images/Diagrams/vector_addition.png>]
+<images/Diagrams/cross_product.png, id=231, 625.33624pt x 486.81876pt>
 File: images/Diagrams/cross_product.png Graphic file (type png)
 <use images/Diagrams/cross_product.png>
 Package pdftex.def Info: images/Diagrams/cross_product.png  used on input line 
-168.
+193.
 (pdftex.def)             Requested size: 156.33368pt x 121.70439pt.
- [54 <./images/Diagrams/vector_addition.png> <./images/Diagrams/vector1.png> <.
-/images/Diagrams/vector2.png> <./images/Diagrams/vector3.png> <./images/Diagram
-s/vector4.png> <./images/Diagrams/vector5.png>] [55 <./images/Diagrams/cross_pr
-oduct.png>] [56]
+
+Underfull \vbox (badness 2181) has occurred while \output is active []
+
+ [55 <./images/Diagrams/vector1.png> <./images/Diagrams/vector2.png> <./images/
+Diagrams/vector3.png> <./images/Diagrams/vector4.png> <./images/Diagrams/vector
+5.png> <./images/Diagrams/cross_product.png>] [56]
 <images/Diagrams/stackedBranchesMesh.png, id=245, 777.90625pt x 731.73375pt>
 File: images/Diagrams/stackedBranchesMesh.png Graphic file (type png)
 <use images/Diagrams/stackedBranchesMesh.png>
 Package pdftex.def Info: images/Diagrams/stackedBranchesMesh.png  used on input
- line 292.
+ line 317.
 (pdftex.def)             Requested size: 155.57849pt x 146.34415pt.
-<images/Diagrams/linkedBranchesMesh.png, id=246, 724.7075pt x 623.32875pt>
+ [57]
+<images/Diagrams/linkedBranchesMesh.png, id=249, 724.7075pt x 623.32875pt>
 File: images/Diagrams/linkedBranchesMesh.png Graphic file (type png)
 <use images/Diagrams/linkedBranchesMesh.png>
 Package pdftex.def Info: images/Diagrams/linkedBranchesMesh.png  used on input 
-line 314.
+line 339.
 (pdftex.def)             Requested size: 144.93893pt x 124.66353pt.
-<images/FractalPlant/FractalPlant05.png, id=247, 1204.5pt x 749.80125pt>
+<images/FractalPlant/FractalPlant05.png, id=250, 1204.5pt x 749.80125pt>
 File: images/FractalPlant/FractalPlant05.png Graphic file (type png)
 <use images/FractalPlant/FractalPlant05.png>
 Package pdftex.def Info: images/FractalPlant/FractalPlant05.png  used on input 
-line 347.
+line 372.
 (pdftex.def)             Requested size: 180.6672pt x 112.46533pt.
-<images/FractalBush/FractalBush06.png, id=248, 1147.28625pt x 795.97375pt>
+<images/FractalBush/FractalBush06.png, id=251, 1147.28625pt x 795.97375pt>
 File: images/FractalBush/FractalBush06.png Graphic file (type png)
 <use images/FractalBush/FractalBush06.png>
 Package pdftex.def Info: images/FractalBush/FractalBush06.png  used on input li
-ne 362.
+ne 387.
 (pdftex.def)             Requested size: 172.08551pt x 119.3909pt.
- [57 <./images/Diagrams/stackedBranchesMesh.png> <./images/Diagrams/linkedBranc
-hesMesh.png>] [58 <./images/FractalPlant/FractalPlant05.png> <./images/FractalB
-ush/FractalBush06.png>])
-[59]
+ [58 <./images/Diagrams/stackedBranchesMesh.png> <./images/Diagrams/linkedBranc
+hesMesh.png>] [59 <./images/FractalPlant/FractalPlant05.png> <./images/FractalB
+ush/FractalBush06.png>]) [60]
 Chapter 6.
-(./chapters/chapter06.tex) [60
+(./chapters/chapter06.tex) [61
 
 ]
 Chapter 7.
-(./chapters/chapter07.tex) [61
+(./chapters/chapter07.tex) [62
 
 ]
 Chapter 8.
 (./chapters/chapter08.tex)
 No file Thesis.acr.
 No file Thesis.gls.
-[62
+[63
 
 ]
 Appendix A.
-(./chapters/appendix.tex (./Thesis.bbl [63
+(./chapters/appendix.tex (./Thesis.bbl [64
 
-] [64
+] [65
 
-])) [65] (./Thesis.aux)
+])) [66] (./Thesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1353,10 +1352,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 9216 strings out of 492982
- 135289 string characters out of 6134896
- 266903 words of memory out of 5000000
- 12486 multiletter control sequences out of 15000+600000
+ 9248 strings out of 492982
+ 135848 string characters out of 6134896
+ 267286 words of memory out of 5000000
+ 12518 multiletter control sequences out of 15000+600000
  13812 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  45i,14n,63p,1987b,462s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1374,10 +1373,10 @@ mr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Thesis.pdf (65 pages, 3545977 bytes).
+Output written on Thesis.pdf (66 pages, 3548353 bytes).
 PDF statistics:
- 327 PDF objects out of 1000 (max. 8388607)
- 191 compressed objects within 2 object streams
+ 330 PDF objects out of 1000 (max. 8388607)
+ 193 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  146 words of extra memory for PDF output out of 10000 (max. 10000000)
 
