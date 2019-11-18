@@ -178,9 +178,9 @@ The result of a cross product can be seen in figure \ref{Cross product diagram} 
 Some of the properties of the cross product are as follows:
 
 \begin{itemize}
-	\item is non-commutative meaning order matters($a \times b \not= b \times a$)
-	\item is anti-commutative ($a \times b = -(a \times b)$)
-	\item is distributive with addition ($a \times (b + c) = (a \times b) + (a \times c)$)
+	\item is non-commutative, meaning order matters($a \times b \not= b \times a$).
+	\item is anti-commutative ($a \times b = -(a \times b)$).
+	\item is distributive with addition ($a \times (b + c) = (a \times b) + (a \times c)$).
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -197,6 +197,11 @@ Some of the properties of the cross product are as follows:
 \FloatBarrier
 
 \subsection{Matrices}
+
+A model in 3D space will exist as a set of vertices which each have a position. Moving the model requires moving all of the the vertices of that model without distorting it in any way, this is called a model transform. There are four main types of transforms; translation, rotation, scale and shear. Matrices are a single matematical construct which is capable of carrying out all four of these transformations. This sections will only cover the first three as the shear transformation is likely not going to be useful for this thesis.    
+
+A matrix is an 2D array of numbers, arranged into rows and columns, which can come in many different sizes. In 3D graphics, matrices used for transformations are the 3 $\times$ 3 and 4 $\times$ 4 matrix as seen below. A 3 $\times$ 3 matrix can be used for linear transorms such as scaling and rotation, furthermore, a linear transform which contains translation is known as an affine transform and can be represented by a 4 $\times$ 4 matrix known as an Atomic Transform Matrix. An atomic Transfom matrix is the concatination of four 4 $\times$ 4 matrices, one for translations, rotations, scale and shear transforms. Resulting in a 4 $\times$ 4 matrix as shown below. 
+
 \begin{equation}
 \textbf{M} = \begin{bmatrix}
 M_{11} & M_{12} & M_{13} \\
@@ -204,6 +209,7 @@ M_{21} & M_{22} & M_{23} \\
 M_{31} & M_{32} & M_{33}
 \end{bmatrix}
 \end{equation}
+
 \begin{equation}
 \textbf{M} = \begin{bmatrix}
 M_{11} & M_{12} & M_{13} & M_{14}\\
@@ -213,9 +219,8 @@ M_{41} & M_{42} & M_{43} & M_{44}
 \end{bmatrix}
 \end{equation}
 
-\begin{flushleft}
-When it comes to matrices in 3D graphics, instead of using a 3 $\times$ 3 matrix we tend use a 4 $\times$ 4 matrix known as an Atomic Transform Matrix. An atomic Transfom matrix is a concatination of four 4 $\times$ 4 matrices: translations, rotations, scale and shear transforms. Resulting in a 4 $\times$ 4 matrix in the following representation: 
-\end{flushleft}
+\noindent
+The affine matrix can be shown in the expression below where $RS$ is a 3 $\times$ 3 matrix containing the rotation and scale where the $4^th$ elements are 0. The $T$ elements represent the translation with the 4th element being 1. 
 
 \begin{equation}
 \textbf{M} = \begin{bmatrix}
@@ -226,11 +231,9 @@ T_{1} & T_{2} & T_{3} & 1
 \end{bmatrix}
 \end{equation}
 
-\begin{flushleft}
-Where $RS$ is a 3 $\times$ 3 matrix containing the rotation and scale where the $4^th$ elements are 0. The $T$ elements represent the translation with the 4th element being 1. 
-\end{flushleft}
-
 \subsection{Matrix Multiplication}
+
+The product of two linear transform matrices will be another linear transform matrix that carries out both of those tranformations. This is true for the multiplication of two affine transform matrices as well, and is why matrix multiplication is so powerful in 3D graphics. Take the two matrices $A$ and $B$ which give the product $P$. In order to multiply $A$ and $B$ together, the dot product of the row and the column is calculated as seen below. It is also imporant to know that matrix multiplication is non-commutative $(AB \not= BA)$.
 
 \begin{equation}
 \textbf{AB} = \begin{bmatrix}
@@ -244,34 +247,64 @@ B_{11} & B_{12} & B_{13}\\
 B_{21} & B_{22} & B_{23}\\
 B_{31} & B_{32} & B_{33}
 \end{bmatrix}
-\end{equation}
-\begin{equation}
 = \begin{bmatrix}
-A_{row1} \cdot B_{col1} & A_{row1} \cdot B_{col2} & A_{row1} \cdot B_{col3}\\
-A_{row2} \cdot B_{col1} & A_{row2} \cdot B_{col2} & A_{row2} \cdot B_{col3}\\
-A_{row3} \cdot B_{col1} & A_{row3} \cdot B_{col2} & A_{row3} \cdot B_{col3}
+(A_{row1} \cdot B_{col1}) & (A_{row1} \cdot B_{col2}) & (A_{row1} \cdot B_{col3})\\
+(A_{row2} \cdot B_{col1}) & (A_{row2} \cdot B_{col2}) & (A_{row2} \cdot B_{col3})\\
+(A_{row3} \cdot B_{col1}) & (A_{row3} \cdot B_{col2}) & (A_{row3} \cdot B_{col3})
 \end{bmatrix}
 \end{equation}
 
-\begin{flushleft}
-Matrix multiplication is non-commutative, Meaning order matters.
-\begin{equation}
-AB \neq BA
-\end{equation}
-\end{flushleft}
-
-
-
 \subsection{Translation}
 
-
+\begin{equation}
+V + T = \begin{bmatrix}
+V_{x} & V_{y} & V_{z}
+\end{bmatrix}
++
+\begin{bmatrix}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0\\
+T_{x} & T_{y} & T_{z} & 1
+\end{bmatrix}
+= \begin{bmatrix}
+(V_x + T_x)~ (V_y + T_y)~ (V_z + T_z)~ 1
+\end{bmatrix}
+\end{equation}
 
 \subsection{Rotation}
 
+\begin{equation}
+R_x(\theta) = 
+\begin{bmatrix}
+1 	& 0 					& 0 					& 0\\
+0 	& \text{cos}(\theta) 	& \text{sin}(\theta) 	& 0\\
+0 	& -\text{sin}(\theta) 	& \text{cos}(\theta) 	& 0\\
+0 	& 0 					& 0 					& 1
+\end{bmatrix}
+= \begin{bmatrix}
+(S_x R_x)~ (S_y R_y)~ (S_z R_z)~ 1
+\end{bmatrix}
+\end{equation}
+
 \subsection{Scale}
 
+\begin{equation}
+ST = \begin{bmatrix}
+S_{x} & S_{y} & S_{z}
+\end{bmatrix}
+\begin{bmatrix}
+S_x & 0 & 0 & 0\\
+0 & S_y & 0 & 0\\
+0 & 0 & S_z & 0\\
+0  & 0  & 0 & 1
+\end{bmatrix}
+= \begin{bmatrix}
+(S_x R_x)~ (S_y R_y)~ (S_z R_z)~ 1
+\end{bmatrix}
+\end{equation}
 
-\subsection{Quaternions}
+\section{Quaternions}
 
 \begin{flushleft}
 We are able to express 3D rotations in the form of a matrix, however in many ways a matrix is not the optimal way of representing a rotation. Matrices are represented by nine floating point values and can be quite expensive to process particularly when doing a vector to matrix multiplication. There are also situations where we would like to smoothly transition from one rotation to another, this is possible using matrices but ican be very complicated. Quaterions are the miraculous answer to all of these difficulties.\\
