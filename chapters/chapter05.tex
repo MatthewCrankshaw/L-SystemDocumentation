@@ -12,7 +12,7 @@ The stages of string interpretation can be seen in figure \ref{l-system interpre
 \end{figure}
 
 \noindent
-This chapter will cover each stage of the string interpreter implementation in detail, as well as well as talk about how the interpreter is able to simulate and animation the plants movements under forces such as gravity and wind in real time. \\
+This chapter will cover each stage of the string interpreter implementation in detail, as well as well as talk about how the interpreter is able to simulate and animation the plants movements under forces such as gravity and wind in real time. 
 
 \section{Turtle Graphics Interpreter}
 
@@ -231,8 +231,6 @@ T_{1} & T_{2} & T_{3} & 1
 \end{bmatrix}
 \end{equation}
 
-\subsection{Matrix Multiplication}
-
 The product of two linear transform matrices will be another linear transform matrix that carries out both of those tranformations. This is true for the multiplication of two affine transform matrices as well, and is why matrix multiplication is so powerful in 3D graphics. Take the two matrices $A$ and $B$ which give the product $P$. In order to multiply $A$ and $B$ together, the dot product of the row and the column is calculated as seen below. It is also imporant to know that matrix multiplication is non-commutative $(AB \not= BA)$.
 
 \begin{equation}
@@ -254,11 +252,14 @@ B_{31} & B_{32} & B_{33}
 \end{bmatrix}
 \end{equation}
 
-\subsection{Translation}
+To translate a vertex in 3D space without causing any distortion. The vertex can be added the the matrix below as follows. These translations can be carried out on all vertices in order to translate a whole object model. 
 
 \begin{equation}
 V + T = \begin{bmatrix}
-V_{x} & V_{y} & V_{z}
+V_{x} \\
+V_{y} \\
+V_{z}~ \\
+1
 \end{bmatrix}
 +
 \begin{bmatrix}
@@ -268,30 +269,73 @@ V_{x} & V_{y} & V_{z}
 T_{x} & T_{y} & T_{z} & 1
 \end{bmatrix}
 = \begin{bmatrix}
-(V_x + T_x)~ (V_y + T_y)~ (V_z + T_z)~ 1
+(V_x + T_x)~ \\
+(V_y + T_y)~ \\
+(V_z + T_z)~ \\
+1
 \end{bmatrix}
 \end{equation}
 
-\subsection{Rotation}
+\noindent
+
+In order to rotate a vertex in 3D space the vertex position and the rotation angle can be applied to the as a matrix depending on the axis about which it is rotating. These rotation matrices can be applied to the vertex itself in order to gain the new position of the vertex. 
 
 \begin{equation}
 R_x(\theta) = 
+\begin{bmatrix}
+(v_x)~ \\
+(v_y)~ \\ 
+(v_z)~ \\
+1
+\end{bmatrix}
 \begin{bmatrix}
 1 	& 0 					& 0 					& 0\\
 0 	& \text{cos}(\theta) 	& \text{sin}(\theta) 	& 0\\
 0 	& -\text{sin}(\theta) 	& \text{cos}(\theta) 	& 0\\
 0 	& 0 					& 0 					& 1
 \end{bmatrix}
-= \begin{bmatrix}
-(S_x R_x)~ (S_y R_y)~ (S_z R_z)~ 1
+\end{equation}
+
+\begin{equation}
+R_y(\theta) = 
+\begin{bmatrix}
+(v_x)~ \\
+(v_y)~ \\
+(v_z)~ \\
+1
+\end{bmatrix}
+\begin{bmatrix}
+\text{cos}(\theta) 	& 0 					& -\text{sin}(\theta) 	& 0\\
+0 					& 1						& 0						& 0\\
+\text{sin}(\theta) 	& 0 					& \text{cos}(\theta)	& 0\\
+0 					& 0 					& 0 					& 1
 \end{bmatrix}
 \end{equation}
 
-\subsection{Scale}
+\begin{equation}
+R_z(\theta) = 
+\begin{bmatrix}
+(v_x)~ \\
+(v_y)~ \\
+(v_z)~ \\
+1
+\end{bmatrix}
+\begin{bmatrix}
+\text{cos}(\theta) 	& \text{sin}(\theta) 	& 0						& 0\\
+-\text{sin}(\theta) & \text{cos}(\theta) 	& 0
+					& 0\\
+0 					& 0 					& 1						& 0\\
+0 					& 0 					& 0 					& 1
+\end{bmatrix}
+\end{equation}
+
 
 \begin{equation}
 ST = \begin{bmatrix}
-S_{x} & S_{y} & S_{z}
+S_{x} \\
+S_{y} \\
+S_{z} \\
+1
 \end{bmatrix}
 \begin{bmatrix}
 S_x & 0 & 0 & 0\\
@@ -300,42 +344,40 @@ S_x & 0 & 0 & 0\\
 0  & 0  & 0 & 1
 \end{bmatrix}
 = \begin{bmatrix}
-(S_x R_x)~ (S_y R_y)~ (S_z R_z)~ 1
+(S_x R_x)~ \\
+(S_y R_y)~ \\
+(S_z R_z)~ \\
+1
 \end{bmatrix}
 \end{equation}
 
-\section{Quaternions}
+\subsection{Quaternions}
 
-\begin{flushleft}
-We are able to express 3D rotations in the form of a matrix, however in many ways a matrix is not the optimal way of representing a rotation. Matrices are represented by nine floating point values and can be quite expensive to process particularly when doing a vector to matrix multiplication. There are also situations where we would like to smoothly transition from one rotation to another, this is possible using matrices but ican be very complicated. Quaterions are the miraculous answer to all of these difficulties.\\
+In computer graphics there are a number of ways to represent 3D rotations. As spoken about previously it is possible to use a matrix, however, a matrix has a number of limitations when dealing with rotation. Matrices are represented by nine floating point values and can be computationally expensive to process particularly when doing a vector to matrix multiplication. There are also situations where we would like to smoothly transition from one rotation to another, or find the rotation between two rotations. For example, when calculating the rotation of branch segments between time intervals in physics calculations. It is possible to make these calculations using matrices but it can become very complicated and even more expensive. Quaterions are the miraculous answer to all of these difficulties.\\
 Quaternions look similar to a 4D vector $ q = [qx, qy, qz, qw]$, and are represented with a real axis ($qw$) and three imaginary axis $qx, qy, qz$.\\
 A quaternion can be represented in complex form as follows: $q = (iq_x + jq_y + kq_z + qw)$. \\ 
 We will not get into too much detail as to the derivation of quaterions in mathematics however it is important to understand that any unit length quaternion which obays $q_x^2 + q_y^2 + q_z^2 + q_w^2 = 1$ \\ 
 
-\end{flushleft}
 
-\subsection{Unit Quaternion}
-Unit quaternions are what are used for rotations, here we can take the angle and the axis of a rotation and convert it to a unit quaternion using the following formula: \\
-$q = [qx, qy, qz]$\\
-where\\
-$q_x = a_x sin \frac{\theta}{2}$\\
-$q_y = a_y sin \frac{\theta}{2}$\\
-$q_z = a_z sin \frac{\theta}{2}$\\
-$q_w = cos \frac{\theta}{2}$\\
+
+Unit quaternions are quaternions that are used for rotations, here we can take the angle and the axis of a rotation and convert it to a unit quaternion using the following formula: \\
+\begin{equation}
+\begin{aligned}
+& q = [qx, qy, qz]\\
+& \text{where} \\
+& q_x = a_x sin \frac{\theta}{2}\\
+& q_y = a_y sin \frac{\theta}{2}\\
+& q_z = a_z sin \frac{\theta}{2}\\
+& q_w = cos \frac{\theta}{2}
+\end{aligned}
+\end{equation}
+
 The scalar part $q_w$ is the cosine of the half angle, and the vector part $q_x q_y q_z$ is the axis of that rotation, scaled by sine of the half angle of rotation.  
-
-\subsection{Quaternion Multiplication}
-
-\subsection{Conjugate and Inverse}
 
 
 \section{Model Generator}
 
-\begin{flushleft}
-
-Modeling the branches of a plant is one of the most important parts for the overall look and feel of that plant that is being generated. The L-system described in the previous sections is able to describe the details about the plants structure, for instance the position, width, length, weight and other important information. The job of the model generator is to take this information and intelligently generate the models vertices, normals, texture coordinates and other information that can then be provided to the OpenGL renderer and finally to the GPU to be rendered on the screen. \\
-
-\vspace{5mm}
+Modeling the branches of a plant is one of the most important parts for the overall look and feel of that plant that is being generated. The L-system described in the previous sections is able to describe the details about the plants structure, for instance the position, width, length, weight and other important information. The job of the model generator is to take this information and intelligently generate the models vertices, normals, texture coordinates and other information that can then be provided to the OpenGL renderer and finally to the GPU to be rendered on the screen.
 
 The simplest way to generate a model for a branching structure of a plant would be to take a number of cylinders, and to rotate and stack them according to each joints position in 3D space. The up side to this approach is that every branch within the plant shares the same object model, depending on the position, rotation and scale of the branch the relavent matrix transforms can be applied. In this way we are able to represent the overall branching structure of the plant. However, there is a problem which is pointed out by Baele and Warz\'{e}e "The branches junction causes a continuity problem: to simply stack up cylinders generates a gap" \cite{baele2005real}. This can be shown in the figure below:
 
@@ -354,14 +396,7 @@ The simplest way to generate a model for a branching structure of a plant would 
 
 \FloatBarrier
 
-\vspace{5mm}
-
-
-\vspace{5mm}
-
 This simple method of stacking cylinders gives a reasonable looking tree structure and it is usually good enough when the angles of branches are not more than about 25$^{\circ}$ and the size of the branches do not change. However for a much more convincing tree structure we will want to do better than this. The logical next step would be to actively link the branch segments together.
-
-\FloatBarrier
 
 \begin{figure}[htbp]
 	{\centering
@@ -373,62 +408,7 @@ This simple method of stacking cylinders gives a reasonable looking tree structu
 		\caption{Example of linked branching with a 25$^{\circ}$ bend per joint.}
 	}
 \end{figure}
-
 \FloatBarrier
-
-\end{flushleft}
 
 \section{Renderer}
-
-\begin{flushleft}
-
-
-\end{flushleft}
-
-\section{Displaying the L-system Instructions} \label{Display L-system Instructions}
-
-\subsection{Basic 2D L-systems} 
-
-
-\begin{figure}[htbp]
-	\raggedright
-	\textbf{\underline{Fractal Plant:}} \\
-	\textbf{Alphabet:} X, F\\
-	\textbf{Constants:} +, -, [, ] \\
-	\textbf{Axiom:} X \\
-	\textbf{Angle:} 25$^\circ$ \\
-	\textbf{Rules:} \\
-	X $\rightarrow$ F-[[X]+X]+F[+FX]-X\\
-	F $\rightarrow$ FF \\
-	{\centering
-		\vspace{7px}
-		\includegraphics[scale=0.15]{FractalPlant/FractalPlant05.png}
-		\caption{Fractal Plant.}
-	}
-\end{figure}
-\begin{figure}[htbp]
-	\raggedright
-	\textbf{\underline{Fractal Bush:}} \\
-	\textbf{Alphabet:} F\\
-	\textbf{Constants:} +, -, [, ] \\
-	\textbf{Axiom:} F \\
-	\textbf{Angle:} 25$^\circ$ \\
-	\textbf{Rules:} \\
-	F $\rightarrow$ FF+[+F-F-F]-[-F+F+F]\\
-	{\centering
-		\vspace{7px}
-		\includegraphics[scale=0.15]{FractalBush/FractalBush06.png}
-		\caption{Fractal Bush.}
-	}
-\end{figure}
-
-\FloatBarrier
-
-\subsection{The Use of L-systems in 3D applications}
-
-\begin{flushleft}
-
-L-systems have been talked about and researched since its inception in 1968 by Aristid Lindenmayer. Over the years it's usefulness in modelling different types of plant life has been very clear, however its presence has been quite absent from any mainstream game engines for the most part, these engines relying either on digital artists skill to develop individual plants or on 3rd party software such as SpeedTree. These types of software use a multitude of different techniques however their methods are heavily rooted in Lindenmayer Systems. 
-
-\end{flushleft}
 

@@ -26,7 +26,7 @@ The implementation for this thesis will be using the modern Open Graphics Librar
 
 For more specialised mathematics capabilities the \acrfull{glm} library holds many mathematics classes and functions for conveniently dealing with structures such as vectors, matrices and quaternions. Furthermore, another important library is \acrfull{glfw} which is a multi-platform \acrshort{api} for creating an managing user interface windows, events and user-input \cite{glfwDocumentation}. In order to keep track of changes and manage versions Git is a free and open source version control software. It is is able to keep track of changes that have been made to the files within a project folder as well as keep previous versions of the project throughout the development process. Git can be used in conjuction with Github, which is a online web application that stores git repositories. This acts as a backup as well as containing all previous versions of the project \cite{torvalds}.
 
-\section{The L-system as an interpreted grammar}
+\section{The L-system as an Interpreted Grammar}
 
 Traditionally an interpreter in computing is a program that takes program code as input, where it is then analyzed and interpreted as it is encountered in the execution process. All of the previously encountered information is kept for later interpretations. The information about the program can be extracted by inspection of the program as a whole, such as the set of declared variables in a block, a function, etc \cite{wilhelm2010compiler}. In essence, the L-system rewriter contains a type of interpreter, this should not be confused with the interpreter that processes the resultant string using turtle graphics. Due to this confusion of terms I will refer the system containing the lexical analyser, L-system parser and the string rewriter as the L-system rewriter, instead of an interpreter in the computational sense. 
 
@@ -63,96 +63,95 @@ Another design decision that has been made, is that all numbers within the L-sys
 
 \section{The L-system Lexical Analyser} \label{Flex}
 
-D. Cooper and L. Torczon write that "The scanner, or lexical analyser, reads a stream of characters and produces a streeam of words. It aggregates characters to form words and applies a set of rules to determin wheter or not each word is legal in the source language. If the word is valid, the scanner assigns it a syntactic category, or part of speech" \cite{cooper2011engineering}. The lexer for parametric 0L-system will need to do exactly that. To get to a stage where we can successfully rewrite the L-system string, the rewriter must first understand what each word and symbol represents, in the form of a syntactic category, and whether or not the word or symbol is valid or not. 
+In computer science, particularly in the study of computer language compilers, the program responsible for carrying out lexical analysis has many different names, such as tokenizer, lexer or scanner. D. Cooper and L. Torczon write that "The scanner, or lexical analyser, reads a stream of characters and produces a stream of words. It aggregates characters to form words and applies a set of rules to determine whether or not each word is legal in the source language. If the word is valid, the scanner assigns it a syntactic category, or part of speech" \cite{cooper2011engineering}. This is no different for a parametric 0L-system. For the rewriter to have enough information to rewrite the L-system a string it must first understand what each word or token within the L-system means, this requires assigning a syntactic category to each token, and whether or not the token is valid or not within the L-system grammar. 
 
-It is possible to write custom \gls{Lexer}, however, it can be quite complicated and time consuming to design and implement, and once a custom \gls{Lexer} has been created it can be difficult to change functionality at a later stage. Luckely there is a well known program known as the \acrlong{flex} (\acrshort{flex}), \acrshort{flex} takes in a file which contains the lexical rules of the language, it uses these rules to create a \gls{Lexer} program. When \acrshort{flex} is run it will create a \gls{Lexer} in the form of a C program. We can use the generated Lexer on the L-system that we would like to rewrite, taking the word within the L-system and assigning a syntactic category to it. In order to create a lexer with \acrshort{flex}, the lexical rules in the form of syntactic categories must defined. Below are the valid syntactic categories of a parametric 0L-system:
+The scanner itself is quite complex, its main goal is to match the characters or strings within the language, to either a particular word, or a regular expression defined in the grammar. When the match is made the token is given a syntactic category. The mechanism by which it achieves this is known as \textit{finite automata} \cite{wilhelm2013compiler}. It is possible to write custom \gls{Lexer}, however, it can be quite complicated and time consuming to design and implement, and once a custom \gls{Lexer} has been created it is also difficult to change functionality at a later stage. There is a well known program known as the \acrlong{flex} (\acrshort{flex}). \acrshort{flex} takes in a file which contains the lexical rules of the language, thise being the strings as well as the regular expression as well as its associated syntactic category. When \acrshort{flex} is executed it will create a \gls{Lexer} in the form of a C program. We can use the generated Lexer program by providing the L-system input. This takes each word within the L-system and assigns a syntactic category to it. In order to create a lexer with \acrshort{flex}, the lexical rules must be defined. Below are the characters, strings and regular expressions and their associated syntactic categories, as well as a description as to its use in the parametric 0L-system.
 
 \begin{table}[h!] \center
-\begin{tabular}{ | c | l | l |}
-\hline
-	Syntactic Word	& Syntactic Category & Meaning\\  
+\begin{tabular}{  c | l | l }
+
+	Syntactic Word	& Syntactic Category & Description\\  
 \hline
 \hline
 	, 				& T\_COMMA 				& Separation between module parameters \\
-\hline
+
 	: 				& T\_COLON 				& Separation between production rule parts \\
-\hline
+
 	; 				& T\_SEMI\_COLON 		& End of a statement\\
-\hline
+
 	\#				& T\_HASH 				& Beginning of a statement\\
-\hline
+
 	( 				& T\_PARENL 			& Start of a modules parameters \\
 					&						& or specifies presidence in an expression \\
-\hline
+
 	) 				& T\_PARENR 			& End of a modules parameters \\
 					&						& or specifies presidence in an expression \\
-\hline 
+ 
 	\{ 				& T\_BRACKETL 			& Start of a random range\\
-\hline
+
 	\} 				& T\_BRACKETR 			& End of a random range\\
-\hline
+
 	$\sim$ 			& T\_TILDE 				& Stochastic operator\\
-\hline
+
 	== 				& T\_EQUAL\_TO 			& Relational operator stating equal to\\
-\hline
+
 	!= 				& T\_NOT\_EQUAL\_TO 	& Relational operator for not equal to\\
-\hline		
+	
 	$<$ 			& T\_LESS\_THAN 		& Relational operator for less than\\
-\hline
+
 	$>$ 			& T\_GREATER\_THAN 		& Relational operator for greater than\\
-\hline
+
 	$<$ = 			& T\_LESS\_EQUAL 		& Relational operator for greater or equal\\
-\hline
+
 	$>$ = 			& T\_GREATER\_EQUAL 	& Relational operator for greater or equal\\
-\hline
+
 	[ 				& T\_SQUARE\_BRACEL 	& Module name (branching save state) \\
-\hline
+
 	] 				& T\_SQUARE\_BRACER 	& Module name (branching load state) \\
-\hline
+
 	+ 				& T\_PLUS 				& Arithmetic operator for addition, or\\
 					&						& Module name (Yaw right) \\
-\hline
+
 	- 				& T\_MINUS 				& Arithmetic operator for subtraction, or\\
 					&						& Module name (Yaw left)\\
-\hline
+
 	/ 				& T\_FORWARD\_SLASH 	& Arithmetic operator for division, or\\
 					&						& Module name (Pitch up)\\
-\hline
+
 	$\backslash$ 		& T\_BACK\_SLASH 		& Module name (Pitch down)\\
-\hline
+
 	* 				& T\_STAR 				& Arithmetic operator for multiplication, or\\
 					&						& Condition in a production rule which is true\\
-\hline
+
 	$\land$		& T\_HAT 				& Arithmetic operator for and exponent, or\\
 					&						& Module name (Roll right)\\
-\hline
+
 	$\&$ 			& T\_AMPERSAND 			& Module name (Roll left)\\
-\hline
+
 	! 				& T\_EXCLAMATION 		& Module name (Set size of branch)\\
-\hline
+
 	\$ 				& T\_DOLLAR 			& Module name \\
-\hline
+
 	= 				& T\_ASSIGN 			& Assignment operator used to set generations\\
-\hline
+
 	\#n 			& T\_GENERATIONS 		& Declaration of the number of generations\\
-\hline
+
 	\#w 			& T\_AXIOM 				& Declaration of the axiom\\
-\hline
+
 	\#define 			& T\_DEFINE 		& Declaration of the define\\
-\hline
+
 	\#object 			& T\_OBJECT			& Declaration of the object\\
-\hline
+
 	[0-9]+.[0-9]+$|$[0-9]+ 					& T\_FLOAT 				& Regular expression for a floating point number\\
-\hline
+
 	[a-zA-Z\_][a-zA-Z0-9\_]*  				& T\_VAR\_NAME 			& Regular expression for a module or variable name\\
-\hline
-\hline
 \end{tabular}
 \caption{Table of Valid Lexer Words}
 \label{lexer words}
 \end{table}
 \FloatBarrier
 
+\noindent
 From the table above there are a number syntactic categories which contain more than one meaning to the grammar, for instance the ( and ) parenthesis have two meanings, it is either to specify the begining and end of a modules parameters or it specifies presidence within an expression.  It is not up to the scanner to determine what the each particular parentheses means, or that it has a meaning at all, the lexer only recognises that it falls into the syntactic categories, T\_PARENL and T\_PARENR. Deriving the meaning of a given token or sytactic category is left up to the parser which is more aware of the context of each syntactic word. Similarly, the symbols [,],+,-,/,$\backslash$, $\land$, $\&$, ! and \$ are valid module names; Moreover, it is possible for a T\_VAR\_NAME to also be a module name, these symbols need to be specifically defined as their own syntactic category, as they not only represent a module name but can also represent a different meaning depending on their context. For instance, the +, -, / are valid module names, but they also are mathematical symbols used within an arithmetic expression. The scanner must separate these symbols and keep them in their own syntactic category in order for the parser to be able to understand the same symbol in multiple contexts. 
 
 
@@ -180,7 +179,7 @@ Below is the \acrshort{bnf} notation for the syntax of an arithmetic expression 
 The above \acrshort{bnf} states that the non-terminal $<$expression$>$ derives from a terminal number, or an expression contained within two parenthesis, or two expressions either side of an addition terminal symbol, or two expressions either side of a subtraction terminal symbol. This type of notation is recursive in nature and allows the formal language to write expressions which exist within other expressions, for example the expression \say{5 + 10 - (20 + 2)}. \\
 
 \subsection{\acrlong{bnf} of the L-system Grammar} \label{L-system Grammar}
-
+\begin{singlespace}
 	\begin{bnf*}
 	\bnfprod{lSystem}
 		{\bnfes \bnfor \bnfpn{statements} \bnfsp \bnfts{EOF}}\\
@@ -276,13 +275,15 @@ The above \acrshort{bnf} states that the non-terminal $<$expression$>$ derives f
 		{\bnfpn{module}}\\
 \end{bnf*}
 
+\end{singlespace} 
+
 \noindent
 As seen above in the \acrshort{bnf} notation for a L-system, the goal state is $<$lSystem$>$. The $<$lSystem$>$ can be made up of $<$statements$>$ beginning with the symbol \say{\#} and ending with the symbol \say{;}, or the \acrlong{eof} (\acrshort{eof}) character signifying the end of the L-system. Each non-terminal $<$statements$>$ is made up of a $<$statement$>$ followed by more $<$statements$>$, or an empty string ($\epsilon$). The $<$statement$>$ itself can either be an \acrlong{eol} (\acrshort{eol}) character or a $<$generation$>$, $<$definition$>$, $<$object$>$, $<$axiom$>$ or $<$production$>$ statement. The non-terminal symbols $<$float$>$ and $<$variable$>$ specify a regular expression. Each statement then has a number of terminal and non-terminal derivatives that allow the production of all valid L-systems that follow this grammar. 
 
 In the previous chapter the scanner definined the syntactic categories, these syntactic categories are in fact all the valid terminal symbols within the L-system grammar. In essence the parser takes these syntactic categories and finds if they fit the above \acrshort{bnf} and if so, it extracts the information from the L-system and generates the relavent data structures and syntax tree. 
 
 
-\subsection{Constants and Objects}
+\subsection{Dealing with Constant Values and Objects}
 
 Defining constants and objects is similar syntactically, the keyword define or include is used, followed by a variable name followed by a value, the value for a constant is a floating point number and the value for an include is a name of an object within the predefined object library. An example of the defining a constant and an object can be seen below: 
 
@@ -419,6 +420,7 @@ During the rewriting process the module that is to be rewritten will be matched 
 
 Once the L-system has been processed by both the lexical analyser and the parser, the data structures and information, such as the starting string, constant variables and production rules are set up for the string rewriter. The string rewriter, is the final stage which uses this data by starting with a current string of modules which is originally set to the axiom string. The string rewriter will then iterate over each module within the current string carrying matching it to the production rules and rewriting the module with the successor if the production rule matches. Once all of the modules have been rewritten, the current string is replaced by the result string for that iteration. This process is carried out for the number of generations specified within the L-system and will eventually provide the resultant string of modules.
 
+\begin{singlespace}
 \newpage
 \begin{algorithmic}[1]
 \Procedure{rewriter}{N, A}
@@ -559,3 +561,5 @@ Once the L-system has been processed by both the lexical analyser and the parser
 \EndFunction
 
 \end{algorithmic}
+
+\end{singlespace}

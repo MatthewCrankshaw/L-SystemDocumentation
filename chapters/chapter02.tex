@@ -233,9 +233,43 @@ Save and load operations are handled using the \acrfull{lifo} principle, meaning
 
 The main advantage to using the save and load position functionality as a symbol within the alphabet of the L-system is that the rewiting system itself handles the branching. There is often no production rule for the save and load symbols and thus the symbols remain consistent from generation to generation. \\ 
 
+\begin{figure}[htbp]
+	\raggedright
+	\textbf{\underline{Fractal Plant:}} \\
+	\textbf{Alphabet:} X, F\\
+	\textbf{Constants:} +, -, [, ] \\
+	\textbf{Axiom:} X \\
+	\textbf{Angle:} 25$^\circ$ \\
+	\textbf{Rules:} \\
+	X $\rightarrow$ F-[[X]+X]+F[+FX]-X\\
+	F $\rightarrow$ FF \\
+	{\centering
+		\vspace{7px}
+		\includegraphics[scale=0.15]{FractalPlant/FractalPlant05.png}
+		\caption{Fractal Plant.}
+	}
+\end{figure}
+\begin{figure}[htbp]
+	\raggedright
+	\textbf{\underline{Fractal Bush:}} \\
+	\textbf{Alphabet:} F\\
+	\textbf{Constants:} +, -, [, ] \\
+	\textbf{Axiom:} F \\
+	\textbf{Angle:} 25$^\circ$ \\
+	\textbf{Rules:} \\
+	F $\rightarrow$ FF+[+F-F-F]-[-F+F+F]\\
+	{\centering
+		\vspace{7px}
+		\includegraphics[scale=0.15]{FractalBush/FractalBush06.png}
+		\caption{Fractal Bush.}
+	}
+\end{figure}
+
+\FloatBarrier
+
 \end{flushleft}
 
-\section{Parametric OL-system} \label{parametric}
+\section{Parametric OL-systems} \label{parametric}
 
 \begin{flushleft}
 
@@ -247,7 +281,7 @@ In this section I will outline the definition and major concepts of the parametr
 
 \end{flushleft}
 
-\subsection{Definition of a Parametric 0L-system} \label{definition of a parametric 0L-system section}
+\subsection{Formal Definition of a Parametric 0L-system} \label{definition of a parametric 0L-system section}
 
 \begin{flushleft}
 
