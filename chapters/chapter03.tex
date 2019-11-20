@@ -63,7 +63,7 @@ Another design decision that has been made, is that all numbers within the L-sys
 
 \section{The L-system Lexical Analyser} \label{Flex}
 
-In computer science, particularly in the study of computer language compilers, the program responsible for carrying out lexical analysis has many different names, such as tokenizer, lexer or scanner. D. Cooper and L. Torczon write that "The scanner, or lexical analyser, reads a stream of characters and produces a stream of words. It aggregates characters to form words and applies a set of rules to determine whether or not each word is legal in the source language. If the word is valid, the scanner assigns it a syntactic category, or part of speech" \cite{cooper2011engineering}. This is no different for a parametric 0L-system. For the rewriter to have enough information to rewrite the L-system a string it must first understand what each word or token within the L-system means, this requires assigning a syntactic category to each token, and whether or not the token is valid or not within the L-system grammar. 
+In computer science, particularly in the study of computer language compilers, the program responsible for carrying out lexical analysis is the lexer. Depending on the literature the lexer can also be known as the tokenizer or scanner. D. Cooper and L. Torczon write that "The scanner, or lexical analyser, reads a stream of characters and produces a stream of words. It aggregates characters to form words and applies a set of rules to determine whether each word is legal in the source language. If the word is valid, the scanner assigns it a syntactic category, or part of speech" \cite{cooper2011engineering}. This is no different for a parametric 0L-system. For the rewriter to have enough information to rewrite the L-system a string it must first understand what each word or token within the L-system means, this requires assigning a syntactic category to each token, and whether or not the token is valid or not within the L-system grammar.  
 
 The scanner itself is quite complex, its main goal is to match the characters or strings within the language, to either a particular word, or a regular expression defined in the grammar. When the match is made the token is given a syntactic category. The mechanism by which it achieves this is known as \textit{finite automata} \cite{wilhelm2013compiler}. It is possible to write custom \gls{Lexer}, however, it can be quite complicated and time consuming to design and implement, and once a custom \gls{Lexer} has been created it is also difficult to change functionality at a later stage. There is a well known program known as the \acrlong{flex} (\acrshort{flex}). \acrshort{flex} takes in a file which contains the lexical rules of the language, thise being the strings as well as the regular expression as well as its associated syntactic category. When \acrshort{flex} is executed it will create a \gls{Lexer} in the form of a C program. We can use the generated Lexer program by providing the L-system input. This takes each word within the L-system and assigns a syntactic category to it. In order to create a lexer with \acrshort{flex}, the lexical rules must be defined. Below are the characters, strings and regular expressions and their associated syntactic categories, as well as a description as to its use in the parametric 0L-system.
 
@@ -373,11 +373,28 @@ The parser provides a syntax tree, which makes it easy to generate the above exp
 
 \subsection{Implementing Random Ranges}
 
-A random range provides a method of declaring a variable which represents a number that should be randomly generated between two bounds. A random range declared within a define statement will generate a random number when that constant variable is added to the constants table. A random range declared within the axiom will generate random number before the string rewriting process begins, this ensures that the number. Conversely, if a random range is defined within the successor of a production rule, the number should be generated during the rewriting process when the current module within the string is successfully matched to the predeccessor at the same time as the expressions within the successors are being evaluated. The values are generated during the rewriting process rather than prior is so that each time a module is matched to the rule, the successor will generate a different value. 
+L-systems can be quite limited in the amount of variation that can be acheived from rewriting alone. In reality the variation between two plants depends on an enormous number of factors. Regardless of the cause, the factors ultimately change the variation mainly within the branching structure as well as slight variation in the features of the branches themselves. These features include but are not limited to branching angles, branch width, branch length and branch weight. To introduce variation in the braching structure the which rules are chosen needs to be chosen at random every now and then, which is discussed in section \ref{stochastic rules}. This section introduces a method of providing variation in the features of branch segments, which will known as random ranges. 
 
-The random number is generated using a simple psuedo-random number generator which gives a uniform distribution between a minimum and a maximum value. It is possible to implement a different type of random distribution if this is something required by the problem domain, however for the purposes of generating plant-life a uniform distribution should be sufficient. 
+A random range provides a method of declaring a variable that represents a number which should be randomly generated between two bounding numbers. The bounding numbers are the minimum and a maximum respectively. The main method used for generating a pseudo-random number using a uniform distribution within a range which can be seen below. 
 
-\subsection{Implementing Stochastic Rules}
+\begin{singlespace}
+\begin{algorithm}
+\begin{algorithmic}[1]
+\Procedure{Random Range}{min, max}
+	\State n $\gets$ (rand() \% (max - min + 1)) + min
+	\State \textbf{return} n
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+\end{singlespace}
+
+\noindent
+
+There are a number of other types of pseudo-random number generators which can be used to generate numbers according to certain distributions; such as normal, binomial, poisson among others. For the purposes of generating plant-life a uniform distribution should be sufficient.
+
+A random range can be declared in the a define statement, axiom parameter or a production rule successor parameter. If it is declared within a define statement, it will generate a random number when that constant variable is added to the constants table. A random range declared within the axiom will generate random number before the string rewriting process begins, this ensures that the number. And finally, if a random range is defined within the successor of a production rule, the number should be generated during the rewriting process when the current module within the string is successfully matched to the predeccessor at the same time as the expressions within the successors are being evaluated. The values are generated during the rewriting process rather than prior is so that each time a module is matched to the rule, the successor will generate a different value. 
+
+\subsection{Implementing Stochastic Rules} \label{stochastic rules}
 
 Each rule belonging to a stochastic group of rules provides a probabity value of how likely it is that the particular rule is selected during the rewriting process. For production rules to be part of the same stochastic group they are required to meet four criteria: 
 
