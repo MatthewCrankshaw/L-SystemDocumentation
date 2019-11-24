@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  21 NOV 2019 11:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  25 NOV 2019 09:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1169,11 +1169,6 @@ Package pdftex.def Info: images/Diagrams/ThesisContent.png  used on input line
 [47]
 Chapter 4.
 (./chapters/chapter04.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 9--32
 
  []
@@ -1342,7 +1337,7 @@ Appendix A.
 
 ] [64
 
-])) [65] (./Thesis.aux)
+] [65])) [66] (./Thesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1351,10 +1346,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 9249 strings out of 492982
- 135856 string characters out of 6134896
- 268312 words of memory out of 5000000
- 12519 multiletter control sequences out of 15000+600000
+ 9250 strings out of 492982
+ 135876 string characters out of 6134896
+ 268326 words of memory out of 5000000
+ 12520 multiletter control sequences out of 15000+600000
  13812 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  45i,14n,63p,1987b,462s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1372,10 +1367,10 @@ mr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Thesis.pdf (65 pages, 3552249 bytes).
+Output written on Thesis.pdf (66 pages, 3553391 bytes).
 PDF statistics:
- 327 PDF objects out of 1000 (max. 8388607)
- 191 compressed objects within 2 object streams
+ 330 PDF objects out of 1000 (max. 8388607)
+ 193 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  146 words of extra memory for PDF output out of 10000 (max. 10000000)
 
