@@ -175,11 +175,11 @@ In order to describe a grammar, there needs to be a suitable notation to express
 \end{algorithm}
 \FloatBarrier
 
-The above \acrshort{bnf} states that the goal symbol non-terminal $<$expression$>$ derives from one of four states. Either a terminal number, or an expression contained within two parenthesis, or two expressions either side of an addition terminal symbol, or two expressions either side of a subtraction terminal symbol. This type of notation is recursive in nature and allows the formal language to write expressions which exist within other expressions. For example the expression \say{5 + 10 - (20 + 2)} can be broken down into the following syntax tree. \\
+The above \acrshort{bnf} states that the goal symbol non-terminal $<$expression$>$ derives from one of four states. Either a terminal number, or an expression contained within two parenthesis, or two expressions either side of an addition terminal symbol, or two expressions either side of a subtraction terminal symbol. This type of notation is recursive in nature and allows the formal language to write expressions which exist within other expressions. For example the expression \say{5 + 10 - (20 + 2)} can be broken down into the following syntax tree. 
 
-have a diagram of the syntax tree for 5+10-(20+2)\\
-\\
-Similar to the scanner, the parser program can be quite complex and difficult to write. If there is a change in the grammar or add features at a later date, it is often times difficult to change the parser to account for these changes. To account for this, there is a program called the parser generator, an implementation of which is called Bison. Bison takes in the context-free grammar definition, in a similar format to the \acrshort{bnf}, and using the deterministic pushdown automata, generates a parser program.\\
+have a diagram of the syntax tree for 5+10-(20+2)
+
+Similar to the scanner, the parser program can be quite complex and difficult to write. If there is a change in the grammar or add features at a later date, it is often times difficult to change the parser to account for these changes. To account for this, there is a program called the parser generator, an implementation of which is called Bison. Bison takes in the context-free grammar definition, in a similar format to the \acrshort{bnf}, and using the deterministic pushdown automata, generates a parser program.
 
 \subsection{\acrlong{bnf} of the L-system Grammar} \label{L-system Grammar}
 \begin{singlespace}
@@ -583,3 +583,10 @@ Once the L-system has been processed by both the lexical analyser and the parser
 \end{algorithmic}
 
 \end{singlespace}
+
+\newpage
+\section{Summary}
+
+The L-system rewriter is one of two major systems within the process or procedurally generating plant-life. The rewriter defined in this thesis acts as a type of compiler similar to that of a computer language. In a sense the L-system itself becomes a language, that the L-system rewriter is able to understand and generate meaningful data structures with. The L-system rewriter follows the grammatical structure of the language very closely. Due to the lexer and the paser, it is able to give informative messages if there is a mistake either grammatically or syntactically. If all of these requirements are met, the rewriter is able to use this data to very quickly generate the resultant string of modules. The person writing that L-system, can know indefinitely that the result provided by the rewriting system is correct according the grammar of the L-system.
+
+The L-system languages can be used for many different applications and is not limited to that of procedural plant generation. The interpretation of the resultant string is really what creates the physical result such as the plant model. This means that this L-system rewriter need not change if the L-system is used for a different purpose, only the interpretation will need to change. This is the main reason behind using a compiler-like process to govern the string rewriting. It allows the L-system enough complexity to provide information to the interpreter but not too much that interpretation becomes reliant on the string rewriter.  
