@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  26 NOV 2019 13:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  27 NOV 2019 15:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -802,6 +802,9 @@ LaTeX Warning: Label `3D rotations' multiply defined.
 
 LaTeX Warning: Label `instruction table 1' multiply defined.
 
+
+LaTeX Warning: Label `3DAxisFigure' multiply defined.
+
 )
 \openout1 = `Thesis.aux'.
 
@@ -1098,7 +1101,14 @@ Package pdftex.def Info: images/Diagrams/stochastics.png  used on input line 58
 
 Underfull \vbox (badness 1142) has occurred while \output is active []
 
- [29 <./images/Diagrams/stochastics.png>]) [30]
+ [29 <./images/Diagrams/stochastics.png>]
+<images/Diagrams/FullDiagram.png, id=132, 985.6825pt x 541.02126pt>
+File: images/Diagrams/FullDiagram.png Graphic file (type png)
+<use images/Diagrams/FullDiagram.png>
+Package pdftex.def Info: images/Diagrams/FullDiagram.png  used on input line 60
+0.
+(pdftex.def)             Requested size: 423.8352pt x 232.6346pt.
+) [30 <./images/Diagrams/FullDiagram.png>]
 Chapter 3.
 (./chapters/chapter03.tex
 Underfull \vbox (badness 1845) has occurred while \output is active []
@@ -1106,7 +1116,7 @@ Underfull \vbox (badness 1845) has occurred while \output is active []
  [31
 
 ]
-<images/Diagrams/StringRewriter.png, id=139, 1238.6275pt x 484.81125pt>
+<images/Diagrams/StringRewriter.png, id=141, 1238.6275pt x 484.81125pt>
 File: images/Diagrams/StringRewriter.png Graphic file (type png)
 <use images/Diagrams/StringRewriter.png>
 Package pdftex.def Info: images/Diagrams/StringRewriter.png  used on input line
@@ -1152,7 +1162,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [40] [41]
-<images/Diagrams/ThesisContent.png, id=173, 618.31pt x 676.5275pt>
+<images/Diagrams/ThesisContent.png, id=175, 618.31pt x 676.5275pt>
 File: images/Diagrams/ThesisContent.png Graphic file (type png)
 <use images/Diagrams/ThesisContent.png>
 Package pdftex.def Info: images/Diagrams/ThesisContent.png  used on input line 
@@ -1166,80 +1176,75 @@ Chapter 4.
 ] [50]) [51]
 Chapter 5.
 (./chapters/chapter05.tex
-Underfull \hbox (badness 10000) in paragraph at lines 2--5
-
- []
-
-<images/Diagrams/L-systemInterpreter.png, id=211, 996.72375pt x 577.15625pt>
+<images/Diagrams/L-systemInterpreter.png, id=213, 996.72375pt x 577.15625pt>
 File: images/Diagrams/L-systemInterpreter.png Graphic file (type png)
 <use images/Diagrams/L-systemInterpreter.png>
 Package pdftex.def Info: images/Diagrams/L-systemInterpreter.png  used on input
- line 9.
+ line 7.
 (pdftex.def)             Requested size: 398.68243pt x 230.8584pt.
-[52
+ [52
 
-]
-<images/Diagrams/JointDiagram.png, id=215, 358.33875pt x 480.79625pt>
+] [53 <./images/Diagrams/L-systemInterpreter.png>]
+<images/Diagrams/JointDiagram.png, id=221, 358.33875pt x 480.79625pt>
 File: images/Diagrams/JointDiagram.png Graphic file (type png)
 <use images/Diagrams/JointDiagram.png>
 Package pdftex.def Info: images/Diagrams/JointDiagram.png  used on input line 5
-8.
+7.
 (pdftex.def)             Requested size: 215.0049pt x 288.47997pt.
- [53 <./images/Diagrams/L-systemInterpreter.png>]
-<images/Diagrams/SkeletonJoints.png, id=220, 607.26875pt x 506.89375pt>
+[54 <./images/Diagrams/JointDiagram.png>]
+<images/Diagrams/SkeletonJoints.png, id=226, 607.26875pt x 506.89375pt>
 File: images/Diagrams/SkeletonJoints.png Graphic file (type png)
 <use images/Diagrams/SkeletonJoints.png>
 Package pdftex.def Info: images/Diagrams/SkeletonJoints.png  used on input line
- 77.
+ 76.
 (pdftex.def)             Requested size: 242.9032pt x 202.7539pt.
- [54 <./images/Diagrams/JointDiagram.png>]
-<images/Diagrams/vector_addition.png, id=225, 841.1425pt x 544.0325pt>
+ [55 <./images/Diagrams/SkeletonJoints.png>]
+<images/Diagrams/vector_addition.png, id=232, 841.1425pt x 544.0325pt>
 File: images/Diagrams/vector_addition.png Graphic file (type png)
 <use images/Diagrams/vector_addition.png>
 Package pdftex.def Info: images/Diagrams/vector_addition.png  used on input lin
-e 115.
+e 114.
 (pdftex.def)             Requested size: 168.22551pt x 108.80457pt.
- [55 <./images/Diagrams/SkeletonJoints.png>]
-<images/Diagrams/vector1.png, id=231, 677.53125pt x 507.8975pt>
+<images/Diagrams/vector1.png, id=233, 677.53125pt x 507.8975pt>
 File: images/Diagrams/vector1.png Graphic file (type png)
 <use images/Diagrams/vector1.png>
-Package pdftex.def Info: images/Diagrams/vector1.png  used on input line 150.
+Package pdftex.def Info: images/Diagrams/vector1.png  used on input line 149.
 (pdftex.def)             Requested size: 67.75708pt x 50.79272pt.
-<images/Diagrams/vector2.png, id=232, 677.53125pt x 507.8975pt>
+<images/Diagrams/vector2.png, id=234, 677.53125pt x 507.8975pt>
 File: images/Diagrams/vector2.png Graphic file (type png)
 <use images/Diagrams/vector2.png>
-Package pdftex.def Info: images/Diagrams/vector2.png  used on input line 152.
+Package pdftex.def Info: images/Diagrams/vector2.png  used on input line 151.
 (pdftex.def)             Requested size: 67.75708pt x 50.79272pt.
-<images/Diagrams/vector3.png, id=233, 590.205pt x 441.65pt>
+<images/Diagrams/vector3.png, id=235, 590.205pt x 441.65pt>
 File: images/Diagrams/vector3.png Graphic file (type png)
 <use images/Diagrams/vector3.png>
-Package pdftex.def Info: images/Diagrams/vector3.png  used on input line 154.
+Package pdftex.def Info: images/Diagrams/vector3.png  used on input line 153.
 (pdftex.def)             Requested size: 59.02396pt x 44.16757pt.
-<images/Diagrams/vector4.png, id=234, 677.53125pt x 507.8975pt>
+<images/Diagrams/vector4.png, id=236, 677.53125pt x 507.8975pt>
 File: images/Diagrams/vector4.png Graphic file (type png)
 <use images/Diagrams/vector4.png>
-Package pdftex.def Info: images/Diagrams/vector4.png  used on input line 156.
+Package pdftex.def Info: images/Diagrams/vector4.png  used on input line 155.
 (pdftex.def)             Requested size: 67.75708pt x 50.79272pt.
-<images/Diagrams/vector5.png, id=235, 676.5275pt x 507.8975pt>
+<images/Diagrams/vector5.png, id=237, 676.5275pt x 507.8975pt>
 File: images/Diagrams/vector5.png Graphic file (type png)
 <use images/Diagrams/vector5.png>
-Package pdftex.def Info: images/Diagrams/vector5.png  used on input line 158.
+Package pdftex.def Info: images/Diagrams/vector5.png  used on input line 157.
 (pdftex.def)             Requested size: 67.65671pt x 50.79272pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [56 <./images/Diagrams/vector_addition.png>]
-<images/Diagrams/cross_product.png, id=240, 625.33624pt x 486.81876pt>
+<images/Diagrams/cross_product.png, id=242, 625.33624pt x 486.81876pt>
 File: images/Diagrams/cross_product.png Graphic file (type png)
 <use images/Diagrams/cross_product.png>
 Package pdftex.def Info: images/Diagrams/cross_product.png  used on input line 
-193.
+192.
 (pdftex.def)             Requested size: 156.33368pt x 121.70439pt.
  [57 <./images/Diagrams/vector1.png> <./images/Diagrams/vector2.png> <./images/
 Diagrams/vector3.png> <./images/Diagrams/vector4.png> <./images/Diagrams/vector
 5.png> <./images/Diagrams/cross_product.png>]
-Overfull \hbox (22.05211pt too wide) detected at line 253
+Overfull \hbox (22.05211pt too wide) detected at line 252
 [] \OT1/cmr/m/n/10.95 = [] \OMS/cmtt/m/n/10.95 ^^B [] \OT1/cmr/m/n/10.95 = []
  []
 
@@ -1247,50 +1252,57 @@ Overfull \hbox (22.05211pt too wide) detected at line 253
 Underfull \vbox (badness 3646) has occurred while \output is active []
 
  [58]
-Underfull \hbox (badness 10000) in paragraph at lines 356--360
+Underfull \hbox (badness 10000) in paragraph at lines 355--359
 
  []
 
 [59]
-Underfull \hbox (badness 10000) in paragraph at lines 363--364
+Underfull \hbox (badness 10000) in paragraph at lines 362--363
 
  []
 
-<images/Diagrams/stackedBranchesMesh.png, id=256, 777.90625pt x 731.73375pt>
+<images/Diagrams/stackedBranchesMesh.png, id=258, 777.90625pt x 731.73375pt>
 File: images/Diagrams/stackedBranchesMesh.png Graphic file (type png)
 <use images/Diagrams/stackedBranchesMesh.png>
 Package pdftex.def Info: images/Diagrams/stackedBranchesMesh.png  used on input
- line 392.
+ line 391.
 (pdftex.def)             Requested size: 155.57849pt x 146.34415pt.
 [60 <./images/Diagrams/stackedBranchesMesh.png>]
-<images/Diagrams/linkedBranchesMesh.png, id=260, 724.7075pt x 623.32875pt>
+<images/Diagrams/linkedBranchesMesh.png, id=262, 724.7075pt x 623.32875pt>
 File: images/Diagrams/linkedBranchesMesh.png Graphic file (type png)
 <use images/Diagrams/linkedBranchesMesh.png>
 Package pdftex.def Info: images/Diagrams/linkedBranchesMesh.png  used on input 
-line 407.
+line 406.
 (pdftex.def)             Requested size: 144.93893pt x 124.66353pt.
-) [61 <./images/Diagrams/linkedBranchesMesh.png>]
+<images/Diagrams/VertexObjects.png, id=263, 715.67375pt x 344.28625pt>
+File: images/Diagrams/VertexObjects.png Graphic file (type png)
+<use images/Diagrams/VertexObjects.png>
+Package pdftex.def Info: images/Diagrams/VertexObjects.png  used on input line 
+430.
+(pdftex.def)             Requested size: 357.836pt x 172.1427pt.
+ [61 <./images/Diagrams/linkedBranchesMesh.png>]) [62 <./images/Diagrams/Vertex
+Objects.png>]
 Chapter 6.
-(./chapters/chapter06.tex) [62
+(./chapters/chapter06.tex) [63
 
 ]
 Chapter 7.
-(./chapters/chapter07.tex) [63
+(./chapters/chapter07.tex) [64
 
 ]
 Chapter 8.
 (./chapters/chapter08.tex)
 No file Thesis.acr.
 No file Thesis.gls.
-[64
+[65
 
 ]
 Appendix A.
-(./chapters/appendix.tex (./Thesis.bbl [65
+(./chapters/appendix.tex (./Thesis.bbl [66
 
-] [66
+] [67
 
-] [67])) [68] (./Thesis.aux)
+] [68])) [69] (./Thesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1299,10 +1311,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 9250 strings out of 492982
- 135876 string characters out of 6134896
- 268326 words of memory out of 5000000
- 12520 multiletter control sequences out of 15000+600000
+ 9350 strings out of 492982
+ 137576 string characters out of 6134896
+ 269096 words of memory out of 5000000
+ 12618 multiletter control sequences out of 15000+600000
  13812 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  45i,14n,63p,2004b,462s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1320,10 +1332,10 @@ mr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Thesis.pdf (68 pages, 3558381 bytes).
+Output written on Thesis.pdf (69 pages, 3633677 bytes).
 PDF statistics:
- 337 PDF objects out of 1000 (max. 8388607)
- 198 compressed objects within 2 object streams
+ 344 PDF objects out of 1000 (max. 8388607)
+ 200 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 146 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 156 words of extra memory for PDF output out of 10000 (max. 10000000)
 
