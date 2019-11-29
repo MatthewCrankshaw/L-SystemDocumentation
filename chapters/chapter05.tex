@@ -352,14 +352,23 @@ S_x & 0 & 0 & 0\\
 
 \subsection{Quaternions}
 
-In computer graphics there are a number of ways to represent 3D rotations. As spoken about previously it is possible to use a matrix, however, a matrix has a number of limitations when dealing with rotation. Matrices are represented by nine floating point values and can be computationally expensive to process particularly when doing a vector to matrix multiplication. There are also situations where we would like to smoothly transition from one rotation to another, or find the rotation between two rotations. For example, when calculating the rotation of branch segments between time intervals in physics calculations. It is possible to make these calculations using matrices but it can become very complicated and even more expensive. Quaterions are the miraculous answer to all of these difficulties.\\
-Quaternions look similar to a 4D vector $ q = [qx, qy, qz, qw]$, and are represented with a real axis ($qw$) and three imaginary axis $qx, qy, qz$.\\
-A quaternion can be represented in complex form as follows: $q = (iq_x + jq_y + kq_z + qw)$. \\ 
-We will not get into too much detail as to the derivation of quaterions in mathematics however it is important to understand that any unit length quaternion which obays $q_x^2 + q_y^2 + q_z^2 + q_w^2 = 1$ \\ 
+In computer graphics there are a number of ways to represent 3D rotations. One method is to use matrices, as spoken about in the previous section. Matrices are often used to represent rotation, however, it has a number of limitations. Matrices are represented by nine floating point values and can be computationally expensive store and, process particularly when doing a vector to matrix multiplication. There are also situations where it is neccessary to smoothly transition from one rotation to another, or find a certain degree of rotation between two rotations. For example, when calculating the rotation of branch segments between time intervals in physics calculations. It is possible to make these calculations using matrices but it can become very complicated and even more computationally expensive. Quaterions are the miraculous answer to all of these difficulties.\\
 
+Quaternions look similar to a 4D vector, as contains 4 axes $q = [qx, qy, qz, qw]$, these are represented with a real axis ($qw$) and three imaginary axis $qx, qy, qz$. A quaternion can be represented in complex form as follows: 
 
+\begin{equation}
+q = (iq_x + jq_y + kq_z + qw)
+\end{equation}
 
-Unit quaternions are quaternions that are used for rotations, here we can take the angle and the axis of a rotation and convert it to a unit quaternion using the following formula: \\
+For the purpose of this thesis it is not important to understand the derivation of quaterions in mathematics, however it is important to understand that any unit length quaternion which obays the rule in \ref{unit quat} below. 
+
+\begin{equation} \label{unit quat}
+	q_x^2 + q_y^2 + q_z^2 + q_w^2 = 1
+\end{equation}
+
+\noindent
+Unit quaternions are used for rotations, it is possible to convert a quaternion to a unit quaternion  by taking the angle and the axis of a rotation and applying to the quaternion as follows: 
+
 \begin{equation}
 \begin{aligned}
 & q = [qx, qy, qz]\\
@@ -371,7 +380,45 @@ Unit quaternions are quaternions that are used for rotations, here we can take t
 \end{aligned}
 \end{equation}
 
-The scalar part $q_w$ is the cosine of the half angle, and the vector part $q_x q_y q_z$ is the axis of that rotation, scaled by sine of the half angle of rotation.  
+\noindent
+The scalar part $q_w$ is the cosine of the half angle, and the vector part $q_x q_y q_z$ is the axis of that rotation, scaled by sine of the half angle of rotation. The unit quaternion can be used for rotations in a number of ways. The most useful of which is to rotate vectors, concatonate rotations together similar to how matrix transformations can be multiplied together as well as interpolate between two rotations. \\
+
+The first operation for quaternions is that of addition. Simply the addition of two quaternions is just the component wise addition of the two quaternions, similar to that of matrices addition.
+
+\begin{equation}
+p + q = [(p_w + q_w), (p_x + q_x), (p_y + q_y), (p_z + q_z)]
+\end{equation}
+
+There are a number of types of quaternion multiplication, however, the one most commonly used for quaternion rotaton is called the grassmann product. This can be described in the following formula below. Where $p$ and $q$ are quaternions and the subscript $w$ indicates the scalar part and subscript $x, y, z$ indicate the vector components of each quaternion.
+
+\begin{equation}
+\begin{aligned}
+R = r_w + r_x + r_y + r_z\\
+\text{where}\\
+r_w = p_w q_w - (p_x q_x + p_y q_y + p_z q_z)\\
+r_x = p_w q_x + p_x q_w + p_y q_z - p_z q_y\\
+r_y = p_w q_y + p_y q_w - p_x q_z + p_z q_x\\
+r_z = p_w q_z + p_z q_w + p_x q_y - p_y q_x\\
+\end{aligned}
+\end{equation}
+
+To rotate a vector by a unit quaternion the vector will need to be converted into its quaternion form. This requires taking the unit vector $v$ and using it as the vector part of the quaternion with a scalar part being equal to zero. This can be written as $Q_v = [v, 0] = [v_x, v_y, v_z, 0]$. In order to rotate the vector we can therefore take the grassmann product of the rotation quaternion $q$ and the vector form quaternion $v$ and the inverse of the rotation quaternion $q^-1$. \\
+
+\begin{equation}
+	V_q = qvq^{-1}
+\end{equation}
+
+\noindent
+For unit quaternions the conjugate and the inverse are identical. The inverse of a unit quaternion can be calculated as follows. 
+
+\begin{equation}
+	q^{-1} = [-q_v, q_s]
+\end{equation}
+
+
+quaternion concatanation\\
+
+rotational linear interpolation\\
 
 
 \section{Model Generator}
@@ -415,11 +462,11 @@ The renderer is the final stage in the procedural generation pipeline. It takes 
 
 The \acrshort{gpu} is a specially designed piece of harware for processing computer graphics and image processing, it has hundereds of individual compute cores which can be used in parallel. Due to the highly parallel nature of the \acrshort{gpu}, the \acrshort{opengl} framework helps to abstract the hardware and create an interface to interact with the \acrshort{gpu} in a simpler way. There are a number of other types of graphics \acrshort{api} such as Vulkan, Metal or DirectX. These \acrshort{api}s all provide a way of interacting with the hardware behind the scenes, However, they each have a different approach. Therefore, this section will not be be going into great detail about about the specifics of \acrshort{opengl} but rather the general concepts required for rendering the plant model on the screen.
 
-\subsection{Buffer Objects}
+\subsection{Models and Buffer Objects}
 
-One of the most important parts of the rendering process is buffering the model data onto the \acrshort{gpu}. In general the model data will consist of vertex data, texture co-ordinates and vertex normals. The vertex data is simply position of a point within a model, three vertices make up a face and the faces are what are ultimately rendered on the screen. The texture co-ordinates are the locations on a texture image which maps directly to the model vertices. Finally the vertex normals simply known as normals are the average normal vector. A normal vector being the vector that is purpendicular to the surface at a given point, and can be used for Phong shading or other types of lighting techniques.  
+The model generator produces all of the information neccessary for the renderer to produce the result on the screen. In general the model data will consist of vertex data, texture co-ordinates and vertex normals. The vertex data is simply position of a point within a model, three vertices make up a face and the faces are what are ultimately rendered on the screen. The texture co-ordinates are the locations on a texture image which maps directly to the model vertices. Finally the vertex normals simply known as normals are the average normal vector. A normal vector being the vector that is purpendicular to the surface at a given point, and can be used for Phong shading or other types of lighting techniques.  
 
-The \acrlong{vbo} (\acrshort{vbo}) is a data structure within the \acrshort{opengl} library which can be used to store this data on the \acrshort{gpu}. Generally, the data is stored as a single buffer or array with the first 3 values being a vertex position, the second two being a texture co-ordinate and the last three being a vertex normal. 
+One of the most important parts of the rendering process is buffering the model data onto the \acrshort{gpu}. The \acrlong{vbo} (\acrshort{vbo}) is a data structure within the \acrshort{opengl} library which can be used to store this data on the \acrshort{gpu}. Generally, the data is stored as a single buffer or array with the first 3 values being a vertex position, the second two being a texture co-ordinate and the last three being a vertex normal. 
 
 \begin{figure}[htbp]
 	{\centering
