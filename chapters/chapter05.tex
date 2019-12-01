@@ -415,10 +415,18 @@ For unit quaternions the conjugate and the inverse are identical. The inverse of
 	q^{-1} = [-q_v, q_s]
 \end{equation}
 
+\noindent
+Quaternion rotations can be concatonated together similar to how matrix transforms can be multiplied together. The order by which rotations matter but using the grassmann product the rotations can easily be multiplied together to give the result of all of those rotations as if they were to happen one after the other. This can be expressed as follows:
 
-quaternion concatanation\\
+\begin{equation}
+\begin{aligned}
+Q_{net} = Q_3 Q_2 Q_1\\
+v' = Q_3 Q_2 Q_1~ v~ Q_{1}^{-1} Q_{2}^{-1} Q_{3}^{-1}
+\end{aligned}
+\end{equation}
 
-rotational linear interpolation\\
+\noindent
+The order in which the quaternions $Q_1, Q_2$ and $Q_3$ are applied is in the order $Q_3~$ then $Q_2~$ and then $Q_1$. To apply this to a vector the product of the three quaternions is multiplied to the vector and then multiplied to the product of the inverse of each quaternion. \\ 
 
 
 \section{Model Generator}
