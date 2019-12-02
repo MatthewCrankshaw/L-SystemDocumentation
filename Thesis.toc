@@ -8,14 +8,14 @@
 \contentsline {section}{\numberline {2.1}Simple DOL-system}{14}
 \contentsline {section}{\numberline {2.2}Interpreting the DOL-system}{15}
 \contentsline {section}{\numberline {2.3}Branching}{18}
-\contentsline {section}{\numberline {2.4}Parametric OL-systems}{22}
+\contentsline {section}{\numberline {2.4}Parametric OL-systems}{21}
 \contentsline {subsection}{\numberline {2.4.1}Formal Definition of a Parametric 0L-system}{22}
 \contentsline {subsection}{\numberline {2.4.2}Defining Constants and Objects}{23}
-\contentsline {subsection}{\numberline {2.4.3}Modules With Special Meanings}{25}
-\contentsline {subsection}{\numberline {2.4.4}Representing L-system Conditions}{26}
-\contentsline {section}{\numberline {2.5}Randomness within L-systems}{27}
-\contentsline {section}{\numberline {2.6}Stochastic Rules within L-systems}{28}
-\contentsline {section}{\numberline {2.7}Summary}{30}
+\contentsline {subsection}{\numberline {2.4.3}Modules With Special Meanings}{24}
+\contentsline {subsection}{\numberline {2.4.4}Representing L-system Conditions}{25}
+\contentsline {section}{\numberline {2.5}Randomness within L-systems}{26}
+\contentsline {section}{\numberline {2.6}Stochastic Rules within L-systems}{27}
+\contentsline {section}{\numberline {2.7}Summary}{29}
 \contentsline {chapter}{\numberline {3}L-system Rewriter Implementation}{31}
 \contentsline {section}{\numberline {3.1}Environment and Tools}{32}
 \contentsline {section}{\numberline {3.2}The L-system as an Interpreted Grammar}{33}
@@ -25,7 +25,7 @@
 \contentsline {subsection}{\numberline {3.5.1}\acrlong {bnf} of the L-system Grammar}{39}
 \contentsline {subsection}{\numberline {3.5.2}Dealing with Constant Values and Objects}{40}
 \contentsline {subsection}{\numberline {3.5.3}Implementing Modules and Strings}{41}
-\contentsline {subsection}{\numberline {3.5.4}Implementing Arithmetic Expressions Trees}{42}
+\contentsline {subsection}{\numberline {3.5.4}Implementing Arithmetic Expressions Trees}{41}
 \contentsline {subsection}{\numberline {3.5.5}Implementing Random Ranges}{42}
 \contentsline {subsection}{\numberline {3.5.6}Implementing Stochastic Rules}{43}
 \contentsline {section}{\numberline {3.6}The String Rewriter}{44}
@@ -38,7 +38,7 @@
 \contentsline {subsection}{\numberline {5.2.2}Matrices}{57}
 \contentsline {subsection}{\numberline {5.2.3}Quaternions}{59}
 \contentsline {section}{\numberline {5.3}Model Generator}{61}
-\contentsline {section}{\numberline {5.4}Renderer}{62}
+\contentsline {section}{\numberline {5.4}Renderer}{63}
 \contentsline {subsection}{\numberline {5.4.1}Models and Buffer Objects}{63}
 \contentsline {chapter}{\numberline {6}Findings and Data Analysis}{64}
 \contentsline {chapter}{\numberline {7}Discussion}{65}

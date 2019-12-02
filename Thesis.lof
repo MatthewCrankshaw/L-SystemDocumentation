@@ -12,10 +12,10 @@
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Fractal Bush.}}{21}
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Diagram of an L-system Using Multiple Objects.}}{24}
 \contentsline {figure}{\numberline {2.10}{\ignorespaces 3D Parametric L-system.}}{25}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Condition statements used to simulate the growth of a flower. 2nd generation on the left, 4th generation in the center and 6th generation on the right}}{27}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Different Variations of the Same L-system with Randomness Introduced in The Angles. }}{28}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Condition statements used to simulate the growth of a flower. 2nd generation on the left, 4th generation in the center and 6th generation on the right}}{26}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Different Variations of the Same L-system with Randomness Introduced in The Angles. }}{27}
 \contentsline {figure}{\numberline {2.13}{\ignorespaces Representation of an L-system with a probability stochastic with a 0.33 probabability for each rule.}}{29}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Diagram of the procedural generation process.}}{30}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Diagram of the procedural generation process.}}{29}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Diagram of the Parts of The Rewiting System.}}{32}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Diagram of an expression tree.}}{42}
@@ -28,7 +28,8 @@
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Diagram of the cross product of two vectors a and b.}}{57}
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Example of the continuity problem faced with stacked branching with a 25$^{\circ }$ bend per joint.}}{62}
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Example of linked branching with a 25$^{\circ }$ bend per joint.}}{62}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Diagram showing the structure of a vertex buffer object.}}{63}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Stacked Vs Linked.}}{62}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Diagram showing the structure of a vertex buffer object.}}{63}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

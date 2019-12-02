@@ -197,11 +197,7 @@ There are a number of fractal geometry that have become well known particularly 
 
 \section{Branching} \label{branching}
 
-\begin{flushleft}
-
-The previous section covered a very basic 0L-system, which was capable of tracing a 3D pattern, the 0L-system allows us to move around a 3D space, however we are not able to branch off in two or more directions as plants do. Lindenmayer introduced two symbols which make branching much easier \cite{lindenmayer1968mathematical}. These are the square bracket commands '[', ']'. The square bracket characters instruct the turtle object to save its current position and orientation for the purpose of being able to go back to that saved position and orientation later. This allows the turtle to jump back to a previous position, facing the same direction as it was before. We can then change orientation and branch off in a different direction. This was originally used by Lindenmayer to develop the branching that occurs in algea, this idea was later used to represent plant-life by Smith \cite{smith1984plants}. \\
-
-\vspace{5mm}
+The previous section covered a very basic 0L-system, which was capable of tracing a 3D pattern, the 0L-system allows us to move around a 3D space, however we are not able to branch off in two or more directions as plants do. Lindenmayer introduced two symbols which make branching much easier \cite{lindenmayer1968mathematical}. These are the square bracket commands '[', ']'. The square bracket characters instruct the turtle object to save its current position and orientation for the purpose of being able to go back to that saved position and orientation later. This allows the turtle to jump back to a previous position, facing the same direction as it was before. We can then change orientation and branch off in a different direction. This was originally used by Lindenmayer to develop the branching that occurs in algea, this idea was later used to represent plant-life by Smith \cite{smith1984plants}. 
 
 The same method of interpreting the L-system string is applied, the symbols [ and ] are used in order the translate back to a previous position and orientation in order to branch off in a different direction. Each save state symbol [ must have a corresponding load state symbol within the string. In order to have a branch off of another branch we can have nested save and load state symbols. For instance the resultant string "F[+F-F]-F" branches off the main branch once as seen in figure \ref{branching 1}. Additionally using nested save and load states in the string "F[+F[+F]-F]-F" we are able to branch twice which can be shown in figure \ref{branching 2}.
 
@@ -217,7 +213,8 @@ The same method of interpreting the L-system string is applied, the symbols [ an
 \end{figure}
 \FloatBarrier
 
-Save and load operations are handled using the \acrfull{lifo} principle, meaning that when the save symbol is used [ the current position and orientation at $p1$ is saved, the next load state ] will restore $p1$'s position and orientation, unless another save takes place in which case that save will have to be loaded before $p1$ can be loaded. In this way, the position saves are stacked and the most recent save is loaded. This can be seen in figure \ref{branching 2} where we have nested branching. \\
+\noindent
+Save and load operations are handled using the \acrfull{lifo} principle, meaning that when the save symbol is used [ the current position and orientation at $p1$ is saved, the next load state ] will restore $p1$'s position and orientation, unless another save takes place in which case that save will have to be loaded before $p1$ can be loaded. In this way, the position saves are stacked and the most recent save is loaded. This can be seen in figure \ref{branching 2} where we have nested branching. 
 
 \begin{figure}[htbp]
 	{\centering
@@ -231,6 +228,7 @@ Save and load operations are handled using the \acrfull{lifo} principle, meaning
 \end{figure}
 \FloatBarrier
 
+\noindent
 The main advantage to using the save and load position functionality as a symbol within the alphabet of the L-system is that the rewiting system itself handles the branching. There is often no production rule for the save and load symbols and thus the symbols remain consistent from generation to generation. \\ 
 
 \begin{figure}[htbp]
@@ -249,6 +247,8 @@ The main advantage to using the save and load position functionality as a symbol
 		\caption{Fractal Plant.}
 	}
 \end{figure}
+\FloatBarrier
+
 \begin{figure}[htbp]
 	\raggedright
 	\textbf{\underline{Fractal Bush:}} \\
@@ -264,55 +264,38 @@ The main advantage to using the save and load position functionality as a symbol
 		\caption{Fractal Bush.}
 	}
 \end{figure}
-
 \FloatBarrier
-
-\end{flushleft}
 
 \section{Parametric OL-systems} \label{parametric}
 
-\begin{flushleft}
-
 Simplistic L-systems like the algae representation in section \ref{Simple DOL-systems} above, give us enough information to create a very basic structure of plant life, there are many details that are not included which a simple OL-system will not be able to represent. With the simplistic approach we have assumed that the width and length and branching angles of each section is constant or predefined. The result of this was that all of the details such as width and length of branches is left up to the interpretation of the resultant L-system string. This begs the question as to how we should accurately interpret the L-system string when we are not provided the details by the L-system. The answer lies in parametric 0L-systems.
-
-\vspace{5mm}
 
 In this section I will outline the definition and major concepts of the parametric L-system formulated by Prusinkiewicz and Hanan in 1990 \cite{prusinkiewicz1990visualization}, and developed upon in 2012 by Prusinkiewicz and Lindenmayer \cite{prusinkiewicz2012algorithmic}. I will also be talking about some of the changes that I have made, and explaining why these changes are necessary for the purpose of this thesis.
 
-\end{flushleft}
 
 \subsection{Formal Definition of a Parametric 0L-system} \label{definition of a parametric 0L-system section}
 
-\begin{flushleft}
+Prusinkiewicz and Hanan define the parametric 0L-systems as a system of parametric words, where a string of letters make up a module name $A$, each module has a number of parameters associated with it. The module names belong an alphabet $V$, therefore, $A~ \in~ V$, and the parameters belong to a set of real numbers $\Re$. If $(a_1,~ a_2,~ ...,~ a_n)~ \in~ R$ are parameters of $A$, the module can be stated as $A(a_1,~ a_2,~ ...,~ a_n)$. Each module is an element of the set of modules $M~ =~ V~ \times~ \Re^*$. $\Re^*$ represents the set of all finite sequences of parameters, including the case where there are no parameters. We can then infer that $M^*~ =~ (V~ \times~ \Re^*)^*$ where $M^*$ is the set of all finite modules. 
 
-Prusinkiewicz and Hanan define the parametric 0L-systems as a system of parametric words, where a string of letters make up a module name $A$, each module has a number of parameters associated with it. The module names belong an alphabet $V$, therefore, $A~ \in~ V$, and the parameters belong to a set of real numbers $\Re$. If $(a_1,~ a_2,~ ...,~ a_n)~ \in~ R$ are parameters of $A$, the module can be stated as $A(a_1,~ a_2,~ ...,~ a_n)$. Each module is an element of the set of modules $M~ =~ V~ \times~ \Re^*$. $\Re^*$ represents the set of all finite sequences of parameters, including the case where there are no parameters. We can then infer that $M^*~ =~ (V~ \times~ \Re^*)^*$ where $M^*$ is the set of all finite modules. \\
 Each parameter of a given module corresponds to a formal definition of that parameter defined within the L-system productions. Let the formal definition of a parameter be $\Sigma$. $ E(\Sigma) $ can be said to be an arithmetic expression of a given parameter.\\ Similar to the arithmetic expressions in the programming languages C/C++, we can make use of the arithmetic operators $ +,~ -,~ *,~ \,~ \wedge{}$. Furthermore, we can have a relational expression $C(\Sigma)$, with a set of relational operators. In the literature by Prusinkiewicz and Hanan the set of relational operators is said to be $<,~ >,~ =$, I have extended this to include the relational operators $>,~ <,~ >=,~ <=,~ ==,~ !=$. Where $==$ is the 'equal to' operator and $!=$ is the 'not equal' operator, and the symbols $>=$ and $<=$ are 'greater than or equal to' and 'less than or equal to' respectively. The parentheses () are also used in order to specify precedence within an expression. A set of arithmetic expressions can be said to be $\hat{E} (\Sigma)$,  these arithmetic expressions can be evaluated and will result in the real number parameter $\Re $, and the relational expressions can be evaluated to either true or false. \\
-
-\vspace{5mm}
-
-The parametric 0L-system can be shown as follows as per Prusinkiewicz and Hanan's definition:\\
-
-\vspace{5mm}
+\\
+The parametric 0L-system can be shown as follows as per Prusinkiewicz and Hanan's definition:
 
 \begin{equation}
 G~ = (V, \Sigma, \omega, P)
 \end{equation}
 \vspace{5mm}
 
+\noindent
 $G$ is an ordererd quadruplet that describes the parametric OL-system. $V$ is the alphabet of characters for the system. $\Sigma$ is the set of formal parameters for the system. $\omega~ \in~ (V~ \times \Re^*)^+$ is a non-empty parametric word called the axiom. Finally $P$ is a finite set of production rules which can be fully defined as:
-
-\vspace{5mm}
 
 \begin{equation}
 P~ \subset~ (V~ \times~ \Sigma^*)~ \times C(\Sigma)~ \times~ (V~ \times~ \hat{E}(\Sigma))^*
 \end{equation}
 
-\vspace{5mm} 
-
-Where $(V~ \times~ \Sigma^*) $ is the predecessor module, $C(\Sigma) $ is the condition and $(V~ \times~ E(\Sigma))^* $ is the set of successor modules. For the sake of readability we can write out a production rule as \textit{predecessor} : \textit{condition} $\rightarrow$ \textit{successor}. I will be explaining the use of conditions in production rules in more detail in section \ref{Condition L-system Subsection}.\\
+\noindent
+Where $(V~ \times~ \Sigma^*) $ is the predecessor module, $C(\Sigma) $ is the condition and $(V~ \times~ E(\Sigma))^* $ is the set of successor modules. For the sake of readability we can write out a production rule as \textit{predecessor} : \textit{condition} $\rightarrow$ \textit{successor}. I will be explaining the use of conditions in production rules in more detail in section \ref{Condition L-system Subsection}.
 A module is said to match a production rule predecessor if they meet the three criteria below.
-
-\vspace{5mm}
 
 \begin{itemize}
 \item The name of the axiom module matches the name of the production predecessor.
@@ -320,20 +303,15 @@ A module is said to match a production rule predecessor if they meet the three c
 \item The condition of the production evaluates to true. If there is no condition, then the result is true by default.
 \end{itemize}
 
-\vspace{5mm}
+\noindent
+In the case where the module does not match any of the production rule predecessors, the module is left unchanged, effectively rewriting itself. 
 
-In the case where the module does not match any of the production rule predecessors, the module is left unchanged, effectively rewriting itself. \\
-
-\end{flushleft}
 
 \subsection{Defining Constants and Objects}
 
-\begin{flushleft}
-
-There are some other features covered by Prusinkiewicz and Lindenmayer, that are not specific to the parametric L-systems definition itself but serve more as quality of life. In the literature, they refer to the \#define which is said "To assign values to numerical constants used in the L-system" as well as the \#include statement which specifies what type of shape to draw by refering to a library of predefined shapes \cite{prusinkiewicz2012algorithmic}. \\
+There are some other features covered by Prusinkiewicz and Lindenmayer, that are not specific to the parametric L-systems definition itself but serve more as quality of life. In the literature, they refer to the \#define which is said "To assign values to numerical constants used in the L-system" as well as the \#include statement which specifies what type of shape to draw by refering to a library of predefined shapes \cite{prusinkiewicz2012algorithmic}.
+\noindent
 For instance if we have an value for an angle that we would like to use within the production rules we can use the \#define statement as follows:
-
-\vspace{5mm}
 
 \begin{equation} \label{define statement example}
 \begin{aligned}
@@ -344,15 +322,9 @@ For instance if we have an value for an angle that we would like to use within t
 \end{aligned}
 \end{equation}
 
-\vspace{5mm}
+Here you can see that the \#define acts like a declaration, where we are going to be defining a variable which will be used later. Essentially we are replacing any occurences of the variable \textit{angle} with the value of 90 degrees. The define statement is written as  \#define \textit{variable\_name} \textit{value}.
 
-Here you can see that the \#define acts like a declaration, where we are going to be defining a variable which will be used later. Essentially we are replacing any occurences of the variable \textit{angle} with the value of 90 degrees. The define statement is written as  \#define \textit{variable\_name} \textit{value}. \\
-
-\vspace{5mm}
-
-With regards to the \#include statement, In the literature the \#include may be used by stating \say{\#include H}. This would tell the turtle interpreter that the symbol \say{H} is a shape in a library of predefined shapes which should be rendered instead of the default shape. This functionality has been slightly modified, instead of the \#include statement, the \#object is used and serves a similar purpose, however, instead importing the symbol \say{H}, denoting to the hetrocist object from a library of predefined shapes, The statement \say{\#object H HETEROCYST} specifies that we are associating the symbol or module \say{H} with the object HETEROCYST. The HETEROCYST object is still stored in a predefined library, however, the advantage is that the object can be associated with multiple different symbols, it also does not limit us to a predefined name for an object. Below is an example using the \#object statement: \\
-
-\vspace{5mm}
+With regards to the \#include statement, In the literature the \#include may be used by stating \say{\#include H}. This would tell the turtle interpreter that the symbol \say{H} is a shape in a library of predefined shapes which should be rendered instead of the default shape. This functionality has been slightly modified, instead of the \#include statement, the \#object is used and serves a similar purpose, however, instead importing the symbol \say{H}, denoting to the hetrocist object from a library of predefined shapes, The statement \say{\#object H HETEROCYST} specifies that we are associating the symbol or module \say{H} with the object HETEROCYST. The HETEROCYST object is still stored in a predefined library, however, the advantage is that the object can be associated with multiple different symbols, it also does not limit us to a predefined name for an object. Below is an example using the \#object statement: 
 
 \begin{equation} \label{object statement example}
 \begin{aligned}
@@ -376,25 +348,14 @@ With regards to the \#include statement, In the literature the \#include may be 
 \end{figure}
 \FloatBarrier
 
-\vspace{5mm}
-
+\noindent
 In the simple example in figure \ref{object statement example} above, you can see that the first three F modules render a branch segment with length of 1.0, however, for the final S module renders a sphere of diameter 1.0. The geometric shape that is eventually rendered does not affect the L-system in any way and the \#object feature bares no meaning to the rewriting system, it simply stands as an instruction to the interpreter which instructs that each time the symbols F or S are interpreted, a specific object should be rendered, such as BRANCH and SPHERE respectively. The position of the next object or branch can then be determined by moving forward by the diameter of the object and rendering the next object from that point, this will be discussed more detail chapter \ref{interpreter implementation} where the turtle graphics interpreter and renderer is defined.
-
-
-\end{flushleft}
 
 \subsection{Modules With Special Meanings}
 
-\begin{flushleft}
-
-
-In the above section I defined the details of a parametric 0L-system, in the paper by Prusinkiewicz and Lindenmayer, there are two operators which I have not discussed yet, those are the ! and the ‘. Prusinkiewicz and Lindenmayer state that “The symbols ! and ‘ are used to decrement the diameter of segments and increment the current index to the color table respectively” \cite{prusinkiewicz2012algorithmic}. We have decided to modify this to work slightly differently, the ! and ‘ will still perform the same operation, however the ! and ‘ symbols are actually treated as a module that holds a particular meaning to the interpreter, rather than a single operator, furthermore, they share the same properties with modules, they can contain multiple parameters, and depending on the number of parameters they can be treated differently. The module ! with no parameters could mean decrement the diameter of the segment by a default amount, whereas !(10) means set the diameter of the segment to 10. The length can also be manipulated in a similar manner. The module with the name F has a default meaning to create a segment in the current direction by a default amount. If we provide the module F(10) we are specifying to create a segment of length 10.\\
-
-\vspace{5mm}
+In the above section I defined the details of a parametric 0L-system, in the paper by Prusinkiewicz and Lindenmayer, there are two operators which I have not discussed yet, those are the ! and the ‘. Prusinkiewicz and Lindenmayer state that “The symbols ! and ‘ are used to decrement the diameter of segments and increment the current index to the color table respectively” \cite{prusinkiewicz2012algorithmic}. We have decided to modify this to work slightly differently, the ! and ‘ will still perform the same operation, however the ! and ‘ symbols are actually treated as a module that holds a particular meaning to the interpreter, rather than a single operator, furthermore, they share the same properties with modules, they can contain multiple parameters, and depending on the number of parameters they can be treated differently. The module ! with no parameters could mean decrement the diameter of the segment by a default amount, whereas !(10) means set the diameter of the segment to 10. The length can also be manipulated in a similar manner. The module with the name F has a default meaning to create a segment in the current direction by a default amount. If we provide the module F(10) we are specifying to create a segment of length 10.
 
 Using the L-system below we can create figure \ref{parametric l-system practical}, the concepts discussed above have been used by decrementing the segment diameter during the rewriting process as well as by incrementing the branch length.
-
-\vspace{5mm}
 
 \begin{equation} \label{parametric l-system practical}
 \begin{aligned}
@@ -404,8 +365,6 @@ Using the L-system below we can create figure \ref{parametric l-system practical
 	&p_2~ :  F(s)~~~~~ :~ * \rightarrow~ F(s~*~1.456)\\
 \end{aligned}
 \end{equation}
-
-\vspace{5mm}
 
 The above l-system gives the resulting representation shown below in figure 3.8. 
 
@@ -419,25 +378,19 @@ The above l-system gives the resulting representation shown below in figure 3.8.
 		\caption{3D Parametric L-system.}
 	}
 \end{figure}
-
 \FloatBarrier
 
+\noindent
 This gives a much more realistic looking tree structure as the branch segments become shorter but also become thinner in diameter as they get closer to the end of the branch as a whole. 
-
-\end{flushleft}
-
-
 
 \subsection{Representing L-system Conditions} \label{Condition L-system Subsection}
 
-\begin{flushleft}
+A condition allows us to have multiple production rules that are the same in terms of the module name and the number of parameters that they have, furthermore, they require a particular condition to be met in order for the module to match that rule. 
 
-A condition allows us to have multiple production rules that are the same in terms of the module name and the number of parameters that they have, furthermore, they require a particular condition to be met in order for the module to match that rule. \\
-In this section I will be detailing the use of the condition statement, which lies between the predecessor and the successor in a production rule, and can be seen as an a mathematical expression on either side of a relational operator. During the rule selection process the expressions are evaluated and the results are compared using the condition operator. If the result of the condition is true then that rule is selected for rewriting, if the result is false then it moves on to check the next rule. \\
+In this section I will be detailing the use of the condition statement, which lies between the predecessor and the successor in a production rule, and can be seen as an a mathematical expression on either side of a relational operator. During the rule selection process the expressions are evaluated and the results are compared using the condition operator. If the result of the condition is true then that rule is selected for rewriting, if the result is false then it moves on to check the next rule. 
 
-\vspace{5mm}
 
-Below is an example of a parametric 0L-system using condition statements:\\
+Below is an example of a parametric 0L-system using condition statements:
 
 \begin{equation} \label{parametric l-system example}
 \begin{aligned}
@@ -450,11 +403,8 @@ Below is an example of a parametric 0L-system using condition statements:\\
 \end{aligned}
 \end{equation}
 
-\vspace{5mm}
-
+\noindent
 The L-system above in \ref{parametric l-system example} is rewritten five times using the axiom specified by the symbol $\omega$, as well as the four production rules $p_1, p_2, p_3, p_4$. Each generation of the rewritting process can be seen below in \ref{parametric l-system example result}.
-
-\vspace{5mm}
 
 \begin{equation} \label{parametric l-system example result}
 \begin{aligned}
@@ -467,11 +417,8 @@ The L-system above in \ref{parametric l-system example} is rewritten five times 
 \end{aligned}
 \end{equation}
 
-\vspace{5mm}
-
-A practical use of the condition statement might be to simulate different stages of growth. This is best illustrated using the L-system below: \\
-
-\vspace{5mm}
+\noindent
+A practical use of the condition statement might be to simulate different stages of growth. This is best illustrated using the L-system below: 
 
 \begin{equation} \label{conditional l-system example}
 \begin{aligned}
@@ -501,15 +448,10 @@ A practical use of the condition statement might be to simulate different stages
 		\caption{Condition statements used to simulate the growth of a flower. 2nd generation on the left, 4th generation in the center and 6th generation on the right}
 	}
 \end{figure}
-
 \FloatBarrier
-
-\end{flushleft}
 
 
 \section{Randomness within L-systems} \label{Randomness L-system Subsection}
-
-\begin{flushleft}
 
 Randomness is an essential part of nature. If there was no randomness in plant life, it would end up with very symetric and unrealistic. Randomness is also responsible for creating variation in the same L-system. A L-system essentially describes the structure and species of a plant. It describes everything from how large the trunk of the tree is, to how many leaves there are on the end of branch, or even if it has flowers or not. However if there is no capability to have randomness in the generation of the L-system then we will always end up with the exact same structure. 
 \vspace{5mm}
@@ -534,28 +476,20 @@ Below is a simple example of how randomness can be used to create variation.
 		\caption{Different Variations of the Same L-system with Randomness Introduced in The Angles. \label{figRandomness}}
 	}
 \end{figure}
-
 \FloatBarrier
 
+\noindent
 In figure \ref{figRandomness} there are four variations of the same L-system using randomness, We can specify that we would like to create a random number by using the expression \{-20.0, 20.0\}. The curly braces signify that what is contained is a random number range, ranging from the minimum value as the first floating point value and the maximum value as the second floating point value separated by a comma. If both values are the same for instance +(\{10.0, 10.0\}) this is equivilant to +(10.0).
-
-\end{flushleft}
 
 \section{Stochastic Rules within L-systems} \label{Stochastic L-system Subsection}
 
-\begin{flushleft}
-
-Similar to the previous section about randomness in L-systems, stochastic L-systems fulfill a similar goal. 0L-systems on their own are incapable of creating any variation, they simply follow a strict set of production rules which gives the same result. Introducing randomness to an 0L-system for width, length and other parameters can result in a plant that looks slightly different but does not change to overall structure of the plant or any branching. In order to create a different structure for a plant we must introduce stochastic probability within the selection of the production rules, thus effecting the rewriting of the structure itself. \\
-
-\vspace{5mm}
+Similar to the previous section about randomness in L-systems, stochastic L-systems fulfill a similar goal. 0L-systems on their own are incapable of creating any variation, they simply follow a strict set of production rules which gives the same result. Introducing randomness to an 0L-system for width, length and other parameters can result in a plant that looks slightly different but does not change to overall structure of the plant or any branching. In order to create a different structure for a plant we must introduce stochastic probability within the selection of the production rules, thus effecting the rewriting of the structure itself.
 
 Eichhorst and Savitch introduced a new type of 0L-system called the S0L-system, this added two features to the existing 0L-system, firstly the S0L-system is not limited to defining a single axiom (starting point), a finite number of starting points can be defined and a probability distribution is used in order to select the starting point at the start of the rewriting process. Secondly, the S0L-system allows you to define a finite number of production rules which have a probability distribution in order to decide which rule should be chosen for rewriting \cite{eichhorst1980growth}. Similarly an article by Yokomori proposes a stochastic 0L-system which also proposes a measure of the entropy of a string generated by a 0L-system \cite{yokomori1980stochastic}.\\
 Later, Prusinkiewicz and Lindenmayer built upon this by creating a definition of a stochastic L-system, that makes use of the stochastic nature of the production rules from the SOL-system. In this paper, I will be using the definition of the stochastic 0L-system defined by Prusinkiewicz and Lindenmayer, and developing them into the existing parametric 0L-system. This paper will not allow multiple starting points as defined by Eichhorst and Savitch in the SOL-system, as it does not seem necessary and could overcomplicate the 0L-system, however, this functionality could be added in the future if it is seen to be neccessary. \\
-Similarly to the 0L-sysstem, the stochastic 0L-system is an ordered quadruplet, represented as $G_\pi~ = (V, \omega, P, \pi)$, where $V$ is the alphabet of the 0L-system, $\omega$ is the axiom, $P$ is the finite set of productions and $\pi$ represents a probability distribution for a set of production probabilities this can be shown as $\pi~ :~ P~ \rightarrow~ (0, 1)$ the production probabilities must be between 0 and 1 and the sum of all production probabilies must add up to 1. \\
+Similarly to the 0L-sysstem, the stochastic 0L-system is an ordered quadruplet, represented as $G_\pi~ = (V, \omega, P, \pi)$, where $V$ is the alphabet of the 0L-system, $\omega$ is the axiom, $P$ is the finite set of productions and $\pi$ represents a probability distribution for a set of production probabilities this can be shown as $\pi~ :~ P~ \rightarrow~ (0, 1)$ the production probabilities must be between 0 and 1 and the sum of all production probabilies must add up to 1.
 
-\vspace{5mm}
-
-The following L-system definition created by Prusinkiewicz and Lindenmayer states three production rules with each rule having a probability of 0.33 out of one. For a finite set of production rules to be stochastic, the production rules must share the same module name an the same number of parameters. There must be two or more production rules and the total probability distribution must add up to 1.0 \cite{prusinkiewicz2012algorithmic}. \\
+The following L-system definition created by Prusinkiewicz and Lindenmayer states three production rules with each rule having a probability of 0.33 out of one. For a finite set of production rules to be stochastic, the production rules must share the same module name an the same number of parameters. There must be two or more production rules and the total probability distribution must add up to 1.0 \cite{prusinkiewicz2012algorithmic}.
 
 \begin{equation} \label{stochastic example}
 \begin{aligned}
@@ -568,9 +502,8 @@ The following L-system definition created by Prusinkiewicz and Lindenmayer state
 \end{aligned}
 \end{equation}
 
-\vspace{5mm}
-
-As you can see the module F(x) above, is the predecessor for all three of the production rules, each rule has a probability which is defined using the $\sim$ symbol followed by probability from 0 to  1. In the above example each probability isapproximately one third, they are approximate in order to total a an exact probability of 1.0. During the rewriting process, when the module F with one parameter is found, a production rule is randomly selected using the probability distribution described within the production rule. The predecessor from the selected rule with then rewrite that module. \\
+\noindent
+As you can see the module F(x) above, is the predecessor for all three of the production rules, each rule has a probability which is defined using the $\sim$ symbol followed by probability from 0 to  1. In the above example each probability isapproximately one third, they are approximate in order to total a an exact probability of 1.0. During the rewriting process, when the module F with one parameter is found, a production rule is randomly selected using the probability distribution described within the production rule. The predecessor from the selected rule with then rewrite that module. 
 
 \begin{figure}[htbp]
 	{\centering
@@ -582,13 +515,10 @@ As you can see the module F(x) above, is the predecessor for all three of the pr
 		\caption{Representation of an L-system with a probability stochastic with a 0.33 probabability for each rule.} \label{stochastic diagram}
 	}
 \end{figure}
-
 \FloatBarrier
 
-The stochastic L-system definition in \ref{stochastic example}, produces the following fractal structures seen in figure \ref{stochastic diagram} below. The stochastic L-system will get a slightly different resultant string each time it is run, depending on which rules were selected for rewriting. This gives a different number of translation instructions, can result in the plants having branches of different lengths, for example $p1$ has two extra F instructions. Resulting in some branches being much longer than others, as well as possibly producing plants of different sizes.\\   
-
-
-\end{flushleft}
+\noindent
+The stochastic L-system definition in \ref{stochastic example}, produces the following fractal structures seen in figure \ref{stochastic diagram} below. The stochastic L-system will get a slightly different resultant string each time it is run, depending on which rules were selected for rewriting. This gives a different number of translation instructions, can result in the plants having branches of different lengths, for example $p1$ has two extra F instructions. Resulting in some branches being much longer than others, as well as possibly producing plants of different sizes. 
 
 \begin{figure}[htbp]
 	{\centering
@@ -605,13 +535,7 @@ The stochastic L-system definition in \ref{stochastic example}, produces the fol
 
 \section{Summary}
 
-\begin{flushleft}
+L-systems represent a set of state transitions based upon the production rules provided, these rules dictate how a string will be rewritten, which in turn determines the overall structure of the plant it is trying to represent. The symbols in D0L-systems or modules in parametric 0L-systems represent particular instructions to be carried out by turtle graphics within the interpreter. The symbols or modules within an L-system do not change the behaviour of the L-system but matter only to the interpreter. Additionally the complexity of the L-system rewriter decides the complexity of the interpreter, if a L-system provides a large amount of information to the interpreter, less assumptions need to be made during the interpretation and therefore, providing the able to more accurately describe the plant-life it is representing.
 
-L-systems represent a set of state transitions based upon the production rules provided, these rules dictate how a string will be rewritten, which in turn determines the overall structure of the plant it is trying to represent. The symbols in D0L-systems or modules in parametric 0L-systems represent particular instructions to be carried out by turtle graphics within the interpreter. The symbols or modules within an L-system do not change the behaviour of the L-system but matter only to the interpreter. Additionally the complexity of the L-system rewriter decides the complexity of the interpreter, if a L-system provides a large amount of information to the interpreter, less assumptions need to be made during the interpretation and therefore, providing the able to more accurately describe the plant-life it is representing. \\
-
-\vspace{5mm}
-
-By using the parametric 0L-system we can build in a number of features, otherwise used in other L-systems, such as branching, conditional production rules, randomness in parameters, stochasticity. These features allow the parametric 0L-system to represent plant-life with varying structures as well as branch lengths, branch widths and production rule conditions can give control over stages of growth. \\ 
-
-\end{flushleft}
+By using the parametric 0L-system we can build in a number of features, otherwise used in other L-systems, such as branching, conditional production rules, randomness in parameters, stochasticity. These features allow the parametric 0L-system to represent plant-life with varying structures as well as branch lengths, branch widths and production rule conditions can give control over stages of growth.
 
