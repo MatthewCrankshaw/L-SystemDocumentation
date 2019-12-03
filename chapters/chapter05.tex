@@ -451,7 +451,7 @@ The simplest way to generate a model for a branching structure of a plant would 
 \FloatBarrier
 
 \noindent
-This simple method of stacking cylinders gives a reasonable looking tree structure and it is usually good enough when the angles of branches are not more than 25$^{\circ}$ and the size of the branches do not change. However for a much more convincing tree structure there will need to be a better solution. The logical next step would be to actively link the branch segments together. This requires a number of things to happen, first of all the vertices from the previous branch top must be linked with the new top of the branch. These circles of branch vertices will have to rotate with the bending of the branch. This means that the final model will not be made up of a large number of the same model but rather a single model with many linked branches. An example of this can be seen below:
+This simple method of stacking cylinders gives a reasonable looking tree structure and it is usually good enough when the angles of branches are not more than 25$^{\circ}$ and the size of the branches do not change. However for a much more convincing tree structure there will need to be a better solution. The logical next step would be to actively link the branch segments together. This requires a number of things to take place, first of all the vertices from the previous branch top must be linked with the new top of the branch. These are the circles of vertices at either end of each branch segment. These circles will have to rotate depending on the bending direction of the branch. This means that the final model will not be made up of a large number of the same model but rather a single model with many linked branches. An example of this can be seen below:
 
 \begin{figure}[htbp]
 	{\centering
@@ -465,6 +465,9 @@ This simple method of stacking cylinders gives a reasonable looking tree structu
 \end{figure}
 \FloatBarrier
 
+\noindent
+This method of branch generation gives a very similar result at first glance to that of stacking cylinders. Although it does have a number of advantages, firstly it completely avoids the branch gap problem that happens with angle changes as well as branch size changes. It also means that the resolution is dynamic, meaning the number of vertices that make up a cylinder can be dynamically changed. This means that a very high resolution tree can be rendered which may look very smooth but will take a lot more computational resources, or a very low resolution tree can be rendered with more jagged edges but will require a lot less computational resources. This can be seen in figure \ref{} below, where similar a looking branch can be acheived using less than half the number of vertices, with joined branches instead of stacked branches.
+
 \begin{figure}[htbp]
 	{\centering
 		\vspace{7px}
@@ -473,6 +476,8 @@ This simple method of stacking cylinders gives a reasonable looking tree structu
 	}
 \end{figure}
 \FloatBarrier
+
+
 
 \section{Renderer}
 

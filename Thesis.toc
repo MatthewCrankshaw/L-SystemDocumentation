@@ -31,6 +31,11 @@
 \contentsline {section}{\numberline {3.6}The String Rewriter}{44}
 \contentsline {section}{\numberline {3.7}Summary}{48}
 \contentsline {chapter}{\numberline {4}Physics Simulation}{49}
+\contentsline {section}{\numberline {4.1}Branch Physical Properties}{49}
+\contentsline {section}{\numberline {4.2}Hook's Law}{51}
+\contentsline {section}{\numberline {4.3}Equations of Motion}{51}
+\contentsline {section}{\numberline {4.4}Updating Branches}{51}
+\contentsline {section}{\numberline {4.5}Summary}{51}
 \contentsline {chapter}{\numberline {5}L-system String Interpreter Implementation}{52}
 \contentsline {section}{\numberline {5.1}Turtle Graphics Interpreter}{53}
 \contentsline {section}{\numberline {5.2}3D Mathematics}{55}
@@ -40,9 +45,9 @@
 \contentsline {section}{\numberline {5.3}Model Generator}{61}
 \contentsline {section}{\numberline {5.4}Renderer}{63}
 \contentsline {subsection}{\numberline {5.4.1}Models and Buffer Objects}{63}
-\contentsline {chapter}{\numberline {6}Findings and Data Analysis}{64}
-\contentsline {chapter}{\numberline {7}Discussion}{65}
-\contentsline {chapter}{\numberline {8}Conclusions}{66}
-\contentsline {chapter}{\numberline {A}Appendix}{67}
-\contentsline {section}{\numberline {A.1}Appendix 1}{67}
-\contentsline {section}{\numberline {A.2}Bibliography}{67}
+\contentsline {chapter}{\numberline {6}Findings and Data Analysis}{65}
+\contentsline {chapter}{\numberline {7}Discussion}{66}
+\contentsline {chapter}{\numberline {8}Conclusions}{67}
+\contentsline {chapter}{\numberline {A}Appendix}{68}
+\contentsline {section}{\numberline {A.1}Appendix 1}{68}
+\contentsline {section}{\numberline {A.2}Bibliography}{68}
