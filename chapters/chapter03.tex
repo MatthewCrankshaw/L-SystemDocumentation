@@ -175,11 +175,22 @@ In order to describe a grammar, there needs to be a suitable notation to express
 \end{algorithm}
 \FloatBarrier
 
-The above \acrshort{bnf} states that the goal symbol non-terminal $<$expression$>$ derives from one of four states. Either a terminal number, or an expression contained within two parenthesis, or two expressions either side of an addition terminal symbol, or two expressions either side of a subtraction terminal symbol. This type of notation is recursive in nature and allows the formal language to write expressions which exist within other expressions. For example the expression \say{5 + 10 - (20 + 2)} can be broken down into the following syntax tree. 
+\noindent
+The \acrshort{bnf} above states that the goal symbol non-terminal $<$expression$>$ derives from one of four states. Either a terminal number, or an expression contained within two parenthesis, or two expressions either side of an addition terminal symbol, or two expressions either side of a subtraction terminal symbol. This type of notation is recursive in nature and allows the formal language to write expressions which exist within other expressions. For example the expression \say{5 + 10 - (20 + 2)} can be broken down into using the \acrshort{bnf} production rule forming a syntax tree as seen in figure \ref{syntax tree} below. In this case the whole expression fits the grammatical model of the language, thus it be parsed, forming the syntax tree. An expression such as this one would create an expression tree data structure, which will be discussed in more detail in section \ref{expression tree}. Depending on the production rule for the non-terminal system being parsed an associated data structure may be created.
 
-have a diagram of the syntax tree for 5+10-(20+2)
+\begin{figure}[htbp]
+	{\centering
+		\vspace{7px}
+		
+		\includegraphics[scale=0.7]{Diagrams/syntaxTree.png}
+		
+		\caption{Diagram syntax tree for an expression.} \label{syntax tree}
+	}
+\end{figure}
+\FloatBarrier
 
-Similar to the scanner, the parser program can be quite complex and difficult to write. If there is a change in the grammar or add features at a later date, it is often times difficult to change the parser to account for these changes. To account for this, there is a program called the parser generator, an implementation of which is called Bison. Bison takes in the context-free grammar definition, in a similar format to the \acrshort{bnf}, and using the deterministic pushdown automata, generates a parser program.
+\noindent
+Similar to the scanner, the parser program can be quite complex, as it needs to find the associated terminal and non-terminal symbols and comply with the grammatrical model. Furthermore, if there is a change in the grammar or there is a need to add features at a later date, it is often times difficult to change the parser to account for these changes. Many studies have been conducted on the optimal method of creating a parser, this is simply not the purpose of this thesis. Because of this a program called the parser generator will be used in order to create a parser based on specification similar to that of the \acrshort{bnf}. An implementation of which is called Bison.
 
 \subsection{\acrlong{bnf} of the L-system Grammar} \label{L-system Grammar}
 \begin{singlespace}
@@ -352,7 +363,7 @@ In example \ref{module definition and call example} above, the module A(10, 20) 
 
 A string in the context of a parametric L-system is a vector of modules, the modules are linked one after the other creating a type of string, but instead of characters or symbols we have a string of modules.
 
-\subsection{Implementing Arithmetic Expressions Trees}
+\subsection{Implementing Arithmetic Expressions Trees} \label{expression tree}
 
 As stated within the \acrshort{bnf} of the L-system grammar an expression is either a variable name, a number or a random range, it is also possible that an expression is part of another expression. Take the example: $5 \times 4 + n$, here there are three expressions 5, 4 and $n$ however, $5 \times 4$ is also an expression, as well as $4 + n$. An expression can also be described as any of the aforementioned expressions between a set of parenthesis such as $(4+n)$. The result of the expression is calculated from left to right unless the parenthesis are used which prioritises the encapsulated expression to be calculated first. We can represent this expression as an expression tree in the diagram below:
 

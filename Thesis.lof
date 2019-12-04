@@ -18,7 +18,8 @@
 \contentsline {figure}{\numberline {2.14}{\ignorespaces Diagram of the procedural generation process.}}{29}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Diagram of the Parts of The Rewiting System.}}{32}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Diagram of an expression tree.}}{42}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Diagram syntax tree for an expression.}}{38}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagram of an expression tree.}}{42}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Diagram of the stages of L-system interpretation and rendering}}{53}

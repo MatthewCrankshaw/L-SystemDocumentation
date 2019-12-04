@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  3 DEC 2019 15:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  4 DEC 2019 14:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1150,33 +1150,38 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [36]
 [37]
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 206
+<images/Diagrams/syntaxTree.png, id=163, 496.85625pt x 478.78876pt>
+File: images/Diagrams/syntaxTree.png Graphic file (type png)
+<use images/Diagrams/syntaxTree.png>
+Package pdftex.def Info: images/Diagrams/syntaxTree.png  used on input line 185
 .
-LaTeX Font Info:    No file OMScmtt.fd. on input line 206.
+(pdftex.def)             Requested size: 347.797pt x 335.14984pt.
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 217
+.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 217.
 
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 206.
+(Font)              for symbol `textbraceleft' on input line 217.
 
 
-Overfull \hbox (62.54007pt too wide) in alignment at lines 186--274
+Overfull \hbox (62.54007pt too wide) in alignment at lines 197--285
  [][][] []
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38]
-[39] [40]
-<images/Diagrams/ThesisContent.png, id=172, 618.31pt x 676.5275pt>
+ [38 <./images/Diagrams/syntaxTree.png>] [39] [40]
+<images/Diagrams/ThesisContent.png, id=174, 618.31pt x 676.5275pt>
 File: images/Diagrams/ThesisContent.png Graphic file (type png)
 <use images/Diagrams/ThesisContent.png>
 Package pdftex.def Info: images/Diagrams/ThesisContent.png  used on input line 
-366.
+377.
 (pdftex.def)             Requested size: 247.31961pt x 270.6062pt.
- [41] [42 <./images/Diagrams/ThesisContent.png>] [43] [44] [45]
-[46] [47]) [48]
+ [41] [42 <./images/Diagrams/ThesisContent.png>] [43] [44] [45] [46] [47]) [48]
+
 Chapter 4.
 (./chapters/chapter04.tex [49
 
@@ -1187,7 +1192,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [51]
 Chapter 5.
 (./chapters/chapter05.tex
-<images/Diagrams/L-systemInterpreter.png, id=213, 996.72375pt x 577.15625pt>
+<images/Diagrams/L-systemInterpreter.png, id=215, 996.72375pt x 577.15625pt>
 File: images/Diagrams/L-systemInterpreter.png Graphic file (type png)
 <use images/Diagrams/L-systemInterpreter.png>
 Package pdftex.def Info: images/Diagrams/L-systemInterpreter.png  used on input
@@ -1196,47 +1201,47 @@ Package pdftex.def Info: images/Diagrams/L-systemInterpreter.png  used on input
  [52
 
 ] [53 <./images/Diagrams/L-systemInterpreter.png>]
-<images/Diagrams/JointDiagram.png, id=221, 358.33875pt x 480.79625pt>
+<images/Diagrams/JointDiagram.png, id=223, 358.33875pt x 480.79625pt>
 File: images/Diagrams/JointDiagram.png Graphic file (type png)
 <use images/Diagrams/JointDiagram.png>
 Package pdftex.def Info: images/Diagrams/JointDiagram.png  used on input line 5
 7.
 (pdftex.def)             Requested size: 215.0049pt x 288.47997pt.
 [54 <./images/Diagrams/JointDiagram.png>]
-<images/Diagrams/SkeletonJoints.png, id=226, 607.26875pt x 506.89375pt>
+<images/Diagrams/SkeletonJoints.png, id=228, 607.26875pt x 506.89375pt>
 File: images/Diagrams/SkeletonJoints.png Graphic file (type png)
 <use images/Diagrams/SkeletonJoints.png>
 Package pdftex.def Info: images/Diagrams/SkeletonJoints.png  used on input line
  76.
 (pdftex.def)             Requested size: 242.9032pt x 202.7539pt.
  [55 <./images/Diagrams/SkeletonJoints.png>]
-<images/Diagrams/vector_addition.png, id=232, 841.1425pt x 544.0325pt>
+<images/Diagrams/vector_addition.png, id=234, 841.1425pt x 544.0325pt>
 File: images/Diagrams/vector_addition.png Graphic file (type png)
 <use images/Diagrams/vector_addition.png>
 Package pdftex.def Info: images/Diagrams/vector_addition.png  used on input lin
 e 114.
 (pdftex.def)             Requested size: 168.22551pt x 108.80457pt.
-<images/Diagrams/vector1.png, id=233, 677.53125pt x 507.8975pt>
+<images/Diagrams/vector1.png, id=235, 677.53125pt x 507.8975pt>
 File: images/Diagrams/vector1.png Graphic file (type png)
 <use images/Diagrams/vector1.png>
 Package pdftex.def Info: images/Diagrams/vector1.png  used on input line 149.
 (pdftex.def)             Requested size: 67.75708pt x 50.79272pt.
-<images/Diagrams/vector2.png, id=234, 677.53125pt x 507.8975pt>
+<images/Diagrams/vector2.png, id=236, 677.53125pt x 507.8975pt>
 File: images/Diagrams/vector2.png Graphic file (type png)
 <use images/Diagrams/vector2.png>
 Package pdftex.def Info: images/Diagrams/vector2.png  used on input line 151.
 (pdftex.def)             Requested size: 67.75708pt x 50.79272pt.
-<images/Diagrams/vector3.png, id=235, 590.205pt x 441.65pt>
+<images/Diagrams/vector3.png, id=237, 590.205pt x 441.65pt>
 File: images/Diagrams/vector3.png Graphic file (type png)
 <use images/Diagrams/vector3.png>
 Package pdftex.def Info: images/Diagrams/vector3.png  used on input line 153.
 (pdftex.def)             Requested size: 59.02396pt x 44.16757pt.
-<images/Diagrams/vector4.png, id=236, 677.53125pt x 507.8975pt>
+<images/Diagrams/vector4.png, id=238, 677.53125pt x 507.8975pt>
 File: images/Diagrams/vector4.png Graphic file (type png)
 <use images/Diagrams/vector4.png>
 Package pdftex.def Info: images/Diagrams/vector4.png  used on input line 155.
 (pdftex.def)             Requested size: 67.75708pt x 50.79272pt.
-<images/Diagrams/vector5.png, id=237, 676.5275pt x 507.8975pt>
+<images/Diagrams/vector5.png, id=239, 676.5275pt x 507.8975pt>
 File: images/Diagrams/vector5.png Graphic file (type png)
 <use images/Diagrams/vector5.png>
 Package pdftex.def Info: images/Diagrams/vector5.png  used on input line 157.
@@ -1246,7 +1251,7 @@ Package pdftex.def Info: images/Diagrams/vector5.png  used on input line 157.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [56 <./images/Diagrams/vector_addition.png>]
-<images/Diagrams/cross_product.png, id=242, 625.33624pt x 486.81876pt>
+<images/Diagrams/cross_product.png, id=244, 625.33624pt x 486.81876pt>
 File: images/Diagrams/cross_product.png Graphic file (type png)
 <use images/Diagrams/cross_product.png>
 Package pdftex.def Info: images/Diagrams/cross_product.png  used on input line 
@@ -1282,14 +1287,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 428--430
 
  []
 
-<images/Diagrams/stackedBranchesMesh.png, id=261, 777.90625pt x 731.73375pt>
+<images/Diagrams/stackedBranchesMesh.png, id=263, 777.90625pt x 731.73375pt>
 File: images/Diagrams/stackedBranchesMesh.png Graphic file (type png)
 <use images/Diagrams/stackedBranchesMesh.png>
 Package pdftex.def Info: images/Diagrams/stackedBranchesMesh.png  used on input
  line 446.
 (pdftex.def)             Requested size: 155.57849pt x 146.34415pt.
 [61]
-<images/Diagrams/linkedBranchesMesh.png, id=266, 724.7075pt x 623.32875pt>
+<images/Diagrams/linkedBranchesMesh.png, id=268, 724.7075pt x 623.32875pt>
 File: images/Diagrams/linkedBranchesMesh.png Graphic file (type png)
 <use images/Diagrams/linkedBranchesMesh.png>
 Package pdftex.def Info: images/Diagrams/linkedBranchesMesh.png  used on input 
@@ -1299,7 +1304,7 @@ line 462.
 
 LaTeX Warning: Reference `' on page 62 undefined on input line 469.
 
-<images/Diagrams/StackedVsLinked.png, id=267, 1003.75pt x 1003.75pt>
+<images/Diagrams/StackedVsLinked.png, id=269, 1003.75pt x 1003.75pt>
 File: images/Diagrams/StackedVsLinked.png Graphic file (type png)
 <use images/Diagrams/StackedVsLinked.png>
 Package pdftex.def Info: images/Diagrams/StackedVsLinked.png  used on input lin
@@ -1307,7 +1312,7 @@ e 474.
 (pdftex.def)             Requested size: 200.74644pt x 200.74644pt.
 [62 <./images/Diagrams/stackedBranchesMesh.png> <./images/Diagrams/linkedBranch
 esMesh.png>]
-<images/Diagrams/VertexObjects.png, id=271, 715.67375pt x 344.28625pt>
+<images/Diagrams/VertexObjects.png, id=273, 715.67375pt x 344.28625pt>
 File: images/Diagrams/VertexObjects.png Graphic file (type png)
 <use images/Diagrams/VertexObjects.png>
 Package pdftex.def Info: images/Diagrams/VertexObjects.png  used on input line 
@@ -1347,10 +1352,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 9359 strings out of 492982
- 137806 string characters out of 6134896
- 271132 words of memory out of 5000000
- 12626 multiletter control sequences out of 15000+600000
+ 9366 strings out of 492982
+ 137989 string characters out of 6134896
+ 271156 words of memory out of 5000000
+ 12632 multiletter control sequences out of 15000+600000
  13812 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  45i,14n,63p,2004b,363s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1368,10 +1373,10 @@ mr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Thesis.pdf (71 pages, 4262396 bytes).
+Output written on Thesis.pdf (71 pages, 4280087 bytes).
 PDF statistics:
- 353 PDF objects out of 1000 (max. 8388607)
+ 355 PDF objects out of 1000 (max. 8388607)
  204 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 161 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 166 words of extra memory for PDF output out of 10000 (max. 10000000)
 
