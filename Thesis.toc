@@ -4,50 +4,50 @@
 \contentsline {section}{\numberline {1.3}Introduction to Rewriting Systems}{10}
 \contentsline {section}{\numberline {1.4}Introduction to Formal Grammars}{11}
 \contentsline {section}{\numberline {1.5}Structure of Thesis}{12}
-\contentsline {chapter}{\numberline {2}Lindenmayer Systems}{13}
-\contentsline {section}{\numberline {2.1}Simple DOL-system}{14}
-\contentsline {section}{\numberline {2.2}Interpreting the DOL-system}{15}
-\contentsline {section}{\numberline {2.3}Branching}{18}
-\contentsline {section}{\numberline {2.4}Parametric OL-systems}{21}
-\contentsline {subsection}{\numberline {2.4.1}Formal Definition of a Parametric 0L-system}{22}
-\contentsline {subsection}{\numberline {2.4.2}Defining Constants and Objects}{23}
-\contentsline {subsection}{\numberline {2.4.3}Modules With Special Meanings}{24}
-\contentsline {subsection}{\numberline {2.4.4}Representing L-system Conditions}{25}
-\contentsline {section}{\numberline {2.5}Randomness within L-systems}{26}
-\contentsline {section}{\numberline {2.6}Stochastic Rules within L-systems}{27}
-\contentsline {section}{\numberline {2.7}Summary}{29}
-\contentsline {chapter}{\numberline {3}L-system Rewriter Implementation}{31}
-\contentsline {section}{\numberline {3.1}Environment and Tools}{32}
-\contentsline {section}{\numberline {3.2}The L-system as an Interpreted Grammar}{33}
-\contentsline {section}{\numberline {3.3}The Syntax of a Parametric L-system}{34}
-\contentsline {section}{\numberline {3.4}The L-system Lexical Analyser}{35}
-\contentsline {section}{\numberline {3.5}The L-system Parser}{37}
-\contentsline {subsection}{\numberline {3.5.1}\acrlong {bnf} of the L-system Grammar}{39}
-\contentsline {subsection}{\numberline {3.5.2}Dealing with Constant Values and Objects}{40}
-\contentsline {subsection}{\numberline {3.5.3}Implementing Modules and Strings}{41}
-\contentsline {subsection}{\numberline {3.5.4}Implementing Arithmetic Expressions Trees}{41}
-\contentsline {subsection}{\numberline {3.5.5}Implementing Random Ranges}{42}
-\contentsline {subsection}{\numberline {3.5.6}Implementing Stochastic Rules}{43}
-\contentsline {section}{\numberline {3.6}The String Rewriter}{44}
-\contentsline {section}{\numberline {3.7}Summary}{48}
-\contentsline {chapter}{\numberline {4}Physics Simulation}{49}
-\contentsline {section}{\numberline {4.1}Branch Physical Properties}{49}
-\contentsline {section}{\numberline {4.2}Hook's Law}{51}
-\contentsline {section}{\numberline {4.3}Equations of Motion}{51}
-\contentsline {section}{\numberline {4.4}Updating Branches}{51}
-\contentsline {section}{\numberline {4.5}Summary}{51}
-\contentsline {chapter}{\numberline {5}L-system String Interpreter Implementation}{52}
-\contentsline {section}{\numberline {5.1}Turtle Graphics Interpreter}{53}
-\contentsline {section}{\numberline {5.2}3D Mathematics}{55}
-\contentsline {subsection}{\numberline {5.2.1}Vectors}{55}
-\contentsline {subsection}{\numberline {5.2.2}Matrices}{57}
-\contentsline {subsection}{\numberline {5.2.3}Quaternions}{59}
-\contentsline {section}{\numberline {5.3}Model Generator}{61}
-\contentsline {section}{\numberline {5.4}Renderer}{63}
-\contentsline {subsection}{\numberline {5.4.1}Models and Buffer Objects}{63}
-\contentsline {chapter}{\numberline {6}Findings and Data Analysis}{65}
-\contentsline {chapter}{\numberline {7}Discussion}{66}
-\contentsline {chapter}{\numberline {8}Conclusions}{67}
-\contentsline {chapter}{\numberline {A}Appendix}{68}
-\contentsline {section}{\numberline {A.1}Appendix 1}{68}
-\contentsline {section}{\numberline {A.2}Bibliography}{68}
+\contentsline {chapter}{\numberline {2}Lindenmayer Systems}{14}
+\contentsline {section}{\numberline {2.1}Simple DOL-system}{15}
+\contentsline {section}{\numberline {2.2}Interpreting the DOL-system String}{16}
+\contentsline {section}{\numberline {2.3}Branching}{21}
+\contentsline {section}{\numberline {2.4}Parametric OL-systems}{22}
+\contentsline {subsection}{\numberline {2.4.1}Formal Definition of a Parametric 0L-system}{23}
+\contentsline {subsection}{\numberline {2.4.2}Defining Constants and Objects}{24}
+\contentsline {subsection}{\numberline {2.4.3}Modules With Special Meanings}{25}
+\contentsline {subsection}{\numberline {2.4.4}Representing L-system Conditions}{26}
+\contentsline {section}{\numberline {2.5}Randomness within L-systems}{27}
+\contentsline {section}{\numberline {2.6}Stochastic Rules within L-systems}{28}
+\contentsline {section}{\numberline {2.7}Summary}{30}
+\contentsline {chapter}{\numberline {3}L-system Rewriter Implementation}{32}
+\contentsline {section}{\numberline {3.1}Environment and Tools}{33}
+\contentsline {section}{\numberline {3.2}The L-system as an Interpreted Grammar}{34}
+\contentsline {section}{\numberline {3.3}The Syntax of a Parametric L-system}{35}
+\contentsline {section}{\numberline {3.4}The L-system Lexical Analyser}{36}
+\contentsline {section}{\numberline {3.5}The L-system Parser}{38}
+\contentsline {subsection}{\numberline {3.5.1}\acrlong {bnf} of the L-system Grammar}{40}
+\contentsline {subsection}{\numberline {3.5.2}Dealing with Constant Values and Objects}{41}
+\contentsline {subsection}{\numberline {3.5.3}Implementing Modules and Strings}{42}
+\contentsline {subsection}{\numberline {3.5.4}Implementing Arithmetic Expressions Trees}{42}
+\contentsline {subsection}{\numberline {3.5.5}Implementing Random Ranges}{43}
+\contentsline {subsection}{\numberline {3.5.6}Implementing Stochastic Rules}{44}
+\contentsline {section}{\numberline {3.6}The String Rewriter}{45}
+\contentsline {section}{\numberline {3.7}Summary}{49}
+\contentsline {chapter}{\numberline {4}Physics Simulation}{50}
+\contentsline {section}{\numberline {4.1}Branch Physical Properties}{50}
+\contentsline {section}{\numberline {4.2}Hook's Law}{52}
+\contentsline {section}{\numberline {4.3}Equations of Motion}{52}
+\contentsline {section}{\numberline {4.4}Updating Branches}{52}
+\contentsline {section}{\numberline {4.5}Summary}{52}
+\contentsline {chapter}{\numberline {5}L-system String Interpreter Implementation}{53}
+\contentsline {section}{\numberline {5.1}Turtle Graphics Interpreter}{54}
+\contentsline {section}{\numberline {5.2}3D Mathematics}{56}
+\contentsline {subsection}{\numberline {5.2.1}Vectors}{56}
+\contentsline {subsection}{\numberline {5.2.2}Matrices}{58}
+\contentsline {subsection}{\numberline {5.2.3}Quaternions}{60}
+\contentsline {section}{\numberline {5.3}Model Generator}{62}
+\contentsline {section}{\numberline {5.4}Renderer}{64}
+\contentsline {subsection}{\numberline {5.4.1}Models and Buffer Objects}{64}
+\contentsline {chapter}{\numberline {6}Findings and Data Analysis}{66}
+\contentsline {chapter}{\numberline {7}Discussion}{67}
+\contentsline {chapter}{\numberline {8}Conclusions}{68}
+\contentsline {chapter}{\numberline {A}Appendix}{69}
+\contentsline {section}{\numberline {A.1}Appendix 1}{69}
+\contentsline {section}{\numberline {A.2}Bibliography}{69}

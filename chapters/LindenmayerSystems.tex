@@ -42,11 +42,11 @@ During the rewriting process, generation zero ($G_0$) is the axiom. In subsequen
 
 The D0L-system is very simple and minimalist in design, which comes with some limitations. The D0L-system production rules merely state that if the symbol matches the production rule, then that symbol will be rewritten. Often this is not the case, there may be some other conditions that may need to be checked before it can be concluded that a rewrite should take place. Furthermore, the symbols within a D0L-system does not supply much information. For instance, how does the D0L-system indicate how many times a given string has been rewritten? The D0L-system is also deterministic, meaning that there is no randomness the rewriting process, and therefore, it will always yield the same result with no variation. This can be seen as a limitation as variation within the system may be a seen as a good thing, such as variation within the branching structure of plants. 
 
-\section{Interpreting the DOL-system} \label{Interpreting DOL-system}
+\section{Interpreting the DOL-system String} \label{Interpreting DOL-system}
 
-Section \ref{Simple DOL-systems} outlines a simple type of L-system known as the DOL-system, this L-system specifies a set of symbols, a starting point and a set of production rules, allowing us to represent a problem as a set of states. The production rules can express valid state transisions, which thereafter allows us to produce a resultant string of symbols that obey the L-systems production rules. This functionality is powerful in and of itself, however, the L-system's symbols are only useful if they represent some kind of meaning, furthermore the L-system does not supply this meaning, each symbol's meaning is interpreted after the rewriting process of the L-system by the interpreter. Due to this, there are two separate and very different systems involved in taking an L-systems input, such as the alphabet, axiom and production rules and turning it into something that is able to model plant-life. These two systems are the L-system rewriter, which is reposponsible for using L-system to rewrite a string and provide a resultant string of symbols. The L-system interpreter takes the resultant string from the L-system rewriter and interprets it in a way that is able to represent the model we are trying to create. 
+Section \ref{Simple DOL-systems} outlined a simple type of L-system known as the DOL-system. This type of L-system specifies an alphabet, an axiom and a set of production rules. This allows the representation of a problem as a set of states. The production rules can express valid state transitions, eventually produces a resulting string of symbols that obey the L-systems production rules. This functionality is powerful; however, the L-system's symbols are only useful if they represent some meaning. Furthermore, the L-system does not supply this meaning, each symbol's meaning is interpreted after the rewriting process by the interpreter. Due to this, there are two separate systems involved in taking an L-systems input, such as the alphabet, axiom and production rules and turning it into something that can model plant-life. These two systems are the L-system rewriter and the string interpreter. The L-system rewriter is responsible for using L-system to rewrite a string from its axiom by a certain number of generations, eventually providing a resulting string of symbols. The string interpreter takes the resulting string from the L-system rewriter and interprets it in a way that can represent the model we are trying to render. 
 
-A paper by Przemyslaw Prusinkiewicz outlines a method for interpreting the L-system in a way that can model fractal structures, plants and trees. The method interprets the resultant string of the L-system, where each symbol represents an instruction which is carried out one after the other to control a 'turtle' \cite{prusinkiewicz1986graphical}. When talking about a turtle, Prusinkiewicz is referring to turtle graphics. Turtle graphics is a type of vector graphics that can be carried out with instructions. It is named a turtle after one of the main features of the Logo programming language. The simple set of turtle instructions listed below, can be displayed as figure \ref{basic turtle}. The turtle starts at the base or root of the tree and interprets a set of rotation and translation movements, which when all executed one after the other, trace the points which make up the plant structure, when these points are then joined together the result is a fractal structure such as a plant or tree.
+A paper by Przemyslaw Prusinkiewicz outlines a method for interpreting the L-system in a way that can model fractal structures, plants and trees. The method interprets the resultant string of the L-system, where each symbol represents an instruction which is carried out one after the other to control a 'turtle' \cite{prusinkiewicz1986graphical}. When talking about a turtle, Prusinkiewicz is referring to turtle graphics. Turtle graphics is a type of vector graphics that can be carried out with instructions. It is named a turtle after one of the main features of the Logo programming language. The simple set of turtle instructions listed below, can be displayed as figure \ref{basic turtle}. The turtle starts at the base or root of the tree and interprets a set of rotation and translation movements. When all executed one after the other, they trace the points which make up the plants structure. When these points are then joined together the result is a fractal structure such as a plant or tree.
 
 \begin{table}[h!]
 \centering
@@ -72,13 +72,13 @@ A paper by Przemyslaw Prusinkiewicz outlines a method for interpreting the L-sys
 	\& 					& Roll to the left by a specified angle.\\
 \hline
 \end{tabular}
-\caption{Table of turtle instruction symbols and their meaning to the interpreter}
-\label{instruction table 1}
+\caption{Table of turtle graphics instructions symbols and their meaning to the interpreter}
+\label{DOL-system instructions}
 \end{table}
 \FloatBarrier
 
 \noindent
-In the OL-system there are a number of symbols that represent a particular meaning to the L-system interpreter. Whenever the interpreter comes across one of these symbols in the resultant string, it is interpreted as a particular turtle instruction which can be seen in table \ref{instruction table 1}. 
+In the OL-system there are a number of symbols that represent a particular meaning to the L-system interpreter. Whenever the interpreter comes across one of these symbols in the resultant string, it is interpreted as a particular turtle instruction which can be seen in table \ref{Instruction Interpretation}. 
 
 \begin{figure}[htbp]
 	{\centering
@@ -87,15 +87,15 @@ In the OL-system there are a number of symbols that represent a particular meani
 		\fbox{
 			\includegraphics[scale=0.3]{Diagrams/rotations.png}
 		}
-		\caption{Diagram of the 3D rotations of the turtle.} \label{3D rotations}
+		\caption{Diagram of the 3D rotations of the turtle.} \label{3D turtle rotations}
 	}
 \end{figure}
 \FloatBarrier
 
 \noindent
-The turtle instructions are presented in such a way that allows movement in three dimensions, the rotations in yaw, pitch and roll, where yaw is a rotation around the Z axis, pitch is rotation around the X axis and roll is rotation around the Y axis. We have two symbols for each rotation, which represent positive and negative rotations repectively. Rotations are expected to be applied before a translation, that way the rotations change the orientation of the turtle and then the forward instructions move the turtle in the Y direction using the current orientation. The orientation is maintained from translation to translation, and subsequent rotations are concatenated to maintain a global orientation, in this way when the turtle moves forward again, it will move in the direction of this global orientation. Diagram  \ref{3D rotations} shows the yaw, pitch and roll rotations as well as their axis and the instruction symbols for the L-system.\\
+The turtle instructions are presented in such a way that allows movement in three dimensions. The rotations are represented as yaw, pitch and roll. Where yaw is a rotation around the Z axis, pitch is rotation around the X axis and roll is rotation around the Y axis. There are two symbols for each rotation, which represent positive and negative rotations respectively. Rotations are expected to be applied before a translation, that way the rotations change the orientation of the turtle and then the forward instructions move the turtle in the Y direction using the current orientation. The orientation is maintained from one translation to the next, and subsequent rotations are concatenated together to create a global orientation, in this way when the turtle moves forward again, it will move in the direction of this global orientation. Figure \ref{3D turtle rotations} shows the yaw, pitch and roll rotations as well as their axis and the instruction symbols for the L-system.\\
 \\
-The turtle instructions in the table \ref{instruction table 1}, can be used as the alphabet for the rewriting system in the the L-system grammar below:
+The turtle instructions in the table \ref{DOL-system instructions}, can be used as the alphabet for the rewriting system defined in the L-system grammar below:
 
 \begin{equation} \label{DOL-system example}
 \begin{aligned}
@@ -107,7 +107,7 @@ The turtle instructions in the table \ref{instruction table 1}, can be used as t
 \end{equation}
 
 \noindent
-This L-system makes use of the alphabet "F, +, -". The meaning of these symbols is not relevent to the rewriting system, so we can use the axiom and production rule to rewrite by one generation. The only piece of information which is relevant to the interpreter is the angle to rotate by when it comes across the symbols + and - this is specified in the definition of the L-system with Angle: 90$^{\circ}$. The resulting string would be "F+F-F-F+F", this string is passed to the interpreter system which uses turtle graphics to execute a list of instructions. These instructions can be articulated in the list below.
+This L-system makes use of the alphabet "F, +, -". The meaning of these symbols is not relevent to the rewriting system. The main piece of information that is relevant to the interpreter is the angle to rotate by when it comes across the symbols + and -. This value is specified in the definition of the L-system with the Angle: 90$^{\circ}$ statement. The resulting string would be "F+F-F-F+F", this string is passed to the interpreter system which uses turtle graphics to execute the list of instructions. These instructions can be articulated in table \ref{Instruction Interpretation} below.
 
 \begin{table}[h!]
 \centering
@@ -135,13 +135,13 @@ This L-system makes use of the alphabet "F, +, -". The meaning of these symbols 
 	I9 						& F & Move forward by 1\\
 \hline
 \end{tabular}
-\caption{Table showing each instruction symbols and their meaning for the L-system \ref{DOL-system example}}
+\caption{Table showing each instruction symbols and their interpretation for the L-system \ref{DOL-system example}}
 \label{Instruction Interpretation}
 \end{table}
 \FloatBarrier
 
 \noindent
-These instructions are carried out one after the other, moving the turtle around the screen in three dimensions, furthermore, tracing the structure which the 0L-system has generated, these instructions will generate the traced line shown in figure \ref{basic turtle}.
+These instructions are carried out one after the other, moving the turtle around the screen in three dimensions. Tracing the structure which the 0L-system has generated, these instructions will generate the traced line shown in figure \ref{basic turtle} below.
 
 \begin{figure}[htbp]
 	{\centering
@@ -156,13 +156,13 @@ These instructions are carried out one after the other, moving the turtle around
 \FloatBarrier
 
 \noindent
-As we can see from the turtle interpretation above, the turtle moves around as if it is an entity within a 3D world following a set of instructions telling it where to move. This is the basic concept of turtle graphics and how it is implemented in the interpreter system. What also becomes apparent is that there are a number of assumptions which the interpreter makes in order to produce the final image in I9. It is assumed that that the + and - symbols mean a change in yaw of 90 degrees, and the second assumption is that the F symbol means to move forward by a distance of 1 unit measurement. The angle and distance values are assumed because the resultant string does not explicitly define the angle or the distance, it leaves that up to the interpretation of the string. 
+As we can see from the turtle interpretation above, the turtle moves around as if it is an entity within a 3D world following a set of instructions that tell it where to move. This is the basic concept of turtle graphics and how it is implemented in the interpreter system. What also becomes apparent is that there are several assumptions which the interpreter makes in order to produce the final image in I9. It is assumed that that the + and - symbols mean a change in yaw of 90 degrees, and the second assumption is that the F symbol means to move forward by a distance of 1 unit measurement. The angle and distance values are assumed because the resultant string does not explicitly define the angle or the distance, it leaves that up to the interpretation of the string. 
 
-In a simple DOL-system like the one above, there is no explicit way of providing this additional information to the interpreter, as such it must be hardcoded into the interpretation, or assumed by some other means. This highlights one of the considerations when creating an L-system. There is a difference in complexities between the L-system rewriter and the interpreter. It is possible to create a very complex rewriting system with extensive rule systems, which is able to supply a large amount of information to the interpreter, the interpreter can be quite rudimentary and follow the instructions exactly. Conversely, we could have a system where the L-system rewriter is quite basic, but the interpreter is very complex and must be capable of representing the L-system despite the lack of information in the resultant string, or be able to obtain this information by other means. 
+In a simple DOL-system like the one above, there is no explicit way of providing this additional information to the interpreter. This means that it must be hardcoded into the interpretation or assumed by some other means. This highlights one of the main considerations when creating an L-system. There is a difference in complexities between the L-system rewriter and the interpreter. It is possible to create a very complex rewriting system with extensive rule systems, which can supply a large amount of information to the interpreter. The interpreter on the other hand can be rudimentary and follow the instructions exactly. Conversely, we could have a system where the L-system rewriter is quite basic, but the interpreter is very complex. The interpreter must be capable of representing the L-system, despite the lack of information in the resultant string, alternatively it should be able to obtain this information by other means. 
 
-It may be tempting to leave the complexity to the interpreter in order to make the L-system rewriter and its rules more simple, however, the drawback of this, is that the information needed for modeling branch diameters, branching angles even the type of objects that need to be represented have to be supplied to the interpreter in some way, and if not through the resulting string of information, how is this information meant to provided to the interpreter. An answer may be to build a system within the interpreter that is capable of assuming the general look of a plant, for instance, branches which decrement in diameter, branching angles which are consistant and other aspects. This results in a very inflexible system which may work for a portion of plant-life but might struggle to represent certain classes of plant-life. Therefore, the benefit of using a system with most of its complexity within the rewriting system is that the L-system is responsible for some of the details of the interpretation such as angles, branch diameters and so on. In the next few sections, different types of L-systems will be discribed, explaining their benefits and limitations, as well as developing a system intergrating these separate systems into a single L-system grammar.   
+It may be tempting to leave the complexity to the interpreter in order to make the L-system rewriter and its rules more simple. However, the drawback of this, is that the information needed for modeling branch diameters, branching angles and even the type of objects that need to be rendered have to be supplied to the interpreter in some way. If not through the resulting string of information, how is this information meant to provided to the interpreter. An answer may be to build a system within the interpreter that is capable of assuming the general look of a plant, for instance, branches which decrement in diameter and branching angles which are consistant. This could results in a very inflexible system which may work for a portion of plant-life but might struggle to represent certain classes of plant-life. Therefore, the benefit of using a system with most of its complexity within the rewriting system is the L-system is responsible for some of the details of the interpretation such as angles, branch diameters and so on. In the next few sections, different types of L-systems will be discribed, explaining their benefits and limitations, as well as developing a system intergrating these separate systems into a single L-system grammar.   
 
-There are a number of fractal geometry that have become well known particularly with regards to how they can seemingly imitate nature \cite{mandelbrot1982fractal}. Particularly with the geometry such as the Koch snowflake which can be represented using the following L-system.
+There are several well known fractal geometry patterns that have been explored, particularly with how they seemingly imitate nature \cite{mandelbrot1982fractal}. One of the fractal patterns is the Koch snowflake which can be represented using the following L-system.
 
 \begin{figure}[htbp]
 	\raggedright
@@ -178,6 +178,8 @@ There are a number of fractal geometry that have become well known particularly 
 		\caption{Koch Curve.}
 	}
 \end{figure}
+\FloatBarrier
+
 \begin{figure}[htbp]
 	\raggedright
 	\textbf{\underline{Sierpinski Triangles:}} \\
@@ -193,6 +195,7 @@ There are a number of fractal geometry that have become well known particularly 
 		\caption{Sierpinski Triangles.}
 	}
 \end{figure}
+\FloatBarrier
 
 \section{Branching} \label{branching}
 
