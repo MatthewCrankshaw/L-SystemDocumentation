@@ -95,7 +95,7 @@ Where $R$ is the next local rotation quaternion, $R_0$ is the previous local rot
 
 \section{Updating Branches}
 
-
+The particles in this system are the joints within the trees' skeleton. All of these joints have to be updated in each update step. This can happen as frequently as needed. A consideration is that if the branches aren't updated frequently enough the animations will not look smooth. Effectively each update step needs to take the forces acting on each branch, its current position and rotation and then calculate the next position and rotation of that branch. This information is then used to generate the model of the tree once again. This is passed to the renderer which will render the result. 
 
 \section{Summary}
 

@@ -35,20 +35,20 @@
 \contentsline {section}{\numberline {4.2}Matrices}{53}
 \contentsline {section}{\numberline {4.3}Quaternions}{54}
 \contentsline {section}{\numberline {4.4}summary}{57}
-\contentsline {chapter}{\numberline {5}Physics Simulation}{58}
-\contentsline {section}{\numberline {5.1}Branch Physical Properties}{58}
-\contentsline {section}{\numberline {5.2}Hook's Law}{60}
-\contentsline {section}{\numberline {5.3}Equations of Motion}{60}
-\contentsline {section}{\numberline {5.4}Updating Branches}{60}
-\contentsline {section}{\numberline {5.5}Summary}{60}
-\contentsline {chapter}{\numberline {6}L-system String Interpreter Implementation}{61}
-\contentsline {section}{\numberline {6.1}Turtle Graphics Interpreter}{62}
-\contentsline {section}{\numberline {6.2}Model Generator}{64}
-\contentsline {section}{\numberline {6.3}Renderer}{66}
-\contentsline {subsection}{\numberline {6.3.1}Models and Buffer Objects}{66}
-\contentsline {chapter}{\numberline {7}Findings and Data Analysis}{67}
-\contentsline {chapter}{\numberline {8}Discussion}{68}
-\contentsline {chapter}{\numberline {9}Conclusions}{69}
-\contentsline {chapter}{\numberline {A}Appendix}{70}
-\contentsline {section}{\numberline {A.1}Appendix 1}{70}
-\contentsline {section}{\numberline {A.2}Bibliography}{70}
+\contentsline {chapter}{\numberline {5}L-system String Interpreter Implementation}{58}
+\contentsline {section}{\numberline {5.1}Turtle Graphics Interpreter}{59}
+\contentsline {section}{\numberline {5.2}Model Generator}{61}
+\contentsline {section}{\numberline {5.3}Renderer}{63}
+\contentsline {subsection}{\numberline {5.3.1}Models and Buffer Objects}{63}
+\contentsline {chapter}{\numberline {6}Physics Simulation}{64}
+\contentsline {section}{\numberline {6.1}Branch Physical Properties}{64}
+\contentsline {section}{\numberline {6.2}Hook's Law}{66}
+\contentsline {section}{\numberline {6.3}Equations of Motion}{66}
+\contentsline {section}{\numberline {6.4}Updating Branches}{66}
+\contentsline {section}{\numberline {6.5}Summary}{67}
+\contentsline {chapter}{\numberline {7}Findings and Data Analysis}{68}
+\contentsline {chapter}{\numberline {8}Discussion}{69}
+\contentsline {chapter}{\numberline {9}Conclusions}{70}
+\contentsline {chapter}{\numberline {A}Appendix}{71}
+\contentsline {section}{\numberline {A.1}Appendix 1}{71}
+\contentsline {section}{\numberline {A.2}Bibliography}{71}

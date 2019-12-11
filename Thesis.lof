@@ -24,14 +24,14 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Table of common dot product tests between two vectors.}}{51}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Diagram of the cross product of two vectors a and b.}}{52}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Diagram of the stages of L-system interpretation and rendering}}{59}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Diagram for the properties of a joint}}{60}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Diagram of a simple plant skeleton with joint position and orientation.}}{61}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Example of the continuity problem faced with stacked branching with a 25$^{\circ }$ bend per joint.}}{61}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Example of linked branching with a 25$^{\circ }$ bend per joint.}}{62}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Stacked Vs Linked.}}{62}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagram showing the structure of a vertex buffer object.}}{63}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Diagram of the stages of L-system interpretation and rendering}}{62}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Diagram for the properties of a joint}}{63}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Diagram of a simple plant skeleton with joint position and orientation.}}{64}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Example of the continuity problem faced with stacked branching with a 25$^{\circ }$ bend per joint.}}{64}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Example of linked branching with a 25$^{\circ }$ bend per joint.}}{65}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Stacked Vs Linked.}}{65}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Diagram showing the structure of a vertex buffer object.}}{66}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
