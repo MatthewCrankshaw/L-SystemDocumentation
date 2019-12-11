@@ -199,9 +199,11 @@ There are several well known fractal geometry patterns that have been explored, 
 
 \section{Branching} \label{branching}
 
-The previous section covered a very basic 0L-system, which was capable of tracing a 3D pattern, the 0L-system allows us to move around a 3D space, however we are not able to branch off in two or more directions as plants do. Lindenmayer introduced two symbols which make branching much easier \cite{lindenmayer1968mathematical}. These are the square bracket commands '[', ']'. The square bracket characters instruct the turtle object to save its current position and orientation for the purpose of being able to go back to that saved position and orientation later. This allows the turtle to jump back to a previous position, facing the same direction as it was before. We can then change orientation and branch off in a different direction. This was originally used by Lindenmayer to develop the branching that occurs in algea, this idea was later used to represent plant-life by Smith \cite{smith1984plants}. 
+The simplistic D0L-system defined in previous sections can trace a 3D pattern. The D0L-systems interpretation provides a way of tracing a path or structure in 3D space. This is useful, however in order to trace the branching structure of plants, there needs to be a way of going to a point in the plant and branching off in one or more directions. A naive method may be for the turtle object to trace its steps back to a particular point and then branch off in a different direction. This may get the desired result but is slow and inefficient. A better solution was proposed by Lindenmayer. He introduced two symbols that have special meanings within the alphabet of the DOL-system which make branching much easier \cite{lindenmayer1968mathematical}. These are the square bracket symbols \say{[}, \say{]}. The open square bracket \say{[} symbol instructs the turtle object to save its current state (position and orientation) for the purpose of being able to go back to that saved state later. The close square bracket \say{]} instructs the turtle to load the saved state and continue from that position and orientation. This allows the turtle to jump back to a previously saved position, facing in the same direction as it was before. The orientation can be changed allowing the turtle to branch off in a different direction. This was originally used by Lindenmayer to develop the branching that occurs within algae but was later adapted by Smith to represent larger plant-life as well \cite{smith1984plants}.
+ 
+The main advantage to using the save and load position functionality as a symbol within the alphabet is that the rewiting system itself handles branching. The production rules often contain the next generations branching structure by using the save and load symbols and thus the branching structure becomes more intricate from one generation to the next.
 
-The same method of interpreting the L-system string is applied, the symbols [ and ] are used in order the translate back to a previous position and orientation in order to branch off in a different direction. Each save state symbol [ must have a corresponding load state symbol within the string. In order to have a branch off of another branch we can have nested save and load state symbols. For instance the resultant string "F[+F-F]-F" branches off the main branch once as seen in figure \ref{branching 1}. Additionally using nested save and load states in the string "F[+F[+F]-F]-F" we are able to branch twice which can be shown in figure \ref{branching 2}.
+Each save state symbol must have a corresponding load state symbol within the string that is being interpreted. This is not a requirement by the L-system language but rather a requirement during by the interpreter. This is because the load and save state symbols have no special meaning when rewriting. It is simply treated the same as any other symbol in the alphabet. This being said, during interpretation, for the turtle object to jump back to a saved state those save and load states should correspond. For instance the resultant string \say{F[+F-F]-F} has both a load and a save state, meaning there is a single branch off the main branch. Which can be seen in figure \ref{branching 1} below. Additionally using nested save and load states in the string, for instance \say{F[+F[+F]-F]-F}, there can be two branches off the main branch twice as seen in figure \ref{branching 2}.
 
 \begin{figure}[htbp]
 	{\centering
@@ -216,7 +218,7 @@ The same method of interpreting the L-system string is applied, the symbols [ an
 \FloatBarrier
 
 \noindent
-Save and load operations are handled using the \acrfull{lifo} principle, meaning that when the save symbol is used [ the current position and orientation at $p1$ is saved, the next load state ] will restore $p1$'s position and orientation, unless another save takes place in which case that save will have to be loaded before $p1$ can be loaded. In this way, the position saves are stacked and the most recent save is loaded. This can be seen in figure \ref{branching 2} where we have nested branching. 
+Save and load operations are handled using the \acrfull{lifo} principle, meaning that when the save symbol is used the current position and orientation at $p1$ is saved. The next load state will restore $p1$'s position and orientation. Unless there is another save that takes place befoe the load state is reached, in which case the most recent save will have to be loaded before $p1$ can be loaded. In this way, the position saves are stacked and the most recent save is always loaded first. An example of this can be seen in figure \ref{branching 2} below:
 
 \begin{figure}[htbp]
 	{\centering
@@ -230,8 +232,6 @@ Save and load operations are handled using the \acrfull{lifo} principle, meaning
 \end{figure}
 \FloatBarrier
 
-\noindent
-The main advantage to using the save and load position functionality as a symbol within the alphabet of the L-system is that the rewiting system itself handles the branching. There is often no production rule for the save and load symbols and thus the symbols remain consistent from generation to generation. \\ 
 
 \begin{figure}[htbp]
 	\raggedright
