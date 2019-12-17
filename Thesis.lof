@@ -5,11 +5,11 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Diagram of the 3D rotations of the turtle.}}{17}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Diagram showing a turtle interpreting simple L-system string.}}{18}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Koch Curve.}}{20}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Sierpinski Triangles.}}{20}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Sierpi\'{n}ski Triangles.}}{20}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Diagram showing a turtle interpreting an L-system using the branching symbols.}}{21}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Diagram showing a turtle interpreting an L-system with nested branching.}}{22}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Fractal Plant.}}{22}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Fractal Bush.}}{23}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Fifth generation of the fractal bush L-system.}}{22}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Fifth generation of the fractal tree L-system}}{23}
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Diagram of an L-system Using Multiple Objects.}}{25}
 \contentsline {figure}{\numberline {2.10}{\ignorespaces 3D Parametric L-system.}}{26}
 \contentsline {figure}{\numberline {2.11}{\ignorespaces Condition statements used to simulate the growth of a flower. 2nd generation on the left, 4th generation in the center and 6th generation on the right}}{28}
@@ -30,7 +30,7 @@
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Example of the continuity problem faced with stacked branching with a 25$^{\circ }$ bend per joint.}}{61}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Example of linked branching with a 25$^{\circ }$ bend per joint.}}{62}
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Stacked Vs Linked.}}{62}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagram showing the structure of a vertex buffer object.}}{63}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagram showing the structure of a vertex buffer object.}}{64}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

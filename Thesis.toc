@@ -7,7 +7,7 @@
 \contentsline {chapter}{\numberline {2}Lindenmayer Systems}{14}
 \contentsline {section}{\numberline {2.1}Simple DOL-system}{15}
 \contentsline {section}{\numberline {2.2}Interpreting the DOL-system String}{16}
-\contentsline {section}{\numberline {2.3}Branching}{21}
+\contentsline {section}{\numberline {2.3}Branching}{20}
 \contentsline {section}{\numberline {2.4}Parametric OL-systems}{23}
 \contentsline {subsection}{\numberline {2.4.1}Formal Definition of a Parametric 0L-system}{23}
 \contentsline {subsection}{\numberline {2.4.2}Defining Constants and Objects}{24}
@@ -40,15 +40,16 @@
 \contentsline {section}{\numberline {5.2}Model Generator}{61}
 \contentsline {section}{\numberline {5.3}Renderer}{63}
 \contentsline {subsection}{\numberline {5.3.1}Models and Buffer Objects}{63}
-\contentsline {chapter}{\numberline {6}Physics Simulation}{64}
-\contentsline {section}{\numberline {6.1}Branch Physical Properties}{64}
-\contentsline {section}{\numberline {6.2}Hook's Law}{66}
-\contentsline {section}{\numberline {6.3}Equations of Motion}{66}
-\contentsline {section}{\numberline {6.4}Updating Branches}{66}
-\contentsline {section}{\numberline {6.5}Summary}{67}
-\contentsline {chapter}{\numberline {7}Findings and Data Analysis}{68}
-\contentsline {chapter}{\numberline {8}Discussion}{69}
-\contentsline {chapter}{\numberline {9}Conclusions}{70}
-\contentsline {chapter}{\numberline {A}Appendix}{71}
-\contentsline {section}{\numberline {A.1}Appendix 1}{71}
-\contentsline {section}{\numberline {A.2}Bibliography}{71}
+\contentsline {section}{\numberline {5.4}Summary}{64}
+\contentsline {chapter}{\numberline {6}Physics Simulation}{65}
+\contentsline {section}{\numberline {6.1}Branch Physical Properties}{65}
+\contentsline {section}{\numberline {6.2}Hook's Law}{67}
+\contentsline {section}{\numberline {6.3}Equations of Motion}{67}
+\contentsline {section}{\numberline {6.4}Updating Branches}{67}
+\contentsline {section}{\numberline {6.5}Summary}{68}
+\contentsline {chapter}{\numberline {7}Findings and Data Analysis}{69}
+\contentsline {chapter}{\numberline {8}Discussion}{70}
+\contentsline {chapter}{\numberline {9}Conclusions}{71}
+\contentsline {chapter}{\numberline {A}Appendix}{72}
+\contentsline {section}{\numberline {A.1}Appendix 1}{72}
+\contentsline {section}{\numberline {A.2}Bibliography}{72}
