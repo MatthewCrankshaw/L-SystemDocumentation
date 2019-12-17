@@ -17,20 +17,20 @@
 \contentsline {figure}{\numberline {2.13}{\ignorespaces Representation of an L-system with a probability stochastic with a 0.33 probabability for each rule.}}{30}
 \contentsline {figure}{\numberline {2.14}{\ignorespaces Diagram of the procedural generation process.}}{31}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagram of the Parts of The Rewiting System.}}{33}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Diagram syntax tree for an expression.}}{39}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagram of an expression tree.}}{43}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagram of the Parts of The Rewiting System.}}{34}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Diagram syntax tree for an expression.}}{40}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagram of an expression tree.}}{44}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Table of common dot product tests between two vectors.}}{51}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagram of the cross product of two vectors a and b.}}{52}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Table of common dot product tests between two vectors.}}{52}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagram of the cross product of two vectors a and b.}}{53}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Diagram of the stages of L-system interpretation and rendering}}{59}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Diagram for the properties of a joint}}{60}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Diagram of a simple plant skeleton with joint position and orientation.}}{61}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Example of the continuity problem faced with stacked branching with a 25$^{\circ }$ bend per joint.}}{61}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Example of linked branching with a 25$^{\circ }$ bend per joint.}}{62}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Stacked Vs Linked.}}{62}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagram showing the structure of a vertex buffer object.}}{64}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Diagram of the stages of L-system interpretation and rendering}}{60}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Diagram for the properties of a joint}}{61}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Diagram of a simple plant skeleton with joint position and orientation.}}{62}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Example of the continuity problem faced with stacked branching with a 25$^{\circ }$ bend per joint.}}{62}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Example of linked branching with a 25$^{\circ }$ bend per joint.}}{63}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Stacked Vs Linked.}}{63}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagram showing the structure of a vertex buffer object.}}{65}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
