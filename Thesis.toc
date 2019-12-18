@@ -49,9 +49,8 @@
 \contentsline {section}{\numberline {6.4}Updating Branches}{69}
 \contentsline {section}{\numberline {6.5}Results}{70}
 \contentsline {section}{\numberline {6.6}Summary}{70}
-\contentsline {chapter}{\numberline {7}Findings and Data Analysis}{71}
-\contentsline {chapter}{\numberline {8}Discussion}{72}
-\contentsline {chapter}{\numberline {9}Conclusions}{73}
-\contentsline {chapter}{\numberline {A}Appendix}{74}
-\contentsline {section}{\numberline {A.1}Appendix 1}{74}
-\contentsline {section}{\numberline {A.2}Bibliography}{74}
+\contentsline {chapter}{\numberline {7}Discussion}{71}
+\contentsline {chapter}{\numberline {8}Conclusions}{72}
+\contentsline {chapter}{\numberline {A}Appendix}{73}
+\contentsline {section}{\numberline {A.1}Appendix 1}{73}
+\contentsline {section}{\numberline {A.2}Bibliography}{73}
