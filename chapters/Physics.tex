@@ -111,4 +111,5 @@ The particles in this system are the joints within the trees' skeleton. All of t
 
 \section{Summary}
 
+This chapter outlined a method of simulating and animating a procedurally generated plant-life by representing each branch as a  particle in a larger particle system. The information about the location, rotation, dimensions and properties of each branch is provided by the tree skeleton created during the interpretation stage which is ultimately provided by the L-system. Using these properties each branch can be simulated as a particle within the entire tree system. Due to the embarrassingly parrallel nature of the system each branch update can be computed in parallel, either on the \acrshort{cpu} or \acrshort{gpu}.    
 

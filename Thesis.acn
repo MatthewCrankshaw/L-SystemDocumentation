@@ -36,6 +36,8 @@
 \glossaryentry{LERP?\glossentry{lerp}|setentrycounter[]{page}\glsnumberformat}{58}
 \glossaryentry{LERP?\glossentry{lerp}|setentrycounter[]{page}\glsnumberformat}{58}
 \glossaryentry{LERP?\glossentry{lerp}|setentrycounter[]{page}\glsnumberformat}{58}
+\glossaryentry{GLM?\glossentry{glm}|setentrycounter[]{page}\glsnumberformat}{59}
+\glossaryentry{GLM?\glossentry{glm}|setentrycounter[]{page}\glsnumberformat}{59}
 \glossaryentry{OpenGL?\glossentry{opengl}|setentrycounter[]{page}\glsnumberformat}{65}
 \glossaryentry{OpenGL?\glossentry{opengl}|setentrycounter[]{page}\glsnumberformat}{65}
 \glossaryentry{GPU?\glossentry{gpu}|setentrycounter[]{page}\glsnumberformat}{65}
@@ -52,3 +54,5 @@
 \glossaryentry{VBO?\glossentry{vbo}|setentrycounter[]{page}\glsnumberformat}{65}
 \glossaryentry{OpenGL?\glossentry{opengl}|setentrycounter[]{page}\glsnumberformat}{65}
 \glossaryentry{GPU?\glossentry{gpu}|setentrycounter[]{page}\glsnumberformat}{65}
+\glossaryentry{CPU?\glossentry{cpu}|setentrycounter[]{page}\glsnumberformat}{70}
+\glossaryentry{GPU?\glossentry{gpu}|setentrycounter[]{page}\glsnumberformat}{70}

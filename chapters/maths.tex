@@ -1,5 +1,5 @@
 
-In any 3D application, mathematical models are used to represent the positions, rotations and scale of objects within a given scene. All objects within a 3D application are represented by a set of vertices or points, which can be represented with X, Y and Z coordinates. Three vertices can make up one triangle also called a face, multiple faces will then make up a whole 3D object. The use of mathematical methods in 3D graphics is to be able to manipulate all vertices of an object in a consistant way, thus rotating, translating or scaling the object within the scene. This section will provide sufficient background on some of most important concepts of 3D Mathematics, such as vectors, matrices and quaternions, which are widely used in the turtle graphics interpreter as well as the model generator.
+In any 3D application, mathematical models are used to represent the positions, rotations and scale of objects within a given scene. It is important for the purpose of this thesis to briefly touch on some of the core concepts, particularly with regards to representing the position and rotation of 3D objects. All objects within a 3D application are represented by a set of vertices or points, which can be represented with X, Y and Z coordinates. Three vertices can make up one triangle also called a face, multiple faces will then make up a whole 3D object. The use of mathematical methods in 3D graphics is to be able to manipulate all vertices of an object in a consistant way, thus rotating, translating or scaling the object within the scene. This section will provide sufficient background on some of most important concepts of 3D Mathematics, such as vectors, matrices and quaternions, which are widely used in the turtle graphics interpreter as well as the model generator.
 
 \section{Vectors}
 
@@ -367,7 +367,7 @@ Using the linear interpolation function will result in a rotation between $Q_1$ 
 
 \section{summary}
 
-
+This chapter covers the three major mathematical concepts used for representing 3D objects location, rotation and scale within a 3D graphics application. This includes moving objects around a scene for the purposes of animation or simulation. It is important to understand these concepts when implementing the string interpreter in order to be able to manipulate the branches or other objects. These concepts are also useful in the implementation of the physics simulations. The \acrlong{glm} (\acrshort{glm}) library provides a large number of useful classes and functions for working with vertices, matrices and quaternions.
 
 
 
