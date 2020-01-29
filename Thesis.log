@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.15)  28 JAN 2020 14:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  30 JAN 2020 11:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -978,6 +978,12 @@ Package pdftex.def Info: images/Diagrams/ChomskyGrammar.png  used on input line
 [13]
 Chapter 2.
 (./chapters/LindenmayerSystems.tex
+Overfull \hbox (4.76366pt too wide) in paragraph at lines 6--7
+\OT1/cmr/m/n/10.95 as plants and trees, as well as other nonor-ganic struc-ture
+s like mu-sic [[]].
+ []
+
+
 Underfull \vbox (badness 1845) has occurred while \output is active []
 
  [14
@@ -987,10 +993,10 @@ Underfull \vbox (badness 1845) has occurred while \output is active []
 <images/Diagrams/rotations.png, id=69, 482.80376pt x 388.45125pt>
 File: images/Diagrams/rotations.png Graphic file (type png)
 <use images/Diagrams/rotations.png>
-Package pdftex.def Info: images/Diagrams/rotations.png  used on input line 88.
+Package pdftex.def Info: images/Diagrams/rotations.png  used on input line 94.
 (pdftex.def)             Requested size: 144.84224pt x 116.53627pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--98
+Underfull \hbox (badness 10000) in paragraph at lines 100--104
 
  []
 
@@ -999,64 +1005,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 94--98
 File: images/Diagrams/basic_turtle.png Graphic file (type png)
 <use images/Diagrams/basic_turtle.png>
 Package pdftex.def Info: images/Diagrams/basic_turtle.png  used on input line 1
-51.
+57.
 (pdftex.def)             Requested size: 339.3705pt x 121.65543pt.
  [18 <./images/Diagrams/basic_turtle.png>]
 <images/Diagrams/koch_curves.png, id=79, 1003.75pt x 1204.5pt>
 File: images/Diagrams/koch_curves.png Graphic file (type png)
 <use images/Diagrams/koch_curves.png>
-Package pdftex.def Info: images/Diagrams/koch_curves.png  used on input line 17
-6.
+Package pdftex.def Info: images/Diagrams/koch_curves.png  used on input line 18
+2.
 (pdftex.def)             Requested size: 160.60327pt x 192.72394pt.
  [19]
 <images/Diagrams/sierpinsky_triangle.png, id=84, 2509.375pt x 2007.5pt>
 File: images/Diagrams/sierpinsky_triangle.png Graphic file (type png)
 <use images/Diagrams/sierpinsky_triangle.png>
 Package pdftex.def Info: images/Diagrams/sierpinsky_triangle.png  used on input
- line 197.
+ line 203.
 (pdftex.def)             Requested size: 250.9522pt x 200.76175pt.
  [20 <./images/Diagrams/koch_curves.png> <./images/Diagrams/sierpinsky_triangle
 .png>]
 <images/Diagrams/branching.png, id=90, 963.6pt x 368.37625pt>
 File: images/Diagrams/branching.png Graphic file (type png)
 <use images/Diagrams/branching.png>
-Package pdftex.def Info: images/Diagrams/branching.png  used on input line 217.
+Package pdftex.def Info: images/Diagrams/branching.png  used on input line 226.
 
 (pdftex.def)             Requested size: 337.26506pt x 128.93361pt.
 <images/Diagrams/NestedBranching.png, id=91, 963.6pt x 352.31625pt>
 File: images/Diagrams/NestedBranching.png Graphic file (type png)
 <use images/Diagrams/NestedBranching.png>
 Package pdftex.def Info: images/Diagrams/NestedBranching.png  used on input lin
-e 232.
+e 241.
 (pdftex.def)             Requested size: 337.26506pt x 123.31253pt.
  [21 <./images/Diagrams/branching.png>]
 <images/Diagrams/fractalBush.png, id=96, 1018.80624pt x 796.9775pt>
 File: images/Diagrams/fractalBush.png Graphic file (type png)
 <use images/Diagrams/fractalBush.png>
-Package pdftex.def Info: images/Diagrams/fractalBush.png  used on input line 25
-1.
+Package pdftex.def Info: images/Diagrams/fractalBush.png  used on input line 26
+0.
 (pdftex.def)             Requested size: 152.81433pt x 119.54146pt.
 <images/Diagrams/fractalPlant.png, id=97, 1014.79124pt x 798.985pt>
 File: images/Diagrams/fractalPlant.png Graphic file (type png)
 <use images/Diagrams/fractalPlant.png>
 Package pdftex.def Info: images/Diagrams/fractalPlant.png  used on input line 2
-71.
+80.
 (pdftex.def)             Requested size: 152.21211pt x 119.84258pt.
  [22 <./images/Diagrams/NestedBranching.png> <./images/Diagrams/fractalBush.png
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 287--290
+Overfull \hbox (0.74872pt too wide) in paragraph at lines 290--291
+\OT1/cmr/m/n/10.95 oped upon in 2012 by Prusinkiewicz and Lin-den-mayer [[]].
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 296--299
 
  []
 
 [23 <./images/Diagrams/fractalPlant.png>]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 308.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 317.
  [24]
 <images/Diagrams/object_example.png, id=108, 1204.5pt x 798.985pt>
 File: images/Diagrams/object_example.png Graphic file (type png)
 <use images/Diagrams/object_example.png>
 Package pdftex.def Info: images/Diagrams/object_example.png  used on input line
- 352.
+ 360.
 (pdftex.def)             Requested size: 240.89574pt x 159.79416pt.
  [25 <./images/Diagrams/object_example.png>]
 <images/ParametricLsystem/branchingPattern.png, id=113, 1204.5pt x 597.23125pt>
@@ -1064,7 +1075,7 @@ Package pdftex.def Info: images/Diagrams/object_example.png  used on input line
 File: images/ParametricLsystem/branchingPattern.png Graphic file (type png)
 <use images/ParametricLsystem/branchingPattern.png>
 Package pdftex.def Info: images/ParametricLsystem/branchingPattern.png  used on
- input line 384.
+ input line 392.
 (pdftex.def)             Requested size: 361.35278pt x 179.17075pt.
  [26 <./images/ParametricLsystem/branchingPattern.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1074,18 +1085,18 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: images/Diagrams/conditionalLsystem.png Graphic file (type png)
 <use images/Diagrams/conditionalLsystem.png>
 Package pdftex.def Info: images/Diagrams/conditionalLsystem.png  used on input 
-line 454.
+line 463.
 (pdftex.def)             Requested size: 433.6013pt x 96.35583pt.
 
-Overfull \hbox (5.32281pt too wide) in paragraph at lines 454--455
+Overfull \hbox (5.32281pt too wide) in paragraph at lines 463--464
  [][] 
  []
 
 <images/Diagrams/RandomTrees.png, id=121, 2007.5pt x 1505.625pt>
 File: images/Diagrams/RandomTrees.png Graphic file (type png)
 <use images/Diagrams/RandomTrees.png>
-Package pdftex.def Info: images/Diagrams/RandomTrees.png  used on input line 48
-2.
+Package pdftex.def Info: images/Diagrams/RandomTrees.png  used on input line 49
+0.
 (pdftex.def)             Requested size: 240.8896pt x 180.6672pt.
 [28 <./images/Diagrams/conditionalLsystem.png>] [29 <./images/Diagrams/RandomTr
 ees.png>]
@@ -1093,7 +1104,7 @@ ees.png>]
 File: images/Diagrams/stochastics.png Graphic file (type png)
 <use images/Diagrams/stochastics.png>
 Package pdftex.def Info: images/Diagrams/stochastics.png  used on input line 52
-1.
+9.
 (pdftex.def)             Requested size: 421.58131pt x 140.5271pt.
 
 Underfull \vbox (badness 1448) has occurred while \output is active []
@@ -1102,8 +1113,8 @@ Underfull \vbox (badness 1448) has occurred while \output is active []
 <images/Diagrams/FullDiagram.png, id=135, 985.6825pt x 541.02126pt>
 File: images/Diagrams/FullDiagram.png Graphic file (type png)
 <use images/Diagrams/FullDiagram.png>
-Package pdftex.def Info: images/Diagrams/FullDiagram.png  used on input line 54
-3.
+Package pdftex.def Info: images/Diagrams/FullDiagram.png  used on input line 55
+1.
 (pdftex.def)             Requested size: 423.8352pt x 232.6346pt.
  [31 <./images/Diagrams/FullDiagram.png>])
 [32]
@@ -1273,10 +1284,6 @@ File: images/Diagrams/linkedBranchesMesh.png Graphic file (type png)
 Package pdftex.def Info: images/Diagrams/linkedBranchesMesh.png  used on input 
 line 112.
 (pdftex.def)             Requested size: 144.93893pt x 124.66353pt.
-
-
-LaTeX Warning: Reference `' on page 63 undefined on input line 119.
-
 <images/Diagrams/StackedVsLinked.png, id=272, 1003.75pt x 1003.75pt>
 File: images/Diagrams/StackedVsLinked.png Graphic file (type png)
 <use images/Diagrams/StackedVsLinked.png>
@@ -1332,16 +1339,13 @@ Appendix A.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  9442 strings out of 492982
- 139294 string characters out of 6134895
- 272850 words of memory out of 5000000
+ 139309 string characters out of 6134896
+ 272859 words of memory out of 5000000
  12706 multiletter control sequences out of 15000+600000
  13812 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1360,7 +1364,7 @@ mr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Thesis.pdf (75 pages, 7451873 bytes).
+Output written on Thesis.pdf (75 pages, 7452237 bytes).
 PDF statistics:
  371 PDF objects out of 1000 (max. 8388607)
  214 compressed objects within 3 object streams
