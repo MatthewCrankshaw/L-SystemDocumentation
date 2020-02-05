@@ -67,83 +67,84 @@ In computer science, specifically the study of programming language compilers, t
 The scanner itself is quite complex, its main goal is to match the characters or strings within the language, to either a word or a regular expression defined in the grammar. When the match is made the token is given a syntactic category. The mechanism by which it achieves this is known as \textit{finite automata} \cite{wilhelm2013compiler}. It is possible to write custom \gls{Lexer}, however, it can be quite complicated and time-consuming to design and implement, and once a custom \gls{Lexer} has been created it is also difficult to change functionality at a later stage. There is a well known program known as the \acrlong{flex} (\acrshort{flex}). \acrshort{flex} takes in a file which contains the lexical rules of the language, this being the strings as well as the regular expression as well as its associated syntactic category. When \acrshort{flex} is executed it will create a \gls{Lexer} in the form of a C program. To create a lexer with \acrshort{flex}, the lexical rules must be defined. Below are the characters, strings and regular expressions and their associated syntactic categories, as well as a description as to its use in the parametric 0L-system. 
 
 \begin{table}[h!] \center
-\begin{tabular}{  c | l | l }
-
+\begin{tabular}{ | c | l | l |}
+\hline
 	Syntactic Word	& Syntactic Category & Description\\  
 \hline
 \hline
 	, 				& T\_COMMA 				& Separation between module parameters \\
-
+\hline
 	: 				& T\_COLON 				& Separation between production rule parts \\
-
+\hline
 	; 				& T\_SEMI\_COLON 		& End of a statement\\
-
+\hline
 	\#				& T\_HASH 				& Beginning of a statement\\
-
+\hline
 	( 				& T\_PARENL 			& Start of a modules parameters \\
 					&						& or specifies presidence in an expression \\
-
+\hline
 	) 				& T\_PARENR 			& End of a modules parameters \\
 					&						& or specifies presidence in an expression \\
- 
+\hline
 	\{ 				& T\_BRACKETL 			& Start of a random range\\
-
+\hline
 	\} 				& T\_BRACKETR 			& End of a random range\\
-
+\hline
 	$\sim$ 			& T\_TILDE 				& Stochastic operator\\
-
-	== 				& T\_EQUAL\_TO 			& Relational operator stating equal to\\
-
-	!= 				& T\_NOT\_EQUAL\_TO 	& Relational operator for not equal to\\
-	
+\hline
+	$==$				& T\_EQUAL\_TO 			& Relational operator stating equal to\\
+\hline
+	$!=$				& T\_NOT\_EQUAL\_TO 	& Relational operator for not equal to\\
+\hline	
 	$<$ 			& T\_LESS\_THAN 		& Relational operator for less than\\
-
+\hline
 	$>$ 			& T\_GREATER\_THAN 		& Relational operator for greater than\\
-
-	$<$ = 			& T\_LESS\_EQUAL 		& Relational operator for greater or equal\\
-
-	$>$ = 			& T\_GREATER\_EQUAL 	& Relational operator for greater or equal\\
-
+\hline
+	$<=$ 			& T\_LESS\_EQUAL 		& Relational operator for greater or equal\\
+\hline
+	$>=$  			& T\_GREATER\_EQUAL 	& Relational operator for greater or equal\\
+\hline
 	[ 				& T\_SQUARE\_BRACEL 	& Module name (branching save state) \\
-
+\hline
 	] 				& T\_SQUARE\_BRACER 	& Module name (branching load state) \\
-
+\hline
 	+ 				& T\_PLUS 				& Arithmetic operator for addition, or\\
 					&						& Module name (Yaw right) \\
-
+\hline
 	- 				& T\_MINUS 				& Arithmetic operator for subtraction, or\\
 					&						& Module name (Yaw left)\\
-
+\hline
 	/ 				& T\_FORWARD\_SLASH 	& Arithmetic operator for division, or\\
 					&						& Module name (Pitch up)\\
-
+\hline
 	$\backslash$ 		& T\_BACK\_SLASH 		& Module name (Pitch down)\\
-
+\hline
 	* 				& T\_STAR 				& Arithmetic operator for multiplication, or\\
 					&						& Condition in a production rule which is true\\
-
+\hline
 	$\land$		& T\_HAT 				& Arithmetic operator for and exponent, or\\
 					&						& Module name (Roll right)\\
-
+\hline
 	$\&$ 			& T\_AMPERSAND 			& Module name (Roll left)\\
-
+\hline
 	! 				& T\_EXCLAMATION 		& Module name (Set size of branch)\\
-
+\hline
 	\$ 				& T\_DOLLAR 			& Module name \\
-
+\hline
 	= 				& T\_ASSIGN 			& Assignment operator used to set generations\\
-
+\hline
 	\#n 			& T\_GENERATIONS 		& Declaration of the number of generations\\
-
+\hline
 	\#w 			& T\_AXIOM 				& Declaration of the axiom\\
-
+\hline
 	\#define 			& T\_DEFINE 		& Declaration of the define\\
-
+\hline
 	\#object 			& T\_OBJECT			& Declaration of the object\\
-
+\hline
 	[0-9]+.[0-9]+$|$[0-9]+ 					& T\_FLOAT 				& Regular expression for a floating point number\\
-
+\hline
 	[a-zA-Z\_][a-zA-Z0-9\_]*  				& T\_VAR\_NAME 			& Regular expression for a module or variable name\\
+\hline
 \end{tabular}
 \caption{Table of Valid Lexer Words}
 \label{lexer words}
@@ -151,15 +152,17 @@ The scanner itself is quite complex, its main goal is to match the characters or
 \FloatBarrier
 
 \noindent
-From the table above there are a number syntactic categories that contain more than one meaning to the grammar, for instance, the open and close parenthesis have two meanings, it is either to specify the beginning and end of a module's parameters or it specifies precedence within an expression.  It is not up to the scanner to determine what each parenthesis means, or that it has a meaning at all, the lexer only recognises that it falls into the syntactic categories, T\_PARENL and T\_PARENR. Deriving the meaning of a given token or syntactic category is left up to the parser which is more aware of the context of each syntactic word. Similarly, the symbols [,],+,-,/,$\backslash$, $\land$, $\&$, ! and \$ are valid module names; Moreover, it is possible for a T\_VAR\_NAME to also be a module name, these symbols need to be specifically defined as their syntactic category, as they not only represent a module name but can also represent a different meaning depending on their context. For instance, the +, -, / are valid module names, but they also are mathematical symbols used within an arithmetic expression. The scanner must separate these symbols and keep them in their syntactic category for the parser to be able to understand the same symbol in multiple contexts. 
+From the table above, several syntactic categories contain more than one meaning; for instance, the open and close parentheses have two meanings. They are used to either specify a modules' parameters or to specify precedence within an expression. It is not up to the scanner to determine what each parenthesis means, or that it has a meaning at all, the lexer only recognises that it falls into the syntactic categories, T\_PARENL and T\_PARENR. Deriving the meaning of a given token or syntactic category is decided by the parser. The parser is more aware of the context of each syntactic word. Similarly, the symbols [,],+,-,/,$\backslash$, $\land$, $\&$, !, \$, and T\_VAR\_NAME are valid module names. These symbols need to be specifically defined as their syntactic category, as they not only represent a module name but can also represent a different meaning depending on their context. For instance, the +, -, / are valid module names, but they also are mathematical symbols used within arithmetic expressions. The scanner must separate these symbols and keep them in their syntactic category for the parser to be able to understand the same symbol in multiple contexts. 
 
-It is also important to note that there are two special types of tokens, these being the T\_FLOAT and T\_VAR\_NAME which not only are part of a syntactic category but also contain a value, for instance, T\_FLOAT has a floating-point value and T\_VAR\_NAME has a string value. These values must be kept and provided to the parser.
+It is also important to note that there are two unique types of tokens. These are the T\_FLOAT and T\_VAR\_NAME. The regular expression for T\_FLOAT will match any floating-point value, and the regular expression for T\_VAR\_NAME will match with any valid variable name. These unique tokens are valid syntactic categories but also contain an associated value. For instance, T\_FLOAT has a floating-point value associated with it, and T\_VAR\_NAME has a string value associated with it. These values must be kept and provided to the parser for use later on.
+
 
 \section{The L-system Parser} \label{parser}
 
-The parsers' job is to find out if the input stream of words from the \gls{Lexer} makes up a valid sentence in the language. The \gls{Parser} fits the syntactical category to the grammatical model of the language. The \gls{Parser} can fit the syntactical categories from the lexer to the grammatical model of the language, if the syntactical categories match the grammatical model then the syntax is seen to be correct. If all of the syntax is correct the \gls{Parser} will generate a syntax tree and build the data structures for use later on in the compilation process \cite{cooper2011engineering}. For the L-system rewriter, the syntax tree and data structures are not used for compilation but rather for the string rewriting process. 
+The parsers' job is to find out if the input stream of words from the \gls{Lexer} is a valid sentence according to the grammar. If the syntactical categories from the \gls{Lexer} match the grammatical model, then the syntax is seen to be correct. If the syntax of the language is correct, the \gls{Parser} will generate a syntax tree and build the relevant data structures for use later on in the compilation process \cite{cooper2011engineering}. For the L-system rewriter, the syntax tree and data structures are not used for compilation but rather for the string rewriting process. 
+ 
 
-To describe a grammar, there needs to be a suitable notation to express its syntactic structure or grammatical model. According to Cooper the \acrshort{bnf} has traditionally been used by computer scientists to represent context-free grammars such as programming languages, its origins are from the late 1950s and early 1960s. The \acrlong{bnf} (\acrshort{bnf}) notation represents the context-free grammar by defining a set of non-terminal symbols that derives from a set of terminal or non-terminal symbols. Terminal symbols are elementary symbols of the language defined by the formal grammar, a terminal symbol will eventually appear in the resulting formal language. On the other hand, a non-terminal symbol exists only as a placeholder for patterns of terminal symbols but does not appear within the formal language itself. The syntactic convention for a \acrshort{bnf} is for non-terminal symbols to be surrounded by angled brackets. For instance $<$expression$>$ and terminal symbols, such as the symbol for addition \say{+} to be underlined, but nowadays it is not often underlined. The symbol $\epsilon$ represents an empty string, the ::= means \say{derives} and the $\mid$ means \say{also derives} but is often articulated as an \say{or} \cite{cooper2011engineering}. To derive a sentence of text within a language the very first derivation must be a non-terminal symbol called the goal symbol. The goal symbol is a set of all valid derived strings, this means that the goal symbol is not a word within the language, but rather a syntactic variable in the form of a non-terminal symbol. The \acrshort{bnf} notation below can be used to represent a simple grammar for arithmetic expressions, where the terminal \say{number} is any valid integer and the goal symbol is $<$expression$>$. Below is the \acrshort{bnf} notation for the syntax of an arithmetic expression that can represent addition and subtraction.
+In order to describe a grammar, a suitable notation is necessary to express its syntactic structure and grammatical model. According to Cooper, the \acrlong{bnf}(\acrshort{bnf}) has traditionally been used by computer scientists to represent context-free grammars such as programming languages. Its origins are from the late 1950s and early 1960s. The \acrshort{bnf} notation represents the context-free grammar by defining a set of non-terminal symbols that derive from a set of terminal or non-terminal symbols. Terminal symbols are elementary symbols of the language defined by the formal grammar. A terminal symbol will eventually appear in the resulting formal language. On the other hand, a non-terminal symbol exists only as a placeholder for patterns of terminal symbols but does not appear within the formal language itself. The syntactic convention for a \acrshort{bnf} is for non-terminal symbols to be surrounded by angled brackets. For instance, $<$expression$>$ and terminal symbols, such as the symbol for addition \say{+} to be underlined, but nowadays, it is not often underlined. The symbol $\epsilon$ represents an empty string, the ::= means \say{derives} and the $\mid$ means \say{also derives} but is often articulated as an \say{or} \cite{cooper2011engineering}. The very first derivation must be a non-terminal symbol called the goal symbol. The goal symbol is a set of all valid derived strings. This means that the goal symbol is not a word within the language, but rather a syntactic variable in the form of a non-terminal symbol. The \acrshort{bnf} notation below can be used to represent a simple grammar for arithmetic expressions, where the terminal \say{number} is any valid integer, and the goal symbol is $<$expression$>$. Below is the \acrshort{bnf} notation for the syntax of an arithmetic expression that can represent addition and subtraction.
 
 \noindent
 \begin{algorithm}
@@ -174,7 +177,7 @@ To describe a grammar, there needs to be a suitable notation to express its synt
 \FloatBarrier
 
 \noindent
-The \acrshort{bnf} above states that the goal symbol non-terminal $<$expression$>$ derives from one of four states. Either a terminal number, or an expression contained within two parentheses, or two expressions either side of an addition terminal symbol, or two expressions either side of a subtraction terminal symbol. This type of notation is recursive in nature and allows the formal language to write expressions that exist within other expressions. For example the expression \say{5 + 10 - (20 + 2)} can be broken down into using the \acrshort{bnf} production rule forming a syntax tree as seen in figure \ref{syntax tree} below. In this case, the whole expression fits the grammatical model of the language, thus it be parsed, forming the syntax tree. An expression such as this one would create an expression tree data structure, which will be discussed in more detail in section \ref{expression tree}. Depending on the production rule for the non-terminal system being parsed an associated data structure may be created.
+The \acrshort{bnf} above states that the goal symbol, $<$expression$>$ derives from one of four states. Either a terminal number, or an expression contained within two parentheses, or two expressions either side of an addition or subtraction terminal symbol. This type of notation is recursive and allows the formal language to write expressions that exist within other expressions. For example the expression \say{5 + 10 - (20 + 2)} can be broken down into using the \acrshort{bnf} production rule forming a syntax tree as seen in figure \ref{syntax tree} below. In this case, the whole expression fits the grammatical model of the language. Thus it can be parsed, forming the syntax tree. Computationally, when parsed, this expression will create a data structure, which will be discussed in more detail in section \ref{expression tree}.
 
 \begin{figure}[htbp]
 	{\centering
@@ -188,9 +191,12 @@ The \acrshort{bnf} above states that the goal symbol non-terminal $<$expression$
 \FloatBarrier
 
 \noindent
-Similar to the scanner, the parser program can be quite complex, as it needs to find the associated terminal and non-terminal symbols and comply with the grammatical model. Furthermore, if there is a change in the grammar or there is a need to add features at a later date, it is oftentimes difficult to change the parser to account for these changes. Many studies have been conducted on the optimal method of creating a parser, this is simply not the purpose of this thesis. Because of this, a program known as a parser generator will be used to create a parser program. It uses a specification of the grammar similar to that of the \acrshort{bnf} to generate a C program capable of parsing a given language. An implementation of a parser generator is called Bison.
+Similar to the scanner, the parser program can be quite complex. It needs to find the associated terminal and non-terminal symbols and comply with the grammatical model. Furthermore, if there is a change in the grammar or there is a need to add features at a later date, it is frequently difficult to change the parser. Many studies have been conducted on creating a parsers; however this is beyond the scope of this thesis. Therefore, a program called a parser generator can be used to create the parser program. It uses a specification of the grammar similar to that of the \acrshort{bnf} to generate a C program capable of parsing a given language. A popular implementation of a parser generator is called Bison.
 
 \subsection{\acrlong{bnf} of the L-system Grammar} \label{L-system Grammar}
+
+A \acrshort{bnf} below is used to describe any possible valid L-system. The Bison program takes a definition similar to this one and creates the parser program. The parser takes in an L-system as input and will process and output the appropriate data structures and information necessary to carry out rewriting.
+
 \begin{singlespace}
 	\begin{bnf*}
 	\bnfprod{lSystem}
@@ -289,11 +295,11 @@ Similar to the scanner, the parser program can be quite complex, as it needs to 
 \noindent
 As seen above in the \acrshort{bnf} notation for a L-system, the goal state is $<$lSystem$>$. The $<$lSystem$>$ can be made up of $<$statements$>$ beginning with the symbol \say{\#} and ending with the symbol \say{;}, or the \acrlong{eof} (\acrshort{eof}) character signifying the end of the L-system. Each non-terminal $<$statements$>$ is made up of a $<$statement$>$ followed by more $<$statements$>$, or an empty string ($\epsilon$). The $<$statement$>$ itself can either be an \acrlong{eol} (\acrshort{eol}) character or a $<$generation$>$, $<$definition$>$, $<$object$>$, $<$axiom$>$ or $<$production$>$ statement. The non-terminal symbols $<$float$>$ and $<$variable$>$ specify a regular expression. Each statement then has a number of terminal and non-terminal derivatives that allow the production of all valid L-systems that follow this grammar. 
 
-In the previous chapter, the scanner defined the syntactic categories, these syntactic categories are all the valid terminal symbols within the L-system grammar. In essence, the parser takes these syntactic categories and finds if they fit the above \acrshort{bnf} and if so, it extracts the information from the L-system and generates the relevant data structures and syntax tree. 
+In the previous chapter, the scanner defined the syntactic categories. These syntactic categories are all the valid terminal symbols within the L-system grammar. In essence, the parser takes these syntactic categories and finds if they fit the above \acrshort{bnf}, and if so, it extracts the information from the L-system and generates the relevant data structures and syntax tree. 
 
 \subsection{Dealing with Constant Values and Objects}
 
-Defining constants and objects is similar syntactically, the keyword define or include is used, followed by a variable name followed by a value, the value for a constant is a floating-point number and the value for an \textit{include} is a name of an object within the predefined object library. An example of defining a constant and an object can be seen below: 
+Defining constants and objects is essential as it allows the specification of named variables and module names that have a particular meaning. To define a constant or an object is syntactically similar. The keyword define or include is used, then a variable name followed by a value. The value for a constant is a floating-point number, and the value for an \textit{include} is a name of an object within the predefined object library. Seen below is an example of defining a constant and an object: 
 
 \begin{equation} \label{constant and object example}
 \begin{aligned}
@@ -325,7 +331,7 @@ The definition variables can be stored as a table, called a constants table, whi
 \FloatBarrier
 
 \noindent
-The object table structure is very similar to the constants table, the object table holds the module name, and name of the object in the predefined object library. The object table will not be used during rewriting but it will be necessary to provide information during the interpretation of the resulting string about which objects each module should render. 
+The object table structure is very similar to the constants table. The object table holds the module name, and name of the object in the predefined object library. The object table is not used during rewriting, but it is necessary to provide information during the interpretation of the resulting string. 
 
 \begin{table}[h!] \center
 \begin{tabular}{ | c | l | }
@@ -345,9 +351,9 @@ The object table structure is very similar to the constants table, the object ta
 
 \subsection{Implementing Modules and Strings} \label{modules and strings}
 
-For the rewriter it is important to understand that there are three major parts of a module, there is a module name, which is a string of characters or a symbol, secondly, there is a list of parameters signified by open and close parenthesis, there can be zero or more parameters listed. If there are no parameters for a module you can specify it without parenthesis, however, there should then be a space between the module without parenthesis and the next module. Thirdly, each parameter can either be made up of a number, variable, random number range or a mathematical expression containing numbers, variables and parentheses signifying precedence. 
+For the rewriter, it is crucial to understand that there are three significant parts of a module. There is a module name, which is a symbol or string of symbols. Secondly, there is a list of zero or more parameters signified by the open and close parenthesis. If there are no parameters for a module, it can be specified without parenthesis. However, if there are no parameters, there should then be a space between the current module and the next module. Thirdly, each parameter can either contain a number, variable, random number range, or a mathematical expression containing numbers, variables, and parentheses signifying precedence. 
 
-It is important to note that there are two types of modules. One being a module definition and the other a module call. Although these are two different types of modules, they can refer to the same thing. This is because the module definition stands as a template for a module within a production rule. These templates do not have to hold actual values but rather the variable names or random ranges which will be substituted during the rewriting process. Module calls, on the other hand, would appear either in the axiom or in the resultant string, the parameters of a module call will always hold actual numerical values. Below is an example outlining the difference between the module definition and module calls.
+It is important to note that there are two types of modules. One being a module definition and the other a module call. Although these are two different types of modules, they can refer to the same thing. The module definition stands as a template for a module within a production rule. These templates do not have to hold actual values but rather the variable names or random ranges, which will be substituted during the rewriting process. Module calls, on the other hand, would appear either in the axiom or in the resultant string. The parameters of a module call will always hold actual numerical values. Below is an example outlining the difference between the module definition and module calls.
 
 \begin{equation} \label{module definition and call example}
 \begin{aligned}
@@ -357,13 +363,14 @@ It is important to note that there are two types of modules. One being a module 
 \end{equation}
 
 \noindent
-In the example \ref{module definition and call example} above, module A(10, 20) within the axiom, is a module call, as it contains two numerical values of 10 and 20. In the production rule p1, the predecessor is the module A(x, y), this is a module definition, it states that module A's first parameter has a local variable x, and its second parameter has the local variable y. The calling modules values 10 and 20 will substitute x and y respectively, anywhere within the successor statement. The production rule p1's successor has a single module A(x+y, y), this is also a module definition, however, the variables will be substituted with the calling modules values such that it is A(10+20, 20). This can then be evaluated to A(30, 20). After the successor module has been substituted and evaluated, the successors' modules must have a numerical value. They then become module calls within the resultant string ready for the next round of rewriting.
+In the example \ref{module definition and call example} above, module A(10, 20) within the axiom is a module call, as it contains two numerical values of 10 and 20. In the production rule p1, the predecessor is the module A(x, y), this is a module definition, it states that module A's first parameter has a local variable x, and its second parameter has the local variable y. The calling modules values 10 and 20 will substitute x and y anywhere within the successor statement. The production rule p1's successor has a single module A(x+y, y). This is also a module definition; however, the variables will be substituted during rewriting with the calling modules value. When substituted, the successor will be A(10+20, 20). This module can be further evaluated to A(30, 20). After the successor module has been substituted and evaluated, the successors' modules must have a numerical value. They then become module calls within the resultant string ready for the next stage of rewriting.
 
-A string in the context of a parametric L-system is a vector of modules, the modules are linked one after the other creating a type of string, but instead of characters or symbols, we have a string of modules.
+A string in the context of a parametric L-system is a list of modules. The modules are linked one after the other, creating a type of string.
 
 \subsection{Implementing Arithmetic Expressions Trees} \label{expression tree}
 
-As stated within the \acrshort{bnf} of the L-system grammar an expression is either a variable name, a number or a random range, it is also possible that an expression is part of another expression. Take the example: $5 \times 4 + n$, here there are three expressions 5, 4 and $n$ however, $5 \times 4$ is also an expression, as well as $4 + n$. An expression can also be described as any of the aforementioned expressions between a set of parentheses such as $(4+n)$. The result of the expression is calculated from left to right unless the parenthesis is used which prioritises the encapsulated expression to be calculated first. We can represent this expression as an expression tree in the diagram below:
+As stated previously within the L-system \acrshort{bnf}, an expression is either a variable name, a number, or a random range. It is also possible that an expression is part of another expression. Take the example: $5 \times 4 + n$, here there are three expressions 5, 4 and $n$ however, $5 \times 4$ is also an expression, as well as $4 + n$. An expression can also be described as any of the expressions above between a set of parentheses, such as $(4+n)$. The result of the expression is calculated from left to right unless parentheses are used, which prioritises the encapsulated expression to be calculated first. We can represent this expression as an expression tree in the diagram below:
+
 
 \begin{figure}[htbp]
 	{\centering
@@ -378,13 +385,13 @@ As stated within the \acrshort{bnf} of the L-system grammar an expression is eit
 \FloatBarrier
 
 \noindent
-The parser provides a syntax tree, which makes it easy to generate the above expression tree, this can have four types of nodes, a variable, number, random range or an operator. The end nodes of the expression tree must be either a number, variable or random range; moreover, a connecting node within the tree must be an operator. We can then traverse the generated tree, and replace the variables with their associated value, and for random ranges, we can generate the random value and assign it to the node. A second traversal during the rewriting process can then computes the result of the expression. 
+The parser provides a syntax tree, which makes it easy to generate the above expression tree. The expression tree can be made up od four types of nodes: a variable, number, random range, or an operator. The leaf nodes of the expression tree must be either a number, variable or random range; moreover, a connecting node within the tree must be an operator. We can then traverse the generated tree and replace the variables with their associated value. For random ranges, the random value can be generated and assigned to the node. A second traversal during the rewriting process can then computes the result of the expression.
 
 \subsection{Implementing Random Ranges}
 
-L-systems can be quite limited in the amount of variation that can be achieved from rewriting alone. In reality, the variation between the two plants depends on an enormous number of factors. Regardless of the cause, the factors ultimately change the variation mainly within the branching structure as well as a slight variation in the features of the branches themselves. These features include but are not limited to branching angles, branch width, branch length, and branch weight. To introduce variation in the branching structure the rules that are chosen need to be random now and then, which is discussed in section \ref{stochastic rules}. This section introduces a method of providing variation in the features of branch segments, will be called random ranges. 
+L-systems are limited in the amount of variation they produce from rewriting alone. In nature, the variation between the two plants depends on an enormous number of factors. These factors ultimately create variation within the branching structure variation in the features of the branches, leaves, and flowers. These features include but are not limited to, branching angles, width, length, and weight. To introduce variation in the L-system branching structure, there must be randomness in how rules are chosen. This topic is discussed in section \ref{stochastic rules}. This section introduces a method of providing variation in the features of branch segments, called random ranges.
 
-A random range provides a method of declaring a variable that represents a number that should be randomly generated between two bounding numbers. The bounding numbers are the minimum and a maximum respectively. The main method used for generating a pseudo-random number using a uniform distribution within a range which can be seen below. 
+A random range provides a method of declaring a variable that represents a number that is randomly generated between two bounding numbers. The bounding numbers are the minimum and a maximum respectively. The primary method used for generating a pseudo-random number using a uniform distribution within a range can be seen below. 
 
 \begin{singlespace}
 \begin{algorithm}
