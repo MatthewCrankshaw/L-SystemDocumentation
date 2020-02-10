@@ -456,9 +456,9 @@ During the rewriting process, the module that is being rewritten is matched to a
 
 \section{The String Rewriter}
 
-Once the L-system has been processed by both the lexical analyser and the parser, the data structures and information is set up for the string rewriter. The string rewriter is the final stage which uses this data by starting with a current string of modules which is originally set to the axiom string. The string rewriter will then iterate over each module within the current string carrying matching it to the production rules and rewriting the module with the successor if the production rule matches. Once all of the modules have been rewritten, the current string is replaced by the result string for that iteration. This process is carried out for the number of generations specified within the L-system and will eventually provide the resultant string of modules.
+Once processed by the lexical analyser and the parser, the L-systems' data structures and information are ready for string rewriting. The string rewriter is the final stage. It starts by starts by using the axiom as the current string of modules. The string rewriter will then iterate over each module within the current string, matching it to the production rules. If they match, the module will be rewritten with the production rules successor, after each parameter in each module is evaluated. Once all the modules are rewritten, the result string replaces the current string of that iteration. This process is carried out for the number of generations specified within the L-system and will eventually provide the final result string of modules.
 
-When the string rewriter is run it should data for the number of generations, axiom string, production rules, constants table, and local variable table. Below is the pseudocode for the rewriting procedure as well as several useful functions for finding the matching production rule, replacing variables, evaluating expressions and adding variables to the local table. 
+Below is the pseudocode for the rewriting procedure as well as several useful functions for finding the matching production rule, replacing variables, evaluating expressions, and adding variables to the local table. 
 
 \begin{singlespace}
 \newpage
