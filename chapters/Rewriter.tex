@@ -387,11 +387,11 @@ As stated previously within the L-system \acrshort{bnf}, an expression is either
 \noindent
 The parser provides a syntax tree, which makes it easy to generate the above expression tree. The expression tree can be made up od four types of nodes: a variable, number, random range, or an operator. The leaf nodes of the expression tree must be either a number, variable or random range; moreover, a connecting node within the tree must be an operator. We can then traverse the generated tree and replace the variables with their associated value. For random ranges, the random value can be generated and assigned to the node. A second traversal during the rewriting process can then computes the result of the expression.
 
-\subsection{Implementing Random Ranges}
+\subsection{Implementing Random Ranges} \label{random range}
 
-L-systems are limited in the amount of variation they produce from rewriting alone. In nature, the variation between the two plants depends on an enormous number of factors. These factors ultimately create variation within the branching structure variation in the features of the branches, leaves, and flowers. These features include but are not limited to, branching angles, width, length, and weight. To introduce variation in the L-system branching structure, there must be randomness in how rules are chosen. This topic is discussed in section \ref{stochastic rules}. This section introduces a method of providing variation in the features of branch segments, called random ranges.
+L-systems are limited in the amount of variation they produce during the rewriting stage. In nature, the variation between the two plants depends on an enormous number of factors. These factors ultimately create variation within the branching structure and in the features of the branches, leaves, and flowers. These features include but are not limited to, branching angles, width, length, height, and weight. When introducing variation in the L-system branching structure, there must be randomness in how rules are chosen. This topic is discussed in section \ref{stochastic rules}. However, this section introduces a method of providing variation in the features of branch segments, called random ranges.
 
-A random range provides a method of declaring a variable that represents a number that is randomly generated between two bounding numbers. The bounding numbers are the minimum and a maximum respectively. The primary method used for generating a pseudo-random number using a uniform distribution within a range can be seen below. 
+A random range is a method of declaring a variable that represents a number that is randomly generated between two bounding numbers. The bounding numbers are the minimum and a maximum, respectively. The primary method used for generating a pseudo-random number using a uniform distribution within a range can be seen below. 
 
 \begin{singlespace}
 \begin{algorithm}
@@ -405,13 +405,17 @@ A random range provides a method of declaring a variable that represents a numbe
 \end{singlespace}
 
 \noindent
-Several other types of pseudo-random number generators can be used to generate numbers according to certain distributions; such as normal, binomial, Poisson among others. To generate plant-life a uniform distribution should be sufficient.
+Several other types of pseudo-random number generators could generate numbers according to different distributions, such as normal, binomial, Poisson, among others. When generating plant-life, a uniform distribution should be sufficient for most features and plant-life.
 
-A random range can be declared in the define statement, axiom parameter or a production rule successor parameter. If it is declared within a define statement, it will generate a random number when that constant variable is added to the constants table. A random range declared within the axiom will generate a random number before the string rewriting process begins, this ensures that the number. And finally, if a random range is defined within the successor of a production rule, the number should be generated during the rewriting process when the current module within the string is successfully matched to the predecessor at the same time as the expressions within the successors are being evaluated. The values are generated during the rewriting process rather than prior is so that each time a module is matched to the rule, the successor will generate a different value.
+A random range can be declared in three different places within the L-system. It can be declared in the define statement, as an axiom parameter, or a production rule successor parameter. If the random range is declared within a define statement or the axiom, it will generate the random value during the parsing stage. However, if the range is defined in the successor, the number is generated during the rewriting process. More specifically, it is generated when the expressions within the successors are being evaluated. The values are generated during the rewriting process, rather than during parsing because each time a module is rewritten, the number should be a new random number. Generating the numbers during parsing means that the random number is only generated once, and then kept for use later. Conversely, generating the number during rewriting means that a new number will be generated every time rewriting takes place. 
 
 \subsection{Implementing Stochastic Rules} \label{stochastic rules}
 
-Each rule belonging to a stochastic group of rules provides a probability value of how likely it is that the particular rule is selected during the rewriting process. For production rules to be part of the same stochastic group they are required to meet four criteria: 
+The term \say{stochastic} refers to a randomly determined process. This could be by a uniform distribution or some random probability distribution. 
+
+One of the important factors of generating plant-life is being able to simulate randomness in the generation process. Section \ref{random range} covers a method of generating random numbers that can be used for the features within an L-system. This section covers a different type of randomness that affects the way the rewriter selects a rule for rewriting. In this way, rules can be selected randomly instead of meeting certain conditions. Randomly selecting rules provides randomness within the structure of the plant-life rather than the features.
+
+In order to achieve stochastic rules, each rule must belong belonging to a stochastic group of rules that provides a probability value. The probability indicates how likely it is that rule is selected during the rewriting process. For production rules to be part of the same stochastic group, they are required to meet the following four criteria: 
 
 \begin{itemize}
 \item The stochastic operator $\sim$ must be used with a probability between 0.0 and 1.0.
@@ -420,7 +424,7 @@ Each rule belonging to a stochastic group of rules provides a probability value 
 \item The total probability of all of the production rules within the stochastic group must not exceed 1.0 or be less than 0.0.
 \end{itemize}
 
-Each time a rule is added to a stochastic group an entry a stochastic rule table is created to keep track of which rules are associated with which stochastic group as well as the probability of each rule. Using the stochastic rules below, we can generate a stochastic rule table as seen in table \ref{stochastic table}. 
+During the parsing phase, if the rule has the stochastic operator, the probability of the rule must be kept for later use within a stochastic probability table. The table also keeps track of which rules are associated with which stochastic groups. A stochastic probability table can be generated from the rules below, as seen in table \ref{stochastic table}. 
 
 \begin{equation} \label{stochastic implementation example}
 \begin{aligned}
@@ -446,9 +450,9 @@ Each time a rule is added to a stochastic group an entry a stochastic rule table
 \end{table}
 \FloatBarrier
 
-The stochastic name can be generated by using the module name of the predecessor of the production rule as well as the number of parameters within the predecessor module. In the example above we can use the predecessor name F which has a single parameter, making the stochastic name F1. This serves as a unique identifier for the stochastic group. Once all of the production rules have been processed and added to the stochastic rule table, each groups' probabilities should be added together and the total should equal 1.0, certain tolerances should put in place to account for floating-point error. 
+The stochastic name used within the stochastic table is generated by using the predecessor module name in the production rule, as well as the number of parameters within the predecessor module. In the example above, we can use the predecessor name F, which has a single parameter, making the stochastic name F1. This method of naming serves as a unique identifier for the stochastic group. Once all of the production rules are processed, each groups' probabilities are added together. The total probability should equal 1.0. A tolerance should put in place to account for floating-point error.
 
-During the rewriting process, the module that is to be rewritten will be matched to a particular stochastic group. A uniformly distributed random number is then generated between 0.0 and 1.0. A range for each rule will then be generated, for instance, p1 will be between 0.0 and 0.33, p2 will be between 0.33 and 0.66 and finally, p3 will be between 0.66 and 1.0. The production rule with the range that the random number falls between is then selected and used for rewriting. 
+During the rewriting process, the module that is being rewritten is matched to a particular stochastic group. A uniformly distributed random number is generated between 0.0 and 1.0. A range for each rule is generated, for instance, p1 will be between 0.0 and 0.33, p2 will be between 0.33 and 0.66, and finally, p3 will be between 0.66 and 1.0. The production rule will be chosen where the random number falls between. For example, if the random number is 0.456, p2 will be chosen as 0.456 falls between 0.33 and 0.66.
 
 \section{The String Rewriter}
 
