@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  11 FEB 2020 12:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  11 FEB 2020 13:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1283,19 +1283,24 @@ Underfull \vbox (badness 2856) has occurred while \output is active []
  [55 <./images/Diagrams/vector1.png> <./images/Diagrams/vector2.png> <./images/
 Diagrams/vector3.png> <./images/Diagrams/vector4.png> <./images/Diagrams/vector
 5.png> <./images/Diagrams/cross_product.png>]
-Overfull \hbox (22.05211pt too wide) detected at line 174
+Overfull \hbox (22.05211pt too wide) detected at line 177
 [] \OT1/cmr/m/n/10.95 = [] \OMS/cmtt/m/n/10.95 ^^B [] \OT1/cmr/m/n/10.95 = []
  []
 
-[56] [57]
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [58]
-Underfull \hbox (badness 10000) in paragraph at lines 329--331
+ [56]
+[57] [58]
+Underfull \hbox (badness 10000) in paragraph at lines 334--336
 
  []
 
-[59]) [60]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [59])
+[60]
 Chapter 5.
 (./chapters/Interpreter.tex
 <images/Diagrams/L-systemInterpreter.png, id=258, 996.72375pt x 577.15625pt>
@@ -1414,7 +1419,7 @@ mr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Thesis.pdf (77 pages, 7538179 bytes).
+Output written on Thesis.pdf (77 pages, 7538442 bytes).
 PDF statistics:
  378 PDF objects out of 1000 (max. 8388607)
  218 compressed objects within 3 object streams

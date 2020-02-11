@@ -119,9 +119,9 @@ Some properties of the cross product are as follows:
 
 \section{Matrices}
 
-A model in 3D space will exist as a set of vertices which each have a position. Moving the model requires moving all of the the vertices of that model without distorting it in any way, this is called a model transform. There are four main types of transforms; translation, rotation, scale and shear. Matrices are a single matematical construct which is capable of carrying out all four of these transformations. This sections will only cover the first three as the shear transformation is likely not going to be useful for this thesis.    
+A model in 3D space exists as a set of position vertices, often represented as vectors. Moving the model requires moving all of the vertices of that model without distorting it in any way. Moving a model like this is called a model transform. There are four main types of transforms, these being: translation, rotation, scale, and shear. Matrices are a single mathematical construct capable of carrying out all four of these transformations. This section will only cover the first three as the shear transformation only used in certain circumstances and will not be useful in this thesis.    
 
-A matrix is an 2D array of numbers, arranged into rows and columns, which can come in many different sizes. In 3D graphics, matrices used for transformations are the 3 $\times$ 3 and 4 $\times$ 4 matrix as seen below. A 3 $\times$ 3 matrix can be used for linear transorms such as scaling and rotation, furthermore, a linear transform which contains translation is known as an affine transform and can be represented by a 4 $\times$ 4 matrix known as an Atomic Transform Matrix. An atomic Transfom matrix is the concatination of four 4 $\times$ 4 matrices, one for translations, rotations, scale and shear transforms. Resulting in a 4 $\times$ 4 matrix as shown below. 
+A matrix is a 2D array of numbers arranged into rows and columns, which can come in many different sizes. In 3D graphics, matrices used for transformations are 3 $\times$ 3 and 4 $\times$ 4 matrix, as seen below. 
 
 \begin{equation}
 \textbf{M} = \begin{bmatrix}
@@ -141,7 +141,9 @@ M_{41} & M_{42} & M_{43} & M_{44}
 \end{equation}
 
 \noindent
-The affine matrix can be shown in the expression below where $RS$ is a 3 $\times$ 3 matrix containing the rotation and scale where the $4^th$ elements are 0. The $T$ elements represent the translation with the 4th element being 1. 
+A 3 $\times$ 3 matrix is used for linear transforms such as scaling and rotation. Furthermore, a linear transform that contains translation is known as an affine transform and is represented as a 4 $\times$ 4 matrix known as an Atomic Transform Matrix. An atomic Transform matrix is the concatenation of four 4 $\times$ 4 matrices, one for translation, rotation, scale, and shear transforms, which results in a 4 $\times$ 4 matrix, as shown below. 
+
+The affine matrix can be shown in the expression below where $RS$ is a 3 $\times$ 3 matrix containing the rotation and scale where the $4^th$ elements are 0. The $T$ elements represent the translation, with the 4th element being 1. 
 
 \begin{equation}
 \textbf{M} = \begin{bmatrix}
@@ -152,7 +154,8 @@ T_{1} & T_{2} & T_{3} & 1
 \end{bmatrix}
 \end{equation}
 
-The product of two linear transform matrices will be another linear transform matrix that carries out both of those tranformations. This is true for the multiplication of two affine transform matrices as well, and is why matrix multiplication is so powerful in 3D graphics. Take the two matrices $A$ and $B$ which give the product $P$. In order to multiply $A$ and $B$ together, the dot product of the row and the column is calculated as seen below. It is also imporant to know that matrix multiplication is non-commutative $(AB \not= BA)$.
+\noindent
+The product of two linear transform matrices will be another linear transform matrix where both of the transformations have taken place. This is true for the multiplication of two affine transform matrices as well, and is why matrix multiplication is so powerful in 3D graphics. Take the two matrices, $A$ and $B$, which give the product $P$. To multiply $A$ and $B$, the dot product of the row and the column is must be calculated, which can be seen in the equation below. It is also important to know that matrix multiplication is non-commutative $(AB \not= BA)$.
 
 \begin{equation}
 \textbf{AB} = \begin{bmatrix}
@@ -173,7 +176,8 @@ B_{31} & B_{32} & B_{33}
 \end{bmatrix}
 \end{equation}
 
-To translate a vertex in 3D space without causing any distortion. The vertex can be added the the matrix below as follows. These translations can be carried out on all vertices in order to translate a whole object model. 
+\noindent
+Translating a vertex in 3D space using matrices is is relatively straightforward. The vertex can be is added to the matrix as seen in the equation below. Where $V$ is the vertex and the $T$ is the translation matrix. To rotate an entire model, the same translation matrix can be applied to all vertices.
 
 \begin{equation}
 V + T = \begin{bmatrix}
@@ -198,8 +202,7 @@ T_{x} & T_{y} & T_{z} & 1
 \end{equation}
 
 \noindent
-
-In order to rotate a vertex in 3D space the vertex position and the rotation angle can be applied to the as a matrix depending on the axis about which it is rotating. These rotation matrices can be applied to the vertex itself in order to gain the new position of the vertex. 
+To rotate a vertex in 3D space, the vertex position and rotation angle can be applied to the matrix differently depending on the axis about which it is rotating. Similar to the translation matrix, rotation matrices are applied to each vertex, to gain the new position of the vertex. The rotation matrices below rotate a vertex around the x, y, and z axes, repectively. 
 
 \begin{equation}
 R_x(\theta) = 
@@ -250,12 +253,14 @@ R_z(\theta) =
 \end{bmatrix}
 \end{equation}
 
+\noindent
+Similarly, the scale transform takes a vertex and multiplies it by the scale matrix. If there are a large number of vertices making up an entire model if all of the points are scaled using the scale transform, the result will be the model either increasing or decreasing in size.
 
 \begin{equation}
-ST = \begin{bmatrix}
-S_{x} \\
-S_{y} \\
-S_{z} \\
+VS = \begin{bmatrix}
+V_{x} \\
+V_{y} \\
+V_{z} \\
 1
 \end{bmatrix}
 \begin{bmatrix}
@@ -265,16 +270,16 @@ S_x & 0 & 0 & 0\\
 0  & 0  & 0 & 1
 \end{bmatrix}
 = \begin{bmatrix}
-(S_x R_x)~ \\
-(S_y R_y)~ \\
-(S_z R_z)~ \\
+(V_x S_x)~ \\
+(V_y S_y)~ \\
+(V_z S_z)~ \\
 1
 \end{bmatrix}
 \end{equation}
 
 \section{Quaternions}
 
-In computer graphics there are a number of ways to represent 3D rotations. One method is to use matrix affine transforms, which is spoken about in the previous section. Matrices are a common way of represening rotation, however, it has a number of limitations. Matrices are represented by nine floating point values and can be computationally expensive to store and process, particularly when doing a vector to matrix multiplication. There are also situations where it is neccessary to smoothly interpolate from one rotation to another or to find the rotation somewhere between two different rotations. It is possible to make these calculations using matrices but it can become very complicated and even more computationally expensive. Quaterions are the answer to these challenges.
+In computer graphics, there are several ways to represent 3D rotations. One method is to use matrix affine transforms, that is spoken about in the previous section. Matrices are a common way of representing rotation; however, there are some limitations. Matrices are represented by nine floating-point values and can be computationally expensive to store and process, mainly when doing a vector to matrix multiplication. There are also situations where it is necessary to interpolate from one rotation to another, smoothly, or to find the rotation somewhere between two different rotations. It is possible to make these calculations using matrices, but it can become very complicated and even more computationally expensive. Quaternions are the answer to these challenges.
 
 Quaternions look similar to a 4D vector. They contain four axes $q = [q_x, q_y, q_z, q_w]$, these are represented with a real axis ($q_w$) and three imaginary axes ($q_x, q_y, q_z$). A quaternion can be represented in the complex form below: 
 
@@ -283,14 +288,14 @@ q = (iq_x + jq_y + kq_z + qw)
 \end{equation}
 
 \noindent
-For the purpose of this thesis it is not important to understand the derivation of quaterions in mathematics. However it is important to understand that any quaternion which obays the rule in \ref{unit quat} below is known as a unit quaternion.
+For this thesis, it is not essential to understand the derivation of quaternions mathematically. However, it is essential to understand that a quaternion obeying the rule in \ref{unit quat} below is known as a unit quaternion.
 
 \begin{equation} \label{unit quat}
 	q_x^2 + q_y^2 + q_z^2 + q_w^2 = 1
 \end{equation}
 
 \noindent
-Unit quaternions can be used for rotations, it is possible to convert a quaternion to a unit quaternion by taking the angle and the axis of a rotation and applying to the quaternion as seen in \ref{unit quat conversion}.
+Unit quaternions can be used for rotations, and it is possible to convert a quaternion to a unit quaternion by taking the angle and the axis of rotation and applying it to the quaternion as seen in \ref{unit quat conversion} below.
 
 \begin{equation} \label{unit quat conversion}
 \begin{aligned}
@@ -304,16 +309,21 @@ Unit quaternions can be used for rotations, it is possible to convert a quaterni
 \end{equation}
 
 \noindent
-The scalar part ($q_w$) is the cosine of the half angle, and the vector part ($q_x q_y q_z$) is the axis of that rotation, scaled by sine of the half angle of rotation. The unit quaternion can be used for rotations in a number of ways. The most useful of which is to rotate vectors, interpolate between two rotations and concatonate rotations together similar to how matrix transformations can be multiplied.
+The scalar part ($q_w$) is the cosine of the half-angle, and the vector part ($q_x q_y q_z$) is the axis of the rotation, scaled by the sine of the half-angle of rotation. 
 
-The first operation for quaternions is that of addition. The addition of two quaternions is quite simple, it involves taking each component of each quaternion and adding them together. This is similar to that of matrices addition and can be expressed as follows:
+Some of the most useful features of a quaternion are the ability to rotate vectors, interpolate between two rotations, and concatenate rotations together.
+
+The first operation for quaternions is addition. The addition of two quaternions is quite simple. It involves taking each component of each quaternion and adding them together. This method is similar to matrix addition and can be expressed as follows.
 
 \begin{equation}
 p + q = [(p_w + q_w), (p_x + q_x), (p_y + q_y), (p_z + q_z)]
 \end{equation}
 
 \noindent
-Multiplication of quaternions is also incredibly powerful and can be used to concatonate rotations. There are a number of different types of quaternion multiplication, however, the one most commonly used for quaternion rotaton is called the grassmann product. This can be described in the following formula below. Where $p$ and $q$ are quaternions and the subscript $w$ indicates the scalar part and subscript $x, y, z$ indicate the vector components of each quaternion.
+The multiplication of quaternions is also incredibly powerful and can be used to concatenate many rotations together without any gimbol lock. There are several different types of quaternion multiplication. However, the one most commonly used for quaternion rotation is called the Grassmann product. 
+
+The Grassmann product can be expressed in the formula below. Where $p$ and $q$ are quaternions, and the subscript $w$ indicates the scalar part and subscript $x, y, z$ indicates the vector components of each quaternion.
+
 
 \begin{equation}
 \begin{aligned}
@@ -327,7 +337,7 @@ Multiplication of quaternions is also incredibly powerful and can be used to con
 \end{equation}
 
 \noindent
-To rotate a vector by a unit quaternion the vector will need to be converted into its quaternion form. This requires taking the unit vector $v$ and using it as the vector part of the quaternion with a scalar part being equal to zero. This can be written as $Q_v = [v, 0] = [v_x, v_y, v_z, 0]$. The grassmann product can be used to calculate the rotation, by taking the product of the rotation quaternion $q$ and the vector form quaternion $v$ and the inverse of the rotation quaternion $q^-1$. \\
+Multiplying two quaternions together is important for multiple rotations taking place one after the other. However, rotate a quaternion by a vector, the vector will need to be converted into its quaternion form. This requires taking the unit vector $v$ and using it as the vector part of the quaternion with a scalar part being equal to zero. This can be written as $Q_v = [v, 0] = [v_x, v_y, v_z, 0]$. The Grassmann product can be used to apply the rotation, by taking the product of the rotation quaternion $q$ and the vector form quaternion $v$ and the inverse of the rotation quaternion $q^-1$.
 
 \begin{equation}
 	V_q = qvq^{-1}
