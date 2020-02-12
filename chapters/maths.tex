@@ -344,26 +344,32 @@ Multiplying two quaternions together is important for multiple rotations taking 
 \end{equation}
 
 \noindent
-For unit quaternions the conjugate and the inverse are identical. Quite simply the inverse of a unit quaternion can be calculated by negating the vector components of the quaternion whilst leaving the scalar component the same. This can be expressed as follows:
+The conjugate and the inverse of a unit quaternion are identical. The conjugate or inverse of a unit quaternion can be calculated by negating the vector components `$q_v$' of the quaternion while leaving the scalar component `$q_s$' the same. The inverse of a unit quaternion can be expressed as follows.
 
 \begin{equation}
 	q^{-1} = [-q_v, q_s]
 \end{equation}
 
 \noindent
-Quaternion rotations can be concatonated together similar to how matrix transforms can be multiplied together in affine transforms. The grassman product is noncommutative and therefore order matters. Using the grassmann product the rotations can easily be multiplied together to give the result of all of those rotations as if they were to happen one after the other. This can be expressed as follows:
+Concatenating quaternion rotations together is similar to how matrix affine transformations can be multiplied together. The Grassman product can be used. The Grassman product is noncommutative and, therefore, order matters. The quaternion multiplication would result in the rotation that represents all rotations, if they were to happen one after the other. This can be expressed in the equation below.
 
 \begin{equation}
 \begin{aligned}
 Q_{net} = Q_3 Q_2 Q_1\\
+\end{aligned}
+\end{equation}
+
+\noindent
+The order the quaternions $Q_1, Q_2$, and $Q_3$ is applied is: $Q_3$, $Q_2$, and then $Q_1$. The product of three quaternions can be applied to a vector by multiplying the product of the quaternions to the vector, then multiplying the product of the inverse of the quaternion as seen below. 
+
+\begin{equation}
+\begin{aligned}
 v' = Q_3 Q_2 Q_1~ v~ Q_{1}^{-1} Q_{2}^{-1} Q_{3}^{-1}
 \end{aligned}
 \end{equation}
 
 \noindent
-The order by which the quaternions $Q_1, Q_2$ and $Q_3$ are applied is $Q_3$ then $Q_2$ and then $Q_1$. To apply this to a vector the product of the three quaternions is multiplied to the vector and then multiplied to the product of the inverse of each quaternion. 
-
-Another incredibly useful mathematical function is called rotational linear interpolation also known as \acrshort{lerp}. The \acrshort{lerp} function takes two quaternions, $Q_1$ and $Q_2$ and linearly interperpolates between those two rotations by a given percentage  $\beta$. The \acrshort{lerp} function can be defined as follows.
+Another incredibly useful mathematical function is called rotational linear interpolation, also known as \acrshort{lerp}. The \acrshort{lerp} function takes two quaternions, $Q_1$ and $Q_2$, and linearly interpolates between those two rotations by a given percentage  $\beta$. The \acrshort{lerp} function can be defined as follows.
 
 \begin{equation}
 \begin{aligned}
@@ -378,11 +384,11 @@ Another incredibly useful mathematical function is called rotational linear inte
 \end{equation}
 
 \noindent
-Using the linear interpolation function will result in a rotation between $Q_1$ and $Q_2$ at a given percentage $\beta$ that is between 0 and 1. Where 0 is the rotation of $Q_1$ and 1 is rotation of $Q_2$.
+Using the linear interpolation function will result in a rotation between $Q_1$ and $Q_2$ at a given percentage of $\beta$, which can be specified between 0 and 1. Where 0 is the rotation of $Q_1$ and 1 is rotation of $Q_2$. \acrshort{lerp} is very helpful in many areas of 3D graphics and is used extensively within the physics simulation of branches covered in chapter \ref{physics chapter}.
 
 \section{summary}
 
-This chapter covers the three major mathematical concepts used for representing 3D objects location, rotation and scale within a 3D graphics application. This includes moving objects around a scene for the purposes of animation or simulation. It is important to understand these concepts when implementing the string interpreter in order to be able to manipulate the branches or other objects. These concepts are also useful in the implementation of the physics simulations. The \acrlong{glm} (\acrshort{glm}) library provides a large number of useful classes and functions for working with vertices, matrices and quaternions.
+This chapter covers the three major mathematical concepts used for representing a 3D objects' position, rotation, and scale within 3D graphics applications. This includes moving objects around a scene, or for animation or simulation of an object. It is essential to understand these concepts when implementing the L-system interpreter, as it is used to manipulate the branches or objects. These concepts are also useful in the implementation of the physics simulations. The \acrlong{glm} (\acrshort{glm}) library provides a large number of useful classes and functions for working with vertices, matrices, and quaternions and can be used instead of re-implementing these mathematical functions.
 
 
 

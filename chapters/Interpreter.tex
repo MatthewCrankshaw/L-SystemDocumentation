@@ -1,5 +1,7 @@
 
-\lettrine[lines=3]{T}{}he string interpreter is one of the major components of plant generation and it is the final step in the process of procedural generation. The output of this stage of processing is dependant on what the L-system is representing, in this case it is responsible for interpreting the resulting string of modules provided by the L-system rewriter, and uses this to generate the 3D models, structures and data of the resulting plant, which is then rendered and simulated on the screen using the OpenGL framework. The generation of plant-life has three main stages, the first part consists of a turtle graphics interpreter which takes the string of modules as a set of instructions, it starts from the root of the tree and generates a skeleton made up of joints, this is similar to the techniques used in skeletal rigging in animation \cite{gregory2014game}. The joints within the tree skeleton each represents a branch segment which has some information about the properties of that segment. These segements can be used to generate the vertex, index and other data that make up the 3D models of the plant. These models can finally be passed to the final part of string interpreter which is the renderer, the renderer is reponsible for taking all the vertices, indices, textures and shaders and organising it in an optimal way that enables rendering the plant on the screen, as well as the physical simulation of the tree skeleton. The stages of string interpretation can be seen in figure \ref{l-system interpreter} below. 
+\lettrine[lines=3]{T}{}he string interpreter is one of the significant components of plant generation. It is the final step in the process of procedural generation. The output of this stage is dependant on what the L-system is representing. In this case, it is responsible for creating the final plant models and information and then rendering it on the screen, using the OpenGL framework. 
+
+The generation of plant-life has three main stages. The first part is the turtle graphics interpreter, then the model generator, and finally, the renderer. The turtle graphics interpreter takes the string of modules provided by the rewriter, as a set of instructions. It starts from the root of the tree and generates a skeletal structure made up of joints. This is similar to the techniques used in skeletal rigging in animation \cite{gregory2014game}. The tree skeleton joints each represent a branch segment or part of the tree. These joints have some information about the properties of that segment. The joint data is then used to generate the model data in the second stage of processing. The model generator creates the 3D points that make up the plant, as well as texture and lighting information. The models can finally be passed to the final part of the string interpreter, which is the renderer. The renderer is responsible for taking all the vertex, texture, and lighting data and renders the final plant on the screen. The renderer will also handle any physical simulation of the tree skeleton. The stages of string interpretation can be seen in figure \ref{l-system interpreter} below, as well as the information needed at each stage. 
 
 \begin{figure}[htbp]
 	{\centering
@@ -11,36 +13,44 @@
 \FloatBarrier
 
 \noindent
-This chapter will cover each stage of the string interpreter implementation in detail, as well as well as talk about how the interpreter is able to simulate and animation the plants movements under forces such as gravity and wind in real time. 
+This chapter will cover each stage of the string interpreter implementation in detail. This chapter will also introduce how the interpreter can simulate and animation the plants' movements under forces such as gravity and wind in real-time. 
 
 \section{Turtle Graphics Interpreter}
 
-The main purpose of the turtle graphics interpreter is to take the string of modules from the L-system rewriter, and interpret it as a list of turtle graphics instructions. As briefly covered in chapter \ref{l-system chapter}, each module name within the L-systems resultant string represents a particular meaning to the turtle graphics interpreter. The meaning of the module names are predefined in the string interpreter and are dependant on what the L-system is trying to represent. The L-system defined for this thesis is a parametric L-system, which allows each module to also provide a number of optional parameters. These may also carry a particular meaning for the interpreter. For instance the forward instruction or module name \say{F} can have three parameters. The value of the first parameter is the distance to move forward, this can also be seen as the length of the branch segment. The second and third parameter is the spring constant of the branch and the mass of the branch repectively. These give some information to the physics simulation in order to animate the plant. Below is a table describing the L-system module names as well as the parameter meanings for the turtle graphics interpreter.
+The primary purpose of the turtle graphics interpreter is to take the string of modules from the L-system rewriter and interpret each module as a turtle graphics instruction. Each instruction carries out a particular job in creating the overall structure of the plant. This stage is purely to follow the turtle graphics instructions and generate the skeletal data of the plant for the next stage.
+
+This section is an implementation of what was covered in section \ref{Interpreting DOL-system}. Where a turtle graphics interpreter was defined for a simple DOL-system, however, there are several differences. The main difference is that the L-system string being interpreted is a parametric L-system and, therefore, consists of modules and parameters. Despite these differences, the overall concept remains the same. Each module name within the L-systems resultant string represents a particular meaning to the turtle graphics interpreter. The meaning of the module names are predefined in the string interpreter system and are dependant on what the L-system is trying to represent. The L-system defined for this thesis allows each module to provide optional parameters. These parameters may also carry particular meanings for the interpreter. For instance, the forward instruction or module name \say{F} can have three parameters. The value of the first parameter is the distance to move forward. The second and third parameter is the spring constant of the branch and the mass of the branch, respectively. These are useful in a physics simulation in order to animate the plant. 
+
+Below is a table describing the L-system module names as well as the parameter meanings for the turtle graphics interpreter. In all of the instructions, there is also the case where no parameter is provided. This is still valid; however, if no parameter value is provided, a default value will be used.
 
 \begin{table}[h!]
 \centering
-\begin{tabular}{ | c | l | l | l |}
+\begin{tabular}{ | c | l | l | l | l |}
 \hline
-	Instruction Name 	& Parameter 1 & Parameter 2 & Parameter 3 \\  
+	Instruction Name  & Meaning					& Parameter 1 	& Parameter 2 		& Parameter 3 \\  
 \hline
 \hline
-	F 							& Distance	& Spring Constant	& Branch Mass\\
+	F 				&	Forward (Render)		& Length		& Spring Constant	& Branch Mass\\
 \hline
-	f 							& Distance	& Spring Constant	& Branch Mass\\
+	f 				&	Forward (Don't render)	& Length 		& Spring Constant	& Branch Mass\\
 \hline
-	+ 							& Angle of rotation &			&\\
+	+ 				&	Yaw	Right				& Angle 		&	N/A				&N/A\\
 \hline
-	- 							& Angle	of rotation	&			&\\
+	- 				&	Yaw Left				& Angle			&	N/A				&N/A\\
 \hline
-	/ 							& Angle	of rotation	&			&\\
+	/ 				&	Pitch Up				& Angle			&	N/A				&N/A\\
 \hline
-	$\backslash$ 				& Angle	of rotation	&			&\\
+	$\backslash$ 	&	Pitch Down				& Angle			&	N/A				&N/A\\
 \hline
-	$\land$ 					& Angle	of rotation	&			&\\
+	$\land$ 		&	Roll Right				& Angle			&	N/A				&N/A\\
 \hline
-	\& 							& Angle	of rotation	&			&\\
+	\& 				&	Roll Left				& Angle 		&	N/A				&N/A\\
 \hline
-	! 							& Branch width		&			&\\
+	! 				&	Change Width			& Branch Width	&	N/A				&N/A\\
+\hline
+	[ 				&	Save State				& N/A			&	N/A				&N/A\\
+\hline
+	] 				&	Load State				& N/A 			&	N/A				&N/A\\
 \hline
 \end{tabular}
 \caption{Table of turtle instruction symbols and their meaning to the interpreter}
@@ -49,7 +59,7 @@ The main purpose of the turtle graphics interpreter is to take the string of mod
 \FloatBarrier
 
 \noindent
-Each modules instruction is carried out one by one to generate the plants skeletal structure, which is made up of joints. The joints hold information about the properties of each particular segement or object of the plant. The joints properties are the position, orientation, scale, parent joint as well as its physical characteristics. It is important to note that all of the scales and rotations must happen before the forward movement. As the rotations change the orientation of the brach and then the movement generates the joint itself. A joint is defined by the figure below:
+Each modules' instruction is carried out one by one to generate the plants' skeletal structure. The skeleton starts without any joints at the root location. All of the rotation instructions change the current angle of the turtle, and the change width instruction changes the value of its width. When one of the forward instructions is reached, a joint is created and added to the plants' skeleton. The joints hold information about the properties of each particular segment or object of the plant. The joints properties are the position, orientation, scale, parent joint, as well as its physical characteristics. It is important to note that all of the rotation and scale transforms must happen before the forward movement. A joint holds the properties seen in the diagram below.
 
 \begin{figure}[htbp]
 	{\centering
@@ -61,11 +71,11 @@ Each modules instruction is carried out one by one to generate the plants skelet
 \FloatBarrier
 
 \noindent
-Figure \ref{joint properties} shows that there is in fact a large amount of information stored for the position and orientation of each joint. This is because the rotation of the joint is stored in both a local and global space. Local space refers to the rotation of the joint relative to its parent rotation, this is useful as it allows the manipulation of subsequent child joints, whilst leaving other joints local rotation unchanged. Global space, also known as world space, is the rotation of each joint relative to the world itself this is useful for understanding the current rotation of the joint relative to the world for instance calculating the torque or force calculations due to gravity. It is important to store both the current and previous rotations as they are used to calculate the rate of change for physics calculations.
+Figure \ref{joint properties} shows that there is a large amount of information stored for the position and orientation of each joint. This is because the rotation of the joint is stored in both a local and global space. Local space refers to the rotation of the joint relative to its parent rotation. This is useful as it allows the manipulation of subsequent child joints while leaving other joints local rotation unchanged. Global space, also known as world space, is the rotation of each joint relative to the world itself. This is useful for understanding the current rotation of the joint relative to the world. It is essential to store both the current and previous rotations as they are used to calculate the rate of change for physics calculations.
 
-The physical properties for each joint are the parts are what will affect model generation as well as physics simulations. These properties include the length, width, spring constant, damping constant as well as the current momentum of the branch. 
+The physical properties for each joint are the parts that will affect model generation as well as physics simulations. These properties include the length, width, spring constant, damping constant as well as the current momentum of the branch. 
 
-Take the following string of modules \say{F(1)[/(90)F(1)$\backslash$ (90)F(1)]-(90)F(1)+(90)F(1)}, the alphabet is made up of seven unique modules F, /, $\backslash$, [, ], + and -. According to the as discussed in previous chapters the \say{F} symbol represents a move forward, and \say{+}, \say{-}, \say{/}, \say{$\backslash$} symbolize different rotations, and the \say{[} and \say{]} represent save and load state respecively. The aforementioned symbols each have a single parameter except the load and save state. It is the turtle graphics interpreters job to understand what these parameters are and how to interpret them. In this case all of the \say{F} modules have the parameter value of 1, and all of the rotation modules have the parameter of 90. These are interpreted as the distance to move forward and the change in angle from the previous joint in degrees. This interpretation can be represented with the joint structure shown in figure \ref{skeleton diagram} below:
+Take the following string of modules \say{F(1)[/(90)F(1)$\backslash$ (90)F(1)]-(90)F(1)+(90)F(1)}, the alphabet is made up of seven unique modules F, /, $\backslash$, [, ], + and -. As discussed in previous chapters the \say{F} symbol represents a move forward, and \say{+}, \say{-}, \say{/}, \say{$\backslash$} symbolize different rotations, and the \say{[} and \say{]} represent save and load state respectively. The symbols in the string above each have a single parameter except the load and save state. It is the turtle graphics interpreters' job to understand what these parameters are and how to interpret them. In this case, all of the \say{F} modules have the parameter value of 1, and all of the rotation modules have the parameter of 90. These are interpreted as the length to move forward and the change in angle from the previous joint. This interpretation can be displayed with the joint structure shown in figure \ref{skeleton diagram} below.
 
 \begin{figure}[htbp]
 	{\centering
@@ -81,11 +91,9 @@ Take the following string of modules \say{F(1)[/(90)F(1)$\backslash$ (90)F(1)]-(
 
 \section{Model Generator}
 
-Modeling the branches of a plant is one of the most important parts for the overall look and feel of that plant that is being generated. The L-system described in the previous sections is able to describe the details about the plants structure, for instance the position, width, length, weight and other important information. The job of the model generator is to take this information and intelligently generate the models vertices, normals, texture coordinates and other information that can then be provided to the OpenGL renderer and finally to the GPU to be rendered on the screen.
+Modeling the branches of a plant is one of the most critical parts of the look and feel of the plant being generated. The plant skeleton and joints describe details about the plants' structure. The job of the model generator is to take the skeleton information and intelligently generate the 3D models' that make up the plants' branches, leaves, or flowers. The models of these objects are made up of vertices, normals, texture coordinates, and other low-level information that can then be provided to the OpenGL renderer and finally displayed on the screen using the GPU.
 
-The simplest way to generate a model for a branching structure of a plant would be to take a number of cylinders, and to rotate and stack them according to each joints position in 3D space. The up side to this approach is that every branch within the plant shares the same object model, depending on the position, rotation and scale of the branch the relavent matrix transforms can be applied. In this way we are able to represent the overall branching structure of the plant. However, there is a problem which is pointed out by Baele and Warz\'{e}e ``The branches junction causes a continuity problem: to simply stack up cylinders generates a gap'' \cite{baele2005real}. This can be shown in the figure below:
-
-\FloatBarrier
+There are many different ways of procedurally modeling the branching branches of a plant. The simplest would be to take several cylinders, rotate and stack them according to each joints position in 3D space. The upside to this approach that it is very efficient, as every branch within the plant shares the same object model, which is a cylinder. This method can approximate the branching structure of the plant. However, there is a problem, which was pointed out by Baele and Warz\'{e}e ``The branches junction causes a continuity problem: to simply stack up cylinders generates a gap'' \cite{baele2005real}. The continuity problem can be seen in the figure below.
 
 \begin{figure}[htbp]
 	{\centering

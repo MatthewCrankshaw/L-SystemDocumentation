@@ -34,7 +34,7 @@
 \contentsline {chapter}{\numberline {4}Mathematics For 3D Graphics}{53}
 \contentsline {section}{\numberline {4.1}Vectors}{53}
 \contentsline {section}{\numberline {4.2}Matrices}{56}
-\contentsline {section}{\numberline {4.3}Quaternions}{57}
+\contentsline {section}{\numberline {4.3}Quaternions}{58}
 \contentsline {section}{\numberline {4.4}summary}{60}
 \contentsline {chapter}{\numberline {5}L-system String Interpreter Implementation}{61}
 \contentsline {section}{\numberline {5.1}Turtle Graphics Interpreter}{62}
