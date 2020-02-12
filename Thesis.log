@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  12 FEB 2020 15:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  13 FEB 2020 10:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1344,55 +1344,59 @@ Package pdftex.def Info: images/Diagrams/stackedBranchesMesh.png  used on input
 File: images/Diagrams/linkedBranchesMesh.png Graphic file (type png)
 <use images/Diagrams/linkedBranchesMesh.png>
 Package pdftex.def Info: images/Diagrams/linkedBranchesMesh.png  used on input 
-line 120.
+line 124.
 (pdftex.def)             Requested size: 144.93893pt x 124.66353pt.
-<images/Diagrams/StackedVsLinked.png, id=279, 1003.75pt x 1003.75pt>
+ [65 <./images/Diagrams/stackedBranchesMesh.png>]
+<images/Diagrams/StackedVsLinked.png, id=282, 1003.75pt x 1003.75pt>
 File: images/Diagrams/StackedVsLinked.png Graphic file (type png)
 <use images/Diagrams/StackedVsLinked.png>
 Package pdftex.def Info: images/Diagrams/StackedVsLinked.png  used on input lin
-e 132.
+e 136.
 (pdftex.def)             Requested size: 200.74644pt x 200.74644pt.
- [65 <./images/Diagrams/stackedBranchesMesh.png> <./images/Diagrams/linkedBranc
-hesMesh.png>] [66 <./images/Diagrams/StackedVsLinked.png>]
+ [66 <./images/Diagrams/linkedBranchesMesh.png> <./images/Diagrams/StackedVsLin
+ked.png>]
 <images/Diagrams/VertexObjects.png, id=287, 715.67375pt x 344.28625pt>
 File: images/Diagrams/VertexObjects.png Graphic file (type png)
 <use images/Diagrams/VertexObjects.png>
 Package pdftex.def Info: images/Diagrams/VertexObjects.png  used on input line 
-159.
+163.
 (pdftex.def)             Requested size: 357.836pt x 172.1427pt.
-) [67 <./images/Diagrams/VertexObjects.png>]
+)
+Underfull \vbox (badness 6859) has occurred while \output is active []
+
+ [67 <./images/Diagrams/VertexObjects.png>] [68]
 Chapter 6.
-(./chapters/Physics.tex [68
+(./chapters/Physics.tex [69
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [69]
-[70]
-<images/Diagrams/gravityExamples.png, id=302, 3212.0pt x 3011.25pt>
+ [70]
+[71]
+<images/Diagrams/gravityExamples.png, id=305, 3212.0pt x 3011.25pt>
 File: images/Diagrams/gravityExamples.png Graphic file (type png)
 <use images/Diagrams/gravityExamples.png>
 Package pdftex.def Info: images/Diagrams/gravityExamples.png  used on input lin
 e 105.
 (pdftex.def)             Requested size: 321.21881pt x 301.14264pt.
-) [71 <./images/Diagrams/gravityExamples.png>]
+) [72 <./images/Diagrams/gravityExamples.png>]
 Chapter 7.
-(./chapters/discussion.tex) [72
+(./chapters/discussion.tex) [73
 
 ]
 Chapter 8.
 (./chapters/conclusions.tex)
 No file Thesis.acr.
 No file Thesis.gls.
-[73
+[74
 
 ]
 Appendix A.
-(./chapters/appendix.tex (./Thesis.bbl [74
+(./chapters/appendix.tex (./Thesis.bbl [75
 
-] [75
+] [76
 
-] [76])) [77] (./Thesis.aux)
+] [77])) [78] (./Thesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1422,10 +1426,10 @@ mr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Thesis.pdf (77 pages, 7548023 bytes).
+Output written on Thesis.pdf (78 pages, 7549077 bytes).
 PDF statistics:
- 378 PDF objects out of 1000 (max. 8388607)
- 218 compressed objects within 3 object streams
+ 381 PDF objects out of 1000 (max. 8388607)
+ 220 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  176 words of extra memory for PDF output out of 10000 (max. 10000000)
 
