@@ -25,32 +25,32 @@ Below is a table describing the L-system module names as well as the parameter m
 
 \begin{table}[h!]
 \centering
-\begin{tabular}{ | c | l | l | l | l |}
+\begin{tabular}{ | c | l | l | l |}
 \hline
-	Instruction Name  & Meaning					& Parameter 1 	& Parameter 2 		& Parameter 3 \\  
+	Instruction Name  & Meaning					& Parameter 1 	& Parameter 2 					\\  
 \hline
 \hline
-	F 				&	Forward (Render)		& Length		& Spring Constant	& Branch Mass\\
+	F 				&	Forward (Render)		& Length		& Spring Constant				\\
 \hline
-	f 				&	Forward (Don't render)	& Length 		& Spring Constant	& Branch Mass\\
+	f 				&	Forward (Don't render)	& Length 		& Spring Constant				\\
 \hline
-	+ 				&	Yaw	Right				& Angle 		&	N/A				&N/A\\
+	+ 				&	Yaw	Right				& Angle 		&	N/A							\\
 \hline
-	- 				&	Yaw Left				& Angle			&	N/A				&N/A\\
+	- 				&	Yaw Left				& Angle			&	N/A							\\
 \hline
-	/ 				&	Pitch Up				& Angle			&	N/A				&N/A\\
+	/ 				&	Pitch Up				& Angle			&	N/A							\\
 \hline
-	$\backslash$ 	&	Pitch Down				& Angle			&	N/A				&N/A\\
+	$\backslash$ 	&	Pitch Down				& Angle			&	N/A							\\
 \hline
-	$\land$ 		&	Roll Right				& Angle			&	N/A				&N/A\\
+	$\land$ 		&	Roll Right				& Angle			&	N/A							\\
 \hline
-	\& 				&	Roll Left				& Angle 		&	N/A				&N/A\\
+	\& 				&	Roll Left				& Angle 		&	N/A							\\
 \hline
-	! 				&	Change Width			& Branch Width	&	N/A				&N/A\\
+	! 				&	Change Width			& Branch Width	&	Resolution of Branch		\\
 \hline
-	[ 				&	Save State				& N/A			&	N/A				&N/A\\
+	[ 				&	Save State				& N/A			&	N/A							\\
 \hline
-	] 				&	Load State				& N/A 			&	N/A				&N/A\\
+	] 				&	Load State				& N/A 			&	N/A							\\
 \hline
 \end{tabular}
 \caption{Table of turtle instruction symbols and their meaning to the interpreter}
@@ -113,7 +113,7 @@ The simple method of stacking cylinders gives an approximation of the tree struc
 
 An improvement would be to link all of the branch segments together to make the entire branching structure seamless. The top vertices from the parent branch must be linked with the bottom of its child branch. The vertices that make up the top and bottom of a branch are circles of vertices, which are linked together using indexing. These circles will have to rotate depending on the bending direction of the branch. This means that the final model will not be made up of a large number of the same model but rather a single large model. 
 
-There are several points to keep in mind for linked branching. The first is that this process is much less efficient than rendering the same cylindrical object many times. The reason for this is that every vertex within the tree needs to be calculated, generated, and finally linked. The second point is what happens when there are multiple branches off a single joint. This will be covered in more detail later. The final point has to do with the resolution of the branch. The resolution is the number of points making up the circumference of the branch. The resolution can be increased or decreased as needed. A higher resolution plant might look better but will also be more resource intensive to render. Conversely, a lower resolution plant might look a bit more jagged, but be far less resource intensive to render. An example of the linked branching can be seen below.
+There are several points to keep in mind for linked branching. The first is that this process is much less efficient than rendering the same cylindrical object many times. The reason for this is that every vertex within the tree needs to be calculated, generated, and finally linked. The second point is what happens when there are multiple branches off a single joint. This will be covered in more detail later. The final point has to do with the resolution of the branch. The resolution is the number of points making up the circumference of the branch. The resolution can be increased or decreased as needed. A higher resolution plant might look better but will also be more resource-intensive to render. Conversely, a lower resolution plant might look a bit more jagged, but be far less resource-intensive to render. An example of the linked branching can be seen below.
 
 \begin{figure}[htbp]
 	{\centering
@@ -128,7 +128,7 @@ There are several points to keep in mind for linked branching. The first is that
 \FloatBarrier
 
 \noindent
-This method of branch generation, at first glance, gives a very similar result to that of stacking cylinders. Although it does have a few advantages, firstly, it completely avoids the branch gap problem with larger angle changes, as well as branch size changes. As discussed previously, the second advantage is that the resolution is dynamic. This can be seen in figure \ref{stackedvslinked} below, where similar a looking branch can be achieved using less than half the number of vertices, with joined branches instead of stacked branches.
+This method of branch generation, at first glance, gives a very similar result to that of stacking cylinders. Although it does have a few advantages, firstly, it completely avoids the branch gap problem when there are larger angle changes, as well as branch size changes. As discussed previously, the second advantage is that the resolution is dynamic. This can be seen in figure \ref{stackedvslinked} below, where a similar-looking branch can be achieved using less than half the number of vertices, with joined branches instead of stacked branches.
 
 
 \begin{figure}[htbp]
@@ -149,9 +149,9 @@ The \acrshort{gpu} is a specially designed piece of hardware for processing comp
 
 \subsection{Models and Buffer Objects}
 
-The model generator produces all of the information neccessary for the renderer to produce the result on the screen. In general the model data will consist of vertex data, texture co-ordinates and vertex normals. The vertex data is simply position of a point within a model, three vertices make up a face and the faces are what are ultimately rendered on the screen. The texture co-ordinates are the locations on a texture image which maps directly to the model vertices. Finally the vertex normals simply known as normals are the average normal vector. A normal vector being the vector that is purpendicular to the surface at a given point, and can be used for Phong shading or other types of lighting techniques.  
+The model generator produces all of the information necessary for the renderer to produce the result on the screen. In general, the model data will consist of vertex data, texture coordinates, and vertex normals. The vertex data is simply the position of a point within the model, three vertices make up a face, and the faces are ultimately rendered on the screen. The texture coordinates are the locations on a texture image that maps directly to the model vertices, in order to have a textured object in the scene. Finally, the vertex normals, known as normals, are the average normal vector. A normal vector is a vector that is perpendicular to the surface at a given point and can be used for Phong shading or other types of lighting techniques.  
 
-One of the most important parts of the rendering process is buffering the model data onto the \acrshort{gpu}. The \acrlong{vbo} (\acrshort{vbo}) is a data structure within the \acrshort{opengl} library which can be used to store this data on the \acrshort{gpu}. Generally, the data is stored as a single buffer or array with the first 3 values being a vertex position, the second two being a texture co-ordinate and the last three being a vertex normal. 
+One of the most important parts of the rendering process is buffering the model data onto the \acrshort{gpu}. The \acrlong{vbo} (\acrshort{vbo}) is a data structure within the \acrshort{opengl} library which can be used to store this data on the \acrshort{gpu}. Generally, the data is stored as a single buffer or array with the first three values being a vertex position, the second two being a texture coordinate, and the last three being a vertex normal.
 
 \begin{figure}[htbp]
 	{\centering
@@ -165,7 +165,7 @@ One of the most important parts of the rendering process is buffering the model 
 \end{figure}
 \FloatBarrier
 
-Buffer objects can be created not only for the plant as a whole but potentially for different parts of the plant. For instance, the leaves on the tree are all quite similar. There is no need to have thousands of copies of a leafs vertices and textures. This would be highly wasteful and unnecessary. Simply, there could be one copy of the vertex data and texture data and instanced renderering can be used to render many copies of this object in at different places in one scene. 
+Buffer objects can be created not only for the plant branching structure but potentially for different parts of the plant, for instance, leaves or flowers. The leaves and flowers on a single tree tend to be very similar, so there is no need to have thousands of copies of a leafs' model or texture. This would be highly wasteful and unnecessary. Instead, there could be one copy of the vertex data, and texture data and instanced rendering can be used to render many copies of this single object in different places on the plant. 
 
 \section{Shaders}
 
