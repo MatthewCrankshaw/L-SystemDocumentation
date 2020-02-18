@@ -89,6 +89,7 @@ Take the following string of modules \say{F(1)[/(90)F(1)$\backslash$ (90)F(1)]-(
 \end{figure}
 \FloatBarrier
 
+\noindent
 Once the plant skeleton containing all of the joints has been created, the model generator can use this information to create the geometry of the plants' branches and leaves. Something to note is that there are two separate joints at the position (0, 1, 0), this is due to the fact that there are two branches going in different directions with independent features such as, width or length. 
 
 \section{Model Generator}
@@ -167,12 +168,18 @@ One of the most important parts of the rendering process is buffering the model 
 \end{figure}
 \FloatBarrier
 
+\noindent
 Buffer objects can be created not only for the plant branching structure but potentially for different parts of the plant, for instance, leaves or flowers. The leaves and flowers on a single tree tend to be very similar, so there is no need to have thousands of copies of a leafs' model or texture. This would be highly wasteful and unnecessary. Instead, there could be one copy of the vertex data, and texture data and instanced rendering can be used to render many copies of this single object in different places on the plant. 
 
 \section{Shaders}
 
 \section{Summary}
 
+This chapter outlines the implementation of the string interpreter for representing plant-life. This consists of a three-stage process, firstly the resulting string from the rewriter is interpreted using turtle graphics to generate the skeletal structure of the plant, which is made up of joints. The model generator then uses the skeletal structure as a frame for creating the plants' branch model data. The plants' model data is finally passed to the renderer, which draws the resulting image on the screen. 
+
+Each branch joint contains a large amount of data that is used in both rendering the plant and physics calculations. The way that the model generator creates and links branches can easily be changed, modified, or improved to generate different types of branches. In this thesis, two methods are covered, the stacked cylinders technique and linked branches. 
+
+The renderer is very platform dependent but usually takes place on the GPU, where buffer objects are used to store the plants model data in GPU memory and eventually displayed through the use of shaders.
 
 
 
