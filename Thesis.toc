@@ -5,8 +5,8 @@
 \contentsline {section}{\numberline {1.4}Introduction to Formal Grammars}{12}
 \contentsline {section}{\numberline {1.5}Structure of Thesis}{12}
 \contentsline {chapter}{\numberline {2}Lindenmayer Systems}{14}
-\contentsline {section}{\numberline {2.1}Simple DOL-system}{16}
-\contentsline {section}{\numberline {2.2}Interpreting the DOL-system String}{17}
+\contentsline {section}{\numberline {2.1}Simple D0L-system}{16}
+\contentsline {section}{\numberline {2.2}Interpreting the D0L-system String}{17}
 \contentsline {section}{\numberline {2.3}Branching}{21}
 \contentsline {section}{\numberline {2.4}Parametric OL-systems}{24}
 \contentsline {subsection}{\numberline {2.4.1}Formal Definition of a Parametric 0L-system}{24}
@@ -50,8 +50,7 @@
 \contentsline {section}{\numberline {6.4}Updating Branches}{71}
 \contentsline {section}{\numberline {6.5}Results}{71}
 \contentsline {section}{\numberline {6.6}Summary}{72}
-\contentsline {chapter}{\numberline {7}Discussion}{73}
-\contentsline {chapter}{\numberline {8}Conclusions}{74}
+\contentsline {chapter}{\numberline {7}Discussion and Conclusions}{73}
 \contentsline {chapter}{\numberline {A}Appendix}{75}
 \contentsline {section}{\numberline {A.1}Appendix 1}{75}
 \contentsline {section}{\numberline {A.2}Bibliography}{75}

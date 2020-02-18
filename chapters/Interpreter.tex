@@ -1,7 +1,7 @@
 
 \lettrine[lines=3]{T}{}he string interpreter is one of the significant components of plant generation. It is the final step in the process of procedural generation. The output of this stage is dependant on what the L-system is representing. In this case, it is responsible for creating the final plant models and information and then rendering it on the screen, using the OpenGL framework. 
 
-The generation of plant-life has three main stages. The first part is the turtle graphics interpreter, then the model generator, and finally, the renderer. The turtle graphics interpreter takes the string of modules provided by the rewriter, as a set of instructions. It starts from the root of the tree and generates a skeletal structure made up of joints. This is similar to the techniques used in skeletal rigging in animation \cite{gregory2014game}. The tree skeleton joints each represent a branch segment or part of the tree. These joints have some information about the properties of that segment. The joint data is then used to generate the model data in the second stage of processing. The model generator creates the 3D points that make up the plant, as well as texture and lighting information. The models can finally be passed to the final part of the string interpreter, which is the renderer. The renderer is responsible for taking all the vertex, texture, and lighting data and renders the final plant on the screen. The renderer will also handle any physical simulation of the tree skeleton. The stages of string interpretation can be seen in figure \ref{l-system interpreter} below, as well as the information needed at each stage. 
+The interpreter has three main stages of processing, which can be seen in figure \ref{l-system interpreter}. The first part is the turtle graphics interpreter, then the model generator, and finally, the renderer. The turtle graphics interpreter takes the string of modules provided by the rewriter, as a set of instructions. It starts from the root of the tree and generates a skeletal structure made up of joints. This is similar to the techniques used in skeletal rigging in animation \cite{gregory2014game}. The tree skeleton joints each represent a branch segment or part of the tree. These joints have some information about the properties of that segment. The joint data is then used to generate the model data in the second stage of processing. The model generator creates the points that make up the plant in 3D space, as well as calculating the texture and lighting information. The models can finally be passed to the renderer. The renderer is responsible for taking all the model information such as, vertex, texture, and lighting data and renders the final plant on the screen. The renderer will also handle any physical simulation of the tree skeleton.
 
 \begin{figure}[htbp]
 	{\centering
@@ -88,6 +88,8 @@ Take the following string of modules \say{F(1)[/(90)F(1)$\backslash$ (90)F(1)]-(
 	}
 \end{figure}
 \FloatBarrier
+
+Once the plant skeleton containing all of the joints has been created, the model generator can use this information to create the geometry of the plants' branches and leaves. Something to note is that there are two separate joints at the position (0, 1, 0), this is due to the fact that there are two branches going in different directions with independent features such as, width or length. 
 
 \section{Model Generator}
 
