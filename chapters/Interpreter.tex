@@ -177,6 +177,8 @@ Buffer objects can be created not only for the plant branching structure but pot
 
 A shader is type of computer program which is used for shading an object within a 3D scene. The shader program typically runs on the GPU and calculates the levels of colour and lighting for a specific part of an object within the scene. More modern types of shading can be used to provide effects like tesselation. 
 
+The shader makes use of the vertex buffer data to select the color of each vertex of the plant being rendered. It does this by finding which colour is at the texture coordinate of that vertex position, and then applies a lighting calculation using the vertex normal to find the amount of reflected light that is coming off the object being rendered. 
+
 \section{Summary}
 
 This chapter outlines the implementation of the string interpreter for representing plant-life. This consists of a three-stage process, firstly the resulting string from the rewriter is interpreted using turtle graphics to generate the skeletal structure of the plant, which is made up of joints. The model generator then uses the skeletal structure as a frame for creating the plants' branch model data. The plants' model data is finally passed to the renderer, which draws the resulting image on the screen. 
