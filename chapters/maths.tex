@@ -141,7 +141,7 @@ M_{41} & M_{42} & M_{43} & M_{44}
 \end{equation}
 
 \noindent
-A 3 $\times$ 3 matrix is used for linear transforms such as scaling and rotation. Furthermore, a linear transform that contains translation is known as an affine transform and is represented as a 4 $\times$ 4 matrix known as an Atomic Transform Matrix. An atomic Transform matrix is the concatenation of four 4 $\times$ 4 matrices, one for translation, rotation, scale, and shear transforms, which results in a 4 $\times$ 4 matrix, as shown below. 
+A 3 $\times$ 3 matrix is used for linear transforms such as scaling and rotation. Furthermore, a linear transform that contains translation is known as an affine transform and is represented as a 4 $\times$ 4 matrix known as an Atomic Transform Matrix. An atomic Transform matrix is the concatenation of four 4 $\times$ 4 matrices, one for translation, rotation, scale, and shear transforms, which results in a 4 $\times$ 4 matrix. It is important to note that the order in which transforms are applied matters. If the object is translated before it is rotated it will rotate in a circle around the point of origin. This may be the desired result but for most cases the order to apply transforms is scale then rotate then translate. 
 
 The affine matrix can be shown in the expression below where $RS$ is a 3 $\times$ 3 matrix containing the rotation and scale where the $4^th$ elements are 0. The $T$ elements represent the translation, with the 4th element being 1. 
 
@@ -276,6 +276,8 @@ S_x & 0 & 0 & 0\\
 1
 \end{bmatrix}
 \end{equation}
+
+The atomic matrix transform is used in many areas of 3D graphics but is usually the go-to method of representing an objects position, rotation and scale in a simple and compact way. 
 
 \section{Quaternions}
 

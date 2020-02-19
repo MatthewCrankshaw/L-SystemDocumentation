@@ -143,6 +143,8 @@ This method of branch generation, at first glance, gives a very similar result t
 \end{figure}
 \FloatBarrier
 
+This technique of linking branches can be further improved by creating curvature from one branch to the next and by adding a smoothed noise function to the vertices that make up the branches. The advantage of this is that the branches have additional complexity and texture, which makes them look more realistic than the simple linking approach. However, the drawback is that they are more complicated to generate and more resource-demanding to render \cite{baele2005real}.
+
 \section{Renderer}
 
 \noindent
@@ -173,11 +175,13 @@ Buffer objects can be created not only for the plant branching structure but pot
 
 \section{Shaders}
 
+A shader is type of computer program which is used for shading an object within a 3D scene. The shader program typically runs on the GPU and calculates the levels of colour and lighting for a specific part of an object within the scene. More modern types of shading can be used to provide effects like tesselation. 
+
 \section{Summary}
 
 This chapter outlines the implementation of the string interpreter for representing plant-life. This consists of a three-stage process, firstly the resulting string from the rewriter is interpreted using turtle graphics to generate the skeletal structure of the plant, which is made up of joints. The model generator then uses the skeletal structure as a frame for creating the plants' branch model data. The plants' model data is finally passed to the renderer, which draws the resulting image on the screen. 
 
-Each branch joint contains a large amount of data that is used in both rendering the plant and physics calculations. The way that the model generator creates and links branches can easily be changed, modified, or improved to generate different types of branches. In this thesis, two methods are covered, the stacked cylinders technique and linked branches. 
+Each branch joint contains a large amount of data that is used when rendering the plant and physics calculations. The way that the model generator creates and links branches can easily be changed, modified, or improved to generate different types of branches. In this thesis, two methods are covered, the stacked cylinders technique and linked branches. 
 
 The renderer is very platform dependent but usually takes place on the GPU, where buffer objects are used to store the plants model data in GPU memory and eventually displayed through the use of shaders.
 

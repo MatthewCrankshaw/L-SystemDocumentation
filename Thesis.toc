@@ -30,27 +30,27 @@
 \contentsline {subsection}{\numberline {3.5.5}Implementing Random Ranges}{45}
 \contentsline {subsection}{\numberline {3.5.6}Implementing Stochastic Rules}{46}
 \contentsline {section}{\numberline {3.6}The String Rewriter}{47}
-\contentsline {section}{\numberline {3.7}Summary}{52}
-\contentsline {chapter}{\numberline {4}Mathematics For 3D Graphics}{53}
-\contentsline {section}{\numberline {4.1}Vectors}{53}
-\contentsline {section}{\numberline {4.2}Matrices}{56}
-\contentsline {section}{\numberline {4.3}Quaternions}{58}
-\contentsline {section}{\numberline {4.4}summary}{60}
-\contentsline {chapter}{\numberline {5}L-system String Interpreter Implementation}{61}
-\contentsline {section}{\numberline {5.1}Turtle Graphics Interpreter}{62}
-\contentsline {section}{\numberline {5.2}Model Generator}{64}
-\contentsline {section}{\numberline {5.3}Renderer}{66}
-\contentsline {subsection}{\numberline {5.3.1}Models and Buffer Objects}{67}
-\contentsline {section}{\numberline {5.4}Shaders}{67}
-\contentsline {section}{\numberline {5.5}Summary}{67}
-\contentsline {chapter}{\numberline {6}Physics Simulation}{68}
-\contentsline {section}{\numberline {6.1}Branch Physical Properties}{69}
-\contentsline {section}{\numberline {6.2}Hook's Law}{70}
-\contentsline {section}{\numberline {6.3}Equations of Motion}{70}
-\contentsline {section}{\numberline {6.4}Updating Branches}{71}
-\contentsline {section}{\numberline {6.5}Results}{71}
-\contentsline {section}{\numberline {6.6}Summary}{72}
-\contentsline {chapter}{\numberline {7}Discussion and Conclusions}{73}
-\contentsline {chapter}{\numberline {A}Appendix}{75}
-\contentsline {section}{\numberline {A.1}Appendix 1}{75}
-\contentsline {section}{\numberline {A.2}Bibliography}{75}
+\contentsline {section}{\numberline {3.7}Summary}{48}
+\contentsline {chapter}{\numberline {4}Mathematics For 3D Graphics}{49}
+\contentsline {section}{\numberline {4.1}Vectors}{49}
+\contentsline {section}{\numberline {4.2}Matrices}{52}
+\contentsline {section}{\numberline {4.3}Quaternions}{54}
+\contentsline {section}{\numberline {4.4}summary}{56}
+\contentsline {chapter}{\numberline {5}L-system String Interpreter Implementation}{57}
+\contentsline {section}{\numberline {5.1}Turtle Graphics Interpreter}{58}
+\contentsline {section}{\numberline {5.2}Model Generator}{60}
+\contentsline {section}{\numberline {5.3}Renderer}{62}
+\contentsline {subsection}{\numberline {5.3.1}Models and Buffer Objects}{63}
+\contentsline {section}{\numberline {5.4}Shaders}{64}
+\contentsline {section}{\numberline {5.5}Summary}{64}
+\contentsline {chapter}{\numberline {6}Physics Simulation}{65}
+\contentsline {section}{\numberline {6.1}Branch Physical Properties}{66}
+\contentsline {section}{\numberline {6.2}Hook's Law}{67}
+\contentsline {section}{\numberline {6.3}Equations of Motion}{67}
+\contentsline {section}{\numberline {6.4}Updating Branches}{68}
+\contentsline {section}{\numberline {6.5}Results}{68}
+\contentsline {section}{\numberline {6.6}Summary}{69}
+\contentsline {chapter}{\numberline {7}Discussion and Conclusions}{70}
+\contentsline {chapter}{Appendices}{72}
+\contentsline {chapter}{\numberline {A}L-system Rewriter Data Structures}{73}
+\contentsline {chapter}{\numberline {B}L-system Rewriter Pseudocode}{74}

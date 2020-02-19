@@ -1,6 +1,211 @@
-\section{Appendix 1}
+\chapter{L-system Rewriter Data Structures} \label{rewriter data structures}
 
-\section{Bibliography}
+\begin{singlespace}
+
+\lstset{language=C}
+\lstset{morekeywords=string}
+
+\begin{lstlisting}[frame=single] 
+struct node{
+  enum Type {VARIABLE, OPERATOR, NUMBER, RANGE} type;
+  union{
+  	string *variable; 
+  	string *operator; 
+  	float number;
+  	float range[3];
+  };
+  node *left; 
+  node *right; 
+};
+\end{lstlisting}
+
+\lstset{morekeywords=vector}
+\lstset{morekeywords=node}
+
+\begin{lstlisting}[frame=single] 
+struct condition{
+    enum Type {EQUAL_TO, NOT_EQUAL_TO, LESS_THAN, GREATER_THAN, 
+    	LESS_EQUAL, GREATER_EQUAL, STOCHASTIC, NO_CONDITION} type;
+    node * leftExp;
+    node * rightExp;
+
+    float stochasticValue;
+};
+\end{lstlisting}
+
+\lstset{morekeywords=condition}
+
+\begin{lstlisting}[frame=single] 
+struct module{
+  string name;
+  int numParam; 
+  enum Type {CALL, DEFINITION} type;
+  string object; 
+  vector<struct node*> params;
+};
+\end{lstlisting}
+
+\lstset{morekeywords=module}
+
+\begin{lstlisting}[frame=single] 
+struct production{
+    string name;
+    module *predecessor;
+    condition *condition;
+    vector<module*> successor;
+};
+\end{lstlisting}
+
+\chapter{L-system Rewriter Pseudocode} \label{rewriter pseudocode}
+
+\begin{algorithmic}[1]
+\Procedure{rewriter}{N, A}
+\Statex
+\Ensure N $>$ 0																	\Comment{The number of generations to rewrite}
+\Ensure A $\not=$ empty															\Comment{A non empty Axiom, a list of modules}
+\Statex
+\State n $\gets$ 0
+\State current $\gets$ A														\Comment{Current string of modules}
+\While{n $<$ N}																	\Comment{For each generation}
+	\State next $\gets$ empty list
+	\For{each mod in current}													\Comment{call is the calling module in current}
+		\State P $\gets$ \Call{FindProductionMatch}{mod}						\Comment{P is the matching production rule}
+		\If{P $\not=$ NULL}
+			\State pred $\gets$ P.predecessor									\Comment{def is the defining module in predecessor}
+			\For{each succ in P.successor}
+				\State index $\gets$ 0
+				\While{index $<$ number of predecessor parameters}
+					\State \Call{AddLocalVar}{pred.param[index], mod.param[index]}
+					\State index $\gets$ index + 1
+				\EndWhile
+				\State copy $\gets$ succ 										\Comment{Create a deep copy}
+				\For{each parameter in copy}									\Comment{parameter is an expression tree}
+					\State \Call{ReplaceVariables}{parameter}
+					\State \Call{EvaluateExpression}{parameter}
+				\EndFor
+				\State next $\gets$ next + copy
+			\EndFor
+		\Else
+			\State next $\gets$ next + mod
+		\EndIf
+	\EndFor
+	\State n $\gets$ n + 1
+	\State current $\gets$ next
+\EndWhile
+\State \textbf{return} current
+\EndProcedure
+\end{algorithmic}
+
+\newpage
+\begin{algorithmic}[1]
+\Function{FindProductionMatch}{Module}
+\For{each P in productionTable}												\Comment{P is a production}
+	\State predecessor $\gets$ P.predecessor								\Comment{predecessor is a single module}
+	\If{predecessor.name $\not=$ Module.name}
+		\State \textbf{continue}
+	\EndIf
+	\If{predecessor.numParam $\not=$ Module.numParam}
+		\State \textbf{continue}
+	\EndIf
+	\If{P has no condition}													
+		\State \textbf{return} P.name										\Comment{match found}
+	\ElsIf{P has a stochastic condition}
+		\State rand $\gets$ random float between 0.0 and 1.0
+		\State total $\gets$ 0.0
+		\State S $\gets$ list of pairs 										\Comment{pair(production name, probability value)} 
+		\For{each s in S}													\Comment{Loop through each tuple in the stochasic list}
+			\If{first item}
+				\If{rand $\geq$ 0.0 AND rand $<$ s.value}
+					\State \textbf{return} s.name
+				\EndIf
+			\ElsIf{last item}
+				\If{rand $\geq$ total AND rand $\leq$ 1.0}
+					\State \textbf{return} s.name
+				\EndIf
+			\Else
+				\If{rand $\geq$ total AND rand $<$ total + s.value}
+					\State \textbf{return} s.name
+				\EndIf
+			\EndIf
+			\State total $\gets$ total + s.value
+		\EndFor	
+	\Else																	\Comment{Regular condition}
+		\State left $\gets$ P.condition.left								\Comment{Deep copy left expression tree}
+		\State right $\gets$ P.condition.right								\Comment{Deep copy right expression tree}
+		
+		\State \Call{replaceVariables}{left}
+		\State \Call{replaceVariables}{right}
+		
+		\State \Call{evaluateExpression}{left}
+		\State \Call{evaluateExpression}{right}
+		
+		\If{left P.condition.op right}										\Comment{Apply operator ($==$, $\not=$, $<$, $>$, $\leq$, $\geq$)}
+			\State \textbf{return} P.name
+		\EndIf 																		 
+	\EndIf							 
+\EndFor
+\EndFunction
+
+\end{algorithmic}
+
+\newpage
+\begin{algorithmic}[1]
+
+\Function{EvaluateExpression}{TreeNode}										\Comment{Recursively evaluate the expression tree}
+	\State left $\gets$ 0.0									
+	\State right $\gets$ 0.0
+	
+	\If{TreeNode.left $==$ NULL OR TreeNode.right $==$ NULL}
+		\State \textbf{return} TreeNode.value
+	\EndIf
+	
+	\State left $\gets$ \Call{ReplaceVariables}{TreeNode.left}
+	\State right $\gets$ \Call{ReplaceVariables}{TreeNode.right}
+	
+	\If{TreeNode.type is an operator}
+		\State \textbf{return} left TreeNode.operator right					\Comment{Apply arithmetic operator (+, -, *, /, $\land{}$)}
+	\EndIf
+\EndFunction
+\\
+\end{algorithmic}
+
+\begin{algorithmic}[1]
+
+\Function{ReplaceVariables}{TreeNode}										\Comment{Recursively replace expression tree variables}
+	\If{TreeNode $==$ NULL}
+		\State \textbf{return}
+	\EndIf
+	\If{TreeNode.type is a variable}
+		\If{TreeNode.value is in constants table}
+			\State TreeNode.value $\gets$ numeric value in constants table 
+		\EndIf
+		\If{TreeNode.value is in local table}
+			\State TreeNode.value $\gets$ numeric value in local table
+		\EndIf
+	\EndIf
+	\State \Call{ReplaceVariables}{TreeNode.left}
+	\State \Call{ReplaceVariables}{TreeNode.right}
+\EndFunction
+\\
+\end{algorithmic}
+
+\begin{algorithmic}[1]
+
+\Function{AddLocalVar}{TreeNodeCall, TreeNodeDef}
+	\If{TreeNodeCall child nodes == NULL OR TreeNodeDef child nodes == NULL}
+		\If{TreeNodeCall.type == Number AND TreeNodeDef.type == Variable}
+			\State Add variable name and value to local table
+		\ElsIf{TreeNodeCall.type == Range AND TreeNodeDef.type == Variable}
+			\State Add variable and generated random range value to local table 
+		\EndIf
+	\EndIf
+	
+									
+\EndFunction
+
+\end{algorithmic}
+\end{singlespace}
+
 \bibliography{chapters/ref}
 \bibliographystyle{apalike}
 

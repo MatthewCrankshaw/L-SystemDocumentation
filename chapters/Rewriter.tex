@@ -297,7 +297,7 @@ As seen above in the \acrshort{bnf} notation for a L-system, the goal state is $
 
 In the previous chapter, the scanner defined the syntactic categories. These syntactic categories are all the valid terminal symbols within the L-system grammar. In essence, the parser takes these syntactic categories and finds if they fit the above \acrshort{bnf}, and if so, it extracts the information from the L-system and generates the relevant data structures and syntax tree. 
 
-\subsection{Dealing with Constant Values and Objects}
+\subsection{Dealing with Constant Values and Objects} \label{constants subsection}
 
 Defining constants and objects is essential as it allows the specification of named variables and module names that have a particular meaning. To define a constant or an object is syntactically similar. The keyword define or include is used, then a variable name followed by a value. The value for a constant is a floating-point number, and the value for an \textit{include} is a name of an object within the predefined object library. Seen below is an example of defining a constant and an object: 
 
@@ -424,6 +424,7 @@ In order to achieve stochastic rules, each rule must belong belonging to a stoch
 \item The total probability of all of the production rules within the stochastic group must not exceed 1.0 or be less than 0.0.
 \end{itemize}
 
+\noindent
 During the parsing phase, if the rule has the stochastic operator, the probability of the rule must be kept for later use within a stochastic probability table. The table also keeps track of which rules are associated with which stochastic groups. A stochastic probability table can be generated from the rules below, as seen in table \ref{stochastic table}. 
 
 \begin{equation} \label{stochastic implementation example}
@@ -456,218 +457,26 @@ During the rewriting process, the module that is being rewritten is matched to a
 
 \section{The String Rewriter}
 
-Once processed by the lexical analyser and the parser, the L-systems' data structures and information are ready for string rewriting. The string rewriter is the final stage. It starts by starts by using the axiom as the current string of modules. The string rewriter will then iterate over each module within the current string, matching it to the production rules. If they match, the module will be rewritten with the production rules successor, after each parameter in each module is evaluated. Once all the modules are rewritten, the result string replaces the current string of that iteration. This process is carried out for the number of generations specified within the L-system and will eventually provide the final result string of modules.
-
-Below is the pseudocode for the rewriting procedure as well as several useful functions for finding the matching production rule, replacing variables, evaluating expressions, and adding variables to the local table. 
+Once the L-system has been processed by the lexical analyser and the parser, the L-systems' resulting data structures are ready for string rewriting. All of the data structures necessary for rewriting can be seen in the list below. A definition of these data structures can be seen in appendix \ref{rewriter data structures}.
 
 \begin{singlespace}
-\newpage
-
-\lstset{language=C}
-\lstset{morekeywords=string}
-
-\begin{lstlisting}[frame=single] 
-struct node{
-  enum Type {VARIABLE, OPERATOR, NUMBER, RANGE} type;
-  union{
-  	string *variable; 
-  	string *operator; 
-  	float number;
-  	float range[3];
-  };
-  node *left; 
-  node *right; 
-};
-\end{lstlisting}
-
-\lstset{morekeywords=vector}
-\lstset{morekeywords=node}
-
-\begin{lstlisting}[frame=single] 
-struct condition{
-    enum Type {EQUAL_TO, NOT_EQUAL_TO, LESS_THAN, GREATER_THAN, 
-    	LESS_EQUAL, GREATER_EQUAL, STOCHASTIC, NO_CONDITION} type;
-    node * leftExp;
-    node * rightExp;
-
-    float stochasticValue;
-};
-\end{lstlisting}
-
-\lstset{morekeywords=condition}
-
-\begin{lstlisting}[frame=single] 
-struct module{
-  string name;
-  int numParam; 
-  enum Type {CALL, DEFINITION} type;
-  string object; 
-  vector<struct node*> params;
-};
-\end{lstlisting}
-
-\lstset{morekeywords=module}
-
-\begin{lstlisting}[frame=single] 
-struct production{
-    string name;
-    module *predecessor;
-    condition *condition;
-    vector<module*> successor;
-};
-\end{lstlisting}
-
-\newpage
-\begin{algorithmic}[1]
-\Procedure{rewriter}{N, A}
-\Statex
-\Ensure N $>$ 0																	\Comment{The number of generations to rewrite}
-\Ensure A $\not=$ empty															\Comment{A non empty Axiom, a list of modules}
-\Statex
-\State n $\gets$ 0
-\State current $\gets$ A														\Comment{Current string of modules}
-\While{n $<$ N}																	\Comment{For each generation}
-	\State next $\gets$ empty list
-	\For{each mod in current}													\Comment{call is the calling module in current}
-		\State P $\gets$ \Call{FindProductionMatch}{mod}						\Comment{P is the matching production rule}
-		\If{P $\not=$ NULL}
-			\State pred $\gets$ P.predecessor									\Comment{def is the defining module in predecessor}
-			\For{each succ in P.successor}
-				\State index $\gets$ 0
-				\While{index $<$ number of predecessor parameters}
-					\State \Call{AddLocalVar}{pred.param[index], mod.param[index]}
-					\State index $\gets$ index + 1
-				\EndWhile
-				\State copy $\gets$ succ 										\Comment{Create a deep copy}
-				\For{each parameter in copy}									\Comment{parameter is an expression tree}
-					\State \Call{ReplaceVariables}{parameter}
-					\State \Call{EvaluateExpression}{parameter}
-				\EndFor
-				\State next $\gets$ next + copy
-			\EndFor
-		\Else
-			\State next $\gets$ next + mod
-		\EndIf
-	\EndFor
-	\State n $\gets$ n + 1
-	\State current $\gets$ next
-\EndWhile
-\State \textbf{return} current
-\EndProcedure
-\end{algorithmic}
-
-\newpage
-\begin{algorithmic}[1]
-\Function{FindProductionMatch}{Module}
-\For{each P in productionTable}												\Comment{P is a production}
-	\State predecessor $\gets$ P.predecessor								\Comment{predecessor is a single module}
-	\If{predecessor.name $\not=$ Module.name}
-		\State \textbf{continue}
-	\EndIf
-	\If{predecessor.numParam $\not=$ Module.numParam}
-		\State \textbf{continue}
-	\EndIf
-	\If{P has no condition}													
-		\State \textbf{return} P.name										\Comment{match found}
-	\ElsIf{P has a stochastic condition}
-		\State rand $\gets$ random float between 0.0 and 1.0
-		\State total $\gets$ 0.0
-		\State S $\gets$ list of pairs 										\Comment{pair(production name, probability value)} 
-		\For{each s in S}													\Comment{Loop through each tuple in the stochasic list}
-			\If{first item}
-				\If{rand $\geq$ 0.0 AND rand $<$ s.value}
-					\State \textbf{return} s.name
-				\EndIf
-			\ElsIf{last item}
-				\If{rand $\geq$ total AND rand $\leq$ 1.0}
-					\State \textbf{return} s.name
-				\EndIf
-			\Else
-				\If{rand $\geq$ total AND rand $<$ total + s.value}
-					\State \textbf{return} s.name
-				\EndIf
-			\EndIf
-			\State total $\gets$ total + s.value
-		\EndFor	
-	\Else																	\Comment{Regular condition}
-		\State left $\gets$ P.condition.left								\Comment{Deep copy left expression tree}
-		\State right $\gets$ P.condition.right								\Comment{Deep copy right expression tree}
-		
-		\State \Call{replaceVariables}{left}
-		\State \Call{replaceVariables}{right}
-		
-		\State \Call{evaluateExpression}{left}
-		\State \Call{evaluateExpression}{right}
-		
-		\If{left P.condition.op right}										\Comment{Apply operator ($==$, $\not=$, $<$, $>$, $\leq$, $\geq$)}
-			\State \textbf{return} P.name
-		\EndIf 																		 
-	\EndIf							 
-\EndFor
-\EndFunction
-
-\end{algorithmic}
-
-\newpage
-\begin{algorithmic}[1]
-
-\Function{EvaluateExpression}{TreeNode}										\Comment{Recursively evaluate the expression tree}
-	\State left $\gets$ 0.0									
-	\State right $\gets$ 0.0
-	
-	\If{TreeNode.left $==$ NULL OR TreeNode.right $==$ NULL}
-		\State \textbf{return} TreeNode.value
-	\EndIf
-	
-	\State left $\gets$ \Call{ReplaceVariables}{TreeNode.left}
-	\State right $\gets$ \Call{ReplaceVariables}{TreeNode.right}
-	
-	\If{TreeNode.type is an operator}
-		\State \textbf{return} left TreeNode.operator right					\Comment{Apply arithmetic operator (+, -, *, /, $\land{}$)}
-	\EndIf
-\EndFunction
-\\
-\end{algorithmic}
-
-\begin{algorithmic}[1]
-
-\Function{ReplaceVariables}{TreeNode}										\Comment{Recursively replace expression tree variables}
-	\If{TreeNode $==$ NULL}
-		\State \textbf{return}
-	\EndIf
-	\If{TreeNode.type is a variable}
-		\If{TreeNode.value is in constants table}
-			\State TreeNode.value $\gets$ numeric value in constants table 
-		\EndIf
-		\If{TreeNode.value is in local table}
-			\State TreeNode.value $\gets$ numeric value in local table
-		\EndIf
-	\EndIf
-	\State \Call{ReplaceVariables}{TreeNode.left}
-	\State \Call{ReplaceVariables}{TreeNode.right}
-\EndFunction
-\\
-\end{algorithmic}
-
-\begin{algorithmic}[1]
-
-\Function{AddLocalVar}{TreeNodeCall, TreeNodeDef}
-	\If{TreeNodeCall child nodes == NULL OR TreeNodeDef child nodes == NULL}
-		\If{TreeNodeCall.type == Number AND TreeNodeDef.type == Variable}
-			\State Add variable name and value to local table
-		\ElsIf{TreeNodeCall.type == Range AND TreeNodeDef.type == Variable}
-			\State Add variable and generated random range value to local table 
-		\EndIf
-	\EndIf
-	
-									
-\EndFunction
-
-\end{algorithmic}
-
+\begin{itemize}
+	\item Constant variables table
+	\item Local variable table
+	\item Number of generations
+	\item Production rules
+	\begin{itemize}
+		\item Predecessor module
+		\item Condition or stochastic probability
+		\item Successor string of modules
+	\end{itemize}
+	\item Axiom string of modules
+\end{itemize}
 \end{singlespace}
 
-\newpage
+\noindent
+The string rewriter is the final stage in the rewriter system. It starts with the axiom as the current string of modules. It then iterates over each module within the current string, matching it to the production rules. If the module matches a rule, the modules' parameter values are matched to the predecessors' parameter variable names and stored in the local variable table. The variables in the production rules successor are replaced according to the constant and local variable tables and subsequently evaluated. The production rule successor is then stored in a result string. If a match is not found, the module itself is stored in the result string. Once all the modules have been rewritten, the result string replaces the current string, and the local table is emptied. This process is carried out for the number of generations specified by the L-system and will eventually provide the final result string of modules. The pseudocode for the rewriting procedure, as well as several useful functions, can be found in appendix \ref{rewriter pseudocode} for more detail. 
+
 \section{Summary}
 
 The L-system rewriter is the first of two major systems within the process of procedurally generating plant-life. The second system is the interpreter. The rewriters' purpose is to take an L-system input and understand its grammatical structure and carry out string rewriting.

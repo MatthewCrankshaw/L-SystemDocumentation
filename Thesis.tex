@@ -1,5 +1,6 @@
 \documentclass[11pt, twoside]{report}
 \usepackage[utf8]{inputenc}
+\usepackage[toc, page]{appendix}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[margin=1in]{geometry}
@@ -91,9 +92,9 @@
 \printglossary[type=\acronymtype]
 \printglossary
 
-\appendix
-\chapter{Appendix}
+\begin{appendices}
 \input{chapters/appendix}
+\end{appendices}
 
 
 
