@@ -475,7 +475,22 @@ Once the L-system has been processed by the lexical analyser and the parser, the
 \end{singlespace}
 
 \noindent
-The string rewriter is the final stage in the rewriter system. It starts with the axiom as the current string of modules. It then iterates over each module within the current string, matching it to the production rules. If the module matches a rule, the modules' parameter values are matched to the predecessors' parameter variable names and stored in the local variable table. The variables in the production rules successor are replaced according to the constant and local variable tables and subsequently evaluated. The production rule successor is then stored in a result string. If a match is not found, the module itself is stored in the result string. Once all the modules have been rewritten, the result string replaces the current string, and the local table is emptied. This process is carried out for the number of generations specified by the L-system and will eventually provide the final result string of modules. The pseudocode for the rewriting procedure, as well as several useful functions, can be found in appendix \ref{rewriter pseudocode} for more detail. 
+The string rewriter is the final stage in the rewriter system. It starts with the axiom as the current string of modules. It then iterates over each module within the current string, matching it to the production rules. If the module matches a rule, the modules' parameter values are matched to the predecessors' parameter variable names and stored in the local variable table. The variables in the production rules successor are replaced according to the constant and local variable tables and subsequently evaluated. The production rule successor is then stored in a result string. If a match is not found, the module itself is stored in the result string. Once all the modules have been rewritten, the result string replaces the current string, and the local table is emptied. This process is carried out for the number of generations specified by the L-system and will eventually provide the final result string of modules.
+
+\begin{figure}[htbp]
+	{\centering
+		\setlength{\fboxrule}{1pt}
+		\vspace{7px}
+		\fbox{
+			\includegraphics[scale=0.4]{Diagrams/rewriter.png}
+		}
+		\caption{Simplified flow chart of string rewriting.} \label{rewriter diagram}
+	}
+\end{figure}
+\FloatBarrier
+
+\noindent
+The rewriting procedure can be summarised in the flow chart above for a more in depth description of the procedure the pseudocode, as well as several useful functions, can be found in appendix \ref{rewriter pseudocode}. 
 
 \section{Summary}
 

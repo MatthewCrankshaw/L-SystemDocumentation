@@ -2,9 +2,9 @@
 
 The primary technique discussed by Barron et al. for simulating the motion of a system like a tree or a plant, is taken from that of a particle system, first described by Reeves \cite{reeves1983particle}. Particle systems can be applied to simulate phenomena like clouds, smoke, water, and fire. The main advantage of particle systems is that the motion for each particle can be updated simultaneously. This technique can be applied to the L-system representation of plant-life, where branches are split into segments that make up a skeleton of segments or joints. Each joint can represent a \say{particle} within the system, which has a dependency on all of its parent branches.
 
-The particle system concept can be used to simulate the motion of the plant by having each joint within the plant skeleton provide some basic physical properties. These properties include but are not limited to the width, length, direction vector, spring consistent, and dampening constant. The direction vector is the global direction that the branch is pointing in 3D space. The spring constant and the dampening constant are used in Hook's Law calculations. The spring force of the branch tries to prevent it from bending. Whereas gravity, wind, and other forces generate torque, which generally acts against this spring force, causing the branch to bend.
+The particle system concept can be used to simulate the motion of the plant by having each joint within the plant skeleton provide some basic physical properties. These properties include but are not limited to the width, length, direction vector, spring consistent, and dampening constant. The direction vector is the global direction that the branch is pointing in 3D space. The spring constant and the dampening constant are used in Hooke's Law calculations. The spring force of the branch resists it from bending. Whereas gravity, wind, and other forces generate torque, which generally acts against this spring force, causing the branch to bend.
 
-This chapter defines a method of calculating the physical motion of a plant, where the properties can be defined in an L-system. The chapter starts by explaining how the volume, mass, inertia, and displacement of a given branch can be calculated. It then moves on to explain Hook's Law and its role within the simulation of plant movement. The equations of motion in a 3D setting are then explained. Finally, this chapter talks about the challenges faced with efficiency when updating branches and some of the results that can be achieved by using this method. 
+This chapter defines a method of calculating the physical motion of a plant, where the properties can be defined in an L-system. The chapter starts by explaining how the volume, mass, inertia, and displacement of a given branch can be calculated. It then moves on to explain Hooke's Law and its role within the simulation of plant movement. The equations of motion in a 3D setting are then explained. Finally, this chapter talks about the challenges faced with efficiency when updating branches and some of the results that can be achieved by using this method. 
 
 \section{Branch Physical Properties}
 
@@ -50,15 +50,15 @@ V = v \otimes w
 \end{equation}
 
 \noindent
-The displacement is the change of angle of a branch from its resting position and is used to calculate the spring force of the branch in Hook's Law. The displacement can be calculated by keeping track of the starting local resting rotation of the branch $p$ as well as its current rotation $q$ in the form of two quaternions. The difference quaternion $d$ is calculated by taking the local resting rotation $p$ and multiplying it by the inverse of its current rotation $q$. 
+The displacement is the change of angle of a branch from its resting position and is used to calculate the spring force of the branch in Hooke's Law. The displacement can be calculated by keeping track of the starting local resting rotation of the branch $p$ as well as its current rotation $q$ in the form of two quaternions. The difference quaternion $d$ is calculated by taking the local resting rotation $p$ and multiplying it by the inverse of its current rotation $q$. 
 
 \begin{equation}
 d = p \times q^{-1}
 \end{equation}
 
-\section{Hook's Law}
+\section{Hooke's Law}
 
-Hook's law is a law of physics that states that the resultant force from compressing or extending a spring is equal to the product of the spring constant and the displacement of the spring. Each branch in a plant structure can be seen as a type of semi-rigid spring where external forces like gravity or wind bend the spring. Hook's law is used to calculate the reaction force due to the displacement of the spring. Hook's Law can be expressed in the equation below.
+Hooke's law is a law of physics that states that the resultant force from compressing or extending a spring is equal to the product of the spring constant and the displacement of the spring. Each branch in a plant structure can be seen as a type of semi-rigid spring where external forces like gravity or wind bend the spring. Hooke's law is used to calculate the reaction force due to the displacement of the spring. Hooke's Law can be expressed in the equation below.
 
 \begin{equation}
 f = -k _s d + k _d v
@@ -123,6 +123,8 @@ The goal of an L-system that can animate a plant, is to have the simulation work
 	}
 \end{figure}
 \FloatBarrier
+
+The L-system above is a 2D fractal tree that has rendered in three dimensions. It is a 2D tree as it only consists of left and right yaw rotations signified with the `+ and -' symbols without any pitch or roll rotations. In this tree, the rotation `r' is defined as 20$^{\circ}$, the distance `d' is 0.4, and the width `w' is 0.5. The spring constant of the branches is kept at a constant 30.0. This means that all the branches are equally prone to bending. 
 
 \begin{singlespace}
 \begin{equation}
