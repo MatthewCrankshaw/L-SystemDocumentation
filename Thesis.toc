@@ -7,16 +7,16 @@
 \contentsline {chapter}{\numberline {2}Lindenmayer Systems}{14}
 \contentsline {section}{\numberline {2.1}Simple D0L-system}{16}
 \contentsline {section}{\numberline {2.2}Interpreting the D0L-system String}{17}
-\contentsline {section}{\numberline {2.3}Branching}{21}
+\contentsline {section}{\numberline {2.3}Branching}{22}
 \contentsline {section}{\numberline {2.4}Parametric OL-systems}{24}
-\contentsline {subsection}{\numberline {2.4.1}Formal Definition of a Parametric 0L-system}{24}
-\contentsline {subsection}{\numberline {2.4.2}Defining Constants and Objects}{25}
+\contentsline {subsection}{\numberline {2.4.1}Formal Definition of a Parametric 0L-system}{25}
+\contentsline {subsection}{\numberline {2.4.2}Defining Constants and Objects}{26}
 \contentsline {subsection}{\numberline {2.4.3}Modules With Special Meanings}{27}
 \contentsline {subsection}{\numberline {2.4.4}Representing L-system Conditions}{28}
 \contentsline {section}{\numberline {2.5}Randomness within L-systems}{29}
 \contentsline {section}{\numberline {2.6}Stochastic Rules within L-systems}{30}
 \contentsline {section}{\numberline {2.7}Computing L-systems}{32}
-\contentsline {section}{\numberline {2.8}Summary}{32}
+\contentsline {section}{\numberline {2.8}Summary}{33}
 \contentsline {chapter}{\numberline {3}L-system Rewriter Implementation}{34}
 \contentsline {section}{\numberline {3.1}Environment and Tools}{35}
 \contentsline {section}{\numberline {3.2}The L-system as an Interpreted Grammar}{36}
@@ -44,7 +44,7 @@
 \contentsline {section}{\numberline {5.4}Shaders}{65}
 \contentsline {section}{\numberline {5.5}Summary}{65}
 \contentsline {chapter}{\numberline {6}Physics Simulator}{66}
-\contentsline {section}{\numberline {6.1}Branch Physical Properties}{67}
+\contentsline {section}{\numberline {6.1}Physical Properties of Branches}{67}
 \contentsline {section}{\numberline {6.2}Hooke's Law}{68}
 \contentsline {section}{\numberline {6.3}Equations of Motion}{69}
 \contentsline {section}{\numberline {6.4}Updating Branches}{69}
