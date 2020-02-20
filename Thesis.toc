@@ -46,11 +46,11 @@
 \contentsline {chapter}{\numberline {6}Physics Simulator}{66}
 \contentsline {section}{\numberline {6.1}Branch Physical Properties}{67}
 \contentsline {section}{\numberline {6.2}Hooke's Law}{68}
-\contentsline {section}{\numberline {6.3}Equations of Motion}{68}
+\contentsline {section}{\numberline {6.3}Equations of Motion}{69}
 \contentsline {section}{\numberline {6.4}Updating Branches}{69}
 \contentsline {section}{\numberline {6.5}Results}{69}
-\contentsline {section}{\numberline {6.6}Summary}{70}
-\contentsline {chapter}{\numberline {7}Discussion and Conclusions}{71}
-\contentsline {chapter}{Appendices}{73}
-\contentsline {chapter}{\numberline {A}L-system Rewriter Data Structures}{74}
-\contentsline {chapter}{\numberline {B}L-system Rewriter Pseudocode}{75}
+\contentsline {section}{\numberline {6.6}Summary}{71}
+\contentsline {chapter}{\numberline {7}Discussion and Conclusions}{72}
+\contentsline {chapter}{Appendices}{74}
+\contentsline {chapter}{\numberline {A}L-system Rewriter Data Structures}{75}
+\contentsline {chapter}{\numberline {B}L-system Rewriter Pseudocode}{76}
