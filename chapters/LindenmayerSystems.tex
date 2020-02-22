@@ -196,7 +196,7 @@ Several well-known fractal geometry patterns have been explored. They are partic
 	\textbf{\underline{Koch Curves:}} \\
 	Generations: 2,3,4\\
 	Angle: 90$^\circ$\\
-	Distance: 1 cm\\
+	Distance: 1\\
 	$\omega$ : F \\
 	$p1$ : F $\rightarrow$ F+F-F-F+F\\
 	{\centering
@@ -216,7 +216,7 @@ The Sierpi\'{n}kski gasket is another example of an edge-rewriting pattern which
 	\textbf{\underline{Sierpi\'{n}ski Gasket:}} \\
 	Generations: 2,3,4,5\\
 	Angle: 60$^\circ$\\
-	Distance: 1 cm\\
+	Distance: 1\\
 	$\omega$ : F\\
 	$p1$ : F $\rightarrow$ X-F-X\\
 	$p2$ : X $\rightarrow$ F+X+F\\
@@ -231,9 +231,9 @@ The Sierpi\'{n}kski gasket is another example of an edge-rewriting pattern which
 \section{Branching} \label{branching}
 
 
-The simplistic D0L-system defined in previous sections can trace a 3D pattern. The D0L-systems interpretation provides a way of tracing a path or structure in 3D space. These types of L-systems are useful; however, to trace the branching structure of plants, there needs to be a way of branching off in one or more directions. A simple solution may be for the turtle object to trace its steps back to a particular branching point and then branch off in a different direction. Branching like this may get the desired result but is slow and inefficient. 
+The simplistic D0L-system defined in previous sections can trace a 3D pattern. The D0L-systems interpretation provides a way of tracing a path or structure in 3D space. These types of L-systems are useful; however, to trace the branching structure of plants, there needs to be a way of branching off in one or more directions. A simple solution may be for the turtle to trace its steps back to a particular branching point and then branch off in a different direction. Branching like this may get the desired result but is slow and inefficient. 
 
-Lindenmayer proposed a better solution to the branching problem. He introduced two symbols that have special meanings within the alphabet of the DOL-system, which make branching much easier \cite{lindenmayer1968mathematical}. These are the square bracket symbols \say{[}, \say{]}. The open square bracket \say{[} symbol instructs the turtle object to save its current state (position and orientation) and be able to go back to that saved state later. The close square bracket \say{]} instructs the turtle to load the saved state and continue from that position and orientation. The save and load states allow the turtle to jump back to a previously saved position, facing in the same direction as it was before. The orientation can later be changed, allowing the turtle to branch off in a different direction. This method was originally used by Lindenmayer to imitate the branching that occurs within algae but was later adapted by Smith to represent larger plant-life as well \cite{smith1984plants}.
+Lindenmayer proposed a better solution to the branching problem. He introduced two symbols that have special meanings within the alphabet of the DOL-system, which make branching much easier \cite{lindenmayer1968mathematical}. These are generally the square bracket symbols \say{[}, \say{]}, but could potentially be represented by any symbol. The open square bracket \say{[} symbol instructs the turtle object to save its current state (position and orientation) to be able to go back to that saved state later. The close square bracket \say{]} instructs the turtle to load the saved state and continue from the saved position and orientation. The save and load states allow the turtle to jump back to a previously saved position, facing in the same direction as it was before. The orientation can later be changed, allowing the turtle to branch off in a different direction. This method was originally used by Lindenmayer to imitate the branching that occurs within algae but was later adapted by Smith to represent larger plant-life as well \cite{smith1984plants}.
  
 The main advantage of using the save and load position functionality within the alphabet is that the rewriting system itself handles branching. The production rules often contain the next generations branching structure by using the save and load symbols, and thus the branching structure becomes more intricate from one generation to the next.
 
@@ -252,7 +252,7 @@ Each save state symbol must have a corresponding load state symbol within the st
 \FloatBarrier
 
 \noindent
-Save and load operations are handled using the \acrfull{lifo} principle. \acrshort{lifo} states that when using the save symbol, it saves the current position and orientation at $p1$. The next load state restores $p1$'s position and orientation. Unless there is another save that takes place before the load state, in which case the most recent save has to be loaded before $p1$ can be loaded. In this way, the position saves are stacked, and the most recent save is always loaded first. An example of this can be seen in figure \ref{branching 2} below:
+Save and load operations are handled using the \acrfull{lifo} principle. \acrshort{lifo} states that when using the save symbol, it saves the current position and orientation at $p1$. The next load state restores $p1$'s position and orientation. Unless there is another save that takes place before the load state, in which case the most recent save has to be loaded before $p1$ can be loaded. In this way, the position saves are placed onto a stack, and the most recent save is always loaded first. An example of this can be seen in figure \ref{branching 2} below:
 
 \begin{figure}[htbp]
 	{\centering
@@ -277,6 +277,7 @@ The save and load state symbols can be used within a simple L-systems to create 
 	\textbf{Angle:} 25$^\circ$ \\
 	\textbf{Rules:} \\
 	F $\rightarrow$ FF+[+F-F-F]-[-F+F+F]\\
+	\vspace{5mm}
 	{\centering
 		\vspace{7px}
 		\includegraphics[scale=0.15]{Diagrams/fractalBush.png}
@@ -286,7 +287,7 @@ The save and load state symbols can be used within a simple L-systems to create 
 \FloatBarrier
 
 \noindent
-In figure \ref{fractal plant} below, there are two different rewriting rules. One for the symbol F and the other for symbol X. Symbol X is the axiom; however, it is not a rendered symbol meaning the interpreter ignores it. Unlike the symbol F, which is rendered as a branch. Instead, symbol X stands as a placeholder for the next rewriting step, where it is rewritten with \say{F-[[X]+X]+F[+FX]-X}. The symbol F is replaced by FF, this means that existing branches get longer each generation, but new branching structures are created at the end \say{leaves} or ends of the branches due to the production rule for symbol X.  
+In figure \ref{fractal plant} below, there are two different rewriting rules. One for the symbol F and the other for symbol X. Symbol X is the axiom; however, it is not a rendered symbol meaning the interpreter ignores it. Unlike the symbol F, which is rendered as a branch. Instead, symbol X stands as a placeholder for the next rewriting step, where it is rewritten with \say{F-[[X]+X]+F[+FX]-X}. The symbol F is replaced by FF, this means that existing branches get longer each generation, but new branching structures are created at the end \say{leaves} or ends of the branches due to the production rule for symbol X. 
 
 \begin{figure}[htbp]
 	\raggedright
@@ -297,6 +298,7 @@ In figure \ref{fractal plant} below, there are two different rewriting rules. On
 	\textbf{Rules:} \\
 	X $\rightarrow$ F-[[X]+X]+F[+FX]-X\\
 	F $\rightarrow$ FF \\
+	\vspace{5mm}
 	{\centering
 		\vspace{7px}
 		\includegraphics[scale=0.15]{Diagrams/fractalPlant.png}
@@ -350,6 +352,7 @@ There are some other features covered by Prusinkiewicz and Lindenmayer that are 
 \noindent
 For instance, if we have a value for an angle that we would like to use within the production rules, we can use the \#define statement as follows:
 
+\begin{singlespace}
 \begin{equation} \label{define statement example}
 \begin{aligned}
 	&n=4 \\
@@ -358,11 +361,14 @@ For instance, if we have a value for an angle that we would like to use within t
 	&p_1~ :  F(x)~~~~~ :~ * \rightarrow~ F(w)+(angle)F(w)+(angle)F(w)+(angle)F(w)\\
 \end{aligned}
 \end{equation}
-
+\end{singlespace}
+\vspace{5mm}
+\noindent
 Here you can see that the \#define acts like a declaration, where a variable is going to be defined, which is used later. Essentially we are replacing any occurrences of the variable \textit{angle} with the value of 90 degrees. The define statement is written as  \#define \textit{variable\_name} \textit{value}.
 
 With regards to the \#include statement, In the literature, the \#include may be used by stating \say{\#include H}. This tells the turtle interpreter that the symbol \say{H} is a shape in a library of predefined shapes which should be rendered instead of the default shape. This functionality has been slightly modified, instead of the \#include statement, the \#object is used and serves a similar purpose, however, instead importing the symbol \say{H}, denoting to the heterocyst object from a library of predefined shapes, The statement \say{\#object H HETEROCYST} specifies that we are associating the symbol or module \say{H} with the object HETEROCYST. The HETEROCYST object is still stored in a predefined library; however, the advantage is that the object can be associated with multiple different symbols, it also does not limit us to a predefined name for an object. Below is an example using the \#object statement: 
 
+\begin{singlespace}
 \begin{equation} \label{object statement example}
 \begin{aligned}
 	&n=1 \\
@@ -372,6 +378,7 @@ With regards to the \#include statement, In the literature, the \#include may be
 	&p_1~ :  F(x)~~~~~ :~ * \rightarrow~ F(w)F(w)F(w)F(w)S(w)\\
 \end{aligned}
 \end{equation}
+\end{singlespace}
 
 \begin{figure}[htbp]
 	{\centering
@@ -388,12 +395,13 @@ With regards to the \#include statement, In the literature, the \#include may be
 \noindent
 In the simple example in figure \ref{object statement example} above, you can see that the first three F modules render a branch segment with a length of 1.0; however, for the final S module renders a sphere of diameter 1.0. The geometric shape that is eventually rendered does not affect the L-system in any way, and the \#object feature bears no meaning to the rewriting system, it merely stands as an instruction to the interpreter which instructs that each time the symbols F or S are interpreted, a specific object should be rendered, such as BRANCH and SPHERE respectively. The position of the next object or branch can then be determined by moving forward by the diameter of the object and rendering the next object from that point. The details of the interpreter are discussed in more detail chapter \ref{interpreter implementation}.
 
-\subsection{Modules With Special Meanings}
+\subsection{Manipulating Branch Width}
 
-In the above section, I defined the details of a parametric 0L-system. In the paper by Prusinkiewicz and Lindenmayer, there are two operators which have not been discussed yet. These operators are the ! and the ‘. Prusinkiewicz and Lindenmayer state that “The symbols ! and ‘ are used to decrement the diameter of segments and increment the current index to the color table respectively” \cite{prusinkiewicz2012algorithmic}. We have decided to modify this to work slightly differently, the ! and ‘ still performs the same operation; however, the ! and ‘ symbols are treated as a module that holds particular meaning to the interpreter, rather than a single operator. Furthermore, they share the same properties with modules; they can contain multiple parameters, and depending on the number of parameters, they can be treated differently. The module ! with no parameters could mean decrement the diameter of the segment by a default amount, whereas !(10) means set the diameter of the segment to 10. The length can also be manipulated similarly. The module with the name F has a default meaning to create a segment in the current direction by a default amount. If we provide the module F(10) we are specifying to create a segment of length 10.
+In the above section, I defined the details of a parametric 0L-system. In the paper by Prusinkiewicz and Lindenmayer, there are two operators which have not been discussed yet. These operators are the ! and the ‘. Prusinkiewicz and Lindenmayer state that “The symbols ! and ‘ are used to decrement the diameter of segments and increment the current index to the color table respectively” \cite{prusinkiewicz2012algorithmic}. We have decided to modify this to work slightly differently, the exclamation (!) and single quotation (‘) still performs the same operation; however, the ! and ‘ symbols are treated as a module that holds particular meaning to the interpreter, rather than a single operator. Furthermore, they share the same properties with modules; they can contain multiple parameters, and depending on the number of parameters, they can be treated differently. The module ! with no parameters could mean decrement the diameter of the segment by a default amount, whereas !(10) means set the diameter of the segment to the value of 10. The length can also be manipulated similarly. The module with the name F has a default meaning to create a segment in the current direction by a default amount. If we provide the module F(10) we are specifying to create a segment of length 10.
 
 Using the L-system below, we can create figure \ref{parametric l-system practical}, the concepts discussed above have been used by decrementing the segment diameter during the rewriting process as well as by incrementing the branch length.
 
+\begin{singlespace}
 \begin{equation} \label{parametric l-system practical}
 \begin{aligned}
 	&n=8 \\
@@ -402,7 +410,9 @@ Using the L-system below, we can create figure \ref{parametric l-system practica
 	&p_2~ :  F(s)~~~~~ :~ * \rightarrow~ F(s~*~1.456)\\
 \end{aligned}
 \end{equation}
+\end{singlespace}
 
+\vspace{5mm} 
 The above l-system gives the resulting representation shown below in figure 3.8. 
 
 \begin{figure}[htbp]
@@ -421,15 +431,17 @@ The above l-system gives the resulting representation shown below in figure 3.8.
 This gives a much more realistic looking tree structure as the branch segments become shorter but also become thinner in diameter as they get closer to the end of the branch as a whole. 
 
 
-\subsection{Representing L-system Conditions} \label{Condition L-system Subsection}
+\subsection{L-system Conditions} \label{Condition L-system Subsection}
 
-A condition allows multiple production rules that are the same in terms of their module name and number of parameters. Furthermore, they require a particular condition to be met for the module to match that rule. 
+As briefly discussed in section \ref{parametric}, a condition is a statement within a production rule between the predecessor and the successor. This section will talk about the use of the condition statement, and give some examples of how it can help in the procedural generation of plant life. It will also speak about some of the advantages and limitations of conditions in L-systems.
 
-This section will detail the use of the condition statement, which lies between the predecessor and the successor in a production rule. It can be seen as a mathematical expression on either side of a relational operator. During the rule selection process, the expressions are evaluated, and the results are compared using the condition operator. If the result of the condition evaluates as true, then that rule is selected for rewriting; otherwise, it will check the next rule. 
+The condition statement gives the ability to define an additional condition that must be met for the production rule to be chosen for rewriting. The implication of this is that multiple production rules can be defined that have the same module name and number of parameters, given that they each have different conditions.
 
+A condition can be seen as a mathematical expression on either side of a relational operator. During the rule selection process, the expressions are evaluated, and the results are compared using the condition operator. If the result of the condition evaluates as true, then that rule is selected for rewriting; otherwise, it will check the next rule, until either a rule matches or none of them match. 
 
-Below is an example of a parametric 0L-system using condition statements:
+A straightforward example to using the condition statement can be seen below. There are four production rules the first two have the predecessor $A(x)$ and the remaining two have the predecessor $B(x, y)$. Each pair of rules would usually be ambigious because they have the same module name and number of parameters. The determining factor now becomes the condition. The first rule will be chosen if the value of parameter $x$ is greater than two and the second rule will be chosen if it is less than two.
 
+\begin{singlespace}
 \begin{equation} \label{parametric l-system example}
 \begin{aligned}
 	&n=5 \\
@@ -440,10 +452,13 @@ Below is an example of a parametric 0L-system using condition statements:
 	&p_4~ :  B(x,~ y)~ :~ x~ <~ y~ \rightarrow~ B(x~ +~ 1,~ y)\\
 \end{aligned}
 \end{equation}
+\end{singlespace}
 
+\vspace{5mm}
 \noindent
-The L-system above in \ref{parametric l-system example} is rewritten five times using the axiom specified by the symbol $\omega$, as well as the four production rules $p_1, p_2, p_3, p_4$. Each generation of the rewriting process can be seen below in \ref{parametric l-system example result}.
+The L-system \ref{parametric l-system example} is rewritten five times. Each generation of the rewriting process can be seen below in \ref{parametric l-system example result}. The L-system rules above are essentially working toward the goal states of C or D. The parameters will be incremented until the conditions are satisfied, and the state becomes either C or D, which do not have rewriting rules and therefore stay the same.
 
+\begin{singlespace}
 \begin{equation} \label{parametric l-system example result}
 \begin{aligned}
 	&g_0 :~ A(0)B(0,~4)\\
@@ -454,10 +469,12 @@ The L-system above in \ref{parametric l-system example} is rewritten five times 
 	&g_5 :~ C~D\\
 \end{aligned}
 \end{equation}
+\end{singlespace}
 
 \noindent
-The practical use of the condition statement might be to simulate different stages of growth. The condition statement is best illustrated using the L-system below: 
+A practical use of the condition statement might be to simulate different stages of growth, where depending on the number of generations the selected rules will change. An example of this is best illustrated using the L-system below: 
 
+\begin{singlespace}
 \begin{equation} \label{conditional l-system example}
 \begin{aligned}
 	&n=2,~4,~6 \\
@@ -475,6 +492,7 @@ The practical use of the condition statement might be to simulate different stag
 	&p_4~ :  I(x)~ :~ x~ <=~ 0~ \rightarrow~ F(len)!(flowerW)S(0.3)\\
 \end{aligned}
 \end{equation}
+\end{singlespace}
 
 \begin{figure}[htbp]
 	{\centering
@@ -483,10 +501,16 @@ The practical use of the condition statement might be to simulate different stag
 		\fbox{
 			\includegraphics[scale=0.12]{Diagrams/conditionalLsystem.png}
 		}
-		\caption{Condition statements used to simulate the growth of a flower. 2nd generation on the left, 4th generation in the center and 6th generation on the right}
+		\caption{Condition statements used to simulate the growth of a flower.}
 	}
 \end{figure}
 \FloatBarrier
+
+\vspace{5mm}
+\noindent
+The L-system seen in \ref{conditional l-system example} above can simulate the growth stages of a flower depending on the number of times the axiom is rewritten. The leftmost image has been rewritten two times, the center four times, and the rightmost image six times. The initial value of the module I parameter in the axiom is five, which is decremented by one each time `I' is rewritten until such a point when it is zero. Once the value reaches zero, the flower object will be rendered at the very end of the branch. 
+
+This type of functionality can be useful because a single L-system could represent multiple stages of growth of a single plant. For instance, a tree could have two stages of growth, a sapling, full-grown tree, or could be made to represent seasons either with or without leaves. A limitation of this is that writing the L-system can become more challenging as it now needs to account for the stage of growth. 
 
 \section{Randomness within L-systems} \label{Randomness L-system Subsection}
 
@@ -559,9 +583,9 @@ The stochastic L-system definition in \ref{stochastic example}, produces the fol
 
 \section{Computing L-systems}
 
-This thesis focuses on the different levels of complexity between the L-system rewriting and the L-system interpretation. It is essential to distinguish these two systems by their components, and how these components interact. The two systems will be called the L-system rewriter and the L-system interpreter. As discussed at the begining of this chapter, the L-system rewriter takes L-system language as input in the form of a text file. The rewriter has three significant parts the tokenizer, parser, and the rewriter. The tokenizer breaks the language into individual words, then checks the syntax of the language according to the grammar. The parser then uses these words to check the validity of the semantic structure of the language as well as build relevant data structures for the rewriter. Finally, the rewriter uses these data structures to rewrite the axiom string several times according to the production rules. The result of the string rewriter is a module string, as well as other bits of information that will be used by the interpreter. The interpreter must now assume any information that has not provided by the string rewriter. 
+This thesis focuses on the different levels of complexity between the L-system rewriting and the L-system interpretation. It is essential to distinguish these two systems by their components, and how these components interact. The two systems will be called the L-system rewriter and the L-system interpreter. As discussed at the begining of this chapter, the L-system rewriter takes L-system language as input in the form of a text file. The rewriter has three significant parts, the tokenizer, parser, and the rewriter. The tokenizer breaks the language into individual words, then checks the syntax of the language according to the grammar. The parser then uses these words to check the validity of the semantic structure of the language as well as build relevant data structures for the rewriter. Finally, the rewriter uses these data structures to rewrite the axiom string several times according to the production rules. The result of the string rewriter is a module string, as well as other bits of information that will be used by the interpreter. 
 
-The string interpreter also has three significant parts; however, the functions of these parts are very dependant on what the L-system is trying to represent. For the procedural generation of plant life, there is the turtle graphics interpreter, model generator, and the OpenGL renderer. The turtle graphics renderer takes each module from the module string and interprets its meaning as a set of instructions carried out by a turtle object. The model generator takes the information generated by the turtle graphics interpreter and generates the 3D branching model as well as leaves and other objects. Lastly, the OpenGL renderer takes the models generated and renders them on the screen for the user. This process can be visualised in figure \ref{procedural generation process} below.
+The string interpreter also has three significant parts; however, the functions of these parts are very dependant on what the L-system is trying to represent. For the procedural generation of plant life, there is the turtle graphics interpreter, model generator, and the OpenGL renderer. The turtle graphics generator takes each module from the result string and interprets its meaning as a set of instructions carried out by a turtle object, which builds a set of data structures about the plant-structure. The model generator takes the information generated by the turtle graphics interpreter and generates the 3D branching model as well as leaves and other objects. Lastly, the OpenGL renderer takes the models generated and renders them on the screen for the user. The L-system procedural generation process can be seen in the figure below.
 
 \begin{figure}[htbp]
 	{\centering
@@ -575,6 +599,10 @@ The string interpreter also has three significant parts; however, the functions 
 	}
 \end{figure}
 \FloatBarrier
+
+\noindent
+Each part of the string rewriter and interpreter will be covered in detail in later chapters. With the design of this procedural generation process the rewriter does not need to change regardless of the interpreter. However, in order to have the L-system output suit a particular problem the string interpreter may need to be built for that purpose.
+
 
 \section{Summary}
 

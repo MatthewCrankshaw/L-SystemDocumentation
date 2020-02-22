@@ -13,7 +13,7 @@
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Fifth generation of the fractal tree L-system}}{24}
 \contentsline {figure}{\numberline {2.10}{\ignorespaces Diagram of an L-system Using Multiple Objects.}}{27}
 \contentsline {figure}{\numberline {2.11}{\ignorespaces 3D Parametric L-system.}}{28}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Condition statements used to simulate the growth of a flower. 2nd generation on the left, 4th generation in the center and 6th generation on the right}}{29}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Condition statements used to simulate the growth of a flower.}}{29}
 \contentsline {figure}{\numberline {2.13}{\ignorespaces Different Variations of the Same L-system with Randomness Introduced in The Angles. }}{30}
 \contentsline {figure}{\numberline {2.14}{\ignorespaces Representation of an L-system with a probability stochastic with a 0.33 probabability for each rule.}}{32}
 \contentsline {figure}{\numberline {2.15}{\ignorespaces Diagram of the procedural generation process.}}{33}

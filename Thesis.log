@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  21 FEB 2020 12:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.16)  22 FEB 2020 16:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1065,7 +1065,7 @@ Package pdftex.def Info: images/Diagrams/rotations.png  used on input line 114.
 
 (pdftex.def)             Requested size: 199.34628pt x 186.69893pt.
  [18]
-Underfull \hbox (badness 10000) in paragraph at lines 120--124
+Underfull \hbox (badness 10000) in paragraph at lines 123--126
 
  []
 
@@ -1077,55 +1077,55 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: images/Diagrams/basic_turtle.png Graphic file (type png)
 <use images/Diagrams/basic_turtle.png>
 Package pdftex.def Info: images/Diagrams/basic_turtle.png  used on input line 1
-77.
+79.
 (pdftex.def)             Requested size: 339.3705pt x 121.65543pt.
  [20 <./images/Diagrams/basic_turtle.png>]
 <images/Diagrams/koch_curves.png, id=87, 1003.75pt x 1204.5pt>
 File: images/Diagrams/koch_curves.png Graphic file (type png)
 <use images/Diagrams/koch_curves.png>
 Package pdftex.def Info: images/Diagrams/koch_curves.png  used on input line 20
-2.
+4.
 (pdftex.def)             Requested size: 160.60327pt x 192.72394pt.
 <images/Diagrams/sierpinsky_triangle.png, id=88, 2509.375pt x 2007.5pt>
 File: images/Diagrams/sierpinsky_triangle.png Graphic file (type png)
 <use images/Diagrams/sierpinsky_triangle.png>
 Package pdftex.def Info: images/Diagrams/sierpinsky_triangle.png  used on input
- line 223.
+ line 225.
 (pdftex.def)             Requested size: 250.9522pt x 200.76175pt.
  [21 <./images/Diagrams/koch_curves.png>] [22 <./images/Diagrams/sierpinsky_tri
 angle.png>]
 <images/Diagrams/branching.png, id=97, 963.6pt x 368.37625pt>
 File: images/Diagrams/branching.png Graphic file (type png)
 <use images/Diagrams/branching.png>
-Package pdftex.def Info: images/Diagrams/branching.png  used on input line 246.
+Package pdftex.def Info: images/Diagrams/branching.png  used on input line 248.
 
 (pdftex.def)             Requested size: 337.26506pt x 128.93361pt.
 <images/Diagrams/NestedBranching.png, id=98, 963.6pt x 352.31625pt>
 File: images/Diagrams/NestedBranching.png Graphic file (type png)
 <use images/Diagrams/NestedBranching.png>
 Package pdftex.def Info: images/Diagrams/NestedBranching.png  used on input lin
-e 261.
+e 263.
 (pdftex.def)             Requested size: 337.26506pt x 123.31253pt.
 <images/Diagrams/fractalBush.png, id=99, 1018.80624pt x 796.9775pt>
 File: images/Diagrams/fractalBush.png Graphic file (type png)
 <use images/Diagrams/fractalBush.png>
 Package pdftex.def Info: images/Diagrams/fractalBush.png  used on input line 28
-0.
+3.
 (pdftex.def)             Requested size: 152.81433pt x 119.54146pt.
  [23 <./images/Diagrams/branching.png> <./images/Diagrams/NestedBranching.png>]
 <images/Diagrams/fractalPlant.png, id=105, 1014.79124pt x 798.985pt>
 File: images/Diagrams/fractalPlant.png Graphic file (type png)
 <use images/Diagrams/fractalPlant.png>
 Package pdftex.def Info: images/Diagrams/fractalPlant.png  used on input line 3
-00.
+04.
 (pdftex.def)             Requested size: 152.21211pt x 119.84258pt.
-
-Overfull \hbox (0.74872pt too wide) in paragraph at lines 310--311
+ [24 <./images/Diagrams/fractalBush.png> <./images/Diagrams/fractalPlant.png>]
+Overfull \hbox (0.74872pt too wide) in paragraph at lines 314--315
 \OT1/cmr/m/n/10.95 oped upon in 2012 by Prusinkiewicz and Lin-den-mayer [[]].
  []
 
-[24 <./images/Diagrams/fractalBush.png> <./images/Diagrams/fractalPlant.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 316--319
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--323
 
  []
 
@@ -1134,7 +1134,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 316--319
 File: images/Diagrams/object_example.png Graphic file (type png)
 <use images/Diagrams/object_example.png>
 Package pdftex.def Info: images/Diagrams/object_example.png  used on input line
- 380.
+ 389.
 (pdftex.def)             Requested size: 240.89574pt x 159.79416pt.
  [27 <./images/Diagrams/object_example.png>]
 <images/ParametricLsystem/branchingPattern.png, id=120, 1204.5pt x 597.23125pt>
@@ -1142,17 +1142,17 @@ Package pdftex.def Info: images/Diagrams/object_example.png  used on input line
 File: images/ParametricLsystem/branchingPattern.png Graphic file (type png)
 <use images/ParametricLsystem/branchingPattern.png>
 Package pdftex.def Info: images/ParametricLsystem/branchingPattern.png  used on
- input line 412.
+ input line 424.
 (pdftex.def)             Requested size: 361.35278pt x 179.17075pt.
  [28 <./images/ParametricLsystem/branchingPattern.png>]
 <images/Diagrams/conditionalLsystem.png, id=124, 3613.5pt x 803.0pt>
 File: images/Diagrams/conditionalLsystem.png Graphic file (type png)
 <use images/Diagrams/conditionalLsystem.png>
 Package pdftex.def Info: images/Diagrams/conditionalLsystem.png  used on input 
-line 483.
+line 503.
 (pdftex.def)             Requested size: 433.6013pt x 96.35583pt.
 
-Overfull \hbox (5.32281pt too wide) in paragraph at lines 483--484
+Overfull \hbox (5.32281pt too wide) in paragraph at lines 503--504
  [][] 
  []
 
@@ -1160,25 +1160,28 @@ Overfull \hbox (5.32281pt too wide) in paragraph at lines 483--484
 <images/Diagrams/RandomTrees.png, id=129, 2007.5pt x 1505.625pt>
 File: images/Diagrams/RandomTrees.png Graphic file (type png)
 <use images/Diagrams/RandomTrees.png>
-Package pdftex.def Info: images/Diagrams/RandomTrees.png  used on input line 51
-0.
+Package pdftex.def Info: images/Diagrams/RandomTrees.png  used on input line 53
+6.
 (pdftex.def)             Requested size: 240.8896pt x 180.6672pt.
  [30 <./images/Diagrams/RandomTrees.png>]
-<images/Diagrams/stochastics.png, id=134, 1204.5pt x 401.5pt>
+Underfull \vbox (badness 7851) has occurred while \output is active []
+
+ [31]
+<images/Diagrams/stochastics.png, id=138, 1204.5pt x 401.5pt>
 File: images/Diagrams/stochastics.png Graphic file (type png)
 <use images/Diagrams/stochastics.png>
-Package pdftex.def Info: images/Diagrams/stochastics.png  used on input line 54
-9.
+Package pdftex.def Info: images/Diagrams/stochastics.png  used on input line 57
+5.
 (pdftex.def)             Requested size: 421.58131pt x 140.5271pt.
- [31]
-<images/Diagrams/FullDiagram.png, id=139, 985.6825pt x 541.02126pt>
+
+[32 <./images/Diagrams/stochastics.png>]
+<images/Diagrams/FullDiagram.png, id=143, 985.6825pt x 541.02126pt>
 File: images/Diagrams/FullDiagram.png Graphic file (type png)
 <use images/Diagrams/FullDiagram.png>
-Package pdftex.def Info: images/Diagrams/FullDiagram.png  used on input line 57
-1.
+Package pdftex.def Info: images/Diagrams/FullDiagram.png  used on input line 59
+7.
 (pdftex.def)             Requested size: 423.8352pt x 232.6346pt.
- [32 <./images/Diagrams/stochastics.png>]) [33 <./images/Diagrams/FullDiagram.p
-ng>]
+) [33 <./images/Diagrams/FullDiagram.png>]
 Chapter 3.
 (./chapters/Rewriter.tex
 Underfull \vbox (badness 1845) has occurred while \output is active []
@@ -1449,8 +1452,8 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  11354 strings out of 492982
- 165176 string characters out of 6134896
- 316767 words of memory out of 5000000
+ 165176 string characters out of 6134895
+ 316768 words of memory out of 5000000
  14594 multiletter control sequences out of 15000+600000
  13812 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1469,7 +1472,7 @@ mr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Thesis.pdf (81 pages, 7632197 bytes).
+Output written on Thesis.pdf (81 pages, 7634041 bytes).
 PDF statistics:
  399 PDF objects out of 1000 (max. 8388607)
  227 compressed objects within 3 object streams
