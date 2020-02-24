@@ -48,9 +48,9 @@
 \contentsline {section}{\numberline {6.2}Hooke's Law}{68}
 \contentsline {section}{\numberline {6.3}Equations of Motion}{69}
 \contentsline {section}{\numberline {6.4}Updating Branches}{69}
-\contentsline {section}{\numberline {6.5}Results}{69}
-\contentsline {section}{\numberline {6.6}Summary}{71}
-\contentsline {chapter}{\numberline {7}Discussion and Conclusions}{72}
-\contentsline {chapter}{Appendices}{74}
-\contentsline {chapter}{\numberline {A}L-system Rewriter Data Structures}{75}
-\contentsline {chapter}{\numberline {B}L-system Rewriter Pseudocode}{76}
+\contentsline {section}{\numberline {6.5}Summary}{69}
+\contentsline {chapter}{\numberline {7}Results}{71}
+\contentsline {chapter}{\numberline {8}Discussion and Conclusions}{73}
+\contentsline {chapter}{Appendices}{75}
+\contentsline {chapter}{\numberline {A}L-system Rewriter Data Structures}{76}
+\contentsline {chapter}{\numberline {B}L-system Rewriter Pseudocode}{77}

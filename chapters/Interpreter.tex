@@ -1,19 +1,23 @@
 
-\lettrine[lines=3]{T}{}he string interpreter is one of the significant components of plant generation. It is the final step in the process of procedural generation. The output of this stage is dependant on what the L-system is representing. In this case, it is responsible for creating the final plant models and information and then rendering it on the screen, using the OpenGL framework. 
+\lettrine[lines=3]{T}{}he string interpreter is one of the significant components of plant generation. It is the final step in the process of procedural generation. The output of this stage is dependant on what the L-system is representing. In this case, it is responsible for creating the final plant models and other information and then rendering it on the screen, using the OpenGL framework. 
 
-The interpreter has three main stages of processing, which can be seen in figure \ref{l-system interpreter}. The first part is the turtle graphics interpreter, then the model generator, and finally, the renderer. The turtle graphics interpreter takes the string of modules provided by the rewriter, as a set of instructions. It starts from the root of the tree and generates a skeletal structure made up of joints. This is similar to the techniques used in skeletal rigging in animation \cite{gregory2014game}. The tree skeleton joints each represent a branch segment or part of the tree. These joints have some information about the properties of that segment. The joint data is then used to generate the model data in the second stage of processing. The model generator creates the points that make up the plant in 3D space, as well as calculating the texture and lighting information. The models can finally be passed to the renderer. The renderer is responsible for taking all the model information such as, vertex, texture, and lighting data and renders the final plant on the screen. The renderer will also handle any physical simulation of the tree skeleton.
+The interpreter has three main stages of processing, which can be seen in figure \ref{l-system interpreter}. The first part is the turtle graphics interpreter, then the model generator, and finally, the renderer. The turtle graphics interpreter takes the string of modules provided by the rewriter, as a set of instructions. It starts from the root of the tree and generates a skeletal structure made up of joints. This is similar to the techniques used in skeletal rigging in animation \cite{gregory2014game}. The tree skeleton joints each represent a branch segment or part of the tree. These joints have some information about the properties of that segment. The joint data is then used to generate the model data in the second stage of processing. The model generator creates the points that make up the plant in 3D space, as well as calculating the texture and lighting information. The models can finally be passed to the renderer. The renderer is responsible for taking all the model information such as, vertex, texture, and lighting data and renders the final plant on the screen. 
+
+The renderer will also handle any physical simulation of the plant. The physics simulation is technically part of the interpreter and is carried out in the rendering stage. This is because the physics simulation relies on the information within the plants' skeletal structure to make the movement calculations. The skeleton manipulates the plant model in order to simulate movement; however, the model does not need to be generated in every frame. In order to fully cover the physics simulator, this process will be split into a separate chapter. 
+
+
 
 \begin{figure}[htbp]
 	{\centering
 		\vspace{7px}
 		\includegraphics[scale=0.4]{Diagrams/L-systemInterpreter.png}
-		\caption{Diagram of the stages of L-system interpretation and rendering} \label{l-system interpreter}
+		\caption{Diagram of the three stages of L-system interpretation} \label{l-system interpreter}
 	}
 \end{figure}
 \FloatBarrier
 
 \noindent
-This chapter will cover each stage of the string interpreter implementation in detail. This chapter will also introduce how the interpreter can simulate and animation the plants' movements under forces such as gravity and wind in real-time. 
+This chapter will cover each stage of the string interpreter implementation in detail. It will also talk about some of the advantages, dissadvantages and limitations each stage. 
 
 \section{Turtle Graphics Interpreter}
 
@@ -53,7 +57,7 @@ Below is a table describing the L-system module names as well as the parameter m
 	] 				&	Load State				& N/A 			&	N/A							\\
 \hline
 \end{tabular}
-\caption{Table of turtle instruction symbols and their meaning to the interpreter}
+\caption{Table of turtle instruction symbols and parameters and their meaning to the interpreter}
 \label{instruction table 1}
 \end{table}
 \FloatBarrier
@@ -84,7 +88,7 @@ Take the following string of modules \say{F(1)[/(90)F(1)$\backslash$ (90)F(1)]-(
 		\fbox{
 			\includegraphics[scale=0.4]{Diagrams/SkeletonJoints.png}
 		}
-		\caption{Diagram of a simple plant skeleton with joint position and orientation.} \label{skeleton diagram}
+		\caption{Diagram of a simple plant skeleton showing joint position and orientation.} \label{skeleton diagram}
 	}
 \end{figure}
 \FloatBarrier
@@ -138,7 +142,7 @@ This method of branch generation, at first glance, gives a very similar result t
 	{\centering
 		\vspace{7px}
 		\includegraphics[scale=0.2]{Diagrams/StackedVsLinked.png}\label{stackedvslinked}
-		\caption{Stacked Vs Linked.}
+		\caption{Diagram comparing stacked vs linked branching.}
 	}
 \end{figure}
 \FloatBarrier

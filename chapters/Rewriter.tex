@@ -12,7 +12,7 @@ Due to the complexity of the L-system grammar, it is difficult for a computer to
 		\fbox{
 			\includegraphics[scale=0.32]{Diagrams/StringRewriter.png}
 		}
-		\caption{Diagram of the Parts of The Rewiting System.} \label{3D rotations}
+		\caption{Diagram showing the parts of the rewiting system.} \label{3D rotations}
 	}
 \end{figure}
 \FloatBarrier
@@ -146,7 +146,7 @@ The scanner itself is quite complex, its main goal is to match the characters or
 	[a-zA-Z\_][a-zA-Z0-9\_]*  				& T\_VAR\_NAME 			& Regular expression for a module or variable name\\
 \hline
 \end{tabular}
-\caption{Table of Valid Lexer Words}
+\caption{Table of valid lexer words}
 \label{lexer words}
 \end{table}
 \FloatBarrier
@@ -185,7 +185,7 @@ The \acrshort{bnf} above states that the goal symbol, $<$expression$>$ derives f
 		
 		\includegraphics[scale=0.7]{Diagrams/syntaxTree.png}
 		
-		\caption{Diagram syntax tree for an expression.} \label{syntax tree}
+		\caption{Diagram of the syntax tree for an expression.} \label{syntax tree}
 	}
 \end{figure}
 \FloatBarrier
@@ -325,7 +325,7 @@ The definition variables can be stored as a table, called a constants table, whi
 	pi					& 3.1415\\
 \hline
 \end{tabular}
-\caption{Table of turtle instruction symbols and their meaning to the interpreter}
+\caption{Variable table for storing constants}
 \label{constants table}
 \end{table}
 \FloatBarrier
@@ -344,7 +344,7 @@ The object table structure is very similar to the constants table. The object ta
 	S				& SPHERE\\
 \hline
 \end{tabular}
-\caption{Table of turtle instruction symbols and their meaning to the interpreter}
+\caption{Object table for storing modules and their associated object}
 \label{constants table}
 \end{table}
 \FloatBarrier
@@ -446,7 +446,7 @@ During the parsing phase, if the rule has the stochastic operator, the probabili
 & p3 & 0.34 \\
 \hline
 \end{tabular}
-\caption{Table of the stochastic rules probabilities within a stochastic group.}
+\caption{Stochastic rule table for holding rule probabilities within a stochastic group.}
 \label{stochastic table}
 \end{table}
 \FloatBarrier
@@ -484,7 +484,7 @@ The string rewriter is the final stage in the rewriter system. It starts with th
 		\fbox{
 			\includegraphics[scale=0.4]{Diagrams/rewriter.png}
 		}
-		\caption{Simplified flow chart of string rewriting.} \label{rewriter diagram}
+		\caption{Simplified flow chart of string rewriting procedure.} \label{rewriter diagram}
 	}
 \end{figure}
 \FloatBarrier
