@@ -1,6 +1,6 @@
-This thesis set out to create a parametric L-system capable of representing complex plant-left structures. And to use the L-system to procedurally generate plant-life with all of the relavant information necessary for physical simulation. This chapter will first test several features of the parametric L-system such as varying branch width and branching angles, to produce different effects within the plant-life. To test the physical simulation of the L-system there are several different examples which are all running the same physics simulation, with the acceleration due to gravity being kept at a constant value of $9.8m/s^2$. 
+This thesis set out to create a parametric L-system capable of representing complex plant-like structures. And to use the L-system to procedurally generate plant-life with all of the relavant information necessary for physical simulation. This chapter will first test several features of the parametric L-system such as varying branch width and branching angles, to produce different effects within the plant-life. To test the physical simulation of the L-system there are several different examples which are all running the same physics simulation, with the acceleration due to gravity being kept at a constant value of $9.8m/s^2$. 
 
-The parametric L-system below contains a number of variables that considerably change the visual properties of the tree. The next few examples will illustrate how changing these parameters can not only effect the look of the plant but also how it reacts in a physical simulation. The table shows two sets of default values that will be applied to the L-system. Each example will change the values of one or two of these parameters and show its effect on the plants structure or how it reacts in the simulation.
+The parametric L-system in \ref{L-system params} below, contains several variables that can be manipulated to change the visual properties of the rendered tree. The next few examples will illustrate how the use of these parameters can effect the look of the plant and how it reacts differently in a simulation. The table shows three sets of default values that will be applied to the L-system in each example. One or two of these parameters will be changed to show its effect on the plants structure or how it reacts in the simulation.
 
 \vspace{10mm}
 \hrule
@@ -31,7 +31,7 @@ The parametric L-system below contains a number of variables that considerably c
 \hline
 \end{tabular}
 \caption{Table of turtle graphics instructions symbols and their meaning to the interpreter}
-\label{DOL-system instructions}
+\label{L-system params}
 \end{table}
 \FloatBarrier
 \hrule
@@ -55,7 +55,7 @@ Although this example is not a physical simulation, it could be simulated. Due t
 \begin{figure}[htbp]
 	{\centering
 		\vspace{7px}
-		\includegraphics[scale=0.25]{Diagrams/TernaryBranching3_vr.png} 
+		\includegraphics[scale=0.30]{Diagrams/TernaryBranching3_vr.png} 
 		\caption{Examples of L-system 1 changing the `dr' variable which modifies the thickness of the base of the tree.} \label{example thickness}
 	}
 \end{figure}
@@ -67,7 +67,7 @@ The figure \ref{example angle} below shows that the result of changing the roll 
 \begin{figure}[htbp]
 	{\centering
 		\vspace{7px}
-		\includegraphics[scale=0.25]{Diagrams/TernaryBranching2_angle_example.png}
+		\includegraphics[scale=0.30]{Diagrams/TernaryBranching2_angle_example.png}
 		\caption{Examples of L-system 2 changing the `a3' variable modifying the roll angle of certain branches.} \label{example angle}
 	}
 \end{figure}
@@ -128,7 +128,7 @@ The L-system above is a 2D fractal tree that has rendered in three dimensions. I
 \begin{figure}[htbp]
 	{\centering
 		\vspace{7px}
-		\includegraphics[scale=0.25]{Diagrams/TernaryBranching3_constantSC.png}
+		\includegraphics[scale=0.30]{Diagrams/TernaryBranching3_constantSC.png}
 		\caption{Examples of L-system 1 with gravity applied when uniformly changing the spring constant `scstart' for all branches.}
 	}
 \end{figure}
@@ -140,7 +140,7 @@ In the previous simulations above the spring constant variable `scstart' has bee
 \begin{figure}[htbp]
 	{\centering
 		\vspace{7px}
-		\includegraphics[scale=0.25]{Diagrams/TernaryBranching3_scmod.png}
+		\includegraphics[scale=0.30]{Diagrams/TernaryBranching3_scmod.png}
 		\caption{Examples of L-system 3 with gravity applied when changing the spring constant modifier `scmod', when the starting spring constant is set to 30 `scstart = 30'.}
 	}
 \end{figure}
