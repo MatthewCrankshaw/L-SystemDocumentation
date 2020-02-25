@@ -36,13 +36,13 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Diagram showing how Hooke's Law can be applied to a plant structure.}}{67}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Examples simulating gravity on a 2D model}}{71}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Examples simulating gravity on a 3D model}}{72}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Examples simulating gravity on a complex 3D model}}{72}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces }}{72}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces }}{73}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces }}{73}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces }}{74}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Graph showing an exponential and linear relationship between the branch width and the generation when increasing the value of `dr'.}}{72}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Examples of L-system 1 changing the `dr' variable which modifies the thickness of the base of the tree.}}{72}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Examples of L-system 2 changing the `a3' variable modifying the roll angle of certain branches.}}{73}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Examples simulating gravity on a 2D model}}{73}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Examples simulating gravity on a 3D model}}{74}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Examples of L-system 1 with gravity applied when uniformly changing the spring constant `scstart' for all branches.}}{74}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Examples of L-system 3 with gravity applied when changing the spring constant modifier `scmod', when the starting spring constant is set to 30 `scstart = 30'.}}{75}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
