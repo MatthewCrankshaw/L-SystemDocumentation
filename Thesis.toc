@@ -50,7 +50,7 @@
 \contentsline {section}{\numberline {6.4}Updating Branches}{69}
 \contentsline {section}{\numberline {6.5}Summary}{69}
 \contentsline {chapter}{\numberline {7}Results}{71}
-\contentsline {chapter}{\numberline {8}Discussion and Conclusions}{76}
-\contentsline {chapter}{Appendices}{78}
-\contentsline {chapter}{\numberline {A}L-system Rewriter Data Structures}{79}
-\contentsline {chapter}{\numberline {B}L-system Rewriter Pseudocode}{80}
+\contentsline {chapter}{\numberline {8}Discussion and Conclusions}{78}
+\contentsline {chapter}{Appendices}{80}
+\contentsline {chapter}{\numberline {A}L-system Rewriter Data Structures}{81}
+\contentsline {chapter}{\numberline {B}L-system Rewriter Pseudocode}{82}
