@@ -3,54 +3,54 @@
 \contentsline {section}{\numberline {1.2}Introduction to Procedural Generation}{10}
 \contentsline {section}{\numberline {1.3}Introduction to Rewriting Systems}{11}
 \contentsline {section}{\numberline {1.4}Introduction to Formal Grammars}{12}
-\contentsline {section}{\numberline {1.5}Structure of Thesis}{12}
+\contentsline {section}{\numberline {1.5}Structure of Thesis}{13}
 \contentsline {chapter}{\numberline {2}Lindenmayer Systems}{14}
 \contentsline {section}{\numberline {2.1}Simple D0L-system}{16}
 \contentsline {section}{\numberline {2.2}Interpreting the D0L-system String}{17}
 \contentsline {section}{\numberline {2.3}Branching}{22}
-\contentsline {section}{\numberline {2.4}Parametric OL-systems}{24}
+\contentsline {section}{\numberline {2.4}Parametric OL-systems}{25}
 \contentsline {subsection}{\numberline {2.4.1}Formal Definition of a Parametric 0L-system}{25}
 \contentsline {subsection}{\numberline {2.4.2}Defining Constants and Objects}{26}
 \contentsline {subsection}{\numberline {2.4.3}Manipulating Branch Width}{27}
 \contentsline {subsection}{\numberline {2.4.4}L-system Conditions}{28}
 \contentsline {section}{\numberline {2.5}Randomness within L-systems}{30}
 \contentsline {section}{\numberline {2.6}Stochastic Rules within L-systems}{31}
-\contentsline {section}{\numberline {2.7}Computing L-systems}{32}
-\contentsline {section}{\numberline {2.8}Summary}{33}
-\contentsline {chapter}{\numberline {3}L-system Rewriter Implementation}{34}
-\contentsline {section}{\numberline {3.1}Environment and Tools}{35}
-\contentsline {section}{\numberline {3.2}The L-system as an Interpreted Grammar}{36}
-\contentsline {section}{\numberline {3.3}The Syntax of a Parametric L-system}{37}
-\contentsline {section}{\numberline {3.4}The L-system Lexical Analyser}{38}
-\contentsline {section}{\numberline {3.5}The L-system Parser}{40}
-\contentsline {subsection}{\numberline {3.5.1}\acrlong {bnf} of the L-system Grammar}{41}
-\contentsline {subsection}{\numberline {3.5.2}Dealing with Constant Values and Objects}{43}
-\contentsline {subsection}{\numberline {3.5.3}Implementing Modules and Strings}{44}
-\contentsline {subsection}{\numberline {3.5.4}Implementing Arithmetic Expressions Trees}{44}
-\contentsline {subsection}{\numberline {3.5.5}Implementing Random Ranges}{45}
-\contentsline {subsection}{\numberline {3.5.6}Implementing Stochastic Rules}{46}
-\contentsline {section}{\numberline {3.6}The String Rewriter}{47}
-\contentsline {section}{\numberline {3.7}Summary}{48}
-\contentsline {chapter}{\numberline {4}Mathematics For 3D Graphics}{50}
-\contentsline {section}{\numberline {4.1}Vectors}{50}
-\contentsline {section}{\numberline {4.2}Matrices}{53}
-\contentsline {section}{\numberline {4.3}Quaternions}{55}
-\contentsline {section}{\numberline {4.4}summary}{57}
-\contentsline {chapter}{\numberline {5}L-system String Interpreter Implementation}{58}
-\contentsline {section}{\numberline {5.1}Turtle Graphics Interpreter}{59}
-\contentsline {section}{\numberline {5.2}Model Generator}{61}
-\contentsline {section}{\numberline {5.3}Renderer}{63}
-\contentsline {subsection}{\numberline {5.3.1}Models and Buffer Objects}{64}
-\contentsline {section}{\numberline {5.4}Shaders}{65}
-\contentsline {section}{\numberline {5.5}Summary}{65}
-\contentsline {chapter}{\numberline {6}Physics Simulator}{66}
-\contentsline {section}{\numberline {6.1}Physical Properties of Branches}{67}
-\contentsline {section}{\numberline {6.2}Hooke's Law}{68}
-\contentsline {section}{\numberline {6.3}Equations of Motion}{69}
-\contentsline {section}{\numberline {6.4}Updating Branches}{69}
-\contentsline {section}{\numberline {6.5}Summary}{69}
-\contentsline {chapter}{\numberline {7}Results}{71}
-\contentsline {chapter}{\numberline {8}Discussion and Conclusions}{78}
-\contentsline {chapter}{Appendices}{80}
-\contentsline {chapter}{\numberline {A}L-system Rewriter Data Structures}{81}
-\contentsline {chapter}{\numberline {B}L-system Rewriter Pseudocode}{82}
+\contentsline {section}{\numberline {2.7}Computing L-systems}{33}
+\contentsline {section}{\numberline {2.8}Summary}{34}
+\contentsline {chapter}{\numberline {3}L-system Rewriter Implementation}{35}
+\contentsline {section}{\numberline {3.1}Environment and Tools}{36}
+\contentsline {section}{\numberline {3.2}The L-system as an Interpreted Grammar}{37}
+\contentsline {section}{\numberline {3.3}The Syntax of a Parametric L-system}{38}
+\contentsline {section}{\numberline {3.4}The L-system Lexical Analyser}{39}
+\contentsline {section}{\numberline {3.5}The L-system Parser}{41}
+\contentsline {subsection}{\numberline {3.5.1}\acrlong {bnf} of the L-system Grammar}{42}
+\contentsline {subsection}{\numberline {3.5.2}Dealing with Constant Values and Objects}{44}
+\contentsline {subsection}{\numberline {3.5.3}Implementing Modules and Strings}{45}
+\contentsline {subsection}{\numberline {3.5.4}Implementing Arithmetic Expressions Trees}{45}
+\contentsline {subsection}{\numberline {3.5.5}Implementing Random Ranges}{46}
+\contentsline {subsection}{\numberline {3.5.6}Implementing Stochastic Rules}{47}
+\contentsline {section}{\numberline {3.6}The String Rewriter}{48}
+\contentsline {section}{\numberline {3.7}Summary}{50}
+\contentsline {chapter}{\numberline {4}Mathematics For 3D Graphics}{51}
+\contentsline {section}{\numberline {4.1}Vectors}{51}
+\contentsline {section}{\numberline {4.2}Matrices}{54}
+\contentsline {section}{\numberline {4.3}Quaternions}{56}
+\contentsline {section}{\numberline {4.4}summary}{58}
+\contentsline {chapter}{\numberline {5}L-system String Interpreter Implementation}{59}
+\contentsline {section}{\numberline {5.1}Turtle Graphics Interpreter}{60}
+\contentsline {section}{\numberline {5.2}Model Generator}{62}
+\contentsline {section}{\numberline {5.3}Renderer}{64}
+\contentsline {subsection}{\numberline {5.3.1}Models and Buffer Objects}{65}
+\contentsline {section}{\numberline {5.4}Shaders}{66}
+\contentsline {section}{\numberline {5.5}Summary}{66}
+\contentsline {chapter}{\numberline {6}Physics Simulator}{67}
+\contentsline {section}{\numberline {6.1}Physical Properties of Branches}{68}
+\contentsline {section}{\numberline {6.2}Hooke's Law}{69}
+\contentsline {section}{\numberline {6.3}Equations of Motion}{70}
+\contentsline {section}{\numberline {6.4}Updating Branches}{70}
+\contentsline {section}{\numberline {6.5}Summary}{71}
+\contentsline {chapter}{\numberline {7}Results}{72}
+\contentsline {chapter}{\numberline {8}Discussion and Conclusions}{79}
+\contentsline {chapter}{Appendices}{81}
+\contentsline {chapter}{\numberline {A}L-system Rewriter Data Structures}{82}
+\contentsline {chapter}{\numberline {B}L-system Rewriter Pseudocode}{83}

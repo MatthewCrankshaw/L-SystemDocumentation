@@ -1,9 +1,8 @@
-This thesis set out to create a parametric L-system capable of representing complex plant-like structures. And to use the L-system to procedurally generate plant-life with all of the relavant information necessary for physical simulation. This chapter will test several features of the parametric L-system, such as how to varying branch width and branching angles, and how to produce different effects on the resulting plant models. Furthermore, this chapter provides several different examples that will test the physical simulation by varying parameters in the L-system. All of the tests are run on the same interpreter and physics simulation, with the acceleration due to gravity being kept at a constant value of $9.8m/s^2$. 
+This thesis set out to design a software solution that uses the parametric L-system to representing complex plant-like structures, and to explore whether the L-system can provide the relavant information necessary for physical simulation. This chapter will show several features of the parametric L-system, such as how varying parameters like branch width and branching angles can affect the resulting visual effect on the plant models. Furthermore, parameters that manipulate the physical behaviour of the plant under forces like wind or gravity will be tested and their results will be discussed. All of the tests within this chapter are run on the same interpreter and physics simulation, with the acceleration due to gravity being kept at a constant value of $9.8m/s^2$. 
 
-The parametric L-system in \ref{L-system params} below, contains several variables that can be manipulated to change the visual properties of the rendered tree. The next few examples will illustrate how the use of these parameters can effect the look of the plant and how the plants reacts differently when simulated. The table shows three sets of default values that will be applied to the L-system in each example. One or two of these parameters will be changed and a screenshot showing its effect on the plants structure or how it reacts in the simulation will be shown.
+L-system \ref{parametric L-system results} defined below has a several parameters that affect the look and behaviour of the resulting plant. The parameters have been chosen as they each affect a perceptible property of plant when rendered or simulated.
 
-Each variable in the table below represents a particular feature that can be manipulated. These features have the the following meanings: 
-
+The table below shows three sets of default values that will be applied to the L-system in each example. These parameters are numeric values and can be provided to the L-system by means of the \#define statements. For each test only one or two of these parameters will be manipulated and screenshots will show its affect on the structure or how it reacts in the physical simulation. These features have the the following meanings: 
 
 \begin{itemize}[noitemsep]
 	\item n - The number of generations to rewrite
@@ -16,8 +15,6 @@ Each variable in the table below represents a particular feature that can be man
 	\item scmod - The proportion to increase the spring constant each generation
 \end{itemize}
 
-\vspace{10mm}
-\hrule
 \begin{singlespace}
 \begin{equation}
 \begin{aligned}
@@ -27,9 +24,11 @@ Each variable in the table below represents a particular feature that can be man
 	&\textrm{\#p2 : F(l, sc) : * : F(l*dl, sc*scmod);}\\
 	&\textrm{\#p3 : !(w) : * : !(w*dr);}
 \end{aligned}
-\end{equation}
+\end{equation} \label{parametric L-system results}
 \end{singlespace}
 
+\vspace{10mm}
+\hrule
 \begin{table}[h!]
 \centering
 \begin{tabular}{ | c | c | c | c | c | c | c | c | c | }
@@ -53,7 +52,7 @@ Each variable in the table below represents a particular feature that can be man
 \vspace{10mm} 
 
 \noindent
-In the example in figure \ref{example thickness}, the value `dr', manipulates how thick each branch is. It does this during the rewriting process. Every time the width module `!' is encountered, it is rewritten with the current radius multiplied by the value of `dr', which increases the radius exponentially. This relationship can be expressed as $r_{i+1} = r_i \times dr$, where $r_i$ is the current branch radius and $r_{i+1}$ is the radius of the branch in the next generation. This gives a tree that gets thicker exponentially as the branch moves closer to the base of the tree. This can be shown in the graphs in figure \ref{graph thickness} below. For a tree that gets thicker linearly, the relationship can be changed and expressed as $r_{i+1} = r_i + dr$. This would result in a tree that gets thicker much more progressively.
+In the example in figure \ref{example thickness}, the value `dr', manipulates how thick each branch is. It does this during the rewriting process. Every time the width module `!' is encountered, it is rewritten with the current radius multiplied by the value of `dr', which increases the radius exponentially. This relationship can be expressed as $r_{i+1} = r_i \times dr$, where $r_i$ is the current branch radius and $r_{i+1}$ is the radius of the branch in the next generation. This gives a tree that gets thicker exponentially as the branch moves closer to the base of the tree, as these branch instructions will be rewritten a greater number of times than the branch instructions near the top of three. This can be shown in the graphs in figure \ref{graph thickness} below. For a tree that gets thicker linearly, the relationship can be changed and expressed as $r_{i+1} = r_i + dr$. This would result in a tree that gets thicker much more progressively.
 
 Although this example is not a physical simulation, it could be simulated. Due to the larger width of the branches near the base of the tree, they would have a higher mass and therefore have more inertia, making them more resistant to changes in velocity.
 

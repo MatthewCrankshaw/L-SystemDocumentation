@@ -109,6 +109,7 @@ $R$ is the next local rotation quaternion, $R_0$ is the previous local rotation 
 
 The particles in this system are the joints within the trees' skeleton. All of the joints have to be updated in each update step. The updates can happen as frequently as needed. A consideration is that if the branches are not updated frequently enough, the animations will not look smooth. Effectively each update step needs to take the forces acting on each branch, its current position, and rotation and calculate the next position and rotation of that branch. This information is then used to generate the model of the tree once again. This position and rotation are passed to the renderer, which will render the result.
 
+\newpage
 \section{Summary}
 
 This chapter outlined a method of simulating and animating a procedurally generated plant by representing each branch as a  particle in a larger particle system. The trees' skeleton provides the information about the location, rotation, dimensions, and properties of each branch. The skeleton is created during the interpretation stage, which is ultimately provided by the L-system. The properties of each branch can be simulated as a particle within the entire tree system. Due to the embarrassingly parallel nature of the system, each branch update can be computed in parallel, either on the \acrshort{cpu} or \acrshort{gpu}.    
