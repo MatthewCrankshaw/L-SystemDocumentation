@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.16)  28 FEB 2020 08:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  28 FEB 2020 10:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1421,66 +1421,73 @@ sed on input line 83.
 (pdftex.def)             Requested size: 361.35278pt x 271.01459pt.
  [74 <./images/Diagrams/TernaryBranching3_vr.png> <./images/Diagrams/TernaryBra
 nching2_angle_example.png>]
-<images/Diagrams/TernaryBranching3_constantSC.png, id=325, 1204.5pt x 903.375pt
+<images/Diagrams/ternarybranching3_a60.png, id=325, 952.55875pt x 587.19376pt>
+File: images/Diagrams/ternarybranching3_a60.png Graphic file (type png)
+<use images/Diagrams/ternarybranching3_a60.png>
+Package pdftex.def Info: images/Diagrams/ternarybranching3_a60.png  used on inp
+ut line 98.
+(pdftex.def)             Requested size: 285.76982pt x 176.15948pt.
+<images/Diagrams/TernaryBranching3_constantSC.png, id=326, 1204.5pt x 903.375pt
 >
 File: images/Diagrams/TernaryBranching3_constantSC.png Graphic file (type png)
 <use images/Diagrams/TernaryBranching3_constantSC.png>
 Package pdftex.def Info: images/Diagrams/TernaryBranching3_constantSC.png  used
- on input line 96.
+ on input line 112.
 (pdftex.def)             Requested size: 361.35278pt x 271.01459pt.
-<images/Diagrams/springconstantgraphs.png, id=326, 1405.25pt x 1003.75pt>
+
+[75 <./images/Diagrams/ternarybranching3_a60.png>]
+<images/Diagrams/springconstantgraphs.png, id=331, 1405.25pt x 1003.75pt>
 File: images/Diagrams/springconstantgraphs.png Graphic file (type png)
 <use images/Diagrams/springconstantgraphs.png>
 Package pdftex.def Info: images/Diagrams/springconstantgraphs.png  used on inpu
-t line 108.
+t line 124.
 (pdftex.def)             Requested size: 421.57826pt x 301.12732pt.
-
-[75 <./images/Diagrams/TernaryBranching3_constantSC.png>]
-<images/Diagrams/TernaryBranching3_scmod.png, id=331, 1204.5pt x 1204.5pt>
+ [76 <./images/Diagrams/TernaryBranching3_constantSC.png>]
+<images/Diagrams/TernaryBranching3_scmod.png, id=336, 1204.5pt x 1204.5pt>
 File: images/Diagrams/TernaryBranching3_scmod.png Graphic file (type png)
 <use images/Diagrams/TernaryBranching3_scmod.png>
 Package pdftex.def Info: images/Diagrams/TernaryBranching3_scmod.png  used on i
-nput line 117.
+nput line 133.
 (pdftex.def)             Requested size: 361.35278pt x 361.35278pt.
- [76 <./images/Diagrams/springconstantgraphs.png> <./images/Diagrams/TernaryBra
+ [77 <./images/Diagrams/springconstantgraphs.png> <./images/Diagrams/TernaryBra
 nching3_scmod.png>]
-<images/Diagrams/gravityExamples1.png, id=337, 3208.98875pt x 1014.79124pt>
+<images/Diagrams/gravityExamples1.png, id=342, 3208.98875pt x 1014.79124pt>
 File: images/Diagrams/gravityExamples1.png Graphic file (type png)
 <use images/Diagrams/gravityExamples1.png>
 Package pdftex.def Info: images/Diagrams/gravityExamples1.png  used on input li
-ne 141.
+ne 157.
 (pdftex.def)             Requested size: 320.91768pt x 101.48506pt.
 
-Overfull \hbox (7.95767pt too wide) detected at line 162
+Overfull \hbox (7.95767pt too wide) detected at line 178
 [][]
  []
 
-<images/Diagrams/gravityExamples2.png, id=338, 3208.98875pt x 1048.91875pt>
+<images/Diagrams/gravityExamples2.png, id=343, 3208.98875pt x 1048.91875pt>
 File: images/Diagrams/gravityExamples2.png Graphic file (type png)
 <use images/Diagrams/gravityExamples2.png>
 Package pdftex.def Info: images/Diagrams/gravityExamples2.png  used on input li
-ne 168.
+ne 184.
 (pdftex.def)             Requested size: 320.91768pt x 104.89801pt.
-<images/Diagrams/windExample.png, id=339, 1003.75pt x 1003.75pt>
+<images/Diagrams/windExample.png, id=344, 1003.75pt x 1003.75pt>
 File: images/Diagrams/windExample.png Graphic file (type png)
 <use images/Diagrams/windExample.png>
-Package pdftex.def Info: images/Diagrams/windExample.png  used on input line 18
-1.
+Package pdftex.def Info: images/Diagrams/windExample.png  used on input line 19
+7.
 (pdftex.def)             Requested size: 301.12732pt x 301.12732pt.
-[77
+[78
 
  <./images/Diagrams/gravityExamples1.png> <./images/Diagrams/gravityExamples2.p
-ng>]) [78 <./images/Diagrams/windExample.png>]
+ng>]) [79 <./images/Diagrams/windExample.png>]
 Chapter 8.
 (./chapters/discussion.tex
 Underfull \vbox (badness 3601) has occurred while \output is active []
 
- [79
+ [80
 
 ])
 No file Thesis.acr.
 No file Thesis.gls.
-[80] [81
+[81] [82
 
 
 ] (./chapters/appendix.tex
@@ -1493,15 +1500,15 @@ File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 44.
- [82
+ [83
 
 ]
 Appendix B.
-[83
+[84
 
-] [84] (./Thesis.bbl [85] [86
+] [85] (./Thesis.bbl [86] [87
 
-] [87])) [88] (./Thesis.aux)
+] [88])) [89] (./Thesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1510,10 +1517,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 11681 strings out of 492982
- 171538 string characters out of 6134895
- 323324 words of memory out of 5000000
- 14908 multiletter control sequences out of 15000+600000
+ 11687 strings out of 492982
+ 171769 string characters out of 6134896
+ 323391 words of memory out of 5000000
+ 14913 multiletter control sequences out of 15000+600000
  13812 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  45i,15n,72p,1987b,1302s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1531,10 +1538,10 @@ mr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Thesis.pdf (88 pages, 9812238 bytes).
+Output written on Thesis.pdf (89 pages, 10117814 bytes).
 PDF statistics:
- 433 PDF objects out of 1000 (max. 8388607)
- 242 compressed objects within 3 object streams
+ 438 PDF objects out of 1000 (max. 8388607)
+ 244 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 226 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 231 words of extra memory for PDF output out of 10000 (max. 10000000)
 

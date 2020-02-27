@@ -75,7 +75,7 @@ Although this example is not a physical simulation, it could be simulated. Due t
 \FloatBarrier
 
 \noindent
-In figure \ref{example angle} below shows that the result of changing the roll rotations' angle for some of the branches gives the tree a very different shape. In this case, increasing the angle of the branches' roll rotation from 15$^\circ$ to 30$^\circ$ can create a branch that curls slightly. Increasing this angle causes a more dramatic result. Furthermore, the angles of rotations can be randomised using the random range feature of the L-system to create a tree with more erratic branches. Manipulating the angles of rotations is a very powerful tool to allow very drastic changes to the look or behavior of a plant without changing its structure. 
+Figure \ref{example angle} below shows that the result of changing the roll rotations' angle for some of the branches gives the tree a very different shape. In this case, increasing the angle of the branches' roll rotations from 15$^\circ$ to 30$^\circ$ can create a branch that curls slightly. Increasing this angle causes the result to be more dramatic. Furthermore, the angles of rotations can be randomised using the random range feature to have the same L-system produce many variations of the same structure. Manipulating the angles of rotations is a very powerful tool to allow very drastic changes to the look or behavior of a plant without changing its structure. 
 
 \begin{figure}[htbp]
 	{\centering
@@ -86,9 +86,25 @@ In figure \ref{example angle} below shows that the result of changing the roll r
 \end{figure}
 \FloatBarrier
 
-The previous examples have tested the capabilities of the parametric L-system without having the resulting structures simulated. One of the advantages of having the simulator and interpreter separate to the L-system rewriter is that the simulator and interpreter choose to ignore specific parameters. For instance, the physical properties of a plant may be provided by the L-system, but the simulator can be turned off, resulting in a static plant that is less resource-intensive to render as it is not continuously updated. The next examples show that changing the physical properties of the plant can change how it responds when the simulator is turned on. Each screenshot is taken after five seconds of the simulator running; this allows the branches' movement to settle into their resting position.
+\noindent
+If the angle is changed to 60$^\circ$ the tree looks almost unrecognisable to its original structure. This can be seen in figure \ref{extreme example angle} below. In this example the branches are rendered as green spheres in order to indicate that they are the end of the branch, this could be used to render the leaves of the tree. It is easy to see how the functionality of parameters can be advantagious, a user can create many variations of a tree without doing very much work, they only need to change a single parameters' value. 
 
-In figure \ref{constant spring} below, the spring constant `scstart' of the is changed from 200 down to 50.  However, the spring constant modifier `scmod' is 1.0. The spring constant for each branch is rewritten with the current spring constant multiplied by the spring constant modifier. This gives the relationship similar to how the width is calculated $sc_{i+1} = sc_i * scmod$. If the `scmod' value is 1.0, the spring constant will be a uniform value independant of how many generations there are. Leaving the spring constant the same throughout the tree assumes that thick branches at the base of the tree are as bendy as thin branches at the top of the tree. This is not accurate and will result in large branches bending unrealistically, particularly under extreme forces. Although this kind of behaviour would not be realistic, it highlights the flexibility of the system, such that if someone changes the physical properties within the L-system it will have a direct affect on the resulting model and simulation.
+\begin{figure}[htbp]
+	{\centering
+		\setlength{\fboxrule}{1pt}
+		\vspace{7px}
+		\fbox{
+			\includegraphics[scale=0.3]{Diagrams/ternarybranching3_a60.png}
+		}
+		\caption{L-system 2 where the variable `a3' has the value of 60$^\circ$. } \label{extreme example angle}
+	}
+\end{figure}
+\FloatBarrier
+
+\noindent
+The previous examples have tested the capabilities of the parametric L-system without having the results simulated. The advantage of having the simulator and interpreter separate to the L-system rewriter is the simulator and interpreter can choose to ignore specific parameters. For instance, if the physical properties of a plant is provided by the L-system, the simulator can easily be turned off, resulting in a static plant. Without running the simulator the plant will become less resource-intensive to render as it is not being continuously updated. The next examples show that changing the physical properties of the plant can change how it responds when the simulator is turned on. Each screenshot is taken after five seconds of the simulator running; this allows the branches' movement to settle into their resting position.
+
+In figure \ref{constant spring} below, the spring constant `scstart' is decresed from 200 to 50.  However, the spring constant modifier `scmod' is 1.0. The spring constant for each branch is rewritten with the current spring constant multiplied by the spring constant modifier. This gives the relationship similar to how the width is calculated $sc_{i+1} = sc_i * scmod$. If the `scmod' value is 1.0, the spring constant will be a uniform value independant of how many generations there are. Leaving the spring constant the same throughout the tree assumes that thick branches at the base of the tree are as bendy as thin branches at the top of the tree. This is not accurate and will result in large branches bending unrealistically, particularly under extreme forces. Although this kind of behaviour would not be realistic, it highlights the flexibility of the system, if the physical properties are changed within the L-system it will have a direct affect on the resulting model and simulation.
 
 \begin{figure}[htbp]
 	{\centering
@@ -172,7 +188,7 @@ The L-system and figure below produces a structure similar to a pine tree. The t
 \end{figure}
 \FloatBarrier
 
-
+\noindent
 In figure \ref{Wind applied to generated model}, the same L-system seen in \ref{Gravity applied to generated model 1} is used, however, the interpreter has been instructed not to render the green spheres at the ends of branches, to see the branching structure better. Instead of gravity the simulator is showing the effect of wind coming from the right hand side of the tree. Each image is a timestep showing an exadurated effect of wind on the plant. In a simulation within a video game or 3D application the wind would be simulated at a lesser extent however you would see a similar movement as well as the russtleing of branches.
 
 \begin{figure}[htbp]

@@ -39,12 +39,13 @@
 \contentsline {figure}{\numberline {7.1}{\ignorespaces Graph showing an exponential and linear relationship between the branch width and the generation when increasing the value of `dr'.}}{73}
 \contentsline {figure}{\numberline {7.2}{\ignorespaces Examples of L-system 1 changing the `dr' variable which modifies the thickness of the base of the tree.}}{74}
 \contentsline {figure}{\numberline {7.3}{\ignorespaces Examples of L-system 2 changing the `a3' variable modifying the roll angle of certain branches.}}{74}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Examples of L-system 1 when uniformly changing the `scstart' for all branches and leaving `scmod = 1.0'.}}{75}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Graphs showing the distribution of spring constants dependency on the spring modifier and number of generations.}}{76}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Examples of L-system 3 with gravity applied when changing the spring constant modifier `scmod', when the starting spring constant is set to 30 `scstart = 30'.}}{76}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Examples simulating gravity on a 2D model}}{77}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Simulating gravity on a simple pine tree model.}}{77}
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Simulating wind on a simple pine tree model}}{78}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces L-system 2 where the variable `a3' has the value of 60$^\circ $. }}{75}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Examples of L-system 1 when uniformly changing the `scstart' for all branches and leaving `scmod = 1.0'.}}{76}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Graphs showing the distribution of spring constants dependency on the spring modifier and number of generations.}}{77}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Examples of L-system 3 with gravity applied when changing the spring constant modifier `scmod', when the starting spring constant is set to 30 `scstart = 30'.}}{77}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Examples simulating gravity on a 2D model}}{78}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Simulating gravity on a simple pine tree model.}}{78}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Simulating wind on a simple pine tree model}}{79}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
