@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  28 FEB 2020 10:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  2 MAR 2020 14:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1386,9 +1386,12 @@ Package pdftex.def Info: images/Diagrams/HookesLaw.png  used on input line 12.
 [68 <./images/Diagrams/HookesLaw.png>] [69] [70]) [71]
 Chapter 7.
 (./chapters/results.tex
-Overfull \hbox (46.03934pt too wide) detected at line 27
+Overfull \hbox (46.03934pt too wide) detected at line 28
 [][]
  []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [72
 
@@ -1397,10 +1400,10 @@ Overfull \hbox (46.03934pt too wide) detected at line 27
 File: images/Diagrams/branchWidthIncrease.png Graphic file (type png)
 <use images/Diagrams/branchWidthIncrease.png>
 Package pdftex.def Info: images/Diagrams/branchWidthIncrease.png  used on input
- line 62.
+ line 63.
 (pdftex.def)             Requested size: 458.11836pt x 205.87221pt.
 
-Overfull \hbox (14.53989pt too wide) in paragraph at lines 62--63
+Overfull \hbox (14.53989pt too wide) in paragraph at lines 63--64
  [][] 
  []
 
@@ -1408,7 +1411,7 @@ Overfull \hbox (14.53989pt too wide) in paragraph at lines 62--63
 File: images/Diagrams/TernaryBranching3_vr.png Graphic file (type png)
 <use images/Diagrams/TernaryBranching3_vr.png>
 Package pdftex.def Info: images/Diagrams/TernaryBranching3_vr.png  used on inpu
-t line 71.
+t line 72.
 (pdftex.def)             Requested size: 361.35278pt x 271.01459pt.
 [73 <./images/Diagrams/branchWidthIncrease.png>]
 <images/Diagrams/TernaryBranching2_angle_example.png, id=319, 1204.5pt x 903.37
@@ -1417,7 +1420,7 @@ File: images/Diagrams/TernaryBranching2_angle_example.png Graphic file (type pn
 g)
 <use images/Diagrams/TernaryBranching2_angle_example.png>
 Package pdftex.def Info: images/Diagrams/TernaryBranching2_angle_example.png  u
-sed on input line 83.
+sed on input line 84.
 (pdftex.def)             Requested size: 361.35278pt x 271.01459pt.
  [74 <./images/Diagrams/TernaryBranching3_vr.png> <./images/Diagrams/TernaryBra
 nching2_angle_example.png>]
@@ -1425,14 +1428,14 @@ nching2_angle_example.png>]
 File: images/Diagrams/ternarybranching3_a60.png Graphic file (type png)
 <use images/Diagrams/ternarybranching3_a60.png>
 Package pdftex.def Info: images/Diagrams/ternarybranching3_a60.png  used on inp
-ut line 98.
+ut line 99.
 (pdftex.def)             Requested size: 285.76982pt x 176.15948pt.
 <images/Diagrams/TernaryBranching3_constantSC.png, id=326, 1204.5pt x 903.375pt
 >
 File: images/Diagrams/TernaryBranching3_constantSC.png Graphic file (type png)
 <use images/Diagrams/TernaryBranching3_constantSC.png>
 Package pdftex.def Info: images/Diagrams/TernaryBranching3_constantSC.png  used
- on input line 112.
+ on input line 113.
 (pdftex.def)             Requested size: 361.35278pt x 271.01459pt.
 
 [75 <./images/Diagrams/ternarybranching3_a60.png>]
@@ -1440,14 +1443,14 @@ Package pdftex.def Info: images/Diagrams/TernaryBranching3_constantSC.png  used
 File: images/Diagrams/springconstantgraphs.png Graphic file (type png)
 <use images/Diagrams/springconstantgraphs.png>
 Package pdftex.def Info: images/Diagrams/springconstantgraphs.png  used on inpu
-t line 124.
+t line 125.
 (pdftex.def)             Requested size: 421.57826pt x 301.12732pt.
  [76 <./images/Diagrams/TernaryBranching3_constantSC.png>]
 <images/Diagrams/TernaryBranching3_scmod.png, id=336, 1204.5pt x 1204.5pt>
 File: images/Diagrams/TernaryBranching3_scmod.png Graphic file (type png)
 <use images/Diagrams/TernaryBranching3_scmod.png>
 Package pdftex.def Info: images/Diagrams/TernaryBranching3_scmod.png  used on i
-nput line 133.
+nput line 134.
 (pdftex.def)             Requested size: 361.35278pt x 361.35278pt.
  [77 <./images/Diagrams/springconstantgraphs.png> <./images/Diagrams/TernaryBra
 nching3_scmod.png>]
@@ -1455,10 +1458,10 @@ nching3_scmod.png>]
 File: images/Diagrams/gravityExamples1.png Graphic file (type png)
 <use images/Diagrams/gravityExamples1.png>
 Package pdftex.def Info: images/Diagrams/gravityExamples1.png  used on input li
-ne 157.
+ne 158.
 (pdftex.def)             Requested size: 320.91768pt x 101.48506pt.
 
-Overfull \hbox (7.95767pt too wide) detected at line 178
+Overfull \hbox (7.95767pt too wide) detected at line 179
 [][]
  []
 
@@ -1466,13 +1469,13 @@ Overfull \hbox (7.95767pt too wide) detected at line 178
 File: images/Diagrams/gravityExamples2.png Graphic file (type png)
 <use images/Diagrams/gravityExamples2.png>
 Package pdftex.def Info: images/Diagrams/gravityExamples2.png  used on input li
-ne 184.
+ne 185.
 (pdftex.def)             Requested size: 320.91768pt x 104.89801pt.
 <images/Diagrams/windExample.png, id=344, 1003.75pt x 1003.75pt>
 File: images/Diagrams/windExample.png Graphic file (type png)
 <use images/Diagrams/windExample.png>
 Package pdftex.def Info: images/Diagrams/windExample.png  used on input line 19
-7.
+8.
 (pdftex.def)             Requested size: 301.12732pt x 301.12732pt.
 [78
 
@@ -1517,10 +1520,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 11687 strings out of 492982
- 171769 string characters out of 6134896
- 323391 words of memory out of 5000000
- 14913 multiletter control sequences out of 15000+600000
+ 11688 strings out of 492982
+ 171781 string characters out of 6134896
+ 323402 words of memory out of 5000000
+ 14914 multiletter control sequences out of 15000+600000
  13812 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  45i,15n,72p,1987b,1302s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1538,7 +1541,7 @@ mr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Thesis.pdf (89 pages, 10117814 bytes).
+Output written on Thesis.pdf (89 pages, 10119427 bytes).
 PDF statistics:
  438 PDF objects out of 1000 (max. 8388607)
  244 compressed objects within 3 object streams
