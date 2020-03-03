@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  3 MAR 2020 11:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.30)  3 MAR 2020 14:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -834,9 +834,6 @@ LaTeX Warning: Label `DOL-system example' multiply defined.
 LaTeX Warning: Label `constants table' multiply defined.
 
 
-LaTeX Warning: Label `3D rotations' multiply defined.
-
-
 LaTeX Warning: Label `maths chapter' multiply defined.
 
 
@@ -1016,19 +1013,16 @@ File: images/Diagrams/ChomskyGrammar.png Graphic file (type png)
 <use images/Diagrams/ChomskyGrammar.png>
 Package pdftex.def Info: images/Diagrams/ChomskyGrammar.png  used on input line
  46.
-(pdftex.def)             Requested size: 417.3564pt x 247.32231pt.
- [12]
-Underfull \vbox (badness 1590) has occurred while \output is active []
-
- [13 <./images/Diagrams/ChomskyGrammar.png>]) [14]
+(pdftex.def)             Requested size: 357.73926pt x 211.99364pt.
+ [12 <./images/Diagrams/ChomskyGrammar.png>]) [13]
 Chapter 2.
 (./chapters/LindenmayerSystems.tex
 Underfull \vbox (badness 3601) has occurred while \output is active []
 
- [15
+ [14
 
 ]
-<images/Diagrams/L-system_relationships.jpg, id=62, 864.22874pt x 663.47874pt>
+<images/Diagrams/L-system_relationships.jpg, id=59, 864.22874pt x 663.47874pt>
 File: images/Diagrams/L-system_relationships.jpg Graphic file (type jpg)
 <use images/Diagrams/L-system_relationships.jpg>
 Package pdftex.def Info: images/Diagrams/L-system_relationships.jpg  used on in
@@ -1048,21 +1042,21 @@ s like mu-sic [[]].
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16 <./images/Diagrams/L-system_relationships.jpg>]
+ [15 <./images/Diagrams/L-system_relationships.jpg>]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 31.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17]
-[18]
-<images/Diagrams/rotations.png, id=76, 664.4825pt x 622.325pt>
+ [16]
+[17]
+<images/Diagrams/rotations.png, id=73, 664.4825pt x 622.325pt>
 File: images/Diagrams/rotations.png Graphic file (type png)
 <use images/Diagrams/rotations.png>
 Package pdftex.def Info: images/Diagrams/rotations.png  used on input line 115.
 
 (pdftex.def)             Requested size: 199.34628pt x 186.69893pt.
- [19]
+ [18]
 Underfull \hbox (badness 10000) in paragraph at lines 124--127
 
  []
@@ -1070,15 +1064,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--127
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[20 <./images/Diagrams/rotations.png>]
-<images/Diagrams/basic_turtle.png, id=85, 1131.22626pt x 405.515pt>
+[19 <./images/Diagrams/rotations.png>]
+<images/Diagrams/basic_turtle.png, id=82, 1131.22626pt x 405.515pt>
 File: images/Diagrams/basic_turtle.png Graphic file (type png)
 <use images/Diagrams/basic_turtle.png>
 Package pdftex.def Info: images/Diagrams/basic_turtle.png  used on input line 1
 80.
 (pdftex.def)             Requested size: 339.3705pt x 121.65543pt.
- [21 <./images/Diagrams/basic_turtle.png>]
-<images/Diagrams/koch_curves.png, id=90, 1003.75pt x 1204.5pt>
+ [20 <./images/Diagrams/basic_turtle.png>]
+<images/Diagrams/koch_curves.png, id=87, 1003.75pt x 1204.5pt>
 File: images/Diagrams/koch_curves.png Graphic file (type png)
 <use images/Diagrams/koch_curves.png>
 Package pdftex.def Info: images/Diagrams/koch_curves.png  used on input line 20
@@ -1087,34 +1081,34 @@ Package pdftex.def Info: images/Diagrams/koch_curves.png  used on input line 20
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22 <./images/Diagrams/koch_curves.png>]
-<images/Diagrams/sierpinsky_triangle.png, id=95, 2509.375pt x 2007.5pt>
+ [21 <./images/Diagrams/koch_curves.png>]
+<images/Diagrams/sierpinsky_triangle.png, id=92, 2509.375pt x 2007.5pt>
 File: images/Diagrams/sierpinsky_triangle.png Graphic file (type png)
 <use images/Diagrams/sierpinsky_triangle.png>
 Package pdftex.def Info: images/Diagrams/sierpinsky_triangle.png  used on input
  line 228.
 (pdftex.def)             Requested size: 250.9522pt x 200.76175pt.
- [23 <./images/Diagrams/sierpinsky_triangle.png>]
-<images/Diagrams/branching.png, id=100, 963.6pt x 368.37625pt>
+ [22 <./images/Diagrams/sierpinsky_triangle.png>]
+<images/Diagrams/branching.png, id=97, 963.6pt x 368.37625pt>
 File: images/Diagrams/branching.png Graphic file (type png)
 <use images/Diagrams/branching.png>
 Package pdftex.def Info: images/Diagrams/branching.png  used on input line 253.
 
 (pdftex.def)             Requested size: 337.26506pt x 128.93361pt.
-<images/Diagrams/NestedBranching.png, id=101, 963.6pt x 352.31625pt>
+<images/Diagrams/NestedBranching.png, id=98, 963.6pt x 352.31625pt>
 File: images/Diagrams/NestedBranching.png Graphic file (type png)
 <use images/Diagrams/NestedBranching.png>
 Package pdftex.def Info: images/Diagrams/NestedBranching.png  used on input lin
 e 268.
 (pdftex.def)             Requested size: 337.26506pt x 123.31253pt.
-<images/Diagrams/fractalBush.png, id=102, 1018.80624pt x 796.9775pt>
+<images/Diagrams/fractalBush.png, id=99, 1018.80624pt x 796.9775pt>
 File: images/Diagrams/fractalBush.png Graphic file (type png)
 <use images/Diagrams/fractalBush.png>
 Package pdftex.def Info: images/Diagrams/fractalBush.png  used on input line 28
 8.
 (pdftex.def)             Requested size: 234.32051pt x 183.30096pt.
-[24 <./images/Diagrams/branching.png> <./images/Diagrams/NestedBranching.png>]
-<images/Diagrams/fractalPlant.png, id=108, 1014.79124pt x 798.985pt>
+[23 <./images/Diagrams/branching.png> <./images/Diagrams/NestedBranching.png>]
+<images/Diagrams/fractalPlant.png, id=105, 1014.79124pt x 798.985pt>
 File: images/Diagrams/fractalPlant.png Graphic file (type png)
 <use images/Diagrams/fractalPlant.png>
 Package pdftex.def Info: images/Diagrams/fractalPlant.png  used on input line 3
@@ -1123,28 +1117,28 @@ Package pdftex.def Info: images/Diagrams/fractalPlant.png  used on input line 3
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25 <./images/Diagrams/fractalBush.png> <./images/Diagrams/fractalPlant.png>]
+ [24 <./images/Diagrams/fractalBush.png> <./images/Diagrams/fractalPlant.png>]
 Overfull \hbox (0.74872pt too wide) in paragraph at lines 319--320
 \OT1/cmr/m/n/10.95 oped upon in 2012 by Prusinkiewicz and Lin-den-mayer [[]].
  []
 
-[26] [27]
-<images/Diagrams/object_example.png, id=119, 1204.5pt x 798.985pt>
+[25] [26]
+<images/Diagrams/object_example.png, id=116, 1204.5pt x 798.985pt>
 File: images/Diagrams/object_example.png Graphic file (type png)
 <use images/Diagrams/object_example.png>
 Package pdftex.def Info: images/Diagrams/object_example.png  used on input line
  398.
 (pdftex.def)             Requested size: 240.89574pt x 159.79416pt.
- [28 <./images/Diagrams/object_example.png>]
-<images/ParametricLsystem/branchingPattern.png, id=123, 1204.5pt x 597.23125pt>
+ [27 <./images/Diagrams/object_example.png>]
+<images/ParametricLsystem/branchingPattern.png, id=120, 1204.5pt x 597.23125pt>
 
 File: images/ParametricLsystem/branchingPattern.png Graphic file (type png)
 <use images/ParametricLsystem/branchingPattern.png>
 Package pdftex.def Info: images/ParametricLsystem/branchingPattern.png  used on
  input line 433.
 (pdftex.def)             Requested size: 361.35278pt x 179.17075pt.
- [29 <./images/ParametricLsystem/branchingPattern.png>]
-<images/Diagrams/conditionalLsystem.png, id=127, 3613.5pt x 803.0pt>
+ [28 <./images/ParametricLsystem/branchingPattern.png>]
+<images/Diagrams/conditionalLsystem.png, id=124, 3613.5pt x 803.0pt>
 File: images/Diagrams/conditionalLsystem.png Graphic file (type png)
 <use images/Diagrams/conditionalLsystem.png>
 Package pdftex.def Info: images/Diagrams/conditionalLsystem.png  used on input 
@@ -1155,47 +1149,47 @@ Overfull \hbox (5.32281pt too wide) in paragraph at lines 514--515
  [][] 
  []
 
-[30]
-<images/Diagrams/RandomTrees.png, id=131, 2007.5pt x 1505.625pt>
+[29]
+<images/Diagrams/RandomTrees.png, id=128, 2007.5pt x 1505.625pt>
 File: images/Diagrams/RandomTrees.png Graphic file (type png)
 <use images/Diagrams/RandomTrees.png>
 Package pdftex.def Info: images/Diagrams/RandomTrees.png  used on input line 54
 7.
 (pdftex.def)             Requested size: 341.2705pt x 255.95287pt.
- [31 <./images/Diagrams/conditionalLsystem.png>] [32 <./images/Diagrams/RandomT
+ [30 <./images/Diagrams/conditionalLsystem.png>] [31 <./images/Diagrams/RandomT
 rees.png>]
-<images/Diagrams/stochastics.png, id=141, 1204.5pt x 401.5pt>
+<images/Diagrams/stochastics.png, id=138, 1204.5pt x 401.5pt>
 File: images/Diagrams/stochastics.png Graphic file (type png)
 <use images/Diagrams/stochastics.png>
 Package pdftex.def Info: images/Diagrams/stochastics.png  used on input line 58
 9.
 (pdftex.def)             Requested size: 421.58131pt x 140.5271pt.
- [33 <./images/Diagrams/stochastics.png>]
-<images/Diagrams/FullDiagram.png, id=146, 985.6825pt x 541.02126pt>
+ [32 <./images/Diagrams/stochastics.png>]
+<images/Diagrams/FullDiagram.png, id=143, 985.6825pt x 541.02126pt>
 File: images/Diagrams/FullDiagram.png Graphic file (type png)
 <use images/Diagrams/FullDiagram.png>
 Package pdftex.def Info: images/Diagrams/FullDiagram.png  used on input line 61
 2.
 (pdftex.def)             Requested size: 423.8352pt x 232.6346pt.
- [34]) [35 <./images/Diagrams/FullDiagram.png>]
+ [33]) [34 <./images/Diagrams/FullDiagram.png>]
 Chapter 3.
 (./chapters/Rewriter.tex
 Underfull \vbox (badness 1845) has occurred while \output is active []
 
- [36
+ [35
 
 ]
-<images/Diagrams/StringRewriter.png, id=157, 1238.6275pt x 484.81125pt>
+<images/Diagrams/StringRewriter.png, id=154, 1238.6275pt x 484.81125pt>
 File: images/Diagrams/StringRewriter.png Graphic file (type png)
 <use images/Diagrams/StringRewriter.png>
 Package pdftex.def Info: images/Diagrams/StringRewriter.png  used on input line
  14.
 (pdftex.def)             Requested size: 396.3689pt x 155.14276pt.
 
-[37 <./images/Diagrams/StringRewriter.png>] [38]
-Underfull \vbox (badness 6078) has occurred while \output is active []
+[36 <./images/Diagrams/StringRewriter.png>] [37]
+Underfull \vbox (badness 1253) has occurred while \output is active []
 
- [39]
+ [38]
 Overfull \hbox (33.96556pt too wide) in paragraph at lines 71--150
  [] 
  []
@@ -1203,11 +1197,11 @@ Overfull \hbox (33.96556pt too wide) in paragraph at lines 71--150
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[40] [41]
+[39] [40]
 Underfull \vbox (badness 1062) has occurred while \output is active []
 
- [42]
-<images/Diagrams/syntaxTree.png, id=179, 496.85625pt x 478.78876pt>
+ [41]
+<images/Diagrams/syntaxTree.png, id=176, 496.85625pt x 478.78876pt>
 File: images/Diagrams/syntaxTree.png Graphic file (type png)
 <use images/Diagrams/syntaxTree.png>
 Package pdftex.def Info: images/Diagrams/syntaxTree.png  used on input line 187
@@ -1227,52 +1221,52 @@ Overfull \hbox (62.54007pt too wide) in alignment at lines 202--290
  [][][] []
  []
 
-[43 <./images/Diagrams/syntaxTree.png>] [44] [45]
-<images/Diagrams/ThesisContent.png, id=191, 618.31pt x 676.5275pt>
+[42 <./images/Diagrams/syntaxTree.png>] [43] [44]
+<images/Diagrams/ThesisContent.png, id=188, 618.31pt x 676.5275pt>
 File: images/Diagrams/ThesisContent.png Graphic file (type png)
 <use images/Diagrams/ThesisContent.png>
 Package pdftex.def Info: images/Diagrams/ThesisContent.png  used on input line 
 382.
 (pdftex.def)             Requested size: 247.31961pt x 270.6062pt.
- [46] [47 <./images/Diagrams/ThesisContent.png>] [48] [49]
-<images/Diagrams/rewriter.png, id=208, 835.12pt x 767.86874pt>
+ [45] [46 <./images/Diagrams/ThesisContent.png>] [47] [48]
+<images/Diagrams/rewriter.png, id=204, 835.12pt x 767.86874pt>
 File: images/Diagrams/rewriter.png Graphic file (type png)
 <use images/Diagrams/rewriter.png>
 Package pdftex.def Info: images/Diagrams/rewriter.png  used on input line 490.
 (pdftex.def)             Requested size: 417.55898pt x 383.93343pt.
- [50 <./images/Diagrams/rewriter.png>]) [51]
+ [49 <./images/Diagrams/rewriter.png>]) [50]
 Chapter 4.
 (./chapters/maths.tex
-<images/Diagrams/vector_addition.png, id=217, 841.1425pt x 544.0325pt>
+<images/Diagrams/vector_addition.png, id=214, 841.1425pt x 544.0325pt>
 File: images/Diagrams/vector_addition.png Graphic file (type png)
 <use images/Diagrams/vector_addition.png>
 Package pdftex.def Info: images/Diagrams/vector_addition.png  used on input lin
 e 35.
 (pdftex.def)             Requested size: 168.22551pt x 108.80457pt.
- [52
+ [51
 
 ]
-<images/Diagrams/vector1.png, id=221, 677.53125pt x 507.8975pt>
+<images/Diagrams/vector1.png, id=218, 677.53125pt x 507.8975pt>
 File: images/Diagrams/vector1.png Graphic file (type png)
 <use images/Diagrams/vector1.png>
 Package pdftex.def Info: images/Diagrams/vector1.png  used on input line 70.
 (pdftex.def)             Requested size: 67.75708pt x 50.79272pt.
-<images/Diagrams/vector2.png, id=222, 677.53125pt x 507.8975pt>
+<images/Diagrams/vector2.png, id=219, 677.53125pt x 507.8975pt>
 File: images/Diagrams/vector2.png Graphic file (type png)
 <use images/Diagrams/vector2.png>
 Package pdftex.def Info: images/Diagrams/vector2.png  used on input line 72.
 (pdftex.def)             Requested size: 67.75708pt x 50.79272pt.
-<images/Diagrams/vector3.png, id=223, 590.205pt x 441.65pt>
+<images/Diagrams/vector3.png, id=220, 590.205pt x 441.65pt>
 File: images/Diagrams/vector3.png Graphic file (type png)
 <use images/Diagrams/vector3.png>
 Package pdftex.def Info: images/Diagrams/vector3.png  used on input line 74.
 (pdftex.def)             Requested size: 59.02396pt x 44.16757pt.
-<images/Diagrams/vector4.png, id=224, 677.53125pt x 507.8975pt>
+<images/Diagrams/vector4.png, id=221, 677.53125pt x 507.8975pt>
 File: images/Diagrams/vector4.png Graphic file (type png)
 <use images/Diagrams/vector4.png>
 Package pdftex.def Info: images/Diagrams/vector4.png  used on input line 76.
 (pdftex.def)             Requested size: 67.75708pt x 50.79272pt.
-<images/Diagrams/vector5.png, id=225, 676.5275pt x 507.8975pt>
+<images/Diagrams/vector5.png, id=222, 676.5275pt x 507.8975pt>
 File: images/Diagrams/vector5.png Graphic file (type png)
 <use images/Diagrams/vector5.png>
 Package pdftex.def Info: images/Diagrams/vector5.png  used on input line 78.
@@ -1281,8 +1275,8 @@ Package pdftex.def Info: images/Diagrams/vector5.png  used on input line 78.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[53 <./images/Diagrams/vector_addition.png>]
-<images/Diagrams/cross_product.png, id=231, 625.33624pt x 486.81876pt>
+[52 <./images/Diagrams/vector_addition.png>]
+<images/Diagrams/cross_product.png, id=228, 625.33624pt x 486.81876pt>
 File: images/Diagrams/cross_product.png Graphic file (type png)
 <use images/Diagrams/cross_product.png>
 Package pdftex.def Info: images/Diagrams/cross_product.png  used on input line 
@@ -1291,37 +1285,37 @@ Package pdftex.def Info: images/Diagrams/cross_product.png  used on input line
 
 Underfull \vbox (badness 2856) has occurred while \output is active []
 
- [54 <./images/Diagrams/vector1.png> <./images/Diagrams/vector2.png> <./images/
+ [53 <./images/Diagrams/vector1.png> <./images/Diagrams/vector2.png> <./images/
 Diagrams/vector3.png> <./images/Diagrams/vector4.png> <./images/Diagrams/vector
 5.png> <./images/Diagrams/cross_product.png>]
 Overfull \hbox (22.05211pt too wide) detected at line 177
 [] \OT1/cmr/m/n/10.95 = [] \OMS/cmtt/m/n/10.95 ^^B [] \OT1/cmr/m/n/10.95 = []
  []
 
-[55] [56]
+[54] [55]
 Underfull \vbox (badness 1019) has occurred while \output is active []
 
- [57]
+ [56]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [58])
-[59]
+ [57])
+[58]
 Chapter 5.
 (./chapters/Interpreter.tex
-<images/Diagrams/L-systemInterpreter.png, id=257, 996.72375pt x 577.15625pt>
+<images/Diagrams/L-systemInterpreter.png, id=254, 996.72375pt x 577.15625pt>
 File: images/Diagrams/L-systemInterpreter.png Graphic file (type png)
 <use images/Diagrams/L-systemInterpreter.png>
 Package pdftex.def Info: images/Diagrams/L-systemInterpreter.png  used on input
  line 13.
 (pdftex.def)             Requested size: 398.68243pt x 230.8584pt.
- [60
+ [59
 
 ]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[61 <./images/Diagrams/L-systemInterpreter.png>]
-<images/Diagrams/JointDiagram.png, id=266, 479.7925pt x 527.9725pt>
+[60 <./images/Diagrams/L-systemInterpreter.png>]
+<images/Diagrams/JointDiagram.png, id=262, 479.7925pt x 527.9725pt>
 File: images/Diagrams/JointDiagram.png Graphic file (type png)
 <use images/Diagrams/JointDiagram.png>
 Package pdftex.def Info: images/Diagrams/JointDiagram.png  used on input line 7
@@ -1330,43 +1324,54 @@ Package pdftex.def Info: images/Diagrams/JointDiagram.png  used on input line 7
 
 Underfull \vbox (badness 1571) has occurred while \output is active []
 
- [62 <./images/Diagrams/JointDiagram.png>]
-<images/Diagrams/SkeletonJoints.png, id=271, 607.26875pt x 506.89375pt>
+ [61 <./images/Diagrams/JointDiagram.png>]
+<images/Diagrams/SkeletonJoints.png, id=268, 607.26875pt x 506.89375pt>
 File: images/Diagrams/SkeletonJoints.png Graphic file (type png)
 <use images/Diagrams/SkeletonJoints.png>
 Package pdftex.def Info: images/Diagrams/SkeletonJoints.png  used on input line
  90.
 (pdftex.def)             Requested size: 242.9032pt x 202.7539pt.
- [63 <./images/Diagrams/SkeletonJoints.png>]
-<images/Diagrams/stackedBranchesMesh.png, id=276, 777.90625pt x 731.73375pt>
+ [62 <./images/Diagrams/SkeletonJoints.png>]
+<images/Diagrams/stackedBranchesMesh.png, id=273, 777.90625pt x 731.73375pt>
 File: images/Diagrams/stackedBranchesMesh.png Graphic file (type png)
 <use images/Diagrams/stackedBranchesMesh.png>
 Package pdftex.def Info: images/Diagrams/stackedBranchesMesh.png  used on input
  line 111.
 (pdftex.def)             Requested size: 155.57849pt x 146.34415pt.
-<images/Diagrams/linkedBranchesMesh.png, id=277, 724.7075pt x 623.32875pt>
+<images/Diagrams/linkedBranchesMesh.png, id=274, 724.7075pt x 623.32875pt>
 File: images/Diagrams/linkedBranchesMesh.png Graphic file (type png)
 <use images/Diagrams/linkedBranchesMesh.png>
 Package pdftex.def Info: images/Diagrams/linkedBranchesMesh.png  used on input 
 line 131.
 (pdftex.def)             Requested size: 144.93893pt x 124.66353pt.
 
-[64 <./images/Diagrams/stackedBranchesMesh.png>]
-<images/Diagrams/StackedVsLinked.png, id=281, 1003.75pt x 1003.75pt>
+[63 <./images/Diagrams/stackedBranchesMesh.png>]
+<images/Diagrams/StackedVsLinked.png, id=278, 1003.75pt x 1003.75pt>
 File: images/Diagrams/StackedVsLinked.png Graphic file (type png)
 <use images/Diagrams/StackedVsLinked.png>
 Package pdftex.def Info: images/Diagrams/StackedVsLinked.png  used on input lin
 e 144.
 (pdftex.def)             Requested size: 200.74644pt x 200.74644pt.
- [65 <./images/Diagrams/linkedBranchesMesh.png> <./images/Diagrams/StackedVsLin
+ [64 <./images/Diagrams/linkedBranchesMesh.png> <./images/Diagrams/StackedVsLin
 ked.png>]
-<images/Diagrams/VertexObjects.png, id=286, 715.67375pt x 344.28625pt>
+<images/Diagrams/VertexObjects.png, id=283, 715.67375pt x 344.28625pt>
 File: images/Diagrams/VertexObjects.png Graphic file (type png)
 <use images/Diagrams/VertexObjects.png>
 Package pdftex.def Info: images/Diagrams/VertexObjects.png  used on input line 
-171.
+172.
 (pdftex.def)             Requested size: 357.836pt x 172.1427pt.
- [66 <./images/Diagrams/VertexObjects.png>]) [67]
+
+Underfull \vbox (badness 1527) has occurred while \output is active []
+
+ [65 <./images/Diagrams/VertexObjects.png>]
+<images/Diagrams/graphicsPipeline.png, id=288, 971.63pt x 367.3725pt>
+File: images/Diagrams/graphicsPipeline.png Graphic file (type png)
+<use images/Diagrams/graphicsPipeline.png>
+Package pdftex.def Info: images/Diagrams/graphicsPipeline.png  used on input li
+ne 191.
+(pdftex.def)             Requested size: 388.64511pt x 146.94638pt.
+ [66 <./images/Diagrams/graphicsPipeline.png>])
+[67]
 Chapter 6.
 (./chapters/Physics.tex
 Underfull \vbox (badness 1067) has occurred while \output is active []
@@ -1374,7 +1379,7 @@ Underfull \vbox (badness 1067) has occurred while \output is active []
  [68
 
 ]
-<images/Diagrams/HookesLaw.png, id=298, 516.93124pt x 375.4025pt>
+<images/Diagrams/HookesLaw.png, id=300, 516.93124pt x 375.4025pt>
 File: images/Diagrams/HookesLaw.png Graphic file (type png)
 <use images/Diagrams/HookesLaw.png>
 Package pdftex.def Info: images/Diagrams/HookesLaw.png  used on input line 12.
@@ -1393,7 +1398,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [73
 
 ]
-<images/Diagrams/branchWidthIncrease.png, id=316, 1308.89pt x 588.1975pt>
+<images/Diagrams/branchWidthIncrease.png, id=318, 1308.89pt x 588.1975pt>
 File: images/Diagrams/branchWidthIncrease.png Graphic file (type png)
 <use images/Diagrams/branchWidthIncrease.png>
 Package pdftex.def Info: images/Diagrams/branchWidthIncrease.png  used on input
@@ -1404,14 +1409,14 @@ Overfull \hbox (14.53989pt too wide) in paragraph at lines 63--64
  [][] 
  []
 
-<images/Diagrams/TernaryBranching3_vr.png, id=317, 1204.5pt x 903.375pt>
+<images/Diagrams/TernaryBranching3_vr.png, id=319, 1204.5pt x 903.375pt>
 File: images/Diagrams/TernaryBranching3_vr.png Graphic file (type png)
 <use images/Diagrams/TernaryBranching3_vr.png>
 Package pdftex.def Info: images/Diagrams/TernaryBranching3_vr.png  used on inpu
 t line 72.
 (pdftex.def)             Requested size: 361.35278pt x 271.01459pt.
 [74 <./images/Diagrams/branchWidthIncrease.png>]
-<images/Diagrams/TernaryBranching2_angle_example.png, id=322, 1204.5pt x 903.37
+<images/Diagrams/TernaryBranching2_angle_example.png, id=324, 1204.5pt x 903.37
 5pt>
 File: images/Diagrams/TernaryBranching2_angle_example.png Graphic file (type pn
 g)
@@ -1421,13 +1426,13 @@ sed on input line 84.
 (pdftex.def)             Requested size: 361.35278pt x 271.01459pt.
  [75 <./images/Diagrams/TernaryBranching3_vr.png> <./images/Diagrams/TernaryBra
 nching2_angle_example.png>]
-<images/Diagrams/ternarybranching3_a60.png, id=328, 952.55875pt x 587.19376pt>
+<images/Diagrams/ternarybranching3_a60.png, id=330, 952.55875pt x 587.19376pt>
 File: images/Diagrams/ternarybranching3_a60.png Graphic file (type png)
 <use images/Diagrams/ternarybranching3_a60.png>
 Package pdftex.def Info: images/Diagrams/ternarybranching3_a60.png  used on inp
 ut line 99.
 (pdftex.def)             Requested size: 285.76982pt x 176.15948pt.
-<images/Diagrams/TernaryBranching3_constantSC.png, id=329, 1204.5pt x 903.375pt
+<images/Diagrams/TernaryBranching3_constantSC.png, id=331, 1204.5pt x 903.375pt
 >
 File: images/Diagrams/TernaryBranching3_constantSC.png Graphic file (type png)
 <use images/Diagrams/TernaryBranching3_constantSC.png>
@@ -1436,14 +1441,14 @@ Package pdftex.def Info: images/Diagrams/TernaryBranching3_constantSC.png  used
 (pdftex.def)             Requested size: 361.35278pt x 271.01459pt.
 
 [76 <./images/Diagrams/ternarybranching3_a60.png>]
-<images/Diagrams/springconstantgraphs.png, id=334, 1405.25pt x 1003.75pt>
+<images/Diagrams/springconstantgraphs.png, id=336, 1405.25pt x 1003.75pt>
 File: images/Diagrams/springconstantgraphs.png Graphic file (type png)
 <use images/Diagrams/springconstantgraphs.png>
 Package pdftex.def Info: images/Diagrams/springconstantgraphs.png  used on inpu
 t line 125.
 (pdftex.def)             Requested size: 421.57826pt x 301.12732pt.
  [77 <./images/Diagrams/TernaryBranching3_constantSC.png>]
-<images/Diagrams/TernaryBranching3_scmod.png, id=339, 1204.5pt x 1204.5pt>
+<images/Diagrams/TernaryBranching3_scmod.png, id=341, 1204.5pt x 1204.5pt>
 File: images/Diagrams/TernaryBranching3_scmod.png Graphic file (type png)
 <use images/Diagrams/TernaryBranching3_scmod.png>
 Package pdftex.def Info: images/Diagrams/TernaryBranching3_scmod.png  used on i
@@ -1451,7 +1456,7 @@ nput line 134.
 (pdftex.def)             Requested size: 361.35278pt x 361.35278pt.
  [78 <./images/Diagrams/springconstantgraphs.png> <./images/Diagrams/TernaryBra
 nching3_scmod.png>]
-<images/Diagrams/gravityExamples1.png, id=345, 3208.98875pt x 1014.79124pt>
+<images/Diagrams/gravityExamples1.png, id=347, 3208.98875pt x 1014.79124pt>
 File: images/Diagrams/gravityExamples1.png Graphic file (type png)
 <use images/Diagrams/gravityExamples1.png>
 Package pdftex.def Info: images/Diagrams/gravityExamples1.png  used on input li
@@ -1462,13 +1467,13 @@ Overfull \hbox (7.95767pt too wide) detected at line 179
 [][]
  []
 
-<images/Diagrams/gravityExamples2.png, id=346, 3208.98875pt x 1048.91875pt>
+<images/Diagrams/gravityExamples2.png, id=348, 3208.98875pt x 1048.91875pt>
 File: images/Diagrams/gravityExamples2.png Graphic file (type png)
 <use images/Diagrams/gravityExamples2.png>
 Package pdftex.def Info: images/Diagrams/gravityExamples2.png  used on input li
 ne 185.
 (pdftex.def)             Requested size: 320.91768pt x 104.89801pt.
-<images/Diagrams/windExample.png, id=347, 1003.75pt x 1003.75pt>
+<images/Diagrams/windExample.png, id=349, 1003.75pt x 1003.75pt>
 File: images/Diagrams/windExample.png Graphic file (type png)
 <use images/Diagrams/windExample.png>
 Package pdftex.def Info: images/Diagrams/windExample.png  used on input line 19
@@ -1517,10 +1522,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 11688 strings out of 492982
- 171781 string characters out of 6134896
- 323405 words of memory out of 5000000
- 14914 multiletter control sequences out of 15000+600000
+ 11695 strings out of 492982
+ 172001 string characters out of 6134896
+ 323477 words of memory out of 5000000
+ 14920 multiletter control sequences out of 15000+600000
  13812 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  45i,15n,72p,2184b,1302s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1538,10 +1543,10 @@ mr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Thesis.pdf (90 pages, 10120615 bytes).
+Output written on Thesis.pdf (90 pages, 10141469 bytes).
 PDF statistics:
- 441 PDF objects out of 1000 (max. 8388607)
+ 443 PDF objects out of 1000 (max. 8388607)
  246 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 231 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 236 words of extra memory for PDF output out of 10000 (max. 10000000)
 
