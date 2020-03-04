@@ -27,26 +27,26 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Diagram of the cross product of two vectors a and b.}}{53}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Diagram of the three stages of L-system interpretation}}{60}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Diagram for the properties of a joint}}{61}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Diagram of a simple plant skeleton showing joint position and orientation.}}{62}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Example of the continuity problem faced with stacked branching with a 25$^{\circ }$ bend per joint.}}{63}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Diagram of a simple plant skeleton showing the joint positions.}}{61}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Diagram for the properties of a joint}}{62}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Example of the continuity problem faced with stacked branching with a 25$^{\circ }$ bend per joint.}}{64}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Example of linked branching with a 25$^{\circ }$ bend per joint.}}{64}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Diagram comparing stacked vs linked branching.}}{64}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagram showing the structure of a vertex buffer object.}}{65}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces The main stages of the rendering pipeline for a typical GPU.}}{66}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Diagram comparing stacked vs linked branching.}}{65}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagram showing the structure of a vertex buffer object.}}{66}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces The main stages of the rendering pipeline for a typical GPU.}}{67}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Diagram showing how Hooke's Law can be applied to a plant structure.}}{69}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Diagram showing how Hooke's Law can be applied to a plant structure.}}{70}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Graph showing an exponential and linear relationship between the branch width and the generation when increasing the value of `dr'.}}{74}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Examples of L-system 1 changing the `dr' variable which modifies the thickness of the base of the tree.}}{75}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Examples of L-system 2 changing the `a3' variable modifying the roll angle of certain branches.}}{75}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces L-system 2 where the variable `a3' has the value of 60$^\circ $. }}{76}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Examples of L-system 1 when uniformly changing the `scstart' for all branches and leaving `scmod = 1.0'.}}{77}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Graphs showing the distribution of spring constants dependency on the spring modifier and number of generations.}}{78}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Examples of L-system 3 with gravity applied when changing the spring constant modifier `scmod', when the starting spring constant is set to 30 `scstart = 30'.}}{78}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Examples simulating gravity on a 2D model}}{79}
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Simulating gravity on a simple pine tree model.}}{79}
-\contentsline {figure}{\numberline {7.10}{\ignorespaces Simulating wind on a simple pine tree model}}{80}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Graph showing an exponential and linear relationship between the branch width and the generation when increasing the value of `dr'.}}{75}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Examples of L-system 1 changing the `dr' variable which modifies the thickness of the base of the tree.}}{76}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Examples of L-system 2 changing the `a3' variable modifying the roll angle of certain branches.}}{76}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces L-system 2 where the variable `a3' has the value of 60$^\circ $. }}{77}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Examples of L-system 1 when uniformly changing the `scstart' for all branches and leaving `scmod = 1.0'.}}{78}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Graphs showing the distribution of spring constants dependency on the spring modifier and number of generations.}}{79}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Examples of L-system 3 with gravity applied when changing the spring constant modifier `scmod', when the starting spring constant is set to 30 `scstart = 30'.}}{79}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Examples simulating gravity on a 2D model}}{80}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Simulating gravity on a simple pine tree model.}}{80}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Simulating wind on a simple pine tree model}}{81}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
