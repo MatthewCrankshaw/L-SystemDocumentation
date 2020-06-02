@@ -51,6 +51,6 @@
 \contentsline {section}{\numberline {6.5}Summary}{73}
 \contentsline {chapter}{\numberline {7}Results}{74}
 \contentsline {chapter}{\numberline {8}Discussion and Conclusions}{82}
-\contentsline {chapter}{Appendices}{84}
-\contentsline {chapter}{\numberline {A}L-system Rewriter Data Structures}{85}
-\contentsline {chapter}{\numberline {B}L-system Rewriter Pseudocode}{86}
+\contentsline {chapter}{Appendices}{85}
+\contentsline {chapter}{\numberline {A}L-system Rewriter Data Structures}{86}
+\contentsline {chapter}{\numberline {B}L-system Rewriter Pseudocode}{87}
